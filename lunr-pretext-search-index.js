@@ -10,13 +10,13 @@ var ptx_lunr_docs = [
   "body": "  My Website   copyright  "
 },
 {
-  "id": "sec-section-name",
+  "id": "sec-introduction",
   "level": "1",
-  "url": "sec-section-name.html",
+  "url": "sec-introduction.html",
   "type": "Section",
   "number": "1.1",
-  "title": "First attempt of the first step",
-  "body": " First attempt of the first step  Text of section.  "
+  "title": "Introduction",
+  "body": " Introduction  A brief description of the present work  In the representation theory of many important algebraic structures, such as Lie algebras, groups (or group algebras), commutative associative algebras, Hopf algebras or quantum groups, tensor product operations among modules play a central role. They not only give new modules from known ones, but they of course also provide a powerful tool for studying modules. More significantly, suitable categories of modules for such algebras, equipped with tensor product operations and appropriate natural isomorphisms, and so on, become symmetric or braided tensor categories, and this tensor category structure is always used, even when it is not explicitly discussed.  "
 },
 {
   "id": "sec-advanced--topics",
