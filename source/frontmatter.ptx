@@ -6,9 +6,19 @@
 <frontmatter xmlns:xi="http://www.w3.org/2001/XInclude" xml:id="frontmatter">
   <titlepage>
     <author>
-      <personname>You</personname>
-      <department>Your department</department>
-      <institution>Your institution</institution>
+      <personname>Yi-Zhi Huang</personname>
+      <department>Department of Mathematics</department>
+      <institution>Rutgers University</institution>
+    </author>
+    <author>
+      <personname>James Lepowsky</personname>
+      <department>Department of Mathematics</department>
+      <institution>Rutgers University</institution>
+    </author>
+    <author>
+      <personname>Lin Zhang</personname>
+      <department>Department of Mathematics</department>
+      <institution>Rutgers University</institution>
     </author>
     <date>
       <today />
