@@ -30,4 +30,6 @@
   <xi:include href="sec-introduction" />
   <xi:include href="sec-advanced--topics.ptx" />
 
+  Testing some new inputs.
+
 </chapter>

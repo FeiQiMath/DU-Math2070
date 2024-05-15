@@ -16,7 +16,7 @@
     <!-- Include chapters -->
      <!-- <xi:include href="./ch-chapter-title.ptx" />-->
      <xi:include href="./ch-Introduction-strongly-graded.ptx" />
-
+     <xi:include href="./ch-test.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
