@@ -5,17 +5,14 @@
   <xi:include href="./docinfo.ptx" />
 
   <book xml:id="my-great-book">
-    <title>Logarithmic tensor category theory for
-      generalized modules for a conformal vertex
-      algebra</title>
+    <title>Simpler title</title>
     <subtitle>No subtitle</subtitle>
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-     <xi:include href="./ch-Introduction-strongly-graded.ptx" />
-    <xi:include href="./ch-chapter-title.ptx" />
+     <xi:include href="./ch-chapter-title.ptx" />
 
 
     <!-- Include backmatter -->
