@@ -1,0 +1,9 @@
+INFO    : PreTeXt-CLI version: 2.4.0
+
+INFO    : PreTeXt project found in `/workspaces/PreTexTTest`.
+INFO    : Converting /workspaces/PreTexTTest/source/tensor-hlz-1.tex to PreTeXt.
+INFO    : Using temporary directory /tmp/pretext_afhnfrud/import
+INFO    : Converting /workspaces/PreTexTTest/source/tensor-hlz-1.tex to /workspaces/PreTexTTest/imports/tensor-hlz-1
+ERROR   : I/O operation on closed file.
+INFO    : While running pretext, the following errors occurred:
+

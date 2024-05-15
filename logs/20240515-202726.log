@@ -1,0 +1,9 @@
+INFO    : PreTeXt-CLI version: 2.4.0
+
+INFO    : PreTeXt project found in `/workspaces/PreTexTTest`.
+INFO    : Converting /workspaces/PreTexTTest/source/Exam.tex to PreTeXt.
+INFO    : Using temporary directory /tmp/pretext_7ruplvy7/import
+INFO    : Converting /workspaces/PreTexTTest/source/Exam.tex to /workspaces/PreTexTTest/imports/Exam
+ERROR   : [Errno 2] No such file or directory: '/workspaces/PreTexTTest/source/Plot.jpeg'
+INFO    : While running pretext, the following errors occurred:
+

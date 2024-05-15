@@ -1,0 +1,8 @@
+INFO    : PreTeXt-CLI version: 2.4.0
+
+INFO    : PreTeXt project found in `/workspaces/PreTexTTest`.
+INFO    : Since no target was supplied, we will use "web".
+
+INFO    : Running in a codespace, so using the codespace server instead of the standard python server.
+INFO    : Server will soon be available at https://humble-space-fiesta-r9xjpr4495xfxxr9-8128.app.github.dev
+INFO    : Opening browser for target `web` at https://humble-space-fiesta-r9xjpr4495xfxxr9-8128.app.github.dev/output/web in 5 seconds

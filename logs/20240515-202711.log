@@ -1,0 +1,6 @@
+INFO    : PreTeXt-CLI version: 2.4.0
+
+INFO    : PreTeXt project found in `/workspaces/PreTexTTest`.
+ERROR   : File /workspaces/PreTexTTest/Exam.tex does not exist.
+INFO    : While running pretext, the following errors occurred:
+

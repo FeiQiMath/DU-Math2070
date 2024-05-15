@@ -1,0 +1,8 @@
+INFO    : PreTeXt-CLI version: 2.4.0
+
+INFO    : PreTeXt project found in `/workspaces/PreTexTTest`.
+CRITICAL: Opening and ending tag mismatch: h line 6 and p, line 6, column 50
+INFO    : ------------------------
+CRITICAL: Failed to build.  Exiting...
+INFO    : While running pretext, the following errors occurred:
+

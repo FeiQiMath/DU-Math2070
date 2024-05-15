@@ -1,0 +1,10 @@
+INFO    : PreTeXt-CLI version: 2.4.0
+
+INFO    : PreTeXt project found in `/workspaces/PreTexTTest`.
+ERROR   : XML Syntax Error caused build to fail:
+ERROR   : /workspaces/PreTexTTest/source/main.ptx:17:6:FATAL:PARSER:ERR_NAME_REQUIRED: StartTag: invalid element name
+CRITICAL: XML syntax for source file is invalid
+INFO    : ------------------------
+CRITICAL: Failed to build.  Exiting...
+INFO    : While running pretext, the following errors occurred:
+
