@@ -6,7 +6,7 @@
 
   <book xml:id="Math-1951-HW-and-Soln">
     <title>Math 1951 Homework Exercises and Solutions</title>
-    <subtitle>No subtitle</subtitle>
+    <!-- <subtitle>No subtitle</subtitle> -->
 
     <!-- Include frontmatter -->
     <xi:include href="./frontmatter.ptx" />
@@ -14,6 +14,7 @@
     <!-- Include chapters -->
      <!-- <xi:include href="./ch-chapter-title.ptx" />-->
      <xi:include href="./ch-prelim.ptx" />
+     <xi:include href="./ch-Homework.ptx" />
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />

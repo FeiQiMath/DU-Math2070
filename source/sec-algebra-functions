@@ -138,20 +138,24 @@
         <li> Symmetry about any axis and/or the origin.</li>
         <li> Whether the function is even, odd, or neither.</li>
     </ul>
-    <solution title="(a)">
+    <solution>
+      <title>Solution of (A)</title>
       <image source="Figures/0.1.19A.JPG"></image>
     </solution>
-    <solution title="(a)">
+    <solution>
       <image source="Figures/0.1.19B.JPG"></image>
     </solution>
-    <solution title="(a)">
+    <solution>
       The graph does not represent a function. 
     </solution>
-    <solution title="(a)">
+    <solution>
       <image source="Figures/0.1.19D.JPG"></image>
     </solution>
 
   </li>
+
   </ol> 
+
+
 
 </section>

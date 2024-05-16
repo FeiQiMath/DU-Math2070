@@ -1,0 +1,84 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-logarithm" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Logarithms</title>
+
+  <ol>
+    <li> 
+    <m>\log _{3} \sqrt{27}</m>
+    <solution>
+      
+    </solution>
+    </li>
+    <li> 
+    <m>\log _{2} 160-\log _{2} 5</m>
+    </li>
+    <li> 
+      <m>\log _{4} 192-\log _{4} 3</m>    
+    </li>
+    <li> 
+      <m>\log _{12} 9+\log _{12} 16</m>
+    </li>
+    <li> <m>\log _{2} 6-\log _{2} 15+\log _{2} 20</m>
+    </li>
+    <li> <m>\log _{3} 100-\log _{3} 18-\log _{3} 50</m>
+    </li>
+    <li> <m>\log _{4} 16^{100}</m>
+    </li>
+    <li> <m>\log _{2} 8^{33}</m>
+    </li>
+    <li> <m>\ln \left(\ln e^{200}\right)</m>
+    </li>
+    Use the Laws of Logarithms to expand the expression.
+    <li> <m>\log _{2}(2 x)</m>
+    </li>
+    <li> <m>\log _{2}(x(x-1))</m>
+    </li>
+    <li> <m>\ln \sqrt{z}</m>
+    </li>
+    <li> <m>\log _{2}\left(A B^{2}\right)</m>
+    </li>
+    <li> <m>\log _{2}(x y)^{10}</m>
+    </li>
+    <li> <m>\log _{3}(x \sqrt{y})</m>
+    </li>
+    <li> <m>\log _{a}\left(\displaystyle{\frac{x^{2}}{yz^{3}}}\right)</m> 
+    </li>
+    <li> <m>\ln \sqrt{a b}</m>
+    </li>
+    <li> <m>\ln \sqrt[3]{3 r^{2} s}</m> 
+    </li>
+    <li> <m>\log \left(\displaystyle{\frac{x^{3} y^{4}}{z^{6}}}\right)</m>
+    </li>
+    <li> <m>\ln \left(x \sqrt{\displaystyle{\frac{y}{z}}}\right)</m>
+    </li>
+    <li> <m>\ln \displaystyle{\frac{3 x^{2}}{(x+1)^{10}}}</m>
+    </li>
+    <li> <m>\log \sqrt[4]{x^{2}+y^{2}}</m>
+    </li>
+    <li> <m>\log \left(\displaystyle{\frac{x}{\sqrt[3]{1-x}}}\right)</m>
+    </li>
+    <li> <m>\log \sqrt{x \sqrt{y \sqrt{z}}}</m>
+    </li>
+    <li> <m>\ln \left(\frac{e^{x}}{x\left(x^{2}+1\right)\left(x^{4}+2\right)}\right)</m>
+    </li>
+  Use the Laws of Logarithms to combine the
+  expression.  
+    <li> <m>\log _{2} 5+5 \log _{2} 2</m>
+    </li>
+    <li> <m>\log 12+\frac{1}{2} \log 7-\log 2</m>
+    </li>
+    <li> <m>\ln 5+2 \ln x + 3\ln (x^2+5)</m>
+    </li>
+    <li> <m>2\left(\log _{5} x+2 \log _{5} y-3 \log _{5} z\right)</m>
+
+    </li>
+    <li>Simplify: <m>\left(\log _{2} 5\right)\left(\log _{5} 7\right)</m>. 
+  
+    </li>
+    <li>(30) Show that <m>-\ln \left(x-\sqrt{x^{2}-1}\right)=\ln \left(x+\sqrt{x^{2}-1}\right)</m>.
+    </li>
+  </ol>
+  
+
+</section>

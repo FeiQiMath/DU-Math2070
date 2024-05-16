@@ -9,6 +9,6 @@
 
   <!-- include sections -->
   <xi:include href="sec-algebra-functions" />
-  <xi:include href="sec-advanced--topics.ptx" />
+  <xi:include href="sec-logarithm-functions.ptx" />
 
 </chapter>
