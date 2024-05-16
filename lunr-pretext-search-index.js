@@ -16,23 +16,14 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Algebras and Functions",
-  "body": " Algebras and Functions   Expand        Expand        Expand  Expand  Factorize  Factorize  Simplify  Simplify  Simplify  Simplify  Compute and write the result as a simple fraction  Compute and write the result as a simple fraction  Compute and write the result as a simple fraction  Compute and write the result as a simple fraction  Compute and write the result as a simple fraction  Rationalize the denomiator:  Rationalize the numerator:   "
-},
-{
-  "id": "sec-algebra-functions-2-1-2-1",
-  "level": "2",
-  "url": "sec-algebra-functions.html#sec-algebra-functions-2-1-2-1",
-  "type": "Figure",
-  "number": "1.1.1",
-  "title": "",
-  "body": "  "
+  "body": " Algebras and Functions   Expand      Expand        Expand  Expand  Factorize  Factorize  Simplify  Simplify  Simplify  Simplify  Compute and write the result as a simple fraction  Compute and write the result as a simple fraction  Compute and write the result as a simple fraction  Compute and write the result as a simple fraction  Compute and write the result as a simple fraction  Rationalize the denomiator:  Rationalize the numerator:   "
 },
 {
   "id": "sec-algebra-functions-2-2-2-1",
   "level": "2",
   "url": "sec-algebra-functions.html#sec-algebra-functions-2-2-2-1",
   "type": "Figure",
-  "number": "1.1.2",
+  "number": "1.1.1",
   "title": "",
   "body": "  "
 },
