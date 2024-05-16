@@ -6,14 +6,14 @@
   <ol>
     <li> Expand <m>(2 x+1)(3 x-2)-5(4 x-1)</m>
     <solution>
-        <image source="source/Figures/0.1.2.JPG"></image>
+        <image source="Figures/0.1.1.JPG"/>
     </solution>
     
     </li>
     <li> Expand <m>(2 y-7)(2 y+7)</m>
     <solution>
         <figure>
-            <image source="source/Figures/0.1.2.JPG"/>
+            <image source="Figures/0.1.2.JPG"/>
         </figure>
     </solution>
     </li>
