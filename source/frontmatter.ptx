@@ -25,11 +25,12 @@
     </date>
   </titlepage>
 
+
   <colophon>
 
-    <website>
+    <!-- <website>
       <url href="https://pretextbook.org">My Website</url>
-    </website>
+    </website> -->
 
     <copyright>
       <year>2020<ndash />2023</year>
