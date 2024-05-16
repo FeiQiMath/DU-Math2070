@@ -4,7 +4,7 @@
   <!-- we first include a file which contains the docinfo element: -->
   <xi:include href="./docinfo.ptx" />
 
-  <book xml:id="my-great-book">
+  <book xml:id="Math-1951-HW-and-Soln">
     <title>Math 1951 Homework Exercises and Solutions</title>
     <subtitle>No subtitle</subtitle>
 
