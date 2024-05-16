@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <section xml:id="sec-algebra-functions" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>First attempt of the first step</title>
+  <title>Algebras and Functions</title>
 
   <ol>
     <li> Expand <m>(2 x+1)(3 x-2)-5(4 x-1)</m>
