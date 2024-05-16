@@ -1,8 +1,0 @@
-INFO    : PreTeXt-CLI version: 2.4.0
-
-INFO    : PreTeXt project found in `/workspaces/PreTexTTest`.
-CRITICAL: PCDATA invalid Char value 12, line 12, column 24
-INFO    : ------------------------
-CRITICAL: Failed to build.  Exiting...
-INFO    : While running pretext, the following errors occurred:
-

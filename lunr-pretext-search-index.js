@@ -7,16 +7,34 @@ var ptx_lunr_docs = [
   "type": "Colophon",
   "number": "",
   "title": "Colophon",
-  "body": "  My Website   copyright  "
+  "body": "  copyright  "
 },
 {
-  "id": "sec-introduction",
+  "id": "sec-algebra-functions",
   "level": "1",
-  "url": "sec-introduction.html",
+  "url": "sec-algebra-functions.html",
   "type": "Section",
   "number": "1.1",
-  "title": "Introduction",
-  "body": " Introduction  A brief description of the present work  In the representation theory of many important algebraic structures, such as Lie algebras, groups (or group algebras), commutative associative algebras, Hopf algebras or quantum groups, tensor product operations among modules play a central role. They not only give new modules from known ones, but they of course also provide a powerful tool for studying modules. More significantly, suitable categories of modules for such algebras, equipped with tensor product operations and appropriate natural isomorphisms, and so on, become symmetric or braided tensor categories, and this tensor category structure is always used, even when it is not explicitly discussed.  "
+  "title": "Algebras and Functions",
+  "body": " Algebras and Functions   Expand        Expand        Expand  Expand  Factorize  Factorize  Simplify  Simplify  Simplify  Simplify  Compute and write the result as a simple fraction  Compute and write the result as a simple fraction  Compute and write the result as a simple fraction  Compute and write the result as a simple fraction  Compute and write the result as a simple fraction  Rationalize the denomiator:  Rationalize the numerator:   "
+},
+{
+  "id": "sec-algebra-functions-2-1-2-1",
+  "level": "2",
+  "url": "sec-algebra-functions.html#sec-algebra-functions-2-1-2-1",
+  "type": "Figure",
+  "number": "1.1.1",
+  "title": "",
+  "body": "  "
+},
+{
+  "id": "sec-algebra-functions-2-2-2-1",
+  "level": "2",
+  "url": "sec-algebra-functions.html#sec-algebra-functions-2-2-2-1",
+  "type": "Figure",
+  "number": "1.1.2",
+  "title": "",
+  "body": "  "
 },
 {
   "id": "sec-advanced--topics",
