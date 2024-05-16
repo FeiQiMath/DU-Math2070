@@ -45,83 +45,113 @@
         
     </solution>
     </li>  
-    <li> Simplify <m>\frac{x^{2}-2 x-3}{2 x^{2}+5 x+3}</m>
+    <li> Simplify <m>\dfrac{x^{2}-2 x-3}{2 x^{2}+5 x+3}</m>
       <solution>
         
             <image source="Figures/0.1.7.JPG"/>
         
     </solution>
     </li>
-    <li> Simplify <m>\frac{x^{2}+2 x-3}{x^{2}+8 x+16} \cdot \frac{3 x+12}{x-1}</m>
+    <li> Simplify <m>\dfrac{x^{2}+2 x-3}{x^{2}+8 x+16} \cdot \dfrac{3 x+12}{x-1}</m>
       <solution>
         
             <image source="Figures/0.1.8.JPG"/>
         
     </solution>
     </li>
-    <li> Simplify <m>\frac{t^{3}-1}{t^{2}-1}</m>
+    <li> Simplify <m>\dfrac{t^{3}-1}{t^{2}-1}</m>
       <solution>
         
             <image source="Figures/0.1.9.JPG"/>
         
     </solution>
     </li>
-    <li> Simplify <m>\frac{x^{2}-2 x-15}{x^{2}-6 x+5} \div \frac{x^{2}-x-12}{x^{2}-1}</m>
+    <li> Simplify <m>\dfrac{x^{2}-2 x-15}{x^{2}-6 x+5} \div \dfrac{x^{2}-x-12}{x^{2}-1}</m>
       <solution>
         
             <image source="Figures/0.1.10.JPG"/>
         
     </solution>
     </li>
-    <li> Compute and write the result as a simple fraction <m>\frac{2}{x}+\frac{1}{x-2}+\frac{3}{(x-2)^{2}}</m>
+    <li> Compute and write the result as a simple fraction <m>\dfrac{2}{x}+\dfrac{1}{x-2}+\dfrac{3}{(x-2)^{2}}</m>
       <solution>
         
             <image source="Figures/0.1.11.JPG"/>
         
     </solution>
     </li>
-    <li> Compute and write the result as a simple fraction <m>\frac{1}{x-1}-\frac{2}{x^{2}-1}</m>
+    <li> Compute and write the result as a simple fraction <m>\dfrac{1}{x-1}-\dfrac{2}{x^{2}-1}</m>
       <solution>
         
             <image source="Figures/0.1.12.JPG"/>
         
     </solution>
     </li>
-    <li> Compute and write the result as a simple fraction <m>\frac{1}{x+2}+\frac{1}{x^{2}-4}-\frac{2}{x^{2}-x-2}</m>
+    <li> Compute and write the result as a simple fraction <m>\dfrac{1}{x+2}+\dfrac{1}{x^{2}-4}-\dfrac{2}{x^{2}-x-2}</m>
       <solution>
         
             <image source="Figures/0.1.13.JPG"/>
         
     </solution>
     </li>
-    <li> Compute and write the result as a simple fraction <m>\frac{\displaystyle{\frac{1}{x}-\frac{1}{2}}}{x-2}</m>
+    <li> Compute and write the result as a simple fraction <m>\dfrac{\displaystyle{\dfrac{1}{x}-\dfrac{1}{2}}}{x-2}</m>
       <solution>
         
             <image source="Figures/0.1.14.JPG"/>
         
     </solution>
     </li>
-    <li> Compute and write the result as a simple fraction <m>\frac{\displaystyle{\frac{1}{x}-\frac{1}{x+1}}}{\displaystyle{\frac{1}{x}+\frac{1}{x+1}}}</m>
+    <li> Compute and write the result as a simple fraction <m>\dfrac{\displaystyle{\dfrac{1}{x}-\dfrac{1}{x+1}}}{\displaystyle{\dfrac{1}{x}+\dfrac{1}{x+1}}}</m>
       <solution>
         
             <image source="Figures/0.1.15.JPG"/>
         
     </solution>
     </li>
-    <li> Rationalize the denomiator: <m>\frac{\sqrt{6}}{\sqrt{3}+\sqrt{2}}</m>
+    <li> Rationalize the denomiator: <m>\dfrac{\sqrt{6}}{\sqrt{3}+\sqrt{2}}</m>
       <solution>
         
             <image source="Figures/0.1.16.JPG"/>
         
     </solution>
     </li>
-    <li> Rationalize the numerator: <m>\frac{\sqrt{x+h}-\sqrt{x}}{h}</m>
+    <li> Rationalize the numerator: <m>\dfrac{\sqrt{x+h}-\sqrt{x}}{h}</m>
       <solution>
         
             <image source="Figures/0.1.17.JPG"/>
         
     </solution>
     </li>
-  </ol>
+  
+  <li> Use the vertical line test to determine whether each of the given graphs represents a function.  
+    <image source="Figures/0.1.18.JPG"/>
+    <solution>
+      <p>(A), (B), (D) are functions. (C) is not.</p> 
+    </solution> 
+  </li>
+  <li> <p>For each graph in Problem 18 representing a function, assume it extends beyond the given grid, determine the following for each graph. </p>
+    <ul>
+        <li> Domain and range. </li>
+        <li> The intervals for which the function is increasing.</li>
+        <li> The intervals for which the function is decreasing.</li>
+        <li> The intervals for which the function is constant.</li>
+        <li> Symmetry about any axis and/or the origin.</li>
+        <li> Whether the function is even, odd, or neither.</li>
+    </ul>
+    <solution title="(a)">
+      <image source="Figures/0.1.19A.JPG"></image>
+    </solution>
+    <solution title="(a)">
+      <image source="Figures/0.1.19B.JPG"></image>
+    </solution>
+    <solution title="(a)">
+      The graph does not represent a function. 
+    </solution>
+    <solution title="(a)">
+      <image source="Figures/0.1.19D.JPG"></image>
+    </solution>
+
+  </li>
+  </ol> 
 
 </section>
