@@ -5,9 +5,7 @@
   <xi:include href="./docinfo.ptx" />
 
   <book xml:id="my-great-book">
-    <title>Logarithmic tensor category theory for
-      generalized modules for a conformal vertex
-      algebra</title>
+    <title>Math 1951 Homework Exercises and Solutions</title>
     <subtitle>No subtitle</subtitle>
 
     <!-- Include frontmatter -->
