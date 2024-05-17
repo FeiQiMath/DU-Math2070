@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="HW2" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Homework 2</title>
+
+  <ol>
+    <li>
+      <p>Find the solution of each of the following IVP. </p>
+      <ol>
+        <li>
+          <m>t^2 y' + 2ty = \cos t, y(\pi)= 0, t\gt 0. </m>
+          <solution>
+            The standard form of the ODE is
+            <me>y' + \frac 2 t y = \frac{\cos t}{t^2}.</me>
+            So 
+            <me>p(t)=\frac 2 t, g(t) = \frac{\cos t}{t^2}.</me>
+            Compute the integrating factor:
+            <me>\mu(t) = e^{\int \frac 2 t dt} = e^{2\ln t} = t^2</me>
+            <m>\textbf{Warning! Do not abuse algebra! }e^{2\ln t} \textbf{ is }t^2, \textbf{ not }2t.</m>
+            Formulate and compute the general solution:
+            <md>
+              <mrow>y(t) \amp = \frac{\int \mu(t) g(t) dt}{\mu(t)}=\displaystyle{\frac{\int t^2 \cdot \frac{\cos t}{t^2} dt}{t^2}}</mrow>
+              <mrow> \amp= \dfrac{\int \cos t dt}{t^2} = \dfrac{\sin t + C}{t^2}</mrow>
+            </md>
+            Plug in the initial condition.
+            <me>y(\pi)=0\Rightarrow \dfrac{\sin\pi + C}{\pi^2}=0\Rightarrow C = 0.</me>
+            So the solution of the IVP is 
+            <me>y(t) = \frac{\sin t}{t^2}.</me>
+          </solution>
+        </li>
+        <li>
+          <m>ty'+3y = \cos t, y(\pi) = 0, t \gt 0. </m>
+          <solution>
+            The standard form of the ODE is
+            <me>y' + \frac 3 t y = \frac{\cos t}{t}.</me>
+            So
+            <me>p(t) = \frac 3 t, g(t) = \frac{\cos t}{t}.</me>
+            Compute the integrating factor:
+            <me>\mu(t) = e^{\int \frac 3 t dt} = e^{3\ln t} = t^3.</me>
+            Formulate the general solution:
+            <me> y(t) = \frac{\int \mu(t)g(t)dt}{\mu(t)} = \frac{\int t^3 \frac{\cos t}{t}}{t^3}= \frac{\int t^2 \cos t dt}{t^3}.</me>
+            We focus on the numerator and perform integration by parts.
+            <md>
+              <mrow>\int t^2 \cos t dt \amp = t^2 \sin t - \int 2t \sin t dt</mrow>
+              <mrow>\amp = t^2 \sin t - 2\left(t\cdot (-\cos t) - \int 1 \cdot (-\cos t)dt\right)</mrow>
+              <mrow>\amp = t^2 \sin t + 2t \cos t - 2\sin t + C</mrow>
+            </md>
+            So the general solution is
+            <me>y(t) = \frac {\sin t} t + \frac{2\cos t}{t^2} - \frac{2\sin t}{t^3}+ \frac{C}{t^3}.</me>
+            Plug in the initial condition
+            <me>y(\pi) = 0\Rightarrow 0 + \frac{-2}{\pi^2} - 0 + \frac{C}{\pi^3} = 0 \Rightarrow C = 2\pi.</me>
+            So the solution of the IVP is 
+            <me>y(t) = \frac {\sin t} t + \frac{2\cos t}{t^2} - \frac{2\sin t}{t^3}- \frac{2\pi}{t^3}.</me>
+          </solution>
+        </li>
+        <li>
+          <m>ty' + (1+t)y = e^{-t}\sin 2t, y(\pi) = 0, t\gt 0. </m>
+          <solution>
+            The standard form of the ODE is
+            <me>y' + \frac {1+t} t y = \frac{e^{-t}\sin 2t}{t}.</me>
+            So
+            <me>p(t) = \frac {1+t} t, g(t) = \frac{e^{-t}\sin 2t}{t}.</me>
+            Compute the integrating factor:
+            <me>\mu(t) = e^{\int p(t)dt} = e^{\int \frac {1+t} t dt} = e^{\int \left(\frac 1 t + 1\right) dt} = e^{\ln t + t} = te^t.</me>
+            <m>\textbf{Warning! Do not abuse algebra!} e^{A+B} = e^A\cdot e^B, \textbf{ not }e^A + e^B. </m>
+            Formulate and compute the general solution:
+            <me> y(t) = \frac{\int \mu(t)g(t)dt}{\mu(t)} = \frac{\int te^t \frac{e^{-t}\sin 2t}{t}}{te^t}= \frac{\int \sin 2t dt}{te^t} = \frac{-\cos 2t + C}{2te^t}.</me>
+            We focus on the numerator and perform integration by parts.
+            <md>
+              <mrow>\int t^2 \cos t dt \amp = t^2 \sin t - \int 2t \sin t dt</mrow>
+              <mrow>\amp = t^2 \sin t - 2\left(t\cdot (-\cos t) - \int 1 \cdot (-\cos t)dt\right)</mrow>
+              <mrow>\amp = t^2 \sin t + 2t \cos t - 2\sin t + C</mrow>
+            </md>
+            So the general solution is
+            <me>y(t) = \frac {\sin t} t + \frac{2\cos t}{t^2} - \frac{2\sin t}{t^3}+ \frac{C}{t^3}.</me>
+            Plug in the initial condition
+            <me>y(\pi) = 0\Rightarrow 0 + \frac{-2}{\pi^2} - 0 + \frac{C}{\pi^3} = 0 \Rightarrow C = 2\pi.</me>
+            So the solution of the IVP is 
+            <me>y(t) = \frac {\sin t} t + \frac{2\cos t}{t^2} - \frac{2\sin t}{t^3}- \frac{2\pi}{t^3}.</me>
+          </solution>
+
+        </li>
+      </ol>
+    </li>
+    <li>
+      <p>Find the solution of each of the following IVP that is continuous everywhere.</p>
+      <ol>
+        <li>
+          <me>y' + y = g(t), y(0) = 1, g(t) = \begin{cases} t \amp \text{if } 0 \leq t \lt 1\\
+            0 \amp \text{if }t \geq 1 \end{cases}</me>
+        </li>
+        <li>
+          <me>(1+t^2) y' + 2t y = g(t), y(0) = 0, g(t) = \begin{cases} t \amp \text{if } 0 \leq t \lt 1\\
+            -t \amp \text{if }t \geq 1 \end{cases}</me>
+        </li>
+      </ol>
+      </li>
+    <li>
+      <p>Find a one-parameter family of solutions of the following ODEs.</p>
+      <ol>
+        <li>
+          <m>\frac{dy}{dx}=\frac{x-e^{-x}}{y+e^y}.</m>
+        </li>
+        <li>
+          <m>xy' = \sqrt{9-y^2}.</m>
+        </li>
+        <li>
+          <m>\frac{dy}{dx}=\frac{xy+2y-x-2}{xy-3y+x-3}.</m>
+        </li>
+      </ol>
+    </li>
+    <li>
+      <p>Find the <m>\textit{explicit}</m> solution of the following IVPs and the interval of existence. </p>
+      <ol>
+        <li>
+          <m>y' = (1-2x)y^2, y(0)=-1/6.</m>
+        </li>
+        <li>
+          <m>y' = \frac{x(x^2+1)}{4y^3}, y(0)=-1/\sqrt{2}.</m>
+        </li>
+        <li>
+          <m>(2y-2)y'= 3x^2+4x+2, y(1)=-2.</m>
+        </li>
+      </ol>
+    </li>
+    
+  </ol>
+
+</section>

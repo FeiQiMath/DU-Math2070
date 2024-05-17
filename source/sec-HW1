@@ -24,9 +24,9 @@
                 <solution>
                     <p>The highest order of the derivative is 100. So the order is 100. </p>
                     <p>Set <m>F(t,y, ..., y^{(100)})=y^{(100)} + y' + 6</m>. Then clearly, 
-                        <me>\frac{\partial}{\partial y^{(i)}} = 0 \text{ if } i \neq 1 \text{ or } i \neq 100, </me>
+                        <me>\frac{\partial F}{\partial y^{(i)}} = 0 \text{ if } i \neq 1 \text{ or } i \neq 100, </me>
                         and 
-                        <me>\frac{\partial}{\partial y^{'}} = \frac{\partial}{\partial y^{(100)}}=1,  </me>
+                        <me>\frac{\partial F}{\partial y^{'}} = \frac{\partial F}{\partial y^{(100)}}=1,  </me>
                         all of which are independent of <m>y</m> and its derivatives. So the ODE is linear.                        
                     </p>
                 </solution>
@@ -37,7 +37,7 @@
                 <solution>
                     <p>The highest order of the derivative is 3. So the order is 3. </p>
                     <p>Set <m>F(t,y, y', y'', y''')=y''' + t^2 y + t^4 y' - (\cos t)y - \sqrt{t}</m>. Then clearly,  
-                        <me>\frac{\partial}{\partial y} = - \cos t, \frac{\partial}{\partial y'} = t^4, \frac{\partial}{\partial y''} = t^2, \frac{\partial}{\partial y'''} = 1, </me>
+                        <me>\frac{\partial F}{\partial y} = - \cos t, \frac{\partial F}{\partial y'} = t^4, \frac{\partial F}{\partial y''} = t^2, \frac{\partial F}{\partial y'''} = 1, </me>
                         all of which are independent of <m>y</m> and its derivatives. So the ODE is linear.                        
                     </p>
                 </solution>
@@ -47,7 +47,7 @@
                 <solution>
                     <p>The highest order of the derivative is 1. So the order is 1. </p>
                     <p>Set <m>F(t,y, y')= y'-y-\sin y</m>. Then clearly,  
-                        <me>\frac{\partial}{\partial y} = -1+\cos y</me>
+                        <me>\frac{\partial F}{\partial y} = -1+\cos y</me>
                         that depends on <m>y</m>. So the ODE is nonlinear.
                     </p>
                 </solution>            
@@ -62,10 +62,10 @@
             <li>
                 <me>y(t)= \tan t, y' = 1+ y^2</me>
                 <solution>
-                    Since <m>y = \tan t</m>, we have <m>y' = \sec^2 t</m>. 
-                    Plug in the ODE: <m>LHS =\sec^2 t</m>, while <m>RHS = 1+\tan^2 t</m>. 
-                    From the trig identity that <m>\sec^2 t = 1+ \tan^2 t</m>, <m>LHS=RHS</m>.
-                    So <m>y = \tan t</m> is a solution of the ODE. 
+                    <p>Since <m>y = \tan t</m>, we have <m>y' = \sec^2 t</m>.</p> 
+                    <p>Plug in the ODE: <m>LHS =\sec^2 t</m>, while <m>RHS = 1+\tan^2 t</m>. 
+                        From the trig identity that <m>\sec^2 t = 1+ \tan^2 t</m>, <m>LHS=RHS</m>.
+                        So <m>y = \tan t</m> is a solution of the ODE. </p>
                 </solution>
             </li>
             <li>

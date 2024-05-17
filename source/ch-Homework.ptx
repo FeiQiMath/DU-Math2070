@@ -9,5 +9,6 @@
 
   <!-- include sections -->
   <xi:include href="sec-HW1" />
+  <xi:include href="sec-HW2" />
 
 </chapter>
