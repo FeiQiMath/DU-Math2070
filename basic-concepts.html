@@ -8,7 +8,7 @@
 <html lang="en-US" dir="ltr">
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Front Matter</title>
+<title>Basic Concepts</title>
 <meta name="Keywords" content="Authored in PreTeXt">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <meta property="og:type" content="book">
@@ -106,7 +106,7 @@ window.MathJax = {
 <ol id="searchresults" class="searchresults"></ol>
 </div>
 </div>
-<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="Math-2070-Notes.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="Math-2070-Notes.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="frontmatter-2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="First-order-ODE.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="First-order-ODE.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-logarithm.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
 \newcommand{\lt}{&lt;}
 \newcommand{\gt}{&gt;}
 \newcommand{\amp}{&amp;}
@@ -115,11 +115,11 @@ window.MathJax = {
 \)</span></div>
 <div class="ptx-page">
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural contains-active toc-item-list">
-<li class="toc-item toc-frontmatter active"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
-<li class="toc-item toc-chapter">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="First-order-ODE.html" class="internal"><span class="codenumber">1</span> <span class="title">First-order Differential Equations</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="basic-concepts.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Basic Concepts</span></a></div></li>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="basic-concepts.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Basic Concepts</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-logarithm.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Logarithms</span></a></div></li>
 </ul>
 </li>
@@ -132,15 +132,90 @@ window.MathJax = {
 </li>
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
-<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="frontmatter" id="frontmatter"><h2 class="heading"><span class="title">A Concise Introduction to Differential Equation at the University of Denver</span></h2>
-<div class="author">
-<div class="author-name">Fei Qi</div>
-<div class="author-info">Department of Mathematics<br>University of Denver</div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="basic-concepts"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.1</span><span class="space"> </span><span class="title">Basic Concepts</span>
+</h2>
+<div class="para logical" id="basic-concepts-2">
+<div class="para">A differential equation is an equation concerning derivatives. Here is the <dfn class="terminology">typical form</dfn> of a first-order ordinary differential equation (ODE):</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y'(t) = f(t,y(t))
+\end{equation*}
 </div>
-<div class="date">February 16, 2025</div>
-<nav class="summary-links"><ul><li><a href="frontmatter-2.html" class="internal"><span class="title">Colophon</span></a></li></ul></nav></section></div>
+<div class="para">that is usually abbreviated as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y' = f(t,y)
+\end{equation*}
+</div>
+<div class="para">where</div>
+</div>
+<ul class="disc">
+<li id="basic-concepts-3-1"><div class="para" id="basic-concepts-3-1-1">
+<span class="process-math">\(t\)</span> is the independent variable.</div></li>
+<li id="basic-concepts-3-2"><div class="para" id="basic-concepts-3-2-1">
+<span class="process-math">\(y = y(t)\)</span> is a one-variable function depending on <span class="process-math">\(t\text{.}\)</span>
+</div></li>
+<li id="basic-concepts-3-3"><div class="para" id="basic-concepts-3-3-1">
+<span class="process-math">\(y' = \frac{dy}{dt}\)</span> is the derivative of <span class="process-math">\(y\text{.}\)</span>
+</div></li>
+<li id="basic-concepts-3-4"><div class="para" id="basic-concepts-3-4-1">
+<span class="process-math">\(f(t,y)\)</span> is a known function of two variables.</div></li>
+</ul>
+<div class="para" id="basic-concepts-4">This ODE expresses the derivative <span class="process-math">\(y'(t)\)</span> in terms of <span class="process-math">\(t, y(t)\text{.}\)</span>
+</div>
+<div class="para" id="basic-concepts-5">A function <span class="process-math">\(y(t)\)</span> defined on an interval satisfying the equation is called a <dfn class="terminology">solution</dfn>.</div>
+<div class="para" id="basic-concepts-6">While we haven’t learned how to solve an ODE, it is easy to check if a function is a solution of an ODE. Simply compute its derivatives, then plug in the ODE, and see if equality holds.</div>
+<details id="basic-concepts-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">A solution of an ODE.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="basic-concepts-7-2-1">
+<span class="process-math">\(y(t) = e^t\)</span> is a solution of the ODE <span class="process-math">\(y' - y = 0\text{,}\)</span> because <span class="process-math">\(y'(t) = e^t\text{,}\)</span>
+</div> <div class="para" id="basic-concepts-7-2-2"><span class="process-math">\(\Rightarrow LHS = y' - y = e^t - e^t = 0 = RHS\text{.}\)</span></div></article></details><details id="basic-concepts-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">A non-solution of an ODE.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="basic-concepts-8-2-1">
+<span class="process-math">\(y(t) = \cos 2t\)</span> is not a solution of the ODE <span class="process-math">\(y' - y = 0\text{,}\)</span> because <span class="process-math">\(y'(t) = -2\sin 2t\text{,}\)</span>
+</div> <div class="para" id="basic-concepts-8-2-2"><span class="process-math">\(\Rightarrow LHS = y' - y = -2\sin 2t - \cos 2t \neq 0 = RHS\text{.}\)</span></div></article></details><div class="para" id="basic-concepts-9">We shall apply this method extensively in this course.</div>
+<div class="para logical" id="basic-concepts-10">
+<div class="para">The most general form of a first-order ODE is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F(t,y,y') = 0.
+\end{equation*}
+</div>
+<div class="para">More presicely, it is a relation among the variable <span class="process-math">\(t, y,\)</span> and <span class="process-math">\(y'\text{.}\)</span>
+</div>
+</div>
+<div class="para logical" id="basic-concepts-11">
+<div class="para">The <dfn class="terminology">order</dfn> of a differential equation is the order of the highest derivative appearing in the equation. Similarly, the most general form of an <span class="process-math">\(n\)</span>-th order ODE is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F(t,y,y',...,y^{(n)}) = 0
+\end{equation*}
+</div>
+</div>
+<details id="basic-concepts-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">Examples of ODEs in typical and general forms.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="basic-concepts-12-2-1"><ul class="disc">
+<li id="basic-concepts-12-2-1-1-1"><div class="para" id="p-derived-basic-concepts-12-2-1-1-1">
+<span class="process-math">\(y' = t^2 + y\)</span> (First-order ODE in its typical form).</div></li>
+<li id="basic-concepts-12-2-1-1-2"><div class="para" id="p-derived-basic-concepts-12-2-1-1-2">
+<span class="process-math">\((y')^2 + \sin y = y + t^2\)</span> (First-order ODE).</div></li>
+<li id="basic-concepts-12-2-1-1-3"><div class="para" id="p-derived-basic-concepts-12-2-1-1-3">
+<span class="process-math">\(y''' + 3y'' + 3y' + y = e^{2t}\)</span> (Third-order ODE).</div></li>
+</ul></div></article></details><div class="para" id="basic-concepts-13">An ODE is an equation involving ordinary derivatives. A Partial Differential Equation (PDE) is an equation concerning partial derivatives.</div>
+<details id="basic-concepts-14" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Example of a PDE.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="basic-concepts-14-2-1">
+<div class="para">A harmonic function <span class="process-math">\(u = u(x,y)\)</span> in two variables are defined by the PDE</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0.
+\end{equation*}
+</div>
+<div class="para">We shall not require PDEs in this course.</div>
+</div></article></details></section></div>
 <div class="ptx-content-footer">
-<a class="previous-button button" href="Math-2070-Notes.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="frontmatter-2.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+<a class="previous-button button" href="First-order-ODE.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-logarithm.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
 </div>
 <div id="ptx-page-footer" class="ptx-page-footer">
