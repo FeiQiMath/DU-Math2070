@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="First-order-ODE" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>First-order Differential Equations</title>
+
+  <introduction>
+    <p> </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-basic-concepts" />
+  <xi:include href="sec-why-study-DEs" />
+  <xi:include href="sec-logarithm-functions.ptx" />
+
+</chapter>

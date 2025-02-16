@@ -1,0 +1,16 @@
+<section xml:id="why-study-DEs">
+    <title>Why study differential equations?</title>
+    
+    <p>The answer is simple: <alert>Differential equation is the foundation of science and technology. </alert></p>
+    <p>Consider an object of temperature <m>T</m> placed in a room of ambient temperature <m>T_a</m>.</p>
+    <p>Newton's law of cooling: The rate of change of <m>T</m> is proportional to the difference of the temperatures between the object and the ambient room.</p>
+    
+    <p>Mathematically, this means
+        <me>\frac{dT}{dt} = -k(T - T_a),</me>
+    where <m>k</m> is some constant, <m>T_a</m> is the ambient temperature.</p>
+    <p>If the ambient temperature <m>T_a</m> is constant, then we may solve it by separating the variables:</p>
+    
+    <p><me>\frac{dT}{dt} = -k(T - T_a) \Rightarrow \frac{dT}{T - T_a} = -kdt \Rightarrow \int \frac{dT}{T - T_a} = \int -kdt</me>
+    <me>\Rightarrow \ln|T - T_a| = -kt + C \Rightarrow T - T_a = Ce^{-kt} \Rightarrow T = T_a + Ce^{-kt}</me>.</p>
+    
+</section>

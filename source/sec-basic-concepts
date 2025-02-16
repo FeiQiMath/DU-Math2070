@@ -1,0 +1,101 @@
+<section xml:id="basic-concepts">
+  <title>Basic Concepts</title>
+
+  <p>
+    A differential equation is an equation concerning derivatives. Here is the <term>typical form</term> of a first-order ordinary differential equation (ODE): 
+  <me>y'(t) = f(t,y(t))</me>
+  that is usually abbreviated as 
+  <me>y' = f(t,y)</me>
+  where</p>
+  <ul>
+    <li>
+      <p><m>t</m> is the independent variable.</p>
+    </li>
+    <li>
+      <p><m>y = y(t)</m> is a one-variable function depending on <m>t</m>.</p>
+    </li>
+    <li>
+      <p><m>y' = \frac{dy}{dt}</m> is the derivative of <m>y</m>.</p>
+    </li>
+    <li>
+      <p><m>f(t,y)</m> is a known function of two variables.</p>
+    </li>
+  </ul>
+
+  <p>
+    This ODE expresses the derivative <m>y'(t)</m> in terms of <m>t, y(t)</m>.
+  </p>
+
+  <p>
+    A function <m>y(t)</m> defined on an interval satisfying the equation is called a <term>solution</term>. 
+  </p>
+  <p>
+    While we haven't learned how to solve an ODE, it is easy to check if a function is a solution of an ODE. Simply compute its derivatives, then plug in the ODE, and see if equality holds.
+  </p>
+
+  <example>
+    <title>A solution of an ODE</title>
+    <statement>
+      <p>
+        <m>y(t) = e^t</m> is a solution of the ODE <m>y' - y = 0</m>, because <m>y'(t) = e^t</m>, 
+      </p>
+      <p>
+        <m>\Rightarrow LHS = y' - y = e^t - e^t = 0 = RHS</m>.
+      </p>
+    </statement>
+  </example>
+
+  <example>
+    <title>A non-solution of an ODE</title>
+    <statement>
+      <p>
+        <m>y(t) = \cos 2t</m> is not a solution of the ODE <m>y' - y = 0</m>, because <m>y'(t) = -2\sin 2t</m>,
+      </p>
+      <p>
+        <m>\Rightarrow LHS = y' - y = -2\sin 2t - \cos 2t \neq 0 = RHS</m>.
+      </p>
+    </statement>
+  </example>
+
+  <p>
+    We shall apply this method extensively in this course.
+  </p>
+  <p>
+    The most general form of a first-order ODE is 
+    <me>F(t,y,y') = 0.</me>
+    More presicely, it is a relation among the variable <m>t, y,</m> and <m>y'</m>. 
+  </p>
+
+  <p>The <term>order</term> of a differential equation is the order of the highest derivative appearing in the equation. Similarly, the most general form of an <m>n</m>-th order ODE is
+      <me>F(t,y,y',...,y^{(n)}) = 0</me>
+  </p>
+
+<example>
+    <title>Examples of ODEs in typical and general forms</title>
+    <statement>
+        <p>
+            <ul>
+                <li><m>y' = t^2 + y</m> (First-order ODE in its typical form).</li>
+                <li><m>(y')^2 + \sin y = y + t^2</m> (First-order ODE). </li>
+                <li><m>y''' + 3y'' + 3y' + y = e^{2t}</m> (Third-order ODE).</li>
+            </ul>
+        </p>
+    </statement>
+</example>
+
+<p> 
+  An ODE is an equation involving ordinary derivatives. A Partial Differential Equation (PDE) is an equation concerning partial derivatives. 
+</p>
+
+<example>
+    <title>Example of a PDE</title>
+    <statement>
+        <p>
+            A harmonic function <m>u = u(x,y)</m> in two variables are defined by the PDE 
+            <me>\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0.</me>
+            We shall not require PDEs in this course. 
+        </p>
+    </statement>
+</example>
+
+</section>

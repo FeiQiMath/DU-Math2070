@@ -4,8 +4,8 @@
   <!-- we first include a file which contains the docinfo element: -->
   <xi:include href="./docinfo.ptx" />
 
-  <book xml:id="Math-1951-HW-and-Soln">
-    <title>Math 1951 Homework Exercises and Solutions</title>
+  <book xml:id="Math-2070-Notes">
+    <title>A Concise Introduction to Differential Equation at the University of Denver</title>
     <!-- <subtitle>No subtitle</subtitle> -->
 
     <!-- Include frontmatter -->
@@ -13,7 +13,7 @@
 
     <!-- Include chapters -->
      <!-- <xi:include href="./ch-chapter-title.ptx" />-->
-     <xi:include href="./ch-prelim.ptx" />
+     <xi:include href="./ch-1st-order.ptx" />
      <xi:include href="./ch-Homework.ptx" />
 
     <!-- Include backmatter -->
