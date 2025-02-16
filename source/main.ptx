@@ -14,7 +14,9 @@
     <!-- Include chapters -->
      <!-- <xi:include href="./ch-chapter-title.ptx" />-->
      <xi:include href="./ch-1st-order.ptx" />
-     <xi:include href="./ch-Homework.ptx" />
+     
+     <xi:include href="./ch-Prerequisites.ptx"/>
+    
 
     <!-- Include backmatter -->
     <xi:include href="./backmatter.ptx" />
