@@ -2,9 +2,9 @@
   <title>Basic Concepts</title>
 
   <p>
-    A differential equation is an equation concerning derivatives. Here is the <term>typical form</term> of a first-order ordinary differential equation (ODE): 
-  <me>y'(t) = f(t,y(t))</me>
-  that is usually abbreviated as 
+    A <term>differential equation</term> is an equation concerning derivatives. Here is the <term>typical form of a first-order ODE</term>,  where <term>ODE</term> is the abbreviation for <term>ordinary differential equation</term>: 
+  <me>y'(t) = f(t,y(t)).</me>
+  With the abbreviation of <m>y(t)</m> and <m>y'(t)</m> by <m>y</m> and <m>y'</m>, respectively, 
   <me>y' = f(t,y)</me>
   where</p>
   <ul>

@@ -4,15 +4,113 @@
     <title>Why study differential equations?</title>
     
     <p>The answer is simple: <alert>Differential equation is the foundation of science and technology. </alert></p>
-    <p>Consider an object of temperature <m>T</m> placed in a room of ambient temperature <m>T_a</m>.</p>
-    <p>Newton's law of cooling: The rate of change of <m>T</m> is proportional to the difference of the temperatures between the object and the ambient room.</p>
+    <subsection xml:id="Newtons-law-of-cooling">
+      <title>Newton's law of cooling</title>
+      <p>Consider an object of temperature <m>T</m> placed in a room of ambient temperature <m>T_a</m>.</p>
+      <p>Newton's law of cooling: The rate of change of <m>T</m> is proportional to the difference of the temperatures between the object and the ambient room.</p>
+      
+      <p>Mathematically, this means
+          <me>\frac{dT}{dt} = -k(T - T_a),</me>
+      where <m>k</m> is some constant, <m>T_a</m> is the ambient temperature.</p>
+      <p>If the ambient temperature <m>T_a</m> is constant, then we may solve it by separating the variables:</p>
+      
+      <p><me>\frac{dT}{dt} = -k(T - T_a) \implies \frac{dT}{T - T_a} = -kdt \implies \int \frac{dT}{T - T_a} = \int -kdt</me>
+      <me>\implies \ln|T - T_a| = -kt + C \implies T - T_a = Ce^{-kt} \implies T = T_a + Ce^{-kt}</me>.</p>
+      
+      <p>
+        <alert>Note:</alert> The constant <m>C</m> is arbitrary. Without any further information there is no way to decide <m>C</m>.
+        In other words, <m>T(t) = T_a + C e^{-kt}</m> is a solution of the ODE <alert>for ANY <m>C</m></alert>. Such an expression is called a <alert>one-parameter family of solutions</alert>. Generally, when solving a first-order ODE <m>F(t, y, y') = 0</m>, we seek a one-parameter family of solutions. If all solutions of the ODE are contained in the family, then we call it the <alert>general solution</alert>.
+      </p>
+    </subsection>
+    <subsection xml:id="Water-pollution-model">
+      <title>Water pollution model</title>
+      <p>
+        A lake has water volume <m>V</m> m<sup>3</sup>. Assume <m>V</m> is constant. A factory emits <m>R</m> kilograms of mercury into the lake every day. Suppose the mercury diffuses to the lake instantly and water refreshes every day by <m>W</m> m<sup>3</sup>. How much time does it take for the water to be unpotable?
+      </p>
+      <p>
+        Let <m>P(t)</m> be the mass of mercury in the lake at time <m>t</m>.  Let <m>\Delta t</m> be a small period of time. Within the time period <m>\Delta t</m>: 
+      </p>
+      <ul>
+        <li>Mercury in = <m>R \Delta t</m>.</li>
+        <li>Polluted water out = <m>W \Delta t</m>.</li>
+        <li>Density of mercury = <m>\frac{P(t)}{V}</m>.</li>
+        <li>Mercury out = <m>\frac{P(t)}{V} W \Delta t</m>.</li>
+      </ul>
+      <p> Thus </p>
+      <me>
+        \Delta P(t) = R \Delta t - \frac{P(t)}{V} W \implies
+        \frac{\Delta P(t)}{\Delta t} = R - \frac{P(t)}{V} W
+      </me>
+      <p>
+        Let <m>\Delta t \to 0</m>, we obtain a differential equation for <m>P(t)</m>,
+      </p>
+      <me>
+        \frac{dP(t)}{dt} = R - \frac{P(t)}{V} W
+      </me>
+      <p>
+      Although not explicitly stated in the problem, we actually have 
+      <ul>
+        <li>An initial condition <m>P(0) = 0</m>.</li>
+        <li>We may also search on internet for the EPA standard, which states that water is not potable if density of mercury reaches the level <m>0.002\, \mathrm{mg/L}</m>.</li>
+      </ul>
+      </p>
+      <p>
+      Therefore, we are looking for a time <m>T</m> when
+      <me>
+        \frac{P(T)}{V} \geq 0.002\, \mathrm{mg/L} = 2 \times 10^{-6}\, \mathrm{kg/m^3}
+      </me>
+      </p>
+      
+      <p>
+        This differential equation can be solved by separating variables:
+      </p>
+      <md align="center">
+        <mrow>\amp \frac{dP}{dt} = R - \frac{P}{V}W \implies \frac{dP}{R - \frac{P}{V}W} = dt \implies \frac{V dP}{W P - V R} = -dt </mrow>
+        <mrow>\implies \amp \int \frac{V dP}{-W P + V R} = \int dt \implies \frac{V}{W} \cdot \ln|W P - V R| = t + C </mrow>
+        <mrow>\implies \amp W P - V R = C e^{-\frac{W}{V} t} \implies P(t) = \frac{V}{W} R + C e^{-\frac{W}{V}t}. </mrow>
+      </md>
+      <p> This is a one-parameter family of solutions of the ODE. We may determine the constant <m>C</m> with the initial condition: </p>
+      <me>
+        P(0) = 0 \implies \frac{V}{W} R + C = 0 \implies C = -\frac{V}{W} R 
+        \implies P(t) = \frac{V}{W} R - \frac{V}{W} R e^{-\frac{W}{V} t}
+      </me>
+      <p>
+        So we obtained a definite function as the solution. 
+      </p>
+      <p>
+      In case <m>V = 10^6\, \mathrm{m}^3</m>, <m>W = 2 \times 10^4\, \mathrm{m}^3/\mathrm{d}</m>, <m>R = 0.05\, \mathrm{kg}/\mathrm{d}</m>, we see that
+      </p>
+      <me>
+      \frac{P(T)}{V} \geq 0.002\, \mathrm{mg/L} = 2 \times 10^{-6}\, \mathrm{kg/m^3}
+      </me>
+      <p>
+      when <m>T \geq -\frac{1}{0.02} \ln \frac{1}{5} \approx 80.5\, \mathrm{day}</m>.
+      </p>
+    </subsection>
     
-    <p>Mathematically, this means
-        <me>\frac{dT}{dt} = -k(T - T_a),</me>
-    where <m>k</m> is some constant, <m>T_a</m> is the ambient temperature.</p>
-    <p>If the ambient temperature <m>T_a</m> is constant, then we may solve it by separating the variables:</p>
-    
-    <p><me>\frac{dT}{dt} = -k(T - T_a) \Rightarrow \frac{dT}{T - T_a} = -kdt \Rightarrow \int \frac{dT}{T - T_a} = \int -kdt</me>
-    <me>\Rightarrow \ln|T - T_a| = -kt + C \Rightarrow T - T_a = Ce^{-kt} \Rightarrow T = T_a + Ce^{-kt}</me>.</p>
-    
+    <subsection xml:id="Initial-value-problem">
+      <title>Initial value problem</title>
+      <p>
+        We have solved the initial value problem
+      </p>
+      <me>
+        \frac{dP(t)}{dt} = R - \frac{P(t)}{V} W, \quad P(0) = 0
+      </me>
+      <p>
+        Generally, an <term>initial value problem</term> (which shall be abbreviated as <term>IVP</term>) consists of a (set of) differential equation(s) and a (set of) initial values.
+      </p>
+      <p>  
+        A <term>first order IVP</term> is of the form
+      </p>
+      <me>
+        y' = f(t, y), \quad y(t_0) = y_0
+      </me>
+      <p>
+        In most science and engineering applications, an IVP should have a <alert>unique</alert> solution on an interval, called <term>interval of existence</term>.
+      </p>
+      <p> Summary: </p> 
+      <p> A first-order ODE <m>\implies</m> One-parameter family of solutions.</p>
+      <p> A first-order IVP <m>\implies</m> A particular solution + interval of existence. </p>
+    </subsection>
+
 </section>
