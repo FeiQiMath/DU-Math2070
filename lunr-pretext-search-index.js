@@ -1,103 +1,175 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
-  "id": "frontmatter-2",
+  "id": "front-colophon",
   "level": "1",
-  "url": "frontmatter-2.html",
+  "url": "front-colophon.html",
   "type": "Colophon",
   "number": "",
   "title": "Colophon",
-  "body": "  copyright  "
+  "body": ""
 },
 {
-  "id": "basic-concepts",
+  "id": "sec-basic-concepts",
   "level": "1",
-  "url": "basic-concepts.html",
+  "url": "sec-basic-concepts.html",
   "type": "Section",
   "number": "1.1",
   "title": "Basic Concepts",
-  "body": " Basic Concepts  A differential equation is an equation concerning derivatives. Here is the typical form of a first-order ordinary differential equation (ODE): that is usually abbreviated as where    is the independent variable.    is a one-variable function depending on .    is the derivative of .    is a known function of two variables.    This ODE expresses the derivative in terms of .  A function defined on an interval satisfying the equation is called a solution .  While we haven't learned how to solve an ODE, it is easy to check if a function is a solution of an ODE. Simply compute its derivatives, then plug in the ODE, and see if equality holds.   A solution of an ODE    is a solution of the ODE , because ,   .     A non-solution of an ODE    is not a solution of the ODE , because ,   .    We shall apply this method extensively in this course.  The most general form of a first-order ODE is More presicely, it is a relation among the variable and .  The order of a differential equation is the order of the highest derivative appearing in the equation. Similarly, the most general form of an -th order ODE is    Examples of ODEs in typical and general forms     (First-order ODE in its typical form).  (First-order ODE).  (Third-order ODE).      An ODE is an equation involving ordinary derivatives. A Partial Differential Equation (PDE) is an equation concerning partial derivatives.   Example of a PDE   A harmonic function in two variables are defined by the PDE We shall not require PDEs in this course.    "
+  "body": " Basic Concepts  A differential equation is an equation concerning derivatives. Here is the typical form of a first-order ODE , where ODE is the abbreviation for ordinary differential equation : With the abbreviation of and by and , respectively, where    is the independent variable.    is a one-variable function depending on .    is the derivative of .    is a known function of two variables.    This ODE expresses the derivative in terms of .  A function defined on an interval satisfying the equation is called a solution .  While we haven't learned how to solve an ODE, it is easy to check if a function is a solution of an ODE. Simply compute its derivatives, then plug in the ODE, and see if equality holds.   A solution of an ODE    is a solution of the ODE , because ,   .     A non-solution of an ODE    is not a solution of the ODE , because ,   .    We shall apply this method extensively in this course.  The most general form of a first-order ODE is More presicely, it is a relation among the variable and .  The order of a differential equation is the order of the highest derivative appearing in the equation. Similarly, the most general form of an -th order ODE is    Examples of ODEs in typical and general forms     (First-order ODE in its typical form).  (First-order ODE).  (Third-order ODE).      An ODE is an equation involving ordinary derivatives. A Partial Differential Equation (PDE) is an equation concerning partial derivatives.   Example of a PDE   A harmonic function in two variables are defined by the PDE We shall not require PDEs in this course.    "
 },
 {
-  "id": "basic-concepts-2",
+  "id": "sec-basic-concepts-2",
   "level": "2",
-  "url": "basic-concepts.html#basic-concepts-2",
+  "url": "sec-basic-concepts.html#sec-basic-concepts-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
-  "body": "typical form "
+  "body": "differential equation typical form of a first-order ODE ODE ordinary differential equation "
 },
 {
-  "id": "basic-concepts-5",
+  "id": "sec-basic-concepts-5",
   "level": "2",
-  "url": "basic-concepts.html#basic-concepts-5",
+  "url": "sec-basic-concepts.html#sec-basic-concepts-5",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "solution "
 },
 {
-  "id": "basic-concepts-7",
+  "id": "sec-basic-concepts-7",
   "level": "2",
-  "url": "basic-concepts.html#basic-concepts-7",
+  "url": "sec-basic-concepts.html#sec-basic-concepts-7",
   "type": "Example",
   "number": "1.1.1",
   "title": "A solution of an ODE.",
   "body": " A solution of an ODE    is a solution of the ODE , because ,   .   "
 },
 {
-  "id": "basic-concepts-8",
+  "id": "sec-basic-concepts-8",
   "level": "2",
-  "url": "basic-concepts.html#basic-concepts-8",
+  "url": "sec-basic-concepts.html#sec-basic-concepts-8",
   "type": "Example",
   "number": "1.1.2",
   "title": "A non-solution of an ODE.",
   "body": " A non-solution of an ODE    is not a solution of the ODE , because ,   .   "
 },
 {
-  "id": "basic-concepts-11",
+  "id": "sec-basic-concepts-11",
   "level": "2",
-  "url": "basic-concepts.html#basic-concepts-11",
+  "url": "sec-basic-concepts.html#sec-basic-concepts-11",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "order "
 },
 {
-  "id": "basic-concepts-12",
+  "id": "sec-basic-concepts-12",
   "level": "2",
-  "url": "basic-concepts.html#basic-concepts-12",
+  "url": "sec-basic-concepts.html#sec-basic-concepts-12",
   "type": "Example",
   "number": "1.1.3",
   "title": "Examples of ODEs in typical and general forms.",
   "body": " Examples of ODEs in typical and general forms     (First-order ODE in its typical form).  (First-order ODE).  (Third-order ODE).     "
 },
 {
-  "id": "basic-concepts-14",
+  "id": "sec-basic-concepts-14",
   "level": "2",
-  "url": "basic-concepts.html#basic-concepts-14",
+  "url": "sec-basic-concepts.html#sec-basic-concepts-14",
   "type": "Example",
   "number": "1.1.4",
   "title": "Example of a PDE.",
   "body": " Example of a PDE   A harmonic function in two variables are defined by the PDE We shall not require PDEs in this course.   "
 },
 {
-  "id": "why-study-DEs",
+  "id": "sec-why-study-DEs",
   "level": "1",
-  "url": "why-study-DEs.html",
+  "url": "sec-why-study-DEs.html",
   "type": "Section",
   "number": "1.2",
   "title": "Why study differential equations?",
-  "body": " Why study differential equations?  The answer is simple: Differential equation is the foundation of science and technology.  Consider an object of temperature placed in a room of ambient temperature .  Newton's law of cooling: The rate of change of is proportional to the difference of the temperatures between the object and the ambient room.  Mathematically, this means where is some constant, is the ambient temperature.  If the ambient temperature is constant, then we may solve it by separating the variables:   .  "
+  "body": " Why study differential equations?  The answer is simple: Differential equation is the foundation of science and technology.   Newton's law of cooling  Consider an object of temperature placed in a room of ambient temperature .  Newton's law of cooling: The rate of change of is proportional to the difference of the temperatures between the object and the ambient room.  Mathematically, this means where is some constant, is the ambient temperature.  If the ambient temperature is constant, then we may solve it by separating the variables:   .   Note: The constant is arbitrary. Without any further information there is no way to decide . In other words, is a solution of the ODE for ANY . Such an expression is called a one-parameter family of solutions . Generally, when solving a first-order ODE , we seek a one-parameter family of solutions. If all solutions of the ODE are contained in the family, then we call it the general solution .    Water pollution model  A lake has water volume m 3 . Assume is constant. A factory emits kilograms of mercury into the lake every day. Suppose the mercury diffuses to the lake instantly and water refreshes every day by m 3 . How much time does it take for the water to be unpotable?  Let be the mass of mercury in the lake at time . Let be a small period of time. Within the time period :   Mercury in = .  Polluted water out = .  Density of mercury = .  Mercury out = .   Thus   Let , we obtain a differential equation for ,   Although not explicitly stated in the problem, we actually have  An initial condition .  We may also search on internet for the EPA standard, which states that water is not potable if density of mercury reaches the level .    Therefore, we are looking for a time when   This differential equation can be solved by separating variables:   This is a one-parameter family of solutions of the ODE. We may determine the constant with the initial condition:   So we obtained a definite function as the solution.  In case , , , we see that   when .    Initial value problem  We have solved the initial value problem   Generally, an initial value problem (which shall be abbreviated as IVP ) consists of a (set of) differential equation(s) and a (set of) initial values.  A first order IVP is of the form   In most science and engineering applications, an IVP should have a unique solution on an interval, called interval of existence .  Summary:  A first-order ODE One-parameter family of solutions.  A first-order IVP A particular solution + interval of existence.   "
 },
 {
-  "id": "sec-logarithm",
+  "id": "Initial-value-problem-4",
+  "level": "2",
+  "url": "sec-why-study-DEs.html#Initial-value-problem-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "initial value problem IVP "
+},
+{
+  "id": "Initial-value-problem-5",
+  "level": "2",
+  "url": "sec-why-study-DEs.html#Initial-value-problem-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "first order IVP "
+},
+{
+  "id": "Initial-value-problem-7",
+  "level": "2",
+  "url": "sec-why-study-DEs.html#Initial-value-problem-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "interval of existence "
+},
+{
+  "id": "geometric-interpretation",
   "level": "1",
-  "url": "sec-logarithm.html",
+  "url": "geometric-interpretation.html",
   "type": "Section",
   "number": "1.3",
-  "title": "Logarithms",
-  "body": " Logarithms                               Use the Laws of Logarithms to expand the expression.                                                Use the Laws of Logarithms to combine the expression.             Simplify: .  (30) Show that .   "
+  "title": "Geometric interpretation",
+  "body": " Geometric interpretation  Not all ODE can be solved as in the previous sections.   In general, we cannot expect to obtain explicit solutions. But there does exist a way to get some information of the solution that works for every ODE .  Consider the IVP . If we substitute in the ODE, we obtain   In other words, the derivative of the solution of the IVP at is known , and takes the value .  Example: . .  Consider the IVP .  Collecting all the derivatives for every point in the -plane, using line elements to denote the derivative, we obtain a picture called the direction field .   Direction field of   Note that the right-hand-side is independent of . So we only calculate with varying -values. Here is the table of values with ranging from to with step .    |                                Based on the previous table, we may sketch the direction field as follows.    Direction field for     We may use the direction field to conduct qualitative studies . Recall from Calculus I:   If , then increases;  If , then stays;  If , then decreases.   Therefore, the direction field can be used to determine the qualitative behavior of solutions of the ODE.   Qualitative behavior of solutions of .    If is above , then the solution increases, going further away from .  If is below , then the solution decreases, going further away from .  If is on , then the solution stays on .      Nonlinear ODE                                   Direction field for     Knowing the direction field, we may plot the graph of a few actual solutions on the -plane. The graph is usually called an integral curve . We may analyze the asymptotic behavior of the solutions, i.e., the behavior of when . In most engineering practices, we only care about the long-term behavior , which means the behavior of when .   Integral curve of and asymptotic behavior of solutions   We first sketch the integral curves, knowing that they must follow the flow given by the direction field.    Direction field for   From the direction field, the following asymptotic behaviors can be observed:   If , then  If , then  If , then  If , then  If , then     What happens if the ODE involves ? It is still possible to draw the direction field by hand and use the qualitative method to analyze the asymptotic behavior of the solutions. We will not require the technique in this course. Please watch MIT Lecture 1 if you are interested.  "
+},
+{
+  "id": "geometric-interpretation-10",
+  "level": "2",
+  "url": "geometric-interpretation.html#geometric-interpretation-10",
+  "type": "Example",
+  "number": "1.3.1",
+  "title": "Direction field of <span class=\"process-math\">\\(y' = 2y - 1\\)<\/span>.",
+  "body": " Direction field of   Note that the right-hand-side is independent of . So we only calculate with varying -values. Here is the table of values with ranging from to with step .    |                                Based on the previous table, we may sketch the direction field as follows.    Direction field for    "
+},
+{
+  "id": "geometric-interpretation-14",
+  "level": "2",
+  "url": "geometric-interpretation.html#geometric-interpretation-14",
+  "type": "Example",
+  "number": "1.3.3",
+  "title": "Qualitative behavior of solutions of <span class=\"process-math\">\\(y' = 2y - 1\\text{.}\\)<\/span>.",
+  "body": " Qualitative behavior of solutions of .    If is above , then the solution increases, going further away from .  If is below , then the solution decreases, going further away from .  If is on , then the solution stays on .    "
+},
+{
+  "id": "geometric-interpretation-15",
+  "level": "2",
+  "url": "geometric-interpretation.html#geometric-interpretation-15",
+  "type": "Example",
+  "number": "1.3.4",
+  "title": "Nonlinear ODE <span class=\"process-math\">\\(y' = (y+1)(y-2)\\)<\/span>.",
+  "body": " Nonlinear ODE                                   Direction field for    "
+},
+{
+  "id": "geometric-interpretation-16",
+  "level": "2",
+  "url": "geometric-interpretation.html#geometric-interpretation-16",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "integral curve asymptotic behavior long-term behavior "
+},
+{
+  "id": "geometric-interpretation-17",
+  "level": "2",
+  "url": "geometric-interpretation.html#geometric-interpretation-17",
+  "type": "Example",
+  "number": "1.3.6",
+  "title": "Integral curve of <span class=\"process-math\">\\(y' = (y+1)(y-2)\\)<\/span> and asymptotic behavior of solutions.",
+  "body": " Integral curve of and asymptotic behavior of solutions   We first sketch the integral curves, knowing that they must follow the flow given by the direction field.    Direction field for   From the direction field, the following asymptotic behaviors can be observed:   If , then  If , then  If , then  If , then  If , then    "
 },
 {
   "id": "sec-HW1",
