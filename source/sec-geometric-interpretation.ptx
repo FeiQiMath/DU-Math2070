@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="geometric-interpretation">
+  <title>Geometric interpretation</title>
+
+  <p><alert>Not all ODE can be solved as in the previous sections.</alert> </p>
+  <p>In general, we cannot expect to obtain explicit solutions. But <em>there does exist a way</em> to get some information of the solution that <em>works for every ODE</em>.</p>
+
+  <p>Consider the IVP <m>y' = f(t, y),\ y(t_0) = y_0</m>. If we substitute <m>t = t_0</m> in the ODE, we obtain</p>
+  
+  <me>y'(t_0) = f(t_0, y(t_0)) = f(t_0, y_0)</me>
+  
+  <p>In other words, the <em>derivative</em> of the solution of the IVP at <m>t = t_0</m> is <em>known</em>, and takes the value <m>f(t_0, y_0)</m>.</p>
+
+  <p>Example: <m>y' = 2y - 1,\, y(2) = 3</m>. <m>\implies y'(2) = 2 \times 3 - 1 = 5</m>.</p>
+  <p>Consider the IVP <m>y' = f(t, y),\ y(t_0) = y_0</m>. <me>\implies y'(t_0) = f(t_0, y(t_0)) = f(t_0, y_0)</me></p>
+
+<p>Collecting <em>all</em> the derivatives for <em>every point</em> in the <m>ty</m>-plane, using <em>line elements</em> to denote the derivative, we obtain a picture called the <em>direction field</em>.</p>
+
+<example>
+<title>Direction field of <m>y' = 2y - 1</m></title>
+<statement>
+<p> Note that the right-hand-side is independent of <m>t</m>. So we only calculate <m>y'</m> with varying <m>y</m>-values. Here is the table of <m>y'</m> values with <m>y</m> ranging from <m>-1</m> to <m>2</m> with step <m>1/2</m>. </p>
+
+<tabular side="minor">
+  <row bottom="minor">
+    <cell><m>y</m></cell> |   
+    <cell><m>y' = 2y - 1</m></cell>
+  </row>
+  
+  <row>
+    <cell><m>2</m></cell>
+    <cell><m>2 \times 2 - 1 = 3</m></cell>
+  </row>
+  <row>
+    <cell><m>3/2</m></cell>
+    <cell><m>2 \times 3/2 - 1 = 2</m></cell>
+  </row>
+  <row>
+    <cell><m>1</m></cell>
+    <cell><m>2 \times 1 - 1 = 1</m></cell>
+  </row>
+  <row>
+    <cell><m>1/2</m></cell>
+    <cell><m>2 \times 1/2 - 1 = 0</m></cell>
+  </row>
+  <row>
+    <cell><m>0</m></cell>
+    <cell><m>2 \times 0 - 1 = -1</m></cell>
+  </row>
+  <row>
+    <cell><m>-1/2</m></cell>
+    <cell><m>2 \times (-1/2) - 1 = -2</m></cell>
+  </row>
+  <row>
+    <cell><m>-1</m></cell>
+    <cell><m>2 \times (-1) - 1 = -3</m></cell>
+  </row>
+</tabular>
+
+<p>Based on the previous table, we may sketch the direction field as follows. </p>
+
+<figure xml:id="direction-field-example-1">
+  <image source="/figures/DE-Figure-1-Dir-Field-Ex-1.png"/>
+  <caption>Direction field for <m>y' = 2y - 1</m></caption>
+</figure>
+
+</statement>
+</example>
+
+
+<p>We may use the direction field to conduct <em>qualitative studies</em>. Recall from Calculus I:</p>
+<ul>
+<li> If <m>y' &gt; 0</m>, then <m>y</m> increases;</li>
+<li> If <m>y' = 0</m>, then <m>y</m> stays;</li>
+<li> If <m>y' &lt; 0</m>, then <m>y</m> decreases.</li>
+</ul>
+<p>Therefore, the direction field can be used to determine the qualitative behavior of solutions of the ODE.</p>
+
+<example>
+<title>Qualitative behavior of solutions of <m>y' = 2y - 1</m>. </title>
+<statement>
+<ul>
+<li>If <m>(t_0, y_0)</m> is above <m>y = 1/2</m>, then the solution increases, going further away from <m>y = 1/2</m>.</li>
+<li>If <m>(t_0, y_0)</m> is below <m>y = 1/2</m>, then the solution decreases, going further away from <m>y = 1/2</m>.</li>
+<li>If <m>(t_0, y_0)</m> is on <m>y = 1/2</m>, then the solution stays on <m>y = 1/2</m>.</li>
+</ul>
+</statement>
+</example>
+
+<example>
+<title>Nonlinear ODE <m>y' = (y+1)(y-2)</m></title>
+<statement>
+<tabular side="all">
+  <row bottom="minor">
+    <cell><m>y</m></cell>
+    <cell><m>y' = (y + 1)(y - 2)</m></cell>
+  </row>
+  <row>
+    <cell><m>3</m></cell>
+    <cell><m>(3 + 1)(3 - 2) = 4</m></cell>
+  </row>
+  <row>
+    <cell><m>2</m></cell>
+    <cell><m>(2 + 1)(2 - 2) = 0</m></cell>
+  </row>
+  <row>
+    <cell><m>1</m></cell>
+    <cell><m>(1 + 1)(1 - 2) = -2</m></cell>
+  </row>
+  <row>
+    <cell><m>0</m></cell>
+    <cell><m>(0 + 1)(0 - 2) = -2</m></cell>
+  </row>
+  <row>
+    <cell><m>-1</m></cell>
+    <cell><m>((-1) + 1)((-1) - 2) = 0</m></cell>
+  </row>
+  <row>
+    <cell><m>-2</m></cell>
+    <cell><m>((-2) + 1)((-2) - 2) = 4</m></cell>
+  </row>
+</tabular>
+<figure xml:id="direction-field-example-2">
+  <image source="/figures/DE-Figure-1-Dir-Field-Ex-2.png"/>
+  <caption>Direction field for <m>y' = (y+1)(y-2)</m></caption>
+</figure>
+</statement>
+</example>
+
+<p> Knowing the direction field, we may plot the graph of a few actual solutions on the <m>yt</m>-plane. The graph is usually called an <term>integral curve</term>. We may analyze the <term>asymptotic behavior</term> of the solutions, i.e., the behavior of <m>y(t)</m> when <m>t\to \pm \infty</m>. In most engineering practices, we only care about the <term> long-term behavior</term>, which means the behavior of <m>y(t)</m> when <m>t\to + \infty</m>. 
+</p>
+<example>
+    <title>Integral curve of <m>y' = (y+1)(y-2)</m> and asymptotic behavior of solutions </title>
+    <statement>
+    <p>We first sketch the integral curves, knowing that they must follow the flow given by the direction field. </p>
+    <figure xml:id="direction-field-example-3">
+        <image source="/figures/DE-Figure-1-Dir-Field-Ex-3.png"/>
+        <caption>Direction field for <m>y' = (y+1)(y-2)</m></caption>
+    </figure>
+    <p> From the direction field, the following asymptotic behaviors can be observed: </p>
+    <ul>
+        <li> If <m>y(t_0) \in (2,+\infty)</m>, then <me>\lim_{t \to \infty} y(t) = \infty, \lim_{t \to -\infty} y(t) = 2.</me></li>
+        <li> If <m>y(t_0) =2 </m>, then <me>\lim_{t \to \infty} y(t) = 2, \lim_{t \to -\infty} y(t) = 2.</me></li>
+        <li> If <m>y(t_0) \in (-1,2)</m>, then <me>\lim_{t \to \infty} y(t) = -1, \lim_{t \to -\infty} y(t) = 2.</me></li>
+        <li> If <m>y(t_0) =-1 </m>, then <me>\lim_{t \to \infty} y(t) = -1, \lim_{t \to -\infty} y(t) = -1.</me></li>
+        <li> If <m>y(t_0) \in (-\infty, -1)</m>, then <me>\lim_{t \to \infty} y(t) = -1, \lim_{t \to -\infty} y(t) = -\infty.</me></li>
+    </ul>
+    </statement>    
+</example>
+
+<p> What happens if the ODE involves <m>t</m>? It is still possible to draw the direction field by hand and use the qualitative method to analyze the asymptotic behavior of the solutions. We will not require the technique in this course. Please watch <url href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-1-the-geometrical-view-of-y-f-x-y/">MIT Lecture 1</url> if you are interested.
+</p>
+
+
+</section>

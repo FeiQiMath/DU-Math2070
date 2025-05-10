@@ -10,6 +10,6 @@
   <!-- include sections -->
   <xi:include href="sec-basic-concepts.ptx" />
   <xi:include href="sec-why-study-DEs.ptx" />
-  <xi:include href="sec-logarithm-functions.ptx" />
+  <xi:include href="sec-geometric-interpretation.ptx" />
 
 </chapter>
