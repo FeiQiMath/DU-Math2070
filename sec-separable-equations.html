@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Separable Equations</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="A Concise Introduction to Differential Equation at the University of Denver">
+<meta property="book:author" content="Fei Qi">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.6.3';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.1dbf799015a9933a.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Math-2070-Notes.html"><span class="title">A Concise Introduction to Differential Equation at the University of Denver</span></a></h1>
+<p class="byline">Fei Qi</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-1st-order-linear.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="First-order-ODE.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-Prerequisites.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="First-order-ODE.html" class="internal"><span class="codenumber">1</span> <span class="title">First-order Differential Equations</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basic-concepts.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Basic Concepts</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-why-study-DEs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Why study differential equations?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Newtons-law-of-cooling" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Newton’s law of cooling</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Water-pollution-model" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Water pollution model</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Initial-value-problem" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Initial value problem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="geometric-interpretation.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Geometric interpretation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-classification.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Classification of Differential Equations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-1st-order-linear.html" class="internal"><span class="codenumber">1.5</span> <span class="title">First-order Linear ODEs</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-separable-equations.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Separable Equations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-Prerequisites.html" class="internal"><span class="codenumber">2</span> <span class="title">Chapter Title</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-HW1.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Homework 1</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="HW2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Homework 2</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-separable-equations"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.6</span><span class="space"> </span><span class="title">Separable Equations</span>
+</h2>
+<div class="para logical" id="sec-separable-equations-2">
+<div class="para">In general, a nonlinear ODE is very difficult to solve. We can only handle a few special types of nonlinear ODEs. In this section, we study the <dfn class="terminology">separable ODEs</dfn>, namely, an ODE of the form:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{dy}{dx} = f(y)g(x),
+\end{equation*}
+</div>
+<div class="para">i.e., the derivative <span class="process-math">\(dy/dx\)</span> is a product of two functions, one depends only on <span class="process-math">\(x\text{,}\)</span> the other depends only on <span class="process-math">\(y\text{.}\)</span> To solve this ODE, we first separate the variables,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{dy}{dx} = f(y)g(x) \Rightarrow \frac{dy}{f(y)} = g(x)dx
+\end{equation*}
+</div>
+<div class="para">then integrate both sides,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int \frac{dy}{f(y)} = \int g(x)dx
+\end{equation*}
+</div>
+<div class="para">The process yields a one-parameter family of <em class="alert">implicit</em> solutions.</div>
+</div>
+<details id="ex-separable-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Solve the separable ODE <span class="process-math">\(\frac{dy}{dx} = \frac{e^x - x}{e^{-y} + y}\)</span>.</span>
+</h3></summary><article class="example example-like knowl__content"><ul class="disc" id="ex-separable-1-2-1">
+<li id="ex-separable-1-2-1-1"><div class="para" id="p-derived-ex-separable-1-2-1-1">Separate the variables:<div class="displaymath process-math">
+\begin{equation*}
+(e^x - x)dx = (e^{-y} + y)dy
+\end{equation*}
+</div>
+</div></li>
+<li id="ex-separable-1-2-1-2">
+<div class="para logical" id="ex-separable-1-2-1-2-1">
+<div class="para">Integrate both sides:</div>
+<div class="displaymath process-math" id="ex-separable-1-2-1-2-1-1">
+\begin{align*}
+\amp \int (e^x - x)dx = \int (e^{-y} + y)dy\\
+\implies \amp e^x - \frac{1}{2}x^2 = -e^{-y} + \frac{1}{2}y^2 + C
+\end{align*}
+</div>
+</div>
+<div class="para" id="ex-separable-1-2-1-2-2">We thus obtain a one-parameter family of <em class="emphasis">implicit</em> solutions</div>
+</li>
+</ul></article></details><details id="ex-separable-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Solve the IVP <span class="process-math">\(\frac{dy}{dx} = \frac{x^2 + \sin x}{y}, \quad y(0) = 1\)</span>.</span>
+</h3></summary><article class="example example-like knowl__content"><ul class="disc" id="ex-separable-2-2-1">
+<li id="ex-separable-2-2-1-1"><div class="para" id="p-derived-ex-separable-2-2-1-1">Separate the variables:<div class="displaymath process-math">
+\begin{equation*}
+ydy = (x^2 + \sin x)dx
+\end{equation*}
+</div>
+</div></li>
+<li id="ex-separable-2-2-1-2">
+<div class="para logical" id="ex-separable-2-2-1-2-1">
+<div class="para">Integrate both sides:</div>
+<div class="displaymath process-math" id="ex-separable-2-2-1-2-1-1">
+\begin{align*}
+\amp \int ydy = \int (x^2 + \sin x)dx\\
+\implies \amp \frac{1}{2}y^2 = \frac{1}{3}x^3 - \cos x + C
+\end{align*}
+</div>
+</div>
+<div class="para" id="ex-separable-2-2-1-2-2">We thus obtain a one-parameter family of <em class="emphasis">implicit</em> solutions</div>
+</li>
+<li id="ex-separable-2-2-1-3">
+<div class="para logical" id="ex-separable-2-2-1-3-1">
+<div class="para">The initial condition should give us a particular solution</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y(0) = 1 \implies \frac{1}{2} = 0 - 1 + C \implies C = \frac{3}{2}
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="ex-separable-2-2-1-3-2">
+<div class="para">We thus obtain a particular implicit solution</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{1}{2}y^2 = \frac{1}{3}x^3 - \cos x + \frac{3}{2}
+\end{equation*}
+</div>
+</div>
+</li>
+<li id="ex-separable-2-2-1-4">
+<div class="para logical" id="ex-separable-2-2-1-4-1">
+<div class="para">This solution can actually be made explicit by solving for <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(x\text{.}\)</span> Multiply both sides by 2 and take the square root,</div>
+<div class="displaymath process-math" id="ex-separable-2-2-1-4-1-3">
+\begin{align*}
+\amp y^2 = \frac{2}{3}x^3 - 2\cos x + 3\\
+\amp \implies y = \pm \sqrt{\frac{2}{3}x^3 - 2\cos x + 3}
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="ex-separable-2-2-1-4-2">
+<div class="para">Since <span class="process-math">\(y(0) = 1\text{,}\)</span> we should take the positive branch. So</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y = \sqrt{\frac{2}{3}x^3 - 2\cos x + 3}
+\end{equation*}
+</div>
+<div class="para">is the explicit solution of the IVP.</div>
+</div>
+</li>
+<li id="ex-separable-2-2-1-5"><div class="para" id="p-derived-ex-separable-2-2-1-5">The solution makes sense when<div class="displaymath process-math">
+\begin{equation*}
+\frac{2}{3}x^3 - 2\cos x + 3 \geq 0.
+\end{equation*}
+</div>Solving this inequality is not possible without a computer. So we will leave it as is.</div></li>
+</ul> <div class="para logical" id="ex-separable-2-2-2">
+<div class="para">Conclusion: The solution is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y = \sqrt{\frac{2}{3}x^3 - 2\cos x + 3}.
+\end{equation*}
+</div>
+<div class="para">It is defined when</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\frac{2}{3}x^3 - 2\cos x + 3 \geq 0.
+\end{equation*}
+</div>
+</div></article></details><div class="para" id="sec-separable-equations-5"><em class="alert">Implicit solution vs explicit solution</em></div>
+<ul class="disc" id="sec-separable-equations-6">
+<li id="sec-separable-equations-6-1"><div class="para" id="p-derived-sec-separable-equations-6-1">If you are given an ODE without initial values, then a one-parameter family of <em class="emphasis">implicit</em> solutions is sufficient.</div></li>
+<li id="sec-separable-equations-6-2"><div class="para" id="p-derived-sec-separable-equations-6-2">If you are given an IVP, whenever possible, you should try to get the <em class="emphasis">explicit</em> solution and the <em class="emphasis">interval of definition</em> (the interval where the solution is defined).</div></li>
+</ul>
+<div class="para" id="sec-separable-equations-7"><em class="alert">Remark.</em></div>
+<ul class="disc" id="sec-separable-equations-8">
+<li id="sec-separable-equations-8-1"><div class="para" id="p-derived-sec-separable-equations-8-1">Suppose we have an initial condition specified for the ODE in <a href="sec-separable-equations.html#ex-separable-1" class="xref" data-knowl="./knowl/xref/ex-separable-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.1: Solve the separable ODE \frac{dy}{dx} = \frac{e^x - x}{e^{-y} + y}">Example 1.6.1</a>, which determines a definite <span class="process-math">\(C\text{.}\)</span> But it is impossible to solve for <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(x\)</span> to get the explicit solution. In that case, we have to be satisfied with the implicit solution and ask a computer to handle the function values.</div></li>
+<li id="sec-separable-equations-8-2"><div class="para" id="p-derived-sec-separable-equations-8-2">In <a href="sec-separable-equations.html#ex-separable-2" class="xref" data-knowl="./knowl/xref/ex-separable-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.2: Solve the IVP \frac{dy}{dx} = \frac{x^2 + \sin x}{y}, \quad y(0) = 1">Example 1.6.2</a>, we managed to solve for <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(x\text{,}\)</span> but was not able to solve for the interval of definition by hand. Nevertheless, we can still ask a computer to solve for the interval of definition. For <a href="sec-separable-equations.html#ex-separable-2" class="xref" data-knowl="./knowl/xref/ex-separable-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.2: Solve the IVP \frac{dy}{dx} = \frac{x^2 + \sin x}{y}, \quad y(0) = 1">Example 1.6.2</a>, the computer gives us the interval of definition as <span class="process-math">\((-1.69533, +\infty)\text{.}\)</span>
+</div></li>
+<li id="sec-separable-equations-8-3"><div class="para" id="p-derived-sec-separable-equations-8-3">The interval of definition, as its name hints, should consist of <em class="alert">only one interval</em> that contains the initial <span class="process-math">\(x\)</span>-value. It should also be an <em class="alert">open interval</em>. We do not include the endpoints because the derivative is not defined there. In <a href="sec-separable-equations.html#ex-separable-2" class="xref" data-knowl="./knowl/xref/ex-separable-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.2: Solve the IVP \frac{dy}{dx} = \frac{x^2 + \sin x}{y}, \quad y(0) = 1">Example 1.6.2</a>, the computer would say that the solution makes sense on <span class="process-math">\([-1.69533, +\infty)\text{.}\)</span> But we should exclude the endpoint <span class="process-math">\(-1.69533\)</span> and use <span class="process-math">\((-1.69533, +\infty)\)</span> instead.</div></li>
+</ul>
+<details id="ex-separable-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.3</span><span class="period">.</span><span class="space"> </span><span class="title">Solve the ODE <span class="process-math">\(y' = xy^3(1 + x^2)^{-1/2}\)</span>.</span>
+</h3></summary><article class="example example-like knowl__content"><ul class="disc" id="ex-separable-3-2-1">
+<li id="ex-separable-3-2-1-1"><div class="para" id="p-derived-ex-separable-3-2-1-1">Separate the variables:<div class="displaymath process-math">
+\begin{equation*}
+\frac{dy}{dx} = y^3 \cdot \frac{x}{\sqrt{1 + x^2}} \implies \frac{dy}{y^3} = \frac{x}{\sqrt{1 + x^2}}dx
+\end{equation*}
+</div>
+</div></li>
+<li id="ex-separable-3-2-1-2"><div class="para" id="p-derived-ex-separable-3-2-1-2">Integrate both sides:<div class="displaymath process-math">
+\begin{equation*}
+\int \frac{dy}{y^3} = \int \frac{x}{\sqrt{1 + x^2}}dx \implies -\frac{1}{2}y^2 = \sqrt{1 + x^2} + C
+\end{equation*}
+</div>
+</div></li>
+</ul> <div class="para" id="ex-separable-3-2-2">We thus obtain a one-parameter family of <em class="emphasis">implicit</em> solutions</div></article></details><details id="ex-separable-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Solve the IVP <span class="process-math">\(y' = xy^3(1 + x^2)^{-1/2}, \, y(\sqrt{3}) = \frac{1}{2}\)</span>.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-separable-4-2-1">
+<div class="para">We have obtained a one-parameter family of implicit solutions in <a href="sec-separable-equations.html#ex-separable-3" class="xref" data-knowl="./knowl/xref/ex-separable-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.3: Solve the ODE y' = xy^3(1 + x^2)^{-1/2}">Example 1.6.3</a>, namely,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-separable-3.html">
+\begin{equation*}
+-\frac{1}{2}y^2 = \sqrt{1 + x^2} + C.
+\end{equation*}
+</div>
+<div class="para">We shall continue from here.</div>
+</div> <ul class="disc" id="ex-separable-4-2-2">
+<li id="ex-separable-4-2-2-1"><div class="para" id="p-derived-ex-separable-4-2-2-1">We determine the constant <span class="process-math">\(C\)</span> by using the initial condition:<div class="displaymath process-math">
+\begin{equation*}
+y(\sqrt{3}) = \frac{1}{2} \implies -\frac{1}{2} \cdot (1/2)^2 = \sqrt{1 + 3} + C \implies C = -4.
+\end{equation*}
+</div>
+</div></li>
+<li id="ex-separable-4-2-2-2"><div class="para" id="p-derived-ex-separable-4-2-2-2">The implicit solution we thus obtained is<div class="displaymath process-math">
+\begin{equation*}
+-\frac{1}{2y^2} = \sqrt{1 + x^2} - 4.
+\end{equation*}
+</div>It is possible to solve an explicit solution. Take the negative reciprocal and simplify,<div class="displaymath process-math">
+\begin{equation*}
+y^2 = \frac{1}{2(4 - \sqrt{1 + x^2})}= \frac{1}{8 - 2\sqrt{1 + x^2}}.
+\end{equation*}
+</div>Now take the square root. Since <span class="process-math">\(y(\sqrt{3}) = \frac{1}{2} \gt 0\text{,}\)</span> we take the <em class="emphasis">positive</em> branch, thus<div class="displaymath process-math">
+\begin{equation*}
+y = \sqrt{\frac{1}{8 - 2\sqrt{1 + x^2}}}.
+\end{equation*}
+</div>
+</div></li>
+<li id="ex-separable-4-2-2-3"><div class="para" id="p-derived-ex-separable-4-2-2-3">Solution exists when<div class="displaymath process-math" id="ex-separable-4-2-2-3-1">
+\begin{align*}
+\amp 8 - 2\sqrt{1 + x^2} \gt 0 \implies  2\sqrt{1+x^2}\lt 8\implies 1+x^2 \lt 16 \\
+\implies \amp x^2 \lt 15 \implies x \in (-\sqrt{15}, \sqrt{15})
+\end{align*}
+</div>
+</div></li>
+</ul> <div class="para logical" id="ex-separable-4-2-3">
+<div class="para">Conclusion: The solution is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y = \sqrt{\frac{1}{8 - 2\sqrt{1 + x^2}}}.
+\end{equation*}
+</div>
+<div class="para">The interval of definition is <span class="process-math">\((-\sqrt{15}, \sqrt{15})\text{.}\)</span>
+</div>
+</div></article></details></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-1st-order-linear.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-Prerequisites.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

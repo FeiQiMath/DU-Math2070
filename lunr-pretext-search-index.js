@@ -172,6 +172,213 @@ var ptx_lunr_docs = [
   "body": " Integral curve of and asymptotic behavior of solutions   We first sketch the integral curves, knowing that they must follow the flow given by the direction field.    Direction field for   From the direction field, the following asymptotic behaviors can be observed:   If , then  If , then  If , then  If , then  If , then    "
 },
 {
+  "id": "sec-classification",
+  "level": "1",
+  "url": "sec-classification.html",
+  "type": "Section",
+  "number": "1.4",
+  "title": "Classification of Differential Equations",
+  "body": " Classification of Differential Equations  We saw in that differential equations can be classified by   Types: ODE and PDE.  Order: the order of highest derivative.   We now focus on the another important classification: linearity.  In this course, we mainly focus on linear ODEs , i.e.,   where is linear in . Equivalently, all depend only on and do not depend on . Otherwise, we say the ODE is nonlinear .  For people who have not seen partial derivatives before, we review the definition here. Given an -variable function , the partial derivative is obtained by taking the derivative with respect to while treating all other ’s as constants.   Partial derivatives of  There are two variables . The partial derivatives are     Partial derivatives of  There are two variables . The partial derivatives are     Determine if the ODE is linear.   Written in the general form:  So  We check that all independent of . So is a linear ODE.     Determine if the ODE is linear.   Written in the general form:  So  We check that that depends on  So is a nonlinear ODE.     Determine if the ODE is linear.   Written in the general form:  So  We check that , ,  all independent of  So is a linear ODE.    Generally, every th order linear ODE can be written as   This is the standard form of a linear ODE (where the coefficient of the highest derivative is 1).  We know a lot about linear ODEs, but very little about nonlinear ODEs.  "
+},
+{
+  "id": "sec-classification-5",
+  "level": "2",
+  "url": "sec-classification.html#sec-classification-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "linear ODEs "
+},
+{
+  "id": "sec-classification-7",
+  "level": "2",
+  "url": "sec-classification.html#sec-classification-7",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "nonlinear "
+},
+{
+  "id": "sec-classification-9",
+  "level": "2",
+  "url": "sec-classification.html#sec-classification-9",
+  "type": "Example",
+  "number": "1.4.1",
+  "title": "Partial derivatives of<span class=\"process-math\">\\(F(x,y) = x^2 + y^2\\)<\/span>.",
+  "body": " Partial derivatives of  There are two variables . The partial derivatives are   "
+},
+{
+  "id": "sec-classification-10",
+  "level": "2",
+  "url": "sec-classification.html#sec-classification-10",
+  "type": "Example",
+  "number": "1.4.2",
+  "title": "Partial derivatives of <span class=\"process-math\">\\(F(x,y) = \\sqrt{x^2 + y^2}\\)<\/span>.",
+  "body": " Partial derivatives of  There are two variables . The partial derivatives are   "
+},
+{
+  "id": "sec-classification-11",
+  "level": "2",
+  "url": "sec-classification.html#sec-classification-11",
+  "type": "Example",
+  "number": "1.4.3",
+  "title": "Determine if the ODE <span class=\"process-math\">\\(y'' - 2y' + y = \\sqrt{t}\\)<\/span> is linear..",
+  "body": " Determine if the ODE is linear.   Written in the general form:  So  We check that all independent of . So is a linear ODE.   "
+},
+{
+  "id": "sec-classification-12",
+  "level": "2",
+  "url": "sec-classification.html#sec-classification-12",
+  "type": "Example",
+  "number": "1.4.4",
+  "title": "Determine if the ODE <span class=\"process-math\">\\(y' = \\sin y\\)<\/span> is linear..",
+  "body": " Determine if the ODE is linear.   Written in the general form:  So  We check that that depends on  So is a nonlinear ODE.   "
+},
+{
+  "id": "sec-classification-13",
+  "level": "2",
+  "url": "sec-classification.html#sec-classification-13",
+  "type": "Example",
+  "number": "1.4.5",
+  "title": "Determine if the ODE <span class=\"process-math\">\\(y'' - \\sqrt{t}y' + \\sin(t^2) y = t^3\\)<\/span> is linear..",
+  "body": " Determine if the ODE is linear.   Written in the general form:  So  We check that , ,  all independent of  So is a linear ODE.   "
+},
+{
+  "id": "sec-classification-16",
+  "level": "2",
+  "url": "sec-classification.html#sec-classification-16",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "standard form "
+},
+{
+  "id": "sec-1st-order-linear",
+  "level": "1",
+  "url": "sec-1st-order-linear.html",
+  "type": "Section",
+  "number": "1.5",
+  "title": "First-order Linear ODEs",
+  "body": " First-order Linear ODEs  Standard form:   Integrating factor:   General solution:   How comes the formula? Observe that  In general, any function making is called an integrating factor. To satisfy this equation, we calculate that   So means   Now that we found the , Recall that the ODE we intend to solve is   Thus, we conclude that   Integrate both sides:   Remarks:   This formula ONLY works for the standard form . Before using it, get the standard form first.  When integrating , no need to worry about the constant or the absolute value. They make no difference.  The arbitrary constant in the general solution appears as a part of the numerator, not outside of the fraction. It is very rare that is a pure constant.    Solve    Already in standard form.  Integrating factor:  General solution:    Digression: What if we keep the constant in the integrating factor?   Integrating factor:  General solution:  So the extra constant in the integrating factor does not make any difference!    Coming back to the problem, we have obtained the general solution. But we are not done yet. We are given an IVP, so we need to take care of the initial condition.   Determine by the initial condition:   Solution of the IVP:         Solve    Standard form:  Integrating factor:  Warning! Saying commits the crime of abusing algebra, which is punishable by banishment to the STEM.  General solution:  Determine by initial value:  Solution of the IVP:      Solve    Standard form:  Integrating factor:   Note that  General solution:  We calculate the integral in the numerator:  Thus the general solution is of the form where in the last step we used the identity .       Solve    Standard form:  Integrating factor:  General solution:  We calculate the integral in the numerator:   So we conclude the general solution as        Solve    Already in standard form.  Integrating factor:  General solution:   How to calculate the integral?  So we have   Then we conclude the general solution as        Solve    Already in standard form.  Integrating factor:  Here we ignored the absolute value (why can we do that?).  General solution:  Please make sure you know how to integrate .       Solve . Find the solution of the IVP that is continuous everywhere   General principle: Solve the ODE on each individual interval. Determine the constants by either the initial condition or continuity at the boundary .  On the interval   Integrating factor:  General solution:   Initial condition  We conclude that on   On the interval   Integrating factor:  General solution:  On   So the solution of the IVP is  To make sure is continuous, we need . This is to say  Conclusion: the continuous solution of the IVP is    "
+},
+{
+  "id": "sec-1st-order-linear-18",
+  "level": "2",
+  "url": "sec-1st-order-linear.html#sec-1st-order-linear-18",
+  "type": "Example",
+  "number": "1.5.1",
+  "title": "Solve <span class=\"process-math\">\\(y' + 2y = e^{3t}, \\quad y(0) = 3.\\)<\/span>.",
+  "body": " Solve    Already in standard form.  Integrating factor:  General solution:    Digression: What if we keep the constant in the integrating factor?   Integrating factor:  General solution:  So the extra constant in the integrating factor does not make any difference!    Coming back to the problem, we have obtained the general solution. But we are not done yet. We are given an IVP, so we need to take care of the initial condition.   Determine by the initial condition:   Solution of the IVP:       "
+},
+{
+  "id": "sec-1st-order-linear-19",
+  "level": "2",
+  "url": "sec-1st-order-linear.html#sec-1st-order-linear-19",
+  "type": "Example",
+  "number": "1.5.2",
+  "title": "Solve <span class=\"process-math\">\\(ty' - y = t^3, \\quad y(1) = 0.\\)<\/span>.",
+  "body": " Solve    Standard form:  Integrating factor:  Warning! Saying commits the crime of abusing algebra, which is punishable by banishment to the STEM.  General solution:  Determine by initial value:  Solution of the IVP:    "
+},
+{
+  "id": "sec-1st-order-linear-20",
+  "level": "2",
+  "url": "sec-1st-order-linear.html#sec-1st-order-linear-20",
+  "type": "Example",
+  "number": "1.5.3",
+  "title": "Solve <span class=\"process-math\">\\((\\sin t) y' + (\\cos t) y = \\sin^2 t, \\quad 0 \\lt t \\lt \\pi.\\)<\/span>.",
+  "body": " Solve    Standard form:  Integrating factor:   Note that  General solution:  We calculate the integral in the numerator:  Thus the general solution is of the form where in the last step we used the identity .     "
+},
+{
+  "id": "sec-1st-order-linear-21",
+  "level": "2",
+  "url": "sec-1st-order-linear.html#sec-1st-order-linear-21",
+  "type": "Example",
+  "number": "1.5.4",
+  "title": "Solve <span class=\"process-math\">\\(ty' + 2y = t(\\ln 3t)^2.\\)<\/span>.",
+  "body": " Solve    Standard form:  Integrating factor:  General solution:  We calculate the integral in the numerator:   So we conclude the general solution as      "
+},
+{
+  "id": "sec-1st-order-linear-22",
+  "level": "2",
+  "url": "sec-1st-order-linear.html#sec-1st-order-linear-22",
+  "type": "Example",
+  "number": "1.5.5",
+  "title": "Solve <span class=\"process-math\">\\(y' + y = \\cos 2t.\\)<\/span>.",
+  "body": " Solve    Already in standard form.  Integrating factor:  General solution:   How to calculate the integral?  So we have   Then we conclude the general solution as      "
+},
+{
+  "id": "sec-1st-order-linear-23",
+  "level": "2",
+  "url": "sec-1st-order-linear.html#sec-1st-order-linear-23",
+  "type": "Example",
+  "number": "1.5.6",
+  "title": "Solve <span class=\"process-math\">\\(y' - (\\tan t)y = \\sec^2 t.\\)<\/span>.",
+  "body": " Solve    Already in standard form.  Integrating factor:  Here we ignored the absolute value (why can we do that?).  General solution:  Please make sure you know how to integrate .     "
+},
+{
+  "id": "sec-1st-order-linear-24",
+  "level": "2",
+  "url": "sec-1st-order-linear.html#sec-1st-order-linear-24",
+  "type": "Example",
+  "number": "1.5.7",
+  "title": "Solve<div class=\"displaymath process-math\">\n\\begin{equation*}\ny' + y = g(t), \\, y(0) = 0, \\, g(t) = \\begin{cases} 1 \\amp 0 \\leq t \\leq 1 \\\\ 0 \\amp t \\gt 1 \\end{cases}\\text{.}\n\\end{equation*}\n<\/div>Find the solution of the IVP that is continuous everywhere.",
+  "body": " Solve . Find the solution of the IVP that is continuous everywhere   General principle: Solve the ODE on each individual interval. Determine the constants by either the initial condition or continuity at the boundary .  On the interval   Integrating factor:  General solution:   Initial condition  We conclude that on   On the interval   Integrating factor:  General solution:  On   So the solution of the IVP is  To make sure is continuous, we need . This is to say  Conclusion: the continuous solution of the IVP is   "
+},
+{
+  "id": "sec-separable-equations",
+  "level": "1",
+  "url": "sec-separable-equations.html",
+  "type": "Section",
+  "number": "1.6",
+  "title": "Separable Equations",
+  "body": " Separable Equations  In general, a nonlinear ODE is very difficult to solve. We can only handle a few special types of nonlinear ODEs. In this section, we study the separable ODEs , namely, an ODE of the form: i.e., the derivative is a product of two functions, one depends only on , the other depends only on . To solve this ODE, we first separate the variables, then integrate both sides, The process yields a one-parameter family of implicit solutions.   Solve the separable ODE    Separate the variables:   Integrate both sides:  We thus obtain a one-parameter family of implicit solutions      Solve the IVP    Separate the variables:   Integrate both sides:   We thus obtain a one-parameter family of implicit solutions   The initial condition should give us a particular solution   We thus obtain a particular implicit solution   This solution can actually be made explicit by solving for in terms of . Multiply both sides by 2 and take the square root,   Since , we should take the positive branch. So is the explicit solution of the IVP.   The solution makes sense when Solving this inequality is not possible without a computer. So we will leave it as is.   Conclusion: The solution is It is defined when     Implicit solution vs explicit solution   If you are given an ODE without initial values, then a one-parameter family of implicit solutions is sufficient.  If you are given an IVP, whenever possible, you should try to get the explicit solution and the interval of definition (the interval where the solution is defined).   Remark.    Suppose we have an initial condition specified for the ODE in , which determines a definite . But it is impossible to solve for in terms of to get the explicit solution. In that case, we have to be satisfied with the implicit solution and ask a computer to handle the function values.  In , we managed to solve for in terms of , but was not able to solve for the interval of definition by hand. Nevertheless, we can still ask a computer to solve for the interval of definition. For , the computer gives us the interval of definition as .  The interval of definition, as its name hints, should consist of only one interval that contains the initial -value. It should also be an open interval . We do not include the endpoints because the derivative is not defined there. In , the computer would say that the solution makes sense on . But we should exclude the endpoint and use instead.    Solve the ODE    Separate the variables:   Integrate both sides:    We thus obtain a one-parameter family of implicit solutions     Solve the IVP   We have obtained a one-parameter family of implicit solutions in , namely, We shall continue from here.   We determine the constant by using the initial condition:   The implicit solution we thus obtained is It is possible to solve an explicit solution. Take the negative reciprocal and simplify, Now take the square root. Since , we take the positive branch, thus   Solution exists when    Conclusion: The solution is The interval of definition is .    "
+},
+{
+  "id": "sec-separable-equations-2",
+  "level": "2",
+  "url": "sec-separable-equations.html#sec-separable-equations-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "separable ODEs "
+},
+{
+  "id": "ex-separable-1",
+  "level": "2",
+  "url": "sec-separable-equations.html#ex-separable-1",
+  "type": "Example",
+  "number": "1.6.1",
+  "title": "Solve the separable ODE <span class=\"process-math\">\\(\\frac{dy}{dx} = \\frac{e^x - x}{e^{-y} + y}\\)<\/span>.",
+  "body": " Solve the separable ODE    Separate the variables:   Integrate both sides:  We thus obtain a one-parameter family of implicit solutions    "
+},
+{
+  "id": "ex-separable-2",
+  "level": "2",
+  "url": "sec-separable-equations.html#ex-separable-2",
+  "type": "Example",
+  "number": "1.6.2",
+  "title": "Solve the IVP <span class=\"process-math\">\\(\\frac{dy}{dx} = \\frac{x^2 + \\sin x}{y}, \\quad y(0) = 1\\)<\/span>.",
+  "body": " Solve the IVP    Separate the variables:   Integrate both sides:   We thus obtain a one-parameter family of implicit solutions   The initial condition should give us a particular solution   We thus obtain a particular implicit solution   This solution can actually be made explicit by solving for in terms of . Multiply both sides by 2 and take the square root,   Since , we should take the positive branch. So is the explicit solution of the IVP.   The solution makes sense when Solving this inequality is not possible without a computer. So we will leave it as is.   Conclusion: The solution is It is defined when    "
+},
+{
+  "id": "ex-separable-3",
+  "level": "2",
+  "url": "sec-separable-equations.html#ex-separable-3",
+  "type": "Example",
+  "number": "1.6.3",
+  "title": "Solve the ODE <span class=\"process-math\">\\(y' = xy^3(1 + x^2)^{-1\/2}\\)<\/span>.",
+  "body": " Solve the ODE    Separate the variables:   Integrate both sides:    We thus obtain a one-parameter family of implicit solutions   "
+},
+{
+  "id": "ex-separable-4",
+  "level": "2",
+  "url": "sec-separable-equations.html#ex-separable-4",
+  "type": "Example",
+  "number": "1.6.4",
+  "title": "Solve the IVP <span class=\"process-math\">\\(y' = xy^3(1 + x^2)^{-1\/2}, \\, y(\\sqrt{3}) = \\frac{1}{2}\\)<\/span>.",
+  "body": " Solve the IVP   We have obtained a one-parameter family of implicit solutions in , namely, We shall continue from here.   We determine the constant by using the initial condition:   The implicit solution we thus obtained is It is possible to solve an explicit solution. Take the negative reciprocal and simplify, Now take the square root. Since , we take the positive branch, thus   Solution exists when    Conclusion: The solution is The interval of definition is .   "
+},
+{
   "id": "sec-HW1",
   "level": "1",
   "url": "sec-HW1.html",

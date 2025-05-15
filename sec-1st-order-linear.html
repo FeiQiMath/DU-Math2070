@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>First-order Linear ODEs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="A Concise Introduction to Differential Equation at the University of Denver">
+<meta property="book:author" content="Fei Qi">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.6.3';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.1dbf799015a9933a.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.541c9106f2c605b9.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Math-2070-Notes.html"><span class="title">A Concise Introduction to Differential Equation at the University of Denver</span></a></h1>
+<p class="byline">Fei Qi</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-classification.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="First-order-ODE.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-separable-equations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="First-order-ODE.html" class="internal"><span class="codenumber">1</span> <span class="title">First-order Differential Equations</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basic-concepts.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Basic Concepts</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-why-study-DEs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Why study differential equations?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Newtons-law-of-cooling" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Newton’s law of cooling</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Water-pollution-model" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Water pollution model</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Initial-value-problem" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Initial value problem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="geometric-interpretation.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Geometric interpretation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-classification.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Classification of Differential Equations</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-1st-order-linear.html" class="internal"><span class="codenumber">1.5</span> <span class="title">First-order Linear ODEs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-separable-equations.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Separable Equations</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-Prerequisites.html" class="internal"><span class="codenumber">2</span> <span class="title">Chapter Title</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-HW1.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Homework 1</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="HW2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Homework 2</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-1st-order-linear"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.5</span><span class="space"> </span><span class="title">First-order Linear ODEs</span>
+</h2>
+<div class="para logical" id="sec-1st-order-linear-2">
+<div class="para">Standard form:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y' + p(t)y = g(t).
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec-1st-order-linear-3">
+<div class="para">Integrating factor:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mu(t) = e^{\int p(t)dt}.
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec-1st-order-linear-4">
+<div class="para">General solution:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y(t) = \frac{\int \mu(t)g(t)dt + C}{\mu(t)}.
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec-1st-order-linear-5">
+<div class="para">How comes the formula? Observe that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+e^{\int p(t)dt}(y' + p(t)y) = \left(e^{\int p(t)dt}y\right)'.
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec-1st-order-linear-6">
+<div class="para">In general, any function <span class="process-math">\(\mu(t)\)</span> making</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mu(t)(y'(t) + p(t)y(t)) = (\mu(t)y(t))'
+\end{equation*}
+</div>
+<div class="para">is called an integrating factor. To satisfy this equation, we calculate that</div>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+RHS = \mu'(t)y(t) + \mu(t)y'(t)
+\end{equation*}
+</div>
+<div class="para" id="sec-1st-order-linear-8">So <span class="process-math">\(LHS = RHS\)</span> means</div>
+<div class="displaymath process-math" id="sec-1st-order-linear-9">
+\begin{align*}
+\amp \mu(t)y'(t) + \mu(t)p(t)y(t) = \mu'(t)y(t) + \mu(t)y'(t)\\
+\implies \amp \mu(t)p(t)y(t) = \mu'(t)y(t) \Rightarrow \mu'(t) = \mu(t)p(t)\\
+\implies \amp \frac{\mu'(t)}{\mu(t)} = p(t) \Rightarrow \ln|\mu(t)| = \int p(t)dt\\
+\implies \amp \mu(t) = e^{\int p(t)dt}.
+\end{align*}
+</div>
+<div class="para" id="sec-1st-order-linear-10">Now that we found the <span class="process-math">\(\mu(t)\text{,}\)</span> Recall that the ODE we intend to solve is</div>
+<div class="displaymath process-math" id="sec-1st-order-linear-11">
+\begin{align*}
+\amp y'(t) + p(t)y(t) = g(t)\\
+\implies \amp \mu(t)(y'(t) + p(t)y(t)) = \mu(t)g(t).
+\end{align*}
+</div>
+<div class="para" id="sec-1st-order-linear-12">Thus, we conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(\mu(t)y(t))' = \mu(t)g(t).
+\end{equation*}
+</div>
+<div class="para" id="sec-1st-order-linear-14">Integrate both sides:</div>
+<div class="displaymath process-math" id="sec-1st-order-linear-15">
+\begin{align*}
+\amp \mu(t)y(t) = \int \mu(t)g(t)dt + C\\
+\implies \amp y(t) = \frac{\int \mu(t)g(t)dt + C}{\mu(t)}.
+\end{align*}
+</div>
+<div class="para" id="sec-1st-order-linear-16">Remarks:</div>
+<ul class="disc" id="sec-1st-order-linear-17">
+<li id="sec-1st-order-linear-17-1"><div class="para" id="p-derived-sec-1st-order-linear-17-1">This formula <em class="alert">ONLY</em> works for the <em class="alert">standard form</em>. Before using it, get the standard form first.</div></li>
+<li id="sec-1st-order-linear-17-2"><div class="para" id="p-derived-sec-1st-order-linear-17-2">When integrating <span class="process-math">\(p(t)\text{,}\)</span> no need to worry about the constant or the absolute value. They make no difference.</div></li>
+<li id="sec-1st-order-linear-17-3"><div class="para" id="p-derived-sec-1st-order-linear-17-3">The arbitrary constant in the general solution appears as <em class="alert">a part</em> of the numerator, not outside of the fraction. It is very rare that <span class="process-math">\(C\)</span> is a pure constant.</div></li>
+</ul>
+<details id="sec-1st-order-linear-18" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.1</span><span class="period">.</span><span class="space"> </span><span class="title">Solve <span class="process-math">\(y' + 2y = e^{3t}, \quad y(0) = 3.\)</span>.</span>
+</h3></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-1st-order-linear-18-2-1">
+<li id="sec-1st-order-linear-18-2-1-1"><div class="para" id="p-derived-sec-1st-order-linear-18-2-1-1">Already in standard form.</div></li>
+<li id="sec-1st-order-linear-18-2-1-2"><div class="para" id="p-derived-sec-1st-order-linear-18-2-1-2">Integrating factor: <span class="process-math">\(\mu(t) = e^{\int 2dt} = e^{2t}.\)</span>
+</div></li>
+<li id="sec-1st-order-linear-18-2-1-3"><div class="para" id="p-derived-sec-1st-order-linear-18-2-1-3">General solution:<div class="displaymath process-math" id="sec-1st-order-linear-18-2-1-3-1">
+\begin{align*}
+\amp y(t) = \frac{\int e^{2t}e^{3t}dt}{e^{2t}} = \frac{\int e^{5t}dt}{e^{2t}} = \frac{1}{5}e^{5t} + C.\\
+\implies \amp y(t) = \frac{1}{5}e^{3t} + Ce^{-2t}.
+\end{align*}
+</div>
+</div></li>
+</ul> <div class="para" id="sec-1st-order-linear-18-2-2">Digression: What if we keep the constant in the integrating factor?</div> <ul class="disc" id="sec-1st-order-linear-18-2-3">
+<li id="sec-1st-order-linear-18-2-3-1"><div class="para" id="p-derived-sec-1st-order-linear-18-2-3-1">Integrating factor: <span class="process-math">\(\mu(t) = e^{\int 2dt + D} = e^{2t + D} = e^{2t} e^{D}.\)</span>
+</div></li>
+<li id="sec-1st-order-linear-18-2-3-2">
+<div class="displaymath process-math" id="sec-1st-order-linear-18-2-3-2-1">
+\begin{align*}
+y(t) \amp = \frac{\int e^{2t} e^{3t} e^{D} dt}{e^{2t} e^{D}} = 
+\frac{\int e^{5t} \cancel{e^D} dt}{e^{2t} \cancel{e^D}} = \frac{\frac{1}{5} e^{5t} + C}{e^{2t}}\\
+\amp = \frac{1}{5} e^{3t} + C e^{-2t}.
+\end{align*}
+</div>
+<div class="para" id="sec-1st-order-linear-18-2-3-2-2">So the extra constant in the integrating factor does not make any difference!</div>
+</li>
+</ul> <div class="para" id="sec-1st-order-linear-18-2-4">Coming back to the problem, we have obtained the general solution. But we are not done yet. We are given an IVP, so we need to take care of the initial condition.</div> <ul class="disc" id="sec-1st-order-linear-18-2-5">
+<li id="sec-1st-order-linear-18-2-5-1"><div class="para" id="p-derived-sec-1st-order-linear-18-2-5-1">Determine <span class="process-math">\(C\)</span> by the initial condition:</div></li>
+<li id="sec-1st-order-linear-18-2-5-2"><div class="para" id="p-derived-sec-1st-order-linear-18-2-5-2"><span class="process-math">\(\displaystyle y(0) = 3 \Rightarrow \frac{1}{5} + C = 3 \Rightarrow C = \frac{14}{5}.\)</span></div></li>
+<li id="sec-1st-order-linear-18-2-5-3"><div class="para" id="p-derived-sec-1st-order-linear-18-2-5-3">Solution of the IVP:</div></li>
+</ul> <div class="para" id="sec-1st-order-linear-18-2-6"><span class="process-math">\(y(t) = \frac{1}{5} e^{3t} + \frac{14}{5} e^{-2t}\)</span></div></article></details><details id="sec-1st-order-linear-19" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.2</span><span class="period">.</span><span class="space"> </span><span class="title">Solve <span class="process-math">\(ty' - y = t^3, \quad y(1) = 0.\)</span>.</span>
+</h3></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-1st-order-linear-19-2-1">
+<li id="sec-1st-order-linear-19-2-1-1"><div class="para" id="p-derived-sec-1st-order-linear-19-2-1-1">Standard form: <span class="process-math">\(y' - \frac{1}{t}y = t^2.\)</span>
+</div></li>
+<li id="sec-1st-order-linear-19-2-1-2">
+<div class="para" id="sec-1st-order-linear-19-2-1-2-1">Integrating factor: <span class="process-math">\(\mu(t) = e^{-\int \frac{1}{t} dt} = e^{-\ln |t|} = \frac{1}{t}.\)</span>
+</div>
+<div class="para" id="sec-1st-order-linear-19-2-1-2-2"><em class="alert">Warning! Saying <span class="process-math">\(e^{-\ln t} = -t\)</span> commits the crime of abusing algebra, which is punishable by banishment to the STEM.</em></div>
+</li>
+<li id="sec-1st-order-linear-19-2-1-3"><div class="para" id="p-derived-sec-1st-order-linear-19-2-1-3">General solution:<div class="displaymath process-math" id="sec-1st-order-linear-19-2-1-3-1">
+\begin{align*}
+y(t) \amp = \frac{\int \frac{1}{t} \cdot t^2 dt + C}{\frac{1}{t}} = t \left( \int dt + C \right)\\
+\amp = t \left( \frac{1}{2}t^2 + C \right) = \frac{1}{2}t^3 + Ct.
+\end{align*}
+</div>
+</div></li>
+<li id="sec-1st-order-linear-19-2-1-4"><div class="para" id="p-derived-sec-1st-order-linear-19-2-1-4">Determine <span class="process-math">\(C\)</span> by initial value:<div class="displaymath process-math">
+\begin{equation*}
+y(1) = 0 \Rightarrow \frac{1}{2} + C = 0 \Rightarrow C = -\frac{1}{2}.
+\end{equation*}
+</div>
+</div></li>
+<li id="sec-1st-order-linear-19-2-1-5"><div class="para" id="p-derived-sec-1st-order-linear-19-2-1-5">Solution of the IVP:<div class="displaymath process-math">
+\begin{equation*}
+y(t) = \frac{1}{2}t^3 - \frac{1}{2}t.
+\end{equation*}
+</div>
+</div></li>
+</ul></article></details><details id="sec-1st-order-linear-20" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.3</span><span class="period">.</span><span class="space"> </span><span class="title">Solve <span class="process-math">\((\sin t) y' + (\cos t) y = \sin^2 t, \quad 0 \lt t \lt \pi.\)</span>.</span>
+</h3></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-1st-order-linear-20-2-1">
+<li id="sec-1st-order-linear-20-2-1-1"><div class="para" id="p-derived-sec-1st-order-linear-20-2-1-1">Standard form: <span class="process-math">\(y' + \frac{\cos t}{\sin t} y = \sin t.\)</span>
+</div></li>
+<li id="sec-1st-order-linear-20-2-1-2">
+<div class="para" id="sec-1st-order-linear-20-2-1-2-1">Integrating factor: <span class="process-math">\(\mu(t) = e^{\int \frac{\cos t}{\sin t} dt}\)</span>
+</div>
+<div class="displaymath process-math" id="sec-1st-order-linear-20-2-1-2-2">
+\begin{gather*}
+\int \frac{\cos t}{\sin t} dt = \int \frac{d(\sin t)}{\sin t} = \ln |\sin t|.\\
+\implies \mu(t) = e^{\ln |\sin t|} = \sin t.
+\end{gather*}
+</div>
+<div class="para" id="sec-1st-order-linear-20-2-1-2-3">Note that <span class="process-math">\(0 \lt t \lt \pi\Rightarrow \sin t \gt 0, | \sin t | = \sin t.\)</span>
+</div>
+</li>
+<li id="sec-1st-order-linear-20-2-1-3">
+<div class="para" id="sec-1st-order-linear-20-2-1-3-1">General solution: <span class="process-math">\(y(t)  = \dfrac{\int \sin^2 t \, dt + C}{\sin t}\)</span>
+</div>
+<div class="para logical" id="sec-1st-order-linear-20-2-1-3-2">
+<div class="para">We calculate the integral in the numerator:</div>
+<div class="displaymath process-math" id="sec-1st-order-linear-20-2-1-3-2-1">
+\begin{align*}
+\int \sin^2 t \, dt \amp = \int \frac{1 - \cos 2t}{2} \, dt = \frac{1}{2} \int (1 - \cos 2t) \, dt\\
+\amp = \frac{1}{2} t - \frac{1}{4} \sin 2t + C.
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="sec-1st-order-linear-20-2-1-3-3">
+<div class="para">Thus the general solution is of the form</div>
+<div class="displaymath process-math" id="sec-1st-order-linear-20-2-1-3-3-1">
+\begin{align*}
+y(t) \amp = \frac{\frac{1}{2}t - \frac{1}{4}\sin 2t + C}{\sin t} = \frac{t}{2\sin t} - \frac{\sin 2t}{4\sin t} + \frac{C}{\sin t}\\
+\amp = \frac{t}{2\sin t} - \frac{\cos t}{2} + \frac{C}{\sin t},
+\end{align*}
+</div>
+<div class="para">where in the last step we used the identity <span class="process-math">\(\sin 2t = 2 \sin t \cos t\text{.}\)</span>
+</div>
+</div>
+</li>
+</ul></article></details><details id="sec-1st-order-linear-21" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.4</span><span class="period">.</span><span class="space"> </span><span class="title">Solve <span class="process-math">\(ty' + 2y = t(\ln 3t)^2.\)</span>.</span>
+</h3></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-1st-order-linear-21-2-1">
+<li id="sec-1st-order-linear-21-2-1-1"><div class="para" id="p-derived-sec-1st-order-linear-21-2-1-1">Standard form: <span class="process-math">\(y' + \frac{2}{t}y = (\ln 3t)^2.\)</span>
+</div></li>
+<li id="sec-1st-order-linear-21-2-1-2"><div class="para" id="p-derived-sec-1st-order-linear-21-2-1-2">Integrating factor: <span class="process-math">\(\mu(t) = e^{\int \frac{2}{t}dt} = e^{2 \ln t} = t^2.\)</span>
+</div></li>
+<li id="sec-1st-order-linear-21-2-1-3">
+<div class="para logical" id="sec-1st-order-linear-21-2-1-3-1">
+<div class="para">General solution:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y(t) = \frac{\int t^2(\ln 3t)^2dt + C}{t^2}.
+\end{equation*}
+</div>
+</div>
+<div class="para logical" id="sec-1st-order-linear-21-2-1-3-2">
+<div class="para">We calculate the integral in the numerator:</div>
+<div class="displaymath process-math" id="sec-1st-order-linear-21-2-1-3-2-1">
+\begin{align*}
+\int t^2(\ln 3t)^2 dt \amp = \frac{1}{3}t^3(\ln 3t)^2 - \int \frac{1}{3}t^3 \cdot 2\ln 3t \cdot \frac{1}{3} \cdot 3 dt\\
+\amp = \frac{1}{3}t^3(\ln 3t)^2 - \frac{2}{3}\int t^2 \ln 3t \, dt\\
+\amp= \frac{1}{3}t^3(\ln 3t)^2 - \frac{2}{3}\left(\frac{1}{3}t^3 \ln 3t - \int \frac{1}{3}t^3 \cdot \frac{1}{3t} \cdot 3 dt\right)\\
+\amp= \frac{1}{3}t^3(\ln 3t)^2 - \frac{2}{9}t^3 \ln 3t + \frac{2}{9} \cdot \frac{1}{3}t^3 + C\\
+\amp= \frac{1}{3}t^3(\ln 3t)^2 - \frac{2}{9}t^3 \ln 3t + \frac{2}{27}t^3 + C
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="sec-1st-order-linear-21-2-1-3-3">
+<div class="para">So we conclude the general solution as</div>
+<div class="displaymath process-math" id="sec-1st-order-linear-21-2-1-3-3-1">
+\begin{align*}
+y(t) \amp = \frac{\frac{1}{3}t^3(\ln 3t)^2 - \frac{2}{9}t^3 \ln 3t + \frac{2}{27}t^3 + C}{t^2}\\
+\amp = \frac{1}{3}t(\ln 3t)^2 - \frac{2}{9}t \ln 3t + \frac{2}{27}t + \frac{C}{t^2}
+\end{align*}
+</div>
+</div>
+</li>
+</ul></article></details><details id="sec-1st-order-linear-22" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.5</span><span class="period">.</span><span class="space"> </span><span class="title">Solve <span class="process-math">\(y' + y = \cos 2t.\)</span>.</span>
+</h3></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-1st-order-linear-22-2-1">
+<li id="sec-1st-order-linear-22-2-1-1"><div class="para" id="p-derived-sec-1st-order-linear-22-2-1-1">Already in standard form.</div></li>
+<li id="sec-1st-order-linear-22-2-1-2"><div class="para" id="p-derived-sec-1st-order-linear-22-2-1-2">Integrating factor: <span class="process-math">\(\mu(t) = e^{\int dt} = e^t.\)</span>
+</div></li>
+<li id="sec-1st-order-linear-22-2-1-3">
+<div class="para logical" id="sec-1st-order-linear-22-2-1-3-1">
+<div class="para">General solution:</div>
+<div class="displaymath process-math" id="sec-1st-order-linear-22-2-1-3-1-1">
+\begin{align*}
+y(t) \amp = \dfrac{\int e^t \cos 2t \, dt }{e^{t}} \\
+\amp =\cdots = \frac{1}{5}e^t \cos 2t + \frac{2}{5}e^t \sin 2t + C e^{-t}
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="sec-1st-order-linear-22-2-1-3-2">
+<div class="para">How to calculate the integral?</div>
+<div class="displaymath process-math" id="sec-1st-order-linear-22-2-1-3-2-1">
+\begin{align*}
+\int e^t \cos 2t \, dt \amp = e^t \cos 2t - \int e^t (-2 \sin 2t) \, dt\\
+\amp = e^t \cos 2t + 2 \int e^t \sin 2t \, dt\\
+\amp = e^t \cos 2t + 2\left(e^t \sin 2t - \int e^t (2 \cos 2t) \, dt\right)\\
+\amp = e^t \cos 2t + 2e^t \sin 2t - 4 \int e^t \cos 2t \, dt
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="sec-1st-order-linear-22-2-1-3-3">
+<div class="para">So we have</div>
+<div class="displaymath process-math" id="sec-1st-order-linear-22-2-1-3-3-1">
+\begin{align*}
+\amp 5 \int e^t \cos 2t \, dt = e^t \cos 2t + 2e^t \sin 2t+C\\
+\implies \amp  \int e^t \cos 2t \, dt = \frac{1}{5} e^t \cos 2t + \frac{2}{5} e^t \sin 2t+C
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="sec-1st-order-linear-22-2-1-3-4">
+<div class="para">Then we conclude the general solution as</div>
+<div class="displaymath process-math" id="sec-1st-order-linear-22-2-1-3-4-1">
+\begin{align*}
+y(t) \amp =\dfrac{\frac{1}{5} e^t \cos 2t + \frac{2}{5} e^t \sin 2t+C }{e^{t}}\\
+\amp = \frac{1}{5} e^t \cos 2t + \frac{2}{5} e^t \sin 2t + C e^{-t}
+\end{align*}
+</div>
+</div>
+</li>
+</ul></article></details><details id="sec-1st-order-linear-23" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.6</span><span class="period">.</span><span class="space"> </span><span class="title">Solve <span class="process-math">\(y' - (\tan t)y = \sec^2 t.\)</span>.</span>
+</h3></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-1st-order-linear-23-2-1">
+<li id="sec-1st-order-linear-23-2-1-1"><div class="para" id="p-derived-sec-1st-order-linear-23-2-1-1">Already in standard form.</div></li>
+<li id="sec-1st-order-linear-23-2-1-2">
+<div class="para" id="sec-1st-order-linear-23-2-1-2-1">Integrating factor: <span class="process-math">\(\mu(t) = e^{-\int \tan t \, dt} = e^{\ln |\cos t|} = \cos t.\)</span>
+</div>
+<div class="para" id="sec-1st-order-linear-23-2-1-2-2">Here we ignored the absolute value (why can we do that?).</div>
+</li>
+<li id="sec-1st-order-linear-23-2-1-3">
+<div class="para logical" id="sec-1st-order-linear-23-2-1-3-1">
+<div class="para">General solution:</div>
+<div class="displaymath process-math" id="sec-1st-order-linear-23-2-1-3-1-1">
+\begin{align*}
+y(t) \amp = \frac{\int \cos t \cdot \sec^2 t \, dt + C}{\cos t} = \frac{\int \sec t \, dt + C}{\cos t}\\
+\amp = \frac{\ln |\sec t + \tan t| + C}{\cos t}
+\end{align*}
+</div>
+</div>
+<div class="para" id="sec-1st-order-linear-23-2-1-3-2">Please make sure you know how to integrate <span class="process-math">\(\sec t\text{.}\)</span>
+</div>
+</li>
+</ul></article></details><details id="sec-1st-order-linear-24" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.5.7</span><span class="period">.</span><span class="space"> </span><span class="title">Solve<div class="displaymath process-math">
+\begin{equation*}
+y' + y = g(t), \, y(0) = 0, \, g(t) = \begin{cases} 1 \amp 0 \leq t \leq 1 \\ 0 \amp t \gt 1 \end{cases}\text{.}
+\end{equation*}
+</div>Find the solution of the IVP that is continuous everywhere.</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="sec-1st-order-linear-24-2-1">General principle: Solve the ODE on each individual interval. Determine the constants by either the initial condition or continuity at the boundary .</div> <div class="para" id="sec-1st-order-linear-24-2-2">On the interval <span class="process-math">\([0,1], \, y' + y = 1.\)</span>
+</div> <ul class="disc" id="sec-1st-order-linear-24-2-3">
+<li id="sec-1st-order-linear-24-2-3-1"><div class="para" id="p-derived-sec-1st-order-linear-24-2-3-1">Integrating factor: <span class="process-math">\(\mu(t) = e^{\int dt} = e^t.\)</span>
+</div></li>
+<li id="sec-1st-order-linear-24-2-3-2"><div class="para" id="p-derived-sec-1st-order-linear-24-2-3-2">General solution:<div class="displaymath process-math">
+\begin{equation*}
+y(t) = \frac{\int e^t \cdot 1 \, dt + C}{e^t} = \frac{e^t + C}{e^t} = 1 + Ce^{-t}.
+\end{equation*}
+</div>
+</div></li>
+<li id="sec-1st-order-linear-24-2-3-3"><div class="para" id="p-derived-sec-1st-order-linear-24-2-3-3">Initial condition <span class="process-math">\(y(0) = 0 \Rightarrow 1 + Ce^0 = 0 \Rightarrow C = -1.\)</span>
+</div></li>
+<li id="sec-1st-order-linear-24-2-3-4"><div class="para" id="p-derived-sec-1st-order-linear-24-2-3-4">We conclude that on <span class="process-math">\([0,1], \, y(t) = 1 - e^{-t}.\)</span>
+</div></li>
+</ul> <div class="para" id="sec-1st-order-linear-24-2-4">On the interval <span class="process-math">\((1, \infty), \, y' + y = 0.\)</span>
+</div> <ul class="disc" id="sec-1st-order-linear-24-2-5">
+<li id="sec-1st-order-linear-24-2-5-1"><div class="para" id="p-derived-sec-1st-order-linear-24-2-5-1">Integrating factor: <span class="process-math">\(\mu(t) = e^{\int dt} = e^t.\)</span>
+</div></li>
+<li id="sec-1st-order-linear-24-2-5-2"><div class="para" id="p-derived-sec-1st-order-linear-24-2-5-2">General solution:<div class="displaymath process-math">
+\begin{equation*}
+y(t) = \frac{\int e^t \cdot 0 \, dt + C}{e^t} = \frac{C}{e^t} = Ce^{-t}.
+\end{equation*}
+</div>
+</div></li>
+<li id="sec-1st-order-linear-24-2-5-3"><div class="para" id="p-derived-sec-1st-order-linear-24-2-5-3">On <span class="process-math">\((1, \infty), \, y(t) = Ce^{-t}.\)</span>
+</div></li>
+</ul> <div class="para logical" id="sec-1st-order-linear-24-2-6">
+<div class="para">So the solution of the IVP is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y(t) = \begin{cases} 1 - e^{-t} \amp t \in [0,1] \\ Ce^{-t} \amp t \in (1,\infty) \end{cases}
+\end{equation*}
+</div>
+</div> <div class="para" id="sec-1st-order-linear-24-2-7">To make sure <span class="process-math">\(y(t)\)</span> is continuous, we need <span class="process-math">\(\lim_{t \to 1^-} y(t) = \lim_{t \to 1^+} y(t).\text{.}\)</span> This is to say <span class="process-math">\(1 - e^{-1} = Ce^{-1} \Rightarrow C = (e - 1).\)</span>
+</div> <div class="para logical" id="sec-1st-order-linear-24-2-8">
+<div class="para">Conclusion: the continuous solution of the IVP is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y(t) = \begin{cases} 1 - e^{-t} \amp t \in [0,1] \\ (e - 1)e^{-t} \amp t \in (1,\infty) \end{cases}
+\end{equation*}
+</div>
+</div></article></details></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-classification.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-separable-equations.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
