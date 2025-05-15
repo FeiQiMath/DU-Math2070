@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-classification" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Classification of Differential Equations</title>
+
+  <p>We saw in <xref ref="sec-basic-concepts"/> that differential equations can be classified by</p>
+<ul>
+  <li>Types: ODE and PDE.</li>
+  <li>Order: the order of highest derivative.</li>
+</ul>
+<p>We now focus on the another important classification: linearity. </p>
+
+<p>In this course, we mainly focus on <term>linear ODEs</term>, i.e.,</p>
+<me>
+  F(t, y, y', \ldots, y^{(n)}) = 0,
+</me>
+<p>where <m>F</m> is linear in <m>y, y', \ldots, y^{(n)}</m>. Equivalently, all <m>\frac{\partial F}{\partial y^{(i)}}</m> depend only on <m>t</m> and do not depend on <m>y, y', \ldots, y^{(n)}</m>. Otherwise, we say the ODE is <term>nonlinear</term>.</p>
+
+<p>For people who have not seen partial derivatives before, we review the definition here. Given an <m>n</m>-variable function <m>F(x_1, \ldots, x_n)</m>, the partial derivative <m>\frac{\partial F}{\partial x_i}</m> is obtained by taking the derivative with respect to <m>x_i</m> while treating all other <m>x_j</m>’s as constants.</p>
+
+<example>
+  <title>Partial derivatives of<m>F(x,y) = x^2 + y^2</m></title>
+  <statement>There are two variables <m>x,y</m>. The partial derivatives are
+  <me>
+    \frac{\partial F}{\partial x} = 2x, \quad \frac{\partial F}{\partial y} = 2y.
+  </me>
+</statement>
+</example>
+
+<example>
+  <title>Partial derivatives of <m>F(x,y) = \sqrt{x^2 + y^2}</m></title>
+  <statement>There are two variables <m>x,y</m>. The partial derivatives are
+  <me>
+    \frac{\partial F}{\partial x} = \frac{x}{\sqrt{x^2+y^2}}, \quad \frac{\partial F}{\partial y} = \frac{y}{\sqrt{x^2+y^2}}.
+  </me>
+</statement>
+</example>
+
+<example>
+  <title>Determine if the ODE <m>y'' - 2y' + y = \sqrt{t}</m> is linear.</title>
+  <statement>
+    <p>Written in the general form: <m>y'' - 2y' + y - \sqrt{t} = 0.</m></p>
+    <p>So <m>F(t, y, y', y'') = y'' - 2y' + y - \sqrt{t}.</m></p>
+    <p>We check that 
+    <me>
+      \frac{\partial F}{\partial y} = 1, \quad \frac{\partial F}{\partial y'} = -2, \quad \frac{\partial F}{\partial y''} = 1,
+    </me>
+    all independent of <m>y, y', \ldots, y^{(n)}.</m>. So <m>y'' - 2y' + y = \sqrt{t}</m> is a linear ODE.</p>
+  </statement>
+</example>
+
+<example>
+  <title>Determine if the ODE <m>y' = \sin y</m> is linear.</title>
+  <statement>
+    <p>Written in the general form: <m>y' - \sin y = 0.</m></p>
+    <p>So <m>F(t, y, y') = y' - \sin y.</m></p>
+    <p>We check that <me>\frac{\partial F}{\partial y} = \cos y</me> that depends on <m>y.</m></p>
+    <p>So <m>y' = \sin y</m> is a nonlinear ODE.</p>
+  </statement>
+</example>
+<example>
+  <title>Determine if the ODE <m>y'' - \sqrt{t}y' + \sin(t^2) y = t^3</m> is linear.</title>
+  <statement>
+    <p>Written in the general form: <m>y'' - \sqrt{t}y' + \sin(t^2) y - t^3 = 0.</m></p>
+    <p>So <m>F(t, y, y', y'') = y'' - \sqrt{t}y' + \sin(t^2) y - t^3.</m></p>
+    <p>We check that <m>\frac{\partial F}{\partial y''} = 1</m>, <m>\frac{\partial F}{\partial y'} = -\sqrt{t}</m>, <m>\frac{\partial F}{\partial y} = \sin(t^2),</m></p>
+    <p>all independent of <m>y, y', \ldots, y^{(n)}.</m></p>
+    <p>So <m>y'' - \sqrt{t}y' + \sin(t^2) y = t^3</m> is a linear ODE.</p>
+  </statement>
+</example>
+<p>Generally, every <m>n</m>th order linear ODE can be written as</p>
+<me>
+  y^{(n)} + a_1(t)y^{(n-1)} + \cdots + a_{n-1}(t)y' + a_n(t)y = g(t).
+</me>
+<p>This is the <term>standard form</term> of a linear ODE (where the coefficient of the highest derivative is 1).</p>
+<p>We know a lot about linear ODEs, but very little about nonlinear ODEs.</p>
+
+
+</section>

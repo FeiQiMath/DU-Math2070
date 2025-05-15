@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-separable-equations" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Separable Equations</title>
+<p>In general, a nonlinear ODE is very difficult to solve. We can only handle a few special types of nonlinear ODEs. In this section, we study the <term>separable ODEs</term>, namely, an ODE of the form:
+  <me>\frac{dy}{dx} = f(y)g(x),</me>
+i.e., the derivative <m>dy/dx</m> is a product of two functions, one depends only on <m>x</m>, the other depends only on <m>y</m>. To solve this ODE, we first separate the variables,
+  <me>\frac{dy}{dx} = f(y)g(x) \Rightarrow \frac{dy}{f(y)} = g(x)dx</me>
+then integrate both sides,
+<me>\int \frac{dy}{f(y)} = \int g(x)dx</me>
+The process yields a one-parameter family of <alert>implicit</alert> solutions.</p>
+<example xml:id="ex-separable-1">
+<title>Solve the separable ODE <m>\frac{dy}{dx} = \frac{e^x - x}{e^{-y} + y}</m></title>
+<statement>
+<ul>
+    <li>Separate the variables:
+  <me>  (e^x - x)dx = (e^{-y} + y)dy</me>
+</li>
+<li><p>Integrate both sides:
+  <md><mrow>\amp \int (e^x - x)dx = \int (e^{-y} + y)dy</mrow>
+  <mrow>\implies \amp e^x - \frac{1}{2}x^2 = -e^{-y} + \frac{1}{2}y^2 + C</mrow></md></p>   
+<p>We thus obtain a one-parameter family of <em>implicit</em> solutions</p></li>
+</ul>
+</statement>
+</example>
+
+<example xml:id="ex-separable-2">
+<title>Solve the IVP <m>\frac{dy}{dx} = \frac{x^2 + \sin x}{y}, \quad y(0) = 1</m></title>
+<statement>
+<ul>
+  <li>Separate the variables:
+  <me>  ydy = (x^2 + \sin x)dx</me>
+</li>
+<li><p>Integrate both sides:
+  <md><mrow>\amp \int ydy = \int (x^2 + \sin x)dx</mrow>
+  <mrow>\implies \amp \frac{1}{2}y^2 = \frac{1}{3}x^3 - \cos x + C</mrow></md>
+</p>
+<p>We thus obtain a one-parameter family of <em>implicit</em> solutions</p>
+</li>
+<li><p>The initial condition should give us a particular solution
+    <me>y(0) = 1 \implies \frac{1}{2} = 0 - 1 + C \implies C = \frac{3}{2}</me>
+</p>
+<p> We thus obtain a particular implicit solution
+  <me>\frac{1}{2}y^2 = \frac{1}{3}x^3 - \cos x + \frac{3}{2}</me></p>
+</li>
+<li><p> This solution can actually be made explicit by solving for <m>y</m> in terms of <m>x</m>. Multiply both sides by 2 and take the square root,
+  <md><mrow>\amp y^2 = \frac{2}{3}x^3 - 2\cos x + 3</mrow>
+  <mrow>\amp \implies y = \pm \sqrt{\frac{2}{3}x^3 - 2\cos x + 3}</mrow></md>
+  </p>
+  <p> Since <m>y(0) = 1</m>, we should take the positive branch. So <me>y = \sqrt{\frac{2}{3}x^3 - 2\cos x + 3}</me> is the explicit solution of the IVP.</p>
+</li>
+<li>The solution makes sense when <me>\frac{2}{3}x^3 - 2\cos x + 3 \geq 0.</me> Solving this inequality is not possible without a computer. So we will leave it as is. </li>
+</ul>
+<p>Conclusion: The solution is <me>y = \sqrt{\frac{2}{3}x^3 - 2\cos x + 3}.</me> It is defined when <me>\frac{2}{3}x^3 - 2\cos x + 3 \geq 0.</me> </p>
+</statement>
+</example>
+
+<p><alert>Implicit solution vs explicit solution</alert></p>
+<ul>
+  <li>If you are given an ODE without initial values, then a one-parameter family of <em>implicit</em> solutions is sufficient.</li>
+  <li>If you are given an IVP, whenever possible, you should try to get the <em>explicit</em> solution and the <em>interval of definition</em> (the interval where the solution is defined).</li>
+</ul>
+
+<p><alert>Remark.</alert> </p>
+<ul>
+<li> Suppose we have an initial condition specified for the ODE in <xref ref="ex-separable-1"/>, which determines a definite <m>C</m>. But it is impossible to solve for <m>y</m> in terms of <m>x</m> to get the explicit solution. In that case, we have to be satisfied with the implicit solution and ask a computer to handle the function values.</li>
+<li> In <xref ref="ex-separable-2"/>, we managed to solve for <m>y</m> in terms of <m>x</m>, but was not able to solve for the interval of definition by hand. Nevertheless, we can still ask a computer to solve for the interval of definition. For <xref ref="ex-separable-2"/>, the computer gives us the interval of definition as <m>(-1.69533, +\infty)</m>.
+</li>
+<li> The interval of definition, as its name hints, should consist of <alert>only one interval</alert> that contains the initial <m>x</m>-value. It should also be an <alert>open interval</alert>. We do not include the endpoints because the derivative is not defined there. In <xref ref="ex-separable-2"/>, the computer would say that the solution makes sense on <m>[-1.69533, +\infty)</m>. But we should exclude the endpoint <m>-1.69533</m> and use <m>(-1.69533, +\infty)</m> instead. </li>
+</ul>
+
+<example xml:id="ex-separable-3">
+<title>Solve the ODE <m>y' = xy^3(1 + x^2)^{-1/2}</m></title>
+<statement>
+<ul>
+<li>Separate the variables:
+  <me>  \frac{dy}{dx} = y^3 \cdot \frac{x}{\sqrt{1 + x^2}} \implies \frac{dy}{y^3} = \frac{x}{\sqrt{1 + x^2}}dx</me>
+</li>
+<li>Integrate both sides:
+  <me> \int \frac{dy}{y^3} = \int \frac{x}{\sqrt{1 + x^2}}dx \implies -\frac{1}{2}y^2 = \sqrt{1 + x^2} + C</me>
+</li>
+</ul>
+<p>We thus obtain a one-parameter family of <em>implicit</em> solutions</p>
+</statement>
+</example>
+<example xml:id="ex-separable-4">
+<title>Solve the IVP <m>y' = xy^3(1 + x^2)^{-1/2}, \, y(\sqrt{3}) = \frac{1}{2}</m></title>
+<statement>
+<p>We have obtained a one-parameter family of implicit solutions in <xref ref="ex-separable-3"/>, namely, 
+<me>-\frac{1}{2}y^2 = \sqrt{1 + x^2} + C.</me>
+We shall continue from here. </p>
+<ul>
+<li> We determine the constant <m>C</m> by using the initial condition:
+  <me>y(\sqrt{3}) = \frac{1}{2} \implies -\frac{1}{2} \cdot (1/2)^2 = \sqrt{1 + 3} + C \implies C = -4.</me>
+</li>
+<li> The implicit solution we thus obtained is
+  <me>-\frac{1}{2y^2} = \sqrt{1 + x^2} - 4.</me>
+  It is possible to solve an explicit solution. Take the negative reciprocal and simplify,
+  <me>y^2 = \frac{1}{2(4 - \sqrt{1 + x^2})}= \frac{1}{8 - 2\sqrt{1 + x^2}}.</me>
+  Now take the square root. Since <m>y(\sqrt{3}) = \frac{1}{2} \gt 0</m>, we take the <em>positive</em> branch, thus
+  <me>y = \sqrt{\frac{1}{8 - 2\sqrt{1 + x^2}}}.</me>
+</li>
+<li>
+    Solution exists when 
+    <md>
+    <mrow>\amp 8 - 2\sqrt{1 + x^2} \gt 0 \implies  2\sqrt{1+x^2}\lt 8\implies 1+x^2 \lt 16 </mrow>
+    <mrow>\implies \amp x^2 \lt 15 \implies x \in (-\sqrt{15}, \sqrt{15})</mrow>
+    </md>
+</li>
+</ul>
+<p>Conclusion: The solution is <me>y = \sqrt{\frac{1}{8 - 2\sqrt{1 + x^2}}}.</me> The interval of definition is <m>(-\sqrt{15}, \sqrt{15})</m>.</p>
+</statement>
+</example>
+</section>

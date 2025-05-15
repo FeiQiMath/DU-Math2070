@@ -11,5 +11,7 @@
   <xi:include href="sec-basic-concepts.ptx" />
   <xi:include href="sec-why-study-DEs.ptx" />
   <xi:include href="sec-geometric-interpretation.ptx" />
-
+  <xi:include href="sec-classification.ptx" />
+  <xi:include href="sec-1st-order-linear.ptx" />
+  <xi:include href="sec-separable.ptx" />
 </chapter>
