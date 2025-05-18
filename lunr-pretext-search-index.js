@@ -316,9 +316,9 @@ var ptx_lunr_docs = [
   "body": " Solve    Already in standard form.  Integrating factor:  Here we ignored the absolute value (why can we do that?).  General solution:  Please make sure you know how to integrate .     "
 },
 {
-  "id": "sec-1st-order-linear-24",
+  "id": "ex-1st-order-linear-piecewise",
   "level": "2",
-  "url": "sec-1st-order-linear.html#sec-1st-order-linear-24",
+  "url": "sec-1st-order-linear.html#ex-1st-order-linear-piecewise",
   "type": "Example",
   "number": "1.5.7",
   "title": "Solve<div class=\"displaymath process-math\">\n\\begin{equation*}\ny' + y = g(t), \\, y(0) = 0, \\, g(t) = \\begin{cases} 1 \\amp 0 \\leq t \\leq 1 \\\\ 0 \\amp t \\gt 1 \\end{cases}\\text{.}\n\\end{equation*}\n<\/div>Find the solution of the IVP that is continuous everywhere.",
@@ -331,7 +331,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.6",
   "title": "Separable Equations",
-  "body": " Separable Equations  In general, a nonlinear ODE is very difficult to solve. We can only handle a few special types of nonlinear ODEs. In this section, we study the separable ODEs , namely, an ODE of the form: i.e., the derivative is a product of two functions, one depends only on , the other depends only on . To solve this ODE, we first separate the variables, then integrate both sides, The process yields a one-parameter family of implicit solutions.   Solve the separable ODE    Separate the variables:   Integrate both sides:  We thus obtain a one-parameter family of implicit solutions      Solve the IVP    Separate the variables:   Integrate both sides:   We thus obtain a one-parameter family of implicit solutions   The initial condition should give us a particular solution   We thus obtain a particular implicit solution   This solution can actually be made explicit by solving for in terms of . Multiply both sides by 2 and take the square root,   Since , we should take the positive branch. So is the explicit solution of the IVP.   The solution makes sense when Solving this inequality is not possible without a computer. So we will leave it as is.   Conclusion: The solution is It is defined when     Implicit solution vs explicit solution   If you are given an ODE without initial values, then a one-parameter family of implicit solutions is sufficient.  If you are given an IVP, whenever possible, you should try to get the explicit solution and the interval of definition (the interval where the solution is defined).   Remark.    Suppose we have an initial condition specified for the ODE in , which determines a definite . But it is impossible to solve for in terms of to get the explicit solution. In that case, we have to be satisfied with the implicit solution and ask a computer to handle the function values.  In , we managed to solve for in terms of , but was not able to solve for the interval of definition by hand. Nevertheless, we can still ask a computer to solve for the interval of definition. For , the computer gives us the interval of definition as .  The interval of definition, as its name hints, should consist of only one interval that contains the initial -value. It should also be an open interval . We do not include the endpoints because the derivative is not defined there. In , the computer would say that the solution makes sense on . But we should exclude the endpoint and use instead.    Solve the ODE    Separate the variables:   Integrate both sides:    We thus obtain a one-parameter family of implicit solutions     Solve the IVP   We have obtained a one-parameter family of implicit solutions in , namely, We shall continue from here.   We determine the constant by using the initial condition:   The implicit solution we thus obtained is It is possible to solve an explicit solution. Take the negative reciprocal and simplify, Now take the square root. Since , we take the positive branch, thus   Solution exists when    Conclusion: The solution is The interval of definition is .    "
+  "body": " Separable Equations  In general, a nonlinear ODE is very difficult to solve. We can only handle a few special types of nonlinear ODEs. In this section, we study the separable ODEs , namely, an ODE of the form: i.e., the derivative is a product of two functions, one depends only on , the other depends only on . To solve this ODE, we first separate the variables, then integrate both sides, The process yields a one-parameter family of implicit solutions.   Solve the separable ODE    Separate the variables:   Integrate both sides:  We thus obtain a one-parameter family of implicit solutions      Solve the IVP    Separate the variables:   Integrate both sides:   We thus obtain a one-parameter family of implicit solutions   The initial condition should give us a particular solution   We thus obtain a particular implicit solution   This solution can actually be made explicit by solving for in terms of . Multiply both sides by 2 and take the square root,   Since , we should take the positive branch. So is the explicit solution of the IVP.   The solution makes sense when Solving this inequality is not possible without a computer. So we will leave it as is.   Conclusion: The solution is It is defined when     Implicit solution vs explicit solution   If you are given an ODE without initial values, then a one-parameter family of implicit solutions is sufficient.  If you are given an IVP, whenever possible, you should try to get the explicit solution and the interval of definition (the interval where the solution is defined).   Remark.    Suppose we have an initial condition specified for the ODE in , which determines a definite . But it is impossible to solve for in terms of to get the explicit solution. In that case, we have to be satisfied with the implicit solution and ask a computer to handle the function values.  In , we managed to solve for in terms of , but was not able to solve for the interval of definition by hand. Nevertheless, we can still ask a computer to solve for the interval of definition. For , the computer gives us the interval of definition as .  The interval of definition, as its name hints, should consist of only one interval that contains the initial -value. It should also be an open interval . We do not include the endpoints because the derivative is not defined there. In , the computer would say that the solution makes sense on . But we should exclude the endpoint and use instead.    Solve the ODE    Separate the variables:   Integrate both sides:    We thus obtain a one-parameter family of implicit solutions     Solve the IVP   We have obtained a one-parameter family of implicit solutions in , namely, We shall continue from here.   We determine the constant by using the initial condition:   The implicit solution we thus obtained is It is possible to solve an explicit solution. Take the negative reciprocal and simplify, Now take the square root. Since , we take the positive branch, thus   Solution exists when    Conclusion: The solution is The interval of definition is .     Solve the IVP   We have obtained a one-parameter family of implicit solutions in , namely, We shall continue from here.   We determine the constant by using the initial condition:   The implicit solution we thus obtained is It is possible to solve an explicit solution. Take the negative reciprocal and simplify, Now take the square root. Since , we take the negative branch, thus   Solution exists when    Conclusion: The solution is The interval of definition is .    Remark. The explicit solution contains more information than the implicit solution. Indeed, Observe that  The positive or negative branch cannot be seen in the implicit solution.  The interval of definition cannot be determined by the implicit solution.  This is why whenever it is possible, we should try to solve for the explicit solution and the interval of definition.  Remark. From and , we also see that the positive or negative branch and the interval of definition depends on the initial condition. Thus these notions make no sense for a one-parameter family of solutions. This is why without the initial condition, we can leave the solution in the implicit form.  "
 },
 {
   "id": "sec-separable-equations-2",
@@ -377,6 +377,96 @@ var ptx_lunr_docs = [
   "number": "1.6.4",
   "title": "Solve the IVP <span class=\"process-math\">\\(y' = xy^3(1 + x^2)^{-1\/2}, \\, y(\\sqrt{3}) = \\frac{1}{2}\\)<\/span>.",
   "body": " Solve the IVP   We have obtained a one-parameter family of implicit solutions in , namely, We shall continue from here.   We determine the constant by using the initial condition:   The implicit solution we thus obtained is It is possible to solve an explicit solution. Take the negative reciprocal and simplify, Now take the square root. Since , we take the positive branch, thus   Solution exists when    Conclusion: The solution is The interval of definition is .   "
+},
+{
+  "id": "ex-separable-5",
+  "level": "2",
+  "url": "sec-separable-equations.html#ex-separable-5",
+  "type": "Example",
+  "number": "1.6.5",
+  "title": "Solve the IVP <span class=\"process-math\">\\(y' = xy^3(1 + x^2)^{-1\/2}, \\, y(\\sqrt{3}) = -\\frac{1}{4}\\)<\/span>.",
+  "body": " Solve the IVP   We have obtained a one-parameter family of implicit solutions in , namely, We shall continue from here.   We determine the constant by using the initial condition:   The implicit solution we thus obtained is It is possible to solve an explicit solution. Take the negative reciprocal and simplify, Now take the square root. Since , we take the negative branch, thus   Solution exists when    Conclusion: The solution is The interval of definition is .   "
+},
+{
+  "id": "sec-existence-uniqueness",
+  "level": "1",
+  "url": "sec-existence-uniqueness.html",
+  "type": "Section",
+  "number": "1.7",
+  "title": "Existence and Uniqueness of Solutions",
+  "body": " Existence and Uniqueness of Solutions  For the application of ODEs in science and engineering, when we modeled a problem into an initial value problem, normally we expect the solution to exist and be unique. However, this is not always the case.   Pathological IVP We first study the initial value problem (IVP)  This IVP has two solutions :   If a system is modeled by this IVP, then we cannot possibly predict how the system behaves. Such problem can also happen for linear ODeS.       Standard form:   Integrating factor:   General solution:    Plug in the initial value: This means for every real number , is a solution of the IVP. The IVP has infinitely many solutions.          We have obtained the general solution in :  Plug in the initial value: , impossible. In other words, The IVP has no solutions.      Summary: A pathological IVP may have no solution \/ more than one solution \/ infinitely many solutions . To determine if an IVP is reasonably posed, we need the existence and uniqueness theorem.    Existence and Uniqueness Theorem: Linear version.   Existence and Uniqueness Theorem: Linear version.   Consider the IVP     where the ODE is linear and in its standard form . Assume that:   Both and are continuous on an open interval  The open interval contains the initial time   Then there exists a unique function  over the interval that solves the IVP.     Interval of Existence and Uniqueness   The interval of existence and uniqueness is an where the solution of the IVP exists uniquely. For brevity, we call it the interval of existence .    allows us to determine the interval of existence without solving it. To obtain the interval, we follow the following procedure.   Find out the standard form of the ODE and specify the initial condition  Find out the singular points, which are the points where and are not continuous. These singular points separate the real line into disjoint open intervals  If is a singular point, we have a pathological IVP. If is not a singular point, then the interval of existence is just the interval that contains that are bounded by the singular points.        Standard form:  Both and blow up at So is a singular point.  Interval of existence is     Remark. The solution of the IVP is that is defined on So if we talk about the interval of definition of the solution, it is But this doesn't change the fact that is a singular point. Generally, we should not be concerned about the solution outside the interval of existence, which is still       Standard form:  is not continuous when and  is not continuous when   Interval of existence =         The standard form is  is not continuous when or  Recall:  So is not continuous when or Note that and  is not continuous when , or where  So the singular points are and   Interval of existence =    Remark: Recall in , we studied the IVP Since is not continuous at , the IVP only has a unique solution on Indeed, for every number  is a solution (the IVP has infinitely many solutions). Only with the continuity requirement did us obtain a unique solution.    Existence and Uniqueness Theorem: Nonlinear case   Existence and Uniqueness Theorem: Nonlinear case   Consider the IVP   Assume that:   The function is continuous NEAR  i.e., one can find small such that is continuous in the rectangular region   The function is continuous NEAR    Then a unique solution  exists NEAR  i.e., there exists a small such that a solution exists on  Likewise, any IVP that does not satisfy the conditions of the theorem is pathological .    Remarks:   The theorem is not as strong as the linear version. It only concludes local existence. It does not tell us the interval of existence.  Nevertheless, the theorem tells if an IVP is reasonably formulated.   Example 1:   is continuous everywhere.  is continuous when   (away from  So the IVP has a unique solution near  Example 2:   is continuous everywhere.  is continuous when   (on  The IVP does not have a unique solution.  Exercise: Check that and are all solutions of the IVP.  Example 3. Find out all , such that the IVP  is reasonably formulated.  is continuous when  is continuous when  So should satisfy  Remark: You should always take the “interior” of the region where the functions and are continuous. You should not keep the boundary (won’t require in this course).   "
+},
+{
+  "id": "ex-existence-uniqueness-1",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#ex-existence-uniqueness-1",
+  "type": "Example",
+  "number": "1.7.1",
+  "title": "<span class=\"process-math\">\\(ty' + (t - 1)y = -e^{-t}, \\, y(0) = 1\\)<\/span>.",
+  "body": "     Standard form:   Integrating factor:   General solution:    Plug in the initial value: This means for every real number , is a solution of the IVP. The IVP has infinitely many solutions.    "
+},
+{
+  "id": "ex-existence-uniqueness-2",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#ex-existence-uniqueness-2",
+  "type": "Example",
+  "number": "1.7.2",
+  "title": "<span class=\"process-math\">\\(ty' + (t - 1)y = -e^{-t}, \\, y(0) = 0\\)<\/span>.",
+  "body": "     We have obtained the general solution in :  Plug in the initial value: , impossible. In other words, The IVP has no solutions.     "
+},
+{
+  "id": "thm-existence-uniqueness-linear",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#thm-existence-uniqueness-linear",
+  "type": "Theorem",
+  "number": "1.7.3",
+  "title": "Existence and Uniqueness Theorem: Linear version..",
+  "body": " Existence and Uniqueness Theorem: Linear version.   Consider the IVP     where the ODE is linear and in its standard form . Assume that:   Both and are continuous on an open interval  The open interval contains the initial time   Then there exists a unique function  over the interval that solves the IVP.   "
+},
+{
+  "id": "def-existence-uniqueness-interval",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#def-existence-uniqueness-interval",
+  "type": "Definition",
+  "number": "1.7.4",
+  "title": "Interval of Existence and Uniqueness.",
+  "body": " Interval of Existence and Uniqueness   The interval of existence and uniqueness is an where the solution of the IVP exists uniquely. For brevity, we call it the interval of existence .   "
+},
+{
+  "id": "ex-existence-uniqueness-3",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#ex-existence-uniqueness-3",
+  "type": "Example",
+  "number": "1.7.5",
+  "title": "<span class=\"process-math\">\\(ty' + (t - 1)y = -e^{-t}, \\, y(\\ln 2) = \\frac{1}{2}\\)<\/span>.",
+  "body": "     Standard form:  Both and blow up at So is a singular point.  Interval of existence is    "
+},
+{
+  "id": "ex-existence-uniqueness-4",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#ex-existence-uniqueness-4",
+  "type": "Example",
+  "number": "1.7.6",
+  "title": "<span class=\"process-math\">\\((t - 3)y' + (\\ln t)y = 2t, \\, y(1) = 2.\\)<\/span>.",
+  "body": "     Standard form:  is not continuous when and  is not continuous when   Interval of existence =   "
+},
+{
+  "id": "ex-existence-uniqueness-5",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#ex-existence-uniqueness-5",
+  "type": "Example",
+  "number": "1.7.7",
+  "title": "<span class=\"process-math\">\\(\\sin(2t) y' + \\tan(4t) y = \\frac{1}{t}, \\, y\\left(\\frac{\\pi}{4}\\right) = 0.\\)<\/span>.",
+  "body": "     The standard form is  is not continuous when or  Recall:  So is not continuous when or Note that and  is not continuous when , or where  So the singular points are and   Interval of existence =   "
+},
+{
+  "id": "thm-existence-uniqueness-nonlinear",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#thm-existence-uniqueness-nonlinear",
+  "type": "Theorem",
+  "number": "1.7.8",
+  "title": "Existence and Uniqueness Theorem: Nonlinear case.",
+  "body": " Existence and Uniqueness Theorem: Nonlinear case   Consider the IVP   Assume that:   The function is continuous NEAR  i.e., one can find small such that is continuous in the rectangular region   The function is continuous NEAR    Then a unique solution  exists NEAR  i.e., there exists a small such that a solution exists on  Likewise, any IVP that does not satisfy the conditions of the theorem is pathological .   "
 },
 {
   "id": "sec-HW1",

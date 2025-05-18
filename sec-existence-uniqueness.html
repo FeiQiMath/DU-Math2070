@@ -1,0 +1,392 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Existence and Uniqueness of Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="A Concise Introduction to Differential Equation at the University of Denver">
+<meta property="book:author" content="Fei Qi">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.6.5';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.052b07dd5d5bd82e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Math-2070-Notes.html"><span class="title">A Concise Introduction to Differential Equation at the University of Denver</span></a></h1>
+<p class="byline">Fei Qi</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-separable-equations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="First-order-ODE.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-Prerequisites.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter"><div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div></li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="First-order-ODE.html" class="internal"><span class="codenumber">1</span> <span class="title">First-order Differential Equations</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basic-concepts.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Basic Concepts</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-why-study-DEs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Why study differential equations?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Newtons-law-of-cooling" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Newton’s law of cooling</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Water-pollution-model" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Water pollution model</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Initial-value-problem" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Initial value problem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="geometric-interpretation.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Geometric interpretation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-classification.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Classification of Differential Equations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-1st-order-linear.html" class="internal"><span class="codenumber">1.5</span> <span class="title">First-order Linear ODEs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-separable-equations.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Separable Equations</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-existence-uniqueness.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Existence and Uniqueness of Solutions</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-1" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Pathological IVP</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-2" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Existence and Uniqueness Theorem: Linear version.</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-3" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Existence and Uniqueness Theorem: Nonlinear case</span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-Prerequisites.html" class="internal"><span class="codenumber">2</span> <span class="title">Chapter Title</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-HW1.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Homework 1</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="HW2.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Homework 2</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-existence-uniqueness"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">1.7</span><span class="space"> </span><span class="title">Existence and Uniqueness of Solutions</span>
+</h2>
+<div class="para" id="sec-existence-uniqueness-2">For the application of ODEs in science and engineering, when we modeled a problem into an initial value problem, normally we expect the solution to exist and be unique. However, this is not always the case.</div>
+<section class="subsection" id="subsec-existence-uniqueness-1"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.7.1</span><span class="space"> </span><span class="title">Pathological IVP</span>
+</h3>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-existence-uniqueness-1.html">
+\begin{equation*}
+\frac{dy}{dx} = x\sqrt{y}, \, y(0) = 0
+\end{equation*}
+</div>
+<div class="para logical" id="subsec-existence-uniqueness-1-3">
+<div class="para">This IVP has <em class="alert">two solutions</em>:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y = \frac{1}{16}x^2 \text{ and }y = 0.
+\end{equation*}
+</div>
+</div>
+<div class="para" id="subsec-existence-uniqueness-1-4">If a system is modeled by this IVP, then we cannot possibly predict how the system behaves. Such problem can also happen for linear ODeS.</div>
+<details id="ex-existence-uniqueness-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.1</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(ty' + (t - 1)y = -e^{-t}, \, y(0) = 1\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><ul class="disc" id="ex-existence-uniqueness-1-2-1">
+<li id="ex-existence-uniqueness-1-2-1-1"><div class="para" id="p-derived-ex-existence-uniqueness-1-2-1-1">Standard form:</div></li>
+<li id="ex-existence-uniqueness-1-2-1-3"><div class="para" id="p-derived-ex-existence-uniqueness-1-2-1-3">Integrating factor:</div></li>
+<li id="ex-existence-uniqueness-1-2-1-5"><div class="para" id="p-derived-ex-existence-uniqueness-1-2-1-5">General solution:</div></li>
+<li id="ex-existence-uniqueness-1-2-1-8"><div class="para" id="p-derived-ex-existence-uniqueness-1-2-1-8">Plug in the initial value:<div class="displaymath process-math">
+\begin{equation*}
+y(0) = 1 \implies 1 + 0 = 1
+\end{equation*}
+</div>This means for every real number <span class="process-math">\(C\text{,}\)</span> <span class="process-math">\(y(t) = e^{-t} + Cte^{-t}\)</span> is a solution of the IVP. <em class="alert">The IVP has infinitely many solutions.</em>
+</div></li>
+</ul></article></details><details id="ex-existence-uniqueness-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.2</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(ty' + (t - 1)y = -e^{-t}, \, y(0) = 0\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><ul class="disc" id="ex-existence-uniqueness-2-2-1">
+<li id="ex-existence-uniqueness-2-2-1-1"><div class="para" id="p-derived-ex-existence-uniqueness-2-2-1-1">We have obtained the general solution in <a href="sec-existence-uniqueness.html#ex-existence-uniqueness-1" class="xref" data-knowl="./knowl/xref/ex-existence-uniqueness-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.7.1: ty' + (t - 1)y = -e^{-t}, \, y(0) = 1">Example 1.7.1</a>: <span class="process-math">\(y(t) = e^{-t} + Cte^{-t}.\)</span>
+</div></li>
+<li id="ex-existence-uniqueness-2-2-1-2"><div class="para" id="p-derived-ex-existence-uniqueness-2-2-1-2">Plug in the initial value: <span class="process-math">\(y(0) = 0 \implies 1 + 0 = 0\text{,}\)</span> impossible. <em class="alert">In other words, The IVP has no solutions.</em>
+</div></li>
+</ul></article></details><div class="para" id="subsec-existence-uniqueness-1-7">Summary: A pathological IVP may have <em class="alert">no solution</em> / <em class="alert">more than one solution</em> / <em class="alert">infinitely many solutions</em>. To determine if an IVP is reasonably posed, we need the existence and uniqueness theorem.</div></section><section class="subsection" id="subsec-existence-uniqueness-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.7.2</span><span class="space"> </span><span class="title">Existence and Uniqueness Theorem: Linear version.</span>
+</h3>
+<article class="theorem theorem-like" id="thm-existence-uniqueness-linear"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="period">.</span><span class="space"> </span><span class="title">Existence and Uniqueness Theorem: Linear version..</span>
+</h4>
+<div class="para" id="thm-existence-uniqueness-linear-2-1">Consider the IVP</div> <div class="para" id="thm-existence-uniqueness-linear-2-2"><span class="process-math">\(y' + p(t)y = g(t), \, y(t_0) = y_0\)</span></div> <div class="para" id="thm-existence-uniqueness-linear-2-3">where the ODE is <em class="alert">linear</em> and in its <em class="alert">standard form</em>. Assume that:</div> <ol class="decimal" id="thm-existence-uniqueness-linear-2-4">
+<li id="thm-existence-uniqueness-linear-2-4-1"><div class="para" id="p-derived-thm-existence-uniqueness-linear-2-4-1">Both <span class="process-math">\(p(t)\)</span> and <span class="process-math">\(g(t)\)</span> are <em class="alert">continuous</em> on an open interval <span class="process-math">\((a,b).\)</span>
+</div></li>
+<li id="thm-existence-uniqueness-linear-2-4-2"><div class="para" id="p-derived-thm-existence-uniqueness-linear-2-4-2">The open interval <span class="process-math">\((a,b)\)</span> contains the initial time <span class="process-math">\(t_0.\)</span>
+</div></li>
+</ol> <div class="para" id="thm-existence-uniqueness-linear-2-5">Then there <em class="alert">exists a unique function</em> <span class="process-math">\(y = y(t)\)</span> over the interval <span class="process-math">\((a,b)\)</span> that solves the IVP.</div></article><article class="definition definition-like" id="def-existence-uniqueness-interval"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.4</span><span class="period">.</span><span class="space"> </span><span class="title">Interval of Existence and Uniqueness.</span>
+</h4>
+<div class="para" id="def-existence-uniqueness-interval-2-1">The <dfn class="terminology">interval of existence and uniqueness</dfn> is an <span class="process-math">\((a,b)\)</span> where the solution of the IVP exists uniquely. For brevity, we call it the <dfn class="terminology">interval of existence</dfn>.</div></article><div class="para" id="subsec-existence-uniqueness-2-4">
+<a href="sec-existence-uniqueness.html#thm-existence-uniqueness-linear" class="xref" data-knowl="./knowl/xref/thm-existence-uniqueness-linear.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.7.3: Existence and Uniqueness Theorem: Linear version.">Theorem 1.7.3</a> allows us to <em class="alert">determine</em> the interval of existence without solving it. To obtain the interval, we follow the following procedure.</div>
+<ul class="disc" id="subsec-existence-uniqueness-2-5">
+<li id="subsec-existence-uniqueness-2-5-1"><div class="para" id="p-derived-subsec-existence-uniqueness-2-5-1">Find out the standard form of the ODE <span class="process-math">\(y' + p(t)y = g(t).\)</span> and specify the initial condition <span class="process-math">\(y(t_0) = y_0.\)</span>
+</div></li>
+<li id="subsec-existence-uniqueness-2-5-2"><div class="para" id="p-derived-subsec-existence-uniqueness-2-5-2">Find out the singular points, which are the points where <span class="process-math">\(p(t)\)</span> and <span class="process-math">\(g(t)\)</span> are not continuous. These singular points separate the real line into disjoint open intervals</div></li>
+<li id="subsec-existence-uniqueness-2-5-3"><div class="para" id="p-derived-subsec-existence-uniqueness-2-5-3">If <span class="process-math">\(t_0\)</span> is a singular point, we have a pathological IVP. If <span class="process-math">\(t_0\)</span> is not a singular point, then the interval of existence is just the interval that contains <span class="process-math">\(t_0\)</span> that are bounded by the singular points.</div></li>
+</ul>
+<details id="ex-existence-uniqueness-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.5</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(ty' + (t - 1)y = -e^{-t}, \, y(\ln 2) = \frac{1}{2}\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><ul class="disc" id="ex-existence-uniqueness-3-2-1">
+<li id="ex-existence-uniqueness-3-2-1-1"><div class="para" id="p-derived-ex-existence-uniqueness-3-2-1-1">Standard form: <span class="process-math">\(y' + \frac{t - 1}{t}y = -\frac{e^{-t}}{t}.\)</span>
+</div></li>
+<li id="ex-existence-uniqueness-3-2-1-2"><div class="para" id="p-derived-ex-existence-uniqueness-3-2-1-2">Both <span class="process-math">\(\frac{t - 1}{t}\)</span> and <span class="process-math">\(- \frac{e^{-t}}{t}\)</span> blow up at <span class="process-math">\(0.\)</span> So <span class="process-math">\(t = 0\)</span> is a singular point.</div></li>
+<li id="ex-existence-uniqueness-3-2-1-3"><div class="para" id="p-derived-ex-existence-uniqueness-3-2-1-3">Interval of existence is <span class="process-math">\((0, \infty).\)</span>
+</div></li>
+</ul></article></details><div class="para" id="subsec-existence-uniqueness-2-7">
+<em class="alert">Remark.</em>  The solution of the IVP is <span class="process-math">\(y(t) = e^{-t}\)</span> that is defined on <span class="process-math">\((-\infty, \infty).\)</span> So if we talk about the interval of definition of the solution, it is <span class="process-math">\((-\infty, \infty).\)</span> But this doesn’t change the fact that <span class="process-math">\(t = 0\)</span> is a singular point. Generally, we should not be concerned about the solution outside the interval of existence, which is still <span class="process-math">\((0, \infty).\)</span>
+</div>
+<details id="ex-existence-uniqueness-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.6</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\((t - 3)y' + (\ln t)y = 2t, \, y(1) = 2.\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><ul class="disc" id="ex-existence-uniqueness-4-2-1">
+<li id="ex-existence-uniqueness-4-2-1-1"><div class="para" id="p-derived-ex-existence-uniqueness-4-2-1-1">Standard form: <span class="process-math">\(y' + \frac{\ln t}{t - 3}y = \frac{2t}{t - 3}.\)</span>
+</div></li>
+<li id="ex-existence-uniqueness-4-2-1-2"><div class="para" id="p-derived-ex-existence-uniqueness-4-2-1-2">
+<span class="process-math">\(\frac{\ln t}{t - 3}\)</span> is not continuous when <span class="process-math">\(t \lt 0\)</span> and <span class="process-math">\(t = 3.\)</span>
+</div></li>
+<li id="ex-existence-uniqueness-4-2-1-3"><div class="para" id="p-derived-ex-existence-uniqueness-4-2-1-3">
+<span class="process-math">\(\frac{2t}{t - 3}\)</span> is not continuous when <span class="process-math">\(t = 3.\)</span>
+</div></li>
+</ul> <div class="para" id="ex-existence-uniqueness-4-2-2">Interval of existence = <span class="process-math">\((0, 3).\)</span>
+</div></article></details><details id="ex-existence-uniqueness-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.7</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\sin(2t) y' + \tan(4t) y = \frac{1}{t}, \, y\left(\frac{\pi}{4}\right) = 0.\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><ul class="disc" id="ex-existence-uniqueness-5-2-1">
+<li id="ex-existence-uniqueness-5-2-1-1"><div class="para" id="p-derived-ex-existence-uniqueness-5-2-1-1">The standard form is <span class="process-math">\(y' + \frac{\tan 4t}{\sin 2t}y = \frac{1}{t \sin(2t)}.\)</span>
+</div></li>
+<li id="ex-existence-uniqueness-5-2-1-2">
+<div class="para" id="ex-existence-uniqueness-5-2-1-2-1">
+<span class="process-math">\(\frac{\tan 4t}{\sin 2t} = \frac{\sin 4t}{\cos 4t \sin 2t}\)</span> is not continuous when <span class="process-math">\(\cos 4t = 0\)</span> or <span class="process-math">\(\sin 2t = 0.\)</span>
+</div>
+<div class="para logical" id="ex-existence-uniqueness-5-2-1-2-2">
+<div class="para">Recall:</div>
+<div class="displaymath process-math" id="ex-existence-uniqueness-5-2-1-2-2-1">
+\begin{align*}
+\amp \sin \alpha = 0 \text{ when } \alpha = k\pi, \, k = 0, \pm 1, \pm 2, \ldots\\
+\amp \cos \alpha = 0 \text{ when } \alpha = k\pi + \frac{\pi}{2}, \, k = 0, \pm 1, \pm 2, \ldots
+\end{align*}
+</div>
+</div>
+<div class="para logical" id="ex-existence-uniqueness-5-2-1-2-3">
+<div class="para">So <span class="process-math">\(\frac{\tan 4t}{\sin 2t} = \frac{\sin 4t}{\cos 4t \sin 2t}\)</span> is not continuous when <span class="process-math">\(\cos 4t = 0\)</span> or <span class="process-math">\(\sin 2t = 0.\)</span> Note that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\cos 4t = 0 \text{ when }4t = k\pi + \frac{\pi}{2} \implies t = \frac{k\pi}{4} + \frac{\pi}{8}, k = 0, \pm 1, \pm 2, \ldots.
+\end{equation*}
+</div>
+<div class="para">and</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sin 2t = 0 \text{ when }2t = k\pi \implies t = \frac{k\pi}{2}, k = 0, \pm 1, \pm 2, \ldots.
+\end{equation*}
+</div>
+</div>
+</li>
+<li id="ex-existence-uniqueness-5-2-1-3"><div class="para" id="p-derived-ex-existence-uniqueness-5-2-1-3">
+<span class="process-math">\(\frac{1}{t \sin 2t}\)</span> is not continuous when <span class="process-math">\(t = 0\text{,}\)</span> or <span class="process-math">\(t = \frac{k\pi}{2},\)</span> where <span class="process-math">\(k = 0, \pm 1, \pm 2, \ldots.\)</span>
+</div></li>
+<li id="ex-existence-uniqueness-5-2-1-4"><div class="para" id="p-derived-ex-existence-uniqueness-5-2-1-4">So the singular points are <span class="process-math">\(t = \frac{k\pi}{4} + \frac{\pi}{8}, k = 0, \pm 1, \pm 2, \ldots\)</span> and <span class="process-math">\(t = \frac{k\pi}{2}, k = 0, \pm 1, \pm 2, \ldots.\)</span>
+</div></li>
+</ul> <div class="para" id="ex-existence-uniqueness-5-2-2">Interval of existence = <span class="process-math">\((\frac{\pi}{8}, \frac{3\pi}{8}).\)</span>
+</div></article></details><div class="para logical" id="subsec-existence-uniqueness-2-10">
+<div class="para">
+<em class="alert">Remark:</em> Recall in <a href="sec-1st-order-linear.html#ex-1st-order-linear-piecewise" class="xref" data-knowl="./knowl/xref/ex-1st-order-linear-piecewise.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.5.7: Solve
+\begin{equation*}
+y' + y = g(t), \, y(0) = 0, \, g(t) = \begin{cases} 1 \amp 0 \leq t \leq 1 \\ 0 \amp t \gt 1 \end{cases}\text{.}
+\end{equation*}
+Find the solution of the IVP that is continuous everywhere">Example 1.5.7</a>, we studied the IVP</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-1st-order-linear-piecewise.html">
+\begin{equation*}
+y' + y = g(t), \, y(0) = 0, \, g(t) = \begin{cases} 1 \amp 0 \leq t \leq 1 \\ 0 \amp t \gt 1 \end{cases}
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(g(t)\)</span> is not continuous at <span class="process-math">\(1\text{,}\)</span> the IVP only has a unique solution on <span class="process-math">\([0, 1].\)</span> Indeed, for every number <span class="process-math">\(C,\)</span>
+</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-1st-order-linear-piecewise.html">
+\begin{equation*}
+y(t) = \begin{cases} 1 - e^{-t} \amp t \in [0, 1] \\ Ce^{-t} \amp t \in (1, \infty) \end{cases}
+\end{equation*}
+</div>
+<div class="para">is a solution (the IVP has infinitely many solutions). Only with the continuity requirement did us obtain a unique solution.</div>
+</div></section><section class="subsection" id="subsec-existence-uniqueness-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="space"> </span><span class="title">Existence and Uniqueness Theorem: Nonlinear case</span>
+</h3>
+<article class="theorem theorem-like" id="thm-existence-uniqueness-nonlinear"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">1.7.8</span><span class="period">.</span><span class="space"> </span><span class="title">Existence and Uniqueness Theorem: Nonlinear case.</span>
+</h4>
+<div class="para" id="thm-existence-uniqueness-nonlinear-2-1">Consider the IVP</div> <div class="para" id="thm-existence-uniqueness-nonlinear-2-2"><span class="process-math">\(y' = f(t,y), \, y(t_0) = y_0.\)</span></div> <div class="para" id="thm-existence-uniqueness-nonlinear-2-3">Assume that:</div> <ol class="decimal" id="thm-existence-uniqueness-nonlinear-2-4">
+<li id="thm-existence-uniqueness-nonlinear-2-4-1"><div class="para" id="p-derived-thm-existence-uniqueness-nonlinear-2-4-1">The function <span class="process-math">\(f(t,y)\)</span> is continuous <em class="alert">NEAR</em> <span class="process-math">\((t_0,y_0),\)</span> i.e., one can find small <span class="process-math">\(\epsilon_1, \epsilon_2 \gt 0,\)</span> such that <span class="process-math">\(f(t,y)\)</span> is continuous in the rectangular region <span class="process-math">\((t_0 - \epsilon_1, t_0 + \epsilon_1) \times (y_0 - \epsilon_2, y_0 + \epsilon_2).\)</span>
+</div></li>
+<li id="thm-existence-uniqueness-nonlinear-2-4-2"><div class="para" id="p-derived-thm-existence-uniqueness-nonlinear-2-4-2">The function <span class="process-math">\(\frac{\partial f}{\partial y}(t,y)\)</span> is continuous <em class="alert">NEAR</em> <span class="process-math">\((t_0,y_0).\)</span>
+</div></li>
+</ol> <div class="para" id="thm-existence-uniqueness-nonlinear-2-5">Then a <em class="alert">unique solution</em> <span class="process-math">\(y = y(t)\)</span> exists <em class="alert">NEAR</em> <span class="process-math">\(t = t_0,\)</span> i.e., there exists a small <span class="process-math">\(\epsilon \gt 0\)</span> such that a solution exists on <span class="process-math">\((t_0 - \epsilon, t_0 + \epsilon).\)</span>
+</div> <div class="para" id="thm-existence-uniqueness-nonlinear-2-6">Likewise, any IVP that does not satisfy the conditions of the theorem is <dfn class="terminology">pathological</dfn>.</div></article><div class="para" id="subsec-existence-uniqueness-3-3">Remarks:</div>
+<ol class="decimal" id="subsec-existence-uniqueness-3-4">
+<li id="subsec-existence-uniqueness-3-4-1"><div class="para" id="p-derived-subsec-existence-uniqueness-3-4-1">The theorem is <em class="alert">not</em> as strong as the linear version. It only concludes <em class="alert">local</em> existence. It does <em class="alert">not</em> tell us the interval of existence.</div></li>
+<li id="subsec-existence-uniqueness-3-4-2"><div class="para" id="p-derived-subsec-existence-uniqueness-3-4-2">Nevertheless, the theorem tells if an IVP is reasonably formulated.</div></li>
+</ol>
+<div class="para" id="subsec-existence-uniqueness-3-5">Example 1: <span class="process-math">\(y' = y^{\frac{1}{3}}, \, y(0) = 1.\)</span>
+</div>
+<ol class="decimal" id="subsec-existence-uniqueness-3-6">
+<li id="subsec-existence-uniqueness-3-6-1"><div class="para" id="p-derived-subsec-existence-uniqueness-3-6-1">
+<span class="process-math">\(f(t,y) = 3\sqrt[3]{y}\)</span> is continuous everywhere.</div></li>
+<li id="subsec-existence-uniqueness-3-6-2"><div class="para" id="p-derived-subsec-existence-uniqueness-3-6-2">
+<span class="process-math">\(\frac{\partial f}{\partial y}(t,y) = \frac{1}{3\sqrt[3]{y^2}}\)</span> is continuous when <span class="process-math">\(y \neq 0.\)</span>
+</div></li>
+</ol>
+<div class="para" id="subsec-existence-uniqueness-3-7">
+<span class="process-math">\(y(0) = 1 \implies (t_0, y_0) = (0, 1)\)</span> (away from <span class="process-math">\(y = 0).\)</span>
+</div>
+<div class="para" id="subsec-existence-uniqueness-3-8">So the IVP has a unique solution near <span class="process-math">\(t = 0.\)</span>
+</div>
+<div class="para" id="subsec-existence-uniqueness-3-9">Example 2: <span class="process-math">\(y' = y^{\frac{1}{3}}, \, y(1) = 0.\)</span>
+</div>
+<ol class="decimal" id="subsec-existence-uniqueness-3-10">
+<li id="subsec-existence-uniqueness-3-10-1"><div class="para" id="p-derived-subsec-existence-uniqueness-3-10-1">
+<span class="process-math">\(f(t,y) = 3\sqrt[3]{y}\)</span> is continuous everywhere.</div></li>
+<li id="subsec-existence-uniqueness-3-10-2"><div class="para" id="p-derived-subsec-existence-uniqueness-3-10-2">
+<span class="process-math">\(\frac{\partial f}{\partial y}(t,y) = \frac{1}{3\sqrt[3]{y^2}}\)</span> is continuous when <span class="process-math">\(y \neq 0.\)</span>
+</div></li>
+</ol>
+<div class="para" id="subsec-existence-uniqueness-3-11">
+<span class="process-math">\(y(1) = 0 \implies (t_0, y_0) = (1, 0)\)</span> (on <span class="process-math">\(y = 0).\)</span>
+</div>
+<div class="para" id="subsec-existence-uniqueness-3-12">The IVP does not have a unique solution.</div>
+<div class="para" id="subsec-existence-uniqueness-3-13">Exercise: Check that <span class="process-math">\(y = 0, \, y = \sqrt[3]{\frac{8}{27}(x - 1)^3}\)</span> and <span class="process-math">\(y = -\sqrt[3]{\frac{8}{27}(x - 1)^3}\)</span> are all solutions of the IVP.</div>
+<div class="para" id="subsec-existence-uniqueness-3-14">Example 3. Find out all <span class="process-math">\((t_0, y_0)\text{,}\)</span> such that the IVP</div>
+<div class="para" id="subsec-existence-uniqueness-3-15">
+<span class="process-math">\(y' = \sqrt{1 - t^2 - y^2}, \, y(t_0) = y_0\)</span> is reasonably formulated.</div>
+<div class="para" id="subsec-existence-uniqueness-3-16">
+<span class="process-math">\(f(t,y) = \sqrt{1 - t^2 - y^2}\)</span> is continuous when <span class="process-math">\(t^2 + y^2 \leq 1.\)</span>
+</div>
+<div class="para" id="subsec-existence-uniqueness-3-17">
+<span class="process-math">\(\frac{\partial f}{\partial y}(t,y) = -\frac{y}{\sqrt{1 - t^2 - y^2}}\)</span> is continuous when <span class="process-math">\(t^2 + y^2 \lt 1.\)</span>
+</div>
+<div class="para" id="subsec-existence-uniqueness-3-18">So <span class="process-math">\((t_0, y_0)\)</span> should satisfy <span class="process-math">\(t_0^2 + y_0^2 \lt 1.\)</span>
+</div>
+<div class="para" id="subsec-existence-uniqueness-3-19">Remark: You should always take the “interior” of the region where the functions <span class="process-math">\(f\)</span> and <span class="process-math">\(\frac{\partial f}{\partial y}\)</span> are continuous. You should not keep the boundary (won’t require in this course).</div></section></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-separable-equations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-Prerequisites.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en-US" dir="ltr">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<meta name="robots" content="noindex, nofollow">
+</head>
+<body class="ignore-math">
+<article class="example example-like"><h3 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Solve the IVP <span class="process-math">\(y' = xy^3(1 + x^2)^{-1/2}, \, y(\sqrt{3}) = \frac{1}{2}\)</span>.</span>
+</h3>
+<div class="para logical">
+<div class="para">We have obtained a one-parameter family of implicit solutions in <a href="sec-separable-equations.html#ex-separable-3" class="xref" data-knowl="./knowl/xref/ex-separable-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.3: Solve the ODE y' = xy^3(1 + x^2)^{-1/2}">Example 1.6.3</a>, namely,</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/ex-separable-3.html">
+\begin{equation*}
+-\frac{1}{2}y^2 = \sqrt{1 + x^2} + C.
+\end{equation*}
+</div>
+<div class="para">We shall continue from here.</div>
+</div> <ul class="disc" id="ex-separable-4-2-2">
+<li><div class="para">We determine the constant <span class="process-math">\(C\)</span> by using the initial condition:<div class="displaymath process-math">
+\begin{equation*}
+y(\sqrt{3}) = \frac{1}{2} \implies -\frac{1}{2} \cdot (1/2)^2 = \sqrt{1 + 3} + C \implies C = -4.
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para">The implicit solution we thus obtained is<div class="displaymath process-math">
+\begin{equation*}
+-\frac{1}{2y^2} = \sqrt{1 + x^2} - 4.
+\end{equation*}
+</div>It is possible to solve an explicit solution. Take the negative reciprocal and simplify,<div class="displaymath process-math">
+\begin{equation*}
+y^2 = \frac{1}{2(4 - \sqrt{1 + x^2})}= \frac{1}{8 - 2\sqrt{1 + x^2}}.
+\end{equation*}
+</div>Now take the square root. Since <span class="process-math">\(y(\sqrt{3}) = \frac{1}{2} \gt 0\text{,}\)</span> we take the <em class="emphasis">positive</em> branch, thus<div class="displaymath process-math">
+\begin{equation*}
+y = \sqrt{\frac{1}{8 - 2\sqrt{1 + x^2}}}.
+\end{equation*}
+</div>
+</div></li>
+<li><div class="para">Solution exists when<div class="displaymath process-math">
+\begin{align*}
+\amp 8 - 2\sqrt{1 + x^2} \gt 0 \implies  2\sqrt{1+x^2}\lt 8\implies 1+x^2 \lt 16 \\
+\implies \amp x^2 \lt 15 \implies x \in (-\sqrt{15}, \sqrt{15})
+\end{align*}
+</div>
+</div></li>
+</ul> <div class="para logical">
+<div class="para">Conclusion: The solution is</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y = \sqrt{\frac{1}{8 - 2\sqrt{1 + x^2}}}.
+\end{equation*}
+</div>
+<div class="para">The interval of definition is <span class="process-math">\((-\sqrt{15}, \sqrt{15})\text{.}\)</span>
+</div>
+</div></article><span class="incontext"><a class="internal" href="sec-separable-equations.html#ex-separable-4">in-context</a></span>
+</body>
+</html>
