@@ -1,0 +1,186 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-existence-uniqueness" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Existence and Uniqueness of Solutions</title>
+  <p> For the application of ODEs in science and engineering, when we modeled a problem into an initial value problem, normally we expect the solution to exist and be unique. However, this is not always the case. </p>
+  <subsection xml:id="subsec-existence-uniqueness-1">
+    <title>Pathological IVP</title>
+    We first study the initial value problem (IVP)
+    <me>\frac{dy}{dx} = x\sqrt{y}, \, y(0) = 0</me>
+    <p>This IVP has <alert>two solutions</alert>: <me>y = \frac{1}{16}x^2 \text{ and }y = 0.</me> </p>
+    <p>If a system is modeled by this IVP, then we cannot possibly predict how the system behaves. Such problem can also happen for linear ODeS. </p>
+
+    <example xml:id="ex-existence-uniqueness-1">
+      <title> <m>ty' + (t - 1)y = -e^{-t}, \, y(0) = 1</m></title>
+      <statement>
+        <ul>
+        <li>Standard form:</li>
+        <p><m>y' + \frac{t - 1}{t}y = -\frac{e^{-t}}{t}</m></p>
+        <li>Integrating factor:</li>
+        <p><m>\mu(t) = e^{\int \frac{t - 1}{t}dt} = e^{\int (1 - \frac{1}{t})dt} = e^{t - \ln t} = \frac{e^t}{t}</m></p>
+        <li>General solution:</li>
+        <p><m>y(t) = \frac{\int e^{-t} \left(-\frac{e^{-t}}{t}\right)dt}{\frac{e^t}{t}} = te^{-t}\left(-\int t^{-2}dt\right)</m></p>
+        <p><m>= te^{-t}\left(t^{-1} + C\right) = e^{-t} + Cte^{-t}</m></p>
+        <li>Plug in the initial value: <me>y(0) = 1 \implies 1 + 0 = 1</me>
+        This means for every real number <m>C</m>, <m>y(t) = e^{-t} + Cte^{-t}</m> is a solution of the IVP. <alert>The IVP has infinitely many solutions.</alert></li>
+        </ul>
+      </statement>
+    </example>
+
+
+<example xml:id="ex-existence-uniqueness-2">
+<title> <m>ty' + (t - 1)y = -e^{-t}, \, y(0) = 0</m></title>
+<statement>
+<ul>
+  <li>We have obtained the general solution in <xref ref="ex-existence-uniqueness-1"/>: <m>y(t) = e^{-t} + Cte^{-t}.</m></li>
+  <li>Plug in the initial value: <m>y(0) = 0 \implies 1 + 0 = 0</m>, impossible. <alert>In other words, The IVP has no solutions.</alert>
+  </li>
+</ul>
+</statement>
+</example>
+
+<p>Summary: A pathological IVP may have <alert>no solution</alert> / <alert>more than one solution</alert> / <alert>infinitely many solutions</alert>. To determine if an IVP is reasonably posed, we need the existence and uniqueness theorem.</p>
+</subsection>
+
+<subsection xml:id="subsec-existence-uniqueness-2">
+<title>Existence and Uniqueness Theorem: Linear version.</title>
+<theorem xml:id="thm-existence-uniqueness-linear">
+  <title>Existence and Uniqueness Theorem: Linear version.</title>
+  <statement>
+    <p>Consider the IVP</p>
+    <p>
+      <m>y' + p(t)y = g(t), \, y(t_0) = y_0</m>
+    </p>
+<p>
+  where the ODE is <alert>linear</alert> and in its <alert>standard form</alert>. Assume that:
+</p>
+<ol>
+  <li>Both <m>p(t)</m> and <m>g(t)</m> are <alert>continuous</alert> on an open interval <m>(a,b).</m></li>
+  <li>The open interval <m>(a,b)</m> contains the initial time <m>t_0.</m></li>
+</ol>
+<p>
+  Then there <alert>exists a unique function</alert> <m>y = y(t)</m> over the interval <m>(a,b)</m> that solves the IVP.
+</p>
+</statement>
+</theorem>
+
+<definition xml:id="def-existence-uniqueness-interval">
+  <title>Interval of Existence and Uniqueness</title>
+  <statement>
+    <p>The <term>interval of existence and uniqueness</term> is an <m>(a,b)</m> where the solution of the IVP exists uniquely. For brevity, we call it the <term>interval of existence</term>.</p>
+  </statement>
+</definition>
+
+<p><xref ref="thm-existence-uniqueness-linear"/> allows us to <alert>determine</alert> the interval of existence without solving it. To obtain the interval, we follow the following procedure.</p>
+<ul>
+  <li>Find out the standard form of the ODE <m>y' + p(t)y = g(t).</m> and specify the initial condition <m>y(t_0) = y_0.</m></li>
+  <li>Find out the singular points, which are the points where <m>p(t)</m> and <m>g(t)</m> are not continuous. These singular points separate the real line into disjoint open intervals</li>
+  <li>If <m>t_0</m> is a singular point, we have a pathological IVP. If <m>t_0</m> is not a singular point, then the interval of existence is just the interval that contains <m>t_0</m> that are bounded by the singular points.</li>
+</ul>   
+
+<example xml:id="ex-existence-uniqueness-3">
+<title> <m>ty' + (t - 1)y = -e^{-t}, \, y(\ln 2) = \frac{1}{2}</m></title>
+<statement>
+<ul>
+<li>Standard form: <m>y' + \frac{t - 1}{t}y = -\frac{e^{-t}}{t}.</m></li>
+<li>Both <m>\frac{t - 1}{t}</m> and <m>- \frac{e^{-t}}{t}</m> blow up at <m>0.</m> So <m>t = 0</m> is a singular point.</li>
+<li>Interval of existence is <m>(0, \infty).</m></li>
+</ul>
+</statement>
+</example>
+
+<p><alert>Remark.</alert>  The solution of the IVP is <m>y(t) = e^{-t}</m> that is defined on <m>(-\infty, \infty).</m> So if we talk about the interval of definition of the solution, it is <m>(-\infty, \infty).</m> But this doesn't change the fact that <m>t = 0</m> is a singular point. Generally, we should not be concerned about the solution outside the interval of existence, which is still <m>(0, \infty).</m></p>
+
+<example xml:id="ex-existence-uniqueness-4">
+<title> <m>(t - 3)y' + (\ln t)y = 2t, \, y(1) = 2.</m></title>
+<statement>
+<ul>
+  <li>Standard form: <m>y' + \frac{\ln t}{t - 3}y = \frac{2t}{t - 3}.</m></li>
+  <li><m>\frac{\ln t}{t - 3}</m> is not continuous when <m>t \lt 0</m> and <m>t = 3.</m></li>
+  <li><m>\frac{2t}{t - 3}</m> is not continuous when <m>t = 3.</m></li>
+</ul>
+<p>Interval of existence = <m>(0, 3).</m></p>
+</statement>
+</example>
+
+<example xml:id="ex-existence-uniqueness-5">
+<title> <m>\sin(2t) y' + \tan(4t) y = \frac{1}{t}, \, y\left(\frac{\pi}{4}\right) = 0.</m></title>
+<statement>
+<ul>
+  <li>The standard form is <m>y' + \frac{\tan 4t}{\sin 2t}y = \frac{1}{t \sin(2t)}.</m></li>
+  <li><p><m>\frac{\tan 4t}{\sin 2t} = \frac{\sin 4t}{\cos 4t \sin 2t}</m> is not continuous when <m>\cos 4t = 0</m> or <m>\sin 2t = 0.</m></p>
+  <p>Recall: 
+  <md>
+  <mrow> \amp \sin \alpha = 0 \text{ when } \alpha = k\pi, \, k = 0, \pm 1, \pm 2, \ldots</mrow>
+  <mrow> \amp \cos \alpha = 0 \text{ when } \alpha = k\pi + \frac{\pi}{2}, \, k = 0, \pm 1, \pm 2, \ldots</mrow>
+  </md></p>
+  <p> So <m>\frac{\tan 4t}{\sin 2t} = \frac{\sin 4t}{\cos 4t \sin 2t}</m> is not continuous when <m>\cos 4t = 0</m> or <m>\sin 2t = 0.</m> Note that <me>\cos 4t = 0 \text{ when }4t = k\pi + \frac{\pi}{2} \implies t = \frac{k\pi}{4} + \frac{\pi}{8}, k = 0, \pm 1, \pm 2, \ldots.</me>
+  and <me>\sin 2t = 0 \text{ when }2t = k\pi \implies t = \frac{k\pi}{2}, k = 0, \pm 1, \pm 2, \ldots.</me></p></li>
+  <li><m>\frac{1}{t \sin 2t}</m> is not continuous when <m>t = 0</m>, or <m>t = \frac{k\pi}{2},</m> where <m>k = 0, \pm 1, \pm 2, \ldots.</m></li>
+  <li>So the singular points are <m>t = \frac{k\pi}{4} + \frac{\pi}{8}, k = 0, \pm 1, \pm 2, \ldots</m> and <m>t = \frac{k\pi}{2}, k = 0, \pm 1, \pm 2, \ldots.</m></li>
+</ul>
+<p>Interval of existence = <m>(\frac{\pi}{8}, \frac{3\pi}{8}).</m></p>
+</statement>
+</example>
+
+<p><alert>Remark:</alert> Recall in <xref ref="ex-1st-order-linear-piecewise"/>, we studied the IVP
+<me>y' + y = g(t), \, y(0) = 0, \, g(t) = \begin{cases} 1 \amp 0 \leq t \leq 1 \\ 0 \amp t \gt 1 \end{cases}</me>
+Since <m>g(t)</m> is not continuous at <m>1</m>, the IVP only has a unique solution on <m>[0, 1].</m> Indeed, for every number <m>C,</m>
+<me>y(t) = \begin{cases} 1 - e^{-t} \amp t \in [0, 1] \\ Ce^{-t} \amp t \in (1, \infty) \end{cases}</me>
+is a solution (the IVP has infinitely many solutions). Only with the continuity requirement did us obtain a unique solution. </p> 
+
+</subsection>
+
+<subsection xml:id="subsec-existence-uniqueness-3">
+<title>Existence and Uniqueness Theorem: Nonlinear case</title>
+<theorem xml:id="thm-existence-uniqueness-nonlinear">
+<title>Existence and Uniqueness Theorem: Nonlinear case</title>
+<statement>
+<p>Consider the IVP</p>
+<p><m>y' = f(t,y), \, y(t_0) = y_0.</m></p>
+<p>Assume that:</p>
+<ol>
+  <li>The function <m>f(t,y)</m> is continuous <alert>NEAR</alert> <m>(t_0,y_0),</m>
+    i.e., one can find small <m>\epsilon_1, \epsilon_2 \gt 0,</m> such that <m>f(t,y)</m> is continuous in the rectangular region <m>(t_0 - \epsilon_1, t_0 + \epsilon_1) \times (y_0 - \epsilon_2, y_0 + \epsilon_2).</m>
+  </li>
+  <li>The function <m>\frac{\partial f}{\partial y}(t,y)</m> is continuous <alert>NEAR</alert> <m>(t_0,y_0).</m></li>
+</ol>
+<p>Then a <alert>unique solution</alert> <m>y = y(t)</m> exists <alert>NEAR</alert> <m>t = t_0,</m> i.e., there exists a small <m>\epsilon \gt 0</m> such that a solution exists on <m>(t_0 - \epsilon, t_0 + \epsilon).</m></p> 
+<p> Likewise, any IVP that does not satisfy the conditions of the theorem is <term>pathological</term>.</p>
+</statement>
+</theorem>
+
+<p><alert>Remarks:</alert></p>
+<ol>
+  <li>The theorem is <alert>not</alert> as strong as the linear version. It only concludes <alert>local</alert> existence. It does <alert>not</alert> tell us the interval of existence.</li>
+  <li>Nevertheless, the theorem tells if an IVP is reasonably formulated.</li>
+</ol>
+
+<p>Example 1: <m>y' = y^{\frac{1}{3}}, \, y(0) = 1.</m></p>
+<ol>
+  <li><m>f(t,y) = 3\sqrt[3]{y}</m> is continuous everywhere.</li>
+  <li><m>\frac{\partial f}{\partial y}(t,y) = \frac{1}{3\sqrt[3]{y^2}}</m> is continuous when <m>y \neq 0.</m></li>
+</ol>
+<p><m>y(0) = 1 \implies (t_0, y_0) = (0, 1)</m> (away from <m>y = 0).</m></p>
+<p>So the IVP has a unique solution near <m>t = 0.</m></p>
+
+<p>Example 2: <m>y' = y^{\frac{1}{3}}, \, y(1) = 0.</m></p>
+<ol>
+  <li><m>f(t,y) = 3\sqrt[3]{y}</m> is continuous everywhere.</li>
+  <li><m>\frac{\partial f}{\partial y}(t,y) = \frac{1}{3\sqrt[3]{y^2}}</m> is continuous when <m>y \neq 0.</m></li>
+</ol>
+<p><m>y(1) = 0 \implies (t_0, y_0) = (1, 0)</m> (on <m>y = 0).</m></p>
+<p>The IVP does not have a unique solution.</p>
+
+<p>Exercise: Check that <m>y = 0, \, y = \sqrt[3]{\frac{8}{27}(x - 1)^3}</m> and <m>y = -\sqrt[3]{\frac{8}{27}(x - 1)^3}</m> are all solutions of the IVP.</p>
+
+<p>Example 3. Find out all <m>(t_0, y_0)</m>, such that the IVP</p>
+<p><m>y' = \sqrt{1 - t^2 - y^2}, \, y(t_0) = y_0</m> is reasonably formulated.</p>
+<p><m>f(t,y) = \sqrt{1 - t^2 - y^2}</m> is continuous when <m>t^2 + y^2 \leq 1.</m></p>
+<p><m>\frac{\partial f}{\partial y}(t,y) = -\frac{y}{\sqrt{1 - t^2 - y^2}}</m> is continuous when <m>t^2 + y^2 \lt 1.</m></p>
+<p>So <m>(t_0, y_0)</m> should satisfy <m>t_0^2 + y_0^2 \lt 1.</m></p>
+
+<p><alert>Remark:</alert> You should always take the “interior” of the region where the functions <m>f</m> and <m>\frac{\partial f}{\partial y}</m> are continuous. You should not keep the boundary (won't require in this course).</p>
+
+</subsection>
+</section>

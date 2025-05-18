@@ -202,7 +202,7 @@
   </statement>
 </example>
 
-<example>
+<example xml:id="ex-1st-order-linear-piecewise"> 
   <title>Solve <me>y' + y = g(t), \, y(0) = 0, \, g(t) = \begin{cases} 1 \amp 0 \leq t \leq 1 \\ 0 \amp t \gt 1 \end{cases}</me>. Find the solution of the IVP that is continuous everywhere</title>
   <statement>
   <p>General principle: Solve the ODE on each individual interval. Determine the constants by either the initial condition or continuity at the boundary .</p>
