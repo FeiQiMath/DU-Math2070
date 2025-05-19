@@ -1,0 +1,157 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-2nd-order-linear-const-coeff-complex" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Second-order Linear ODEs with Constant Coefficients - Complex Roots</title>
+  <p>Consider the ODE</p>
+<p>
+  <m>ay'' + by' + cy = 0</m>
+</p>
+<p>where <m>a, b, c</m> are constant numbers. We tried the function <m>y = e^{rt}</m> and got the auxiliary equation</p>
+<p>
+  <m>ar^2 + br + c = 0.</m>
+</p>
+<p>If the quadratic equation has two complex roots, then these two roots can be written as</p>
+<p>
+  <m>r_1 = \alpha + i\beta, \, r_2 = \alpha - i\beta.</m>
+</p>
+<p>In this case, we obtain two complex solutions</p>
+<p>
+  <m>\bar{y}_1 = e^{(\alpha + i\beta)t}, \, \bar{y}_2 = e^{(\alpha - i\beta)t}.</m>
+</p>
+<p>Using Euler's formula, we may write them as</p>
+<p>
+  <m>\bar{y}_1 = e^{\alpha t} \cos \beta t + i e^{\alpha t} \sin \beta t, \, \bar{y}_2 = e^{\alpha t} \cos \beta t - i e^{\alpha t} \sin \beta t.</m>
+</p>
+<p>Note that <m>\cos(-\theta) = \cos \theta, \, \sin(-\theta) = -\sin \theta.</m> Note also that <m>y_1, y_2</m> are conjugate to each other.</p>
+
+<p><strong>Theorem:</strong> If <m>y(t) = u(t) + iv(t)</m> is a complex solution of</p>
+<p>
+  <m>y'' + p(t)y' + q(t)y = 0,</m>
+</p>
+<p>then both the real part <m>u(t)</m> and the imaginary part <m>v(t)</m> are solutions of the ODE as well.</p>
+
+<p><strong>Proof:</strong></p>
+<p>
+  <m>y = u + iv \Rightarrow y' = u' + iv', \, y'' = u'' + iv''</m>
+</p>
+<p>
+  <m>y'' + py' + qy = 0</m>
+</p>
+<p>
+  <m>\Rightarrow (u'' + iv'') + p(u' + iv') + q(u + iv) = 0</m>
+</p>
+<p>
+  <m>\Rightarrow u'' + pu' + qu + i(v'' + pv' + qv) = 0 = 0 + 0i</m>
+</p>
+<p>Recall that <m>a + bi = c + di \Leftrightarrow a = c, \, b = d.</m></p>
+<p>So we conclude that</p>
+<p>
+  <m>u'' + pu' + qu = 0, \, v'' + pv' + qv = 0.</m>
+</p>
+<p>Therefore, both <m>u</m> and <m>v</m> are solutions.</p>
+
+<p><strong>Theorem:</strong> If the auxiliary equation of <m>ay'' + by' + cy = 0</m> has complex solutions <m>\alpha + i\beta, \, \alpha - i\beta,</m> then the general solution of the ODE is</p>
+<p>
+  <m>y = C_1 e^{\alpha t} \cos(\beta t) + C_2 e^{\alpha t} \sin(\beta t).</m>
+</p>
+
+<p><strong>Proof:</strong> We already have the complex solutions</p>
+<p>
+  <m>\bar{y}_1 = e^{\alpha t} \cos \beta t + i e^{\alpha t} \sin \beta t, \, \bar{y}_2 = e^{\alpha t} \cos \beta t - i e^{\alpha t} \sin \beta t.</m>
+</p>
+<p>The theorem implies that</p>
+<p>
+  <m>y_1 = e^{\alpha t} \cos \beta t, \, y_2 = e^{\alpha t} \sin \beta t</m>
+</p>
+<p>are both solutions. Note that</p>
+<p>
+  <m>W(y_1, y_2) = \begin{vmatrix} e^{\alpha t} \cos \beta t \amp e^{\alpha t} \sin \beta t \\ \end{vmatrix}</m>
+</p>
+<p>
+  <m>= \begin{vmatrix} e^{\alpha t} \cos \beta t \amp e^{\alpha t} \sin \beta t \\ \alpha e^{\alpha t} \cos \beta t - e^{\alpha t} \sin \beta t \amp \alpha e^{\alpha t} \sin \beta t + e^{\alpha t} \cos \beta t \end{vmatrix}</m>
+</p>
+<p>
+  <m>= e^{2\alpha t} (\cos^2 \beta t + \sin^2 \beta t) = e^{2\alpha t} \neq 0.</m>
+</p>
+<p>So <m>y_1, y_2</m> are linearly independent. The conclusion follows.</p>
+
+<p><strong>Example 1:</strong> <m>y'' + y = 0.</m></p>
+<p>Auxiliary Equation: <m>r^2 + 1 = 0 \Rightarrow r^2 = -1 \Rightarrow r = \pm i = 0 \pm i.</m></p>
+<p>General solution:</p>
+<p>
+  <m>y = C_1 e^{0t} \cos t + C_2 e^{0t} \sin t = C_1 \cos t + C_2 \sin t.</m>
+</p>
+
+<p><strong>Example 2:</strong> <m>y'' + 2y' + 8y = 0.</m></p>
+<p>Auxiliary Equation: <m>r^2 + 2r + 8 = 0 \Rightarrow r = -1 \pm \sqrt{7}i.</m></p>
+<p>General solution:</p>
+<p>
+  <m>y = C_1 e^{-t} \cos \sqrt{7}t + C_2 e^{-t} \sin \sqrt{7}t.</m>
+</p>
+
+<p><strong>Example 3:</strong> <m>y'' - y' + y = 0.</m></p>
+<p>Auxiliary Equation: <m>r^2 - r + 1 = 0 \Rightarrow r = \frac{1}{2} \pm \frac{\sqrt{3}}{2}i.</m></p>
+<p>General solution:</p>
+<p>
+  <m>y = C_1 e^{\frac{t}{2}} \cos \frac{\sqrt{3}}{2}t + C_2 e^{\frac{t}{2}} \sin \frac{\sqrt{3}}{2}t.</m>
+</p>
+
+<p><strong>Oscillation Patterns</strong></p>
+<p>Recall: For real numbers <m>A, B</m> and <m>\theta,</m></p>
+<p>
+  <m>A \cos \theta + B \sin \theta = R \cos(\theta - \phi),</m>
+</p>
+<p>In other words, any linear combination of sine and cosine functions of the same angle can be rewritten as a single cosine function, with <m>R = \sqrt{A^2 + B^2}, \, \phi =</m> angle determined by <m>(A, B).</m> Engineers also call <m>R</m> the <span style="color:magenta;">amplitude</span>, <m>\phi</m> the <span style="color:magenta;">phase.</span></p>
+
+<p><strong>Example:</strong> <m>2 \cos \theta + 2\sqrt{3} \sin \theta</m></p>
+<p>
+  <m>= 4 \cos\left(\theta - \frac{\pi}{3}\right)</m>
+</p>
+<p>
+  <m>- \cos \theta + \sin \theta</m>
+</p>
+<p>
+  <m>= \sqrt{2} \cos\left(\theta - \frac{3\pi}{4}\right)</m>
+</p>
+
+<p>
+  <!-- Space for figures -->
+</p>
+
+<p><strong>Oscillation Patterns</strong></p>
+
+<p><strong>Example 1:</strong> <m>y'' + y = 0.</m></p>
+<p>
+  <m>y = C_1 \cos t + C_2 \sin t = \sqrt{C_1^2 + C_2^2} \cos(t - \phi)</m>
+</p>
+<p><em>Amplitude stays still.</em></p>
+
+<p><strong>Example 2:</strong> <m>y'' + 2y' + 8y = 0.</m></p>
+<p>
+  <m>y = C_1 e^{-t} \cos \sqrt{7}t + C_2 e^{-t} \sin \sqrt{7}t = \sqrt{C_1^2 + C_2^2} e^{-t} \cos(\sqrt{7}t - \phi)</m>
+</p>
+<p><em>Amplitude decays exponentially.</em></p>
+
+<p><strong>Example 3:</strong> <m>y'' - y' + y = 0.</m></p>
+<p>
+  <m>y = C_1 e^{\frac{t}{2}} \cos\left(\frac{\sqrt{3}}{2} t\right) + C_2 e^{\frac{t}{2}} \sin\left(\frac{\sqrt{3}}{2} t\right) = \sqrt{C_1^2 + C_2^2} e^{\frac{t}{2}} \cos\left(\frac{\sqrt{3}}{2} t - \phi\right)</m>
+</p>
+<p><em>Amplitude grows exponentially.</em></p>
+
+<p>
+  <!-- Space for figures -->
+</p>
+
+<p>In general, if <m>\alpha + \beta i</m> are the roots of the auxiliary equation for the ODE</p>
+<p>
+  <m>ay'' + by' + cy = 0,</m>
+</p>
+<ol>
+  <li><m>\alpha = 0 \Rightarrow</m> Steady Oscillation.</li>
+  <li><m>\alpha \lt 0 \Rightarrow</m> Decaying Oscillation.</li>
+  <li><m>\alpha \gt 0 \Rightarrow</m> Growing Oscillation.</li>
+</ol>
+<p>Note that the oscillation pattern depends only on the differential equation itself. It does not depend on the initial condition.</p>
+
+
+</section>

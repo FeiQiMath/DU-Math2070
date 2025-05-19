@@ -2,7 +2,11 @@
 
 <section xml:id="sec-separable-equations" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Separable Equations</title>
-<p>In general, a nonlinear ODE is very difficult to solve. We can only handle a few special types of nonlinear ODEs. In this section, we study the <term>separable ODEs</term>, namely, an ODE of the form:
+<p>In general, a nonlinear ODE is very difficult to solve. We can only handle a few special types of nonlinear ODEs. </p>
+
+<subsection xml:id="subsec-separable-equations-1">
+<title>Form of a separable ODE</title>
+<p>In this section, we study the <term>separable ODEs</term>, namely, an ODE of the form:
   <me>\frac{dy}{dx} = f(y)g(x),</me>
 i.e., the derivative <m>dy/dx</m> is a product of two functions, one depends only on <m>x</m>, the other depends only on <m>y</m>. To solve this ODE, we first separate the variables,
   <me>\frac{dy}{dx} = f(y)g(x) \Rightarrow \frac{dy}{f(y)} = g(x)dx</me>
@@ -54,8 +58,11 @@ The process yields a one-parameter family of <alert>implicit</alert> solutions.<
 <p>Conclusion: The solution is <me>y = \sqrt{\frac{2}{3}x^3 - 2\cos x + 3}.</me> It is defined when <me>\frac{2}{3}x^3 - 2\cos x + 3 \geq 0.</me> </p>
 </statement>
 </example>
+</subsection>
 
-<p><alert>Implicit solution vs explicit solution</alert></p>
+<subsection xml:id="subsec-implicit-vs-explicit">
+<title>Implicit solution vs explicit solution</title>
+<p>In this section, we discuss the difference between an implicit solution and an explicit solution.</p>
 <ul>
   <li>If you are given an ODE without initial values, then a one-parameter family of <em>implicit</em> solutions is sufficient.</li>
   <li>If you are given an IVP, whenever possible, you should try to get the <em>explicit</em> solution and the <em>interval of definition</em> (the interval where the solution is defined).</li>
@@ -151,4 +158,31 @@ This is why whenever it is possible, we should try to solve for the explicit sol
 </p>
 
 <p><alert>Remark.</alert> From <xref ref="ex-separable-4"/> and <xref ref="ex-separable-5"/>, we also see that the positive or negative branch and the interval of definition depends on the initial condition. Thus these notions make no sense for a one-parameter family of solutions. This is why without the initial condition, we can leave the solution in the implicit form.</p>
+</subsection>
+
+<subsection xml:id="subsec-separable-equations-3">
+<title>Singular solutions</title>
+<p>We saw that <m>y' = xy^3(1 + x^2)^{-1/2}</m> has a one-parameter family of implicit solutions.
+  <me>\frac{1}{2y^2} = \sqrt{1 + x^2} + C</me >
+</p>
+<p>
+  <alert>It is not the general solution</alert> because the family does not include the solution <m>y = 0</m>. Such an extra solution is called a <strong>singular solution</strong>.
+</p>
+<p>Another example is <me>\frac{dy}{dx} = x\sqrt{y}</me> which has a one-parameter family of solutions
+  <me>y = \left(\frac{1}{4}x^2 + C\right)^2</me>
+while <m>y = 0</m> is a singular solution.</p>
+
+<p>Generally, for a separable ODE
+  <me>\frac{dy}{dx} = f(y)g(x),</me>
+  the constant function <m>y = a</m> is a singular solution for every number <m>a</m> satisfying <m>f(a) = 0.</m>
+  (Clearly, <m>LHS = a' = 0, \, RHS = f(a)g(x) = 0.</m>)
+</p>
+<p>
+  When we separate the variables, we <alert>divided</alert> both sides by <m>f(y).</m>
+  Such an operation implicitly required that <m>f(y) \neq 0.</m>
+  Therefore, in the subsequent one-parameter family of solutions obtained by integration, the constant functions <m>y = a</m> with <m>f(a) = 0</m> will not be included in the family.
+</p>
+<p>Singular solutions are common for nonlinear ODEs.</p>
+</subsection>
+
 </section>

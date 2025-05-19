@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-2nd-order-linear-const-coeff-repeated" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Second-order Linear ODEs with Constant Coefficients - Repeated Real Roots</title>
+
+<p>Consider the ODE</p>
+<p>
+  <m>ay'' + by' + cy = 0</m>
+</p>
+<p>where <m>a, b, c</m> are constant numbers. We tried the function <m>y = e^{rt}</m> and got the auxiliary equation</p>
+<p>
+  <m>ar^2 + br + c = 0.</m>
+</p>
+<p>If the quadratic equation has two repeated roots <m>r_1 = r_2 = r,</m> in this case, we only obtain one solution</p>
+<p>
+  <m>y_1 = e^{rt}.</m>
+</p>
+<p>Another solution may be obtained (via cheating) by</p>
+<p>
+  <m>y_2 = te^{rt}.</m>
+</p>
+<p>So the general solution is</p>
+<p>
+  <m>y = C_1 e^{rt} + C_2 te^{rt}.</m>
+</p>
+
+<p><strong>Example 1:</strong> <m>y'' - 2y' + y = 0.</m></p>
+<p>Auxiliary equation: <m>r^2 - 2r + 1 = 0 \implies r_1 = r_2 = 1.</m></p>
+<p>General solution: <m>y = C_1 e^t + C_2 te^t.</m></p>
+
+<p><strong>Example 2:</strong> <m>4y'' - 4y' + y = 0.</m></p>
+<p>Auxiliary equation: <m>4r^2 - 4r + 1 = 0 \implies r_1 = r_2 = \frac{1}{2}.</m></p>
+<p>General solution: <m>y = C_1 e^{\frac{t}{2}} + C_2 te^{\frac{t}{2}}.</m></p>
+
+<p><strong>Example 3:</strong> For the IVP</p>
+<p>
+  <m>y'' + 10y' + 25y = 0, \, y(0) = 1, \, y'(0) = \alpha,</m>
+</p>
+<p>find the critical value of <m>\alpha</m> where the long-term behavior changes.</p>
+
+<p>Auxiliary equation: <m>r^2 + 10r + 25 = 0 \implies r_1 = r_2 = -5.</m></p>
+<p>General solution: <m>y = C_1 e^{-5t} + C_2 t e^{-5t}.</m></p>
+<p><m>y(0) = 1 \implies C_1 = 1.</m></p>
+<p><m>y'(0) = \alpha \implies -5C_1 + C_2 = \alpha \implies C_2 = \alpha + 5.</m></p>
+<p>Solution of the IVP: <m>y = e^{-5t} + (\alpha + 5) t e^{-5t}.</m></p>
+
+<p>As <m>t \to \infty,</m> the solution <m>y \to 0</m> no matter how <m>\alpha</m> is chosen.</p>
+<p>However, there are two ways approaching zero:</p>
+<p>If <m>\alpha \gt -5,</m> then <m>y \to 0^+.</m> If <m>\alpha \lt -5,</m> then <m>y \to 0^-.</m></p>
+<p>The long-term behavior changes when <m>\alpha = -5.</m></p>
+
+<p><strong>Solution of the IVP:</strong> <m>y = e^{-5t} + (\alpha + 5) t e^{-5t}.</m></p>
+
+<p>
+  <!-- Space for figure -->
+</p>
+<p>
+  <strong>For <m>\alpha \gt -5:</m></strong>
+  <m>y(t) = (1 + (\alpha + 5)t)e^{-5t}, \, \alpha \gt 0.</m>
+</p>
+
+<p>
+  <!-- Space for figure -->
+</p>
+<p>
+  <strong>For <m>\alpha \lt -5:</m></strong>
+  <m>y(t) = (1 + (\alpha + 5)t)e^{-5t}, \, \alpha \lt 0.</m>
+</p>
+
+<p>
+  <!-- Space for figure -->
+</p>
+
+<p>How do we know we should multiply by <m>t?</m> It is a result of a very standard technique called variation of parameters.</p>
+
+<p><strong>Philosophy:</strong> If you know one solution <m>y_1(t),</m> then since the ODE is linear, for any number <m>c,</m> the function <m>cy_1</m> would also be a solution.</p>
+<p>Variation of parameter simply means that replacing the numerical parameter <m>c</m> with a function <m>u(t),</m> i.e., set</p>
+<p>
+  <m>y_2(t) = u(t)y_1(t).</m>
+</p>
+<p>Plugging it back into the ODE, we may get an (usually much simpler) ODE for <m>u.</m> By solving for <m>u,</m> we may obtain <m>y_2.</m></p>
+
+<p>In the context of linear homogeneous ODE, the technique is usually referred to as <strong>reduction of order.</strong></p>
+
+
+<p>Let <m>y_1</m> be a solution of the homogeneous linear ODE</p>
+<p><m>y'' + p(t)y' + q(t)y = 0.</m></p>
+<p>We set <m>y_2(t) = u(t)y_1(t)</m> and require that <m>y_2</m> is another solution. This means that</p>
+<p><m>(uy_1)'' + p(uy_1)' + quy_1 = 0</m></p>
+<p>Expanding the left-hand-side</p>
+<p><m>LHS = u''y_1 + 2u'y_1' + uy_1''</m></p>
+<p><m>= u''y_1 + (2y_1' + py_1)u' + pu'y_1 + quy_1</m></p>
+<p><m>= u''y_1 + (2y_1' + py_1)u' + u(y_1'' + py_1' + qy_1)</m></p>
+<p><m>= u''y_1 + (2y_1' + py_1)u' = 0 = RHS</m></p>
+<p>we obtain a second-order ODE of <m>u</m> that involves only <m>u''</m> and <m>u'</m>.</p>
+<p>This ODE is essentially a first-order separable ODE of <m>u'</m>, i.e.,</p>
+<p><m>y_1 \frac{du'}{dt} = -(2y_1' + py_1)u' \implies \frac{du'}{u'} = -\frac{2y_1' + py_1}{y_1} dt</m></p>
+<p>Solving <m>u'</m> then integrate, we obtain <m>u</m> and thus <m>y_2.</m></p>
+
+<p>Remarks:</p>
+<p>1. When formulating the equation for <m>u'</m>, make sure you read the function <m>p</m> from the <alert>standard form</alert>.</p>
+<p>2. Since we only need one <m>y_2</m> that is linearly independent to <m>y_1</m>, when solving for <m>u'</m> and integrating for <m>u</m>, we may make a <alert>wise choice</alert> of the arbitrary constants. It suffices that <m>u' \neq 0.</m></p>
+<p>3. It is possible to have a formula for <m>u</m>, namely,</p>
+<p><m>u(t) = \int \dfrac{\exp(-\int p(t)dt)}{y_1(t)^2} dt</m></p>
+<p>I do not recommend using this formula or memorizing it.</p>
+
+<p>Example 1: Let <m>ay'' + by' + cy = 0</m> be an ODE whose auxiliary equation has repeated roots <m>r_1 = r_2 = r</m>. This means that the ODE can be rewritten as</p>
+<p><m>y'' - 2ry' + r^2y = 0.</m></p>
+<p>For <m>y_1 = e^{rt}</m>, we set <m>y_2 = uy_1</m>, then</p>
+<p><m>y_2'' - 2ry_2' + r^2y_2 = (y_1)'' - 2r(y_1)' + r^2uy_1</m></p>
+<p><m>= u''y_1 + 2u'y_1' + uy_1'' - 2r(u'y_1 + uy_1') + r^2uy_1</m></p>
+<p><m>= u''e^{rt} + 2u' \cdot re^{rt} + u \cdot r^2e^{rt}</m></p>
+<p><m>- 2ru'e^{rt} - 2r \cdot re^{rt} + r^2ue^{rt}</m></p>
+<p><m>= e^{rt}u'' = 0 \implies u'' = 0 \implies u' = C_1</m></p>
+<p>We may pick <m>C_1 = 1</m>, so that <m>u' = 1 \implies u = t + C_2.</m></p>
+<p>We may pick <m>C_2 = 0</m>, so that <m>u = t \implies y_2 = te^{rt}.</m></p>
+<p>Exercise: Check that <m>W(y_1, y_2) \neq 0.</m></p>
+<p>We conclude that <m>y = C_1e^{rt} + C_2te^{rt}</m> is the general solution.</p>
+
+
+<p>Example 2: <m>ty'' - y' - 4t^3y = 0.</m> Knowing that <m>y_1 = \sin(t^2)</m> is a solution, find the general solution.</p>
+
+<p>Standard form: <m>y'' - \dfrac{1}{t}y' - 4t^2y = 0 \implies p(t) = -\dfrac{1}{t}.</m></p>
+
+<p>Set <m>y_2 = uy_1.</m> To formulate the ODE for <m>u',</m> we have</p>
+<p><m>y_1 = \sin(t^2), \quad y_1' = 2t \cos(t^2)</m></p>
+<p><m>y_1u'' + (2y_1' + py_1)u' = 0</m></p>
+<p><m>\implies \sin(t^2) \dfrac{du'}{dt} + \left(4t \cos(t^2) - \dfrac{1}{t} \sin(t^2)\right) u' = 0</m></p>
+<p><m>\implies \dfrac{du'}{u'} = \left(-4t \dfrac{\cos(t^2)}{\sin(t^2)} + \dfrac{1}{t}\right) dt \implies \ln|u'| = -2 \ln|\sin(t^2)| + \ln t.</m></p>
+<p><m>\implies u' = \dfrac{t}{\sin^2(t^2)} \implies u = -\dfrac{1}{2} \cot(t^2) \implies y_2 = -\dfrac{1}{2} \cos(t^2).</m></p>
+
+<p>Standard form: <m>y'' - \dfrac{1}{t}y' - 4t^2y = 0 \implies p(t) = -\dfrac{1}{t}.</m></p>
+
+<p>Set <m>y_2 = uy_1.</m> We obtained that one option of <m>y_2,</m> namely,</p>
+<p><m>y_2 = -\dfrac{1}{2} \cos(t^2).</m></p>
+
+<p>By incorporating the <m>-1/2</m> coefficient into the arbitrary constants, we see that the general solution of the ODE is</p>
+<p><m>y = C_1 \sin(t^2) + C_2 \cos(t^2).</m></p>
+
+
+</section>

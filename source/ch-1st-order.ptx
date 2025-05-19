@@ -15,4 +15,7 @@
   <xi:include href="sec-1st-order-linear.ptx" />
   <xi:include href="sec-separable.ptx" />
   <xi:include href="sec-existence-uniqueness.ptx" />
+  <xi:include href="sec-autonomous.ptx" />
+  <xi:include href="sec-numerical.ptx" />
+
 </chapter>

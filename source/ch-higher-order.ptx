@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-higher-order" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Higher-order Differential Equations</title>
+
+  <introduction>
+    <p> </p>
+  </introduction>
+
+  <!-- include sections -->
+  <xi:include href="sec-2nd-order-linear-gen-theory.ptx" />
+  <xi:include href="sec-2nd-order-linear-const-coeff-real.ptx" />
+  <xi:include href="sec-complex-numbers.ptx" />
+  <xi:include href="sec-2nd-order-linear-const-coeff-complex.ptx" />
+  <xi:include href="sec-2nd-order-linear-const-coeff-repeated.ptx" />
+  <xi:include href="sec-2nd-order-linear-non-homogeneous.ptx" />
+  <xi:include href="sec-undetermined-coeff-1.ptx" />
+  <xi:include href="sec-undetermined-coeff-2.ptx" />
+</chapter>

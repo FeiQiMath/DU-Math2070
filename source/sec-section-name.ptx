@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<section xml:id="sec-section-name" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>First attempt of the first step</title>
+<section xml:id="sec-classification" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Classification of Differential Equations</title>
 
-  <p> Text of section. </p>
-
+  <p></p>
 </section>

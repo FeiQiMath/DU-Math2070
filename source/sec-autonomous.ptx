@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-autonomous" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Autonomous Equations</title>
+
+<p>In many situations, the ODE we use to model a physical system is of the form <me>y' = f(y),</me>
+where the right-hand-side does not depend on <m>t</m>. Such an ODE is called an <term>autonomous ODE</term>.</p>
+<p>All autonomous ODEs are separable and thus can be solved by the method of separation of variables. However, if we only need the qualitative behavior of the solutions, it is usually more convenient to use the qualitative method. </p>
+
+<subsection xml:id="subsec-equilibrium-solution">
+<p>We start with the definition of an <term>equilibrium solution</term>. We say <m>y = y_0</m> is an equlibrium solution of the autonomous ODE <m>y' = f(y)</m> if <me>f(y_0) = 0.</me></p>
+
+<p>Example 1: <m>y' = \frac{1}{2}y - 1.</m></p>
+<p><m>\frac{1}{2}y - 1 = 0 \implies y = 2.</m> So <m>y = 2</m> is an equilibrium solution.</p>
+<p>Example 2: <m>y' = (y - 1)y(y + 1).</m></p>
+<p><m>(y - 1)y(y + 1) = 0 \implies y = 0, 1, -1.</m></p>
+<p>So <m>y = 0, y = -1, y = 1</m> are equilibrium solutions.</p>
+<p>We consider only the case where the constant function <m>y(t) = y_0</m> is the unique solution of the IVP <m>y' = f(y), y(t_0) = y_0.</m> From the existence and uniqueness theorem, it suffices that <m>f(y)</m> and <m>\dfrac{\partial f}{\partial y}</m> are continuous near <m>y = y_0</m>. This always holds if <m>f(y)</m> is a polynomial function. </p>
+</subsection>
+
+<subsection xml:id="subsec-stability-of-equilibrium-solution">
+<p>Let <m>y = y_0</m> be an equilibrium solution of <m>y' = f(y).</m></p>
+<ul>
+<li><m>y = y_0</m> is <term>stable from above</term> if for every <m>y \gt y_0</m> that is not too far from <m>y_0</m>, <m>f(y) \lt 0.</m></li>
+<!-- Figure: Stable from above 
+<p>
+  <img src="path/to/stable_from_above.png" alt="Stable from above" />
+</p>
+-->
+<li><m>y = y_0</m> is <term>unstable from above</term> if for every <m>y \gt y_0</m> that is not too far from <m>y_0</m>, <m>f(y) \gt 0.</m></li>
+<!-- Figure: Unstable from above 
+<p>
+  <img src="path/to/unstable_from_above.png" alt="Unstable from above" />
+</p>-->
+
+<li><m>y = y_0</m> is <term>stable from below</term> if for every <m>y \lt y_0</m> that is not too far from <m>y_0</m>, <m>f(y) \lt 0.</m></li>
+<!-- Figure: Stable from below -->
+<!-- <p>
+  <img src="path/to/stable_from_below.png" alt="Stable from below" />
+</p> -->
+
+<li><m>y = y_0</m> is <term>unstable from below</term> if for every <m>y \lt y_0</m> that is not too far from <m>y_0</m>, <m>f(y) \gt 0.</m></li>
+<!-- Figure: Unstable from below -->
+<!-- <p>
+  <img src="path/to/unstable_from_below.png" alt="Unstable from below" />
+</p> -->
+
+<li><m>y = y_0</m> is <term>stable</term> if it is both stable from above and stable from below.</li>
+<!-- Figure: Stable -->
+<!-- <p>
+  <img src="path/to/stable.png" alt="Stable" />
+</p>-->
+<li><m>y = y_0</m> is <term>unstable</term> if it is both unstable from above and unstable from below.</li>
+<!-- Figure: Unstable -->
+<!-- <p>
+  <img src="path/to/unstable.png" alt="Unstable" />
+</p> -->
+
+<li><m>y = y_0</m> is <term>semistable</term> if it is stable from one side but unstable from the other side.</li>
+<!-- Figure: Semistable -->
+<!-- <p>
+  <img src="path/to/semistable.png" alt="Semistable" />
+</p> -->
+</ul>
+</subsection>
+
+<subsection xml:id="subsec-qualitative-method">
+<p> Once we know the equilibrium solutions and their stability, we may determine the asymptotic behavior of the solutions. The asymptotic behavior of the solutions is usually good enough for scientists and engineers to make decisions. </p>
+
+<p>Example: Pollution Model</p>
+<p><m>\frac{dP}{dt} = R - \frac{P}{V}W, \, P(0) = 0.</m></p>
+
+<p>The ODE is autonomous.</p>
+<p>Equilibrium solution: <m>R - \frac{P}{V}W = 0 \implies P = \frac{RV}{W}.</m></p>
+<p>From the direction field, the solution passing through <m>(0, 0)</m> will never go above <m>P = \frac{RV}{W}.</m></p>
+<p>So density of mercury is always below <m>\frac{R}{W}.</m> If <m>\frac{R}{W} \lt 0.002 \, \text{mg/L},</m> the lake water stays potable forever.</p>
+
+<!-- Figure: Pollution Model -->
+<!-- <p>
+  <img src="path/to/pollution_model.png" alt="Pollution Model" />
+</p> -->
+
+<p>Example: Falling object from great height, subject to gravity <m>mg</m> and the air resistance <m>-kv^2</m>. From Newton's second law:</p>
+<p><m>\frac{m \, dv}{dt} = mg - kv^2, \, v(0) = 0.</m></p>
+
+<p>The ODE is autonomous.</p>
+
+<p>Equilibrium solution <m>mg - kv^2 = 0 \implies v = \sqrt{\frac{mg}{k}}.</m></p>
+<p>The equilibrium solution is indeed the terminal velocity. We obtained it without much trouble. </p>
+
+<p>We may also try to get the explicit solution of the IVP by separating the variables:</p>
+<p>
+  <m>\frac{mdv}{mg - kv^2} = dt \implies \frac{m}{2\sqrt{mg}} \left( \frac{dv}{\sqrt{mg} - \sqrt{kv}} + \frac{dv}{\sqrt{mg} + \sqrt{kv}} \right) = dt
+</m>
+</p>
+
+<p>
+  <m>\implies \frac{1}{2\sqrt{\frac{m}{kg}}} \ln \left| \frac{\sqrt{mg} + \sqrt{kv}}{\sqrt{mg} - \sqrt{kv}} \right| = t + C \implies \frac{\sqrt{mg} + \sqrt{kv}}{\sqrt{mg} - \sqrt{kv}} = Ce^{\frac{2\sqrt{kg}}{m}t}
+</m>
+</p>
+
+<p>
+  <m>\frac{\sqrt{mg} + \sqrt{kv}}{\sqrt{mg} - \sqrt{kv}} = Ce^{\frac{2\sqrt{kg}}{m}t}, \, v(0) = 0 \Rightarrow C = 1.</m>
+</p>
+
+<p>
+  <m>\Rightarrow v = \frac{\sqrt{mg}}{\sqrt{k}} e^{\frac{2\sqrt{kg}}{m}t} - 1 \Rightarrow \frac{\sqrt{mg}}{\sqrt{k}} \frac{e^{\frac{2\sqrt{kg}}{m}t}}{e^{\frac{2\sqrt{kg}}{m}t} + 1} \rightarrow \sqrt{\frac{mg}{k}} \text{ as } t \to \infty</m>
+</p>
+
+<p>As you see, although the explicit solution contains much more information, if we only need the asymptotic behavior, it is much more convenient to use the qualitative method. </p>
+
+<p>More examples</p>
+
+<p>Example: <m>y' = y(y - 1)(y + 1).</m></p>
+<p>Equilibriums: <m>y = -1, y = 0, y = 1.</m></p>
+
+<p>If <m>y \gt 1</m>, then <m>y' \gt 0</m></p>
+<p>If <m>0 \lt y \lt 1</m>, then <m>y' \lt 0</m></p>
+<p>If <m>-1 \lt y \lt 0</m>, then <m>y' \gt 0</m></p>
+<p>If <m>y \lt -1</m>, then <m>y' \lt 0</m></p>
+
+<!-- Figure: Direction Field -->
+<!-- <p>
+  <img src="path/to/direction_field.png" alt="Direction Field" />
+</p> -->
+
+<p>If an initial condition is given as <m>y(3) = 2</m>, then <m>\lim_{t \to \infty} y(t) = \infty,</m> <m>\lim_{t \to -\infty} y(t) = 1.</m></p>
+
+<p>If an initial condition is given as <m>y(4) = -\frac{1}{2}</m>, then <m>\lim_{t \to \infty} y(t) = 0,</m> <m>\lim_{t \to -\infty} y(t) = -1.</m></p>
+
+<!-- Figure: Direction Field -->
+<!-- <p>
+  <img src="path/to/direction_field.png" alt="Direction Field" />
+</p> -->
+
+<p>Instead of drawing the full directional field, we may compress the 2-dimensional plane into one single line, called the phase line.</p>
+
+<!-- Figure: Directional Field and Phase Line -->
+<!-- <p>
+  <img src="path/to/phase_line.png" alt="Phase Line" />
+</p> -->
+
+
+<p>The phase line can either be drawn vertically or horizontally.</p>
+
+<!-- Figure: Directional Field and Phase Line -->
+<!-- <p>
+  <img src="path/to/phase_line.png" alt="Phase Line" />
+</p> -->
+
+<p>Example: <m>y' = y^2(y^2 - 4) = y^2(y - 2)(y + 2).</m></p>
+<p>Equilibriums: <m>y = -2, y = 0, y = 2.</m></p>
+
+<!-- Figure: Stability Analysis -->
+<!-- <p>
+  <img src="path/to/stability_analysis.png" alt="Stability Analysis" />
+</p> -->
+
+<!-- <table>
+  <tr>
+    <td>stable</td>
+    <td>semistable</td>
+    <td>unstable</td>
+  </tr>
+  <tr>
+    <td>
+      <m>y < -2</m><br>
+      <m>y - 2 < 0</m><br>
+      <m>y^2 > 0</m><br>
+      <m>y + 2 < 0</m><br>
+      <m>\Rightarrow y' > 0</m>
+    </td>
+    <td>
+      <m>-2 < y < 0</m><br>
+      <m>y - 2 < 0</m><br>
+      <m>y^2 > 0</m><br>
+      <m>y + 2 > 0</m><br>
+      <m>\Rightarrow y' < 0</m>
+    </td>
+    <td>
+      <m>0 < y < 2</m><br>
+      <m>y - 2 > 0</m><br>
+      <m>y^2 > 0</m><br>
+      <m>y + 2 > 0</m><br>
+      <m>\Rightarrow y' > 0</m>
+    </td>
+  </tr>
+</table> -->
+
+<p> In many cases, we do not know the explicity formula for <m>f(y)</m> but only its graph. We are still able to carry out the qualitative method.</p>
+
+<p>Example: <m>y' = f(y)</m> where the graph of <m>f(y)</m> is given.</p>
+
+<!-- Figure: Graph of f(y) -->
+<!-- <p>
+  <img src="path/to/graph.png" alt="Graph of f(y)" />
+</p> -->
+
+
+</subsection>
+
+</section>

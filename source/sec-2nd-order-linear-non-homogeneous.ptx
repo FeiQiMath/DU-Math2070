@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-2nd-order-linear-non-homogeneous" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Second-order Linear Non-Homogeneous ODEs</title>
+
+<p>The general solution of a nonhomogeneous linear ODE</p>
+<p><m>y'' + p(t)y' + q(t)y = g(t)</m></p>
+<p>is closely related to the solution of the homogeneous ODE</p>
+<p><m>y'' + p(t)y' + q(t)y = 0.</m></p>
+
+<p>Principle of Superposition</p>
+<p>3. Let <m>Y_1, Y_2</m> be two solutions of <m>y'' + p(t)y' + q(t)y = g(t).</m> Then <m>Y_1 - Y_2</m> is a solution of <m>y'' + p(t)y' + q(t)y = 0.</m></p>
+
+<p>Proof. The assumption states that</p>
+<p><m>Y_1'' + p(t)Y_1' + q(t)Y_1 = g(t),</m></p>
+<p><m>Y_2'' + p(t)Y_2' + q(t)Y_2 = g(t).</m></p>
+<p>Subtract these two equations, by linearity of derivatives, we get</p>
+<p><m>(Y_1 - Y_2)'' + p(t)(Y_1 - Y_2)' + q(t)(Y_1 - Y_2) = 0.</m></p>
+<p>Thus <m>Y_1 - Y_2</m> is a solution of the <m>y'' + p(t)y' + q(t)y = 0.</m></p>
+
+<p>Theorem. The general solution of <m>y'' + p(t)y' + q(t)y = g(t)</m> is of the form</p>
+<p><m>y = y_c + Y = C_1y_1 + C_2y_2 + Y</m></p>
+<p>where <m>y_c = C_1y_1 + C_2y_2</m> is the general solution of the ODE</p>
+<p><m>y'' + p(t)y' + q(t)y = 0,</m> <m>Y</m> is a particular solution of ODE <m>y'' + p(t)y' + q(t)y = g(t).</m></p>
+
+<p>Proof. We first check that <m>y = y_c + Y</m> is a solution:</p>
+<p><m>LHS = (y_c + Y)'' + p(t)(y_c + Y)' + q(t)(y_c + Y)</m></p>
+<p><m>= y_c'' + p(t)y_c' + q(t)y_c + Y'' + p(t)Y' + q(t)Y</m></p>
+<p><m>= 0 + g(t) = RHS.</m></p>
+
+<p>Proof (continued). It remains to check that <alert>any solution is of this form.</alert> Let <m>y</m> be any solution of the nonhomogeneous ODE. Then from the principle of superposition, <m>y - Y</m> is a solution of the homogeneous ODE. Thus</p>
+<p><m>y - Y = C_1y_1 + C_2y_2</m></p>
+<p>for some numbers <m>C_1, C_2.</m> Thus <m>y = C_1y_1 + C_2y_2 + Y.</m></p>
+
+<p>Terminologies:</p>
+<p><m>y_c = C_1y_1 + C_2y_2</m> is called the <alert>complementary solution.</alert> <m>Y</m> is called a <alert>particular solution.</alert></p>
+
+<p>Solving a nonhomogeneous ODE reduces to two parts: Solve the homogeneous ODE to find the complementary solution, then find a particular solution.</p>
+
+<p>Linear ODE with constant coefficients</p>
+
+<p>For a second order linear nonhomogeneous ODE with constant coefficients</p>
+<p><m>ay'' + by' + cy = g(t),</m></p>
+<p>we learned how to find the complementary solution:</p>
+<p>We start by forming the auxiliary equation <m>ar^2 + br + c = 0</m> and solve the quadratic equation. Three cases:</p>
+<ul>
+  <li>Two distinct real roots <m>r_1 \neq r_2,</m> <m>y_c = C_1e^{r_1t} + C_2e^{r_2t}.</m></li>
+  <li>Two distinct complex roots <m>r_1 = \alpha + i\beta, r_2 = \alpha - i\beta,</m> <m>y_c = C_1e^{\alpha t} \cos \beta t + C_2e^{\alpha t} \sin \beta t.</m></li>
+  <li>Two repeated real roots <m>r_1 = r_2 = r,</m> <m>y_c = C_1e^{rt} + C_2te^{rt}.</m></li>
+</ul>
+
+<p>For a second order linear nonhomogeneous ODE with constant coefficients</p>
+<p><m>ay'' + by' + cy = g(t),</m></p>
+<p>There are two approaches of finding a particular solution.</p>
+
+<ol>
+  <li>Method of Undetermined Coefficients. The method is convenient and easy to generalize to higher-order linear <alert>ODEs</alert>, but only works for some special classes of <m>g(t)</m> (good enough for most engineering practices).</li>
+  
+  <li>Variation of Parameter <alert>(not required).</alert> Knowing the complementary solution <m>y_c = C_1y_1 + C_2y_2,</m> we may set <m>Y = u_1y_1 + u_2y_2</m> and solve that</li>
+</ol>
+
+<p><m>Y = y_1 \cdot \int \dfrac{-y_2 \cdot g}{W(y_1, y_2)} dt + y_2 \cdot \int \dfrac{y_1 \cdot g}{W(y_1, y_2)} dt</m></p>
+
+</section>

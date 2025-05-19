@@ -1,0 +1,160 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-undetermined-coeff-2nd-order" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Method of Undetermined Coefficients - First Ansatz</title>
+
+<p>We use <alert>examples</alert> to study the method of undetermined coefficients.</p>
+
+<p>Example 1: <m>y'' - 2y' - 3y = 3</m></p>
+<p>Idea: RHS is a constant. We try a constant function.</p>
+
+<p>Solution: Complementary solution: <m>y_c = C_1e^{3t} + C_2e^{-t}.</m></p>
+<p>Set <m>Y = A.</m> Then <m>Y' = 0, Y'' = 0.</m></p>
+<p><m>LHS = 0 - 0 - 3A = 3 \implies A = -1 \implies Y = -1.</m></p>
+
+<p>The general solution is</p>
+<p><m>y = C_1e^{3t} + C_2e^{-t} - 1.</m></p>
+
+<p>Example 2: <m>y'' - y' - 2y = t^2 + 1</m></p>
+<p>Idea: RHS is a polynomial. We try a polynomial function.</p>
+
+<p>Solution: Complementary solution: <m>y_c = C_1e^{2t} + C_2e^{-t}.</m></p>
+<p>Set <m>Y = At^2 + Bt + C.</m> Then <m>Y' = 2At + B, Y'' = 2A.</m></p>
+<p><m>LHS = 2A - (2At + B) - 2(At^2 + Bt + C)</m></p>
+<p><m>= -2At^2 + (-2A - 2B)t + (2A - B - 2C) = t^2 + 1</m></p>
+<p><m>\implies -2A = 1, -2A - 2B = 0, 2A - B - 2C = 1</m></p>
+<p><m>\implies A = -\dfrac{1}{2}, B = \dfrac{1}{2}, C = -\dfrac{5}{4} \implies Y = -\dfrac{1}{2}t^2 + \dfrac{1}{2}t - \dfrac{5}{4}.</m></p>
+
+<p>The general solution is</p>
+<p><m>y = C_1e^{2t} + C_2e^{-t} - \dfrac{1}{2}t^2 + \dfrac{1}{2}t - \dfrac{5}{4}.</m></p>
+
+<p>Remark: Generally, if the RHS is a polynomial of degree <m>n</m>, we set <m>Y</m> as a <alert>generic</alert> polynomial of degree <m>n.</m></p>
+
+<p>Remark: Even if <m>g(t) = t^n</m>, when setting <m>Y</m>, we should start from the highest degree of <m>g(t)</m> and go <alert>all the way down</alert> to the constant term.</p>
+
+<p>Example 3: <m>y'' - y' - 2y = t^3</m></p>
+
+<p>Solution: Complementary solution: <m>y_c = C_1e^{2t} + C_2e^{-t}.</m></p>
+<p>Set <m>Y = At^3 + Bt^2 + Ct + D.</m></p>
+<p>Then <m>Y' = 3At^2 + 2Bt + C, Y'' = 6At + 2B.</m> Then LHS is</p>
+<p><m>6At + 2B - (3At^2 + 2Bt + C) - 2(At^3 + Bt^2 + Ct + D)</m></p>
+<p><m>= -2At^3 + (-2B - 3A)t^2 + (6A - 2B - 2C)t + (2B - C - 2D) = t^3</m></p>
+<p><m>\implies -2A = 1, -2B - 3A = 0, 6A - 2B - 2C = 0, 2B - C - 2D = 0</m></p>
+<p><m>\implies A = -\dfrac{1}{2}, B = -\dfrac{3}{4}, C = \dfrac{9}{4}, D = -\dfrac{3}{8}.</m></p>
+
+<p>General solution:</p>
+<p><m>y = C_1e^{2t} + C_2e^{-t} - \dfrac{1}{2}t^3 + \dfrac{3}{4}t^2 + \dfrac{9}{4}t - \dfrac{3}{8}.</m></p>
+
+<p>Example 4: <m>y'' - y' - 2y = e^{3t}</m></p>
+<p>Idea: RHS is an exponential function. We try an exponential function with the same exponential coefficient.</p>
+
+<p>Solution: Complementary solution: <m>y_c = C_1e^{2t} + C_2e^{-t}.</m></p>
+<p>Set <m>Y = Ae^{3t}.</m> Then <m>Y' = 3Ae^{3t}, Y'' = 9Ae^{3t}.</m></p>
+<p><m>Y'' - Y' - 2Y = 9Ae^{3t} - 3Ae^{3t} - 2Ae^{3t} = 4Ae^{3t} = e^{3t}</m></p>
+<p><m>\implies A = \dfrac{1}{4} \implies Y = \dfrac{1}{4}e^{3t}.</m></p>
+
+<p>General solution:</p>
+<p><m>y = C_1e^{2t} + C_2e^{-t} + \dfrac{1}{4}e^{3t}.</m></p>
+
+<p>Remark: If we choose <m>e^{\alpha t}</m> for <m>\alpha \neq 3,</m> it won’t work.</p>
+
+<p>Example 5: <m>y'' - 2y' + y = 3 \sin 3t</m></p>
+<p>Idea: RHS is a trigonometric function. We try a trigonometric function with the same trigonometric coefficient.</p>
+
+<p>Solution: Complementary solution: <m>y_c = C_1e^t + C_2te^t.</m></p>
+<p>Set <m>Y = A \sin 3t + B \cos 3t.</m> <alert>Note that both sin and cos should appear.</alert></p>
+<p><m>\implies Y' = 3A \cos 3t - 3B \sin 3t, Y'' = -9A \sin 3t - 9B \cos 3t.</m></p>
+<p><m>Y'' - 2Y' + Y = (-9A \sin 3t - 9B \cos 3t) - 2(3A \cos 3t - 3B \sin 3t)</m></p>
+<p><m>= (-8A + 6B) \sin 3t + (-8B - 6A) \cos 3t = 3 \sin 3t.</m></p>
+<p><m>\implies -8A + 6B = 3, -8B - 6A = 0</m></p>
+<p><m>\implies A = -\dfrac{6}{25}, B = -\dfrac{9}{50} \implies Y = -\dfrac{6}{25} \sin 3t - \dfrac{9}{50} \cos 3t.</m></p>
+
+<p>General solution:</p>
+<p><m>y = C_1e^t + C_2te^t - \dfrac{6}{25} \sin 3t + \dfrac{9}{50} \cos 3t.</m></p>
+
+<p>Remark: This works only for sin and cos, fails for other trigs.</p>
+<p>Remark: If we try <m>A \sin \alpha t + B \cos \alpha t</m> for <m>\alpha \neq 3,</m> the method won’t work.</p>
+
+<p><strong>Important Conceptual Remarks</strong></p>
+
+<p>The method works because:</p>
+<ul>
+  <li>Derivatives of polynomial functions are polynomials (up to the same degree).</li>
+  <li>Derivatives of exponential functions are exponential functions (with the same exponential coefficient).</li>
+  <li>Derivatives of sine and cosine functions are sine and cosine functions (with the same trigonometric coefficient).</li>
+</ul>
+<p>For functions without this property, the method fails. You will have to use the integration formula.</p>
+
+<p>The polynomials, exponentials, sine and cosine functions are referred to as the basic types. Observe that products of basic type functions satisfy the same property.</p>
+
+<p>We have seen that for <m>ay'' + by' + cy = g(t).</m></p>
+<ol>
+  <li>If <m>g(t) = 3</m> (or <m>g(t) = -10</m>), we should set the ansatz as <m>Y = A.</m></li>
+  <li>If <m>g(t) = t^2 + 1</m> (or <m>g(t) = 6t^2</m>, or <m>g(t) = -2t^2 + 4t - 3</m>), we should set the ansatz as <m>Y = At^2 + Bt + C.</m></li>
+  <li>If <m>g(t) = e^{3t}</m> (or <m>g(t) = -2e^{3t}</m>), we should set the ansatz as <m>Y = Ae^{3t}.</m></li>
+  <li>If <m>g(t) = 3 \sin 3t</m> (or <m>g(t) = 6 \cos 3t</m>, or <m>g(t) = 18 \cos 3t - 27 \sin 3t</m>), we should set the ansatz as <m>Y = A \cos 3t + B \sin 3t.</m></li>
+</ol>
+<p>This list continues with products of basic types.</p>
+
+<ol>
+  <li>If <m>g(t) = 4t^3e^{3t}</m> (or <m>g(t) = (t^3 + 2t)e^{3t}</m>), we should set the ansatz as</li>
+  <p><m>Y = (At^3 + Bt^2 + Ct + D)e^{3t}.</m></p>
+  <p>Remark: We need an exponential function with the same coefficient. Then we pair it with a generic polynomial.</p>
+
+  <li>If <m>g(t) = (t^2 + 1) \sin 3t</m> (or <m>g(t) = 2t^2 \cos 3t,</m> or <m>g(t) = 2t \cos 3t + (t^2 + 1) \sin 3t</m>), we should set the ansatz as</li>
+  <p><m>Y = (At^2 + Bt + C) \sin 3t + (Dt^2 + Et + F) \cos 3t.</m></p>
+  <p>Remark: We need both sine and cosine with the same coefficient. We pair both sine and cosine with generic polynomials of the same degrees.</p>
+  
+  <p>Common mistake that won’t work:</p>
+  <p><m>Y = (At^2 + Bt + C)(D \cos 3t + E \sin 3t)</m></p>
+</ol>
+
+<ol>
+  <li>If <m>g(t) = e^{3t} \cos 4t</m> (or <m>g(t) = -e^{3t} \sin 4t,</m> or <m>g(t) = 2e^{3t} \cos 4t - 6e^{3t} \sin 4t</m>), we should set the ansatz as</li>
+  <p><m>Y = Ae^{3t} \cos 4t + Be^{3t} \sin 4t.</m></p>
+  <p>Remark: We should understand <m>e^{\alpha t} \cos \beta t</m> (or <m>e^{\alpha t} \sin \beta t,</m> or both) as the real parts (or imaginary parts, or both) of <m>e^{(\alpha + \beta i)t}</m> and <m>e^{(\alpha - \beta i)t}.</m> We need both <m>e^{\alpha t} \cos \beta t</m> and <m>e^{\alpha t} \sin \beta t.</m></p>
+
+  <li>If <m>g(t) = 3te^{3t} \cos 4t</m> (or <m>g(t) = 6te^{3t} \sin 4t,</m> or <m>g(t) = 18te^{3t} \cos 4t - 7e^{3t} \sin 4t</m>), we should set the ansatz as</li>
+  <p><m>Y = (At + B)e^{3t} \cos 4t + (Ct + D)e^{3t} \sin 4t.</m></p>
+  <p>Remark: We need both <m>e^{\alpha t} \cos \beta t</m> and <m>e^{\alpha t} \sin \beta t.</m> Then we pair both of them with generic polynomials of the same degree.</p>
+</ol>
+
+<p>Example 6. <m>y'' + 4y = t e^t \cos 2t.</m></p>
+<p>Complementary solution: <m>y = C_1 \cos 2t + C_2 \sin 2t.</m></p>
+<p>Set <m>Y = (At + B)e^t \cos 2t + (Ct + D)e^t \sin 2t.</m></p>
+<p><m>Y' = Ae^t \cos 2t + (At + B)e^t \cos 2t - 2(At + B)e^t \sin 2t + Ce^t \sin 2t + (Ct + D)e^t \sin 2t</m></p>
+<p><m>= [(A + 2C)t + B + A + 2D]e^t \cos 2t + [(C - 2A)t + C + D - 2B]e^t \sin 2t.</m></p>
+<p><m>Y'' = (A + 2C)e^t \cos 2t + [(A + 2C)t + B + A + 2D]e^t \cos 2t - 2[(A + 2C)t + B + A + 2D]e^t \sin 2t</m></p>
+<p><m>+ (C - 2A)e^t \sin 2t + [(A + 2C)t + B + A + 2D]e^t \sin 2t</m></p>
+<p><m>+ 2[(A + 2C)t + B + A + 2D]e^t \cos 2t.</m></p>
+<p><m>= [(-3A + 4C)t + 2A - 3B + 4D]e^t \cos 2t + [(-4A - 3C)t - 4A - 4B + 2C + D]e^t \sin 2t.</m></p>
+<p>So</p>
+<p><m>Y'' + 4Y</m></p>
+<p><m>= [(-3A + 4C)t + 2A - 3B + 4C + 4D]e^t \cos 2t</m></p>
+<p><m>+ [(-4A - 3C)t - 4A - 4B + 2C + D]e^t \sin 2t</m></p>
+<p><m>+ 4(At + B)e^t \cos 2t + 4(Ct + D)e^t \sin 2t</m></p>
+<p><m>= [(A + 4C)t + 2A + B + 4C + 4D]e^t \cos 2t</m></p>
+<p><m>+ [(-4A + C)t - 4A - 4B + 2C + D]e^t \sin 2t.</m></p>
+<p><m>= te^t \cos 2t.</m></p>
+<p>Thus, we obtain four equations concerning four variables:</p>
+<p><m>A + 4C = 1, \quad 2A + B + 4C + 4D = 0,</m></p>
+<p><m>-4A + C = 0, \quad -4A - 4B + 2C + D = 0.</m></p>
+<p>Solving the system, we obtain</p>
+<p><m>A = \dfrac{1}{17}, \quad B = -\dfrac{2}{289}, \quad C = \dfrac{4}{17}, \quad D = -\dfrac{76}{289}.</m></p>
+<p>So</p>
+<p><m>Y = \left( \dfrac{1}{17} t - \dfrac{2}{289} \right)e^t \cos 2t + \left( \dfrac{4}{17} t - \dfrac{76}{289} \right)e^t \sin 2t.</m></p>
+
+<p>The general solution is</p>
+<p><m>y = C_1 \cos 2t + C_2 \sin 2t + \left( \dfrac{1}{17} t - \dfrac{2}{289} \right)e^t \cos 2t + \left( \dfrac{4}{17} t - \dfrac{76}{289} \right)e^t \sin 2t.</m></p>
+
+<p><strong>The first ansatz - Summary</strong></p>
+
+<p>All the ansatz from 1-8 can be summarized as follows:</p>
+<p>For the ODE <m>ay'' + by' + cy = g(t),</m> with</p>
+<p><m>g(t) = e^{at} \cos(\beta t) (a_n t^n + a_{n-1} t^{n-1} + \cdots + a_1 t + a_0) + e^{at} \sin(\beta t) (b_n t^n + b_{n-1} t^{n-1} + \cdots + b_1 t + b_0),</m></p>
+<p>for some real numbers <m>a_1, \ldots, a_n, b_1, \ldots, b_n</m> (where <m>a_n</m> and <m>b_n</m> are <alert>not simultaneously zero</alert>), the first ansatz should be set as</p>
+<p><m>Y = e^{at} \cos(\beta t) (A_n t^n + A_{n-1} t^{n-1} + \cdots + A_1 t + A_0) + e^{at} \sin(\beta t) (B_n t^n + B_{n-1} t^{n-1} + \cdots + B_1 t + B_0).</m></p>
+
+<p><strong>(Important)</strong> The first ansatz depends only on <m>g(t),</m> irrelevant of the left-hand-side.</p>
+
+</section>

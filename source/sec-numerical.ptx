@@ -1,0 +1,219 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-numerical" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Numerical Methods</title>
+<p><strong>Numerical Methods</strong></p>
+<ul>
+  <li>Applies to every reasonably formulated initial value problem.</li>
+  <li>Most useful when the analytic methods fail.</li>
+  <li>Main method for IVP in real world engineering practice.</li>
+</ul>
+
+<subsection xml:id="subsec-euler-method">
+<p><strong>Euler’s method.</strong></p>
+<p>Idea: Use the direction field to perform linear approximations.</p>
+<p>Recall: <m>f(t) \approx f(t_0) + f'(t_0)(t - t_0)</m></p>
+
+<p>Consider <m>y' = f(t, y), \, y(t_0) = y_0,</m> we choose a small step-size <m>h.</m></p>
+<p>Then we approximate <m>y(t_0 + h)</m> by <m>y(t_0 + h) \approx y(t_0) + y'(t_0)h = y(t_0) + h \cdot f(t_0, y_0).</m></p>
+
+<!-- Figure: Euler's Method -->
+<!-- <p>
+  <img src="path/to/euler_method.png" alt="Euler's Method" />
+</p>
+   -->
+
+<p>We read the line element at the point <m>(t_0, y(t_0 + h)),</m> perform the same procedure to get an approximation of <m>y(t_0 + 2h).</m></p>
+
+<!-- Figure: Euler's Method -->
+<!-- <p>
+  <img src="path/to/euler_method_2.png" alt="Euler's Method" />
+</p> -->
+
+<p>Repeating the process, we may approximate <m>y(t_0 + nh)</m> for every <m>n = 1, 2, 3, \ldots</m></p>
+
+<!-- Figure: Euler's Method -->
+<!-- <p>
+  <img src="path/to/euler_method_3.png" alt="Euler's Method" />
+</p> -->
+
+<p>Formula: Given the IVP <m>y' = f(t, y)</m> and step-size <m>h,</m> set <m>t_n = t_0 + nh, \, n = 0, 1, 2, \ldots</m></p>
+
+<p>If we let <m>y_n</m> be the approximation of <m>y(t_0 + nh),</m> then <m>y_n</m> can be obtained from <m>y_{n-1}, t_{n-1}, h</m> by</p>
+<p><m>y_n = y_{n-1} + h \cdot f(t_{n-1}, y_{n-1})</m></p>
+
+<p>Example 1: <m>y' = t - y + 1, \, y(1) = 3.</m> Use Euler’s method to approximate <m>y(3)</m> with step-size <m>h = 0.5.</m></p>
+
+<p>Since <m>h = 0.5, \, t_0 = 1,</m> we compute that</p>
+<p><m>y_n = y_{n-1} + h(t_{n-1} - y_{n-1} + 1)</m></p>
+<p><m> = y_{n-1} + 0.5(t_0 + (n - 1)h - y_{n-1} + 1)</m></p>
+<p><m> = y_{n-1} + 0.5(1 + (n - 1)0.5 - y_{n-1} + 1)</m></p>
+<p><m> = y_{n-1} + 0.5 + 0.25(n - 1)</m></p>
+<p><m> = 0.5y_{n-1} + 0.75 + 0.25n.</m></p>
+
+<p>We computed that</p>
+<p><m>y_n = 0.5y_{n-1} + 0.75 + 0.25n.</m></p>
+<p>Want: <m>y(3),</m> i.e., <m>t_0 + nh = 3</m> <m>\Rightarrow 1 + 0.5n = 3 \Rightarrow n = 4.</m></p>
+<p>So <m>y(3) \approx 3.125.</m></p>
+
+<!-- Table: Values of n, tn, and yn -->
+<table>
+  <thead>
+    <tr>
+      <th><m>n</m></th>
+      <th><m>t_n</m></th>
+      <th><m>y_n</m></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>1.5</td>
+      <td><m>0.5 \cdot 3 + 0.75 + 0.25 \cdot 1 = 2.5</m></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>2</td>
+      <td><m>0.5 \cdot 2.5 + 0.75 + 0.25 \cdot 2 = 2.5</m></td>
+    </tr>
+    <tr>
+      <td>3</td>
+      <td>2.5</td>
+      <td><m>0.5 \cdot 2.5 + 0.75 + 0.25 \cdot 3 = 2.75</m></td>
+    </tr>
+    <tr>
+      <td>4</td>
+      <td>3</td>
+      <td><m>0.5 \cdot 2.75 + 0.75 + 0.25 \cdot 4 = 3.125</m></td>
+    </tr>
+  </tbody>
+</table>
+
+<p><strong>General steps:</strong></p>
+<ol>
+  <li>Formulate the formula and simplify <m>y_n</m> in terms of <m>y_{n-1}, n, h.</m></li>
+  <li>Determine how many steps you want to compute.</li>
+  <li>Compute using either a calculator or some software.</li>
+</ol>
+
+<p>Example 2: <m>y' = t + y, \, y(1) = 2.</m> Use Euler’s method to approximate <m>y(3)</m> with step-size <m>h = 1.</m></p>
+
+<p>Since <m>h = 1, \, t_0 = 1,</m> we compute that</p>
+<p><m>y_n = y_{n-1} + h(t_{n-1} + y_{n-1})</m></p>
+<p><m> = y_{n-1} + 1 \cdot (t_0 + (n - 1)h + y_{n-1})</m></p>
+<p><m> = y_{n-1} + (1 + (n - 1) + y_{n-1})</m></p>
+<p><m> = 2y_{n-1} + n.</m></p>
+<p>We computed that</p>
+<p><m>y_n = 2y_{n-1} + n.</m></p>
+<p>Want: <m>y(3),</m> i.e., <m>t_0 + nh = 3</m> <m>\Rightarrow 1 + n = 3 \Rightarrow n = 2.</m></p>
+<p>So <m>y(3) \approx 12.</m></p>
+
+<!-- Table: Values of n, tn, and yn -->
+<table>
+  <thead>
+    <tr>
+      <th><m>n</m></th>
+      <th><m>t_n</m></th>
+      <th><m>y_n</m></th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>0</td>
+      <td>1</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <td>1</td>
+      <td>2</td>
+      <td><m>2 \cdot 2 + 1 = 5</m></td>
+    </tr>
+    <tr>
+      <td>2</td>
+      <td>3</td>
+      <td><m>2 \cdot 5 + 2 = 12</m></td>
+    </tr>
+  </tbody>
+</table>
+</subsection>
+
+<subsection xml:id="subsec-error-analysis">
+
+<p><strong>Error analysis</strong></p>
+
+<p>In Example 1, we approximated that <m>y(3) \approx 3.125.</m></p>
+<p>The IVP <m>y' = t - y + 1, \, y(1) = 3</m> can be solved directly.</p>
+<p>The actual solution is <m>y(t) = t + 2e^{1-t} \Rightarrow y(3) \approx 3.27067.</m></p>
+<p>The approximation is not very good. However, if we use <m>h = \frac{1}{10},</m> or <m>h = \frac{1}{10,000},</m> the approximation will be much better.</p>
+
+<p>Recall: Taylor's theorem:</p>
+<p><m>y(t_0 + h) = y(t_0) + hy'(t_0) + \frac{h^2}{2}y''(t_0) + \ldots</m></p>
+
+<p>In the Euler's method, we only kept the first two terms.</p>
+<p>The dropped terms can be expressed using Lagrange remainder:</p>
+<p><m>Error = \frac{1}{2}h^2y''(t_1), \, t_1 \in (t_0, t_0 + h)</m></p>
+
+<ol>
+  <li>If <m>y''(t) \gt 0</m> on <m>(t_0, t_0 + h),</m> Euler’s method gives an underestimate of <m>y(t_0 + h),</m> i.e., the estimate <m>y_1</m> is smaller than the actual solution <m>y(t_0 + h).</m></li>
+  <li>If <m>y''(t) \lt 0</m> on <m>(t_0, t_0 + h),</m> Euler’s method gives an overestimate of <m>y(t_0 + h),</m> i.e., the estimate <m>y_1</m> is larger than the actual solution <m>y(t_0 + h).</m></li>
+  <li>If <m>y''(t)</m> changes sign. In that case, we can’t tell.</li>
+  <li>The formula describes the error in <alert>one step</alert>, thus is called the <term>local truncation error.</term> It is proportional to <m>h^2.</m> In particular, lowering <m>h</m> means lowering the error.</li>
+  <li>The final error, aka <term>global truncation error,</term> will accumulate.</li>
+  <li>In general, if the local truncation <m>\sim h^k</m>, then global truncation error <m>\sim h^{k-1}.</m> For Euler’s method, the GTE <m>\sim h.</m></li>
+</ol>
+
+<p>Example 1: <m>y' = t - y + 1, \, y(1) = 3.</m></p>
+<p>We estimated that <m>y(3) \approx 3.125.</m> Do we have an overestimate or an underestimate?</p>
+
+<p>To find <m>y''</m>, we take the derivative on both sides of the ODE:</p>
+<p><m>y'' = t' - y' + 1' = 1 - (t - y + 1) = -t + y</m></p>
+
+<p>Within <m>[1, 3],</m> we can estimate <m>y''</m> using the values of each step. Recall that <m>y(1) = 3, \, y(1.5) \approx 2.5, \, y(2) \approx 2.5, \, y(2.5) \approx 2.75, \, y(3) \approx 3.125.</m></p>
+<p><m>\Rightarrow y''(1.5) \approx -1.5 + 2.5 = 1, \, y''(2) \approx -2 + 2.5 = 0.5, \, y''(2.5) \approx -2.5 + 2.75 = 0.25, \, y''(3) \approx -3 + 3.125 = 0.125.</m></p>
+
+<p>All positive. It is <alert>likely</alert> that we have an underestimate.</p>
+<p><alert>Warning:</alert> This process is not fully rigorous. It provides some evidence that is usually good enough in engineering practices.</p>
+
+<p>Example 1: <m>y' = t - y + 1, \, y(1) = 3.</m></p>
+<p>We estimated that <m>y(3) \approx 3.125.</m> If the error of <m>y(3)</m> is 0.2 with step-size <m>h = 0.5,</m> what would the error be if step-size <m>h = 0.01?</m></p>
+
+<p>We know that the global truncation error is proportional to <m>h,</m> i.e., <m>E = Kh.</m></p>
+
+<p>We have <m>E = 0.2</m> when <m>h = 0.5.</m> So <m>0.2 = K \cdot 0.5.</m></p>
+<p>When <m>h = 0.01,</m> we have <m>E = K \cdot 0.01 = \frac{0.2}{0.5} \cdot 0.01 = 0.004.</m></p>
+
+<p><alert>Remark:</alert> We may use this method to decide the step-size so that the error is controlled within a certain precision level.</p>
+
+</subsection>   
+
+<subsection xml:id="subsec-other-methods">
+
+<ul>
+  <li><strong>Improved Euler's method:</strong> <m>y' = f(t, y), \, y(t_0) = y_0</m>
+    <ul>
+      <li><m>t_n = t_0 + nh</m></li>
+      <li><m>y^*_n = y_{n-1} + h \cdot f(t_{n-1}, y_{n-1})</m></li>
+      <li><m>y_n = y_{n-1} + h \cdot \frac{1}{2}(f(t_{n-1}, y_{n-1}) + f(t_n, y^*_n))</m></li>
+      <li>Local truncation error <m>\sim h^3</m>, Global truncation error <m>\sim h^2</m></li>
+    </ul>
+  </li>
+  
+  <li><strong>Runge-Kutta method (RK4)</strong>
+    <ul>
+      <li><m>t_n = t_0 + nh</m></li>
+      <li><m>K_1 = f(t_{n-1}, y_{n-1}), \, K_2 = f(t_{n-1} + \frac{1}{2}h, y_{n-1} + \frac{1}{2}K_1h)</m></li>
+      <li><m>K_3 = f(t_{n-1} + \frac{1}{2}h, y_{n-1} + \frac{1}{2}K_2h)</m></li>
+      <li><m>K_4 = f(t_{n-1} + h, y_{n-1} + K_3)</m></li>
+      <li><m>y_n = y_{n-1} + \frac{h}{6}(K_1 + 2K_2 + 2K_3 + K_4)</m></li>
+      <li>Local truncation error <m>\sim h^5</m>, Global truncation error <m>\sim h^4</m></li>
+    </ul>
+  </li>
+</ul>
+
+</subsection>
+</section>

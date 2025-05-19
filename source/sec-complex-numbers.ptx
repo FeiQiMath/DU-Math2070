@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-complex-numbers" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Complex Numbers</title>
+
+  <subsection xml:id="subsec-multiplication">
+    <title>Multiplication</title>
+    <p>A complex number is of the form <m>a + bi</m>, where <m>a, b</m> are real numbers, and <m>i = \sqrt{-1}.</m> Note that <m>i^2 = -1.</m> <m>a</m> is called the real part, <m>b</m> is called the imaginary part.</p>
+
+  <p><strong>Multiplication:</strong></p>
+  <p>
+    <m>(a + bi)(c + di) = ac + bci + adi + bd i^2 = ac - bd + (ad + bc)i.</m>
+  </p>
+
+<p><strong>Examples:</strong></p>
+<ul>
+  <li><m>(1 + i)(2 - i) = 2 + 1 + (2i - i) = 3 + i.</m></li>
+  <li><m>i(3 + i) = 3i - 1 = -1 + 3i.</m></li>
+  <li><m>(\cos \theta + i \sin \theta)(1 - 2i) = \cos \theta + 2 \sin \theta + i(\sin \theta - 2 \cos \theta).</m></li>
+</ul>
+</subsection>
+
+<subsection xml:id="subsec-complex-geom-int">
+  <title>Geometric Interpretation</title>
+<p>A complex number may be identified with a point in the two-dimensional plane, called the complex plane.</p>
+
+<p>
+  <md>
+  <mrow>a + bi \amp \leftrightarrow (a, b)</mrow>
+  <mrow>\text{Real part} \amp  \leftrightarrow x\text{-coordinate}</mrow>
+  <mrow>\text{Imaginary part} \amp \leftrightarrow y\text{-coordinate}</mrow>
+  </md>
+</p>
+
+<p><strong>Example:</strong> <m>1 + 2i \leftrightarrow (1, 2)</m></p>
+<p>
+  <!-- Space for figure -->
+</p>
+
+<p><strong>Example:</strong> <m>-4 - 2i \leftrightarrow (-4, -2)</m></p>
+<p>
+  <!-- Space for figure -->
+</p>
+</subsection>
+
+<subsection xml:id="subsec-Euler-formula    ">
+  <title>Euler Formula</title>
+<p><strong>Euler’s formula reads</strong></p>
+<p><m>e^{i\theta} = \cos \theta + i \sin \theta</m></p>
+<p><strong>More generally</strong></p>
+<p><m>re^{i\theta} = r \cos \theta + i r \sin \theta, \, r \geq 0</m></p>
+<p>Indeed, this formula is nothing more than the polar-coordinate transformation</p>
+<p><m>(r, \theta) \leftrightarrow (r \cos \theta, r \sin \theta)</m></p>
+
+<p>Given a complex number <m>a + bi</m>, the number <m>r</m>, called the amplitude, is precisely the distance between <m>a + bi</m> and the origin,</p>
+<p><m>r = \sqrt{a^2 + b^2}</m></p>
+
+<p>The angle <m>\theta</m>, called the phase, is precisely the angle formed from the x-axis to the line connecting the origin and <m>a + bi.</m> In formulas,</p>
+<p><m>\theta = \arctan\left(\frac{b}{a}\right) \text{ if } (a, b) \text{ is in the first and fourth quadrant.}</m></p>
+<p><m>\theta = \arctan\left(\frac{b}{a}\right) + \pi \text{ if } (a, b) \text{ is in the second and third quadrant.}</m></p>
+
+<p>
+  <!-- Space for figure -->
+</p>
+
+<p><strong>Examples:</strong> <m>1 + i = \sqrt{2} e^{i\frac{\pi}{4}}, \, 1 - i = \sqrt{2} e^{-i\frac{\pi}{4}} = \sqrt{2} e^{i\frac{7\pi}{4}}.</m></p>
+
+<p>
+  <!-- Space for figure -->
+</p>
+<p>
+  <!-- Space for figure -->
+</p>
+
+<p><strong>Examples:</strong> <m>-1 + i = \sqrt{2} e^{i\frac{3\pi}{4}}, \, -1 - i = \sqrt{2} e^{-i\frac{3\pi}{4}} = \sqrt{2} e^{i\frac{5\pi}{4}}.</m></p>
+
+<p>
+  <!-- Space for figure -->
+</p>
+<p>
+  <!-- Space for figure -->
+</p>
+</subsection>
+
+<subsection xml:id="subsec-multiplication-geom-int">
+<title>Geometric Interpretation of Multiplication</title>
+<p>Consider two complex numbers</p>
+<p>
+  <m>r_1 e^{i\theta_1} = r_1(\cos \theta_1 + i \sin \theta_1), \, r_2 e^{i\theta_2} = r_2(\cos \theta_2 + i \sin \theta_2).</m>
+</p>
+<p>Then multiplying these two complex numbers ends up with</p>
+<p>
+  <m>r_1 r_2 e^{i(\theta_1 + \theta_2)} = r_1 r_2 (\cos(\theta_1 + \theta_2) + i \sin(\theta_1 + \theta_2)).</m>
+</p>
+<p><strong>Proof:</strong></p>
+<p>
+  <m>r_1(\cos \theta_1 + i \sin \theta_1) \cdot r_2(\cos \theta_2 + i \sin \theta_2)</m>
+</p>
+<p>
+  <m>= r_1 r_2 \left( \cos \theta_2 \cos \theta_1 - \sin \theta_1 \sin \theta_2 \right)</m>
+</p>
+<p>
+  <m>= r_1 r_2 \left( +i(\sin \theta_1 \cos \theta_2 + \sin \theta_2 \cos \theta_1) \right)</m>
+</p>
+<p>
+  <m>= r_1 r_2 (\cos(\theta_1 + \theta_2) + i \sin(\theta_1 + \theta_2)).</m>
+</p>
+<p>Here we used the fact that</p>
+<p>
+  <m>\cos(\theta_1 + \theta_2) = \cos \theta_1 \cos \theta_2 - \sin \theta_1 \sin \theta_2,</m>
+</p>
+<p>
+  <m>\sin(\theta_1 + \theta_2) = \sin \theta_1 \cos \theta_2 + \sin \theta_2 \cos \theta_1.</m>
+</p>
+
+<p>Geometrically, this means that the <span style="color:magenta;">amplitude</span> of the product is the product of amplitudes, and <span style="color:magenta;">phase</span> of the product is the sum of the phases.</p>
+
+<p><strong>Example:</strong> <m>(1 + i)(1 - i) = \sqrt{2} e^{i\frac{\pi}{4}} \cdot \sqrt{2} e^{i\frac{3\pi}{4}} = 2 e^{i\pi} = -2.</m></p>
+
+<p>
+  <!-- Space for figure -->
+</p>
+<p>
+  <!-- Space for figure -->
+</p>
+
+</subsection>
+
+<subsection xml:id="subsec-powers-roots">
+  <title>Powers and Roots</title>
+<p>To square the complex number</p>
+<p>
+  <m>re^{i\theta} = r(\cos \theta + i \sin \theta),</m>
+</p>
+<p>using the previous description of multiplications, we obtain</p>
+<p>
+  <m>r^2 e^{i \cdot 2\theta} = r^2(\cos 2\theta + i \sin 2\theta).</m>
+</p>
+<p>Generally, for an integer <m>n</m>, the <m>n</m>-th power of <m>re^{i\theta}</m> is simply</p>
+<p>
+  <m>r^n e^{i n \theta} = r^n(\cos n\theta + i \sin n\theta).</m>
+</p>
+
+<p>The roots, on the other hand, are more complicated.</p>
+<p>Generally, the <m>n</m>-th root <m>\sqrt[n]{z}</m> has <m>n</m> different candidates.</p>
+<p>Let <m>z = Re^{i\theta}, \, w = \sqrt[n]{z}.</m> If <m>w = re^{i\alpha},</m> then</p>
+<p>
+  <m>r^n e^{i n \alpha} = Re^{i\theta}.</m>
+</p>
+<p>While the amplitude <m>r = \sqrt[n]{R}</m> is unique, the phase <m>\alpha</m> is not unique.</p>
+<p>Indeed, <m>e^{i n \alpha} = e^{i \theta} \text{ means } n\alpha = \theta + 2k\pi, \, k = 0, \pm 1, \pm 2, \ldots.</m></p>
+
+<p>The roots, on the other hand, are more complicated.</p>
+<p>Generally, the <m>n</m>-th root <m>\sqrt[n]{z}</m> has <m>n</m> different candidates.</p>
+<p>Let <m>z = Re^{i\theta}, \, w = \sqrt[n]{z}.</m> If <m>w = re^{i\alpha},</m> then</p>
+<p>
+  <m>r^n e^{i n \alpha} = Re^{i\theta}.</m>
+</p>
+<p>While the amplitude <m>r = \sqrt[n]{R}</m> is unique, the phase <m>\alpha</m> is not unique.</p>
+<p>Indeed, <m>e^{i n \alpha} = e^{i \theta}</m> means <m>n\alpha = \theta + 2k\pi, \, k = 0, \pm 1, \pm 2, \ldots.</m></p>
+<p>This is to say that</p>
+<p>
+  <m>\alpha = \frac{\theta}{n} + \frac{2k\pi}{n}, \, k = 0, \pm 1, \pm 2, \ldots</m>
+</p>
+<p>Correspondingly, for <m>k = 0, 1, \ldots, n - 1,</m></p>
+<p>
+  <m>\sqrt[n]{R} e^{i \frac{\theta}{n}}, \, \sqrt[n]{R} e^{i \left(\frac{\theta}{n} + \frac{2\pi k}{n}\right)}, \ldots, \, \sqrt[n]{R} e^{i \left(\frac{\theta}{n} + \frac{2(n-1)\pi}{n}\right)}</m>
+</p>
+<p>are <m>n</m> candidates of roots for <m>\sqrt[n]{z}.</m></p>
+
+<p><strong>Example:</strong> <m>\sqrt[3]{1} = \left(e^{i(0 + 2k\pi)}\right)^{\frac{1}{3}} = e^{i\frac{2k\pi}{3}}.</m></p>
+<p>
+  <m>= \begin{cases}
+    e^{i0} = 1 \\
+    = e^{i\frac{2\pi}{3}} = -\frac{1}{2} + \frac{\sqrt{3}}{2}i \\
+    e^{i\frac{4\pi}{3}} = -\frac{1}{2} - \frac{\sqrt{3}}{2}i
+  \end{cases}
+</m>
+</p>
+
+<p>
+  <!-- Space for figure -->
+</p>
+
+<p><strong>Example:</strong> <m>\sqrt[4]{-4} = \left(4 e^{i(\pi + 2k\pi)}\right)^{\frac{1}{4}} = \sqrt{2} e^{i\left(\frac{\pi}{4} + \frac{k\pi}{2}\right)}.</m></p>
+
+<p>may possibly be</p>
+<p>
+  <m>\sqrt{2} e^{i\frac{\pi}{4}}, \, \sqrt{2} e^{i\frac{3\pi}{4}}, \, \sqrt{2} e^{i\frac{5\pi}{4}}, \, \sqrt{2} e^{i\frac{7\pi}{4}},</m>
+</p>
+<p>i.e. <m>1 + i, \, -1 + i, \, -1 - i, \, 1 - i.</m></p>
+
+<p>
+  <!-- Space for figure -->
+</p>
+
+</subsection>
+
+</section>
