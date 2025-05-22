@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-inverse-Laplace" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Inverse Laplace Transform</title>
+
+<p><strong>Inverse Laplace transform</strong></p>
+
+<p>If <m>F(s)</m> represents the Laplace transform of <m>f(t),</m> i.e., <m>\mathcal{L}\{f(t)\} = F(s),</m> we would say that <m>f(t)</m> is the inverse Laplace transform of <m>F(s)</m> and write <m>f(t) = \mathcal{L}^{-1}\{F(s)\}.</m></p>
+
+<p><strong>Examples:</strong></p>
+
+<p><m>\mathcal{L}\{1\} = \frac{1}{s} \Rightarrow \mathcal{L}^{-1}\left\{\frac{1}{s}\right\} = 1.</m></p>
+<p><m>\mathcal{L}\{t\} = \frac{1}{s^2} \Rightarrow \mathcal{L}^{-1}\left\{\frac{1}{s^2}\right\} = t.</m></p>
+<p><m>\mathcal{L}\{t^2\} = \frac{2}{s^3} \Rightarrow \mathcal{L}^{-1}\left\{\frac{2}{s^3}\right\} = t^2.</m></p>
+<p><m>\mathcal{L}\{e^{-3t}\} = \frac{1}{s + 3} \Rightarrow \mathcal{L}^{-1}\left\{\frac{1}{s + 3}\right\} = e^{-3t}.</m></p>
+<p><m>\mathcal{L}\{e^{5t}\} = \frac{1}{s - 5} \Rightarrow \mathcal{L}^{-1}\left\{\frac{1}{s - 5}\right\} = e^{5t}.</m></p>
+<p><m>\mathcal{L}\{\sin 2t\} = \frac{2}{s^2 + 4} \Rightarrow \mathcal{L}^{-1}\left\{\frac{2}{s^2 + 4}\right\} = \sin 2t.</m></p>
+
+
+<p>Remark: There is a general theorem stating that if <m>\mathcal{L}\{f(t)\} = \mathcal{L}\{g(t)\}</m> then <m>f(t) = g(t)</m> for all <m>t</m> except for the points of discontinuity of <m>f(t)</m> and <m>g(t)</m>. In particular, the Laplace transform is a one-to-one mapping only when restricted to the set of continuous functions. We implicitly assume that the image of the inverse Laplace transform is the set of continuous functions.</p>
+
+<p>Since the Laplace transform is linear, its inverse is also linear, i.e., for every real numbers <m>\alpha, \beta</m> and functions <m>F(s), G(s),</m></p>
+<p><m>\mathcal{L}^{-1}\{\alpha F(s) + \beta G(s)\} = \alpha \mathcal{L}^{-1}\{F(s)\} + \beta \mathcal{L}^{-1}\{G(s)\}.</m></p>
+
+<p><strong>Examples:</strong></p>
+
+<p><m>\mathcal{L}^{-1}\left\{\frac{1}{s^5}\right\} = \frac{1}{4!} \mathcal{L}^{-1}\left\{\frac{4!}{s^5}\right\} = \frac{1}{4!} t^4.</m></p>
+
+<p><m>\mathcal{L}^{-1}\left\{\frac{1}{s^2 + 7}\right\} = \frac{1}{\sqrt{7}} \mathcal{L}^{-1}\left\{\frac{\sqrt{7}}{s^2 + (\sqrt{7})^2}\right\} = \frac{1}{\sqrt{7}} \sin \sqrt{7}t.</m></p>
+
+<p><m>\mathcal{L}^{-1}\left\{\frac{-2s + 6}{s^2 + 4}\right\} = \mathcal{L}^{-1}\left\{\frac{-2s}{s^2 + 4} + \frac{6}{s^2 + 4}\right\}</m></p>
+
+<p><m>= -2\mathcal{L}^{-1}\left\{\frac{s}{s^2 + 4}\right\} + 6 \cdot \mathcal{L}^{-1}\left\{\frac{1}{2} \cdot \frac{2}{s^2 + 4}\right\}</m></p>
+
+<p><m>= -2\mathcal{L}^{-1}\left\{\frac{s}{s^2 + 4}\right\} + 6 \cdot \frac{1}{2} \mathcal{L}^{-1}\left\{\frac{2}{s^2 + 4}\right\}</m></p>
+
+<p><m>= -2 \cdot \cos 2t + 3 \cdot \sin 2t.</m></p>
+
+<p>The following formulas of inverse Laplace should be memorized.</p>
+
+<p><m>\mathcal{L}^{-1}\left\{\frac{1}{s}\right\} = 1, \quad \mathcal{L}^{-1}\left\{\frac{1}{s^2}\right\} = t, \quad \mathcal{L}^{-1}\left\{\frac{1}{s^3}\right\} = \frac{t^2}{2},</m></p>
+<p><m>\mathcal{L}^{-1}\left\{\frac{1}{s^4}\right\} = \frac{t^3}{3!}, \ldots, \mathcal{L}^{-1}\left\{\frac{1}{s^n}\right\} = \frac{t^{n-1}}{(n - 1)!}.</m></p>
+
+<p>For a real number <m>\alpha,</m></p>
+<p><m>\mathcal{L}^{-1}\left\{\frac{1}{s - \alpha}\right\} = e^{\alpha t}.</m></p>
+
+<p>For real numbers <m>\beta > 0, k > 0,</m></p>
+<p><m>\mathcal{L}^{-1}\left\{\frac{s}{s^2 + \beta^2}\right\} = \cos \beta t, \quad \mathcal{L}^{-1}\left\{\frac{1}{s^2 + \beta^2}\right\} = \frac{1}{\beta} \sin \beta t.</m></p>
+<p><m>\mathcal{L}^{-1}\left\{\frac{s}{s^2 - k^2}\right\} = \cosh kt, \quad \mathcal{L}^{-1}\left\{\frac{1}{s^2 - k^2}\right\} = \frac{1}{k} \sinh kt.</m></p>
+
+<p><strong>Laplace Transform of derivatives</strong></p>
+
+<p><strong>Theorem:</strong> If <m>f</m> is continuous on <m>[0, \infty)</m> and of exponential order, and if <m>f'</m> is piecewise continuous on <m>[0, \infty),</m> then</p>
+<p><m>\mathcal{L}\{f'(t)\} = s\mathcal{L}\{f(t)\} - f(0) = sF(s) - f(0).</m></p>
+<p>The equality holds for sufficiently large <m>s.</m></p>
+
+<p><strong>Proof:</strong> It follows from integration by parts.</p>
+<p><m>\mathcal{L}\{f'(t)\} = \int_{0}^{\infty} f'(t)e^{-st} dt</m></p>
+<p><m> = f(t)e^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} f(t)(-s)e^{-st} dt</m></p>
+<p><m> = \left( \lim_{t \to \infty} f(t)e^{-st} - f(0)e^{0} \right) + s\mathcal{L}\{f(t)\}.</m></p>
+
+<p>Since <m>f</m> is of exponential order, for sufficiently large <m>s,</m></p>
+<p><m>\lim_{t \to \infty} f(t)e^{-st} = 0.</m> Thus, <m>\mathcal{L}\{f'(t)\} = sF(s) - f(0).</m></p>
+
+<p><strong>Theorem:</strong> If <m>f, f'</m> are continuous on <m>[0, \infty)</m> and of exponential order, and if <m>f''</m> is piecewise continuous on <m>[0, \infty),</m> then for sufficiently large <m>s,</m></p>
+<p><m>\mathcal{L}\{f''(t)\} = s^2 \mathcal{L}\{f(t)\} - sf(0) - f'(0) = s^2F(s) - sf(0) - f'(0).</m></p>
+
+<p><strong>Proof:</strong> It follows from integration by parts.</p>
+<p><m>\mathcal{L}\{f''(t)\} = \int_{0}^{\infty} f''(t)e^{-st} dt</m></p>
+<p><m> = f'(t)e^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} f'(t)(-s)e^{-st} dt</m></p>
+<p><m> = \left( \lim_{t \to \infty} f'(t)e^{-st} - f'(0)e^{0} \right) + s\mathcal{L}\{f'(t)\}.</m></p>
+
+<p>Since <m>f</m> is of exponential order, for sufficiently large <m>s,</m></p>
+<p><m>\lim_{t \to \infty} f'(t)e^{-st} = 0.</m> Thus, <m>\mathcal{L}\{f''(t)\} = sF(s) - f(0) - f'(0).</m></p>
+
+<p><strong>Theorem:</strong> If <m>f, f', \ldots, f^{(n-1)}</m> are continuous on <m>[0, \infty)</m> and are of exponential order, and if <m>f^{(n)}</m> is piecewise continuous on <m>[0, \infty),</m> then with <m>F(s) = \mathcal{L}\{f(t)\},</m> for sufficiently large <m>s,</m></p>
+<p><m>\mathcal{L}\{f^{(n)}(t)\} = s^n F(s) - s^{n-1} f(0) - s^{n-2} f'(0) - \ldots - f^{(n-1)}(0).</m></p>
+
+<p><strong>Proof:</strong> From integration by parts</p>
+<p><m>\mathcal{L}\{f^{(n)}(t)\} = \int_{0}^{\infty} f^{(n)}(t)e^{-st} dt</m></p>
+<p><m> = f^{(n-1)}(t)e^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} f^{(n-1)}(t)(-s)e^{-st} dt</m></p>
+<p><m> = \left( \lim_{t \to \infty} f^{(n-1)}(t)e^{-st} - f^{(n-1)}(0)e^{0} \right) + s\mathcal{L}\{f^{(n-1)}(t)\}.</m></p>
+
+<p>Since <m>f</m> is of exponential order, for sufficiently large <m>s,</m></p>
+<p><m>\lim_{t \to \infty} f^{(n-1)}(t)e^{-st} = 0.</m> Thus, <m>\mathcal{L}\{f^{(n)}(t)\} = s\mathcal{L}\{f^{(n-1)}(t)\} - f^{(n-1)}(0).</m></p>
+
+<p><strong>Laplace transform of a linear ODE.</strong></p>
+
+<p>We have learned how to obtain the general solution of</p>
+<p><m>a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(t)</m></p>
+<p>using the auxiliary equation and the method of undetermined coefficients. When initial conditions are given, we need to solve <m>C_1, \ldots, C_n</m> in the process. The process is not always convenient.</p>
+
+<p>Laplace transform provides an alternative way and gives a direct solution of an IVP</p>
+<p><m>a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(t)</m></p>
+<p><m>y(0) = y_0, y'(0) = y_1, \ldots, y^{(n-1)}(0) = y_{n-1}.</m></p>
+
+<p><strong>Given an IVP</strong></p>
+<p><m>a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(t)</m></p>
+<p><m>y(0) = y_0, y'(0) = y_1, \ldots, y^{(n-1)}(0) = y_{n-1}.</m></p>
+
+<p>We Laplace transform both sides. Let <m>Y(s) = \mathcal{L}\{y(t)\}.</m> Then for the <m>i^{th}</m> derivative, we have</p>
+<p><m>\mathcal{L}\{y^{(i)}(t)\} = s^i Y(s) - s^{i-1} y(0) - s^{i-2} y'(0) - \cdots - s y^{(i-2)}(0)</m></p>
+<p><m> = s^i Y(s) - s^{i-1} y_0 - s^{i-2} y_1 - \cdots - s y_{i-2} - y_{i-1}.</m></p>
+
+<p>Note that except for the first term, all other terms are known.</p>
+<p>So, the Laplace transform of the left-hand side is</p>
+<p><m>a_n (s^n Y(s) - s^{n-1} y_0 - \cdots - y_{n-1}) + a_{n-1} (s^{n-1} Y(s) - s^{n-2} y_0 - \cdots - y_{n-2}) + \cdots + a_0 Y(s),</m></p>
+<p>while the right-hand side is <m>G(s) = \mathcal{L}\{g(t)\}.</m></p>
+
+<p>Therefore, the Laplace transform on a differential equation ends up with the algebraic equation</p>
+<p><m>a_n (s^n Y(s) - s^{n-1} y_0 - \cdots - y_{n-1}) + a_{n-1} (s^{n-1} Y(s) - s^{n-2} y_0 - \cdots - y_{n-2}) + \cdots + a_0 Y(s) = G(s),</m></p>
+<p>from which we may solve <m>Y(s)</m> explicitly. Indeed,</p>
+<p><m>Y(s) = \frac{Q(s)}{P(s)} + \frac{G(s)}{P(s)},</m></p>
+<p>where <m>P(s) = a_n s^n + \cdots + a_0, Q(s)</m> is decided by the initial condition. After getting <m>Y(s),</m> we perform the inverse Laplace transform to obtain <m>y(t) = \mathcal{L}^{-1}\{Y(s)\}</m> that solves the IVP.</p>
+
+<p><strong>Given an IVP</strong></p>
+<p><m>a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(t)</m></p>
+<p><m>y(0) = y_0, y'(0) = y_1, \ldots, y^{(n-1)}(0) = y_{n-1}.</m></p>
+
+<p>The process of solving the IVP may be summarized as follows:</p>
+
+<ul>
+<li><strong>Find unknown <m>y(t)</m> that satisfies DE and initial conditions</strong></li>
+<li><strong>Apply Laplace transform <m>\mathcal{L}</m></strong></li>
+<li><strong>Transformed DE becomes an algebraic equation in <m>Y(s)</m></strong></li>
+<li><strong>Solve transformed equation for <m>Y(s)</m></strong></li>
+<li><strong>Apply inverse Laplace transform <m>\mathcal{L}^{-1}</m></strong></li>
+<li><strong>Solution <m>y(t)</m> of original IVP</strong></li>
+</ul>
+
+<p><strong>Example 1</strong></p>
+
+<p><strong>Solve the IVP</strong></p>
+<p><m>y'' - 3y' + 2y = e^{-4t}, \quad y(0) = 1, \quad y'(0) = 5.</m></p>
+
+<p>Set <m>Y(s) = \mathcal{L}\{y(t)\}.</m> Laplace transform both sides:</p>
+<p><m>s^2 Y(s) - sy(0) - y'(0) - 3(sY(s) - y(0)) + 2Y(s)</m></p>
+<p><m>= (s^2 - 3s + 2)Y(s) - s \cdot 1 - 5 + 3 \cdot 1</m></p>
+<p><m>= (s^2 - 3s + 2)Y(s) - s - 2 = \frac{1}{s + 4}.</m></p>
+
+<p>Then</p>
+<p><m>Y(s) = \frac{1}{s^2 - 3s + 2} \left( \frac{1}{s + 4} + s + 2 \right)</m></p>
+<p><m>= \frac{1}{(s - 1)(s - 2)} \cdot \frac{1}{s + 4}.</m></p>
+<p><m>= \frac{1}{(s - 1)(s - 2)(s + 4)}.</m></p>
+
+<p><strong>Partial Fractions - Linear factors</strong></p>
+
+<p>To evaluate <m>y(t) = \mathcal{L}^{-1}\left\{\frac{s^2 + 6s + 9}{(s - 1)(s - 2)(s + 4)}\right\}</m></p>
+
+<p>We will need to break the fraction as</p>
+<p><m>\frac{s^2 + 6s + 9}{(s - 1)(s - 2)(s + 4)} = \frac{A}{s - 1} + \frac{B}{s - 2} + \frac{C}{s + 4}</m></p>
+
+<p>We apply the cover-up method to conclude that</p>
+<p><m>A = \frac{s^2 + 6s + 9}{(s - 2)(s + 4)}\bigg|_{s=1} = \frac{1^2 + 6 \cdot 1 + 9}{(1 - 2)(1 + 4)} = \frac{16}{-5} = -\frac{16}{5}.</m></p>
+
+<p><m>B = \frac{s^2 + 6s + 9}{(s - 1)(s + 4)}\bigg|_{s=2} = \frac{2^2 + 6 \cdot 2 + 9}{(2 - 1)(2 + 4)} = \frac{25}{6}.</m></p>
+
+<p><m>C = \frac{s^2 + 6s + 9}{(s - 1)(s - 2)}\bigg|_{s=-4} = \frac{(-4)^2 + 6 \cdot (-4) + 9}{(-4 - 1)(-4 - 2)} = \frac{1}{30}.</m></p>
+
+<p>So, the solution of the IVP is</p>
+<p><m>y(t) = \mathcal{L}^{-1}\left\{\frac{s^2 + 6s + 9}{(s - 1)(s - 2)(s + 4)}\right\}</m></p>
+
+<p><m>= \mathcal{L}^{-1}\left\{-\frac{16}{5} \cdot \frac{1}{s - 1} + \mathcal{L}^{-1}\left\{\frac{25}{6} \cdot \frac{1}{s - 2}\right\} + \mathcal{L}^{-1}\left\{\frac{1}{30} \cdot \frac{1}{s + 4}\right\}\right\}</m></p>
+
+<p><m>= -\frac{16}{5} \mathcal{L}^{-1}\left\{\frac{1}{s - 1}\right\} + \frac{25}{6} \mathcal{L}^{-1}\left\{\frac{1}{s - 2}\right\} + \frac{1}{30} \mathcal{L}^{-1}\left\{\frac{1}{s + 4}\right\}</m></p>
+
+<p><m>= -\frac{16}{5} e^t + \frac{25}{6} e^{2t} + \frac{1}{30} e^{-4t}.</m></p>
+
+<p><strong>Example 2</strong></p>
+
+<p><strong>Solve the IVP</strong></p>
+<p><m>\frac{dy}{dt} + 3y = 13 \sin 2t, \quad y(0) = 6.</m></p>
+
+<p>Set <m>Y(s) = \mathcal{L}\{y(t)\}.</m> Laplace transform both sides:</p>
+<p><m>sY(s) - y(0) + 3Y(s) = 13 \cdot \frac{2}{s^2 + 4}</m></p>
+<p><m>(s + 3)Y(s) - 6 = \frac{26}{s^2 + 4}</m></p>
+
+<p><m>Y(s) = \frac{6}{s + 3} + \frac{26}{(s^2 + 4)(s + 3)}.</m></p>
+
+<p>To find <m>y(t) = \mathcal{L}^{-1}\left\{\frac{6s^2 + 50}{(s + 3)(s^2 + 4)}\right\}</m></p>
+
+<p>We will need to break the fraction as</p>
+<p><m>\frac{6s^2 + 50}{(s + 3)(s^2 + 4)} = \frac{A}{s + 3} + \frac{Bs + C}{s^2 + 4}.</m></p>
+
+<p>We may use the cover-up method to decide <m>A.</m></p>
+<p><m>A = \frac{6s^2 + 50}{s^2 + 4}\bigg|_{s=-3} = \frac{6 \cdot (-3)^2 + 50}{(-3)^2 + 4} = \frac{104}{13} = 8.</m></p>
+
+<p>Then we decide <m>B</m> and <m>C</m> directly from subtraction:</p>
+<p><m>Bs + C = \frac{6s^2 + 50}{s^2 + 4} - \frac{8}{s + 3} = \frac{6s^2 + 50 - 8s^2 - 32}{(s + 3)(s^2 + 4)} = \frac{-2s^2 + 18}{(s + 3)(s^2 + 4)}.</m></p>
+<p><m> = \frac{-2(s - 3)}{s^2 + 4} \implies B = -2, C = 6.</m></p>
+
+<p>So</p>
+<p><m>y(t) = \mathcal{L}^{-1} \left\{ \dfrac{6s^2 + 50}{(s + 3)(s^2 + 4)} \right\}</m></p>
+<p>= <m>\mathcal{L}^{-1} \left\{ \dfrac{8}{s + 3} \right\} + \mathcal{L}^{-1} \left\{ \dfrac{-2s + 6}{s^2 + 4} \right\}</m></p>
+<p>= <m>\mathcal{L}^{-1} \left\{ \dfrac{8}{s + 3} \right\} - 2\mathcal{L}^{-1} \left\{ \dfrac{s}{s^2 + 4} \right\} + 6\mathcal{L}^{-1} \left\{ \dfrac{1}{s^2 + 4} \right\}</m></p>
+<p>= <m>8e^{-3t} - 2 \cos 2t + 6 \cdot \dfrac{1}{2} \sin 2t</m></p>
+<p>= <m>8e^{-3t} - 2 \cos 2t + 3 \sin 2t.</m></p>
+</section>
+

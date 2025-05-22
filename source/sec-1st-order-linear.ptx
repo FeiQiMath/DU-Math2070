@@ -2,10 +2,11 @@
 
 <section xml:id="sec-1st-order-linear" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>First-order Linear ODEs</title>
-
-  <p><span style="color:red;">Standard form:</span> <me>y' + p(t)y = g(t).</me></p>
-  <p><span style="color:red;">Integrating factor:</span> <me>\mu(t) = e^{\int p(t)dt}.</me></p>
-  <p><span style="color:red;">General solution:</span> <me>y(t) = \frac{\int \mu(t)g(t)dt + C}{\mu(t)}.</me></p>
+<theorem xml:id="thm-1st-order-linear">
+  <p>Consider a first-order linear ODE in its <alert>standard form</alert> <me>y' + p(t)y = g(t).</me></p>
+  <p>We solve it by first calculating the <alert>integrating factor</alert> <me>\mu(t) = e^{\int p(t)dt},</me></p>
+  <p>then the formula of the <alert>general solution</alert> is <me>y(t) = \frac{\int \mu(t)g(t)dt}{\mu(t)}.</me></p>
+</theorem>
 
   <p>How comes the formula? Observe that <me>e^{\int p(t)dt}(y' + p(t)y) = \left(e^{\int p(t)dt}y\right)'.</me></p>
   <p>In general, any function <m>\mu(t)</m> making <me>\mu(t)(y'(t) + p(t)y(t)) = (\mu(t)y(t))'</me> is called an integrating factor. To satisfy this equation, we calculate that</p>
@@ -27,52 +28,53 @@
   <me>(\mu(t)y(t))' = \mu(t)g(t).</me>
 <p>Integrate both sides:</p>
 <md>
-<mrow>\amp \mu(t)y(t) = \int \mu(t)g(t)dt + C</mrow>
-<mrow>\implies \amp y(t) = \frac{\int \mu(t)g(t)dt + C}{\mu(t)}.</mrow>
+<mrow>\amp \mu(t)y(t) = \int \mu(t)g(t)dt</mrow>
+<mrow>\implies \amp y(t) = \frac{\int \mu(t)g(t)dt}{\mu(t)}.</mrow>
 </md>
 
-<p>Remarks:</p>
+<remark>
 <ul>
   <li>This formula <alert>ONLY</alert> works for the <alert>standard form</alert>. Before using it, get the standard form first.</li>
   <li>When integrating <m>p(t)</m>, no need to worry about the constant or the absolute value. They make no difference.</li>
-  <li>The arbitrary constant in the general solution appears as <alert>a part</alert> of the numerator, not outside of the fraction. It is very rare that <m>C</m> is a pure constant.</li>
+  <li>The arbitrary constant in the general solution appears as <alert>a part</alert> of the numerator, not outside of the fraction. It might be helpful to write the formula of the general solution as 
+  <me>y(t) = \frac{\int \mu(t)g(t)dt + C}{\mu(t)}.</me>
+  From this formula, it is clear that <m>C</m> is a pure constant only when <m>\mu(t)</m> is a constant. This case is very rare, and only happens when <m>p(t)=0</m>. </li>
 </ul>
+</remark>
 
 <example>
   <title>Solve <m>y' + 2y = e^{3t}, \quad y(0) = 3.</m></title>
-  <statement>
-  <ul>
+  <p><ul>
     <li>Already in standard form.</li>
     <li>Integrating factor: <m>\mu(t) = e^{\int 2dt} = e^{2t}.</m></li>
     <li>General solution:
     <md>
-    <mrow>\amp y(t) = \frac{\int e^{2t}e^{3t}dt}{e^{2t}} = \frac{\int e^{5t}dt}{e^{2t}} = \frac{1}{5}e^{5t} + C.</mrow>
+    <mrow>\amp y(t) = \frac{\int e^{2t}e^{3t}dt}{e^{2t}} = \frac{\int e^{5t}dt}{e^{2t}} = e^{-2t}\left(\frac{1}{5}e^{5t} + C\right).</mrow>
     <mrow>\implies \amp y(t) = \frac{1}{5}e^{3t} + Ce^{-2t}.</mrow>
     </md>
     </li>
-  </ul>
+  </ul></p>
   <p>Digression: What if we keep the constant in the integrating factor?</p>
 <ul>
   <li>Integrating factor: <m>\mu(t) = e^{\int 2dt + D} = e^{2t + D} = e^{2t} e^{D}.</m></li>
-  <li>General solution:
+  <li><p>General solution:
   <md>
     <mrow>y(t) \amp = \frac{\int e^{2t} e^{3t} e^{D} dt}{e^{2t} e^{D}} = 
     \frac{\int e^{5t} \cancel{e^D} dt}{e^{2t} \cancel{e^D}} = \frac{\frac{1}{5} e^{5t} + C}{e^{2t}}</mrow>
     <mrow>\amp = \frac{1}{5} e^{3t} + C e^{-2t}.</mrow>
   </md>
-  <p>So the extra constant in the integrating factor does not make any difference!</p>
+  So the extra constant in the integrating factor does not make any difference!</p>
 </li>
 </ul>
   <p> Coming back to the problem, we have obtained the general solution. But we are not done yet. We are given an IVP, so we need to take care of the initial condition.</p>
 <ul>
-  <li>Determine <m>C</m> by the initial condition:</li>
-  <li><m>y(0) = 3 \Rightarrow \frac{1}{5} + C = 3 \Rightarrow C = \frac{14}{5}.</m></li>
-  <li>Solution of the IVP:</li>
+  <li>Determine <m>C</m> by the initial condition:
+  <me>y(0) = 3 \Rightarrow \frac{1}{5} + C = 3 \Rightarrow C = \frac{14}{5}.</me>
+  </li>
 </ul>
-<p>
-  <m>y(t) = \frac{1}{5} e^{3t} + \frac{14}{5} e^{-2t}</m>
+<p> <alert>Conclusion:</alert> The solution of the IVP is
+  <me>y(t) = \frac{1}{5} e^{3t} + \frac{14}{5} e^{-2t}</me  >
 </p>
-</statement>
 </example>
 
 <example>

@@ -1,0 +1,251 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-second-translation-theorem" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Second Translation Theorem</title>
+
+ <p><strong>Unit step function and piecewise function</strong></p>
+<p><strong>Definition.</strong> The function</p>
+<p><m>\mathcal{U}(t - a) = \begin{cases} 
+0, \amp  0 \le t \lt a \\ 
+1, \amp  t \ge a 
+\end{cases}</m> is called the unit step function (Heaviside step function).</p>
+
+<p>Any piecewise function can be expressed as a (possible infinite) sum of functions with unit step functions.</p>
+
+
+<p>Suppose <m>f(t) = \begin{cases} 
+f_1(t), \amp 0 \leq t \lt a \\ 
+f_2(t), \amp t \geq a 
+\end{cases}.</m></p>
+
+<p>Then,</p>
+<p><m>f(t) = f_1(t) + (f_2(t) - f_1(t))\mathcal{U}(t - a).</m></p>
+
+<p>We may interpret it as follows: <m>f(t)</m> starts with <m>f_1(t).</m> When <m>t = a, f(t)</m> jumps from <m>f_1(t)</m> to <m>f_2(t),</m> i.e., <m>f(t)</m> jumps by <m>f_2(t) - f_1(t).</m> We then supplement <m>\mathcal{U}(t - a).</m></p>
+
+<p><strong>Example 1.</strong> <m>f(t) = \begin{cases} 
+20t, \amp 0 \leq t \lt 5 \\ 
+0, \amp t \geq 5 
+\end{cases}</m> can be expressed as</p>
+<p><m>f(t) = 20t + (0 - 20t)\mathcal{U}(t - 5) = 20t - 20t \cdot \mathcal{U}(t - 5).</m></p>
+
+
+<p>Suppose <m>f(t) = \begin{cases} 
+f_1(t), \amp 0 \leq t \lt a \\ 
+f_2(t), \amp a \leq t \lt b \\ 
+f_3(t), \amp t \geq b 
+\end{cases}.</m></p>
+
+<p>Then,</p>
+<p><m>f(t) = f_1(t) + (f_2(t) - f_1(t))\mathcal{U}(t - a) + (f_3(t) - f_2(t))\mathcal{U}(t - b).</m></p>
+
+<p><strong>Interpretation:</strong> <m>f(t)</m> starts from <m>f_1(t),</m> jumps from <m>f_1(t)</m> to <m>f_2(t)</m> at <m>t = a</m> by <m>f_2(t) - f_1(t),</m> then jumps from <m>f_2(t)</m> to <m>f_3(t)</m> at <m>t = b</m> by <m>f_3(t) - f_2(t).</m></p>
+
+<p><strong>Example 2.</strong> <m>f(t) = \begin{cases} 
+2, \amp 0 \leq t \lt 2 \\ 
+-1, \amp 2 \leq t \lt 3 \\ 
+0, \amp t \geq 3 
+\end{cases}</m></p>
+
+<p><m>f(t) = 2 + (-1 - 2)\mathcal{U}(t - 2) + (0 - (-1))\mathcal{U}(t - 3) = 2 - 3\mathcal{U}(t - 2) + \mathcal{U}(t - 3).</m></p>
+
+<p><strong>Conversely, given a function</strong></p>
+<p><m>f(t) = g_1(t) + g_2(t)\mathcal{U}(t - a) + g_3(t)\mathcal{U}(t - b)</m></p>
+<p>represented in terms of unit step functions (assume that <m>a \lt b</m>), we may recover the piecewise function representation.</p>
+
+<p>If <m>t \in [0, a],</m> we see that</p>
+<p><m>f(t) = g_1(t) + g_2(t) \cdot 0 + g_3(t) \cdot 0 = g_1(t).</m></p>
+
+<p>If <m>t \in [a, b],</m> we see that</p>
+<p><m>f(t) = g_1(t) + g_2(t) \cdot 1 + g_3(t) \cdot 0 = g_1(t) + g_2(t).</m></p>
+
+<p>If <m>t \in [b, c],</m> we see that</p>
+<p><m>f(t) = g_1(t) + g_2(t) \cdot 1 + g_3(t) \cdot 1 = g_1(t) + g_2(t) + g_3(t).</m></p>
+
+<p>So,</p>
+<p><m>f(t) = \begin{cases} 
+g_1(t), \amp 0 \leq t \lt a \\ 
+g_1(t) + g_2(t), \amp a \leq t \lt b \\ 
+g_1(t) + g_2(t) + g_3(t), \amp t \geq b 
+\end{cases}.</m></p>
+
+<p><strong>Second translation theorem</strong></p>
+<p><strong>Theorem.</strong> If <m>\mathcal{L}\{f(t)\} = F(s),</m> then <m>\mathcal{L}\{f(t - a)\mathcal{U}(t - a)\} = e^{-as}F(s).</m></p>
+
+<p> % Space for the first figure % </p>
+<p> % Space for the second figure % </p>
+
+<p><strong>Proof:</strong></p>
+<p><m>\int_{0}^{\infty} f(t - a)\mathcal{U}(t - a)e^{-st}dt = \int_{a}^{\infty} f(t - a)\mathcal{U}(t - a)e^{-st}dt</m></p>
+<p>= <m>\int_{0}^{\infty} f(T)\mathcal{U}(t)e^{-s(T + a)}dT = e^{-as} \int_{0}^{\infty} f(T)e^{-sT}dT</m></p>
+<p>= <m>e^{-as}F(s).</m></p>
+
+
+<p><strong>Remarks:</strong></p>
+<ol>
+    <li>The theorem is also referred to as the <span style="color:magenta;">t-axis shift.</span></li>
+    <li>Here is a more convenient and less confusing form: <m>\mathcal{L}\{f(t)\mathcal{U}(t - a)\} = e^{-as}\mathcal{L}\{f(t + a)\}.</m></li>
+</ol>
+<p>We use this formula to handle the Laplace transform of piecewise functions.</p>
+
+<p><strong>Example 3.</strong> Laplace transform of the unit step function.</p>
+<p><m>\mathcal{L}\{\mathcal{U}(t - a)\} = e^{-as}\mathcal{L}\{1\} = \dfrac{e^{-as}}{s}.</m></p>
+
+<p><strong>Example 4.</strong> <m>f(t) = \begin{cases} 
+2, \amp 0 \leq t \lt 2 \\ 
+-1, \amp 2 \leq t \lt 3 \\ 
+0, \amp t \geq 3 
+\end{cases}</m></p>
+
+<p><m>\mathcal{L}\{f(t)\} = \mathcal{L}\{2 - 3\mathcal{U}(t - 2) + \mathcal{U}(t - 3)\} = 2\mathcal{L}\{1\} - 3\mathcal{L}\{\mathcal{U}(t - 2)\} + \mathcal{L}\{\mathcal{U}(t - 3)\}.</m></p>
+<p><m>= 2\cdot\dfrac{1}{s} - 3\cdot\dfrac{e^{-2s}}{s} + \dfrac{e^{-3s}}{s} = \dfrac{2}{s} - \dfrac{3e^{-2s}}{s} + \dfrac{e^{-3s}}{s}.</m></p>
+
+<p><strong>Example 5.</strong> <m>\mathcal{L}\{\cos t \mathcal{U}(t - \pi)\} = e^{- \pi s}\mathcal{L}\{\cos(t + \pi)\}.</m></p>
+<p><m>= -e^{-\pi s}\mathcal{L}\{\cos t\} = -e^{-\pi s} \cdot \dfrac{s}{s^2 + 1}.</m></p>
+
+<p><strong>Example 6.</strong> <m>\mathcal{L}^{-1}\left\{ e^{-2s} \cdot \dfrac{1}{s - 4} \right\} = \mathcal{L}^{-1}\left\{ \dfrac{1}{s - 4} \right\}\bigg|_{t \to t - 2}.</m></p>
+<p><m>= e^{4t}\bigg|_{t \to t - 2} \mathcal{U}(t - 2) = e^{4(t - 2)}\mathcal{U}(t - 2).</m></p>
+
+<p><strong>Example 7.</strong> <m>\mathcal{L}^{-1}\left\{ \dfrac{s}{s^2 + 9} e^{-\dfrac{\pi}{2}s} \right\} = \mathcal{L}^{-1}\left\{ \dfrac{s}{s^2 + 9} \right\}\bigg|_{t \to t - \dfrac{\pi}{2}} U\left(t - \dfrac{\pi}{2}\right).</m></p>
+<p><m>= \cos 3t\bigg|_{t \to t - \dfrac{\pi}{2}} U\left(t - \dfrac{\pi}{2}\right) = -\sin 3t \mathcal{U}(t - 2).</m></p>
+
+<p><strong>Initial value problem with piecewise functions</strong></p>
+<p><strong>Example 7.</strong> <m>y' + y = f(t), \quad y(0) = 5, \quad f(t) = \begin{cases} 
+0, \amp 0 \leq t \lt \pi \\ 
+3 \cos t, \amp t \geq \pi 
+\end{cases}.</m></p>
+
+<p>Recall that we solved such ODE on each interval <m>[0, \pi]</m> and <m>[\pi, \infty)</m> separately using integrating factors. Laplace transform is much more convenient.</p>
+
+<p>Set <m>Y(s) = \mathcal{L}\{y(t)\}.</m> Also rewrite <m>f(t) = 0 + (3 \cos t - 0)\mathcal{U}(t - \pi) = 3 \cos t \mathcal{U}(t - \pi).</m></p>
+
+<p>Laplace both sides, we have</p>
+<p><m>sY(s) - y(0) + Y(s) = (s + 1)Y(s) - 5</m></p>
+<p><m>= \mathcal{L}\{3 \cos t \mathcal{U}(t - \pi)\} = -3e^{-\pi s}\mathcal{L}\{\cos(t + \pi)\}.</m></p>
+<p><m>= -3e^{-\pi s} \cdot \dfrac{s}{s^2 + 1}.</m></p>
+
+<p>Set <m>Y(s) = \mathcal{L}\{y(t)\}.</m></p>
+<p><m>(s + 1)Y(s) - 5 = -3e^{-\pi s} \cdot \dfrac{s}{s^2 + 1}.</m></p>
+<p>Solving <m>Y(s),</m> we obtain that</p>
+<p><m>Y(s) = \dfrac{5}{s + 1} + e^{-\pi s} \cdot \dfrac{-3s}{(s^2 + 1)(s + 1)}.</m></p>
+<p>We focus on the second fraction for now. We start by</p>
+<p><m>\dfrac{-3s}{(s^2 + 1)(s + 1)} = \dfrac{A}{s} + \dfrac{Bs + C}{s^2 + 1}.</m></p>
+<p> <m>\implies A = \dfrac{-3s}{(s^2 + 1)}\bigg|_{s = -1} = \dfrac{3}{2}.</m></p>
+<p>So</p>
+<p><m>\dfrac{-3s}{(s^2 + 1)(s + 1)} = \dfrac{3}{2} \cdot \dfrac{1}{s + 1} + \dfrac{B s + C}{s^2 + 1}.</m></p>
+
+<p>We obtain <m>B, C</m> by subtraction.</p>
+<p><m>\dfrac{Bs + C}{s^2 + 1} = \dfrac{-3s - \dfrac{3}{2}(s^2 + 1)}{(s^2 + 1)(s + 1)} = \dfrac{-\dfrac{3}{2}(s + 1)^2}{(s^2 + 1)(s + 1)} = \dfrac{-\dfrac{3}{2}s - \dfrac{3}{2}}{(s^2 + 1)}.</m></p>
+
+<p>Therefore,</p>
+<p><m>\dfrac{-3s}{(s^2 + 1)(s + 1)} = \dfrac{3}{2} \cdot \dfrac{1}{s + 1} + \dfrac{-\dfrac{3}{2}s - \dfrac{3}{2}}{s^2 + 1}.</m></p>
+<p>Now we use the second translation theorem to handle the inverse Laplace transform:</p>
+<p><m>\mathcal{L}^{-1}\left\{ e^{-\pi s} \cdot \dfrac{-3s}{(s^2 + 1)(s + 1)} \right\}</m></p>
+<p>= <m>\mathcal{L}^{-1}\left\{ \dfrac{3}{2} \cdot \dfrac{1}{s + 1} + \dfrac{-\dfrac{3}{2}s - \dfrac{3}{2}}{(s^2 + 1)} \right\}\bigg|_{t \to t - \pi} \mathcal{U}(t - \pi).</m></p>
+<p>= <m>\left( \dfrac{3}{2} e^{-t} - \dfrac{3}{2} \cos t - \dfrac{3}{2} \sin t \right)\bigg|_{t \to t - \pi} \mathcal{U}(t - \pi).</m></p>
+<p>= <m>\left( \dfrac{3}{2} e^{-(t - \pi)} + \dfrac{3}{2} \cos t + \dfrac{3}{2} \sin t \right) \mathcal{U}(t - \pi).</m></p>
+
+<p>We are now ready for the solution:</p>
+<p><m>y(t) = \mathcal{L}^{-1}\{Y(s)\}</m></p>
+<p>= <m>\mathcal{L}^{-1}\left\{ \dfrac{5}{s + 1} + e^{-\pi s} \cdot \dfrac{-3s}{(s^2 + 1)(s + 1)} \right\}</m></p>
+<p>= <m>5e^{-t} + \left( \dfrac{3}{2} e^{-(t - \pi)} + \dfrac{3}{2} \cos t + \dfrac{3}{2} \sin t \right) \mathcal{U}(t - \pi).</m></p>
+<p>= <m>\begin{cases} 
+5e^{-t}, \amp 0 \leq t \lt \pi \\ 
+5e^{-t} + \dfrac{3}{2} e^{-(t - \pi)} + \dfrac{3}{2} \cos t + \dfrac{3}{2} \sin t, \amp t \geq \pi 
+\end{cases}.</m></p>
+<p><strong>Remark:</strong> Notice that <m>y(t)</m> is continuous. Generally, the Laplace method yields a continuous solution of an IVP.</p>
+
+
+<p><strong>Example 1.</strong> <m>y'' + y = f(t), \quad y(0) = 0, \quad y'(0) = 1,</m></p>
+<p><m>f(t) = \begin{cases} 
+0, \amp  0 \leq t \lt \pi \\ 
+1, \amp  \pi \leq t \lt 2\pi \\ 
+0, \amp  t \geq 2\pi 
+\end{cases}.</m></p>
+
+<p>Write</p>
+<p><m>f(t) = 0 + (1 - 0)\mathcal{U}(t - \pi) + (0 - 1)\mathcal{U}(t - 2\pi) = \mathcal{U}(t - \pi) - \mathcal{U}(t - 2\pi).</m></p>
+
+<p>Set <m>Y(s) = \mathcal{L}\{y(t)\}.</m> Laplace both sides of the ODE:</p>
+<p><m>s^2Y(s) - sy(0) - y'(0) + Y(s) = \mathcal{L}\{\mathcal{U}(t - \pi) - \mathcal{U}(t - 2\pi)\}.</m></p>
+<p><m> \Rightarrow (s^2 + 1)Y(s) - 1 = \dfrac{e^{-\pi s}}{s} - \dfrac{e^{-2\pi s}}{s}.</m></p>
+<p><m>\Rightarrow Y(s) = \dfrac{1}{s^2 + 1} + \dfrac{e^{-\pi s}}{s(s^2 + 1)} - \dfrac{e^{-2\pi s}}{s(s^2 + 1)}.</m></p>
+
+<p>We first obtain the partial fraction decomposition of</p>
+<p><m>\dfrac{1}{s(s^2 + 1)} = \dfrac{A}{s} + \dfrac{Bs + C}{s^2 + 1}.</m></p>
+
+<p>Obtain <m>A</m> by cover-up method, <m>B, C</m> by subtraction:</p>
+<p><m>A = \dfrac{1}{s^2 + 1}\bigg|_{s = 0} = 1,</m></p>
+<p><m>\dfrac{Bs + C}{s^2 + 1} = \dfrac{1}{s(s^2 + 1)} - \dfrac{1 - s^2}{s} = \dfrac{1 - s^2 - 1}{s(s^2 + 1)} = \dfrac{-s}{s^2 + 1} \Rightarrow B = -1, C = 0.</m></p>
+
+<p>So</p>
+<p><m>\dfrac{1}{s(s^2 + 1)} = \dfrac{1}{s} - \dfrac{s}{s^2 + 1}.</m></p>
+
+<p>Then</p>
+<p><m>\mathcal{L}^{-1}\left\{\dfrac{1}{s(s^2 + 1)}\right\} = 1 - \cos t.</m></p>
+
+<p>The inverse form of the second translation theorem says</p>
+<p><m>\mathcal{L}^{-1}\left\{ e^{-as} \cdot \dfrac{1}{s(s^2 + 1)} \right\} = (1 - \cos t)\bigg|_{t \to t - a} \mathcal{U}(t - a).</m></p>
+
+<p>Set <m>Y(s) = \mathcal{L}\{y(t)\}.</m> Then</p>
+<p><m>Y(s) = \dfrac{1}{s^2 + 1} + \dfrac{e^{-\pi s}}{s(s^2 + 1)} - \dfrac{e^{-2\pi s}}{s(s^2 + 1)}.</m></p>
+
+<p>The inverse form of the second translation theorem:</p>
+<p><m>\mathcal{L}^{-1}\left\{ e^{-as} \cdot \dfrac{1}{s(s^2 + 1)} \right\} = \mathcal{U}(t - a) \cdot \left( (1 - \cos t)\bigg|_{t \to t - a} \right).</m></p>
+
+<p>Therefore</p>
+<p><m>y(t) = \sin t + \mathcal{U}(t - \pi) \cdot (1 - \cos(t - \pi)) - \mathcal{U}(t - 2\pi) \cdot (1 - \cos(t - 2\pi))</m></p>
+<p><m>= \sin t + \mathcal{U}(t - \pi) \cdot (1 + \cos t) - \mathcal{U}(t - 2\pi) \cdot (1 - \cos t).</m></p>
+
+<p> % Space for the third figure % </p>
+
+<p><strong>Example 2.</strong> <m>y' + 2y = f(t), \quad y(0) = 0,</m></p>
+<p><m>f(t) = \begin{cases} 
+t, \amp  0 \leq t \lt 1 \\ 
+0, \amp  t \geq 1 
+\end{cases}.</m></p>
+
+<p>Rewrite the function <m>f(t)</m> as</p>
+<p><m>f(t) = t + (0 - t)\mathcal{U}(t - 1) = t - t\mathcal{U}(t - 1).</m></p>
+
+<p>Set <m>Y(s) = \mathcal{L}\{y(t)\}.</m> Laplace both sides:</p>
+<p><m>sY(s) - y(0) + 2Y(s) = \mathcal{L}\{t\} - \mathcal{L}\{t\mathcal{U}(t - 1)\},</m></p>
+<p><m>(s + 2)Y(s) = \dfrac{1}{s^2} - e^{-s}\mathcal{L}\{t + 1\} = \dfrac{1}{s^2} - e^{-s}\left(\dfrac{1}{s^2} + \dfrac{1}{s}\right).</m></p>
+
+<p><m>Y(s) = \dfrac{1}{s^2(s + 2)} - e^{-s}\left(\dfrac{1}{s^2} + \dfrac{1}{s}\right).</m></p>
+
+<p>We now focus on the fractions. By the cover-up method,</p>
+<p><m>\dfrac{1}{s(s + 2)} = \dfrac{A}{s} + \dfrac{B}{s + 2}.</m></p>
+
+<p>Set <m>Y(s) = \mathcal{L}\{y(t)\}.</m> Then</p>
+<p><m>Y(s) = \dfrac{1}{s^2(s + 2)} - e^{-s}\left(\dfrac{1}{s^2 + 2} + \dfrac{1}{s(s + 2)}\right).</m></p>
+
+<p>The other fraction requires some work.</p>
+<p><m>\dfrac{1}{s^2(s + 2)} = \dfrac{A}{s^2} + \dfrac{B}{s} + \dfrac{C}{s + 2}.</m></p>
+
+<p>Cover-up method gives <m>A</m> and <m>C.</m> We find <m>B</m> by subtraction.</p>
+<p><m>A = \dfrac{1}{s + 2}\bigg|_{s = 0} = \dfrac{1}{2}, \quad C = \dfrac{1}{s}\bigg|_{s = -2} = \dfrac{1}{4}.</m></p>
+<p><m>B = \dfrac{1}{s^2(s + 2)} - \dfrac{1}{2} \cdot \dfrac{1}{s^2} - \dfrac{1}{4} \cdot \dfrac{1}{s + 2} = \ldots = -\dfrac{1}{4}.</m></p>
+
+<p>So,</p>
+<p><m>\dfrac{1}{s^2(s + 2)} = \dfrac{1}{2} \cdot \dfrac{1}{s^2} - \dfrac{1}{4} \cdot \dfrac{1}{s} + \dfrac{1}{s + 2}.</m></p>
+
+<p><m>Y(s) = \dfrac{1}{s^2(s + 2)} - e^{-s}\left(\dfrac{1}{s^2(s + 2)} + \dfrac{1}{s(s + 2)}\right)</m></p>
+<p><m>= \dfrac{1}{2} \cdot \dfrac{1}{s^2} + \dfrac{1}{4} \cdot \dfrac{1}{s} + \dfrac{1}{s + 2} - e^{-s}\left(\dfrac{1}{2} \cdot \dfrac{1}{s^2} + \dfrac{1}{4} \cdot \dfrac{1}{s + 2}\right).</m></p>
+<p><m>= \dfrac{1}{2} \cdot \dfrac{1}{s^2} + \dfrac{1}{4} \cdot \dfrac{1}{s} + \dfrac{1}{s + 2} - e^{-s}\left(\dfrac{1}{2} \cdot \dfrac{1}{s^2} + \dfrac{1}{4} \cdot \dfrac{1}{s + 2}\right).</m></p>
+
+<p><m>Y(s) = \dfrac{1}{2} \cdot \dfrac{1}{s^2} - \dfrac{1}{4} \cdot \dfrac{1}{s} + \dfrac{1}{s + 2} - e^{-s}\left(\dfrac{1}{2} \cdot \dfrac{1}{s^2} + \dfrac{1}{4} \cdot \dfrac{1}{s + 2}\right).</m></p>
+
+<p><m>y(t) = \dfrac{1}{2}t - \dfrac{1}{4} + \dfrac{1}{4}e^{-2t} - \left(-\dfrac{1}{2}t - \dfrac{1}{4}e^{-2t}\right)\mathcal{U}(t - 1).</m></p>
+
+<p><m>= \left(\dfrac{1}{2}t - \dfrac{1}{4} + \dfrac{1}{4}e^{-2t} - \left(\dfrac{1}{2}t - \dfrac{1}{4}\right)e^{-2(t - 1)}\right)\mathcal{U}(t - 1).</m></p>
+
+<p><m>= \begin{cases} 
+\dfrac{1}{2}t - \dfrac{1}{4} + \dfrac{1}{4}e^{-2t}, \amp  0 \leq t \lt 1 \\ 
+\dfrac{1}{4}e^{-2t} + \dfrac{1}{4}e^{-2t + 2}, \amp  t \geq 1 
+\end{cases}</m></p>
+
+<p> % Space for the figure % </p>
+
+
+</section>

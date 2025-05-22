@@ -3,5 +3,192 @@
 <section xml:id="sec-undetermined-coeff-2" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Method of Undetermined Coefficients - Final Ansatz</title>
 
-  <p></p>
+  <p><strong>The case when the first ansatz fails</strong></p>
+
+<p>Example 1. <m>y'' - y' - 2y = e^{2t}</m></p>
+<p>Complementary solution: <m>y = C_1e^{-t} + C_2e^{2t}.</m></p>
+<p>If we try <m>Y = Ae^{2t},</m> then <m>Y' = 2Ae^{2t}, Y'' = 4Ae^{2t}.</m></p>
+<p><m>Y'' - Y' - 2Y = 2Ae^{2t} - 2Ae^{2t} - 2Ae^{2t} = 0.</m></p>
+<p>There is no way for <m>Y'' - Y' - 2Y = e^{2t}.</m></p>
+
+<p>Why does this happen? Notice that <m>e^{2t}</m> appears as a part of the complementary solution while my ansatz <m>Ae^{2t}</m> is its multiple. When this happens, the first try ansatz fails.</p>
+
+<p>To find a particular solution, we multiply our ansatz by <m>t</m> and try again. <m>Y = Ate^{2t}, Y' = Ae^{2t} + 2Ate^{2t}, Y'' = 4Ae^{2t} + 4Ate^{2t}.</m></p>
+<p><m>Y'' - Y' - 2Y = 4Ae^{2t} + 4Ate^{2t} - (Ae^{2t} + 2Ate^{2t}) - 2Ate^{2t}</m></p>
+<p><m>= 3Ae^{2t} = e^{2t} \implies A = \dfrac{1}{3} \implies Y = \dfrac{1}{3}te^{2t}.</m></p>
+
+<p>Example 2. <m>y'' - 2y' + y = 2te^t.</m></p>
+<p>Complementary solution: <m>y = C_1e^t + C_2te^t.</m></p>
+<p>The first try ansatz is <m>Y = e^t(At + B) = Ate^t + Be^t.</m></p>
+<p>This ansatz clearly fails, as <m>Y</m> has the same structure as the complementary solution. We need to multiply by <m>t.</m></p>
+<p><m>Y = te^t(At + B) = (At^2 + Bt)e^t.</m></p>
+<p>Then <m>Y' = (2At + B)e^t + (At^2 + Bt)e^t,</m></p>
+<p><m>Y'' = 2Ae^t + 2(2At + B)e^t + (At^2 + Bt)e^t.</m></p>
+<p><m>Y'' - 2Y' + Y</m></p>
+<p><m>= 2Ae^t + 2(2At + B)e^t + (At^2 + Bt)e^t</m></p>
+<p><m>- 2((2At + B)e^t + (At^2 + Bt)e^t) + (At^2 + Bt)e^t</m></p>
+<p><m>= 2Ae^t.</m></p>
+
+<p>We do not have <m>te^t</m> terms on the left-hand-side. The equality cannot hold, no matter how <m>A, B</m> are chosen. The second try fails.</p>
+
+<p><span style="color:red;">We will have to multiply by another <m>t</m> and try again.</span></p>
+
+<p>Now we try:</p>
+<p><m>Y = t^2 e^t(At + B) = (At^3 + Bt^2)e^t.</m></p>
+<p>Then <m>Y' = (3At^2 + 2Bt)e^t + (At^3 + Bt^2)e^t,</m></p>
+<p><m>Y'' = (6At + 2B)e^t + 2(3At^2 + 2Bt)e^t + (At^3 + Bt^2)e^t.</m> So,</p>
+<p><m>Y'' - 2Y' + Y</m></p>
+<p><m>= (6At + 2B)e^t + 2(3At^2 + 2Bt)e^t + (At^3 + Bt^2)e^t</m></p>
+<p><m>- 2((3At^2 + 2Bt)e^t + (At^3 + Bt^2)e^t) + (At^3 + Bt^2)e^t</m></p>
+<p><m>= (6At + 2B)e^t = te^t.</m></p>
+
+<p>This means <m>6A = 1, 2B = 0 \implies A = \dfrac{1}{6}, B = 0 \implies Y = \dfrac{1}{6}t^3 e^t.</m></p>
+
+<p>The general solution:</p>
+<p><m>y = C_1 e^t + C_2 te^t + \dfrac{1}{6}t^3 e^t.</m></p>
+
+<p><strong>How to find the final ansatz without trying</strong></p>
+
+<p>Recall: In <m>y'' - y' - 2y = e^{2t}</m> of Example 1:</p>
+<ol>
+  <li>The aux. eqn. is <m>r^2 - r - 2 = 0 \implies r_1 = 2, r_2 = -1.</m></li>
+  <li><m>g(t) = e^{2t}</m> whose exponential coefficient is <m>2,</m> which is a root that appears <alert>once.</alert></li>
+  <li>We have seen that the first ansatz failed, the second succeeded.</li>
+</ol>
+
+<p>Recall: In <m>y'' - 2y' + y = te^t</m> of Example 2:</p>
+<ol>
+  <li>The aux. eqn. is <m>r^2 - 2r + 1 = 0 \implies r_1 = r_2 = 1.</m></li>
+  <li><m>g(t) = e^t</m> whose exponential coefficient is <m>1,</m> which is a root that appears <alert>twice.</alert></li>
+  <li>We have seen that the first and second ansatz failed, the third ansatz succeeded.</li>
+</ol>
+
+<p>Generally, for the ODE <m>ay'' + by' + cy = g(t),</m> where</p>
+<p><m>g(t) = e^{at} \cos \beta t \cdot (\text{polynomial}) + e^{at} \sin \beta t \cdot (\text{polynomial}),</m></p>
+<p>if the complex number <m>\alpha + i\beta</m> appears as a root for the auxiliary equation for <m>m</m> times, then the first <m>m</m> ansatz fail. We should modify the first ansatz by <m>t^m.</m></p>
+
+<p><strong>Remark:</strong> For convenience, we will call the complex number <m>\alpha + i\beta</m> the <alert>exponential coefficient</alert> of <m>g(t).</m></p>
+
+<p><strong>Remark:</strong> The exponential coefficient is a nonstandard terminology. In higher level mathematics, <m>\alpha + i\beta</m> is indeed an eigenvalue with respect to the differential operator. Its associated eigenfunction is <m>e^{(\alpha + i\beta)t}</m> with real part <m>e^{at} \cos \beta t</m> and imaginary part <m>e^{at} \sin \beta t.</m> But it’s wrong to call these trigs eigenfunctions.</p>
+
+
+<p><strong>Remark:</strong> Since the ODE is <span style="color:red;">second-order</span>, there are at most two roots for the auxiliary equation, <span style="color:red;">the ansatz at most fails twice.</span></p>
+
+<p>Example 3: <m>y'' + 4y = t \sin 2t.</m></p>
+<p>Aux. Eqn: <m>r^2 + 4 = 0 \implies r^2 = -4 \implies r = \pm 2i.</m></p>
+<p>Complementary solution: <m>y_c = C_1 \cos 2t + C_2 \sin 2t.</m></p>
+<p>The first ansatz: <m>Y = (At + B) \cos 2t + (Ct + D) \sin 2t.</m></p>
+<p>Exponential coefficient: <m>0 + 2i = 2i</m> appears as a single root.</p>
+<p>First try fails. The final ansatz should be</p>
+<p><m>Y = t((At + B) \cos 2t + (Ct + D) \sin 2t)</m></p>
+<p><m>= (At^2 + Bt) \cos 2t + (Ct^2 + Dt) \sin 2t.</m></p>
+<p><m>Y' = (2At + B) \cos 2t - 2(At^2 + Bt) \sin 2t + (2Ct + D) \sin 2t + 2(Ct^2 + D) \cos 2t.</m></p>
+<p>To compute <m>Y'',</m> we may use the binomial theorem <m>(fg)'' = f''g + 2f'g' + fg''.</m></p>
+
+<p>Then</p>
+<p><m>Y'' = 2A \cos 2t + 2(2At + B) \cdot (-2 \sin 2t) + (At^2 + Bt) \cdot (-4 \cos 2t) + 2C \sin 2t + 2(2Ct + D) \cdot 2 \cos 2t + (Ct^2 + Dt) \cdot (-4 \sin 2t).</m></p>
+
+<p><m>Y'' + 4Y = 2A \cos 2t + 2(2At + B) \cdot (-2 \sin 2t) + 2C \sin 2t + 2(2Ct + D) \cdot 2 \cos 2t</m></p>
+<p><m>= \cos 2t (8Ct + 2A + 4D) - 2 \sin 2t (-8At - 4B + 2C).</m></p>
+<p><m>Y'' + 4Y</m></p>
+<p><m>= \cos 2t (8Ct + 2A + 4D) + \sin 2t (-8At - 4B + 2C)</m></p>
+<p><m>= t \sin 2t.</m></p>
+
+<p>Comparing the coefficients, we see that</p>
+<p><m>8C = 0, \quad 2A + 4D = 0, \quad -8A = 1, \quad -4B + 2C = 0</m></p>
+<p><m>\implies A = -\dfrac{1}{8}, B = C = 0, D = \dfrac{1}{16}.</m></p>
+
+<p>So <m>Y = -\dfrac{1}{8}t^2 \cos 2t + \dfrac{1}{16}t \sin 2t.</m> The general solution is</p>
+<p><m>y = C_1 \cos 2t + C_2 \sin 2t - \dfrac{1}{8}t^2 \cos 2t + \dfrac{1}{16}t \sin 2t.</m></p>
+<p>Example 4: <m>y'' - 2y' + 2y = e^t \cos t.</m></p>
+<p>Aux. Eqn: <m>r^2 - 2r + 2 = 0 \implies (r - 1)^2 = -1 \implies r = 1 \pm i.</m></p>
+<p>Comp. Soln: <m>y_c = C_1 e^t \cos t + C_2 e^t \sin t.</m></p>
+<p>First ansatz: <m>Y = Ae^t \cos t + Be^t \sin t.</m></p>
+<p>Exp. Coeff.: <m>= 1 + i</m> that appear as a single root. First try fails.</p>
+<p>Final ansatz: <m>Y = Ate^t \cos t + Bte^t \sin t.</m></p>
+<p>To compute the derivatives, we may use the following rules:</p>
+<p><m>(fg)' = f'g h + f g'h + f g h'.</m></p>
+
+<p>So</p>
+<p><m>Y' = A(e^t \cos t + te^t \cos t - te^t \sin t) + B(e^t \sin t + te^t \sin t + te^t \cos t)</m></p>
+<p><m>= ((A + B)t + A)e^t \cos t + ((B - A)t + B)e^t \sin t.</m></p>
+<p><m>Y'' = (A + B)e^t \cos t + ((A + B)t + A)e^t \cos t</m></p>
+<p><m>+ ((A + B)t + A)e^t \cdot (-\sin t) + (B - A)e^t \sin t.</m></p>
+<p><m>+ ((B - A)t + B)e^t \cos t.</m></p>
+<p><m>Y'' = (A + B)e^t \cos t + ((A + B)t + A)e^t \cos t</m></p>
+<p><m>+ ((A + B)t + A)e^t \cdot (-\sin t) + (B - A)e^t \sin t</m></p>
+<p><m>+ ((B - A)t + B)e^t \cos t</m></p>
+<p><m>= ((A + B) + (A + B)t + A + (B - A)t + B)e^t \cos t</m></p>
+<p><m>+ ((-(A + B)t - A + B - A)t + B)e^t \sin t</m></p>
+<p><m>= (2Bt + 2A + 2B)e^t \cos t + (-2At - 2A + 2B)e^t \sin t.</m></p>
+<p>So</p>
+<p><m>Y'' - 2Y' + 2Y</m></p>
+<p><m>= (2Bt + 2A + 2B - 2((A + B)t + A) + 2At)e^t \cos t</m></p>
+<p><m>+ (-2At - 2A + 2B - 2((B - A)t + B) + 2Bt)e^t \sin t</m></p>
+<p><m>= 2Be^t \cos t - 2Ae^t \sin t = e^t \cos t.</m></p>
+<p><m>\implies 2B = 1, -2A = 0 \implies A = 0, B = \dfrac{1}{2} \implies Y = \dfrac{1}{2}te^t \sin t.</m></p>
+
+<p><strong>General solution:</strong></p>
+<p><m>y = C_1 e^t \cos t + C_2 e^t \sin t + \dfrac{1}{2} te^t \sin t.</m></p>
+
+<p><strong>Note:</strong> In the MIT Lecture 13 and 14, there exists a simpler way of computing <m>Y'' - 2Y' + 2Y</m>, using the exponential shift lemma of differential operators and complex functions. We shall not require that in our course.</p>
+
+<p><strong>Sums of functions with different exp coeffs.</strong></p>
+
+<p>We have seen how to solve <m>ay'' + by' + cy = g(t)</m> when</p>
+<p><m>g(t) = e^{at} \cos \beta t \cdot (\text{polynomial}) + e^{at} \sin \beta t \cdot (\text{polynomial}).</m></p>
+
+<p>What shall we do if <m>g(t)</m> is a sum of such functions but with different <span style="color:magenta;">α’s</span> and <span style="color:magenta;">β’s?</span> For example,</p>
+<p><m>g(t) = t^3 + e^t + \sin 2t + 2 \cos 2t.</m></p>
+
+<p>To handle such <m>g(t),</m> we need the following <span style="color:red;">principle of superposition.</span></p>
+
+<p>4. Let <m>Y_1</m> be a particular solution of</p>
+<p><m>y'' + p(t)y' + q(t)y = g_1(t),</m></p>
+<p>and <m>Y_2</m> be a particular solution of</p>
+<p><m>y'' + p(t)y' + q(t)y = g_2(t).</m></p>
+<p>Then <m>Y_1 + Y_2</m> is a particular solution of</p>
+<p><m>y'' + p(t)y' + q(t)y = g_1(t) + g_2(t).</m></p>
+<p><strong>Proof.</strong> The assumption implies that</p>
+<p><m>Y_1'' + p(t)Y_1' + q(t)Y_1 = g_1(t),</m></p>
+<p><m>Y_2'' + p(t)Y_2' + q(t)Y_2 = g_2(t).</m></p>
+
+<p>Adding them up, by linearity of differential operators, we have</p>
+<p><m>(Y_1 + Y_2)'' + p(t)(Y_1 + Y_2)' + q(t)(Y_1 + Y_2) = g_1(t) + g_2(t).</m></p>
+
+<p>Thus <m>Y_1 + Y_2</m> satisfies the ODE</p>
+<p><m>y'' + p(t)y' + q(t)y = g_1(t) + g_2(t).</m></p>
+
+<p>The principle of superposition tells us that to handle such <m>g(t):</m></p>
+<ol>
+  <li>Break <m>g(t) = g_1(t) + \cdots + g_m(t),</m> according to the exponential coefficients.</li>
+  <li>Find <m>Y_1, \ldots, Y_m</m> individually for <m>g_1, \ldots, g_m,</m> i.e., for <m>i = 1, \ldots, m,</m> find a particular <m>Y_i</m> for <m>ay'' + by' + cy = g_i(t).</m></li>
+  <li>Then <m>Y = Y_1 + \cdots + Y_m</m> is a particular solution.</li>
+</ol>
+
+<p>Example 5. <m>y'' + y = t + t \sin t + 2 \cos t.</m></p>
+<p>Aux. Eqn: <m>r^2 + 1 = 0 \implies r = \pm i.</m></p>
+<p>Comp. Soln: <m>y_c = C_1 \cos t + C_2 \sin t.</m></p>
+<p>Now we regard <m>g(t) = g_1(t) + g_2(t),</m> where</p>
+<p><m>g_1(t) = t, \quad g_2(t) = t \sin t + 2 \cos t.</m></p>
+<p>(Note: Terms with the same exponential coefficient should be collected together to avoid unnecessary repetitions.)</p>
+<p>First we deal with <m>g_1(t) = t.</m> The first ansatz is <m>Y_1 = At + B.</m> The exponential coefficient is <m>0</m> that is not a root. First ansatz succeeds.</p>
+
+<p><m>Y_1' = A, \quad Y_1'' = 0. Y_1'' + Y_1 = At + B = g_1(t) = t</m></p>
+<p><m>\implies A = 1, B = 0 \implies Y_1 = t.</m></p>
+<p>The first ansatz is <m>Y_2 = (Ct + D) \cos t + (Et + F) \sin t.</m></p>
+<p>The exponential coefficient is <m>i</m> that appears as a single root. First try fails. The final ansatz is</p>
+<p><m>Y_2 = (Ct^2 + Dt) \cos t + (Et^2 + Ft) \sin t.</m></p>
+<p>We compute the derivatives and find that</p>
+<p><m>Y_2'' + Y_2 = (-4Ct + 2E - 2D) \sin t + (4Et + 2F + 2C) \cos t.</m></p>
+<p><m>= t \sin t + 2 \cos t</m></p>
+<p><m>\implies -4C = 1, 2E - 2D = 0, 4E = 0, 2F + 2C = 2.</m></p>
+<p><m>\implies C = -\dfrac{1}{4}, D = E = 0, F = \dfrac{5}{4}.</m></p>
+<p>We found solutions</p>
+<p><m>Y_1 = t, \quad Y_2 = -\dfrac{1}{4}t^2 \cos t + \dfrac{5}{4}t \sin t.</m></p>
+
+<p>From the principle of superposition,</p>
+<p><m>Y = Y_1 + Y_2 = t - \dfrac{1}{4}t^2 \cos t + \dfrac{5}{4}t \sin t</m></p>
+<p>is a particular solution. The general solution is then</p>
+<p><m>y = C_1 \cos t + C_2 \sin t + t - \dfrac{1}{4}t^2 \cos t + \dfrac{5}{4}t \sin t.</m></p>
 </section>

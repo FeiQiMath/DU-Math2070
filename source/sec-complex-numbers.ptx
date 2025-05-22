@@ -43,7 +43,7 @@
 </p>
 </subsection>
 
-<subsection xml:id="subsec-Euler-formula    ">
+<subsection xml:id="subsec-Euler-formula">
   <title>Euler Formula</title>
 <p><strong>Euler’s formula reads</strong></p>
 <p><m>e^{i\theta} = \cos \theta + i \sin \theta</m></p>

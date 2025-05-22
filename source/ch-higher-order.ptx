@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <chapter xml:id="ch-higher-order" xmlns:xi="http://www.w3.org/2001/XInclude">
-  <title>Higher-order Differential Equations</title>
+  <title>Second-Order and Higher-Order Differential Equations</title>
 
   <introduction>
     <p> </p>
@@ -16,4 +16,5 @@
   <xi:include href="sec-2nd-order-linear-non-homogeneous.ptx" />
   <xi:include href="sec-undetermined-coeff-1.ptx" />
   <xi:include href="sec-undetermined-coeff-2.ptx" />
+  <xi:include href="sec-higher-order-linear-ODEs.ptx" />
 </chapter>

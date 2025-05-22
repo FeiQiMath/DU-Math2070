@@ -1,0 +1,199 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-laplace-transform" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Laplace Transform and Examples</title>
+
+  <p><strong>Integral transform</strong></p>
+
+<p>Integral transforms: Let <m>K(s, t)</m> be a function with two real variables. Given a function <m>f(t)</m> defined on a set <m>D</m>, the following integral</p>
+<p><m>F(s) = \int_D K(s, t)f(t)dt</m></p>
+<p>defines a new function <m>F(s)</m>. The map sending <m>f(t)</m> to <m>F(s)</m> is called an <alert>integral transform</alert>. The function <m>K(s, t)</m> is called the <alert>kernel</alert> of the integral transform.</p>
+
+<p>Note that when <m>D</m> is an <alert>infinite</alert> interval, the integral defining <m>F(s)</m> is improper and might not converge for all real numbers <m>s</m>. In this case, the domain of new function <m>F(s)</m>, i.e., the set of <m>s</m> such that the integral converges, is not expected to be <m>(-\infty, \infty).</m></p>
+
+<p>Integral transforms appears in many discussions of mathematics, physics, engineering, and computer science.</p>
+
+<p><strong>Fourier transform:</strong> <m>D = (-\infty, \infty), K(s, t) = e^{-ist},</m></p>
+<p><m>f(t) \mapsto F(s) = \int_{-\infty}^{\infty} f(t)e^{-ist} dt</m> <alert>complex function</alert></p>
+
+<p>Fourier transform is widely used, including but not limited to, partial differential equations, computer graphics, machine learning, etc. (not required in this course)</p>
+  <p>In this course, we mainly focus on the <alert>Laplace transform</alert>, with</p>
+<p><m>D = [0, \infty), K(s, t) = e^{-st}.</m></p>
+<p>The corresponding integral transform</p>
+<p><m>f(t) \mapsto F(s) = \int_{0}^{\infty} f(t)e^{-st} dt</m></p>
+<p>is called the <alert>Laplace transform</alert>. The function <m>F(s)</m> is usually denoted by <m>\mathcal{L}\{f(t)\}.</m></p>
+<p>The domain of <m>F(s)</m> depends on <m>f(t)</m>, determined by the convergence of the improper integral, i.e.,</p>
+<p><m>\lim_{b \to \infty} \int_{0}^{b} f(t)e^{-st} dt</m> should exist.</p>
+<p><strong>Examples of Laplace transforms</strong></p>
+
+<p>Laplace Transform:</p>
+<p><m>f(t) \mapsto \mathcal{L}\{f(t)\} = F(s) = \int_{0}^{\infty} f(t)e^{-st} dt</m></p>
+<p>Note that the domain of <m>F(s)</m> depends on the choice of <m>f(t).</m></p>
+
+<p><strong>Example 1. Evaluate <m>\mathcal{L}\{1\}.</m></strong></p>
+<p><m>\mathcal{L}\{1\} = \int_{0}^{\infty} e^{-st} dt = \left. \frac{e^{-st}}{-s} \right|_{0}^{\infty} = \left( \lim_{t \to \infty} \frac{e^{-st}}{-s} \right) - \frac{1}{-s}.</m></p>
+
+<p>If <m>s \gt 0</m>, then <m>\lim_{t \to \infty} \frac{e^{-st}}{-s} = 0.</m> The integral converges.</p>
+<p>In this case, <m>F(s) = 0 - \frac{1}{-s} = \frac{1}{s}.</m></p>
+<p>If <m>s \lt 0</m>, then <m>\lim_{t \to \infty} \frac{e^{-st}}{-s} = +\infty.</m> The integral diverges.</p>
+<p>If <m>s = 0</m>, then we have <m>e^{-st} = 1.</m></p>
+<p>In this case, <m>\int_{0}^{\infty} e^{-st} dt = \int_{0}^{\infty} 1 dt</m> also diverges.</p>
+<p><strong>Conclusion:</strong> <alert>\mathcal{L}\{1\} = \frac{1}{s}, \quad s \gt 0.</alert></p>
+
+<p><strong>Example 2. Evaluate <m>\mathcal{L}\{t\}.</m></strong></p>
+<p><m>\mathcal{L}\{t\} = \int_{0}^{\infty} te^{-st} dt = -\frac{1}{s} te^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} 1 \cdot \left(-\frac{1}{s} e^{-st}\right) dt</m></p>
+<p><m> = -\frac{1}{s} \left( \lim_{t \to \infty} te^{-st} - 0 \right) + \frac{1}{s} \int_{0}^{\infty} e^{-st} dt</m></p>
+
+<p>We have seen that <m>\int_{0}^{\infty} e^{-st} dt</m> converges if and only if <m>s \gt 0.</m> In this case, <m>\lim_{t \to \infty} te^{-st} = \lim_{t \to \infty} \frac{t}{e^{st}} = 0</m> by L'Hôpital's rule.</p>
+
+<p><m>\mathcal{L}\{t\} = \int_{0}^{\infty} te^{-st} dt = -\frac{1}{s} te^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} 1 \cdot \left(-\frac{1}{s} e^{-st}\right) dt</m></p>
+<p><m> = -\frac{1}{s} \left( \lim_{t \to \infty} te^{-st} - 0 \right) + \frac{1}{s} \int_{0}^{\infty} e^{-st} dt</m></p>
+<p><m> = -\frac{1}{s} \cdot (0 - 0) + \frac{1}{s} \cdot \frac{1}{s} = \frac{1}{s^2}.</m></p>
+
+<p>So</p>
+<p><alert>\mathcal{L}\{t\} = \frac{1}{s^2}, \quad s \gt 0.</alert></p>
+
+<p>So we have obtained that for <m>s \gt 0,</m></p>
+<p><m>\mathcal{L}\{t^n\} = -\frac{n}{s} \int_{0}^{\infty} t^{n-1} e^{-st} dt = -\frac{n}{s} \mathcal{L}\{t^{n-1}\}</m></p>
+
+<p>This defines a recursion of <m>\mathcal{L}\{t^n\}</m> that can be easily solved:</p>
+<p><m>\mathcal{L}\{t^n\} = -\frac{n}{s} \mathcal{L}\{t^{n-1}\} = -\frac{n}{s} \cdot \frac{n - 1}{s} \mathcal{L}\{t^{n-2}\}</m></p>
+<p><m> = \ldots = -\frac{n}{s} \cdot \frac{n - 1}{s} \cdots \frac{2}{s} \cdot \frac{1}{s} \mathcal{L}\{1\} = -\frac{n \cdot (n - 1) \cdots 2 \cdot 1}{s^{n + 1}} = -\frac{n!}{s^{n + 1}}.</m></p>
+
+<p><strong>Conclusion:</strong></p>
+<p><alert>\mathcal{L}\{t^n\} = \frac{n!}{s^{n + 1}}, \quad s \gt 0.</alert></p>
+
+<p>For <strong>example</strong></p>
+<p><m>\mathcal{L}\{t^2\} = \frac{2!}{s^3}, \quad \mathcal{L}\{t^3\} = \frac{3!}{s^4}, \quad \mathcal{L}\{t^4\} = \frac{4!}{s^5}, \quad s \gt 0.</m></p>
+<p>Note that the power of <m>s</m> in the denominator is 1 larger than the power of <m>t.</m></p>
+
+<p><strong>Example 4. Evaluate <m>\mathcal{L}\{e^{-3t}\}</m> and <m>\mathcal{L}\{e^{5t}\}.</m></strong></p>
+<p><m>\mathcal{L}\{e^{-3t}\} = \int_{0}^{\infty} e^{-3t} e^{-st} dt = \int_{0}^{\infty} e^{-(s + 3)t} dt</m></p>
+<p><m> = \frac{1}{-(s + 3)} e^{-(s + 3)t} \bigg|_{0}^{\infty} = \frac{1}{-(s + 3)} \left( \lim_{t \to \infty} e^{-(s + 3)t} - 1 \right)</m></p>
+
+<p>Clearly, <m>\lim_{t \to \infty} e^{-(s + 3)t}</m> exists when <m>s + 3 \gt 0,</m> i.e., <m>s \gt -3.</m> The limit is zero. So</p>
+<p><m>\mathcal{L}\{e^{-3t}\} = \frac{1}{-(s + 3)} (0 - 1) = \frac{1}{s + 5}, \quad s \gt -3.</m></p>
+
+<p><m>\mathcal{L}\{e^{5t}\} = \int_{0}^{\infty} e^{5t} e^{-st} dt = \int_{0}^{\infty} e^{-(s - 5)t} dt</m></p>
+<p><m> = \frac{1}{-(s - 5)} e^{-(s - 5)t} \bigg|_{0}^{\infty} = \frac{1}{-(s - 5)} \left( \lim_{t \to \infty} e^{-(s - 5)t} - 1 \right)</m></p>
+
+<p>Clearly, <m>\lim_{t \to \infty} e^{-(s - 5)t}</m> exists when <m>s - 5 \gt 0,</m> i.e., <m>s \gt 5.</m> The limit is zero. So</p>
+<p><m>\mathcal{L}\{e^{5t}\} = \frac{1}{-(s - 5)} (0 - 1) = \frac{1}{s - 5}, \quad s \gt 5.</m></p>
+
+<p><strong>Example 5. Evaluate <m>\mathcal{L}\{e^{at}\}.</m></strong></p>
+<p><m>\mathcal{L}\{e^{at}\} = \int_{0}^{\infty} e^{at} e^{-st} dt = \int_{0}^{\infty} e^{-(s - \alpha)t} dt</m></p>
+<p><m> = \frac{1}{-(s - \alpha)} e^{-(s - \alpha)t} \bigg|_{0}^{\infty} = \frac{1}{-(s - \alpha)} \left( \lim_{t \to \infty} e^{-(s - \alpha)t} - 1 \right)</m></p>
+
+<p>Clearly, <m>\lim_{t \to \infty} e^{-(s - \alpha)t}</m> exists when <m>s - \alpha \gt 0,</m> i.e., <m>s \gt \alpha.</m> The limit is zero. So</p>
+<p><alert>\mathcal{L}\{e^{at}\} = \frac{1}{s - \alpha}, \quad s \gt \alpha.</alert></p>
+
+<p><strong>Example 6. Evaluate <m>\mathcal{L}\{\sin 2t\}.</m></strong></p>
+<p><m>\mathcal{L}\{\sin 2t\} = \int_{0}^{\infty} \sin 2t \, e^{-st} dt</m></p>
+<p><m> = -\frac{1}{s} \sin 2t \, e^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} 2 \cos 2t \left(-\frac{1}{s} e^{-st}\right) dt</m></p>
+<p><m> = -\frac{1}{s} \left( \lim_{t \to \infty} e^{-st} \sin 2t - 0 \right) + \frac{2}{s} \int_{0}^{\infty} \cos 2t \, e^{-st} dt</m></p>
+
+<p>Clearly, <m>\lim_{t \to \infty} e^{-st} \sin 2t</m> exists <alert>iff</alert> <m>s \gt 0,</m> and equals 0.</p>
+
+<p><m>\mathcal{L}\{\sin 2t\} = -\frac{2}{s} \int_{0}^{\infty} \cos 2t \, e^{-st} dt</m></p>
+<p><m> = \frac{2}{s} \left( -\frac{1}{s} \cos 2t \, e^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} (-2 \sin 2t) \left(-\frac{1}{s} e^{-st}\right) dt \right)</m></p>
+<p><m> = -\frac{2}{s^2} \left( \lim_{t \to \infty} \cos 2t \, e^{-st} - \cos 0 \, e^0 \right) - \frac{4}{s^2} \int_{0}^{\infty} \sin 2t \, e^{-st} dt</m></p>
+
+<p>Clearly when <m>s \gt 0,</m> <m>\lim_{t \to \infty} e^{-st} \cos 2t = 0.</m></p>
+
+<p><m>\mathcal{L}\{\sin 2t\} = -\frac{2}{s^2} (0 - 1) - \frac{4}{s^2} \int_{0}^{\infty} \sin 2t \, e^{-st} dt</m></p>
+<p><m> = \frac{2}{s^2} - \frac{4}{s^2} \mathcal{L}\{\sin 2t\} \Rightarrow \left( 1 + \frac{4}{s^2} \right) \mathcal{L}\{\sin 2t\} = \frac{2}{s^2}</m></p>
+
+<p>So we conclude that</p>
+<p><m>\mathcal{L}\{\sin 2t\} = \frac{2}{s^2 + 4}, \quad s \gt 0.</m></p>
+
+<p><strong>Example 7. Evaluate <m>\mathcal{L}\{\sin \beta t\}.</m></strong></p>
+<p>With a similar procedure, we see that</p>
+<p><m>\mathcal{L}\{\sin \beta t\} = \frac{\beta}{s^2} - \frac{\beta^2}{s^2} \mathcal{L}\{\sin \beta t\} \Rightarrow \left( 1 + \frac{\beta^2}{s^2} \right) \mathcal{L}\{\sin \beta t\} = \frac{\beta}{s^2}</m></p>
+
+<p>So we conclude that</p>
+<p><alert>\mathcal{L}\{\sin \beta t\} = \frac{\beta}{s^2 + \beta^2}, \quad s \gt 0.</alert></p>
+
+<p><strong>Example 8. Evaluate <m>\mathcal{L}\{\cos \beta t\}.</m></strong></p>
+<p>With a similar procedure, we see that</p>
+<p><m>\mathcal{L}\{\cos \beta t\} = \frac{1}{s} - \frac{\beta^2}{s^2} \mathcal{L}\{\cos \beta t\} \Rightarrow \left( 1 + \frac{\beta^2}{s^2} \right) \mathcal{L}\{\cos \beta t\} = \frac{s}{s^2}</m></p>
+
+<p>So we conclude that</p>
+<p><alert>\mathcal{L}\{\cos \beta t\} = \frac{s}{s^2 + \beta^2}, \quad s \gt 0.</alert></p>
+
+<p><strong>Theorem:</strong> For every real numbers <m>\alpha, \beta,</m></p>
+<p><m>\mathcal{L}\{af(t) + \beta g(t)\} = \alpha \mathcal{L}\{f(t)\} + \beta \mathcal{L}\{g(t)\}.</m></p>
+
+<p><strong>Proof:</strong> It follows from the linearity of integrals.</p>
+<p><m>\mathcal{L}\{af(t) + \beta g(t)\} = \int_{0}^{\infty} (af(t) + \beta g(t)) e^{-st} dt</m></p>
+<p><m> = \alpha \int_{0}^{\infty} f(t)e^{-st} dt + \beta \int_{0}^{\infty} g(t)e^{-st} dt</m></p>
+<p><m> = \alpha \mathcal{L}\{f(t)\} + \beta \mathcal{L}\{g(t)\}.</m></p>
+
+<p><strong>Hyperbolic functions</strong></p>
+
+<p>Recall that from the Euler’s formula, the usual sine and cosine functions may also be expressed as</p>
+<p><m>\sin t = \frac{e^{it} - e^{-it}}{2i}, \quad \cos x = \frac{e^{it} + e^{-it}}{2}.</m></p>
+<p>The hyperbolic functions are defined similarly:</p>
+<p><m>\sinh x = \frac{e^t - e^{-t}}{2}, \quad \cosh x = \frac{e^t + e^{-t}}{2}.</m></p>
+<p>These functions are widely used in engineering practices.</p>
+<p>The Laplace transform of hyperbolic functions can be obtained via linearity. For every <m>k \gt 0:</m></p>
+<p><m>\mathcal{L}\{\sinh kt\} = \mathcal{L}\left\{ \frac{e^{kt} - e^{-kt}}{2} \right\} = \frac{1}{2} \mathcal{L}\{e^{kt}\} - \frac{1}{2} \mathcal{L}\{e^{-kt}\}</m></p>
+<p><m> = \frac{1}{2} \cdot \frac{1}{s - k} - \frac{1}{2} \cdot \frac{1}{s + k} = \frac{1}{2} \cdot \frac{s + k - (s - k)}{(s - k)(s + k)} = \frac{k}{s^2 - k^2}.</m></p>
+<p><m>\mathcal{L}\{\cosh kt\} = \mathcal{L}\left\{ \frac{e^{kt} + e^{-kt}}{2} \right\} = \frac{1}{2} \mathcal{L}\{e^{kt}\} + \frac{1}{2} \mathcal{L}\{e^{-kt}\}</m></p>
+<p><m> = \frac{1}{2} \cdot \frac{1}{s - k} + \frac{1}{2} \cdot \frac{1}{s + k} = \frac{1}{2} \cdot \frac{s + k + (s - k)}{(s - k)(s + k)} = \frac{s}{s^2 - k^2}.</m></p>
+
+<p><strong>Summary of basic formulas for Laplace transform</strong></p>
+
+<ul>
+<li><strong>Power functions</strong></li>
+<p><m>\mathcal{L}\{1\} = \frac{1}{s}, \quad \mathcal{L}\{t\} = \frac{1}{s^2}, \quad \mathcal{L}\{t^n\} = \frac{n!}{s^{n + 1}}, \quad s \gt 0.</m></p>
+<p>Then by linearity, we may obtain the Laplace transform of all polynomial functions, e.g., <m>\mathcal{L}\{1 + 5t + 3t^2\} = \mathcal{L}\{1\} + 5\mathcal{L}\{t\} + 3\mathcal{L}\{t^2\} = \frac{1}{s} + \frac{5}{s^2} + 3 \cdot \frac{2!}{s^3} = \frac{1}{s} + \frac{5}{s^2} + \frac{6}{s^3}.</m></p>
+
+<li><strong>Exponential functions:</strong> for every real number <m>\alpha,</m></li>
+<p><m>\mathcal{L}\{e^{\alpha t}\} = \frac{1}{s - \alpha}, \quad s \gt \alpha.</m></p>
+
+<li><strong>Trigonometric and hyperbolic functions:</strong> for every <m>\beta, k \gt 0,</m></li>
+<p><m>\mathcal{L}\{\cos \beta t\} = \frac{s}{s^2 + \beta^2}, \quad \mathcal{L}\{\sin \beta t\} = \frac{\beta}{s^2 + \beta^2}, \quad s \gt 0.</m></p>
+<p><m>\mathcal{L}\{\cosh kt\} = \frac{s}{s^2 - k^2}, \quad \mathcal{L}\{\sinh kt\} = \frac{k}{s^2 - k^2}, \quad s \gt k.</m></p>
+</ul>
+
+<p><strong>When does <m>\mathcal{L}\{f(t)\}</m> exist</strong></p>
+
+<p>Recall: A function is piecewise continuous on <m>[0, \infty),</m> if in any subinterval <m>[a, b],</m> the function is continuous everywhere except at finitely many numbers. The discontinuities are either removable or jump.</p>
+
+<p><strong>Definition:</strong> A function is said to be of exponential order, if there exist constants <m>c, M \gt 0</m> and <m>T \gt 0,</m> such that <m>|f(t)| \leq Me^{ct}</m> for all <m>t \gt T.</m></p>
+
+<p>In other words, <m>|f(t)|</m> does not grow faster than a constant multiple of a simple exponential function.</p>
+
+<p><strong>Definition:</strong> A function is said to be of exponential order, if there exist constants <m>c, M \gt 0</m> and <m>T \gt 0,</m> such that <m>|f(t)| \leq Me^{ct}</m> for all <m>t \gt T.</m></p>
+<p>In other words, <m>|f(t)|</m> does not grow faster than a constant multiple of a simple exponential function <m>e^{ct}.</m></p>
+
+<p>Polynomial functions, simple exponential function <m>e^{at},</m> cosine and sine functions are of exponential order.</p>
+
+<p>The function <m>f(t) = e^{t^2}</m> is not of exponential order, since for every possible <m>c \gt 0,</m></p>
+<p><m>\left| \frac{e^{t^2}}{e^{ct}} \right| = e^{t^2 - ct} = e^{t^2(t - c)} \to \infty</m></p>
+<p>So <m>e^{t^2}</m> grows faster than any multiple of <m>e^{ct}.</m></p>
+
+<p><strong>Theorem:</strong> If <m>f</m> is piecewise continuous on <m>[0, \infty)</m> and of exponential order, then <m>\mathcal{L}\{f(t)\}</m> exists for <m>s \gt c.</m></p>
+
+<p><strong>Proof:</strong> Since <m>f</m> is of exponential order, there exists <m>c \gt 0, M \gt 0, T \gt 0,</m> such that whenever <m>t \gt T, |f(t)| \leq Me^{ct}.</m> Using the number <m>T,</m> we rewrite</p>
+<p><m>\mathcal{L}\{f(t)\} = \int_{0}^{T} e^{-st} f(t) dt + \int_{T}^{\infty} e^{-st} f(t) dt = I_1 + I_2</m></p>
+<p>Since <m>f</m> is piecewise continuous, <m>I_1</m> exists.</p>
+<p>For <m>I_2,</m> we use the inequality <m>|f(t)| \leq Me^{ct}</m> to show that</p>
+<p><m>\int_{T}^{\infty} |e^{-st} f(t)| dt = \int_{T}^{\infty} e^{-st} |f(t)| dt \leq \int_{T}^{\infty} e^{-st} e^{ct} dt</m></p>
+<p>Right-hand side is precisely <m>\mathcal{L}\{e^{ct}\}</m> that exists when <m>s \gt c.</m> In other words, <m>I_2</m> converges absolutely when <m>s \gt c.</m></p>
+
+<p><strong>Remark:</strong> These two conditions are sufficient but not necessary. In other words, <m>\mathcal{L}\{f(t)\}</m> exists does not mean that <m>f(t)</m> should satisfy these two conditions.</p>
+
+<p><strong>Examples:</strong> The function <m>t^{-\frac{1}{2}}</m> is not piecewise continuous. The function <m>2te^{t^2} \cos e^{t^2}</m> is not of exponential order. But it is not difficult to see that both <m>\mathcal{L}\{t^{-\frac{1}{2}}\}</m> and <m>\mathcal{L}\{2te^{t^2} \cos e^{t^2}\}</m> exist.</p>
+
+<p><strong>Long term behavior of <m>\mathcal{L}\{f(t)\}</m></strong></p>
+
+<p><strong>Theorem:</strong> If <m>f</m> is piecewise continuous on <m>[0, \infty)</m> and of exponential order, then the function <m>F(s) = \mathcal{L}\{f(t)\}</m> satisfies <m>\lim_{s \to \infty} F(s) = 0.</m></p>
+
+<p><strong>Proof:</strong> Take <m>c, M, T \gt 0</m> as in the previous proof. Since <m>f</m> is piecewise continuous on <m>[0, T],</m> <m>f(x)</m> is bounded. By adjusting <m>M,</m> we may assume that <m>|f(t)| \leq Me^{ct}</m> on <m>[0, \infty).</m></p>
+
+<p><m>0 \leq |F(s)| \leq \int_{0}^{\infty} e^{-st} |f(t)| dt \leq \int_{0}^{\infty} e^{-st} e^{ct} dt = \int_{0}^{\infty} e^{-(s - c)t} dt = \frac{1}{s - c} \to 0, \text{ as } s \to \infty.</m></p>
+
+<p>The conclusion then follows from the squeeze theorem.</p>
+
+</section>

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<chapter xml:id="ch-Laplace" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Laplace Transform</title>
+
+  <!-- include sections -->
+  <xi:include href="sec-laplace-transform.ptx" />
+  <xi:include href="sec-inverse-Laplace.ptx" />
+  <xi:include href="sec-first-translation-theorem.ptx" />
+  <xi:include href="sec-second-translation-theorem.ptx" />
+  <xi:include href="sec-Laplace-periodic.ptx" />
+  <xi:include href="sec-derivative-Laplace-convolutions.ptx" />
+  <xi:include href="sec-Dirac-delta.ptx" />
+
+</chapter>

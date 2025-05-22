@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-Dirac-delta" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Dirac Delta Function</title>
+
+  <p>The topic is one of the most confusing topics in undergraduate level STEM courses. The full justification requires the theory of distributions.</p>
+<p>We start by the unit impulse function. For fixed <m>t_0 \gt 0</m> and <m>0 \lt a \lt t_0</m>, the function</p>
+<p><m>\delta_a(t - t_0) = \begin{cases} \frac{1}{2a}, \amp t_0 - a \leq t \lt t_0 + a, \\ 0, \amp \text{otherwise.} \end{cases}</m></p>
+<p>is called the unit impulse function centered at <m>t_0</m> with width <m>a.</m></p>
+<p>Key property:</p>
+<p><m>\int_0^{\infty} \delta_a(t - t_0) dt = 1.</m></p>
+<p>For fixed <m>t_0 \gt 0</m> and <m>0 \lt a \lt t_0</m>, the function</p>
+<p><m>\delta_a(t - t_0) = \begin{cases} \frac{1}{2a}, \amp t_0 - a \leq t \lt t_0 + a, \\ 0, \amp \text{otherwise.} \end{cases}</m></p>
+<p>is called the unit impulse function centered at <m>t_0</m> with width <m>a.</m></p>
+<p>Key property:</p>
+<p><m>\int_0^{\infty} \delta_a(t - t_0) dt = 1.</m></p>
+<p>The Dirac <m>\delta</m>-function is defined as the "limit" of the unit impulse function:</p>
+<p><m>\delta(t - t_0) = \lim_{a \to 0} \delta_a(t - t_0).</m></p>
+<p>Intuitively,</p>
+<p><m>\delta(t - t_0) = \begin{cases} \infty, \amp t = t_0, \\ 0, \amp t \neq t_0. \end{cases}</m></p>
+<p><m>\int_0^{\infty} \delta(t - t_0) dt = 1.</m></p>
+<p>Trouble: there <span style="color:magenta;">does not exist</span> a function in the usual sense satisfying <span style="color:magenta;">both properties</span> above.</p>
+<p>Indeed, the <m>\delta</m>-function makes sense ONLY as a distribution (aka, generalized function).</p>
+<p>The <span style="color:red;">key property</span> of the Dirac <m>\delta</m>-function that matters in both pure and applied mathematics is</p>
+<p><m>\int_0^{\infty} f(t) \delta(t - t_0) dt = f(t_0).</m></p>
+<p>In other words, the integration sifts <m>f(t_0).</m></p>
+<p>In all applications of the Dirac <m>\delta</m>-function, this is the only property that matters. We should not worry about the values of the function at a number. We should stick to this property only.</p>
+<p>In particular, we know the Laplace transform of <m>\delta(t - t_0).</m></p>
+<p><m>L\{\delta(t - t_0)\} = \int_0^{\infty} \delta(t - t_0)e^{-st} dt = e^{-st_0}.</m></p>.
+<p>Dirac <m>\delta</m>-function – history and applications</p>
+<ul>
+    <li>The idea of the Dirac <m>\delta</m>-function is essentially in Fourier’s work of partial differential equations in mid-1800’s.</li>
+    <li>The function is formally introduced by Paul Dirac in 1927, when he used the function to study various spectral problems.</li>
+    <li>The function is rigorized by Laurent Schwartz in 1945 by inventing the theory of distributions (almost 20 years later).</li>
+</ul>
+<p>Applications</p>
+<ul>
+    <li>Describe the “fundamental solution” of a PDE.</li>
+    <li>Describe the “derivative” of a function with jump discontinuity, e.g., <m>\frac{d}{dt} U(t - a) = \delta(t - a).</m></li>
+    <li>Unifying the discrete and continuous models in probability theory.</li>
+</ul>
+<ul>
+    <li>Physicists and engineers tend to use the Dirac <m>\delta</m>-function without worrying about the theory of distributions, because the <span style="color:magenta;">effect of the \delta-function can be easily observed from experiments</span>, e.g., on an oscilloscope connected to a differential circuit with square wave external voltage.</li>
+    <li>In the teaching of quantum mechanics, for a very long time, the standard response to conceptual problems is SUAC, abbreviation of <span style="color:magenta;">Shut up and Calculate.</span></li>
+    <li>In applying the <m>\delta</m>-function in engineering practices, you may use the same philosophy. We shall see that in the next two examples.</li>
+</ul>
+<p>Dirac <m>\delta</m>-function – examples</p>
+<p>Example. <m>y'' + y = 4\delta(t - 2\pi), \, y(0) = 0, \, y'(0) = 0.</m></p>
+<p>We solve the ODE using the Laplace method. Set <m>Y(s) = L\{y(t)\}.</m></p>
+<p><m>s^2 Y(s) - sy(0) - y'(0) + Y(s) = \frac{4e^{-2\pi s}}{s^2 + 1}</m></p>
+<p><m>\Rightarrow Y(s) = \frac{4}{s^2 + 1}</m></p>
+<p><m>\Rightarrow y(t) = L^{-1} \left\{ \frac{4}{s^2 + 1} \right\} \, \bigg|_{t \mapsto t - 2\pi}</m></p>
+<p><m>= 4 \sin(t - 2\pi) U(t - 2\pi)</m></p>
+<p><m>= \begin{cases} 0, \amp 0 \leq t \lt 2\pi \\ 4 \sin t, \amp t \geq 2\pi \end{cases}</m></p>
+<p>Example. <m>y'' + y = 4\delta(t - 2\pi), \, y(0) = 1, \, y'(0) = 0.</m></p>
+<p>We solve the ODE using the Laplace method. Set <m>Y(s) = L\{y(t)\}.</m></p>
+<p><m>s^2 Y(s) - sy(0) - y'(0) + Y(s) = 4e^{-2\pi s}</m></p>
+<p><m>\Rightarrow Y(s) = \frac{s}{s^2 + 1} + \frac{4e^{-2\pi s}}{s^2 + 1}</m></p>
+<p><m>\Rightarrow y(t) = \cos t + 4\sin(t - 2\pi) U(t - 2\pi)</m></p>
+<p><m>= \begin{cases} \cos t, \amp 0 \leq t \lt 2\pi \\ \cos t + 4\sin t, \amp t \geq 2\pi \end{cases}</m></p>
+<p>Generally, the Dirac <m>\delta</m>-function <m>\delta(t - t_0)</m> effectively introduces an abrupt change of the solution at <m>t = t_0</m> (that can be observed from experiments).</p>
+</section>

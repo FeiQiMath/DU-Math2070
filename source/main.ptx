@@ -13,11 +13,13 @@
     <xi:include href="./frontmatter.ptx" />
 
     <!-- Include chapters -->
-     <!-- <xi:include href="./ch-chapter-title.ptx" />-->
+     <!-- <xi:include href="./ch-chapter-title.ptx" /> -->
      <xi:include href="./ch-1st-order.ptx" />
      <xi:include href="./ch-higher-order.ptx" />
-
-     <xi:include href="./ch-Prerequisites.ptx"/>
+     <xi:include href="./ch-Laplace.ptx" />
+     <!-- <xi:include href="./ch-series-solutions.ptx" /> -->
+     <xi:include href="./ch-linear-systems.ptx" />
+     <!-- <xi:include href="./ch-Prerequisites.ptx"/> -->
     
 
     <!-- Include backmatter -->

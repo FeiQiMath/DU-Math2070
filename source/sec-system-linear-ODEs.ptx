@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-system-linear-ODEs" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>System of First-Order Linear ODEs</title>
+
+<p>1. General theory systems of first order linear ODEs</p>
+<p><m>\vec{x}'(t) = A(t) \vec{x}(t)</m></p>
+
+<p>In <m>n</m>-variable case</p>
+<p><m>\begin{cases} 
+x_1' = p_{11}(t)x_1 + \cdots + p_{1n}(t)x_n + g_1(t) \\ 
+x_2' = p_{21}(t)x_1 + \cdots + p_{2n}(t)x_n + g_2(t) \\ 
+\vdots \\ 
+x_n' = p_{n1}(t)x_1 + \cdots + p_{nn}(t)x_n + g_n(t) 
+\end{cases}</m></p>
+
+<p>Existence and Uniqueness Theorem: If <m>p_{ij}(t), i, j = 1, \ldots, n</m> and <m>g_i(t), i = 1, \ldots, n</m> are continuous over an interval <m>(\alpha, \beta)</m> that contains <m>t_0</m>, then there exists a unique solution to the initial value problem</p>
+<p><m>\begin{cases} 
+x_1' = p_{11}(t)x_1 + \cdots + p_{1n}(t)x_n + g_1(t) \\ 
+x_2' = p_{21}(t)x_1 + \cdots + p_{2n}(t)x_n + g_2(t), \quad x_1(t_0) = x_0^1, \ldots, x_n(t_0) = x_0^n 
+\end{cases}</m></p>
+<p>over the interval <m>(\alpha, \beta).</m></p>
+
+<p>Remark: We’ll only focus on the homogeneous system, i.e., the case when all <m>g_i(t) = 0.</m></p>
+
+<p>Principle of Superposition: Vector functions <m>\vec{x}_1(t), \ldots, \vec{x}_n(t)</m> are linearly independent solutions to the system <m>\vec{x}'(t) = A(t)\vec{x}(t),</m> then the general solution to the linear homogeneous system is</p>
+<p><m>\vec{x}(t) = C_1 \vec{x}_1(t) + \cdots + C_n \vec{x}_n(t)</m></p>
+<p>Linearly independent means the Wronskian of the vector functions are not constantly zero.</p>
+
+<p>Relations to the first order ODE</p>
+<p>2. System of Linear ODEs with Constant coefficients:</p>
+<p><m>\vec{x}'(t) = A\vec{x}(t)</m></p>
+
+<p>Idea: Try <m>\vec{x}(t) = e^{Mt}\vec{c}</m> to find some solutions. Then use the principle of superposition to solve the problem.</p>
+
+<p>To get the general solution to the linear system of ODE defined by</p>
+<p><m>\vec{x}' = A \vec{x}</m></p>
+
+<p>The initial steps are always the same: Find the eigenvalues by solving the polynomial equation</p>
+<p><m>\text{det}(A - \lambda I) = 0</m></p>
+<p>Then find the eigenvectors by solving the linear system</p>
+<p><m>(A - \lambda I) \vec{v} = 0</m></p>
+<p>for each eigenvalue <m>\lambda.</m></p>
+
+<p>For <m>2 \times 2</m> systems, this equation is quadratic. This means it might have three different kinds of roots and we have to deal with each case separately.</p>
+
+<p>1. Real distinct eigenvalues. In this case one can always find two linearly independent eigenvectors.</p>
+<p>Let <m>\lambda_1 \neq \lambda_2</m> be the eigenvalues and <m>\vec{v_1}, \vec{v_2}</m> are the eigenvectors corresponding respectively to <m>\lambda_1, \lambda_2.</m> Then the general solution is</p>
+<p><m>\vec{x}(t) = C_1 e^{\lambda_1 t} \vec{v_1} + C_2 e^{\lambda_2 t} \vec{v_2}</m></p>
+
+<p>2. Complex eigenvalues. In this case we need to look at only one eigenvector.</p>
+<p>Let <m>\alpha + i\beta</m> be the eigenvalues of the matrix. Let <m>\vec{v}</m> be the eigenvector corresponding to <m>\alpha + i\beta.</m> Perform the following steps:</p>
+<ul>
+    <li>Write the complex solution <m>e^{\alpha + i\beta t}</m> into the following form</li>
+    <p><m>e^{(\alpha + i\beta)t} \vec{v} = e^{\alpha t} \left( \vec{u} + i \vec{w} \right)</m></p>
+    <p>You’ll need to use Euler’s equation and perform a complex multiplication.</p>
+    <li>Then the general solution is</li>
+    <p><m>\vec{x}(t) = C_1 e^{\alpha t} \vec{u} + C_2 e^{\alpha t} \vec{w}</m></p>
+</ul>
+
+<p>3. Repeated eigenvalues. There are two sub-cases. Let <m>\lambda</m> be the eigenvalue in question</p>
+<ul>
+    <li>(1) There exists two linearly independent eigenvectors <m>\vec{v_1}, \vec{v_2}</m>, both corresponding to <m>\lambda.</m> In this case the general solution is simply</li>
+    <p><m>\vec{x}(t) = C_1 e^{\lambda t} \vec{v_1} + C_2 e^{\lambda t} \vec{v_2}</m></p>
+    <li>(2) Only one eigenvector <m>\vec{v}</m> can be found and all other eigenvectors are proportion to it.</li>
+    <p>To find the general solution:</p>
+</ul>
+
+<p>Find the "generalized eigenvector" by solving the following linear system</p>
+<p><m>(A - \lambda I) \vec{u} = \vec{v}</m></p>
+<p>The general solution would then be</p>
+<p><m>\vec{x}(t) = C_1 e^{\lambda_1 t} \vec{u} + C_2 e^{\lambda_2 t} (t \vec{u} + \vec{u})</m></p>
+
+<p>4. Examples.</p>
+
+<p>(1) Real distinct eigenvalues - typical</p>
+<p><m>\vec{x} = \left[ \begin{array}{c} -2 \\ 1 \\ -2 \end{array} \right]</m></p>
+
+<p>Find the eigenvalues:</p>
+<p><m>\text{det}(A - \lambda I) = \left| \begin{array}{ccc} -2 - \lambda \amp 1 \amp 1 \\ 1 \amp -2 - \lambda \amp -2 \\ -2 \amp 1 \amp -2 \end{array} \right| = (-2 - \lambda)(-2 - \lambda)^2 - 1 = 0</m></p>
+
+<p>Solve the equation</p>
+<p><m>\lambda = -2 \pm 1 \Rightarrow \lambda_1 = -1, \lambda_2 = -3.</m></p>
+
+<p>Solve the eigenvector for <m>\lambda_1 = -1</m>:</p>
+<p><m>\left[ \begin{array}{ccc|c} -2 + 1 \amp 1 \amp 1 \amp 0 \\ 1 \amp -2 + 1 \amp -2 \amp 0 \\ -2 \amp 1 \amp -2 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -1 \amp 1 \amp 0 \amp 0 \\ 1 \amp -1 \amp 0 \amp 0 \\ -2 \amp 1 \amp -2 \amp 0 \end{array} \right] \Rightarrow \vec{v_1} = \left[ \begin{array}{c} 1 \\ 1 \end{array} \right]</m></p>
+
+<p>Solve the eigenvector for <m>\lambda_2 = -3</m>:</p>
+<p><m>\left[ \begin{array}{ccc|c} -2 + 3 \amp 1 \amp 1 \amp 0 \\ 1 \amp -2 + 3 \amp -2 \amp 0 \\ -2 \amp 1 \amp -2 + 3 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} 1 \amp 1 \amp 0 \amp 0 \\ 1 \amp 1 \amp -2 \amp 0 \\ -2 \amp 1 \amp 1 \amp 0 \end{array} \right] \Rightarrow \vec{v_2} = \left[ \begin{array}{c} -1 \\ 1 \end{array} \right]</m></p>
+
+<p>So the general solution is</p>
+<p><m>\vec{x}(t) = C_1 e^{-t} \left[ \begin{array}{c} 1 \\ 1 \end{array} \right] + C_2 e^{-3t} \left[ \begin{array}{c} -1 \\ 1 \end{array} \right]</m></p>
+
+<p>(2) Real distinct eigenvalues - ugly</p>
+<p><m>\vec{x} = \left[ \begin{array}{c} 2 \\ 1 \\ 3 \end{array} \right]</m></p>
+
+<p>Find the eigenvalues:</p>
+<p><m>\text{det}(A - \lambda I) = \left| \begin{array}{ccc} 2 - \lambda \amp 1 \amp 1 \\ 3 \amp -\lambda \amp 5 \\ 0 \amp 0 \amp 0 \end{array} \right| = \lambda^2 - 5\lambda + 5 = 0</m></p>
+
+<p>Solve the equation</p>
+<p><m>\lambda = \frac{5 \pm \sqrt{5^2 - 20}}{2} = \frac{5 \pm \sqrt{5}}{2}, \quad \lambda_1 = \frac{5 + \sqrt{5}}{2}, \quad \lambda_2 = \frac{5 - \sqrt{5}}{2}.</m></p>
+
+<p>Solve the eigenvector for <m>\lambda_1 = \frac{5 + \sqrt{5}}{2}</m>:</p>
+<p><m>\left[ \begin{array}{ccc|c} 2 - \lambda \amp 1 \amp 1 \amp 0 \\ 3 \amp -\lambda \amp 5 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} 2 - \frac{5 + \sqrt{5}}{2} \amp 1 \amp 1 \amp 0 \\ 3 \amp -\frac{5 + \sqrt{5}}{2} \amp 5 \amp 0 \end{array} \right]</m></p>
+
+<p>So it should be redundant (otherwise you messed up!). Put <m>x_2 = 1</m> to get <m>x_3 = -i</m> and therefore</p>
+<p><m>\left[ \begin{array}{c} 0 \\ 1 \\ -i \end{array} \right]</m> is an eigenvector corresponding to the eigenvalue <m>\lambda_2 = -\frac{3}{2}.</m></p>
+
+<p>Solve the eigenvector for <m>\lambda_2 = \frac{5 - \sqrt{5}}{2}</m></p>
+<p><m>\left[ \begin{array}{ccc|c} 
+2 \amp -5 \amp -\sqrt{5} \amp 2 \\ 
+1 \amp 1 \amp 0 \amp 0 \\ 
+3 \amp -5 \amp -\sqrt{5} \amp 0 
+\end{array} \right] = \left[ \begin{array}{ccc|c} 
+-1 \amp -\sqrt{5} \amp 0 \amp 0 \\ 
+1 \amp -\sqrt{5} \amp 0 \amp 0 
+\end{array} \right] \Rightarrow \vec{v_2} = \left[ \begin{array}{c} 1 \\ \frac{1}{1 - \sqrt{5}} \end{array} \right]</m></p>
+
+<p>So the general solution is</p>
+<p><m>\vec{x}(t) = C_1 e^{\frac{5 + \sqrt{5}}{2}t} \left[ \begin{array}{c} 1 \\ \frac{1}{1 + \sqrt{5}} \end{array} \right] + C_2 e^{\frac{5 - \sqrt{5}}{2}t} \left[ \begin{array}{c} 1 \\ \frac{1}{1 - \sqrt{5}} \end{array} \right]</m></p>
+
+<p>Remark: Certainly things can be made uglier.</p>
+
+<p>(3) Complex eigenvalues - typical</p>
+<p><m>\vec{x} = \left[ \begin{array}{c} 2 \\ 5 \\ -1 \\ 4 \end{array} \right]</m></p>
+
+<p>Find the eigenvalues:</p>
+<p><m>\left| \begin{array}{cc} 2 - \lambda \amp -1 \\ 4 - \lambda \amp 5 \end{array} \right| = \lambda^2 - 6\lambda + 13 = 0</m></p>
+
+<p>Solve the equation</p>
+<p><m>\lambda = 3 \pm 2i.</m></p>
+
+<p>Solve the eigenvector for <m>3 + 2i:</m></p>
+<p><m>\left[ \begin{array}{cc|c} 2 - (3 + 2i) \amp -1 \amp 0 \\ 5 \amp - (3 + 2i) \amp 0 \end{array} \right] = \left[ \begin{array}{cc|c} -1 - 2i \amp -1 \amp 0 \\ 5 \amp -1 - 2i \amp 0 \end{array} \right] \Rightarrow \vec{v_1} = \left[ \begin{array}{c} -1 \\ 1 + 2i \end{array} \right]</m></p>
+
+<p>Formulate the complex solution and find its real and imaginary part.</p>
+<p><m>e^{(3 + 2i)t} \left[ \begin{array}{c} -1 \\ 1 + 2i \end{array} \right] = e^{3t} e^{2it} \left[ \begin{array}{c} -1 \\ 1 + 2i \end{array} \right]</m></p>
+
+<p>Product rule of exponential</p>
+<p><m>e^{(3 + 2i)t} = e^{3t} \left[ \begin{array}{c} \cos(2t) + i\sin(2t) \end{array} \right]</m></p>
+
+<p>You’ll need to use Euler’s equation and perform a complex multiplication.</p>
+<p>Then the general solution is</p>
+<p><m>\vec{x}(t) = C_1 e^{3t} \left[ \begin{array}{c} \cos(2t) + i\sin(2t) \end{array} \right] + C_2 e^{3t} \left[ \begin{array}{c} -\cos(2t) - 2\sin(2t) \end{array} \right]</m></p>
+
+<p>Remark. The above eigenvector was obtained by looking at the first equation. If instead you look at the second row, you may get a different eigenvector <m>\vec{v_1} = \left[ 1, -2, -5 \right],</m> which will lead to the following general solution</p>
+<p><m>\vec{x}(t) = C_1 e^{3t} \left[ \begin{array}{c} -\cos(2t) - 2\sin(2t) \end{array} \right] + C_2 e^{3t} \left[ \begin{array}{c} 2\sin(2t) \end{array} \right].</m></p>
+
+
+<p>Although they look so different, but indeed they are the same when the initial values are specified.</p>
+<p>Indeed, if we impose that <m>\vec{x}(0) = \left[ \begin{array}{c} 1 \\ -1 \end{array} \right],</m> then both general solutions yield the same solution</p>
+<p><m>\vec{x}(t) = \left[ \begin{array}{c} e^{3t} \cos 2t \\ e^{3t} \left( \cos 2t - 2\sin 2t \right) \end{array} \right]</m></p>
+<p>The only difference would be in the choice of parameters.</p>
+
+<p>(4) Complex eigenvalues - ugly</p>
+<p><m>\vec{x} = \left[ \begin{array}{c} 2 \\ -1 \\ 5 \end{array} \right]</m></p>
+
+<p>Find the eigenvalues:</p>
+<p><m>\left| \begin{array}{cc} 2 - \lambda \amp -1 \\ 5 \amp -5 - \lambda \end{array} \right| = \lambda^2 - 7\lambda + 15 = 0</m></p>
+
+<p>Solve the equation</p>
+<p><m>\lambda = \frac{7 \pm \sqrt{7^2 - 60}}{2} = 7 \pm \sqrt{1} = \frac{7 \pm \sqrt{1}}{2}.</m></p>
+
+<p>Solve the eigenvector for <m>\frac{7 + \sqrt{1}}{2}:</m></p>
+<p><m>\left[ \begin{array}{cc|c} 2 - (7 + \sqrt{1}) \amp -1 \amp 0 \\ 5 \amp -5 - (7 + \sqrt{1}) \amp 0 \end{array} \right] = \left[ \begin{array}{cc|c} -3 - \sqrt{1} \amp -1 \amp 0 \\ 5 \amp -12 \amp 0 \end{array} \right] \Rightarrow \vec{v_1} = \left[ \begin{array}{c} -1 \\ 3 + \sqrt{1} \end{array} \right]</m></p>
+
+<p>Formulate the complex solution and find its real and imaginary part.</p>
+<p><m>e^{(3 + i\pi)t} \left[ \begin{array}{c} -1 \\ 3 + \sqrt{1} \end{array} \right] = e^{3t} e^{i\pi t} \left[ \begin{array}{c} -1 \\ 3 + \sqrt{1} \end{array} \right]</m></p>
+
+<p>Product rule of exponential</p>
+<p><m>e^{(3 + i\pi)t} = e^{3t} \left[ \begin{array}{c} \cos(\pi t) + i\sin(\pi t) \end{array} \right]</m></p>
+
+<p>You’ll need to use Euler’s equation and perform a complex multiplication.</p>
+<p>Then the general solution is</p>
+<p><m>\vec{x}(t) = C_1 e^{3t} \left[ \begin{array}{c} -\cos(\pi t) + i\sin(\pi t) \end{array} \right] + C_2 e^{3t} \left[ \begin{array}{c} 3 + \sqrt{1} \end{array} \right]</m></p>
+
+<p>(5) Repeated eigenvalues Case 1</p>
+<p><m>\vec{x} = \left[ \begin{array}{c} 2 \\ 0 \\ 0 \end{array} \right]</m></p>
+
+<p>Find the eigenvalues:</p>
+<p><m>\left| \begin{array}{cc} 2 - \lambda \amp 0 \\ 0 \amp 2 - \lambda \end{array} \right| = (2 - \lambda)^2 = 0</m></p>
+
+<p>Solve the equation</p>
+<p><m>\lambda = 2 \quad \text{(repeated)}</m></p>
+
+<p>Solve the eigenvector for <m>\lambda = 2:</m></p>
+<p><m>\left[ \begin{array}{cc|c} 2 - 2 \amp 0 \amp 0 \\ 1 \amp -2 - \lambda \amp 0 \end{array} \right] = \left[ \begin{array}{cc|c} 0 \amp 0 \amp 0 \\ 1 \amp 0 \amp 0 \end{array} \right]</m></p>
+
+<p>This ridiculous linear system simply means we have zero equations for two variables, i.e., both variables involved are free.</p>
+
+<p>Setting free variable (<m>#1,#2</m>) as <m>(1,0)</m> and <m>(0,1)</m>, we obtain two linearly independent eigenvectors and</p>
+<p><m>\vec{v_1} = \left[ \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} 0 \\ 1 \\ 1 \end{array} \right]</m></p>
+
+<p>And the general solution is</p>
+<p><m>\vec{x}(t) = C_1 e^{2t} \left[ \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right] + C_2 e^{2t} \left[ \begin{array}{c} 0 \\ 1 \\ 1 \end{array} \right]</m></p>
+
+<p>Remark: For <m>2 \times 2</m> matrix, this is a considerably rare case and only happens when you have a scalar matrix, i.e., a scalar multiple of the identity matrix. But for matrices of higher dimension this is more common.</p>
+
+<p>(6) Repeated eigenvalues Case 2</p>
+<p><m>\vec{x}' = \left[ \begin{array}{cc} 2 \amp -1 \\ 1 \amp 4 \end{array} \right]</m></p>
+
+<p>Find the eigenvalues:</p>
+<p><m>\left| \begin{array}{cc} 2 - \lambda \amp -1 \\ 4 - \lambda \amp 1 \end{array} \right| = \lambda^2 - 6\lambda + 9 = 0</m></p>
+
+<p>Solve the equation</p>
+<p><m>\lambda = 3 \quad \text{(repeated)}</m></p>
+
+<p>Solve the eigenvector</p>
+<p><m>\left[ \begin{array}{cc|c} 2 - 3 \amp -1 \amp 0 \\ 4 - 3 \amp 1 \amp 0 \end{array} \right] = \left[ \begin{array}{cc|c} -1 \amp 0 \amp 0 \\ 1 \amp 0 \amp 0 \end{array} \right] \Rightarrow \vec{v} = \left[ \begin{array}{c} -1 \\ 1 \end{array} \right]</m></p>
+
+<p>Solve for the generalized eigenvector</p>
+<p><m>\left[ \begin{array}{cc|c} 2 - 3 \amp -1 \amp 0 \\ 4 - 3 \amp 1 \amp 0 \end{array} \right] = \left[ \begin{array}{cc|c} -1 \amp -1 \amp 0 \\ 1 \amp 0 \amp 0 \end{array} \right] \Rightarrow \vec{v} = \left[ \begin{array}{c} 0 \\ 0 \end{array} \right]</m></p>
+
+<p>So the general solution is</p>
+<p><m>\vec{x}(t) = C_1 e^{3t} \left[ \begin{array}{c} -1 \\ 1 \end{array} \right] + C_2 e^{3t} \left[ \begin{array}{c} t - 1 \\ 0 \end{array} \right]</m></p>
+
+<p>(7) 3 x 3 system: mixture of real and complex eigenvalues</p>
+<p><m>\vec{x}' = \left[ \begin{array}{ccc} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp -2 \\ 3 \amp 2 \amp 1 \end{array} \right]</m></p>
+
+<p>Find the eigenvalues:</p>
+<p><m>1 - \lambda = \left| \begin{array}{ccc} 1 - \lambda \amp 0 \amp 0 \\ 2 \amp 1 - \lambda \amp -2 \\ 3 \amp 2 \amp 1 - \lambda \end{array} \right| = (1 - \lambda)\left[(1 - \lambda)^2 + 4\right] = 0</m></p>
+
+<p>Solve the equation</p>
+<p><m>\lambda_1 = 1, \quad \lambda_2 = 1 + 2i, \quad \lambda_3 = 1 - 2i.</m></p>
+
+<p>Solve the eigenvector for <m>\lambda_1 = 1:</m></p>
+<p><m>\left[ \begin{array}{ccc|c} -1 \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 - 1 \amp -2 \amp 0 \\ 3 \amp 2 \amp 1 - 1 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -1 \amp 0 \amp 0 \amp 0 \\ 2 \amp 0 \amp -2 \amp 0 \\ 3 \amp 2 \amp 0 \amp 0 \end{array} \right] \Rightarrow \vec{v_1} = \left[ \begin{array}{c} 2 \\ 0 \\ 0 \end{array} \right]</m></p>
+
+<p>Solve the eigenvector for <m>\lambda_2 = 1 + 2i:</m></p>
+<p><m>\left[ \begin{array}{ccc|c} 1 - (1 + 2i) \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 - (1 + 2i) \amp -2 \amp 0 \\ 3 \amp 2 \amp 1 - (1 + 2i) \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -2i \amp 0 \amp 0 \amp 0 \\ 2 \amp -2i \amp -2 \amp 0 \end{array} \right] \Rightarrow \vec{v_2} = \left[ \begin{array}{c} 0 \\ 1 \\ i \end{array} \right]</m></p>
+
+<p>Find the real part and the imaginary part of <m>e^{(1 + 2i)t} \vec{v_2}:</m></p>
+<p><m>e^{(1 + 2i)t} \left[ \begin{array}{c} 0 \\ 1 \\ i \end{array} \right] = e^t e^{2it} \left[ \begin{array}{c} 0 \\ 1 \\ i \end{array} \right]</m></p>
+
+<p>Product rule \amp Euler</p>
+<p><m>e^{(1 + 2i)t} = e^t \left[ \cos(2t) + i\sin(2t) \right]</m></p>
+
+<p>Multiply</p>
+<p><m>e^t \left[ \begin{array}{c} 0 \\ \cos(2t) + i\sin(2t) \end{array} \right] = e^t \left[ \begin{array}{c} 0 \\ \cos(2t) \\ \sin(2t) \end{array} \right]</m></p>
+
+<p>Separate</p>
+<p><m>e^{t/2} \left[ \begin{array}{c} 0 \\ \cos(2t) \\ \sin(2t) \end{array} \right]</m></p>
+
+<p>So the general solution is</p>
+<p><m>\vec{x}(t) = C_1 e^{3t} \left[ \begin{array}{c} -\cos(2t) \\ -2\sin(2t) \end{array} \right] + C_2 e^{3t} \left[ \begin{array}{c} -\sin(2t) \\ \cos(2t) \end{array} \right]</m></p>
+
+<p>(8) 3 x 3 system: mixture of repeated (case 1) and single eigenvalues</p>
+<p><m>\vec{x}' = \left[ \begin{array}{ccc} 2 \amp -1 \amp 1 \\ 4 \amp 3 \amp -2 \\ 2 \amp 2 \amp 2 \end{array} \right]</m></p>
+
+<p>Find the eigenvalues:</p>
+<p><m>\left| \begin{array}{ccc} 3 - \lambda \amp -2 \amp 4 \\ 4 \amp 3 - \lambda \amp -2 \\ 2 \amp 2 \amp 2 - \lambda \end{array} \right| = -\lambda^3 + 6\lambda^2 + 15\lambda + 8 = -(\lambda + 1)^2(\lambda - 8)</m></p>
+
+<p>Solve the equation</p>
+<p><m>\lambda_1 = \lambda_2 = -1, \quad \lambda_3 = 8.</m></p>
+
+<p>Solve the eigenvector for <m>\lambda_1 = -1:</m></p>
+<p><m>\left[ \begin{array}{ccc|c} 3 + 1 \amp -2 \amp 4 \amp 0 \\ 4 \amp 3 + 1 \amp -2 \amp 0 \\ 2 \amp 2 \amp 2 + 1 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} 4 \amp -2 \amp 4 \amp 0 \\ 4 \amp 4 \amp -2 \amp 0 \\ 2 \amp 2 \amp 3 \amp 0 \end{array} \right]</m></p>
+
+<p>So the general solution is</p>
+<p><m>\vec{x}(t) = C_1 e^{-t} \left[ \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right] + C_2 e^{-t} \left[ \begin{array}{c} 0 \\ 1 \\ 0 \end{array} \right] + C_3 e^{8t} \left[ \begin{array}{c} 0 \\ 0 \\ 1 \end{array} \right]</m></p>
+
+<p>Solve the eigenvector for <m>\lambda_1 = -1</m></p>
+<p><m>\begin{bmatrix} 3 \amp 1 \amp 2 \amp 4 \\ 2 \amp 1 \amp 0 \amp 0 \\ 4 \amp 2 \amp 3 \amp 1 \\ 0 \amp 0 \amp 0 \amp 0 \end{bmatrix} = \begin{bmatrix} 4 \amp 2 \amp 2 \amp 0 \\ 2 \amp 4 \amp 4 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{bmatrix} \Rightarrow \begin{bmatrix} 1 \\ -1 \\ 0 \end{bmatrix} = \mathbf{v_1}</m></p>
+<p>One equation for three variables, thus two variables are free and can be set to solve</p>
+<p><m>\mathbf{v_1} = \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}, \quad \mathbf{v_2} = \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix}</m></p>
+
+<p>Solve the eigenvector for <m>\lambda_3 = 8</m></p>
+<p><m>\begin{bmatrix} 3 \amp -8 \amp 2 \amp 4 \\ 2 \amp -2 \amp 8 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{bmatrix} = \begin{bmatrix} -5 \amp 2 \amp 4 \amp 0 \\ -1 \amp -4 \amp 1 \amp 0 \\ -2 \amp -8 \amp 2 \amp 0 \\ 4 \amp 2 \amp -5 \amp 0 \end{bmatrix} \Rightarrow \begin{bmatrix} r_1 = r_2 + r_3 \\ r_2 = r_1 + 2r_1 \end{bmatrix} \Rightarrow \mathbf{v_3} = \begin{bmatrix} 2 \\ 2 \\ 2 \end{bmatrix}</m></p>
+
+<p>So the general solution to the ODE is</p>
+<p><m>\mathbf{x}(t) = C_1 e^{-t} \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix} + C_2 e^{-2t} \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix} + C_3 e^{8t} \begin{bmatrix} 2 \\ 1 \\ 2 \end{bmatrix}</m></p>
+
+
+</section>

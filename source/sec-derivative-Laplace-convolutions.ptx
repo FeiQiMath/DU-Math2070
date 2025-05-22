@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-derivative-Laplace-convolutions" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Derivative of Laplace Transform and Convolution</title>
+
+  <p> Motivation: Provide some tools to solve all possible Laplace and inverse Laplace transforms.</p>
+
+  <p>Derivatives of <m>L\{f(t)\}</m></p>
+<p>Let <m>F(s) = L\{f(t)\}.</m> If we apply <m>\frac{d}{ds}</m> on both sides, we have</p>
+<p><m>\frac{d}{ds} F(s) = \frac{d}{ds} \int_0^{\infty} f(t)e^{-st}dt</m></p>
+<p>If <m>f</m> is piecewise continuous and of exponential order, the differential operator commutes with the integral, resulting in</p>
+<p><m>F'(s) = \int_0^{\infty} f(t) \frac{d}{ds} (e^{-st})dt = \int_0^{\infty} f(t)(-te^{-st})dt</m></p>
+<p><m>= -\int_0^{\infty} tf(t)e^{-st}dt = -L\{tf(t)\}.</m></p>
+<p>In other words,</p>
+<p><m>L\{tf(t)\} = \left(-\frac{d}{ds}\right) F(s) = -F'(s).</m></p>
+
+<p>With a similar argument, we see that for every integer <m>n > 0,</m></p>
+<p><m>L\{t^n f(t)\} = \left(-\frac{d}{ds}\right)^n F(s) = (-1)^n F^{(n)}(s).</m></p>
+<p>With this formula, we may handle the Laplace transform of a polynomial multiplied by any function <m>f(t),</m> provided we know <m>L\{f(t)\}.</m></p>
+<p>Example:</p>
+<p><m>L\{(t + t^2)e^{2t} \sin 3t\} = L\{te^{2t} \sin 3t\} + L\{t^2 e^{2t} \sin 3t\}</m></p>
+<p><m>= \left(-\frac{d}{ds}\right) \frac{3}{(s - 2)^2 + 9} + \left(-\frac{d}{ds}\right)^2 \frac{3}{(s - 2)^2 + 9}.</m></p>
+
+<p>Example:</p>
+<p><m>L\{(t + t^2)e^{2t} \sin 3t\} = L\{te^{2t} \sin 3t\} + L\{t^2 e^{2t} \sin 3t\}</m></p>
+<p><m>= \left(-\frac{d}{ds}\right) \frac{3}{(s - 2)^2 + 9} + \left(-\frac{d}{ds}\right)^2 \frac{3}{(s - 2)^2 + 9}.</m></p>
+<p>Say <m>F(s) = \frac{3}{(s - 2)^2 + 9},</m> then its first derivative <m>F'(s)</m> is</p>
+<p><m>F'(s) = \frac{-6(s - 2)}{((s - 2)^2 + 9)^2}.</m></p>
+<p>Its second derivative <m>F''(s)</m> is</p>
+<p><m>F''(s) = \frac{-6((s - 2)^2 + 9)^2 \cdot 1 - (s - 2) \cdot 2((s - 2)^2 + 9) \cdot 2(s - 2)}{((s - 2)^2 + 9)^4}.</m></p>
+<p><m>= \frac{-6(s - 2)^2 + 9 - 4(s - 2)^2}{((s - 2)^2 + 9)^3} = \frac{18}{((s - 2)^2 + 9)^3}.</m></p>
+<p>So</p>
+<p><m>L\{(t + t^2)e^{2t} \sin 3t\} = L\{te^{2t} \sin 3t\} + L\{t^2 e^{2t} \sin 3t\}</m></p>
+<p><m>= \left(-\frac{d}{ds}\right) \frac{3}{(s - 2)^2 + 9} + \left(-\frac{d}{ds}\right)^2 \frac{3}{(s - 2)^2 + 9}</m></p>
+<p><m>= \frac{6(s - 2)}{((s - 2)^2 + 9)^2} + \frac{18}{((s - 2)^2 + 9)^3}.</m></p>
+<p>(No matter what method you use, the product of polynomial, exponential and trig functions will always be annoying).</p>
+
+
+<p>Inverse Laplace of repeated quadratic factors</p>
+<p>The derivative formula also helps us to perform inverse Laplace transform of a particular kind of partial fractions with irreducible quadratic factor.</p>
+<p>Recall that</p>
+<p><m>L\{e^{\alpha t} \sin \beta t\} = \frac{\beta}{(s - \alpha)^2 + \beta^2}.</m></p>
+<p>The derivative formula implies that</p>
+<p><m>L\{te^{\alpha t} \sin \beta t\} = -\frac{d}{ds} \frac{\beta}{(s - \alpha)^2 + \beta^2} = \frac{2\beta(s - \alpha)}{((s - \alpha)^2 + \beta^2)^2}.</m></p>
+<p>Therefore,</p>
+<p><m>L^{-1} \left\{ \frac{(s - \alpha)}{((s - \alpha)^2 + \beta^2)^2} \right\} = \frac{1}{2\beta} te^{\alpha t} \sin \beta t.</m></p>
+
+<p>Convolution product</p>
+<p>For the inverse Laplace of the most general type of partial fractions with repeated quadratic factor, we need to use the convolution product.</p>
+<p>Let <m>f, g</m> be piecewise continuous on <m>[0, \infty)</m> and of exp. order. The convolution <m>f * g</m> is a function defined by</p>
+<p><m>(f * g)(t) = \int_0^t f(\tau)g(t - \tau)d\tau.</m></p>
+<p>Theorem. <m>L\{(f * g)(t)\} = L\{f(t)\} \cdot L\{g(t)\}.</m></p>
+<p>Inverse form: <m>L^{-1}\{F(s)G(s)\} = L^{-1}\{F(s)\} * L^{-1}\{G(s)\}.</m></p>
+<p>The proof is a simple exercise of multivariable calculus (via manipulation of regions of a double integral). (skip here).</p>
+
+<p>Inverse Laplace of repeated quadratic factors</p>
+<p>Using the inverse form, we compute that</p>
+<p><m>L^{-1} \left\{ \frac{1}{((s - \alpha)^2 + \beta^2)^2} \right\}</m></p>
+<p><m>= L^{-1} \left\{ \frac{1}{(s - \alpha)^2 + \beta^2} \cdot \frac{1}{(s - \alpha)^2 + \beta^2} \right\}</m></p>
+<p><m>= L^{-1} \left\{ \frac{1}{(s - \alpha)^2 + \beta^2} \right\} * L^{-1} \left\{ \frac{1}{(s - \alpha)^2 + \beta^2} \right\}</m></p>
+<p><m>= \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right) * \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right)</m></p>
+<p><m>= \int_0^t \left( \frac{1}{\beta} e^{\alpha \tau} \sin \beta \tau \right) \left( \frac{1}{\beta} e^{\alpha (t - \tau)} \sin \beta (t - \tau) \right) d\tau</m></p>
+<p><m>= \frac{1}{\beta^2} e^{\alpha t} \int_0^t \sin \beta \tau \sin \beta (t - \tau) d\tau.</m></p>
+
+<p>To compute the integral of a product of two sine functions, we need some trigonometric identities.</p>
+<p>Recall. Sine and Cosine of sums and differences.</p>
+<p><m>\sin(\alpha + \beta) = \sin \alpha \cos \beta + \sin \beta \cos \alpha,</m></p>
+<p><m>\sin(\alpha - \beta) = \sin \alpha \cos \beta - \sin \beta \cos \alpha,</m></p>
+<p><m>\cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta,</m></p>
+<p><m>\cos(\alpha - \beta) = \cos \alpha \cos \beta + \sin \beta \sin \alpha.</m></p>
+<p>By adding and subtracting these identities, we obtain</p>
+<p><m>\sin \alpha \cos \beta = \frac{1}{2}(\sin(\alpha + \beta) + \sin(\alpha - \beta))</m></p>
+<p><m>\cos \alpha \cos \beta = \frac{1}{2}(\cos(\alpha - \beta) + \cos(\alpha + \beta))</m></p>
+<p><m>\sin \alpha \sin \beta = -\frac{1}{2}(\cos(\alpha - \beta) - \cos(\alpha + \beta)).</m></p>
+<p>So,</p>
+<p><m>\int_0^t \sin \beta \tau \sin \beta (t - \tau) d\tau = \frac{1}{2} \left( \cos(\beta \tau - \beta(t - \tau)) - \cos(\beta \tau + \beta(t - \tau)) \right)</m></p>
+<p><m>= -\frac{1}{2} \left( \cos(2\beta \tau - \beta) - \cos(\beta t) \right)</m></p>
+<p><m>= \frac{1}{2} \int_0^t \left( \cos(2\beta \tau - \beta t) - \cos(\beta t) \right) d\tau</m></p>
+<p><m>= \frac{1}{2} \left( \frac{1}{2\beta} \sin(2\beta \tau - \beta t) - \cos(\beta t) \tau \right) \bigg|_0^t</m></p>
+<p><m>= \frac{1}{2} \left( \frac{1}{2\beta} \left( \sin(2\beta t - \beta t) - \sin(0 - \beta t) \right) - \cos(\beta t)(t - 0) \right)</m></p>
+<p><m>= \frac{1}{2} \left( \frac{1}{\beta} \sin \beta t - t \cos(\beta t) \right).</m></p>
+<p>So we conclude that</p>
+<p><m>L^{-1} \left\{ \frac{1}{((s - \alpha)^2 + \beta^2)^2} \right\} = \frac{1}{\beta^2} e^{\alpha t} \int_0^t \sin \beta \tau \sin \beta (t - \tau) d\tau</m></p>
+<p><m>= \frac{1}{\beta^2} e^{\alpha t} \cdot \frac{1}{2\beta} \left( \sin \beta t - t \cos(\beta t) \right)</m></p>
+<p><m>= \frac{1}{2\beta^3} e^{\alpha t} \sin \beta t - \frac{1}{2\beta^2} t e^{\alpha t} \cos(\beta t).</m></p>
+<p>In general,</p>
+<p><m>L^{-1} \left\{ \frac{1}{((s - \alpha)^2 + \beta^2)^n} \right\} = \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right) * \cdots * \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right)</m></p>
+<p>(convolution with itself for <m>n</m> times).</p>
+<p><m>L^{-1} \left\{ \frac{s - \alpha}{((s - \alpha)^2 + \beta^2)^n} \right\} = \left( e^{\alpha t} \cos \beta t \right) * \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right) * \cdots * \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right)</m></p>
+<p>(convolution of one copy of <m>e^{\alpha t} \cos \beta t</m> and <m>n - 1</m> copies of <m>\frac{1}{\beta} e^{\alpha t} \sin \beta t).</m></p>
+
+<p>Integro-differential equation</p>
+<p>Another application of the convolution product is the Laplace transform of an integral. Recall that the theorem states that</p>
+<p><m>L\{(f * g)(t)\} = L\{f(t)\} \cdot L\{g(t)\}.</m></p>
+<p>If we take <m>g(t) = 1,</m> then</p>
+<p><m>(f * 1)(t) = \int_0^t f(\tau) d\tau.</m></p>
+<p>The theorem then says that</p>
+<p><m>L\left\{ \int_0^t f(\tau) d\tau \right\} = L\{f(t)\} \cdot L\{1\} = \frac{F(s)}{s}.</m></p>
+<p>This formula allows us to use the Laplace method to solve integro-differential equations that arise in science and engineering.</p>
+
+<p>Example: LRC-series circuit.</p>
+<p>In Midterm 2, we saw that the electron charge of the capacitor in an LRC-series circuit satisfies a second-order linear ODE. Experimentally, it is <span style="color:magenta;">difficult to measure the charge</span> of a capacitor. It is <span style="color:magenta;">easier to measure the current</span> instead.</p>
+<p>Let <m>i(t)</m> be the current at time <m>t.</m> Suppose at time zero, the capacitor is uncharged. Then <m>i(t)</m> satisfies the following ODE:</p>
+<p><m>L \frac{di}{dt} + R i + \frac{1}{C} \int_0^t i(\tau) d\tau = E(t)</m></p>
+<p>We set <m>I(s) = L\{i(t)\}</m> and Laplace both sides:</p>
+<p><m>L(I(s) - s \cdot i(0)) + R I(s) + \frac{1}{C} \cdot \frac{I(s)}{s} = L\{E(t)\}.</m></p>
+<p>If <m>L = 0.1 \, h, \, R = 2 \, \Omega, \, C = 0.1 \, f, \, i(0) = 0,</m> and <m>E(t)</m> is the unit square wave function, then</p>
+<p><m>0.1(I(s) - s \cdot 0) + 2 I(s) + \frac{10}{s} I(s) = \frac{1}{s(1 + e^{-s})}</m></p>
+<p><m>\implies I(s) = \frac{10}{(s^2 + 20s + 100)(1 + e^{-s})}.</m></p>
+<p><m>I(s) = \frac{10}{(s^2 + 20s + 100)(1 + e^{-s})} = 10 \sum_{n=0}^{\infty} (-1)^n \frac{e^{-ns}}{(s + 10)^2}</m></p>
+<p><m>= 10 \sum_{n=0}^{\infty} (-1)^n (t - n)e^{-10(t - n)} u(t - n).</m></p>
+
+</section>

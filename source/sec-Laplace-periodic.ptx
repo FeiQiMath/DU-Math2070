@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-Laplace-periodic" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>Laplace Transform of Periodic Functions</title>
+
+<p>Recall: Let <m>T \gt 0.</m> We say a function <m>f(t)</m> is <m>T</m>-periodic, if for every number <m>t</m> in the domain of <m>f, f(t + T) = f(t),</m> and <m>T</m> is the smallest positive number satisfying this property.</p>
+
+<p><strong>Examples.</strong> <m>\sin t, \cos t</m> are both <m>2\pi</m>-periodic because</p>
+<p><m>\sin(t + 2\pi) = \sin t, \quad \cos(t + 2\pi) = \cos t.</m></p>
+
+<p><m>\tan t, \cot t</m> are both <m>\pi</m>-periodic, because</p>
+<p><m>\sin(t + \pi) = -\sin t, \quad \cos(t + \pi) = -\cos t.</m></p>
+
+<p>As a result,</p>
+<p><m>\tan(t + \pi) = \dfrac{\sin(t + \pi)}{\cos(t + \pi)} = \dfrac{-\sin(t)}{-\cos(t)} = \tan t</m></p>
+<p><m>\cot(t + \pi) = \dfrac{\cos(t + \pi)}{\sin(t + \pi)} = \dfrac{-\cos(t)}{-\sin(t)} = \cot t.</m></p>
+
+<p>We won’t say <m>\tan t</m> and <m>\cot t</m> are <m>2\pi</m>-periodic.</p>
+
+<p><strong>Theorem.</strong> If <m>f(t)</m> is a <m>T</m>-periodic function on <m>[0, \infty),</m> then</p>
+<p><m>\mathcal{L}\{f(t)\} = \dfrac{1}{1 - e^{-sT}} \int_{0}^{T} f(t)e^{-st}dt.</m></p>
+
+<p><strong>Proof.</strong> We separate the integral interval into <m>[0, T]</m> and <m>[T, \infty),</m></p>
+<p><m>\mathcal{L}\{f(t)\} = \int_{0}^{\infty} f(t)e^{-st}dt = \int_{0}^{T} f(t)e^{-st}dt + \int_{T}^{\infty} f(t)e^{-st}dt.</m></p>
+
+<p>We focus on the second integral. Note that for every <m>t \gt T,</m> from periodicity, <m>f(t) = f(t - T),</m> then</p>
+<p><m>\int_{T}^{\infty} f(t)e^{-st}dt = \int_{T}^{\infty} f(t - T)e^{-s(t - T)}dt</m></p>
+<p><m>= e^{-sT} \int_{T}^{\infty} f(t - T)e^{-st}dt.</m></p>
+
+<p><m>\int_{T}^{\infty} f(t) e^{-st}dt = \int_{T}^{\infty} f(t - T)e^{-s(t - T)}dt</m></p>
+<p><m>= e^{-sT} \int_{T}^{\infty} f(t - T)e^{-s(t - T)}dt.</m></p>
+
+<p>If we set <m>u = t - T,</m> then</p>
+<p><m>\int_{T}^{\infty} f(t - T)e^{-s(t - T)}dt = \int_{0}^{\infty} f(u)e^{-su}du = \mathcal{L}\{f(t)\}.</m></p>
+<p>(note that <m>u</m> is a dummy variable, we may replace it by <m>t).</m></p>
+
+
+<p>Therefore</p>
+<p><m>\mathcal{L}\{f(t)\} = \int_{0}^{T} f(t) e^{-st}dt + e^{-sT} \mathcal{L}\{f(t)\}.</m></p>
+
+<p>We may proceed to solve <m>\mathcal{L}\{f(t)\}</m> to get</p>
+<p><m>\mathcal{L}\{f(t)\} = \dfrac{1}{1 - e^{-sT}} \int_{0}^{T} f(t) e^{-st}dt.</m></p>
+
+<p>
+Laplace transform of the square wave function
+</p>
+
+<p>
+The square wave function E(t) is a 2-periodic function that is extended from the following piecewise function:
+<me>
+E(t) = 
+\begin{cases} 
+1, \amp  0 \leq t \lt 1 \\ 
+0, \amp  1 \leq t \lt 2 
+\end{cases}
+</me>
+</p>
+
+<p>
+Using the theorem, we see that:
+
+<me>
+\mathcal{L}\{E(t)\} = \dfrac{1}{1 - e^{-2s}} \int_0^2 E(t)e^{-st} dt = \dfrac{1}{1 - e^{-2s}} \int_0^1 1 \cdot e^{-st} dt
+</me>
+<me>
+= \dfrac{1}{1 - e^{-2s}} \left( -\dfrac{1}{s} e^{-st} \right) \bigg|_0^1 = -\dfrac{(e^{-s} - 1)}{s(1 - e^{-2s})} = \dfrac{1}{s(1 + e^{-s})}
+</me>
+</p>
+
+
+<p>
+LR-series with square wave external voltage
+</p>
+
+<p>
+Example. Let <m>i</m> be the current of an LR-series circuit whose external voltage is given by the square wave function. Assume that at <m>t = 0</m>, the current <m>i(0) = 0</m>. We wish to know <m>i(t)</m> at time <m>t \gt 0</m>.
+</p>
+
+<p>
+From Kirchhoff’s law, <m>i(t)</m> satisfies the ODE:
+
+<me>
+L \dfrac{di}{dt} + R i = E(t).
+</me>
+</p>
+
+<p>
+If we set <m>I(s) = \mathcal{L}\{i(t)\}</m>, then
+
+<me>
+L \cdot (sI(s) - i(0)) + R \cdot I(s) = \mathcal{L}\{E(t)\}
+</me>
+
+<me>
+\Rightarrow (Ls + R)I(s) = \dfrac{1}{s(1 - e^{-2s})} \Rightarrow I(s) = \dfrac{1}{s(Ls + R)(1 + e^{-2s})}
+</me>
+</p>
+
+<p>[Space for the figure]</p>
+
+<p><me>I(s) = \dfrac{1}{s(Ls + R)(1 + e^{-s})}</me></p>
+
+<p>We first use partial fractions to rewrite 
+<me>\dfrac{1}{s(Ls + R)} = \dfrac{1}{R} \cdot \dfrac{-1}{s} - \dfrac{L}{R} \cdot \dfrac{1}{Ls + R}</me>
+</p>
+<p> To handle <m>\dfrac{1}{1 + e^{-s}}</m>, we view it as the sum of a geometric series with initial term 1 and ratio <m>-e^{-s}</m>, i.e.,
+<me>\dfrac{1}{1 + e^{-s}} = \sum_{n=0}^{\infty} 1 \cdot (-e^{-s})^n = \sum_{n=0}^{\infty} (-1)^n e^{-sn}</me>
+</p>
+<p>
+[Space for the figure]
+</p>
+</section>

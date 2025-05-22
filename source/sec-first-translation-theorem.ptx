@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-first-translation-theorem" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>First Translation Theorem</title>
+
+<p><strong>First Translation Theorem</strong></p>
+<p>The first translation theorem allows us to handle</p>
+<ul>
+    <li>Laplace transform of a function with an exponential factor,</li>
+    <li>Inverse Laplace transform of a fraction with repeated linear factors.</li>
+</ul>
+<p>Theorem. If <m>\mathcal{L}\{f(t)\} = F(s)</m>, then <m>\mathcal{L}\{e^{at}f(t)\} = F(s - a).</m></p>
+<p>Equivalently,</p>
+<p><m>\mathcal{L}\{e^{at}f(t)\} = \mathcal{L}\{f(t)\}\big|_{s \to s - a}</m></p>
+<p>Proof:</p>
+<p><m>\mathcal{L}\{e^{at}f(t)\} = \int_{0}^{\infty} e^{at}f(t)e^{-st}dt</m></p>
+<p>= <m>\int_{0}^{\infty} f(t)e^{-(s-a)t}dt = F(s - a).</m></p>
+
+<p><strong>Remark:</strong> The theorem is also referred to as the s-axis shift since we are shifting the s-coordinate.</p>
+<p><strong>Example 1.</strong> Evaluate <m>\mathcal{L}\{e^{5t}t^3\}</m> and <m>\mathcal{L}\{e^{-2t} \cos 4t\}.</m></p>
+<p><m>\mathcal{L}\{e^{5t}t^3\} = \mathcal{L}\{t^3\}\big|_{s \to s - 5} = \frac{3!}{s^4}\big|_{s \to s - 5} = \frac{6}{(s - 5)^4}.</m></p>
+<p><m>\mathcal{L}\{e^{-2t} \cos 4t\} = \mathcal{L}\{\cos 4t\}\big|_{s \to s - (-2)} = \frac{s}{s^2 + 4^2}\big|_{s \to s + 2} = \frac{s}{(s + 2)^2 + 16}.</m></p>
+
+<p><strong>Example 2.</strong> Evaluate <m>\mathcal{L}^{-1}\left\{\frac{2s + 5}{(s - 3)^2}\right\}.</m></p>
+<p>We first break them into partial fractions.</p>
+<p><m>\frac{2s + 5}{(s - 3)^2} = \frac{A}{s - 3} + \frac{B}{(s - 3)^2}.</m></p>
+<p>The cover-up method gives that <m>B = (2s + 5)\big|_{s=3} = 11.</m></p>
+<p>Subtract the left-hand-side with the <m>B</m>-term.</p>
+<p><m>\frac{2s + 5}{(s - 3)^2} - \frac{11}{(s - 3)^2} = \frac{2s - 6}{(s - 3)^2} = \frac{2}{s - 3}.</m></p>
+<p>Therefore <m>A = 2.</m></p>
+<p><m>\mathcal{L}^{-1}\left\{\frac{2s + 5}{(s - 3)^2}\right\} = \mathcal{L}^{-1}\left\{\frac{2}{s - 3}\right\} + \mathcal{L}^{-1}\left\{\frac{11}{(s - 3)^2}\right\}.</m></p>
+<p><m>= 2e^{3t}\mathcal{L}^{-1}\left\{\frac{1}{s}\right\} + 11e^{3t}\mathcal{L}^{-1}\left\{\frac{1}{s^2}\right\} = 2e^{3t} \cdot 1 + 11e^{3t} \cdot t.</m></p>
+
+<p><strong>Example 3.</strong> Evaluate <m>\mathcal{L}^{-1}\left\{\frac{s/2 + 5/3}{s^2 + 4s + 6}\right\}.</m></p>
+<p>We rewrite the denominator as <m>s^2 + 4s + 6 = (s + 2)^2 + (\sqrt{2})^2.</m></p>
+<p>Recall that</p>
+<p><m>\mathcal{L}\{e^{-2t} \cos \sqrt{2}t\} = \mathcal{L}\{\cos \sqrt{2}t\}\big|_{s \to s + 2} = \frac{s + 2}{(s + 2)^2 + (\sqrt{2})^2},</m></p>
+<p><m>\mathcal{L}\{e^{-2t} \sin \sqrt{2}t\} = \mathcal{L}\{\sin \sqrt{2}t\}\big|_{s \to s + 2} = \frac{\sqrt{2}}{(s + 2)^2 + (\sqrt{2})^2}.</m></p>
+<p>To match up, we reorganize the fraction as</p>
+<p><m>\frac{s}{2} + \frac{5}{3} = \frac{s + 2 - 2}{2} + \frac{5}{3} = \frac{1}{2}(s + 2) - \frac{2}{3}.</m></p>
+<p>So</p>
+<p><m>\mathcal{L}^{-1}\left\{\frac{s/2 + 5/3}{s^2 + 4s + 6}\right\}</m></p>
+<p>= <m>\mathcal{L}^{-1}\left\{\frac{1}{2} \cdot \frac{s + 2}{(s + 2)^2 + (\sqrt{2})^2}\right\} + \mathcal{L}^{-1}\left\{\frac{2}{3} \cdot \frac{1}{\sqrt{2}} \cdot \frac{\sqrt{2}}{(s + 2)^2 + (\sqrt{2})^2}\right\}.</m></p>
+<p>= <m>\frac{1}{2} e^{-2t} \cos \sqrt{2}t + \frac{\sqrt{2}}{3} e^{-2t} \sin \sqrt{2}t.</m></p>
+
+<p><strong>Remark on the irreducible quadratic case</strong></p>
+<p>To compute the inverse Laplace of</p>
+<p><m>\frac{As + B}{as^2 + bs + c}</m></p>
+<ol>
+    <li>Process the denominator by completion of square to find <m>\alpha</m> and <m>\beta:</m></li>
+</ol>
+<p><m>as^2 + bs + c = a\left(s^2 + \frac{b}{a}s + \left(\frac{b}{2a}\right)^2 - \left(\frac{b}{2a}\right)^2 + \frac{c}{a}\right)</m></p>
+<p>= <m>a\left(\left(s + \frac{b}{2a}\right)^2 + \frac{-b^2 + 4ac}{4a^2}\right)</m></p>
+<p>By assumption, <m>as^2 + bs + c</m> is irreducible, then necessarily, <m>-b^2 + 4ac \gt 0.</m> Thus</p>
+<p><m>\alpha = -\frac{b}{2a}, \quad \beta = \frac{\sqrt{-b^2 + 4ac}}{2a}.</m></p>
+
+<ol start="2">
+    <li>Process the numerator to match up with the <m>s - \alpha</m> in the denominator:</li>
+</ol>
+<p><m>As + B = A(s - \alpha + \alpha) + B = A(s - \alpha) + A\alpha + B.</m></p>
+<ol start="3">
+    <li>Therefore,</li>
+</ol>
+<p><m>\frac{As + B}{as^2 + bs + c} = \frac{A(s - \alpha)}{a[(s - \alpha)^2 + \beta^2]} + \frac{A\alpha + B}{a[(s - \alpha)^2 + \beta^2]}.</m></p>
+<p><m>\mathcal{L}^{-1} \to \frac{A}{a} e^{\alpha t} \cos \beta t + \frac{A\alpha + B}{a} \cdot \frac{1}{\beta} e^{\alpha t} \sin \beta t.</m></p>
+
+<p>It is not recommended that you memorize formulas for <m>\alpha, \beta.</m> Rather, you should carry out the procedure.</p>
+<p><strong>Example (maybe another one).</strong></p>
+<ol>
+    <li><m>s^2 + 4s + 6 = s^2 + 4s + 4 - 4 + 6 = (s + 2)^2 + 2.</m></li>
+    <p>So, <m>\alpha = -2, \beta = \sqrt{2}.</m></p>
+    <li><m>\frac{s}{2} + \frac{5}{3} = \frac{1}{2}(s + 2 - 2) + \frac{5}{3} = \frac{1}{2}(s + 2) - 1 + \frac{5}{3}.</m></li>
+    <p>= <m>\frac{1}{2}(s + 2) + \frac{2}{3}.</m></p>
+    <li>So,</li>
+    <p><m>\frac{\frac{s}{2} + \frac{5}{3}}{s^2 + 4s + 6} = \frac{1}{2}(s + 2) + \frac{2}{3}\cdot\frac{1}{(s + 2)^2 + 2}.</m></p>
+</ol>
+<p><m>\mathcal{L}^{-1}\left\{\frac{s/2 + 5/3}{s^2 + 4s + 6}\right\} = \frac{1}{2} \mathcal{L}^{-1}\left\{\frac{s + 2}{(s + 2)^2 + 2}\right\} + \frac{2}{3} \mathcal{L}^{-1}\left\{\frac{1}{(s + 2)^2 + 2}\right\}.</m></p>
+<p>= <m>\frac{1}{2} e^{-2t} \cos \sqrt{2}t + \frac{\sqrt{2}}{3} e^{-2t} \sin \sqrt{2}t.</m></p>
+
+<p><strong>Important formulas to keep in mind</strong></p>
+<p><m>\mathcal{L}^{-1}\left\{\frac{1}{s - \alpha}\right\} = e^{\alpha t}, \quad \mathcal{L}^{-1}\left\{\frac{1}{(s - \alpha)^2}\right\} = te^{\alpha t}</m></p>
+<p><m>\mathcal{L}^{-1}\left\{\frac{1}{(s - \alpha)^3}\right\} = \frac{t^2 e^{\alpha t}}{2}, \quad \mathcal{L}^{-1}\left\{\frac{1}{(s - \alpha)^n}\right\} = \frac{t^{n-1} e^{\alpha t}}{(n - 1)!}.</m></p>
+<p><m>\mathcal{L}^{-1}\left\{\frac{s - \alpha}{(s - \alpha)^2 + \beta^2}\right\} = e^{\alpha t} \cos \beta t,</m></p>
+<p><m>\mathcal{L}^{-1}\left\{\frac{1}{(s - \alpha)^2 + \beta^2}\right\} = \frac{1}{\beta} e^{\alpha t} \sin \beta t,</m></p>
+<p><m>\mathcal{L}^{-1}\left\{\frac{s - \alpha}{(s - \alpha)^2 - k^2}\right\} = e^{\alpha t} \cosh kt,</m></p>
+<p><m>\mathcal{L}^{-1}\left\{\frac{1}{(s - \alpha)^2 - k^2}\right\} = \frac{1}{k} e^{\alpha t} \sinh kt.</m></p>
+
+<p><strong>Solving an IVP using s-axis shifts.</strong></p>
+<p><strong>Example 4.</strong> <m>y'' - 6y' + 9y = t^2 e^{3t}, \quad y(0) = 2, \quad y'(0) = 17.</m></p>
+<p>Set <m>Y(s) = \mathcal{L}\{y(t)\}.</m> Laplace both sides of the ODE:</p>
+<p><m>s^2Y(s) - sy(0) - y'(0) - 6(sY(s) - y(0)) + 9Y(s) = (s^2 - 6s + 9)Y(s) - 2s - 5</m></p>
+<p><m>= (s - 3)^2Y(s) - 2s - 5 = \mathcal{L}\{t^2 e^{3t}\} = \frac{2}{s^3}\big|_{s \to s - 3} = \frac{2}{(s - 3)^3}.</m></p>
+<p>Thus</p>
+<p><m>(s - 3)^2Y(s) = 2s + 5 + \frac{2}{(s - 3)^3}.</m></p>
+<p><m>Y(s) = \frac{2s + 5}{(s - 3)^2} + \frac{2}{(s - 3)^5}.</m></p>
+
+<p>Therefore,</p>
+<p><m>y(t) = \mathcal{L}^{-1}\left\{\frac{2}{s - 3}\right\} + \mathcal{L}^{-1}\left\{\frac{11}{(s - 3)^2}\right\} + \mathcal{L}^{-1}\left\{\frac{2}{(s - 3)^5}\right\}.</m></p>
+<p>= <m>2e^{3t} + 11te^{3t} + 2 \cdot \frac{1}{4!}t^4 e^{3t}</m></p>
+<p>= <m>2e^{3t} + 11te^{3t} + \frac{1}{12}t^4 e^{3t}.</m></p>
+<p><strong>Remark:</strong> You may try the method of undetermined coefficients to find how inconvenient it is.</p>
+
+<p><strong>Example 5.</strong> <m>y'' + 4y' + 6y = 1 + e^{-t}, \quad y(0) = 0, \quad y'(0) = 0.</m></p>
+<p>Set <m>Y(s) = \mathcal{L}\{y(t)\}.</m> Laplace the ODE:</p>
+<p><m>s^2Y(s) - sy(0) - y'(0) + 4(sY(s) - y(0)) + 6Y(s)</m></p>
+<p><m>= (s^2 + 4s + 6)Y(s) = \mathcal{L}\{1 + e^{-t}\} = \frac{1}{s} + \frac{1}{s + 1}.</m></p>
+<p>⇒ <m>Y(s) = \frac{1}{s(s^2 + 4s + 6)} + \frac{1}{(s + 1)(s^2 + 4s + 6)}.</m></p>
+<p><m>= \frac{A}{s} + \frac{B}{s + 1} + \frac{Cs + D}{s^2 + 4s + 6}.</m></p>
+<p>Cover-up method gives <m>A</m> and <m>B.</m></p>
+<p><m>A = \left( \frac{1}{(s^2 + 4s + 6)} + \frac{s}{(s + 1)(s^2 + 4s + 6)}\right)\bigg|_{s=0} = \frac{1}{6}.</m></p>
+<p><m>B = \left( \frac{s + 1}{s(s^2 + 4s + 6)} + \frac{1}{(s^2 + 4s + 6)} \right)\bigg|_{s = -1} = \frac{1}{3}.</m></p>
+<p>So,</p>
+<p><m>\frac{1}{s(s^2 + 4s + 6)} + \frac{1}{(s + 1)(s^2 + 4s + 6)} = \frac{1}{6} \cdot \frac{1}{s} + \frac{1}{3} \cdot \frac{1}{s + 1} + \frac{Cs + D}{s^2 + 4s + 6}.</m></p>
+<p>We obtain <m>C, D</m> by subtraction:</p>
+<p><m>\frac{1}{s(s^2 + 4s + 6)} + \frac{1}{(s + 1)(s^2 + 4s + 6)} - \frac{1}{6} \cdot \frac{1}{s} - \frac{1}{3} \cdot \frac{1}{s + 1} = \frac{6 - (s^2 + 4s + 6)}{6s(s^2 + 4s + 6)}.</m></p>
+<p><m>= \frac{6s(s^2 + 4s + 6)}{6s(s^2 + 4s + 6)} + \frac{3 - (s^2 + 4s + 6)}{3(s + 1)(s^2 + 4s + 6)}.</m></p>
+<p><m>= \frac{6s^2 + 24s + 36}{6s^2 + 24s + 36} + \frac{3 - s^2 - 4s - 6}{3(s + 1)(s^2 + 4s + 6)}.</m></p>
+<p><m>= \frac{6s^2 + 24s + 36}{6s^2 + 24s + 36} + \frac{-s^2 - 4s - 3}{3(s + 1)(s^2 + 4s + 6)}.</m></p>
+<p>= \ldots = \frac{-3s - 10}{6(s^2 + 4s + 6)} = \frac{Cs + D}{(s^2 + 4s + 6)} \Rightarrow C = -\frac{1}{2}, D = -\frac{5}{3}.</p>
+<p>So,</p>
+<p><m>Y(s) = \frac{1}{6} \cdot \frac{1}{s} + \frac{1}{3} \cdot \frac{1}{s + 1} - \frac{s/2 + 5/3}{s^2 + 4s + 6}.</m></p>
+<p>Thus, the solution of the IVP is</p>
+<p><m>y(t) = \frac{1}{6} \cdot \mathcal{L}^{-1}\left\{\frac{1}{s}\right\} + \frac{1}{3} \cdot \mathcal{L}^{-1}\left\{\frac{1}{s + 1}\right\} - \mathcal{L}^{-1}\left\{\frac{s/2 + 5/3}{s^2 + 4s + 6}\right\}.</m></p>
+<p>= <m>\frac{1}{6} \cdot 1 + \frac{1}{3} \cdot e^{-t} - \frac{1}{2} e^{-2t} \cos \sqrt{2}t + \frac{\sqrt{2}}{3} e^{-2t} \sin \sqrt{2}t.</m></p>
+<p><strong>Remark:</strong> For this problem, the method of undetermined coefficients is indeed more convenient.</p>
+
+
+</section>

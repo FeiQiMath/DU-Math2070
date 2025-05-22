@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<section xml:id="sec-linear-algebra" xmlns:xi="http://www.w3.org/2001/XInclude">
+  <title>A crash course of linear algebra</title>
+
+  <p>A Crash Course of Linear Algebra</p>
+
+<p>For Students in Differential Equations in Science and Engineering</p>
+
+<p>1. Matrix Multiplication</p>
+
+<p>(1) Multiplying row vectors and column vectors</p>
+<p><m>\left[ x_1 \quad x_2 \quad x_3 \right] \left[ \begin{array}{c} y_1 \\ y_2 \\ y_3 \end{array} \right] = x_1y_1 + x_2y_2 + x_3y_3</m></p>
+<p>It's just like the dot product of two vectors.</p>
+
+<p>(2) Multiplying matrices and column vectors</p>
+<p><m>\left[ \begin{array}{ccc} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{array} \right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} a_{11}x_1 + a_{12}x_2 + a_{13}x_3 \\ a_{21}x_1 + a_{22}x_2 + a_{23}x_3 \\ a_{31}x_1 + a_{32}x_2 + a_{33}x_3 \end{array} \right]</m></p>
+<p>Regard the matrix as three row vectors, perform three row-column multiplications and put the results respectively in the corresponding rows.</p>
+
+<p>(3) Multiplying matrices and matrices</p>
+<p><m>\left[ \begin{array}{ccc} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{array} \right] \left[ \begin{array}{ccc} b_{11} \amp b_{12} \amp b_{13} \\ b_{21} \amp b_{22} \amp b_{23} \\ b_{31} \amp b_{32} \amp b_{33} \end{array} \right]</m></p>
+<p><m>= \left[ \begin{array}{ccc} a_{11}b_{11} + a_{12}b_{21} + a_{13}b_{31} \amp a_{11}b_{12} + a_{12}b_{22} + a_{13}b_{32} \amp a_{11}b_{13} + a_{12}b_{23} + a_{13}b_{33} \\ a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31} \amp a_{21}b_{12} + a_{22}b_{22} + a_{23}b_{32} \amp a_{21}b_{13} + a_{22}b_{23} + a_{23}b_{33} \\ a_{31}b_{11} + a_{32}b_{21} + a_{33}b_{31} \amp a_{31}b_{12} + a_{32}b_{22} + a_{33}b_{32} \amp a_{31}b_{13} + a_{32}b_{23} + a_{33}b_{33} \end{array} \right]</m></p>
+<p>Regard the matrix on the right as three column vectors, perform three matrix-column multiplications and put the results respectively in the corresponding columns.</p>
+
+<p>2. Using Matrices to Solve System of Linear Equations</p>
+
+<p>The system of linear equations</p>
+<p><m>\begin{cases} 
+a_{11}x_1 + a_{12}x_2 + a_{13}x_3 = b_1 \\
+a_{21}x_1 + a_{22}x_2 + a_{23}x_3 = b_2 \\
+a_{31}x_1 + a_{32}x_2 + a_{33}x_3 = b_3
+\end{cases}</m></p>
+<p>can be regarded as an equation of column vectors</p>
+<p><m>\left[ \begin{array}{ccc} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{array} \right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} b_1 \\ b_2 \\ b_3 \end{array} \right]</m></p>
+<p>To solve it, we form the extended matrix</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+a_{11} \amp a_{12} \amp a_{13} \amp b_1 \\ 
+a_{21} \amp a_{22} \amp a_{23} \amp b_2 \\ 
+a_{31} \amp a_{32} \amp a_{33} \amp b_3 
+\end{array} \right]</m></p>
+
+<p>Perform row transformations to punch holes in the lower triangular part</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+* \amp * \amp * \amp * \\ 
+0 \amp * \amp * \amp * \\ 
+0 \amp 0 \amp * \amp * 
+\end{array} \right]</m></p>
+
+<p>Several cases might occur:</p>
+<p>(1) All the diagonal terms are nonzero. In this case, the system has a unique solution.</p>
+
+<p>Example.</p>
+<p><m>\begin{cases} 
+x_1 - 2x_2 + 3x_3 = 7 \\ 
+-x_1 + x_2 - 2x_3 = -5 \\ 
+2x_1 - x_2 - x_3 = 4 
+\end{cases}</m></p>
+
+<p>The extended matrix</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp -2 \amp 3 \amp 7 \\ 
+-1 \amp 1 \amp -2 \amp -5 \\ 
+2 \amp -1 \amp -1 \amp 4 
+\end{array} \right]</m></p>
+
+<p>We first punch two holes in the first column: add the first row to the second row, and add <m>(-2)</m> times the first row to the last row:</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp -2 \amp 3 \amp 7 \\ 
+0 \amp -1 \amp 1 \amp 2 \\ 
+0 \amp -3 \amp -7 \amp -10 
+\end{array} \right]</m></p>
+
+<p>Then punch one hole in the second column: add 3 times the second row to the last row.</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp -2 \amp 3 \amp 7 \\ 
+0 \amp -1 \amp 1 \amp 2 \\ 
+0 \amp 0 \amp -4 \amp -4 
+\end{array} \right]</m></p>
+
+<p>Now all the diagonal terms are nonzero and we can start to solve it:</p>
+<p>Last row says</p>
+<p><m>-4x_3 = -4 \implies x_3 = 1.</m></p>
+
+<p>Second row says</p>
+<p><m>-x_2 + x_3 = 2 \implies x_2 = x_3 - 2 = 1 - 2 = -1.</m></p>
+
+<p>First row says</p>
+<p><m>x_1 - 2x_2 + 3x_3 = 7 \implies x_1 = 7 + 2x_2 - 3x_3 = 7 - 2 - 3 = 2.</m></p>
+
+<p>So we have a unique solution</p>
+<p><m>\left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} 2 \\ -1 \\ 1 \end{array} \right]</m></p>
+
+<p>Remark. This case happens if and only if the matrix is nonsingular, i.e., the determinant of the coefficient matrix is nonzero. In fact, if you did not switch rows or multiply any row by any number, then the determinant is precisely the product of all diagonal entries. Therefore it is nonzero if and only if all the factors are nonzero.</p>
+
+<p>(2) The last term in the diagonal is zero, as well as the right-hand side, and the rest diagonal terms is nonzero. In this case, the system has infinitely many solutions parametrized by one free variable.</p>
+
+<p>Example.</p>
+<p><m>\begin{cases} 
+x_1 + 2x_2 - x_3 = 2 \\ 
+2x_1 + x_2 + x_3 = 1 \\ 
+x_1 - 2x_2 + 2x_3 = -1 
+\end{cases}</m></p>
+
+<p>The extended matrix</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp -2 \amp -1 \amp 2 \\ 
+2 \amp 1 \amp 1 \amp 1 \\ 
+1 \amp -1 \amp 2 \amp -1 
+\end{array} \right]</m></p>
+
+<p>We first punch two holes in the first column: add <m>(-2)</m> times the first row to the second row, and add <m>(-1)</m> times the first row to the last row:</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp -2 \amp -1 \amp 2 \\ 
+0 \amp 3 \amp 3 \amp -3 \\ 
+0 \amp 3 \amp -1 \amp -3 
+\end{array} \right]</m></p>
+
+<p>Then punch one hole in the second column: add <m>(-1)</m> times the second row to the last row.</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp -2 \amp -1 \amp 2 \\ 
+0 \amp 3 \amp 3 \amp -3 \\ 
+0 \amp 0 \amp -4 \amp 0 
+\end{array} \right]</m></p>
+
+<p>Last row reads</p>
+<p><m>0 = 0.</m></p>
+<p>That means it’s redundant and we now have two equations with three variables.</p>
+
+<p>Second row says</p>
+<p><m>-3x_2 + 3x_3 = -3 \implies x_2 = x_3 + 1.</m></p>
+
+<p>First row says</p>
+<p><m>x_1 + 2x_2 - x_3 = 2 \implies x_1 = -2x_2 + x_3 + 2 = -2(x_3 + 1) + x_3 + 2 = -x_3.</m></p>
+
+<p>Let <m>x_3 = c</m> as the free variable, then we have infinitely many solutions:</p>
+<p><m>\left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} -c \\ c + 1 \\ c \end{array} \right]</m></p>
+<p>that is parameterized by <m>c.</m></p>
+
+<p>(3) The left-hand side of the last row is zero, but the right-hand side of the last row is nonzero. In this case, the system has no solution.</p>
+
+<p>Example.</p>
+<p><m>\begin{cases} 
+x_1 + 2x_2 - x_3 = 1 \\ 
+2x_1 + x_2 + x_3 = 1 \\ 
+x_1 - x_2 + 2x_3 = 1 
+\end{cases}</m></p>
+
+<p>The extended matrix</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp 2 \amp -1 \amp 1 \\ 
+2 \amp 1 \amp 1 \amp 1 \\ 
+1 \amp -1 \amp 2 \amp 1 
+\end{array} \right]</m></p>
+
+<p>We first punch two holes in the first column: add <m>(-2)</m> times the first row to the second row, and add <m>(-1)</m> times the first row to the last row:</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp 2 \amp -1 \amp 1 \\ 
+0 \amp -3 \amp 3 \amp -1 \\ 
+0 \amp -3 \amp -1 \amp 0 
+\end{array} \right]</m></p>
+
+<p>Then punch one hole in the second column: subtract the last row by the second row.</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp 2 \amp -1 \amp 1 \\ 
+0 \amp -3 \amp 3 \amp -1 \\ 
+0 \amp 0 \amp -4 \amp 1 
+\end{array} \right]</m></p>
+
+<p>Last row reads</p>
+<p><m>0 = 1</m></p>
+<p>that can never be satisfied. Therefore the system has no solution.</p>
+
+<p>(4) The second and the third row are all zero. In this case, the system has infinitely many solutions parametrized by two free variables.</p>
+
+<p>Example.</p>
+<p><m>\begin{cases} 
+x_1 + 2x_2 - x_3 = -2 \\ 
+-2x_1 - 4x_2 + 2x_3 = 4 \\ 
+2x_1 + 4x_2 - 2x_3 = -4 
+\end{cases}</m></p>
+
+<p>The extended matrix</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp 2 \amp -1 \amp -2 \\ 
+-2 \amp -4 \amp 2 \amp 4 \\ 
+2 \amp 4 \amp -2 \amp -4 
+\end{array} \right]</m></p>
+
+<p>We first punch two holes in the first column: add <m>(2)</m> times the first row to the second row, and add <m>(-2)</m> times the first row to the last row:</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp 2 \amp -1 \amp -2 \\ 
+0 \amp 0 \amp 0 \amp 0 \\ 
+0 \amp 0 \amp 0 \amp 0 
+\end{array} \right]</m></p>
+
+<p>And now both the second row and third row read</p>
+<p><m>0 = 0.</m></p>
+
+<p>We are left with one equation with three variables. So two of them are free. Let’s set <m>x_1 = c_1</m> and <m>x_2 = c_2.</m></p>
+<p>The first equation reads</p>
+<p><m>x_1 + 2x_2 - x_3 = -2 \implies x_3 = x_1 + 2x_2 = c_1 + 2c_2 - 2.</m></p>
+
+<p>Then we have infinitely many solutions:</p>
+<p><m>\left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} c_1 \\ c_2 \\ c_1 + 2c_2 - 2 \end{array} \right]</m></p>
+<p>that is parameterized by two free variables <m>c_1</m> and <m>c_2.</m></p>
+
+<p>(5) Other cases. You will learn about them systematically in a course of linear algebra. For this class, you don’t need to worry about more than the above.</p>
+
+<p>Remark. For all cases other than (1), the determinant of the coefficient matrix is zero.</p>
+<p>Remark. In general you don’t need to be that mechanical in doing this. As long as there are enough zeros in the extended matrix, you can start to read it in terms of variables. Examples will be seen below.</p>
+<p>Remark. For homogeneous equations (meaning that <m>b_1 = b_2 = b_3 = 0</m>), we don’t need to worry about the third case.</p>
+
+<p>3. Linearly Independent Vectors and Linearly Dependent Vectors</p>
+
+<p>(1) Three vectors <m>\vec{v_1}, \vec{v_2}, \vec{v_3}</m> are called linearly dependent if for some <m>k_1, k_2</m> and <m>k_3</m> that are NOT ALL ZERO, such that</p>
+<p><m>k_1 \vec{v_1} + k_2 \vec{v_2} + k_3 \vec{v_3} = 0.</m></p>
+<p>In this case, one can express one of them by the linear combination of the other two.</p>
+
+<p>Example.</p>
+<p><m>\vec{v_1} = \left[ \begin{array}{c} 2 \\ 1 \\ 0 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} 0 \\ 1 \\ 0 \end{array} \right], \quad \vec{v_3} = \left[ \begin{array}{c} -1 \\ 2 \\ 0 \end{array} \right]</m></p>
+<p>One can verify that</p>
+<p><m>\vec{v_1} - 5\vec{v_2} + 2\vec{v_3} = 0.</m></p>
+<p>Therefore</p>
+<p><m>\vec{v_1} = 5\vec{v_2} - 2\vec{v_3}.</m></p>
+
+<p>So <m>\vec{v_1}</m> "depends" on <m>\vec{v_2}</m> and <m>\vec{v_3}.</m> This is one reason for this terminology.</p>
+
+<p>(2) If you cannot find such <m>k_1, k_2</m> and <m>k_3</m>, then we say <m>\vec{v_1}, \vec{v_2}, \vec{v_3}</m> are linearly independent. Equivalently, all <m>k_1, k_2</m> and <m>k_3</m> satisfying</p>
+<p><m>k_1 \vec{v_1} + k_2 \vec{v_2} + k_3 \vec{v_3} = 0</m></p>
+<p>must be ALL ZERO: <m>k_1 = k_2 = k_3 = 0.</m></p>
+
+<p>(3) Write</p>
+<p><m>\vec{v_1} = \left[ \begin{array}{c} a_1 \\ a_2 \\ a_3 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} b_1 \\ b_2 \\ b_3 \end{array} \right], \quad \vec{v_3} = \left[ \begin{array}{c} c_1 \\ c_2 \\ c_3 \end{array} \right]</m></p>
+
+<p>The left-hand side of the equation</p>
+<p><m>k_1 \vec{v_1} + k_2 \vec{v_2} + k_3 \vec{v_3} = 0</m></p>
+<p>can then be written as</p>
+<p><m>k_1 \left[ \begin{array}{c} a_1 \\ a_2 \\ a_3 \end{array} \right] + k_2 \left[ \begin{array}{c} b_1 \\ b_2 \\ b_3 \end{array} \right] + k_3 \left[ \begin{array}{c} c_1 \\ c_2 \\ c_3 \end{array} \right] = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right]</m></p>
+
+<p>Therefore the equation is simply</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+a_1 \amp b_1 \amp c_1 \\ 
+a_2 \amp b_2 \amp c_2 \\ 
+a_3 \amp b_3 \amp c_3 
+\end{array} \right] \left[ \begin{array}{c} k_1 \\ k_2 \\ k_3 \end{array} \right] = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right]</m></p>
+
+<p>In other words, all we need to deal with is simply a homogeneous system of linear equations.</p>
+
+<p>Like what we did in the previous section, we use row transformations to punch holes in the lower triangular part:</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+a_1 \amp b_1 \amp c_1 \\ 
+a_2 \amp b_2 \amp c_2 \\ 
+a_3 \amp b_3 \amp c_3 
+\end{array} \right] \implies \left[ \begin{array}{ccc|c} 
+* \amp * \amp * \\ 
+0 \amp * \amp * \\ 
+0 \amp 0 \amp * 
+\end{array} \right]</m></p>
+
+<ul>
+    <li>If all diagonal entries are nonzero (equivalently, if the determinant of the matrix is nonzero), then we have linear independence.</li>
+    <li>CAUTION! This only works when the matrix dimension is equal to the number of vectors. If say you have 4 vectors of dimension 3, then they are automatically linear dependent!</li>
+    <li>Otherwise, we have linear dependence and solving the linear system should give a relation.</li>
+</ul>
+
+<p>Example 1: Determine if the following vectors are linear independent.</p>
+<p><m>\vec{v_1} = \left[ \begin{array}{c} 0 \\ 1 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} 1 \\ 0 \end{array} \right], \quad \vec{v_3} = \left[ \begin{array}{c} 1 \\ 1 \end{array} \right]</m></p>
+
+<p>Put <m>\vec{v_1}, \vec{v_2}, \vec{v_3}</m> into a matrix and compute its determinant:</p>
+<p><m>\left[ \begin{array}{ccc} 
+0 \amp 1 \amp 1 \\ 
+1 \amp 0 \amp 1 
+\end{array} \right] = 0 + 1 - 1 - 0 - 0 - 0 = 2 \neq 0.</m></p>
+
+<p>So they are linearly independent.</p>
+
+<p>If we look at the linear system</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp 0 \amp 0 \\ 
+0 \amp 1 \amp 0 
+\end{array} \right]</m></p>
+
+<p>Switching <m>r_1</m> and <m>r_2</m> (note: switching two rows will change the sign of the determinant):</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp 0 \amp 1 \amp 0 \\ 
+0 \amp 1 \amp 1 \amp 0 \\ 
+1 \amp 0 \amp -1 \amp 0 
+\end{array} \right]</m></p>
+
+<p>Subtract the third row by the first:</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp 0 \amp 1 \amp 0 \\ 
+0 \amp 1 \amp 1 \amp 0 \\ 
+0 \amp 1 \amp -2 \amp 0 
+\end{array} \right]</m></p>
+
+<p>Subtract the third row by the second:</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp 0 \amp 1 \amp 0 \\ 
+0 \amp 1 \amp 1 \amp 0 \\ 
+0 \amp 0 \amp -3 \amp 0 
+\end{array} \right]</m></p>
+
+<p>One can see that all the diagonal entries are nonzero.</p>
+
+<p>Example 2: Find a relation between the following vectors.</p>
+<p><m>\vec{v_1} = \left[ \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} 0 \\ 1 \\ 1 \end{array} \right], \quad \vec{v_3} = \left[ \begin{array}{c} 1 \\ 2 \\ 1 \end{array} \right], \quad \vec{v_4} = \left[ \begin{array}{c} 1 \\ 2 \\ 2 \end{array} \right]</m></p>
+
+<p>Put <m>\vec{v_1}, \vec{v_2}, \vec{v_3}, \vec{v_4}</m> into a matrix and form the linear system above:</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp 0 \amp 1 \amp 0 \\ 
+1 \amp 1 \amp 2 \amp 0 \\ 
+0 \amp 1 \amp 2 \amp 0 
+\end{array} \right] \left[ \begin{array}{c} k_1 \\ k_2 \\ k_3 \\ k_4 \end{array} \right] = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right]</m></p>
+
+<p>To solve it, we form the extended matrix:</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp 0 \amp 1 \amp 0 \\ 
+1 \amp 1 \amp 2 \amp 0 \\ 
+0 \amp 1 \amp 2 \amp 0 
+\end{array} \right]</m></p>
+
+<p>To punch holes on the lower triangular part, we first subtract the second row by the first row:</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp 0 \amp 1 \amp 0 \\ 
+0 \amp 1 \amp 1 \amp 0 \\ 
+0 \amp 1 \amp 2 \amp 0 
+\end{array} \right]</m></p>
+
+<p>Then subtract the third row by the second:</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+1 \amp 0 \amp 1 \amp 0 \\ 
+0 \amp 1 \amp 1 \amp 0 \\ 
+0 \amp 0 \amp 1 \amp 0 
+\end{array} \right]</m></p>
+
+<p>(It seems that you have nonzero diagonal entries, but the additional column makes it possible to find nonzero solutions!)</p>
+
+<p>The last row reads</p>
+<p><m>k_3 = 0.</m></p>
+
+<p>The second row reads</p>
+<p><m>k_2 + k_4 = 0 \implies k_2 = -k_4.</m></p>
+
+<p>The first row reads</p>
+<p><m>k_1 + k_3 + k_4 = 0 \implies k_1 = -k_4.</m></p>
+<p>Set <m>k_4 = 1</m> and we have <m>k_2 = -1, k_1 = -1.</m> So a linear relation is obtained, as</p>
+<p><m>-1\vec{v_1} - 1\vec{v_2} + 1\vec{v_3} = 0.</m></p>
+
+<p>4. Eigenvalues and Eigenvectors</p>
+
+<p>(1) Let <m>A</m> be a matrix and let <m>\vec{x}</m> be a NONZERO vector. If the matrix-vector product <m>A\vec{x}</m> is a multiple of <m>\vec{x},</m> i.e.,</p>
+<p><m>A\vec{x} = \lambda \vec{x}</m></p>
+<p>Then the multiple <m>\lambda</m> is called an eigenvalue of <m>A,</m> and <m>\vec{x}</m> is called an eigenvector of <m>A</m> corresponding to the eigenvalue <m>\lambda.</m></p>
+
+<p>(2) The condition is equivalent to the following system of linear equations</p>
+<p><m>(A - \lambda I)\vec{x} = 0.</m></p>
+
+<p>To see more clearly, write</p>
+<p><m>A = \left[ \begin{array}{ccc} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{array} \right]</m></p>
+
+<p>Then the condition can be expressed as</p>
+<p><m>\left[ \begin{array}{ccc|c} 
+a_{11} - \lambda \amp a_{12} \amp a_{13} \\ 
+a_{21} \amp a_{22} - \lambda \amp a_{23} \\ 
+a_{31} \amp a_{32} \amp a_{33} - \lambda 
+\end{array} \right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right]</m></p>
+
+<p>To have a nonzero solution to such a linear system, the determinant of the matrix must be zero. Therefore the eigenvalues of the matrix satisfy the polynomial equation</p>
+<p><m>\text{det}(A - \lambda I) = 0.</m></p>
+
+<p>Or in terms of matrices</p>
+<p><m>\left| \begin{array}{ccc} 
+a_{11} - \lambda \amp a_{12} \amp a_{13} \\ 
+a_{21} \amp a_{22} - \lambda \amp a_{23} \\ 
+a_{31} \amp a_{32} \amp a_{33} - \lambda 
+\end{array} \right| = 0.</m></p>
+
+<p>Once the roots of the above polynomial are found, put them into the above linear system and solve it, you will get the eigenvectors.</p>
+
+<p>(3) In summary, to find the eigenvalues and eigenvectors for a given matrix <m>A:</m></p>
+<ul>
+    <li>Find the eigenvalues by solving the polynomial equation <m>\text{det}(A - \lambda I) = 0.</m></li>
+    <li>Solve the linear system specified above for EACH eigenvalue <m>\lambda</m> to get the corresponding eigenvector.</li>
+</ul>
+
+<p>Example 1. Find the eigenvalues and corresponding eigenvectors for the matrix</p>
+<p><m>A = \left[ \begin{array}{ccc} -3 \amp \frac{3}{4} \amp 1 \\ -5 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \end{array} \right]</m></p>
+
+<p>Step 1: Find the eigenvalues:</p>
+<p><m>\text{det}(A - \lambda I) = \left| \begin{array}{ccc} -3 - \lambda \amp \frac{3}{4} \amp 1 \\ -5 \amp -1 - \lambda \amp 0 \\ 0 \amp 0 \amp 1 \end{array} \right| = (-3 - \lambda)(-1 - \lambda)(1) + \frac{15}{4} \lambda^2 + 3\lambda = 0</m></p>
+<p>Solving the quadratic equation, one gets the eigenvalues</p>
+<p><m>\lambda_1 = -\frac{1}{2}, \quad \lambda_2 = -\frac{3}{2}.</m></p>
+
+<p>Step 2: Find an eigenvector for each of the eigenvalues:</p>
+<p>For <m>\lambda = -\frac{1}{2},</m> solve the linear system</p>
+<p><m>\left[ \begin{array}{ccc|c} -3 + \frac{1}{2} \amp \frac{3}{4} \amp 1 \amp 0 \\ -5 \amp 1 + \frac{1}{2} \amp 0 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -\frac{5}{2} \amp \frac{3}{4} \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]</m></p>
+
+<p>Punch a hole on the lower-left corner:</p>
+<p><m>\left[ \begin{array}{ccc|c} -\frac{5}{2} \amp \frac{3}{4} \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]</m></p>
+
+<p>(If you did not get a full zero row, that means you messed up and DON’T YOU DARE TO CONTINUE!)</p>
+
+<p>So the first row reads</p>
+<p><m>-5x_1 + \frac{3}{4}x_2 = 0 \implies x_1 = \frac{3}{4}x_2.</m></p>
+
+<p>Set <m>x_2 = 10</m> (since I hate fractions), then <m>x_1 = 3.</m> So</p>
+<p><m>\left[ \begin{array}{c} 3 \\ 10 \\ x_3 \end{array} \right]</m> is an eigenvector corresponding to the eigenvalue <m>\lambda_1 = -\frac{1}{2}.</m></p>
+
+<p>YOU ARE NOT DONE YET, there is another eigenvector to deal with!</p>
+
+<p>For <m>\lambda = -\frac{3}{2},</m> solve the linear system</p>
+<p><m>\left[ \begin{array}{ccc|c} -3 + \frac{3}{2} \amp \frac{3}{4} \amp 1 \amp 0 \\ -5 \amp 1 + \frac{3}{2} \amp 0 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -\frac{3}{2} \amp \frac{3}{4} \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]</m></p>
+
+<p>Punch a hole on the lower-left corner:</p>
+<p><m>\left[ \begin{array}{ccc|c} -\frac{3}{2} \amp \frac{3}{4} \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]</m></p>
+
+<p>The first row reads</p>
+<p><m>\frac{3}{2}x_1 + \frac{3}{4}x_2 = 0 \implies x_1 = -\frac{1}{2}x_2.</m></p>
+
+<p>Put <m>x_2 = 2</m> to get <m>x_1 = 1</m> and therefore</p>
+<p><m>\left[ \begin{array}{c} 1 \\ 2 \\ x_3 \end{array} \right]</m> is an eigenvector corresponding to the eigenvalue <m>\lambda_2 = -\frac{3}{2}.</m></p>
+
+<p>(Now we are done!)</p>
+
+<p>Example 2. Find the eigenvalues and corresponding eigenvectors for the matrix</p>
+<p><m>A = \left[ \begin{array}{ccc} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp -2 \\ 3 \amp 2 \amp 1 \end{array} \right]</m></p>
+
+<p>Step 1: Find the eigenvalues:</p>
+<p><m>\text{det}(A - \lambda I) = \left| \begin{array}{ccc} 1 - \lambda \amp 0 \amp 0 \\ 2 \amp 1 - \lambda \amp -2 \\ 3 \amp 2 \amp 1 - \lambda \end{array} \right| = (1 - \lambda)\left[(1 - \lambda)^2 + 4\right] = 0</m></p>
+<p>Solving the equation, one gets the eigenvalue</p>
+<p><m>\lambda_1 = 1, \quad \lambda_2 = 1 + 2i, \quad \lambda_3 = 1 - 2i.</m></p>
+
+<p>Step 2: Find an eigenvector for each of the eigenvalues:</p>
+<p>For <m>\lambda = 1,</m> solve the linear system</p>
+<p><m>\left[ \begin{array}{ccc|c} 1 - 1 \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 - 1 \amp -2 \amp 0 \\ 3 \amp 2 \amp 1 - 1 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} 0 \amp 0 \amp 0 \amp 0 \\ 2 \amp 0 \amp -2 \amp 0 \\ 3 \amp 2 \amp 0 \amp 0 \end{array} \right]</m></p>
+
+<p>(As long as there are enough holes in the matrix, you don’t have to punch more)</p>
+<p>The second row reads</p>
+<p><m>2x_1 - 2x_3 = 0 \implies x_1 = x_3.</m></p>
+
+<p>The third row reads</p>
+<p><m>3x_1 + 2x_2 = 0 \implies 3x_1 + 2x_2 = 0 \implies x_2 = -\frac{3}{2}x_1.</m></p>
+
+<p>Set <m>x_2 = 3,</m> then <m>x_1 = -2</m> and <m>x_3 = -2.</m> So</p>
+<p><m>\left[ \begin{array}{c} -2 \\ 3 \\ -2 \end{array} \right]</m> is an eigenvector corresponding to the eigenvalue <m>\lambda_1 = 1.</m></p>
+
+<p>For <m>\lambda = 1 + 2i,</m> solve the linear system</p>
+<p><m>\left[ \begin{array}{ccc|c} 1 - (1 + 2i) \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 - (1 + 2i) \amp -2 \amp 0 \\ 3 \amp 2 \amp 1 - (1 + 2i) \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -2i \amp 0 \amp 0 \amp 0 \\ 2 \amp -2i \amp -2 \amp 0 \\ 3 \amp 2 \amp -2i \amp 0 \end{array} \right]</m></p>
+
+<p>The first row reads</p>
+<p><m>-2i x_1 = 0 \implies x_1 = 0.</m></p>
+
+<p>The second equation reads</p>
+<p><m>-2i x_2 - 2x_3 = -2 \implies x_3 = -i x_2.</m></p>
+
+<p>The third equation reads</p>
+<p><m>0 = 2x_2 - 2x_3 = 2x_2 - 2(-i x_2) = 0.</m></p>
+
+<p>(It seems that you have nonzero diagonal entries, but the additional column makes it possible to find nonzero solutions!)</p>
+
+<p>The last row reads</p>
+<p><m>k_3 = 0.</m></p>
+
+<p>So it should be redundant (otherwise you messed up!). Put <m>x_2 = 1</m> to get <m>x_3 = -i</m> and therefore</p>
+<p><m>\left[ \begin{array}{c} 0 \\ 1 \\ -i \end{array} \right]</m> is an eigenvector corresponding to the eigenvalue <m>\lambda_2 = 1 + 2i.</m></p>
+
+<p>For <m>\lambda = 1 - 2i,</m> the eigenvector can actually be obtained by taking the conjugate of the eigenvector to <m>\lambda_2,</m> namely, we should have</p>
+<p><m>\left[ \begin{array}{c} 0 \\ 1 \\ i \end{array} \right]</m> is an eigenvector corresponding to the eigenvalue <m>\lambda_3 = 1 - 2i.</m></p>
+<p>Please do the computations to verify this.</p>
+
+<p>Remark. The technique of computing eigenvectors and eigenvalues is crucial for solving linear systems of ODE with constant coefficients, as you will see in 7.5, 7.6, and 7.8.</p>
+
+<p>Remark. Actually, the above example tells the secret that, when dealing with complex eigenvalues, it suffices to look at only one of them. You will experience the same again in 7.6.</p>
+
+
+
+
+</section>
