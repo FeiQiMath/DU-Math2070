@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Laplace Transform and Examples</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="A Concise Introduction to Differential Equation at the University of Denver">
+<meta property="book:author" content="Fei Qi">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.7.0';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.5eb70769dc5e56d7.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Math-2070-Notes.html"><span class="title">A Concise Introduction to Differential Equation at the University of Denver</span></a></h1>
+<p class="byline">Fei Qi</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-Laplace.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Laplace.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-inverse-Laplace.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="First-order-ODE.html" class="internal"><span class="codenumber">1</span> <span class="title">First-order Differential Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basic-concepts.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Basic Concepts</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-why-study-DEs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Why study differential equations?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Newtons-law-of-cooling" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Newton’s law of cooling</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Water-pollution-model" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Water pollution model</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Initial-value-problem" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Initial value problem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="geometric-interpretation.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Geometric interpretation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-classification.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Classification of Differential Equations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-1st-order-linear.html" class="internal"><span class="codenumber">1.5</span> <span class="title">First-order Linear ODEs</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-separable-equations.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Separable Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-separable-equations.html#subsec-separable-equations-1" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Form of a separable ODE</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-separable-equations.html#subsec-implicit-vs-explicit" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Implicit solution vs explicit solution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-separable-equations.html#subsec-separable-equations-3" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Singular solutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-existence-uniqueness.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Existence and Uniqueness of Solutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-1" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Pathological IVP</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-2" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Existence and Uniqueness Theorem: Linear version.</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-3" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Existence and Uniqueness Theorem: Nonlinear case</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-autonomous.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Autonomous Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-autonomous.html#subsec-equilibrium-solution" class="internal"><span class="codenumber">1.8.1</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-autonomous.html#subsec-stability-of-equilibrium-solution" class="internal"><span class="codenumber">1.8.2</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-autonomous.html#subsec-qualitative-method" class="internal"><span class="codenumber">1.8.3</span> <span class="title"></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-numerical.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Numerical Methods</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical.html#subsec-euler-method" class="internal"><span class="codenumber">1.9.1</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical.html#subsec-error-analysis" class="internal"><span class="codenumber">1.9.2</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical.html#subsec-other-methods" class="internal"><span class="codenumber">1.9.3</span> <span class="title"></span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-higher-order.html" class="internal"><span class="codenumber">2</span> <span class="title">Second-Order and Higher-Order Differential Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-gen-theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Second-order Linear ODEs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-real.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Real Roots</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-complex-numbers.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Complex Numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-multiplication" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-complex-geom-int" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Geometric Interpretation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-Euler-formula" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Euler Formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-multiplication-geom-int" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Geometric Interpretation of Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-powers-roots" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Powers and Roots</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-complex.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Complex Roots</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-repeated.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Repeated Real Roots</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-non-homogeneous.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Second-order Linear Non-Homogeneous ODEs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-undetermined-coeff-2nd-order.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Method of Undetermined Coefficients - First Ansatz</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-undetermined-coeff-2.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Method of Undetermined Coefficients - Final Ansatz</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-higher-order-linear-ODEs.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Higher-order Linear ODEs</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Laplace-periodic.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Laplace Transform of Periodic Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-derivative-Laplace-convolutions.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Derivative of Laplace Transform and Convolution</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Dirac-delta.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Dirac Delta Function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-linear-systems.html" class="internal"><span class="codenumber">4</span> <span class="title">Linear Systems of ODEs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-algebra.html" class="internal"><span class="codenumber">4.1</span> <span class="title">A crash course of linear algebra</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-system-linear-ODEs.html" class="internal"><span class="codenumber">4.2</span> <span class="title">System of First-Order Linear ODEs</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-laplace-transform"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.1</span><span class="space"> </span><span class="title">Laplace Transform and Examples</span>
+</h2>
+<div class="para" id="sec-laplace-transform-2">Integral transform</div>
+<div class="para" id="sec-laplace-transform-3">Integral transforms: Let <span class="process-math">\(K(s, t)\)</span> be a function with two real variables. Given a function <span class="process-math">\(f(t)\)</span> defined on a set <span class="process-math">\(D\text{,}\)</span> the following integral</div>
+<div class="para" id="sec-laplace-transform-4"><span class="process-math">\(F(s) = \int_D K(s, t)f(t)dt\)</span></div>
+<div class="para" id="sec-laplace-transform-5">defines a new function <span class="process-math">\(F(s)\text{.}\)</span> The map sending <span class="process-math">\(f(t)\)</span> to <span class="process-math">\(F(s)\)</span> is called an <em class="alert">integral transform</em>. The function <span class="process-math">\(K(s, t)\)</span> is called the <em class="alert">kernel</em> of the integral transform.</div>
+<div class="para" id="sec-laplace-transform-6">Note that when <span class="process-math">\(D\)</span> is an <em class="alert">infinite</em> interval, the integral defining <span class="process-math">\(F(s)\)</span> is improper and might not converge for all real numbers <span class="process-math">\(s\text{.}\)</span> In this case, the domain of new function <span class="process-math">\(F(s)\text{,}\)</span> i.e., the set of <span class="process-math">\(s\)</span> such that the integral converges, is not expected to be <span class="process-math">\((-\infty, \infty).\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-7">Integral transforms appears in many discussions of mathematics, physics, engineering, and computer science.</div>
+<div class="para" id="sec-laplace-transform-8">Fourier transform: <span class="process-math">\(D = (-\infty, \infty), K(s, t) = e^{-ist},\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-9">
+<span class="process-math">\(f(t) \mapsto F(s) = \int_{-\infty}^{\infty} f(t)e^{-ist} dt\)</span> <em class="alert">complex function</em>
+</div>
+<div class="para" id="sec-laplace-transform-10">Fourier transform is widely used, including but not limited to, partial differential equations, computer graphics, machine learning, etc. (not required in this course)</div>
+<div class="para" id="sec-laplace-transform-11">In this course, we mainly focus on the <em class="alert">Laplace transform</em>, with</div>
+<div class="para" id="sec-laplace-transform-12"><span class="process-math">\(D = [0, \infty), K(s, t) = e^{-st}.\)</span></div>
+<div class="para" id="sec-laplace-transform-13">The corresponding integral transform</div>
+<div class="para" id="sec-laplace-transform-14"><span class="process-math">\(f(t) \mapsto F(s) = \int_{0}^{\infty} f(t)e^{-st} dt\)</span></div>
+<div class="para" id="sec-laplace-transform-15">is called the <em class="alert">Laplace transform</em>. The function <span class="process-math">\(F(s)\)</span> is usually denoted by <span class="process-math">\(\mathcal{L}\{f(t)\}.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-16">The domain of <span class="process-math">\(F(s)\)</span> depends on <span class="process-math">\(f(t)\text{,}\)</span> determined by the convergence of the improper integral, i.e.,</div>
+<div class="para" id="sec-laplace-transform-17">
+<span class="process-math">\(\lim_{b \to \infty} \int_{0}^{b} f(t)e^{-st} dt\)</span> should exist.</div>
+<div class="para" id="sec-laplace-transform-18">Examples of Laplace transforms</div>
+<div class="para" id="sec-laplace-transform-19">Laplace Transform:</div>
+<div class="para" id="sec-laplace-transform-20"><span class="process-math">\(f(t) \mapsto \mathcal{L}\{f(t)\} = F(s) = \int_{0}^{\infty} f(t)e^{-st} dt\)</span></div>
+<div class="para" id="sec-laplace-transform-21">Note that the domain of <span class="process-math">\(F(s)\)</span> depends on the choice of <span class="process-math">\(f(t).\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-22">Example 1. Evaluate <span class="process-math">\(\mathcal{L}\{1\}.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-23"><span class="process-math">\(\mathcal{L}\{1\} = \int_{0}^{\infty} e^{-st} dt = \left. \frac{e^{-st}}{-s} \right|_{0}^{\infty} = \left( \lim_{t \to \infty} \frac{e^{-st}}{-s} \right) - \frac{1}{-s}.\)</span></div>
+<div class="para" id="sec-laplace-transform-24">If <span class="process-math">\(s \gt 0\text{,}\)</span> then <span class="process-math">\(\lim_{t \to \infty} \frac{e^{-st}}{-s} = 0.\)</span> The integral converges.</div>
+<div class="para" id="sec-laplace-transform-25">In this case, <span class="process-math">\(F(s) = 0 - \frac{1}{-s} = \frac{1}{s}.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-26">If <span class="process-math">\(s \lt 0\text{,}\)</span> then <span class="process-math">\(\lim_{t \to \infty} \frac{e^{-st}}{-s} = +\infty.\)</span> The integral diverges.</div>
+<div class="para" id="sec-laplace-transform-27">If <span class="process-math">\(s = 0\text{,}\)</span> then we have <span class="process-math">\(e^{-st} = 1.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-28">In this case, <span class="process-math">\(\int_{0}^{\infty} e^{-st} dt = \int_{0}^{\infty} 1 dt\)</span> also diverges.</div>
+<div class="para" id="sec-laplace-transform-29">Conclusion: <em class="alert">\mathcal{L}\{1\} = \frac{1}{s}, \quad s \gt 0.</em>
+</div>
+<div class="para" id="sec-laplace-transform-30">Example 2. Evaluate <span class="process-math">\(\mathcal{L}\{t\}.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-31"><span class="process-math">\(\mathcal{L}\{t\} = \int_{0}^{\infty} te^{-st} dt = -\frac{1}{s} te^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} 1 \cdot \left(-\frac{1}{s} e^{-st}\right) dt\)</span></div>
+<div class="para" id="sec-laplace-transform-32"><span class="process-math">\(= -\frac{1}{s} \left( \lim_{t \to \infty} te^{-st} - 0 \right) + \frac{1}{s} \int_{0}^{\infty} e^{-st} dt\)</span></div>
+<div class="para" id="sec-laplace-transform-33">We have seen that <span class="process-math">\(\int_{0}^{\infty} e^{-st} dt\)</span> converges if and only if <span class="process-math">\(s \gt 0.\)</span> In this case, <span class="process-math">\(\lim_{t \to \infty} te^{-st} = \lim_{t \to \infty} \frac{t}{e^{st}} = 0\)</span> by L’Hôpital’s rule.</div>
+<div class="para" id="sec-laplace-transform-34"><span class="process-math">\(\mathcal{L}\{t\} = \int_{0}^{\infty} te^{-st} dt = -\frac{1}{s} te^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} 1 \cdot \left(-\frac{1}{s} e^{-st}\right) dt\)</span></div>
+<div class="para" id="sec-laplace-transform-35"><span class="process-math">\(= -\frac{1}{s} \left( \lim_{t \to \infty} te^{-st} - 0 \right) + \frac{1}{s} \int_{0}^{\infty} e^{-st} dt\)</span></div>
+<div class="para" id="sec-laplace-transform-36"><span class="process-math">\(= -\frac{1}{s} \cdot (0 - 0) + \frac{1}{s} \cdot \frac{1}{s} = \frac{1}{s^2}.\)</span></div>
+<div class="para" id="sec-laplace-transform-37">So</div>
+<div class="para" id="sec-laplace-transform-38"><em class="alert">\mathcal{L}\{t\} = \frac{1}{s^2}, \quad s \gt 0.</em></div>
+<div class="para" id="sec-laplace-transform-39">So we have obtained that for <span class="process-math">\(s \gt 0,\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-40"><span class="process-math">\(\mathcal{L}\{t^n\} = -\frac{n}{s} \int_{0}^{\infty} t^{n-1} e^{-st} dt = -\frac{n}{s} \mathcal{L}\{t^{n-1}\}\)</span></div>
+<div class="para" id="sec-laplace-transform-41">This defines a recursion of <span class="process-math">\(\mathcal{L}\{t^n\}\)</span> that can be easily solved:</div>
+<div class="para" id="sec-laplace-transform-42"><span class="process-math">\(\mathcal{L}\{t^n\} = -\frac{n}{s} \mathcal{L}\{t^{n-1}\} = -\frac{n}{s} \cdot \frac{n - 1}{s} \mathcal{L}\{t^{n-2}\}\)</span></div>
+<div class="para" id="sec-laplace-transform-43"><span class="process-math">\(= \ldots = -\frac{n}{s} \cdot \frac{n - 1}{s} \cdots \frac{2}{s} \cdot \frac{1}{s} \mathcal{L}\{1\} = -\frac{n \cdot (n - 1) \cdots 2 \cdot 1}{s^{n + 1}} = -\frac{n!}{s^{n + 1}}.\)</span></div>
+<div class="para" id="sec-laplace-transform-44">Conclusion:</div>
+<div class="para" id="sec-laplace-transform-45"><em class="alert">\mathcal{L}\{t^n\} = \frac{n!}{s^{n + 1}}, \quad s \gt 0.</em></div>
+<div class="para" id="sec-laplace-transform-46">For example</div>
+<div class="para" id="sec-laplace-transform-47"><span class="process-math">\(\mathcal{L}\{t^2\} = \frac{2!}{s^3}, \quad \mathcal{L}\{t^3\} = \frac{3!}{s^4}, \quad \mathcal{L}\{t^4\} = \frac{4!}{s^5}, \quad s \gt 0.\)</span></div>
+<div class="para" id="sec-laplace-transform-48">Note that the power of <span class="process-math">\(s\)</span> in the denominator is 1 larger than the power of <span class="process-math">\(t.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-49">Example 4. Evaluate <span class="process-math">\(\mathcal{L}\{e^{-3t}\}\)</span> and <span class="process-math">\(\mathcal{L}\{e^{5t}\}.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-50"><span class="process-math">\(\mathcal{L}\{e^{-3t}\} = \int_{0}^{\infty} e^{-3t} e^{-st} dt = \int_{0}^{\infty} e^{-(s + 3)t} dt\)</span></div>
+<div class="para" id="sec-laplace-transform-51"><span class="process-math">\(= \frac{1}{-(s + 3)} e^{-(s + 3)t} \bigg|_{0}^{\infty} = \frac{1}{-(s + 3)} \left( \lim_{t \to \infty} e^{-(s + 3)t} - 1 \right)\)</span></div>
+<div class="para" id="sec-laplace-transform-52">Clearly, <span class="process-math">\(\lim_{t \to \infty} e^{-(s + 3)t}\)</span> exists when <span class="process-math">\(s + 3 \gt 0,\)</span> i.e., <span class="process-math">\(s \gt -3.\)</span> The limit is zero. So</div>
+<div class="para" id="sec-laplace-transform-53"><span class="process-math">\(\mathcal{L}\{e^{-3t}\} = \frac{1}{-(s + 3)} (0 - 1) = \frac{1}{s + 5}, \quad s \gt -3.\)</span></div>
+<div class="para" id="sec-laplace-transform-54"><span class="process-math">\(\mathcal{L}\{e^{5t}\} = \int_{0}^{\infty} e^{5t} e^{-st} dt = \int_{0}^{\infty} e^{-(s - 5)t} dt\)</span></div>
+<div class="para" id="sec-laplace-transform-55"><span class="process-math">\(= \frac{1}{-(s - 5)} e^{-(s - 5)t} \bigg|_{0}^{\infty} = \frac{1}{-(s - 5)} \left( \lim_{t \to \infty} e^{-(s - 5)t} - 1 \right)\)</span></div>
+<div class="para" id="sec-laplace-transform-56">Clearly, <span class="process-math">\(\lim_{t \to \infty} e^{-(s - 5)t}\)</span> exists when <span class="process-math">\(s - 5 \gt 0,\)</span> i.e., <span class="process-math">\(s \gt 5.\)</span> The limit is zero. So</div>
+<div class="para" id="sec-laplace-transform-57"><span class="process-math">\(\mathcal{L}\{e^{5t}\} = \frac{1}{-(s - 5)} (0 - 1) = \frac{1}{s - 5}, \quad s \gt 5.\)</span></div>
+<div class="para" id="sec-laplace-transform-58">Example 5. Evaluate <span class="process-math">\(\mathcal{L}\{e^{at}\}.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-59"><span class="process-math">\(\mathcal{L}\{e^{at}\} = \int_{0}^{\infty} e^{at} e^{-st} dt = \int_{0}^{\infty} e^{-(s - \alpha)t} dt\)</span></div>
+<div class="para" id="sec-laplace-transform-60"><span class="process-math">\(= \frac{1}{-(s - \alpha)} e^{-(s - \alpha)t} \bigg|_{0}^{\infty} = \frac{1}{-(s - \alpha)} \left( \lim_{t \to \infty} e^{-(s - \alpha)t} - 1 \right)\)</span></div>
+<div class="para" id="sec-laplace-transform-61">Clearly, <span class="process-math">\(\lim_{t \to \infty} e^{-(s - \alpha)t}\)</span> exists when <span class="process-math">\(s - \alpha \gt 0,\)</span> i.e., <span class="process-math">\(s \gt \alpha.\)</span> The limit is zero. So</div>
+<div class="para" id="sec-laplace-transform-62"><em class="alert">\mathcal{L}\{e^{at}\} = \frac{1}{s - \alpha}, \quad s \gt \alpha.</em></div>
+<div class="para" id="sec-laplace-transform-63">Example 6. Evaluate <span class="process-math">\(\mathcal{L}\{\sin 2t\}.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-64"><span class="process-math">\(\mathcal{L}\{\sin 2t\} = \int_{0}^{\infty} \sin 2t \, e^{-st} dt\)</span></div>
+<div class="para" id="sec-laplace-transform-65"><span class="process-math">\(= -\frac{1}{s} \sin 2t \, e^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} 2 \cos 2t \left(-\frac{1}{s} e^{-st}\right) dt\)</span></div>
+<div class="para" id="sec-laplace-transform-66"><span class="process-math">\(= -\frac{1}{s} \left( \lim_{t \to \infty} e^{-st} \sin 2t - 0 \right) + \frac{2}{s} \int_{0}^{\infty} \cos 2t \, e^{-st} dt\)</span></div>
+<div class="para" id="sec-laplace-transform-67">Clearly, <span class="process-math">\(\lim_{t \to \infty} e^{-st} \sin 2t\)</span> exists <em class="alert">iff</em> <span class="process-math">\(s \gt 0,\)</span> and equals 0.</div>
+<div class="para" id="sec-laplace-transform-68"><span class="process-math">\(\mathcal{L}\{\sin 2t\} = -\frac{2}{s} \int_{0}^{\infty} \cos 2t \, e^{-st} dt\)</span></div>
+<div class="para" id="sec-laplace-transform-69"><span class="process-math">\(= \frac{2}{s} \left( -\frac{1}{s} \cos 2t \, e^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} (-2 \sin 2t) \left(-\frac{1}{s} e^{-st}\right) dt \right)\)</span></div>
+<div class="para" id="sec-laplace-transform-70"><span class="process-math">\(= -\frac{2}{s^2} \left( \lim_{t \to \infty} \cos 2t \, e^{-st} - \cos 0 \, e^0 \right) - \frac{4}{s^2} \int_{0}^{\infty} \sin 2t \, e^{-st} dt\)</span></div>
+<div class="para" id="sec-laplace-transform-71">Clearly when <span class="process-math">\(s \gt 0,\)</span> <span class="process-math">\(\lim_{t \to \infty} e^{-st} \cos 2t = 0.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-72"><span class="process-math">\(\mathcal{L}\{\sin 2t\} = -\frac{2}{s^2} (0 - 1) - \frac{4}{s^2} \int_{0}^{\infty} \sin 2t \, e^{-st} dt\)</span></div>
+<div class="para" id="sec-laplace-transform-73"><span class="process-math">\(= \frac{2}{s^2} - \frac{4}{s^2} \mathcal{L}\{\sin 2t\} \Rightarrow \left( 1 + \frac{4}{s^2} \right) \mathcal{L}\{\sin 2t\} = \frac{2}{s^2}\)</span></div>
+<div class="para" id="sec-laplace-transform-74">So we conclude that</div>
+<div class="para" id="sec-laplace-transform-75"><span class="process-math">\(\mathcal{L}\{\sin 2t\} = \frac{2}{s^2 + 4}, \quad s \gt 0.\)</span></div>
+<div class="para" id="sec-laplace-transform-76">Example 7. Evaluate <span class="process-math">\(\mathcal{L}\{\sin \beta t\}.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-77">With a similar procedure, we see that</div>
+<div class="para" id="sec-laplace-transform-78"><span class="process-math">\(\mathcal{L}\{\sin \beta t\} = \frac{\beta}{s^2} - \frac{\beta^2}{s^2} \mathcal{L}\{\sin \beta t\} \Rightarrow \left( 1 + \frac{\beta^2}{s^2} \right) \mathcal{L}\{\sin \beta t\} = \frac{\beta}{s^2}\)</span></div>
+<div class="para" id="sec-laplace-transform-79">So we conclude that</div>
+<div class="para" id="sec-laplace-transform-80"><em class="alert">\mathcal{L}\{\sin \beta t\} = \frac{\beta}{s^2 + \beta^2}, \quad s \gt 0.</em></div>
+<div class="para" id="sec-laplace-transform-81">Example 8. Evaluate <span class="process-math">\(\mathcal{L}\{\cos \beta t\}.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-82">With a similar procedure, we see that</div>
+<div class="para" id="sec-laplace-transform-83"><span class="process-math">\(\mathcal{L}\{\cos \beta t\} = \frac{1}{s} - \frac{\beta^2}{s^2} \mathcal{L}\{\cos \beta t\} \Rightarrow \left( 1 + \frac{\beta^2}{s^2} \right) \mathcal{L}\{\cos \beta t\} = \frac{s}{s^2}\)</span></div>
+<div class="para" id="sec-laplace-transform-84">So we conclude that</div>
+<div class="para" id="sec-laplace-transform-85"><em class="alert">\mathcal{L}\{\cos \beta t\} = \frac{s}{s^2 + \beta^2}, \quad s \gt 0.</em></div>
+<div class="para" id="sec-laplace-transform-86">Theorem: For every real numbers <span class="process-math">\(\alpha, \beta,\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-87"><span class="process-math">\(\mathcal{L}\{af(t) + \beta g(t)\} = \alpha \mathcal{L}\{f(t)\} + \beta \mathcal{L}\{g(t)\}.\)</span></div>
+<div class="para" id="sec-laplace-transform-88">Proof: It follows from the linearity of integrals.</div>
+<div class="para" id="sec-laplace-transform-89"><span class="process-math">\(\mathcal{L}\{af(t) + \beta g(t)\} = \int_{0}^{\infty} (af(t) + \beta g(t)) e^{-st} dt\)</span></div>
+<div class="para" id="sec-laplace-transform-90"><span class="process-math">\(= \alpha \int_{0}^{\infty} f(t)e^{-st} dt + \beta \int_{0}^{\infty} g(t)e^{-st} dt\)</span></div>
+<div class="para" id="sec-laplace-transform-91"><span class="process-math">\(= \alpha \mathcal{L}\{f(t)\} + \beta \mathcal{L}\{g(t)\}.\)</span></div>
+<div class="para" id="sec-laplace-transform-92">Hyperbolic functions</div>
+<div class="para" id="sec-laplace-transform-93">Recall that from the Euler’s formula, the usual sine and cosine functions may also be expressed as</div>
+<div class="para" id="sec-laplace-transform-94"><span class="process-math">\(\sin t = \frac{e^{it} - e^{-it}}{2i}, \quad \cos x = \frac{e^{it} + e^{-it}}{2}.\)</span></div>
+<div class="para" id="sec-laplace-transform-95">The hyperbolic functions are defined similarly:</div>
+<div class="para" id="sec-laplace-transform-96"><span class="process-math">\(\sinh x = \frac{e^t - e^{-t}}{2}, \quad \cosh x = \frac{e^t + e^{-t}}{2}.\)</span></div>
+<div class="para" id="sec-laplace-transform-97">These functions are widely used in engineering practices.</div>
+<div class="para" id="sec-laplace-transform-98">The Laplace transform of hyperbolic functions can be obtained via linearity. For every <span class="process-math">\(k \gt 0:\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-99"><span class="process-math">\(\mathcal{L}\{\sinh kt\} = \mathcal{L}\left\{ \frac{e^{kt} - e^{-kt}}{2} \right\} = \frac{1}{2} \mathcal{L}\{e^{kt}\} - \frac{1}{2} \mathcal{L}\{e^{-kt}\}\)</span></div>
+<div class="para" id="sec-laplace-transform-100"><span class="process-math">\(= \frac{1}{2} \cdot \frac{1}{s - k} - \frac{1}{2} \cdot \frac{1}{s + k} = \frac{1}{2} \cdot \frac{s + k - (s - k)}{(s - k)(s + k)} = \frac{k}{s^2 - k^2}.\)</span></div>
+<div class="para" id="sec-laplace-transform-101"><span class="process-math">\(\mathcal{L}\{\cosh kt\} = \mathcal{L}\left\{ \frac{e^{kt} + e^{-kt}}{2} \right\} = \frac{1}{2} \mathcal{L}\{e^{kt}\} + \frac{1}{2} \mathcal{L}\{e^{-kt}\}\)</span></div>
+<div class="para" id="sec-laplace-transform-102"><span class="process-math">\(= \frac{1}{2} \cdot \frac{1}{s - k} + \frac{1}{2} \cdot \frac{1}{s + k} = \frac{1}{2} \cdot \frac{s + k + (s - k)}{(s - k)(s + k)} = \frac{s}{s^2 - k^2}.\)</span></div>
+<div class="para" id="sec-laplace-transform-103">Summary of basic formulas for Laplace transform</div>
+<ul class="disc" id="sec-laplace-transform-104">
+<li id="sec-laplace-transform-104-1"><div class="para" id="p-derived-sec-laplace-transform-104-1">Power functions</div></li>
+<li id="sec-laplace-transform-104-4"><div class="para" id="p-derived-sec-laplace-transform-104-4">Exponential functions: for every real number <span class="process-math">\(\alpha,\)</span>
+</div></li>
+<li id="sec-laplace-transform-104-6"><div class="para" id="p-derived-sec-laplace-transform-104-6">Trigonometric and hyperbolic functions: for every <span class="process-math">\(\beta, k \gt 0,\)</span>
+</div></li>
+</ul>
+<div class="para" id="sec-laplace-transform-105">When does <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> exist</div>
+<div class="para" id="sec-laplace-transform-106">Recall: A function is piecewise continuous on <span class="process-math">\([0, \infty),\)</span> if in any subinterval <span class="process-math">\([a, b],\)</span> the function is continuous everywhere except at finitely many numbers. The discontinuities are either removable or jump.</div>
+<div class="para" id="sec-laplace-transform-107">Definition: A function is said to be of exponential order, if there exist constants <span class="process-math">\(c, M \gt 0\)</span> and <span class="process-math">\(T \gt 0,\)</span> such that <span class="process-math">\(|f(t)| \leq Me^{ct}\)</span> for all <span class="process-math">\(t \gt T.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-108">In other words, <span class="process-math">\(|f(t)|\)</span> does not grow faster than a constant multiple of a simple exponential function.</div>
+<div class="para" id="sec-laplace-transform-109">Definition: A function is said to be of exponential order, if there exist constants <span class="process-math">\(c, M \gt 0\)</span> and <span class="process-math">\(T \gt 0,\)</span> such that <span class="process-math">\(|f(t)| \leq Me^{ct}\)</span> for all <span class="process-math">\(t \gt T.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-110">In other words, <span class="process-math">\(|f(t)|\)</span> does not grow faster than a constant multiple of a simple exponential function <span class="process-math">\(e^{ct}.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-111">Polynomial functions, simple exponential function <span class="process-math">\(e^{at},\)</span> cosine and sine functions are of exponential order.</div>
+<div class="para" id="sec-laplace-transform-112">The function <span class="process-math">\(f(t) = e^{t^2}\)</span> is not of exponential order, since for every possible <span class="process-math">\(c \gt 0,\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-113"><span class="process-math">\(\left| \frac{e^{t^2}}{e^{ct}} \right| = e^{t^2 - ct} = e^{t^2(t - c)} \to \infty\)</span></div>
+<div class="para" id="sec-laplace-transform-114">So <span class="process-math">\(e^{t^2}\)</span> grows faster than any multiple of <span class="process-math">\(e^{ct}.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-115">Theorem: If <span class="process-math">\(f\)</span> is piecewise continuous on <span class="process-math">\([0, \infty)\)</span> and of exponential order, then <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> exists for <span class="process-math">\(s \gt c.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-116">Proof: Since <span class="process-math">\(f\)</span> is of exponential order, there exists <span class="process-math">\(c \gt 0, M \gt 0, T \gt 0,\)</span> such that whenever <span class="process-math">\(t \gt T, |f(t)| \leq Me^{ct}.\)</span> Using the number <span class="process-math">\(T,\)</span> we rewrite</div>
+<div class="para" id="sec-laplace-transform-117"><span class="process-math">\(\mathcal{L}\{f(t)\} = \int_{0}^{T} e^{-st} f(t) dt + \int_{T}^{\infty} e^{-st} f(t) dt = I_1 + I_2\)</span></div>
+<div class="para" id="sec-laplace-transform-118">Since <span class="process-math">\(f\)</span> is piecewise continuous, <span class="process-math">\(I_1\)</span> exists.</div>
+<div class="para" id="sec-laplace-transform-119">For <span class="process-math">\(I_2,\)</span> we use the inequality <span class="process-math">\(|f(t)| \leq Me^{ct}\)</span> to show that</div>
+<div class="para" id="sec-laplace-transform-120"><span class="process-math">\(\int_{T}^{\infty} |e^{-st} f(t)| dt = \int_{T}^{\infty} e^{-st} |f(t)| dt \leq \int_{T}^{\infty} e^{-st} e^{ct} dt\)</span></div>
+<div class="para" id="sec-laplace-transform-121">Right-hand side is precisely <span class="process-math">\(\mathcal{L}\{e^{ct}\}\)</span> that exists when <span class="process-math">\(s \gt c.\)</span> In other words, <span class="process-math">\(I_2\)</span> converges absolutely when <span class="process-math">\(s \gt c.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-122">Remark: These two conditions are sufficient but not necessary. In other words, <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> exists does not mean that <span class="process-math">\(f(t)\)</span> should satisfy these two conditions.</div>
+<div class="para" id="sec-laplace-transform-123">Examples: The function <span class="process-math">\(t^{-\frac{1}{2}}\)</span> is not piecewise continuous. The function <span class="process-math">\(2te^{t^2} \cos e^{t^2}\)</span> is not of exponential order. But it is not difficult to see that both <span class="process-math">\(\mathcal{L}\{t^{-\frac{1}{2}}\}\)</span> and <span class="process-math">\(\mathcal{L}\{2te^{t^2} \cos e^{t^2}\}\)</span> exist.</div>
+<div class="para" id="sec-laplace-transform-124">Long term behavior of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-125">Theorem: If <span class="process-math">\(f\)</span> is piecewise continuous on <span class="process-math">\([0, \infty)\)</span> and of exponential order, then the function <span class="process-math">\(F(s) = \mathcal{L}\{f(t)\}\)</span> satisfies <span class="process-math">\(\lim_{s \to \infty} F(s) = 0.\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-126">Proof: Take <span class="process-math">\(c, M, T \gt 0\)</span> as in the previous proof. Since <span class="process-math">\(f\)</span> is piecewise continuous on <span class="process-math">\([0, T],\)</span> <span class="process-math">\(f(x)\)</span> is bounded. By adjusting <span class="process-math">\(M,\)</span> we may assume that <span class="process-math">\(|f(t)| \leq Me^{ct}\)</span> on <span class="process-math">\([0, \infty).\)</span>
+</div>
+<div class="para" id="sec-laplace-transform-127"><span class="process-math">\(0 \leq |F(s)| \leq \int_{0}^{\infty} e^{-st} |f(t)| dt \leq \int_{0}^{\infty} e^{-st} e^{ct} dt = \int_{0}^{\infty} e^{-(s - c)t} dt = \frac{1}{s - c} \to 0, \text{ as } s \to \infty.\)</span></div>
+<div class="para" id="sec-laplace-transform-128">The conclusion then follows from the squeeze theorem.</div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-Laplace.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-inverse-Laplace.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,493 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Higher-order Linear ODEs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="A Concise Introduction to Differential Equation at the University of Denver">
+<meta property="book:author" content="Fei Qi">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.7.0';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.5eb70769dc5e56d7.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Math-2070-Notes.html"><span class="title">A Concise Introduction to Differential Equation at the University of Denver</span></a></h1>
+<p class="byline">Fei Qi</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-undetermined-coeff-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-higher-order.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="ch-Laplace.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="First-order-ODE.html" class="internal"><span class="codenumber">1</span> <span class="title">First-order Differential Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basic-concepts.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Basic Concepts</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-why-study-DEs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Why study differential equations?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Newtons-law-of-cooling" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Newton’s law of cooling</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Water-pollution-model" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Water pollution model</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Initial-value-problem" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Initial value problem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="geometric-interpretation.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Geometric interpretation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-classification.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Classification of Differential Equations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-1st-order-linear.html" class="internal"><span class="codenumber">1.5</span> <span class="title">First-order Linear ODEs</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-separable-equations.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Separable Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-separable-equations.html#subsec-separable-equations-1" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Form of a separable ODE</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-separable-equations.html#subsec-implicit-vs-explicit" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Implicit solution vs explicit solution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-separable-equations.html#subsec-separable-equations-3" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Singular solutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-existence-uniqueness.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Existence and Uniqueness of Solutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-1" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Pathological IVP</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-2" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Existence and Uniqueness Theorem: Linear version.</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-3" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Existence and Uniqueness Theorem: Nonlinear case</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-autonomous.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Autonomous Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-autonomous.html#subsec-equilibrium-solution" class="internal"><span class="codenumber">1.8.1</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-autonomous.html#subsec-stability-of-equilibrium-solution" class="internal"><span class="codenumber">1.8.2</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-autonomous.html#subsec-qualitative-method" class="internal"><span class="codenumber">1.8.3</span> <span class="title"></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-numerical.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Numerical Methods</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical.html#subsec-euler-method" class="internal"><span class="codenumber">1.9.1</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical.html#subsec-error-analysis" class="internal"><span class="codenumber">1.9.2</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical.html#subsec-other-methods" class="internal"><span class="codenumber">1.9.3</span> <span class="title"></span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-higher-order.html" class="internal"><span class="codenumber">2</span> <span class="title">Second-Order and Higher-Order Differential Equations</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-gen-theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Second-order Linear ODEs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-real.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Real Roots</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-complex-numbers.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Complex Numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-multiplication" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-complex-geom-int" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Geometric Interpretation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-Euler-formula" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Euler Formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-multiplication-geom-int" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Geometric Interpretation of Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-powers-roots" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Powers and Roots</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-complex.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Complex Roots</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-repeated.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Repeated Real Roots</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-non-homogeneous.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Second-order Linear Non-Homogeneous ODEs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-undetermined-coeff-2nd-order.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Method of Undetermined Coefficients - First Ansatz</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-undetermined-coeff-2.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Method of Undetermined Coefficients - Final Ansatz</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-higher-order-linear-ODEs.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Higher-order Linear ODEs</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Laplace-periodic.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Laplace Transform of Periodic Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-derivative-Laplace-convolutions.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Derivative of Laplace Transform and Convolution</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Dirac-delta.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Dirac Delta Function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-linear-systems.html" class="internal"><span class="codenumber">4</span> <span class="title">Linear Systems of ODEs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-algebra.html" class="internal"><span class="codenumber">4.1</span> <span class="title">A crash course of linear algebra</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-system-linear-ODEs.html" class="internal"><span class="codenumber">4.2</span> <span class="title">System of First-Order Linear ODEs</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-higher-order-linear-ODEs"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.9</span><span class="space"> </span><span class="title">Higher-order Linear ODEs</span>
+</h2>
+<div class="para" id="sec-higher-order-linear-ODEs-2">Higher order linear ODE – General theory</div>
+<ol class="decimal" id="sec-higher-order-linear-ODEs-3"><li id="sec-higher-order-linear-ODEs-3-1"><div class="para" id="p-derived-sec-higher-order-linear-ODEs-3-1">Homogeneous case: For the ODE</div></li></ol>
+<div class="para" id="sec-higher-order-linear-ODEs-4">2. Nonhomogeneous case: For the ODE</div>
+<div class="para" id="sec-higher-order-linear-ODEs-5"><span class="process-math">\(y^{(n)} + p_1(t)y^{(n-1)} + \cdots + p_{n-1}(t)y' + p_n(t)y = g(t)\)</span></div>
+<ul class="disc" id="sec-higher-order-linear-ODEs-6">
+<li id="sec-higher-order-linear-ODEs-6-1"><div class="para" id="p-derived-sec-higher-order-linear-ODEs-6-1">
+<span class="process-math">\(y = y_c + Y,\)</span><ul class="circle" id="sec-higher-order-linear-ODEs-6-1-2">
+<li id="sec-higher-order-linear-ODEs-6-1-2-1"><div class="para" id="p-derived-sec-higher-order-linear-ODEs-6-1-2-1">
+<span class="process-math">\(y_c,\)</span> the complementary solution, is the general solution of the homogeneous ODE.</div></li>
+<li id="sec-higher-order-linear-ODEs-6-1-2-2"><div class="para" id="p-derived-sec-higher-order-linear-ODEs-6-1-2-2">
+<span class="process-math">\(Y,\)</span> a particular solution, is a solution of the nonhomogeneous ODE.</div></li>
+</ul>
+</div></li>
+<li id="sec-higher-order-linear-ODEs-6-2"><div class="para" id="p-derived-sec-higher-order-linear-ODEs-6-2"><ul class="circle" id="sec-higher-order-linear-ODEs-6-2-1">
+<li id="sec-higher-order-linear-ODEs-6-2-1-1"><div class="para" id="p-derived-sec-higher-order-linear-ODEs-6-2-1-1">If <span class="process-math">\(Y_1\)</span> is a solution of <span class="process-math">\(y^{(n)} + \cdots + p_n(t)y = g_1(t),\)</span>
+</div></li>
+<li id="sec-higher-order-linear-ODEs-6-2-1-2"><div class="para" id="p-derived-sec-higher-order-linear-ODEs-6-2-1-2">
+<span class="process-math">\(Y_2\)</span> is a solution of <span class="process-math">\(y^{(n)} + \cdots + p_n(t)y = g_2(t),\)</span>
+</div></li>
+<li id="sec-higher-order-linear-ODEs-6-2-1-3"><div class="para" id="p-derived-sec-higher-order-linear-ODEs-6-2-1-3">then <span class="process-math">\(Y_1 + Y_2\)</span> is a solution of <span class="process-math">\(y^{(n)} + \cdots + p_n(t)y = g_1(t) + g_2(t).\)</span>
+</div></li>
+</ul></div></li>
+</ul>
+<div class="para" id="sec-higher-order-linear-ODEs-7">Higher order linear ODE with Const. Coeff.</div>
+<ol class="decimal" id="sec-higher-order-linear-ODEs-8"><li id="sec-higher-order-linear-ODEs-8-1"><div class="para" id="p-derived-sec-higher-order-linear-ODEs-8-1">Homogeneous case: For the ODE,</div></li></ol>
+<div class="para" id="sec-higher-order-linear-ODEs-9">Theorem: Every polynomial with real coefficients can be factored as a product of linear and quadratic polynomials.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-10">Corollary: If <span class="process-math">\(\alpha + i\beta\)</span> is a root that is repeated <span class="process-math">\(m\)</span> times, then its conjugate <span class="process-math">\(\alpha - i\beta\)</span> is also a root that is repeated <span class="process-math">\(m\)</span> times.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-11">Let <span class="process-math">\(r\)</span> be a solution of the auxiliary equation.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-12">Case 1: If <span class="process-math">\(r\)</span> is a real single root, then it contributes one function <span class="process-math">\(e^{rt}\)</span> to the fundamental set of solutions.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-13">Case 2: If <span class="process-math">\(r\)</span> is a real root repeated <span class="process-math">\(m\)</span> times, then it contributes <span class="process-math">\(m\)</span> functions</div>
+<div class="para" id="sec-higher-order-linear-ODEs-14"><span class="process-math">\(e^{rt}, \, te^{rt}, \ldots, \, t^{m-1}e^{rt},\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-15">to the fundamental set of solutions.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-16">Case 3: If <span class="process-math">\(r = \alpha + i\beta\)</span> is a complex single root, then together with its conjugate <span class="process-math">\(\bar{r} = \alpha - i\beta,\)</span> they contribute two functions</div>
+<div class="para" id="sec-higher-order-linear-ODEs-17">
+<span class="process-math">\(e^{\alpha t} \cos \beta t, \, e^{\alpha t} \sin \beta t\)</span> to the fundamental set of solutions.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-18">Case 4: If <span class="process-math">\(r = \alpha + i\beta\)</span> is a complex root repeated <span class="process-math">\(m\)</span> times, then together with <span class="process-math">\(\bar{r} = \alpha - i\beta,\)</span> they contribute 2m functions</div>
+<div class="para" id="sec-higher-order-linear-ODEs-19"><span class="process-math">\(e^{\alpha t} \cos \beta t, \, e^{\alpha t} \sin \beta t, \, te^{\alpha t} \cos \beta t, \, te^{\alpha t} \sin \beta t, \, \ldots, \, t^{m-1}e^{\alpha t} \cos \beta t, \, t^{m-1}e^{\alpha t} \sin \beta t,\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-20">to the fundamental set of solutions.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-21">Example 1: <span class="process-math">\(y''' - y' = 0.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-22">Auxiliary equation: <span class="process-math">\(r^3 - r = 0 \implies r(r^2 - 1) = 0 \implies r(r - 1)(r + 1) = 0 \implies r_1 = -1, r_2 = 0, r_3 = 1.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-23">General solution: <span class="process-math">\(y = C_1 e^{-t} + C_2 + C_3 e^t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-24">Example 2: <span class="process-math">\(y''' - y'' - y' + y = 0.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-25">Auxiliary equation: <span class="process-math">\(r^3 - r^2 - r + 1 = 0\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-26"><span class="process-math">\(LHS = r^2(r - 1) - (r - 1) = (r - 1)(r^2 - 1) = (r - 1)(r - 1)(r + 1) \implies r_1 = -1, r_2 = r_3 = 1.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-27">General solution: <span class="process-math">\(y = C_1 e^{-t} + C_2 e^t + C_3 t e^t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-28">Example 3: <span class="process-math">\(y''' - 3y'' + 3y - y = 0.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-29">Auxiliary equation: <span class="process-math">\(r^3 - 3r^2 + 3r - 1 = 0\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-30"><span class="process-math">\(LHS = r^3 - 1 - 3r(r - 1) = (r - 1)(r^2 + r + 1) - 3r(r - 1)\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-31"><span class="process-math">\(= (r - 1)(r^2 + r + 1 - 3) = (r - 1)(r^2 - 2r + 1)\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-32"><span class="process-math">\(= (r - 1)^3 = 0 \implies r_1 = r_2 = r_3 = 1.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-33">General solution: <span class="process-math">\(y = C_1 e^t + C_2 te^t + C_3 t^2 e^t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-34">Example 4: <span class="process-math">\(y''' - y = 0.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-35">Auxiliary equation: <span class="process-math">\(r^3 - 1 = 0 \implies (r - 1)(r^2 + r + 1) = 0\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-36"><span class="process-math">\(\implies r_1 = 1, r_2 = -\dfrac{1}{2} + \dfrac{\sqrt{3}}{2} i, r_3 = -\dfrac{1}{2} - \dfrac{\sqrt{3}}{2} i.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-37">General solution:</div>
+<div class="para" id="sec-higher-order-linear-ODEs-38"><span class="process-math">\(y = C_1 e^t + C_2 e^{-\frac{t}{2}} \cos\left(\dfrac{\sqrt{3}}{2} t\right) + C_3 e^{-\frac{t}{2}} \sin\left(\dfrac{\sqrt{3}}{2} t\right).\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-39">Example 5: <span class="process-math">\(y^{(4)} + 8y'' + 16y = 0.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-40">Auxiliary equation: <span class="process-math">\(r^4 + 8r^2 + 16 = 0\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-41"><span class="process-math">\(\implies (r^2 + 4)^2 = 0 \implies r_1 = r_2 = 2i, r_3 = r_4 = -2i.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-42">General solution:</div>
+<div class="para" id="sec-higher-order-linear-ODEs-43"><span class="process-math">\(y = C_1 \cos 2t + C_2 \sin 2t + C_3 t \cos 2t + C_4 t \sin 2t.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-44">Example 6: <span class="process-math">\(y^{(4)} + 4y = 0.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-45">Auxiliary equation: <span class="process-math">\(r^4 + 4 = 0.\)</span> So <span class="process-math">\(r = 4^{1/4} \sqrt{-1}.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-46">Recall that</div>
+<div class="para" id="sec-higher-order-linear-ODEs-47"><span class="process-math">\(4^{1/4} = (4e^{i(\pi + 2k\pi)})^{1/4} = 2 \cdot 2^{1/4} e^{i(\frac{\pi}{4} + \frac{k\pi}{2})}.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-48">Thus <span class="process-math">\(r_1 = \sqrt{2} e^{i \frac{\pi}{4}} = \sqrt{2} \left( \cos \frac{\pi}{4} + i \sin \frac{\pi}{4} \right) = 1 + i,\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-49"><span class="process-math">\(r_2 = \sqrt{2} e^{i \frac{3\pi}{4}} = \sqrt{2} \left( \cos \frac{3\pi}{4} + i \sin \frac{3\pi}{4} \right) = -1 + i.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-50">Example 6: <span class="process-math">\(y^{(4)} + 4y = 0.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-51">Auxiliary equation: <span class="process-math">\(r^4 + 4 = 0.\)</span> So <span class="process-math">\(r = 4^{1/4} \sqrt{-1}.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-52">Recall that</div>
+<div class="para" id="sec-higher-order-linear-ODEs-53"><span class="process-math">\(4^{1/4} = (4e^{i(\pi + 2k\pi)})^{1/4} = 2 \cdot 2^{1/4} e^{i(\frac{\pi}{4} + \frac{k\pi}{2})}.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-54">Thus</div>
+<div class="para" id="sec-higher-order-linear-ODEs-55"><span class="process-math">\(r_1 = \sqrt{2} e^{i \frac{\pi}{4}} = \sqrt{2} \left( \cos \frac{\pi}{4} + i \sin \frac{\pi}{4} \right) = 1 + i,\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-56"><span class="process-math">\(r_2 = \sqrt{2} e^{i \frac{3\pi}{4}} = \sqrt{2} \left( \cos \frac{3\pi}{4} + i \sin \frac{3\pi}{4} \right) = -1 + i,\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-57"><span class="process-math">\(r_3 = \sqrt{2} e^{i \frac{5\pi}{4}} = \sqrt{2} \left( \cos \frac{5\pi}{4} + i \sin \frac{5\pi}{4} \right) = -1 - i,\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-58"><span class="process-math">\(r_4 = \sqrt{2} e^{i \frac{7\pi}{4}} = \sqrt{2} \left( \cos \frac{7\pi}{4} + i \sin \frac{7\pi}{4} \right) = 1 - i.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-59">General solution:</div>
+<div class="para" id="sec-higher-order-linear-ODEs-60"><span class="process-math">\(y = C_1 e^t \cos t + C_2 e^t \sin t + C_3 e^{-t} \cos t + C_4 e^{-t} \sin t.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-61">Higher order linear ODE with Const. Coeff.</div>
+<ol class="decimal" id="sec-higher-order-linear-ODEs-62"><li id="sec-higher-order-linear-ODEs-62-1"><div class="para" id="p-derived-sec-higher-order-linear-ODEs-62-1">Nonhomogeneous case: For the ODE</div></li></ol>
+<div class="para" id="sec-higher-order-linear-ODEs-63">Step 2: We find a particular solution <span class="process-math">\(Y_j\)</span> for each</div>
+<div class="para" id="sec-higher-order-linear-ODEs-64"><span class="process-math">\(g_j(t) = e^{\alpha_j t} \cos \beta_j t \, (\text{polynomial}) + e^{\alpha_j t} \sin \beta_j t \, (\text{polynomial}).\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-65">The first ansatz should be set as</div>
+<div class="para" id="sec-higher-order-linear-ODEs-66"><span class="process-math">\(Y_j = e^{\alpha_j t} \cos \beta_j t (A_n t^n + \cdots + A_0) + e^{\alpha_j t} \sin \beta_j t (B_n t^n + \cdots + B_0).\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-67">where <span class="process-math">\(n\)</span> is the largest degree appearing in the polynomial.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-68">If the exponential coefficient <span class="process-math">\(\alpha_j + i\beta_j\)</span> does not appear as a root of the auxiliary equation, the first ansatz succeeds.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-69">If <span class="process-math">\(\alpha + i\beta\)</span> is a root repeated <span class="process-math">\(m\)</span> times, the final ansatz should be modified by <span class="process-math">\(t^m,\)</span> i.e.,</div>
+<div class="para" id="sec-higher-order-linear-ODEs-70"><span class="process-math">\(Y = t^m \, (\text{First Ansatz}).\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-71">Step 3: Once we find a particular solution for each</div>
+<div class="para" id="sec-higher-order-linear-ODEs-72"><span class="process-math">\(g_j(t) = e^{\alpha_j t} \cos \beta_j t \, (\text{polynomial}) + e^{\alpha_j t} \sin \beta_j t \, (\text{polynomial}),\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-73">the principle of superposition implies that</div>
+<div class="para" id="sec-higher-order-linear-ODEs-74"><span class="process-math">\(Y = Y_1 + Y_2 + \cdots + Y_m\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-75">is a particular solution of the nonhomogeneous ODE.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-76"><span class="process-math">\(a_n y^{(n)} + a_{n-1} y^{(n-1)} + \cdots + a_1 y' + a_0 y = g(t)\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-77">for <span class="process-math">\(g(t) = g_1(t) + g_2(t) + \cdots + g_m(t).\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-78">If you wish to ask the computer to carry out the calculation, make sure you plug in the final ansatz for each <span class="process-math">\(Y_j\)</span> in <span class="process-math">\(Y.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-79">Example 7: Determine the final ansatz for the following ODES.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-80">(a) <span class="process-math">\(y''' - y'' - y' + y = 2e^{-t}.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-81">Aux. eqn: <span class="process-math">\(r^3 - r^2 - r + 1 = (r - 1)^2(r + 1) = 0 \implies r = -1, 1, 1.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-82">The first ansatz <span class="process-math">\(Y = Ae^{-t}.\)</span> Exp. Coeff. = <span class="process-math">\(-1,\)</span> single root.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-83">The final ansatz <span class="process-math">\(Y = Ate^{-t}.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-84">(b) <span class="process-math">\(y''' - y'' - y' + y = 2e^t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-85">Solutions of the Aux. eqn: <span class="process-math">\(r = -1, 1, 1.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-86">The first ansatz <span class="process-math">\(Y = Ae^t.\)</span> Exp. Coeff. = <span class="process-math">\(1,\)</span> double root.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-87">The final ansatz <span class="process-math">\(Y = At^2 e^t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-88">(c) <span class="process-math">\(y^{(4)} - y = \cos t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-89">Aux. eqn: <span class="process-math">\(r^4 - 1 = (r - 1)(r + 1)(r^2 + 1) = 0 \implies r = -1, 1, i, -i.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-90">First ansatz <span class="process-math">\(Y = A \cos t + B \sin t.\)</span> Exp. Coeff. = <span class="process-math">\(i,\)</span> single root.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-91">Final ansatz <span class="process-math">\(Y = At \cos t + Bt \sin t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-92">(d) <span class="process-math">\(y^{(4)} + 2y'' + y = t \sin t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-93">Aux. eqn: <span class="process-math">\(r^4 + 2r^2 + 1 = (r^2 + 1)^2 = 0 \implies r = i, -i, -i, i.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-94">First ansatz <span class="process-math">\(Y = \cos t (At + B) + \sin t (Ct + D).\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-95">Exp. Coeff. = <span class="process-math">\(i\)</span> that is a double root.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-96">Final ansatz <span class="process-math">\(Y = \cos t (At^3 + Bt^2) + \sin t (Ct^3 + Dt^2).\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-97">(e) <span class="process-math">\(y^{(4)} + 2y''' + 2y'' = 16.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-98">Aux. Eqn. <span class="process-math">\(r^4 + 2r^3 + 2r^2 = 0 \implies r^2(r^2 + 2r + 2) = 0\)</span> <span class="process-math">\(\implies r_1 = r_2 = 0, r_3 = -1 + i, r_4 = -1 - i.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-99">First ansatz <span class="process-math">\(Y = A.\)</span> Exp. Coeff. = <em class="alert">0</em>, double root.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-100">Final ansatz <span class="process-math">\(Y = At^2.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-101">(f) <span class="process-math">\(y^{(4)} + 2y''' + 2y'' = e^{-t} \cos t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-102">Aux. eqn. <span class="process-math">\(r^4 + 2r^3 + 2r^2 = r^2(r^2 + 2r + 2) = 0\)</span> <span class="process-math">\(\implies r = 0, -1 + i, -1 - i.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-103">First ansatz <span class="process-math">\(Y = Ae^{-t} \cos t + Be^{-t} \sin t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-104">Exp. Coeff. = <em class="alert">-1 + i</em> that is a single root.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-105">Final ansatz <span class="process-math">\(Y = Ate^{-t} \cos t + Bte^{-t} \sin t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-106">Example 8: Find the general solution of</div>
+<div class="para" id="sec-higher-order-linear-ODEs-107"><span class="process-math">\(y''' - y'' - y' + y = 8e^t + 4e^{-t} + 25 \cos 2t + t^2.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-108">Aux. Eqn. <span class="process-math">\(r^3 - r^2 - r + 1 = r^2(r - 1) - (r - 1) = (r - 1)(r^2 - 1) = (r - 1)^2(r + 1) = 0\)</span> <span class="process-math">\(\implies r = -1, 1, 1.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-109">Comp. Soln. <span class="process-math">\(y_c = C_1 e^{-t} + C_2 e^t + C_3 t e^t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-110">Let <span class="process-math">\(Y_1\)</span> be a solution of <span class="process-math">\(y''' - y'' - y' + y = 8e^t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-111">First ansatz <span class="process-math">\(Y_1 = Ae^t.\)</span> Exp. Coeff. = <em class="alert">1</em> which is a double root.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-112">Final ansatz <span class="process-math">\(Y_1 = At^2 e^t.\)</span> Then <span class="process-math">\(Y'_1 = 2Ate^t + At^2 e^t,\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-113"><span class="process-math">\(Y''_1 = 2Ae^t + 2Ate^t + 2Ate^t = 2Ae^t + 4Ate^t + At^2 e^t,\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-114"><span class="process-math">\(Y'''_1 = 2Ae^t + 4A(e^t + te^t) + 2Ate^t = 6Ae^t + 6Ate^t.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-115"><span class="process-math">\(Y'''_1 - Y''_1 - Y'_1 + Y_1 = 6Ae^t + 6Ate^t + At^2 e^t - (2Ae^t + 4Ate^t + At^2 e^t)\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-116"><span class="process-math">\(- (2Ate^t + At^2 e^t) + At^2 e^t = 4Ae^t = 8e^t \implies A = 2.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-117">So <span class="process-math">\(Y_1 = 2t^2 e^t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-118">Let <span class="process-math">\(Y_2\)</span> be a solution of <span class="process-math">\(y''' - y'' - y' + y = 4e^{-t}.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-119">First ansatz <span class="process-math">\(Y_2 = Be^{-t}.\)</span> Exp. Coeff. = <em class="alert">-1</em> which is a single root.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-120">Final ansatz <span class="process-math">\(Y_2 = Bte^{-t}.\)</span> Then <span class="process-math">\(Y'_2 = Be^{-t} - Bte^{-t},\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-121"><span class="process-math">\(Y''_2 = -Be^{-t} - (Be^{-t} - Bte^{-t}) = -2Be^{-t} + Bte^{-t},\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-122"><span class="process-math">\(Y'''_2 = 2Be^{-t} + Be^{-t} - Bte^{-t} = 3Be^{-t} - Bte^{-t}.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-123"><span class="process-math">\(Y'''_2 - Y''_2 - Y'_2 + Y_2 = 3Be^{-t} - (-2Be^{-t} + Bte^{-t}) - (-Be^{-t} - Bte^{-t})\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-124"><span class="process-math">\(= - (Be^{-t} - Bte^{-t}) + Bte^{-t} = 4Be^{-t} = 4e^{-t} \implies B = 1.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-125">So <span class="process-math">\(Y_2 = te^{-t}.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-126">Let <span class="process-math">\(Y_2\)</span> be a solution of <span class="process-math">\(y''' - y'' - y' + y = 4e^{-t}.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-127">First ansatz <span class="process-math">\(Y_2 = Be^{-t}.\)</span> Exp. Coeff. = <em class="alert">-1</em> which is a single root.</div>
+<div class="para" id="sec-higher-order-linear-ODEs-128">Final ansatz <span class="process-math">\(Y_2 = Bte^{-t}.\)</span> Then <span class="process-math">\(Y'_2 = Be^{-t} - Bte^{-t},\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-129"><span class="process-math">\(Y''_2 = -Be^{-t} - (Be^{-t} - Bte^{-t}) = -2Be^{-t} + Bte^{-t},\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-130"><span class="process-math">\(Y'''_2 = 2Be^{-t} + Be^{-t} - Bte^{-t} = 3Be^{-t} - Bte^{-t}.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-131"><span class="process-math">\(Y'''_2 - Y''_2 - Y'_2 + Y_2 = 3Be^{-t} - (-2Be^{-t} + Bte^{-t}) - (-Be^{-t} - Bte^{-t})\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-132"><span class="process-math">\(= - (Be^{-t} - Bte^{-t}) + Bte^{-t} = 4Be^{-t} = 4e^{-t} \implies B = 1.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-133">So <span class="process-math">\(Y_2 = te^{-t}.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-134">Let <span class="process-math">\(Y_3\)</span> be a solution of <span class="process-math">\(y''' - y'' - y' + y = 25 \cos 2t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-135">First ansatz <span class="process-math">\(Y_3 = C \cos 2t + D \sin 2t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-136">Exp. Coeff. = <em class="alert">2i</em>, not a root. <span class="process-math">\(Y'_3 = -2C \sin 2t + 2D \cos 2t,\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-137">
+<span class="process-math">\(Y''_3 = -4C \cos 2t - 4D \sin 2t,\)</span> <span class="process-math">\(Y'''_3 = 8C \sin 2t - 8D \cos 2t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-138"><span class="process-math">\(Y'''_3 - Y''_3 - Y'_3 + Y_3 = 8C \sin 2t - 8D \cos 2t - (-4C \cos 2t - 4D \sin 2t)\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-139"><span class="process-math">\(- (-2C \sin 2t + 2D \cos 2t) + C \cos 2t + D \sin 2t\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-140"><span class="process-math">\(= \sin 2t (10C + 5D) + \cos 2t (-10D + 5C) = 25 \cos 2t\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-141"><span class="process-math">\(\implies 10C + 5D = 0, -10D + 5C = 25 \implies C = 1, D = -2.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-142">So <span class="process-math">\(Y_3 = \cos 2t - 2 \sin 2t.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-143">Let <span class="process-math">\(Y_4\)</span> be a solution of <span class="process-math">\(y''' - y'' - y' + y = t^2.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-144">First ansatz <span class="process-math">\(Y_4 = Et^2 + Ft + G.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-145">Exp. Coeff. = <em class="alert">0</em>, not a root. <span class="process-math">\(Y'_4 = 2Et + F, Y''_4 = 2E, Y'''_4 = 0.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-146"><span class="process-math">\(Y'''_4 - Y''_4 - Y'_4 + Y_4 = 0 - 2E - (2Et + F) + Et^2 + Ft + G\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-147"><span class="process-math">\(= Et^2 + (F - 2E)t + G - 2E - F\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-148"><span class="process-math">\(\implies E = 1, F - 2E = 0, G - 2E - F = 0\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-149"><span class="process-math">\(\implies E = 1, F = 2, G = 4.\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-150">So <span class="process-math">\(Y_4 = t^2 + 2t + 4.\)</span>
+</div>
+<div class="para" id="sec-higher-order-linear-ODEs-151">By the principle of superposition,</div>
+<div class="para" id="sec-higher-order-linear-ODEs-152"><span class="process-math">\(Y = Y_1 + Y_2 + Y_3 + Y_4\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-153"><span class="process-math">\(= 2t^2 e^t + te^{-t} + \cos 2t - 2 \sin 2t + t^2 + 2t + 4\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-154">is a particular solution. The general solution is then</div>
+<div class="para" id="sec-higher-order-linear-ODEs-155"><span class="process-math">\(y = y_c + Y\)</span></div>
+<div class="para" id="sec-higher-order-linear-ODEs-156"><span class="process-math">\(= C_1 e^{-t} + C_2 e^t + C_3 t e^t + 2t^2 e^t + te^{-t} + \cos 2t - 2 \sin 2t + t^2 + 2t + 4.\)</span></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-undetermined-coeff-2.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-Laplace.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

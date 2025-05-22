@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>A crash course of linear algebra</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="A Concise Introduction to Differential Equation at the University of Denver">
+<meta property="book:author" content="Fei Qi">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.7.0';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.5eb70769dc5e56d7.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Math-2070-Notes.html"><span class="title">A Concise Introduction to Differential Equation at the University of Denver</span></a></h1>
+<p class="byline">Fei Qi</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="ch-linear-systems.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-linear-systems.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-system-linear-ODEs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="First-order-ODE.html" class="internal"><span class="codenumber">1</span> <span class="title">First-order Differential Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basic-concepts.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Basic Concepts</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-why-study-DEs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Why study differential equations?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Newtons-law-of-cooling" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Newton’s law of cooling</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Water-pollution-model" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Water pollution model</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Initial-value-problem" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Initial value problem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="geometric-interpretation.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Geometric interpretation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-classification.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Classification of Differential Equations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-1st-order-linear.html" class="internal"><span class="codenumber">1.5</span> <span class="title">First-order Linear ODEs</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-separable-equations.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Separable Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-separable-equations.html#subsec-separable-equations-1" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Form of a separable ODE</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-separable-equations.html#subsec-implicit-vs-explicit" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Implicit solution vs explicit solution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-separable-equations.html#subsec-separable-equations-3" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Singular solutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-existence-uniqueness.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Existence and Uniqueness of Solutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-1" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Pathological IVP</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-2" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Existence and Uniqueness Theorem: Linear version.</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-3" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Existence and Uniqueness Theorem: Nonlinear case</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-autonomous.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Autonomous Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-autonomous.html#subsec-equilibrium-solution" class="internal"><span class="codenumber">1.8.1</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-autonomous.html#subsec-stability-of-equilibrium-solution" class="internal"><span class="codenumber">1.8.2</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-autonomous.html#subsec-qualitative-method" class="internal"><span class="codenumber">1.8.3</span> <span class="title"></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-numerical.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Numerical Methods</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical.html#subsec-euler-method" class="internal"><span class="codenumber">1.9.1</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical.html#subsec-error-analysis" class="internal"><span class="codenumber">1.9.2</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical.html#subsec-other-methods" class="internal"><span class="codenumber">1.9.3</span> <span class="title"></span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-higher-order.html" class="internal"><span class="codenumber">2</span> <span class="title">Second-Order and Higher-Order Differential Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-gen-theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Second-order Linear ODEs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-real.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Real Roots</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-complex-numbers.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Complex Numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-multiplication" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-complex-geom-int" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Geometric Interpretation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-Euler-formula" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Euler Formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-multiplication-geom-int" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Geometric Interpretation of Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-powers-roots" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Powers and Roots</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-complex.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Complex Roots</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-repeated.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Repeated Real Roots</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-non-homogeneous.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Second-order Linear Non-Homogeneous ODEs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-undetermined-coeff-2nd-order.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Method of Undetermined Coefficients - First Ansatz</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-undetermined-coeff-2.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Method of Undetermined Coefficients - Final Ansatz</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-higher-order-linear-ODEs.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Higher-order Linear ODEs</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Laplace-periodic.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Laplace Transform of Periodic Functions</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-derivative-Laplace-convolutions.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Derivative of Laplace Transform and Convolution</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Dirac-delta.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Dirac Delta Function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-linear-systems.html" class="internal"><span class="codenumber">4</span> <span class="title">Linear Systems of ODEs</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-linear-algebra.html" class="internal"><span class="codenumber">4.1</span> <span class="title">A crash course of linear algebra</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-system-linear-ODEs.html" class="internal"><span class="codenumber">4.2</span> <span class="title">System of First-Order Linear ODEs</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-linear-algebra"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">4.1</span><span class="space"> </span><span class="title">A crash course of linear algebra</span>
+</h2>
+<div class="para" id="sec-linear-algebra-2">A Crash Course of Linear Algebra</div>
+<div class="para" id="sec-linear-algebra-3">For Students in Differential Equations in Science and Engineering</div>
+<div class="para" id="sec-linear-algebra-4">1. Matrix Multiplication</div>
+<div class="para" id="sec-linear-algebra-5">(1) Multiplying row vectors and column vectors</div>
+<div class="para" id="sec-linear-algebra-6"><span class="process-math">\(\left[ x_1 \quad x_2 \quad x_3 \right] \left[ \begin{array}{c} y_1 \\ y_2 \\ y_3 \end{array} \right] = x_1y_1 + x_2y_2 + x_3y_3\)</span></div>
+<div class="para" id="sec-linear-algebra-7">It’s just like the dot product of two vectors.</div>
+<div class="para" id="sec-linear-algebra-8">(2) Multiplying matrices and column vectors</div>
+<div class="para" id="sec-linear-algebra-9"><span class="process-math">\(\left[ \begin{array}{ccc} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{array} \right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} a_{11}x_1 + a_{12}x_2 + a_{13}x_3 \\ a_{21}x_1 + a_{22}x_2 + a_{23}x_3 \\ a_{31}x_1 + a_{32}x_2 + a_{33}x_3 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-10">Regard the matrix as three row vectors, perform three row-column multiplications and put the results respectively in the corresponding rows.</div>
+<div class="para" id="sec-linear-algebra-11">(3) Multiplying matrices and matrices</div>
+<div class="para" id="sec-linear-algebra-12"><span class="process-math">\(\left[ \begin{array}{ccc} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{array} \right] \left[ \begin{array}{ccc} b_{11} \amp b_{12} \amp b_{13} \\ b_{21} \amp b_{22} \amp b_{23} \\ b_{31} \amp b_{32} \amp b_{33} \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-13"><span class="process-math">\(= \left[ \begin{array}{ccc} a_{11}b_{11} + a_{12}b_{21} + a_{13}b_{31} \amp a_{11}b_{12} + a_{12}b_{22} + a_{13}b_{32} \amp a_{11}b_{13} + a_{12}b_{23} + a_{13}b_{33} \\ a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31} \amp a_{21}b_{12} + a_{22}b_{22} + a_{23}b_{32} \amp a_{21}b_{13} + a_{22}b_{23} + a_{23}b_{33} \\ a_{31}b_{11} + a_{32}b_{21} + a_{33}b_{31} \amp a_{31}b_{12} + a_{32}b_{22} + a_{33}b_{32} \amp a_{31}b_{13} + a_{32}b_{23} + a_{33}b_{33} \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-14">Regard the matrix on the right as three column vectors, perform three matrix-column multiplications and put the results respectively in the corresponding columns.</div>
+<div class="para" id="sec-linear-algebra-15">2. Using Matrices to Solve System of Linear Equations</div>
+<div class="para" id="sec-linear-algebra-16">The system of linear equations</div>
+<div class="para" id="sec-linear-algebra-17"><span class="process-math">\(\begin{cases} 
+a_{11}x_1 + a_{12}x_2 + a_{13}x_3 = b_1 \\
+a_{21}x_1 + a_{22}x_2 + a_{23}x_3 = b_2 \\
+a_{31}x_1 + a_{32}x_2 + a_{33}x_3 = b_3
+\end{cases}\)</span></div>
+<div class="para" id="sec-linear-algebra-18">can be regarded as an equation of column vectors</div>
+<div class="para" id="sec-linear-algebra-19"><span class="process-math">\(\left[ \begin{array}{ccc} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{array} \right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} b_1 \\ b_2 \\ b_3 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-20">To solve it, we form the extended matrix</div>
+<div class="para" id="sec-linear-algebra-21"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+a_{11} \amp a_{12} \amp a_{13} \amp b_1 \\ 
+a_{21} \amp a_{22} \amp a_{23} \amp b_2 \\ 
+a_{31} \amp a_{32} \amp a_{33} \amp b_3 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-22">Perform row transformations to punch holes in the lower triangular part</div>
+<div class="para" id="sec-linear-algebra-23"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+* \amp * \amp * \amp * \\ 
+0 \amp * \amp * \amp * \\ 
+0 \amp 0 \amp * \amp * 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-24">Several cases might occur:</div>
+<div class="para" id="sec-linear-algebra-25">(1) All the diagonal terms are nonzero. In this case, the system has a unique solution.</div>
+<div class="para" id="sec-linear-algebra-26">Example.</div>
+<div class="para" id="sec-linear-algebra-27"><span class="process-math">\(\begin{cases} 
+x_1 - 2x_2 + 3x_3 = 7 \\ 
+-x_1 + x_2 - 2x_3 = -5 \\ 
+2x_1 - x_2 - x_3 = 4 
+\end{cases}\)</span></div>
+<div class="para" id="sec-linear-algebra-28">The extended matrix</div>
+<div class="para" id="sec-linear-algebra-29"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp -2 \amp 3 \amp 7 \\ 
+-1 \amp 1 \amp -2 \amp -5 \\ 
+2 \amp -1 \amp -1 \amp 4 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-30">We first punch two holes in the first column: add the first row to the second row, and add <span class="process-math">\((-2)\)</span> times the first row to the last row:</div>
+<div class="para" id="sec-linear-algebra-31"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp -2 \amp 3 \amp 7 \\ 
+0 \amp -1 \amp 1 \amp 2 \\ 
+0 \amp -3 \amp -7 \amp -10 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-32">Then punch one hole in the second column: add 3 times the second row to the last row.</div>
+<div class="para" id="sec-linear-algebra-33"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp -2 \amp 3 \amp 7 \\ 
+0 \amp -1 \amp 1 \amp 2 \\ 
+0 \amp 0 \amp -4 \amp -4 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-34">Now all the diagonal terms are nonzero and we can start to solve it:</div>
+<div class="para" id="sec-linear-algebra-35">Last row says</div>
+<div class="para" id="sec-linear-algebra-36"><span class="process-math">\(-4x_3 = -4 \implies x_3 = 1.\)</span></div>
+<div class="para" id="sec-linear-algebra-37">Second row says</div>
+<div class="para" id="sec-linear-algebra-38"><span class="process-math">\(-x_2 + x_3 = 2 \implies x_2 = x_3 - 2 = 1 - 2 = -1.\)</span></div>
+<div class="para" id="sec-linear-algebra-39">First row says</div>
+<div class="para" id="sec-linear-algebra-40"><span class="process-math">\(x_1 - 2x_2 + 3x_3 = 7 \implies x_1 = 7 + 2x_2 - 3x_3 = 7 - 2 - 3 = 2.\)</span></div>
+<div class="para" id="sec-linear-algebra-41">So we have a unique solution</div>
+<div class="para" id="sec-linear-algebra-42"><span class="process-math">\(\left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} 2 \\ -1 \\ 1 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-43">Remark. This case happens if and only if the matrix is nonsingular, i.e., the determinant of the coefficient matrix is nonzero. In fact, if you did not switch rows or multiply any row by any number, then the determinant is precisely the product of all diagonal entries. Therefore it is nonzero if and only if all the factors are nonzero.</div>
+<div class="para" id="sec-linear-algebra-44">(2) The last term in the diagonal is zero, as well as the right-hand side, and the rest diagonal terms is nonzero. In this case, the system has infinitely many solutions parametrized by one free variable.</div>
+<div class="para" id="sec-linear-algebra-45">Example.</div>
+<div class="para" id="sec-linear-algebra-46"><span class="process-math">\(\begin{cases} 
+x_1 + 2x_2 - x_3 = 2 \\ 
+2x_1 + x_2 + x_3 = 1 \\ 
+x_1 - 2x_2 + 2x_3 = -1 
+\end{cases}\)</span></div>
+<div class="para" id="sec-linear-algebra-47">The extended matrix</div>
+<div class="para" id="sec-linear-algebra-48"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp -2 \amp -1 \amp 2 \\ 
+2 \amp 1 \amp 1 \amp 1 \\ 
+1 \amp -1 \amp 2 \amp -1 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-49">We first punch two holes in the first column: add <span class="process-math">\((-2)\)</span> times the first row to the second row, and add <span class="process-math">\((-1)\)</span> times the first row to the last row:</div>
+<div class="para" id="sec-linear-algebra-50"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp -2 \amp -1 \amp 2 \\ 
+0 \amp 3 \amp 3 \amp -3 \\ 
+0 \amp 3 \amp -1 \amp -3 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-51">Then punch one hole in the second column: add <span class="process-math">\((-1)\)</span> times the second row to the last row.</div>
+<div class="para" id="sec-linear-algebra-52"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp -2 \amp -1 \amp 2 \\ 
+0 \amp 3 \amp 3 \amp -3 \\ 
+0 \amp 0 \amp -4 \amp 0 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-53">Last row reads</div>
+<div class="para" id="sec-linear-algebra-54"><span class="process-math">\(0 = 0.\)</span></div>
+<div class="para" id="sec-linear-algebra-55">That means it’s redundant and we now have two equations with three variables.</div>
+<div class="para" id="sec-linear-algebra-56">Second row says</div>
+<div class="para" id="sec-linear-algebra-57"><span class="process-math">\(-3x_2 + 3x_3 = -3 \implies x_2 = x_3 + 1.\)</span></div>
+<div class="para" id="sec-linear-algebra-58">First row says</div>
+<div class="para" id="sec-linear-algebra-59"><span class="process-math">\(x_1 + 2x_2 - x_3 = 2 \implies x_1 = -2x_2 + x_3 + 2 = -2(x_3 + 1) + x_3 + 2 = -x_3.\)</span></div>
+<div class="para" id="sec-linear-algebra-60">Let <span class="process-math">\(x_3 = c\)</span> as the free variable, then we have infinitely many solutions:</div>
+<div class="para" id="sec-linear-algebra-61"><span class="process-math">\(\left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} -c \\ c + 1 \\ c \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-62">that is parameterized by <span class="process-math">\(c.\)</span>
+</div>
+<div class="para" id="sec-linear-algebra-63">(3) The left-hand side of the last row is zero, but the right-hand side of the last row is nonzero. In this case, the system has no solution.</div>
+<div class="para" id="sec-linear-algebra-64">Example.</div>
+<div class="para" id="sec-linear-algebra-65"><span class="process-math">\(\begin{cases} 
+x_1 + 2x_2 - x_3 = 1 \\ 
+2x_1 + x_2 + x_3 = 1 \\ 
+x_1 - x_2 + 2x_3 = 1 
+\end{cases}\)</span></div>
+<div class="para" id="sec-linear-algebra-66">The extended matrix</div>
+<div class="para" id="sec-linear-algebra-67"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp 2 \amp -1 \amp 1 \\ 
+2 \amp 1 \amp 1 \amp 1 \\ 
+1 \amp -1 \amp 2 \amp 1 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-68">We first punch two holes in the first column: add <span class="process-math">\((-2)\)</span> times the first row to the second row, and add <span class="process-math">\((-1)\)</span> times the first row to the last row:</div>
+<div class="para" id="sec-linear-algebra-69"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp 2 \amp -1 \amp 1 \\ 
+0 \amp -3 \amp 3 \amp -1 \\ 
+0 \amp -3 \amp -1 \amp 0 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-70">Then punch one hole in the second column: subtract the last row by the second row.</div>
+<div class="para" id="sec-linear-algebra-71"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp 2 \amp -1 \amp 1 \\ 
+0 \amp -3 \amp 3 \amp -1 \\ 
+0 \amp 0 \amp -4 \amp 1 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-72">Last row reads</div>
+<div class="para" id="sec-linear-algebra-73"><span class="process-math">\(0 = 1\)</span></div>
+<div class="para" id="sec-linear-algebra-74">that can never be satisfied. Therefore the system has no solution.</div>
+<div class="para" id="sec-linear-algebra-75">(4) The second and the third row are all zero. In this case, the system has infinitely many solutions parametrized by two free variables.</div>
+<div class="para" id="sec-linear-algebra-76">Example.</div>
+<div class="para" id="sec-linear-algebra-77"><span class="process-math">\(\begin{cases} 
+x_1 + 2x_2 - x_3 = -2 \\ 
+-2x_1 - 4x_2 + 2x_3 = 4 \\ 
+2x_1 + 4x_2 - 2x_3 = -4 
+\end{cases}\)</span></div>
+<div class="para" id="sec-linear-algebra-78">The extended matrix</div>
+<div class="para" id="sec-linear-algebra-79"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp 2 \amp -1 \amp -2 \\ 
+-2 \amp -4 \amp 2 \amp 4 \\ 
+2 \amp 4 \amp -2 \amp -4 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-80">We first punch two holes in the first column: add <span class="process-math">\((2)\)</span> times the first row to the second row, and add <span class="process-math">\((-2)\)</span> times the first row to the last row:</div>
+<div class="para" id="sec-linear-algebra-81"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp 2 \amp -1 \amp -2 \\ 
+0 \amp 0 \amp 0 \amp 0 \\ 
+0 \amp 0 \amp 0 \amp 0 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-82">And now both the second row and third row read</div>
+<div class="para" id="sec-linear-algebra-83"><span class="process-math">\(0 = 0.\)</span></div>
+<div class="para" id="sec-linear-algebra-84">We are left with one equation with three variables. So two of them are free. Let’s set <span class="process-math">\(x_1 = c_1\)</span> and <span class="process-math">\(x_2 = c_2.\)</span>
+</div>
+<div class="para" id="sec-linear-algebra-85">The first equation reads</div>
+<div class="para" id="sec-linear-algebra-86"><span class="process-math">\(x_1 + 2x_2 - x_3 = -2 \implies x_3 = x_1 + 2x_2 = c_1 + 2c_2 - 2.\)</span></div>
+<div class="para" id="sec-linear-algebra-87">Then we have infinitely many solutions:</div>
+<div class="para" id="sec-linear-algebra-88"><span class="process-math">\(\left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} c_1 \\ c_2 \\ c_1 + 2c_2 - 2 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-89">that is parameterized by two free variables <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2.\)</span>
+</div>
+<div class="para" id="sec-linear-algebra-90">(5) Other cases. You will learn about them systematically in a course of linear algebra. For this class, you don’t need to worry about more than the above.</div>
+<div class="para" id="sec-linear-algebra-91">Remark. For all cases other than (1), the determinant of the coefficient matrix is zero.</div>
+<div class="para" id="sec-linear-algebra-92">Remark. In general you don’t need to be that mechanical in doing this. As long as there are enough zeros in the extended matrix, you can start to read it in terms of variables. Examples will be seen below.</div>
+<div class="para" id="sec-linear-algebra-93">Remark. For homogeneous equations (meaning that <span class="process-math">\(b_1 = b_2 = b_3 = 0\)</span>), we don’t need to worry about the third case.</div>
+<div class="para" id="sec-linear-algebra-94">3. Linearly Independent Vectors and Linearly Dependent Vectors</div>
+<div class="para" id="sec-linear-algebra-95">(1) Three vectors <span class="process-math">\(\vec{v_1}, \vec{v_2}, \vec{v_3}\)</span> are called linearly dependent if for some <span class="process-math">\(k_1, k_2\)</span> and <span class="process-math">\(k_3\)</span> that are NOT ALL ZERO, such that</div>
+<div class="para" id="sec-linear-algebra-96"><span class="process-math">\(k_1 \vec{v_1} + k_2 \vec{v_2} + k_3 \vec{v_3} = 0.\)</span></div>
+<div class="para" id="sec-linear-algebra-97">In this case, one can express one of them by the linear combination of the other two.</div>
+<div class="para" id="sec-linear-algebra-98">Example.</div>
+<div class="para" id="sec-linear-algebra-99"><span class="process-math">\(\vec{v_1} = \left[ \begin{array}{c} 2 \\ 1 \\ 0 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} 0 \\ 1 \\ 0 \end{array} \right], \quad \vec{v_3} = \left[ \begin{array}{c} -1 \\ 2 \\ 0 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-100">One can verify that</div>
+<div class="para" id="sec-linear-algebra-101"><span class="process-math">\(\vec{v_1} - 5\vec{v_2} + 2\vec{v_3} = 0.\)</span></div>
+<div class="para" id="sec-linear-algebra-102">Therefore</div>
+<div class="para" id="sec-linear-algebra-103"><span class="process-math">\(\vec{v_1} = 5\vec{v_2} - 2\vec{v_3}.\)</span></div>
+<div class="para" id="sec-linear-algebra-104">So <span class="process-math">\(\vec{v_1}\)</span> "depends" on <span class="process-math">\(\vec{v_2}\)</span> and <span class="process-math">\(\vec{v_3}.\)</span> This is one reason for this terminology.</div>
+<div class="para" id="sec-linear-algebra-105">(2) If you cannot find such <span class="process-math">\(k_1, k_2\)</span> and <span class="process-math">\(k_3\text{,}\)</span> then we say <span class="process-math">\(\vec{v_1}, \vec{v_2}, \vec{v_3}\)</span> are linearly independent. Equivalently, all <span class="process-math">\(k_1, k_2\)</span> and <span class="process-math">\(k_3\)</span> satisfying</div>
+<div class="para" id="sec-linear-algebra-106"><span class="process-math">\(k_1 \vec{v_1} + k_2 \vec{v_2} + k_3 \vec{v_3} = 0\)</span></div>
+<div class="para" id="sec-linear-algebra-107">must be ALL ZERO: <span class="process-math">\(k_1 = k_2 = k_3 = 0.\)</span>
+</div>
+<div class="para" id="sec-linear-algebra-108">(3) Write</div>
+<div class="para" id="sec-linear-algebra-109"><span class="process-math">\(\vec{v_1} = \left[ \begin{array}{c} a_1 \\ a_2 \\ a_3 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} b_1 \\ b_2 \\ b_3 \end{array} \right], \quad \vec{v_3} = \left[ \begin{array}{c} c_1 \\ c_2 \\ c_3 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-110">The left-hand side of the equation</div>
+<div class="para" id="sec-linear-algebra-111"><span class="process-math">\(k_1 \vec{v_1} + k_2 \vec{v_2} + k_3 \vec{v_3} = 0\)</span></div>
+<div class="para" id="sec-linear-algebra-112">can then be written as</div>
+<div class="para" id="sec-linear-algebra-113"><span class="process-math">\(k_1 \left[ \begin{array}{c} a_1 \\ a_2 \\ a_3 \end{array} \right] + k_2 \left[ \begin{array}{c} b_1 \\ b_2 \\ b_3 \end{array} \right] + k_3 \left[ \begin{array}{c} c_1 \\ c_2 \\ c_3 \end{array} \right] = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-114">Therefore the equation is simply</div>
+<div class="para" id="sec-linear-algebra-115"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+a_1 \amp b_1 \amp c_1 \\ 
+a_2 \amp b_2 \amp c_2 \\ 
+a_3 \amp b_3 \amp c_3 
+\end{array} \right] \left[ \begin{array}{c} k_1 \\ k_2 \\ k_3 \end{array} \right] = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-116">In other words, all we need to deal with is simply a homogeneous system of linear equations.</div>
+<div class="para" id="sec-linear-algebra-117">Like what we did in the previous section, we use row transformations to punch holes in the lower triangular part:</div>
+<div class="para" id="sec-linear-algebra-118"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+a_1 \amp b_1 \amp c_1 \\ 
+a_2 \amp b_2 \amp c_2 \\ 
+a_3 \amp b_3 \amp c_3 
+\end{array} \right] \implies \left[ \begin{array}{ccc|c} 
+* \amp * \amp * \\ 
+0 \amp * \amp * \\ 
+0 \amp 0 \amp * 
+\end{array} \right]\)</span></div>
+<ul class="disc" id="sec-linear-algebra-119">
+<li id="sec-linear-algebra-119-1"><div class="para" id="p-derived-sec-linear-algebra-119-1">If all diagonal entries are nonzero (equivalently, if the determinant of the matrix is nonzero), then we have linear independence.</div></li>
+<li id="sec-linear-algebra-119-2"><div class="para" id="p-derived-sec-linear-algebra-119-2">CAUTION! This only works when the matrix dimension is equal to the number of vectors. If say you have 4 vectors of dimension 3, then they are automatically linear dependent!</div></li>
+<li id="sec-linear-algebra-119-3"><div class="para" id="p-derived-sec-linear-algebra-119-3">Otherwise, we have linear dependence and solving the linear system should give a relation.</div></li>
+</ul>
+<div class="para" id="sec-linear-algebra-120">Example 1: Determine if the following vectors are linear independent.</div>
+<div class="para" id="sec-linear-algebra-121"><span class="process-math">\(\vec{v_1} = \left[ \begin{array}{c} 0 \\ 1 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} 1 \\ 0 \end{array} \right], \quad \vec{v_3} = \left[ \begin{array}{c} 1 \\ 1 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-122">Put <span class="process-math">\(\vec{v_1}, \vec{v_2}, \vec{v_3}\)</span> into a matrix and compute its determinant:</div>
+<div class="para" id="sec-linear-algebra-123"><span class="process-math">\(\left[ \begin{array}{ccc} 
+0 \amp 1 \amp 1 \\ 
+1 \amp 0 \amp 1 
+\end{array} \right] = 0 + 1 - 1 - 0 - 0 - 0 = 2 \neq 0.\)</span></div>
+<div class="para" id="sec-linear-algebra-124">So they are linearly independent.</div>
+<div class="para" id="sec-linear-algebra-125">If we look at the linear system</div>
+<div class="para" id="sec-linear-algebra-126"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp 0 \amp 0 \\ 
+0 \amp 1 \amp 0 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-127">Switching <span class="process-math">\(r_1\)</span> and <span class="process-math">\(r_2\)</span> (note: switching two rows will change the sign of the determinant):</div>
+<div class="para" id="sec-linear-algebra-128"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp 0 \amp 1 \amp 0 \\ 
+0 \amp 1 \amp 1 \amp 0 \\ 
+1 \amp 0 \amp -1 \amp 0 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-129">Subtract the third row by the first:</div>
+<div class="para" id="sec-linear-algebra-130"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp 0 \amp 1 \amp 0 \\ 
+0 \amp 1 \amp 1 \amp 0 \\ 
+0 \amp 1 \amp -2 \amp 0 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-131">Subtract the third row by the second:</div>
+<div class="para" id="sec-linear-algebra-132"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp 0 \amp 1 \amp 0 \\ 
+0 \amp 1 \amp 1 \amp 0 \\ 
+0 \amp 0 \amp -3 \amp 0 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-133">One can see that all the diagonal entries are nonzero.</div>
+<div class="para" id="sec-linear-algebra-134">Example 2: Find a relation between the following vectors.</div>
+<div class="para" id="sec-linear-algebra-135"><span class="process-math">\(\vec{v_1} = \left[ \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} 0 \\ 1 \\ 1 \end{array} \right], \quad \vec{v_3} = \left[ \begin{array}{c} 1 \\ 2 \\ 1 \end{array} \right], \quad \vec{v_4} = \left[ \begin{array}{c} 1 \\ 2 \\ 2 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-136">Put <span class="process-math">\(\vec{v_1}, \vec{v_2}, \vec{v_3}, \vec{v_4}\)</span> into a matrix and form the linear system above:</div>
+<div class="para" id="sec-linear-algebra-137"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp 0 \amp 1 \amp 0 \\ 
+1 \amp 1 \amp 2 \amp 0 \\ 
+0 \amp 1 \amp 2 \amp 0 
+\end{array} \right] \left[ \begin{array}{c} k_1 \\ k_2 \\ k_3 \\ k_4 \end{array} \right] = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-138">To solve it, we form the extended matrix:</div>
+<div class="para" id="sec-linear-algebra-139"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp 0 \amp 1 \amp 0 \\ 
+1 \amp 1 \amp 2 \amp 0 \\ 
+0 \amp 1 \amp 2 \amp 0 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-140">To punch holes on the lower triangular part, we first subtract the second row by the first row:</div>
+<div class="para" id="sec-linear-algebra-141"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp 0 \amp 1 \amp 0 \\ 
+0 \amp 1 \amp 1 \amp 0 \\ 
+0 \amp 1 \amp 2 \amp 0 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-142">Then subtract the third row by the second:</div>
+<div class="para" id="sec-linear-algebra-143"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+1 \amp 0 \amp 1 \amp 0 \\ 
+0 \amp 1 \amp 1 \amp 0 \\ 
+0 \amp 0 \amp 1 \amp 0 
+\end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-144">(It seems that you have nonzero diagonal entries, but the additional column makes it possible to find nonzero solutions!)</div>
+<div class="para" id="sec-linear-algebra-145">The last row reads</div>
+<div class="para" id="sec-linear-algebra-146"><span class="process-math">\(k_3 = 0.\)</span></div>
+<div class="para" id="sec-linear-algebra-147">The second row reads</div>
+<div class="para" id="sec-linear-algebra-148"><span class="process-math">\(k_2 + k_4 = 0 \implies k_2 = -k_4.\)</span></div>
+<div class="para" id="sec-linear-algebra-149">The first row reads</div>
+<div class="para" id="sec-linear-algebra-150"><span class="process-math">\(k_1 + k_3 + k_4 = 0 \implies k_1 = -k_4.\)</span></div>
+<div class="para" id="sec-linear-algebra-151">Set <span class="process-math">\(k_4 = 1\)</span> and we have <span class="process-math">\(k_2 = -1, k_1 = -1.\)</span> So a linear relation is obtained, as</div>
+<div class="para" id="sec-linear-algebra-152"><span class="process-math">\(-1\vec{v_1} - 1\vec{v_2} + 1\vec{v_3} = 0.\)</span></div>
+<div class="para" id="sec-linear-algebra-153">4. Eigenvalues and Eigenvectors</div>
+<div class="para" id="sec-linear-algebra-154">(1) Let <span class="process-math">\(A\)</span> be a matrix and let <span class="process-math">\(\vec{x}\)</span> be a NONZERO vector. If the matrix-vector product <span class="process-math">\(A\vec{x}\)</span> is a multiple of <span class="process-math">\(\vec{x},\)</span> i.e.,</div>
+<div class="para" id="sec-linear-algebra-155"><span class="process-math">\(A\vec{x} = \lambda \vec{x}\)</span></div>
+<div class="para" id="sec-linear-algebra-156">Then the multiple <span class="process-math">\(\lambda\)</span> is called an eigenvalue of <span class="process-math">\(A,\)</span> and <span class="process-math">\(\vec{x}\)</span> is called an eigenvector of <span class="process-math">\(A\)</span> corresponding to the eigenvalue <span class="process-math">\(\lambda.\)</span>
+</div>
+<div class="para" id="sec-linear-algebra-157">(2) The condition is equivalent to the following system of linear equations</div>
+<div class="para" id="sec-linear-algebra-158"><span class="process-math">\((A - \lambda I)\vec{x} = 0.\)</span></div>
+<div class="para" id="sec-linear-algebra-159">To see more clearly, write</div>
+<div class="para" id="sec-linear-algebra-160"><span class="process-math">\(A = \left[ \begin{array}{ccc} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-161">Then the condition can be expressed as</div>
+<div class="para" id="sec-linear-algebra-162"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+a_{11} - \lambda \amp a_{12} \amp a_{13} \\ 
+a_{21} \amp a_{22} - \lambda \amp a_{23} \\ 
+a_{31} \amp a_{32} \amp a_{33} - \lambda 
+\end{array} \right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-163">To have a nonzero solution to such a linear system, the determinant of the matrix must be zero. Therefore the eigenvalues of the matrix satisfy the polynomial equation</div>
+<div class="para" id="sec-linear-algebra-164"><span class="process-math">\(\text{det}(A - \lambda I) = 0.\)</span></div>
+<div class="para" id="sec-linear-algebra-165">Or in terms of matrices</div>
+<div class="para" id="sec-linear-algebra-166"><span class="process-math">\(\left| \begin{array}{ccc} 
+a_{11} - \lambda \amp a_{12} \amp a_{13} \\ 
+a_{21} \amp a_{22} - \lambda \amp a_{23} \\ 
+a_{31} \amp a_{32} \amp a_{33} - \lambda 
+\end{array} \right| = 0.\)</span></div>
+<div class="para" id="sec-linear-algebra-167">Once the roots of the above polynomial are found, put them into the above linear system and solve it, you will get the eigenvectors.</div>
+<div class="para" id="sec-linear-algebra-168">(3) In summary, to find the eigenvalues and eigenvectors for a given matrix <span class="process-math">\(A:\)</span>
+</div>
+<ul class="disc" id="sec-linear-algebra-169">
+<li id="sec-linear-algebra-169-1"><div class="para" id="p-derived-sec-linear-algebra-169-1">Find the eigenvalues by solving the polynomial equation <span class="process-math">\(\text{det}(A - \lambda I) = 0.\)</span>
+</div></li>
+<li id="sec-linear-algebra-169-2"><div class="para" id="p-derived-sec-linear-algebra-169-2">Solve the linear system specified above for EACH eigenvalue <span class="process-math">\(\lambda\)</span> to get the corresponding eigenvector.</div></li>
+</ul>
+<div class="para" id="sec-linear-algebra-170">Example 1. Find the eigenvalues and corresponding eigenvectors for the matrix</div>
+<div class="para" id="sec-linear-algebra-171"><span class="process-math">\(A = \left[ \begin{array}{ccc} -3 \amp \frac{3}{4} \amp 1 \\ -5 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-172">Step 1: Find the eigenvalues:</div>
+<div class="para" id="sec-linear-algebra-173"><span class="process-math">\(\text{det}(A - \lambda I) = \left| \begin{array}{ccc} -3 - \lambda \amp \frac{3}{4} \amp 1 \\ -5 \amp -1 - \lambda \amp 0 \\ 0 \amp 0 \amp 1 \end{array} \right| = (-3 - \lambda)(-1 - \lambda)(1) + \frac{15}{4} \lambda^2 + 3\lambda = 0\)</span></div>
+<div class="para" id="sec-linear-algebra-174">Solving the quadratic equation, one gets the eigenvalues</div>
+<div class="para" id="sec-linear-algebra-175"><span class="process-math">\(\lambda_1 = -\frac{1}{2}, \quad \lambda_2 = -\frac{3}{2}.\)</span></div>
+<div class="para" id="sec-linear-algebra-176">Step 2: Find an eigenvector for each of the eigenvalues:</div>
+<div class="para" id="sec-linear-algebra-177">For <span class="process-math">\(\lambda = -\frac{1}{2},\)</span> solve the linear system</div>
+<div class="para" id="sec-linear-algebra-178"><span class="process-math">\(\left[ \begin{array}{ccc|c} -3 + \frac{1}{2} \amp \frac{3}{4} \amp 1 \amp 0 \\ -5 \amp 1 + \frac{1}{2} \amp 0 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -\frac{5}{2} \amp \frac{3}{4} \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-179">Punch a hole on the lower-left corner:</div>
+<div class="para" id="sec-linear-algebra-180"><span class="process-math">\(\left[ \begin{array}{ccc|c} -\frac{5}{2} \amp \frac{3}{4} \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-181">(If you did not get a full zero row, that means you messed up and DON’T YOU DARE TO CONTINUE!)</div>
+<div class="para" id="sec-linear-algebra-182">So the first row reads</div>
+<div class="para" id="sec-linear-algebra-183"><span class="process-math">\(-5x_1 + \frac{3}{4}x_2 = 0 \implies x_1 = \frac{3}{4}x_2.\)</span></div>
+<div class="para" id="sec-linear-algebra-184">Set <span class="process-math">\(x_2 = 10\)</span> (since I hate fractions), then <span class="process-math">\(x_1 = 3.\)</span> So</div>
+<div class="para" id="sec-linear-algebra-185">
+<span class="process-math">\(\left[ \begin{array}{c} 3 \\ 10 \\ x_3 \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_1 = -\frac{1}{2}.\)</span>
+</div>
+<div class="para" id="sec-linear-algebra-186">YOU ARE NOT DONE YET, there is another eigenvector to deal with!</div>
+<div class="para" id="sec-linear-algebra-187">For <span class="process-math">\(\lambda = -\frac{3}{2},\)</span> solve the linear system</div>
+<div class="para" id="sec-linear-algebra-188"><span class="process-math">\(\left[ \begin{array}{ccc|c} -3 + \frac{3}{2} \amp \frac{3}{4} \amp 1 \amp 0 \\ -5 \amp 1 + \frac{3}{2} \amp 0 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -\frac{3}{2} \amp \frac{3}{4} \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-189">Punch a hole on the lower-left corner:</div>
+<div class="para" id="sec-linear-algebra-190"><span class="process-math">\(\left[ \begin{array}{ccc|c} -\frac{3}{2} \amp \frac{3}{4} \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-191">The first row reads</div>
+<div class="para" id="sec-linear-algebra-192"><span class="process-math">\(\frac{3}{2}x_1 + \frac{3}{4}x_2 = 0 \implies x_1 = -\frac{1}{2}x_2.\)</span></div>
+<div class="para" id="sec-linear-algebra-193">Put <span class="process-math">\(x_2 = 2\)</span> to get <span class="process-math">\(x_1 = 1\)</span> and therefore</div>
+<div class="para" id="sec-linear-algebra-194">
+<span class="process-math">\(\left[ \begin{array}{c} 1 \\ 2 \\ x_3 \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_2 = -\frac{3}{2}.\)</span>
+</div>
+<div class="para" id="sec-linear-algebra-195">(Now we are done!)</div>
+<div class="para" id="sec-linear-algebra-196">Example 2. Find the eigenvalues and corresponding eigenvectors for the matrix</div>
+<div class="para" id="sec-linear-algebra-197"><span class="process-math">\(A = \left[ \begin{array}{ccc} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp -2 \\ 3 \amp 2 \amp 1 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-198">Step 1: Find the eigenvalues:</div>
+<div class="para" id="sec-linear-algebra-199"><span class="process-math">\(\text{det}(A - \lambda I) = \left| \begin{array}{ccc} 1 - \lambda \amp 0 \amp 0 \\ 2 \amp 1 - \lambda \amp -2 \\ 3 \amp 2 \amp 1 - \lambda \end{array} \right| = (1 - \lambda)\left[(1 - \lambda)^2 + 4\right] = 0\)</span></div>
+<div class="para" id="sec-linear-algebra-200">Solving the equation, one gets the eigenvalue</div>
+<div class="para" id="sec-linear-algebra-201"><span class="process-math">\(\lambda_1 = 1, \quad \lambda_2 = 1 + 2i, \quad \lambda_3 = 1 - 2i.\)</span></div>
+<div class="para" id="sec-linear-algebra-202">Step 2: Find an eigenvector for each of the eigenvalues:</div>
+<div class="para" id="sec-linear-algebra-203">For <span class="process-math">\(\lambda = 1,\)</span> solve the linear system</div>
+<div class="para" id="sec-linear-algebra-204"><span class="process-math">\(\left[ \begin{array}{ccc|c} 1 - 1 \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 - 1 \amp -2 \amp 0 \\ 3 \amp 2 \amp 1 - 1 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} 0 \amp 0 \amp 0 \amp 0 \\ 2 \amp 0 \amp -2 \amp 0 \\ 3 \amp 2 \amp 0 \amp 0 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-205">(As long as there are enough holes in the matrix, you don’t have to punch more)</div>
+<div class="para" id="sec-linear-algebra-206">The second row reads</div>
+<div class="para" id="sec-linear-algebra-207"><span class="process-math">\(2x_1 - 2x_3 = 0 \implies x_1 = x_3.\)</span></div>
+<div class="para" id="sec-linear-algebra-208">The third row reads</div>
+<div class="para" id="sec-linear-algebra-209"><span class="process-math">\(3x_1 + 2x_2 = 0 \implies 3x_1 + 2x_2 = 0 \implies x_2 = -\frac{3}{2}x_1.\)</span></div>
+<div class="para" id="sec-linear-algebra-210">Set <span class="process-math">\(x_2 = 3,\)</span> then <span class="process-math">\(x_1 = -2\)</span> and <span class="process-math">\(x_3 = -2.\)</span> So</div>
+<div class="para" id="sec-linear-algebra-211">
+<span class="process-math">\(\left[ \begin{array}{c} -2 \\ 3 \\ -2 \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_1 = 1.\)</span>
+</div>
+<div class="para" id="sec-linear-algebra-212">For <span class="process-math">\(\lambda = 1 + 2i,\)</span> solve the linear system</div>
+<div class="para" id="sec-linear-algebra-213"><span class="process-math">\(\left[ \begin{array}{ccc|c} 1 - (1 + 2i) \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 - (1 + 2i) \amp -2 \amp 0 \\ 3 \amp 2 \amp 1 - (1 + 2i) \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -2i \amp 0 \amp 0 \amp 0 \\ 2 \amp -2i \amp -2 \amp 0 \\ 3 \amp 2 \amp -2i \amp 0 \end{array} \right]\)</span></div>
+<div class="para" id="sec-linear-algebra-214">The first row reads</div>
+<div class="para" id="sec-linear-algebra-215"><span class="process-math">\(-2i x_1 = 0 \implies x_1 = 0.\)</span></div>
+<div class="para" id="sec-linear-algebra-216">The second equation reads</div>
+<div class="para" id="sec-linear-algebra-217"><span class="process-math">\(-2i x_2 - 2x_3 = -2 \implies x_3 = -i x_2.\)</span></div>
+<div class="para" id="sec-linear-algebra-218">The third equation reads</div>
+<div class="para" id="sec-linear-algebra-219"><span class="process-math">\(0 = 2x_2 - 2x_3 = 2x_2 - 2(-i x_2) = 0.\)</span></div>
+<div class="para" id="sec-linear-algebra-220">(It seems that you have nonzero diagonal entries, but the additional column makes it possible to find nonzero solutions!)</div>
+<div class="para" id="sec-linear-algebra-221">The last row reads</div>
+<div class="para" id="sec-linear-algebra-222"><span class="process-math">\(k_3 = 0.\)</span></div>
+<div class="para" id="sec-linear-algebra-223">So it should be redundant (otherwise you messed up!). Put <span class="process-math">\(x_2 = 1\)</span> to get <span class="process-math">\(x_3 = -i\)</span> and therefore</div>
+<div class="para" id="sec-linear-algebra-224">
+<span class="process-math">\(\left[ \begin{array}{c} 0 \\ 1 \\ -i \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_2 = 1 + 2i.\)</span>
+</div>
+<div class="para" id="sec-linear-algebra-225">For <span class="process-math">\(\lambda = 1 - 2i,\)</span> the eigenvector can actually be obtained by taking the conjugate of the eigenvector to <span class="process-math">\(\lambda_2,\)</span> namely, we should have</div>
+<div class="para" id="sec-linear-algebra-226">
+<span class="process-math">\(\left[ \begin{array}{c} 0 \\ 1 \\ i \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_3 = 1 - 2i.\)</span>
+</div>
+<div class="para" id="sec-linear-algebra-227">Please do the computations to verify this.</div>
+<div class="para" id="sec-linear-algebra-228">Remark. The technique of computing eigenvectors and eigenvalues is crucial for solving linear systems of ODE with constant coefficients, as you will see in 7.5, 7.6, and 7.8.</div>
+<div class="para" id="sec-linear-algebra-229">Remark. Actually, the above example tells the secret that, when dealing with complex eigenvalues, it suffices to look at only one of them. You will experience the same again in 7.6.</div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="ch-linear-systems.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-system-linear-ODEs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>

@@ -1,0 +1,360 @@
+<!DOCTYPE html>
+<!--********************************************-->
+<!--*       Generated from PreTeXt source      *-->
+<!--*                                          *-->
+<!--*         https://pretextbook.org          *-->
+<!--*                                          *-->
+<!--********************************************-->
+<html lang="en-US" dir="ltr" data-legacy-colorscheme="blue_red">
+<!--******************************************-->
+<!--*  Authored with PreTeXt                 *-->
+<!--*  pretextbook.org                       *-->
+<!--*  Theme: default-legacy                 *-->
+<!--*  Palette:                              *-->
+<!--******************************************-->
+<head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>Derivative of Laplace Transform and Convolution</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
+<link href="https://fonts.cdnfonts.com/css/dejavu-serif" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=PT+Serif:ital,wght@0,400;0,700;1,400;1,700&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wdth,wght@75..100,300..800&amp;display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inconsolata:wght@400;700&amp;" rel="stylesheet">
+<link href="_static/pretext/css/theme.css" rel="stylesheet" type="text/css">
+<link href="_static/pretext/css/ol-markers.css" rel="stylesheet" type="text/css">
+<script>
+var runestoneMathReady = new Promise((resolve) => window.rsMathReady = resolve);
+window.MathJax = {
+  "tex": {
+    "inlineMath": [
+      [
+        "\\(",
+        "\\)"
+      ]
+    ],
+    "tags": "none",
+    "tagSide": "right",
+    "tagIndent": ".8em",
+    "packages": {
+      "[+]": [
+        "base",
+        "extpfeil",
+        "ams",
+        "amscd",
+        "color",
+        "newcommand",
+        "knowl"
+      ]
+    }
+  },
+  "options": {
+    "ignoreHtmlClass": "tex2jax_ignore|ignore-math",
+    "processHtmlClass": "process-math"
+  },
+  "chtml": {
+    "scale": 0.98,
+    "mtextInheritFont": true
+  },
+  "loader": {
+    "load": [
+      "input/asciimath",
+      "[tex]/extpfeil",
+      "[tex]/amscd",
+      "[tex]/color",
+      "[tex]/newcommand",
+      "[pretext]/mathjaxknowl3.js"
+    ],
+    "paths": {
+      "pretext": "_static/pretext/js/lib"
+    }
+  },
+  "startup": {
+    pageReady() {
+      return MathJax.startup.defaultPageReady().then(function () {
+      console.log("in ready function");
+      rsMathReady();
+      }
+    )}
+  }
+};
+</script><script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script><meta name="Keywords" content="Authored in PreTeXt">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta property="og:type" content="book">
+<meta property="book:title" content="A Concise Introduction to Differential Equation at the University of Denver">
+<meta property="book:author" content="Fei Qi">
+<script src="_static/pretext/js/lib/jquery.min.js"></script><script src="_static/pretext/js/lib/jquery.sticky.js"></script><script src="_static/pretext/js/lib/jquery.espy.min.js"></script><script src="_static/pretext/js/pretext.js"></script><script src="_static/pretext/js/pretext_add_on.js?x=1"></script><script src="_static/pretext/js/user_preferences.js"></script><!--** eBookCongig is necessary to configure interactive       **-->
+<!--** Runestone components to run locally in reader's browser **-->
+<!--** No external communication:                              **-->
+<!--**     log level is 0, Runestone Services are disabled     **-->
+<script type="text/javascript">
+eBookConfig = {};
+eBookConfig.useRunestoneServices = false;
+eBookConfig.host = 'http://127.0.0.1:8000';
+eBookConfig.course = 'PTX_Course_Title_Here';
+eBookConfig.basecourse = 'PTX_Base_Course';
+eBookConfig.isLoggedIn = false;
+eBookConfig.email = '';
+eBookConfig.isInstructor = false;
+eBookConfig.logLevel = 0;
+eBookConfig.username = '';
+eBookConfig.readings = null;
+eBookConfig.activities = null;
+eBookConfig.downloadsEnabled = false;
+eBookConfig.allow_pairs = false;
+eBookConfig.enableScratchAC = false;
+eBookConfig.build_info = "";
+eBookConfig.python3 = null;
+eBookConfig.runestone_version = '7.7.0';
+eBookConfig.jobehost = '';
+eBookConfig.proxyuri_runs = '';
+eBookConfig.proxyuri_files = '';
+eBookConfig.enable_chatcodes =  false;
+</script>
+<!--*** Runestone Services ***-->
+<script src="_static/prefix-runtime.5eb70769dc5e56d7.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
+<script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
+</script>
+</head>
+<body id="changeme" class="pretext book ignore-math">
+<a class="assistive" href="#ptx-content">Skip to main content</a><header id="ptx-masthead" class="ptx-masthead"><div class="ptx-banner"><div class="title-container">
+<h1 class="heading"><a href="Math-2070-Notes.html"><span class="title">A Concise Introduction to Differential Equation at the University of Denver</span></a></h1>
+<p class="byline">Fei Qi</p>
+</div></div></header><nav id="ptx-navbar" class="ptx-navbar navbar"><div class="ptx-navbar-contents">
+<button class="toc-toggle button" title="Contents"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5d2;</span><span class="name">Contents</span></button><div class="searchbox">
+<div class="searchwidget"><button id="searchbutton" class="searchbutton button" type="button" title="Search book"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe8b6;</span><span class="name">Search Book</span></button></div>
+<div id="searchresultsplaceholder" class="searchresultsplaceholder" style="display: none">
+<div class="search-results-controls">
+<input aria-label="Search term" id="ptxsearch" class="ptxsearch" type="text" name="terms" placeholder="Search term"><button title="Close search" id="closesearchresults" class="closesearchresults"><span class="material-symbols-outlined">close</span></button>
+</div>
+<h2 class="search-results-heading">Search Results: </h2>
+<div id="searchempty" class="searchempty"><span>No results.</span></div>
+<ol id="searchresults" class="searchresults"></ol>
+</div>
+</div>
+<span class="nav-other-controls"></span><span class="treebuttons"><a class="previous-button button" href="sec-Laplace-periodic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="up-button button" href="ch-Laplace.html" title="Up"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Up</span></a><a class="next-button button" href="sec-Dirac-delta.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a></span>
+</div></nav><div id="latex-macros" class="hidden-content process-math" style="display:none"><span class="process-math">\(\newcommand{\N}{\mathbb N} \newcommand{\Z}{\mathbb Z} \newcommand{\Q}{\mathbb Q} \newcommand{\R}{\mathbb R}
+\newcommand{\lt}{&lt;}
+\newcommand{\gt}{&gt;}
+\newcommand{\amp}{&amp;}
+\definecolor{fillinmathshade}{gray}{0.9}
+\newcommand{\fillinmath}[1]{\mathchoice{\colorbox{fillinmathshade}{$\displaystyle     \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\textstyle        \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptstyle      \phantom{\,#1\,}$}}{\colorbox{fillinmathshade}{$\scriptscriptstyle\phantom{\,#1\,}$}}}
+\)</span></div>
+<div class="ptx-page">
+<div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-frontmatter">
+<div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
+<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Preface</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="First-order-ODE.html" class="internal"><span class="codenumber">1</span> <span class="title">First-order Differential Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-basic-concepts.html" class="internal"><span class="codenumber">1.1</span> <span class="title">Basic Concepts</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-why-study-DEs.html" class="internal"><span class="codenumber">1.2</span> <span class="title">Why study differential equations?</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Newtons-law-of-cooling" class="internal"><span class="codenumber">1.2.1</span> <span class="title">Newton’s law of cooling</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Water-pollution-model" class="internal"><span class="codenumber">1.2.2</span> <span class="title">Water pollution model</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-why-study-DEs.html#Initial-value-problem" class="internal"><span class="codenumber">1.2.3</span> <span class="title">Initial value problem</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="geometric-interpretation.html" class="internal"><span class="codenumber">1.3</span> <span class="title">Geometric interpretation</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-classification.html" class="internal"><span class="codenumber">1.4</span> <span class="title">Classification of Differential Equations</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-1st-order-linear.html" class="internal"><span class="codenumber">1.5</span> <span class="title">First-order Linear ODEs</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-separable-equations.html" class="internal"><span class="codenumber">1.6</span> <span class="title">Separable Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-separable-equations.html#subsec-separable-equations-1" class="internal"><span class="codenumber">1.6.1</span> <span class="title">Form of a separable ODE</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-separable-equations.html#subsec-implicit-vs-explicit" class="internal"><span class="codenumber">1.6.2</span> <span class="title">Implicit solution vs explicit solution</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-separable-equations.html#subsec-separable-equations-3" class="internal"><span class="codenumber">1.6.3</span> <span class="title">Singular solutions</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-existence-uniqueness.html" class="internal"><span class="codenumber">1.7</span> <span class="title">Existence and Uniqueness of Solutions</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-1" class="internal"><span class="codenumber">1.7.1</span> <span class="title">Pathological IVP</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-2" class="internal"><span class="codenumber">1.7.2</span> <span class="title">Existence and Uniqueness Theorem: Linear version.</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-3" class="internal"><span class="codenumber">1.7.3</span> <span class="title">Existence and Uniqueness Theorem: Nonlinear case</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-autonomous.html" class="internal"><span class="codenumber">1.8</span> <span class="title">Autonomous Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-autonomous.html#subsec-equilibrium-solution" class="internal"><span class="codenumber">1.8.1</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-autonomous.html#subsec-stability-of-equilibrium-solution" class="internal"><span class="codenumber">1.8.2</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-autonomous.html#subsec-qualitative-method" class="internal"><span class="codenumber">1.8.3</span> <span class="title"></span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-numerical.html" class="internal"><span class="codenumber">1.9</span> <span class="title">Numerical Methods</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical.html#subsec-euler-method" class="internal"><span class="codenumber">1.9.1</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical.html#subsec-error-analysis" class="internal"><span class="codenumber">1.9.2</span> <span class="title"></span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-numerical.html#subsec-other-methods" class="internal"><span class="codenumber">1.9.3</span> <span class="title"></span></a></div></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-higher-order.html" class="internal"><span class="codenumber">2</span> <span class="title">Second-Order and Higher-Order Differential Equations</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-gen-theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Second-order Linear ODEs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-real.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Real Roots</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-complex-numbers.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Complex Numbers</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-multiplication" class="internal"><span class="codenumber">2.3.1</span> <span class="title">Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-complex-geom-int" class="internal"><span class="codenumber">2.3.2</span> <span class="title">Geometric Interpretation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-Euler-formula" class="internal"><span class="codenumber">2.3.3</span> <span class="title">Euler Formula</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-multiplication-geom-int" class="internal"><span class="codenumber">2.3.4</span> <span class="title">Geometric Interpretation of Multiplication</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-powers-roots" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Powers and Roots</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-complex.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Complex Roots</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-repeated.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Repeated Real Roots</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-non-homogeneous.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Second-order Linear Non-Homogeneous ODEs</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-undetermined-coeff-2nd-order.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Method of Undetermined Coefficients - First Ansatz</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-undetermined-coeff-2.html" class="internal"><span class="codenumber">2.8</span> <span class="title">Method of Undetermined Coefficients - Final Ansatz</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-higher-order-linear-ODEs.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Higher-order Linear ODEs</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter contains-active">
+<div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
+<ul class="structural toc-item-list contains-active">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Laplace-periodic.html" class="internal"><span class="codenumber">3.5</span> <span class="title">Laplace Transform of Periodic Functions</span></a></div></li>
+<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-derivative-Laplace-convolutions.html" class="internal"><span class="codenumber">3.6</span> <span class="title">Derivative of Laplace Transform and Convolution</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-Dirac-delta.html" class="internal"><span class="codenumber">3.7</span> <span class="title">Dirac Delta Function</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-chapter">
+<div class="toc-title-box"><a href="ch-linear-systems.html" class="internal"><span class="codenumber">4</span> <span class="title">Linear Systems of ODEs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-linear-algebra.html" class="internal"><span class="codenumber">4.1</span> <span class="title">A crash course of linear algebra</span></a></div></li>
+<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-system-linear-ODEs.html" class="internal"><span class="codenumber">4.2</span> <span class="title">System of First-Order Linear ODEs</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
+</ul></nav></div>
+<main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-derivative-Laplace-convolutions"><h2 class="heading hide-type">
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">3.6</span><span class="space"> </span><span class="title">Derivative of Laplace Transform and Convolution</span>
+</h2>
+<div class="para" id="sec-derivative-Laplace-convolutions-2">Motivation: Provide some tools to solve all possible Laplace and inverse Laplace transforms.</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-3">Derivatives of <span class="process-math">\(L\{f(t)\}\)</span>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-4">Let <span class="process-math">\(F(s) = L\{f(t)\}.\)</span> If we apply <span class="process-math">\(\frac{d}{ds}\)</span> on both sides, we have</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-5"><span class="process-math">\(\frac{d}{ds} F(s) = \frac{d}{ds} \int_0^{\infty} f(t)e^{-st}dt\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-6">If <span class="process-math">\(f\)</span> is piecewise continuous and of exponential order, the differential operator commutes with the integral, resulting in</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-7"><span class="process-math">\(F'(s) = \int_0^{\infty} f(t) \frac{d}{ds} (e^{-st})dt = \int_0^{\infty} f(t)(-te^{-st})dt\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-8"><span class="process-math">\(= -\int_0^{\infty} tf(t)e^{-st}dt = -L\{tf(t)\}.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-9">In other words,</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-10"><span class="process-math">\(L\{tf(t)\} = \left(-\frac{d}{ds}\right) F(s) = -F'(s).\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-11">With a similar argument, we see that for every integer <span class="process-math">\(n &gt; 0,\)</span>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-12"><span class="process-math">\(L\{t^n f(t)\} = \left(-\frac{d}{ds}\right)^n F(s) = (-1)^n F^{(n)}(s).\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-13">With this formula, we may handle the Laplace transform of a polynomial multiplied by any function <span class="process-math">\(f(t),\)</span> provided we know <span class="process-math">\(L\{f(t)\}.\)</span>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-14">Example:</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-15"><span class="process-math">\(L\{(t + t^2)e^{2t} \sin 3t\} = L\{te^{2t} \sin 3t\} + L\{t^2 e^{2t} \sin 3t\}\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-16"><span class="process-math">\(= \left(-\frac{d}{ds}\right) \frac{3}{(s - 2)^2 + 9} + \left(-\frac{d}{ds}\right)^2 \frac{3}{(s - 2)^2 + 9}.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-17">Example:</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-18"><span class="process-math">\(L\{(t + t^2)e^{2t} \sin 3t\} = L\{te^{2t} \sin 3t\} + L\{t^2 e^{2t} \sin 3t\}\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-19"><span class="process-math">\(= \left(-\frac{d}{ds}\right) \frac{3}{(s - 2)^2 + 9} + \left(-\frac{d}{ds}\right)^2 \frac{3}{(s - 2)^2 + 9}.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-20">Say <span class="process-math">\(F(s) = \frac{3}{(s - 2)^2 + 9},\)</span> then its first derivative <span class="process-math">\(F'(s)\)</span> is</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-21"><span class="process-math">\(F'(s) = \frac{-6(s - 2)}{((s - 2)^2 + 9)^2}.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-22">Its second derivative <span class="process-math">\(F''(s)\)</span> is</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-23"><span class="process-math">\(F''(s) = \frac{-6((s - 2)^2 + 9)^2 \cdot 1 - (s - 2) \cdot 2((s - 2)^2 + 9) \cdot 2(s - 2)}{((s - 2)^2 + 9)^4}.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-24"><span class="process-math">\(= \frac{-6(s - 2)^2 + 9 - 4(s - 2)^2}{((s - 2)^2 + 9)^3} = \frac{18}{((s - 2)^2 + 9)^3}.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-25">So</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-26"><span class="process-math">\(L\{(t + t^2)e^{2t} \sin 3t\} = L\{te^{2t} \sin 3t\} + L\{t^2 e^{2t} \sin 3t\}\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-27"><span class="process-math">\(= \left(-\frac{d}{ds}\right) \frac{3}{(s - 2)^2 + 9} + \left(-\frac{d}{ds}\right)^2 \frac{3}{(s - 2)^2 + 9}\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-28"><span class="process-math">\(= \frac{6(s - 2)}{((s - 2)^2 + 9)^2} + \frac{18}{((s - 2)^2 + 9)^3}.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-29">(No matter what method you use, the product of polynomial, exponential and trig functions will always be annoying).</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-30">Inverse Laplace of repeated quadratic factors</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-31">The derivative formula also helps us to perform inverse Laplace transform of a particular kind of partial fractions with irreducible quadratic factor.</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-32">Recall that</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-33"><span class="process-math">\(L\{e^{\alpha t} \sin \beta t\} = \frac{\beta}{(s - \alpha)^2 + \beta^2}.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-34">The derivative formula implies that</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-35"><span class="process-math">\(L\{te^{\alpha t} \sin \beta t\} = -\frac{d}{ds} \frac{\beta}{(s - \alpha)^2 + \beta^2} = \frac{2\beta(s - \alpha)}{((s - \alpha)^2 + \beta^2)^2}.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-36">Therefore,</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-37"><span class="process-math">\(L^{-1} \left\{ \frac{(s - \alpha)}{((s - \alpha)^2 + \beta^2)^2} \right\} = \frac{1}{2\beta} te^{\alpha t} \sin \beta t.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-38">Convolution product</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-39">For the inverse Laplace of the most general type of partial fractions with repeated quadratic factor, we need to use the convolution product.</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-40">Let <span class="process-math">\(f, g\)</span> be piecewise continuous on <span class="process-math">\([0, \infty)\)</span> and of exp. order. The convolution <span class="process-math">\(f * g\)</span> is a function defined by</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-41"><span class="process-math">\((f * g)(t) = \int_0^t f(\tau)g(t - \tau)d\tau.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-42">Theorem. <span class="process-math">\(L\{(f * g)(t)\} = L\{f(t)\} \cdot L\{g(t)\}.\)</span>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-43">Inverse form: <span class="process-math">\(L^{-1}\{F(s)G(s)\} = L^{-1}\{F(s)\} * L^{-1}\{G(s)\}.\)</span>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-44">The proof is a simple exercise of multivariable calculus (via manipulation of regions of a double integral). (skip here).</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-45">Inverse Laplace of repeated quadratic factors</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-46">Using the inverse form, we compute that</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-47"><span class="process-math">\(L^{-1} \left\{ \frac{1}{((s - \alpha)^2 + \beta^2)^2} \right\}\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-48"><span class="process-math">\(= L^{-1} \left\{ \frac{1}{(s - \alpha)^2 + \beta^2} \cdot \frac{1}{(s - \alpha)^2 + \beta^2} \right\}\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-49"><span class="process-math">\(= L^{-1} \left\{ \frac{1}{(s - \alpha)^2 + \beta^2} \right\} * L^{-1} \left\{ \frac{1}{(s - \alpha)^2 + \beta^2} \right\}\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-50"><span class="process-math">\(= \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right) * \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right)\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-51"><span class="process-math">\(= \int_0^t \left( \frac{1}{\beta} e^{\alpha \tau} \sin \beta \tau \right) \left( \frac{1}{\beta} e^{\alpha (t - \tau)} \sin \beta (t - \tau) \right) d\tau\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-52"><span class="process-math">\(= \frac{1}{\beta^2} e^{\alpha t} \int_0^t \sin \beta \tau \sin \beta (t - \tau) d\tau.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-53">To compute the integral of a product of two sine functions, we need some trigonometric identities.</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-54">Recall. Sine and Cosine of sums and differences.</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-55"><span class="process-math">\(\sin(\alpha + \beta) = \sin \alpha \cos \beta + \sin \beta \cos \alpha,\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-56"><span class="process-math">\(\sin(\alpha - \beta) = \sin \alpha \cos \beta - \sin \beta \cos \alpha,\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-57"><span class="process-math">\(\cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta,\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-58"><span class="process-math">\(\cos(\alpha - \beta) = \cos \alpha \cos \beta + \sin \beta \sin \alpha.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-59">By adding and subtracting these identities, we obtain</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-60"><span class="process-math">\(\sin \alpha \cos \beta = \frac{1}{2}(\sin(\alpha + \beta) + \sin(\alpha - \beta))\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-61"><span class="process-math">\(\cos \alpha \cos \beta = \frac{1}{2}(\cos(\alpha - \beta) + \cos(\alpha + \beta))\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-62"><span class="process-math">\(\sin \alpha \sin \beta = -\frac{1}{2}(\cos(\alpha - \beta) - \cos(\alpha + \beta)).\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-63">So,</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-64"><span class="process-math">\(\int_0^t \sin \beta \tau \sin \beta (t - \tau) d\tau = \frac{1}{2} \left( \cos(\beta \tau - \beta(t - \tau)) - \cos(\beta \tau + \beta(t - \tau)) \right)\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-65"><span class="process-math">\(= -\frac{1}{2} \left( \cos(2\beta \tau - \beta) - \cos(\beta t) \right)\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-66"><span class="process-math">\(= \frac{1}{2} \int_0^t \left( \cos(2\beta \tau - \beta t) - \cos(\beta t) \right) d\tau\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-67"><span class="process-math">\(= \frac{1}{2} \left( \frac{1}{2\beta} \sin(2\beta \tau - \beta t) - \cos(\beta t) \tau \right) \bigg|_0^t\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-68"><span class="process-math">\(= \frac{1}{2} \left( \frac{1}{2\beta} \left( \sin(2\beta t - \beta t) - \sin(0 - \beta t) \right) - \cos(\beta t)(t - 0) \right)\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-69"><span class="process-math">\(= \frac{1}{2} \left( \frac{1}{\beta} \sin \beta t - t \cos(\beta t) \right).\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-70">So we conclude that</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-71"><span class="process-math">\(L^{-1} \left\{ \frac{1}{((s - \alpha)^2 + \beta^2)^2} \right\} = \frac{1}{\beta^2} e^{\alpha t} \int_0^t \sin \beta \tau \sin \beta (t - \tau) d\tau\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-72"><span class="process-math">\(= \frac{1}{\beta^2} e^{\alpha t} \cdot \frac{1}{2\beta} \left( \sin \beta t - t \cos(\beta t) \right)\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-73"><span class="process-math">\(= \frac{1}{2\beta^3} e^{\alpha t} \sin \beta t - \frac{1}{2\beta^2} t e^{\alpha t} \cos(\beta t).\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-74">In general,</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-75"><span class="process-math">\(L^{-1} \left\{ \frac{1}{((s - \alpha)^2 + \beta^2)^n} \right\} = \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right) * \cdots * \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right)\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-76">(convolution with itself for <span class="process-math">\(n\)</span> times).</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-77"><span class="process-math">\(L^{-1} \left\{ \frac{s - \alpha}{((s - \alpha)^2 + \beta^2)^n} \right\} = \left( e^{\alpha t} \cos \beta t \right) * \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right) * \cdots * \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right)\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-78">(convolution of one copy of <span class="process-math">\(e^{\alpha t} \cos \beta t\)</span> and <span class="process-math">\(n - 1\)</span> copies of <span class="process-math">\(\frac{1}{\beta} e^{\alpha t} \sin \beta t).\)</span>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-79">Integro-differential equation</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-80">Another application of the convolution product is the Laplace transform of an integral. Recall that the theorem states that</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-81"><span class="process-math">\(L\{(f * g)(t)\} = L\{f(t)\} \cdot L\{g(t)\}.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-82">If we take <span class="process-math">\(g(t) = 1,\)</span> then</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-83"><span class="process-math">\((f * 1)(t) = \int_0^t f(\tau) d\tau.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-84">The theorem then says that</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-85"><span class="process-math">\(L\left\{ \int_0^t f(\tau) d\tau \right\} = L\{f(t)\} \cdot L\{1\} = \frac{F(s)}{s}.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-86">This formula allows us to use the Laplace method to solve integro-differential equations that arise in science and engineering.</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-87">Example: LRC-series circuit.</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-88">In Midterm 2, we saw that the electron charge of the capacitor in an LRC-series circuit satisfies a second-order linear ODE. Experimentally, it is difficult to measure the charge of a capacitor. It is easier to measure the current instead.</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-89">Let <span class="process-math">\(i(t)\)</span> be the current at time <span class="process-math">\(t.\)</span> Suppose at time zero, the capacitor is uncharged. Then <span class="process-math">\(i(t)\)</span> satisfies the following ODE:</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-90"><span class="process-math">\(L \frac{di}{dt} + R i + \frac{1}{C} \int_0^t i(\tau) d\tau = E(t)\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-91">We set <span class="process-math">\(I(s) = L\{i(t)\}\)</span> and Laplace both sides:</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-92"><span class="process-math">\(L(I(s) - s \cdot i(0)) + R I(s) + \frac{1}{C} \cdot \frac{I(s)}{s} = L\{E(t)\}.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-93">If <span class="process-math">\(L = 0.1 \, h, \, R = 2 \, \Omega, \, C = 0.1 \, f, \, i(0) = 0,\)</span> and <span class="process-math">\(E(t)\)</span> is the unit square wave function, then</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-94"><span class="process-math">\(0.1(I(s) - s \cdot 0) + 2 I(s) + \frac{10}{s} I(s) = \frac{1}{s(1 + e^{-s})}\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-95"><span class="process-math">\(\implies I(s) = \frac{10}{(s^2 + 20s + 100)(1 + e^{-s})}.\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-96"><span class="process-math">\(I(s) = \frac{10}{(s^2 + 20s + 100)(1 + e^{-s})} = 10 \sum_{n=0}^{\infty} (-1)^n \frac{e^{-ns}}{(s + 10)^2}\)</span></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-97"><span class="process-math">\(= 10 \sum_{n=0}^{\infty} (-1)^n (t - n)e^{-10(t - n)} u(t - n).\)</span></div></section></div>
+<div id="ptx-content-footer" class="ptx-content-footer">
+<a class="previous-button button" href="sec-Laplace-periodic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Dirac-delta.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
+</div></main>
+</div>
+<div id="ptx-page-footer" class="ptx-page-footer">
+<a class="pretext-link" href="https://pretextbook.org" title="PreTeXt"><div class="logo"><svg xmlns="http://www.w3.org/2000/svg" height="100%" viewBox="338 3000 8772 6866" role="img"><title>PreTeXt logo</title><g style="stroke-width:.025in; stroke:currentColor; fill:none"><polyline points="472,3590 472,9732 " style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round; "></polyline><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,9448 A 4660 4660  0  0  1  8598  9259"></path><path style="stroke-width:174;stroke-linecap:butt;" d="M 4488,9685 A 4228 4228  0  0  0   472  9732"></path><path style="stroke-width:126;stroke-linecap:butt;" d="M 4724,3590 A 4241 4241  0  0  1  8598  3496"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,3496  A 4241 4241  0  0  1  4724  3590"></path><path style="stroke-width:126;stroke-linecap:round;" d="M 850,9259  A 4507 4507  0  0  1  4724  9448"></path><polyline points="5385,4299 4062,8125" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8598,3496 8598,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="850,3496 850,9259" style="stroke-width:126; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="4960,9685 4488,9685" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="3070,4582 1889,6141 3070,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="6418,4582 7600,6141 6418,7700" style="stroke-width:300; stroke-linejoin:miter; stroke-linecap:round;"></polyline><polyline points="8976,3590 8976,9732" style="stroke-width:174; stroke-linejoin:miter; stroke-linecap:round;"></polyline><path style="stroke-width:174;stroke-linecap:butt;" d="M 4960,9685 A 4228 4228  0  0  1  8976  9732"></path></g></svg></div></a><a class="runestone-link" href="https://runestone.academy" title="Runestone Academy"><img class="logo" src="https://runestone.academy/runestone/static/images/RAIcon_cropped.png" alt="Runstone Academy logo"></a><a class="mathjax-link" href="https://www.mathjax.org" title="MathJax"><img class="logo" src="https://www.mathjax.org/badge/badge-square-2.png" alt="MathJax logo"></a>
+</div>
+</body>
+</html>
