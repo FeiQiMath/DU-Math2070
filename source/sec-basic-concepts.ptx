@@ -1,10 +1,17 @@
 <section xml:id="sec-basic-concepts">
   <title>Basic Concepts</title>
 
+  <definition xml:id="def-diffeq">
+    <statement>
+      <p>
+        A <term>differential equation</term> is an equation concerning derivatives. An <term>ordinary differential equation</term> (abbrev. <term>ODE</term>) is an equation involving only ordinary derivatives of a single-variable function. 
+      </p>
+    </statement>
+  </definition>
   <p>
-    A <term>differential equation</term> is an equation concerning derivatives. Here is the <term>typical form of a first-order ODE</term>,  where <term>ODE</term> is the abbreviation for <term>ordinary differential equation</term>: 
+    Here is the <term>typical form</term> of a first-order ODE: 
   <me>y'(t) = f(t,y(t)).</me>
-  With the abbreviation of <m>y(t)</m> and <m>y'(t)</m> by <m>y</m> and <m>y'</m>, respectively, 
+  or, with the abbreviation of <m>y(t)</m> and <m>y'(t)</m> by <m>y</m> and <m>y'</m>, respectively, 
   <me>y' = f(t,y)</me>
   where</p>
   <ul>
@@ -23,38 +30,34 @@
   </ul>
 
   <p>
-    This ODE expresses the derivative <m>y'(t)</m> in terms of <m>t, y(t)</m>.
+    This ODE expresses the derivative <m>y'(t)</m> in terms of <m>t</m> and <m>y(t)</m>.
   </p>
 
-  <p>
-    A function <m>y(t)</m> defined on an interval satisfying the equation is called a <term>solution</term>. 
-  </p>
+  <definition>
+    <p>A function <m>y(t)</m> defined on an interval satisfying the equation is called a <term>solution</term>. </p>
+  </definition>
   <p>
     While we haven't learned how to solve an ODE, it is easy to check if a function is a solution of an ODE. Simply compute its derivatives, then plug in the ODE, and see if equality holds.
   </p>
 
   <example>
     <title>A solution of an ODE</title>
-    <statement>
-      <p>
-        <m>y(t) = e^t</m> is a solution of the ODE <m>y' - y = 0</m>, because <m>y'(t) = e^t</m>, 
-      </p>
-      <p>
-        <m>\Rightarrow LHS = y' - y = e^t - e^t = 0 = RHS</m>.
-      </p>
-    </statement>
+    <p>
+      <m>y(t) = e^t</m> is a solution of the ODE <m>y' - y = 0</m>, because <m>y'(t) = e^t</m>, 
+    </p>
+    <p>
+      <m>\Rightarrow LHS = y' - y = e^t - e^t = 0 = RHS</m>.
+    </p>
   </example>
 
   <example>
     <title>A non-solution of an ODE</title>
-    <statement>
       <p>
         <m>y(t) = \cos 2t</m> is not a solution of the ODE <m>y' - y = 0</m>, because <m>y'(t) = -2\sin 2t</m>,
       </p>
       <p>
         <m>\Rightarrow LHS = y' - y = -2\sin 2t - \cos 2t \neq 0 = RHS</m>.
       </p>
-    </statement>
   </example>
 
   <p>
