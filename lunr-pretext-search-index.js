@@ -16,7 +16,7 @@ var ptx_lunr_docs = [
   "type": "Preface",
   "number": "",
   "title": "Preface",
-  "body": " This textbook is the culmination of several years of teaching differential equations at Rutgers University and the University of Denver. It originated from a desire to provide a more accessible, coherent, and pedagogically sound alternative to the commercial textbooks that I found lacking in various respects. Over time, these notes have been refined and expanded through continuous use in the classroom, shaped by student feedback, and informed by collaborative teaching experiences.  The current version covers the standard topics taught in a first course on differential equations at the University of Denver. While it is intended to serve as a complete resource for that curriculum, there remain several important topics that will be included in future iterations, such as series solutions to differential equations, the method of variation of parameters, and the phase portraits of linear and nonlinear autonomous systems.  This work was made possible in part through the support of a Colorado Department of Higher Education Open Educational Resources (CDHE OER) grant. I would also like to express my sincere gratitude to the many colleagues and teaching assistants who have contributed to this effort over the years. In particular, I am grateful for the valuable influence and mentorship of Doron Zeilberger, Lasantha Goonetilleke, and Kumar Shwetketu Virbhadra, who were instructors I have had the privilege to work as a TA. I am indebted to my teaching assistants: Kempton Albee, Benjamin Brown, Brendan Dufty, Zion Hefty, Paul Johnson, Eden Ketchum, Christian Naess, and Kaya Wright, for their support, insights, and collaboration.  It is my hope that this textbook will serve as a useful and adaptable resource for students and instructors alike, and that it contributes to a broader effort to make high-quality educational materials freely available.  "
+  "body": " This textbook is the culmination of several years of teaching differential equations at Rutgers University and the University of Denver. It originated from a desire to provide a more accessible, coherent, and pedagogically sound alternative to the commercial textbooks that I found lacking in various respects. Over time, these notes have been refined and expanded through continuous use in the classroom, shaped by student feedback, and improved by collaborative teaching experiences.  The current version covers the standard topics taught in a first course on differential equations at the University of Denver. While it is intended to serve as a complete resource for that curriculum, there remain several important topics that will be included in future iterations, such as series solutions to differential equations, the method of variation of parameters, and the phase portraits of linear and nonlinear autonomous systems.  This work was made possible in part through the support of a Colorado Department of Higher Education Open Educational Resources (CDHE OER) grant. I would also like to express my sincere gratitude to the many colleagues and teaching assistants who have contributed to this effort over the years. In particular, I am grateful for the valuable influence and mentorship of Doron Zeilberger, Lasantha Goonetilleke, and Kumar Shwetketu Virbhadra, who were instructors I have had the privilege to work as a TA at Rutgers University. I am indebted to my teaching assistants: Kempton Albee, Benjamin Brown, Brendan Dufty, Zion Hefty, Paul Johnson, Eden Ketchum, Christian Naess, and Kaya Wright, for their support, insights, and collaboration. I should also acknowledge the Cursor app that provided a quick conversion of my previous materials in all different formats (scanned, handwritten, latex, powerpoint, etc.) into the simple PreTeXt format and assisted me in the subsequent editing process.  It is my hope that this textbook will serve as a useful and adaptable resource for students and instructors alike, and that it contributes to a broader effort to make high-quality educational materials freely available.  "
 },
 {
   "id": "sec-basic-concepts",
@@ -25,68 +25,77 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Basic Concepts",
-  "body": " Basic Concepts  A differential equation is an equation concerning derivatives. Here is the typical form of a first-order ODE , where ODE is the abbreviation for ordinary differential equation : With the abbreviation of and by and , respectively, where    is the independent variable.    is a one-variable function depending on .    is the derivative of .    is a known function of two variables.    This ODE expresses the derivative in terms of .  A function defined on an interval satisfying the equation is called a solution .  While we haven't learned how to solve an ODE, it is easy to check if a function is a solution of an ODE. Simply compute its derivatives, then plug in the ODE, and see if equality holds.   A solution of an ODE    is a solution of the ODE , because ,   .     A non-solution of an ODE    is not a solution of the ODE , because ,   .    We shall apply this method extensively in this course.  The most general form of a first-order ODE is More presicely, it is a relation among the variable and .  The order of a differential equation is the order of the highest derivative appearing in the equation. Similarly, the most general form of an -th order ODE is    Examples of ODEs in typical and general forms     (First-order ODE in its typical form).  (First-order ODE).  (Third-order ODE).      An ODE is an equation involving ordinary derivatives. A Partial Differential Equation (PDE) is an equation concerning partial derivatives.   Example of a PDE   A harmonic function in two variables are defined by the PDE We shall not require PDEs in this course.    "
+  "body": " Basic Concepts    A differential equation is an equation concerning derivatives. An ordinary differential equation (abbrev. ODE ) is an equation involving only ordinary derivatives of a single-variable function.    Here is the typical form of a first-order ODE: or, with the abbreviation of and by and , respectively, where    is the independent variable.    is a one-variable function depending on .    is the derivative of .    is a known function of two variables.    This ODE expresses the derivative in terms of and .  A function defined on an interval satisfying the equation is called a solution .  While we haven't learned how to solve an ODE, it is easy to check if a function is a solution of an ODE. Simply compute its derivatives, then plug in the ODE, and see if equality holds.   A solution of an ODE   is a solution of the ODE , because ,   .    A non-solution of an ODE   is not a solution of the ODE , because ,   .   We shall apply this method extensively in this course.  The most general form of a first-order ODE is More presicely, it is a relation among the variable and .  The order of a differential equation is the order of the highest derivative appearing in the equation. Similarly, the most general form of an -th order ODE is    Examples of ODEs in typical and general forms     (First-order ODE in its typical form).  (First-order ODE).  (Third-order ODE).      An ODE is an equation involving ordinary derivatives. A Partial Differential Equation (PDE) is an equation concerning partial derivatives.   Example of a PDE   A harmonic function in two variables are defined by the PDE We shall not require PDEs in this course.    "
 },
 {
-  "id": "sec-basic-concepts-2",
+  "id": "def-diffeq",
   "level": "2",
-  "url": "sec-basic-concepts.html#sec-basic-concepts-2",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "differential equation typical form of a first-order ODE ODE ordinary differential equation "
-},
-{
-  "id": "sec-basic-concepts-5",
-  "level": "2",
-  "url": "sec-basic-concepts.html#sec-basic-concepts-5",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "solution "
-},
-{
-  "id": "sec-basic-concepts-7",
-  "level": "2",
-  "url": "sec-basic-concepts.html#sec-basic-concepts-7",
-  "type": "Example",
+  "url": "sec-basic-concepts.html#def-diffeq",
+  "type": "Definition",
   "number": "1.1.1",
-  "title": "A solution of an ODE.",
-  "body": " A solution of an ODE    is a solution of the ODE , because ,   .   "
+  "title": "",
+  "body": "  A differential equation is an equation concerning derivatives. An ordinary differential equation (abbrev. ODE ) is an equation involving only ordinary derivatives of a single-variable function.   "
+},
+{
+  "id": "sec-basic-concepts-3",
+  "level": "2",
+  "url": "sec-basic-concepts.html#sec-basic-concepts-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "typical form "
+},
+{
+  "id": "sec-basic-concepts-6",
+  "level": "2",
+  "url": "sec-basic-concepts.html#sec-basic-concepts-6",
+  "type": "Definition",
+  "number": "1.1.2",
+  "title": "",
+  "body": "A function defined on an interval satisfying the equation is called a solution . "
 },
 {
   "id": "sec-basic-concepts-8",
   "level": "2",
   "url": "sec-basic-concepts.html#sec-basic-concepts-8",
   "type": "Example",
-  "number": "1.1.2",
-  "title": "A non-solution of an ODE.",
-  "body": " A non-solution of an ODE    is not a solution of the ODE , because ,   .   "
+  "number": "1.1.3",
+  "title": "A solution of an ODE.",
+  "body": " A solution of an ODE   is a solution of the ODE , because ,   .  "
 },
 {
-  "id": "sec-basic-concepts-11",
+  "id": "sec-basic-concepts-9",
   "level": "2",
-  "url": "sec-basic-concepts.html#sec-basic-concepts-11",
+  "url": "sec-basic-concepts.html#sec-basic-concepts-9",
+  "type": "Example",
+  "number": "1.1.4",
+  "title": "A non-solution of an ODE.",
+  "body": " A non-solution of an ODE   is not a solution of the ODE , because ,   .  "
+},
+{
+  "id": "sec-basic-concepts-12",
+  "level": "2",
+  "url": "sec-basic-concepts.html#sec-basic-concepts-12",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "order "
 },
 {
-  "id": "sec-basic-concepts-12",
+  "id": "sec-basic-concepts-13",
   "level": "2",
-  "url": "sec-basic-concepts.html#sec-basic-concepts-12",
+  "url": "sec-basic-concepts.html#sec-basic-concepts-13",
   "type": "Example",
-  "number": "1.1.3",
+  "number": "1.1.5",
   "title": "Examples of ODEs in typical and general forms.",
   "body": " Examples of ODEs in typical and general forms     (First-order ODE in its typical form).  (First-order ODE).  (Third-order ODE).     "
 },
 {
-  "id": "sec-basic-concepts-14",
+  "id": "sec-basic-concepts-15",
   "level": "2",
-  "url": "sec-basic-concepts.html#sec-basic-concepts-14",
+  "url": "sec-basic-concepts.html#sec-basic-concepts-15",
   "type": "Example",
-  "number": "1.1.4",
+  "number": "1.1.6",
   "title": "Example of a PDE.",
   "body": " Example of a PDE   A harmonic function in two variables are defined by the PDE We shall not require PDEs in this course.   "
 },
