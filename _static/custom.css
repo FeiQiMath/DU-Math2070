@@ -1,0 +1,7 @@
+/* Remove border, background, and shadow from PreTeXt examples */
+.example, .ptx-example {
+    border: none !important;
+    background: none !important;
+    box-shadow: none !important;
+    padding: 0 !important;
+}

@@ -25,7 +25,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.1",
   "title": "Basic Concepts",
-  "body": " Basic Concepts    A differential equation is an equation concerning derivatives. An ordinary differential equation (abbrev. ODE ) is an equation involving only ordinary derivatives of a single-variable function.    Here is the typical form of a first-order ODE: or, with the abbreviation of and by and , respectively, where    is the independent variable.    is a one-variable function depending on .    is the derivative of .    is a known function of two variables.    This ODE expresses the derivative in terms of and .  A function defined on an interval satisfying the equation is called a solution .  While we haven't learned how to solve an ODE, it is easy to check if a function is a solution of an ODE. Simply compute its derivatives, then plug in the ODE, and see if equality holds.   A solution of an ODE   is a solution of the ODE , because ,   .    A non-solution of an ODE   is not a solution of the ODE , because ,   .   We shall apply this method extensively in this course.  The most general form of a first-order ODE is More presicely, it is a relation among the variable and .  The order of a differential equation is the order of the highest derivative appearing in the equation. Similarly, the most general form of an -th order ODE is    Examples of ODEs in typical and general forms     (First-order ODE in its typical form).  (First-order ODE).  (Third-order ODE).      An ODE is an equation involving ordinary derivatives. A Partial Differential Equation (PDE) is an equation concerning partial derivatives.   Example of a PDE   A harmonic function in two variables are defined by the PDE We shall not require PDEs in this course.    "
+  "body": " Basic Concepts    A differential equation is an equation concerning derivatives. An ordinary differential equation (abbrev. ODE ) is an equation involving only ordinary derivatives of a single-variable function.    Here is the typical form of a first-order ODE: or, with the abbreviation of and by and , respectively, where    is the independent variable.    is a one-variable function depending on .    is the derivative of .    is a known function of two variables.    This ODE expresses the derivative in terms of and .    A function defined on an open interval is called a solution of the ODE on if    is differentiable on .    For all in , the equation holds.      While we haven't learned how to solve an ODE, it is easy to check if a function is a solution of an ODE. Simply compute its derivatives, then plug in the ODE, and see if equality holds.   A solution of an ODE   is a solution of the ODE , because ,   .  The solution is defined on everywhere on .    A non-solution of an ODE   is not a solution of the ODE , because ,   .  The solution is defined on everywhere on .    We shall apply the method of checking solutions extensively in this course, especially in the study of higher-order linear ODEs.     Most generally, a first-order ODE is of the form i.e., a relation among the variable and . We call this the general form of a first-order ODE.  The order of a differential equation is the order of the highest derivative appearing in the equation. Similarly, the general form of an -th order ODE is i.e., a relation among the variable and the derivatives of .     Examples of ODEs in typical and general forms     (First-order ODE in its typical form).  (First-order ODE).  (Third-order ODE).        A partial differential equation (abbrev. PDE ) is an equation concerning partial derivatives.     Example of a PDE   A harmonic function in two variables are defined by the PDE     We shall not require PDEs in this course.  "
 },
 {
   "id": "def-diffeq",
@@ -46,58 +46,76 @@ var ptx_lunr_docs = [
   "body": "typical form "
 },
 {
-  "id": "sec-basic-concepts-6",
+  "id": "def-solution",
   "level": "2",
-  "url": "sec-basic-concepts.html#sec-basic-concepts-6",
+  "url": "sec-basic-concepts.html#def-solution",
   "type": "Definition",
   "number": "1.1.2",
   "title": "",
-  "body": "A function defined on an interval satisfying the equation is called a solution . "
+  "body": "  A function defined on an open interval is called a solution of the ODE on if    is differentiable on .    For all in , the equation holds.     "
 },
 {
-  "id": "sec-basic-concepts-8",
+  "id": "ex-solution",
   "level": "2",
-  "url": "sec-basic-concepts.html#sec-basic-concepts-8",
+  "url": "sec-basic-concepts.html#ex-solution",
   "type": "Example",
   "number": "1.1.3",
   "title": "A solution of an ODE.",
-  "body": " A solution of an ODE   is a solution of the ODE , because ,   .  "
+  "body": " A solution of an ODE   is a solution of the ODE , because ,   .  The solution is defined on everywhere on .  "
 },
 {
-  "id": "sec-basic-concepts-9",
+  "id": "ex-non-solution",
   "level": "2",
-  "url": "sec-basic-concepts.html#sec-basic-concepts-9",
+  "url": "sec-basic-concepts.html#ex-non-solution",
   "type": "Example",
   "number": "1.1.4",
   "title": "A non-solution of an ODE.",
-  "body": " A non-solution of an ODE   is not a solution of the ODE , because ,   .  "
+  "body": " A non-solution of an ODE   is not a solution of the ODE , because ,   .  The solution is defined on everywhere on .  "
+},
+{
+  "id": "sec-basic-concepts-10",
+  "level": "2",
+  "url": "sec-basic-concepts.html#sec-basic-concepts-10",
+  "type": "Remark",
+  "number": "1.1.5",
+  "title": "",
+  "body": " We shall apply the method of checking solutions extensively in this course, especially in the study of higher-order linear ODEs.  "
+},
+{
+  "id": "def-general-form",
+  "level": "2",
+  "url": "sec-basic-concepts.html#def-general-form",
+  "type": "Definition",
+  "number": "1.1.6",
+  "title": "",
+  "body": "  Most generally, a first-order ODE is of the form i.e., a relation among the variable and . We call this the general form of a first-order ODE.  The order of a differential equation is the order of the highest derivative appearing in the equation. Similarly, the general form of an -th order ODE is i.e., a relation among the variable and the derivatives of .   "
 },
 {
   "id": "sec-basic-concepts-12",
   "level": "2",
   "url": "sec-basic-concepts.html#sec-basic-concepts-12",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
-  "title": "",
-  "body": "order "
-},
-{
-  "id": "sec-basic-concepts-13",
-  "level": "2",
-  "url": "sec-basic-concepts.html#sec-basic-concepts-13",
   "type": "Example",
-  "number": "1.1.5",
+  "number": "1.1.7",
   "title": "Examples of ODEs in typical and general forms.",
   "body": " Examples of ODEs in typical and general forms     (First-order ODE in its typical form).  (First-order ODE).  (Third-order ODE).     "
 },
 {
-  "id": "sec-basic-concepts-15",
+  "id": "def-pde",
   "level": "2",
-  "url": "sec-basic-concepts.html#sec-basic-concepts-15",
+  "url": "sec-basic-concepts.html#def-pde",
+  "type": "Definition",
+  "number": "1.1.8",
+  "title": "",
+  "body": "  A partial differential equation (abbrev. PDE ) is an equation concerning partial derivatives.   "
+},
+{
+  "id": "sec-basic-concepts-14",
+  "level": "2",
+  "url": "sec-basic-concepts.html#sec-basic-concepts-14",
   "type": "Example",
-  "number": "1.1.6",
+  "number": "1.1.9",
   "title": "Example of a PDE.",
-  "body": " Example of a PDE   A harmonic function in two variables are defined by the PDE We shall not require PDEs in this course.   "
+  "body": " Example of a PDE   A harmonic function in two variables are defined by the PDE    "
 },
 {
   "id": "sec-why-study-DEs",
@@ -106,34 +124,43 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.2",
   "title": "Why study differential equations?",
-  "body": " Why study differential equations?  The answer is simple: Differential equation is the foundation of science and technology.   Newton's law of cooling  Consider an object of temperature placed in a room of ambient temperature .  Newton's law of cooling: The rate of change of is proportional to the difference of the temperatures between the object and the ambient room.  Mathematically, this means where is some constant, is the ambient temperature.  If the ambient temperature is constant, then we may solve it by separating the variables:   .   Note: The constant is arbitrary. Without any further information there is no way to decide . In other words, is a solution of the ODE for ANY . Such an expression is called a one-parameter family of solutions . Generally, when solving a first-order ODE , we seek a one-parameter family of solutions. If all solutions of the ODE are contained in the family, then we call it the general solution .    Water pollution model  A lake has water volume m 3 . Assume is constant. A factory emits kilograms of mercury into the lake every day. Suppose the mercury diffuses to the lake instantly and water refreshes every day by m 3 . How much time does it take for the water to be unpotable?  Let be the mass of mercury in the lake at time . Let be a small period of time. Within the time period :   Mercury in = .  Polluted water out = .  Density of mercury = .  Mercury out = .   Thus   Let , we obtain a differential equation for ,   Although not explicitly stated in the problem, we actually have  An initial condition .  We may also search on internet for the EPA standard, which states that water is not potable if density of mercury reaches the level .    Therefore, we are looking for a time when   This differential equation can be solved by separating variables:   This is a one-parameter family of solutions of the ODE. We may determine the constant with the initial condition:   So we obtained a definite function as the solution.  In case , , , we see that   when .    Initial value problem  We have solved the initial value problem   Generally, an initial value problem (which shall be abbreviated as IVP ) consists of a (set of) differential equation(s) and a (set of) initial values.  A first order IVP is of the form   In most science and engineering applications, an IVP should have a unique solution on an interval, called interval of existence .  Summary:  A first-order ODE One-parameter family of solutions.  A first-order IVP A particular solution + interval of existence.   "
+  "body": " Why study differential equations?  The answer is simple: Differential equation is the foundation of science and technology. In this section, we shall discuss two examples.   Newton's law of cooling  Consider an object of temperature placed in a room of ambient temperature . Newton's law of cooling states that the rate of change of is proportional to the difference of the temperatures between the object and the ambient room. Mathematically, this means where is some constant, is the ambient temperature.  If the ambient temperature is constant, then we may solve the ODE by separating the variables : We exponentiate both sides to obtain Then moving to the right-hand side, we obtain     The constant is arbitrary. Without any further information there is no way to decide .  In other words, is a solution of the ODE for ANY . Such an expression is called a one-parameter family of solutions . Generally, when solving a first-order ODE , we seek a one-parameter family of solutions. If all solutions of the ODE are contained in the family, then we call it the general solution .      When we exponentiated to obtain , we ignored the absolute value after exponentiation. Let's go through the details carefully. Rigorously, when we exponentiate both sides of the equation, we get Notice that is always a positive constant. Getting rid of the absolute value, we obtain What we did to obtain is to incorporate the constant into the constant . So the constant can be either positive or negative.  A more acute reader might ask can be zero? The answer is yes. If , then , which is a constant function. It is easily verified that is also a solution of the ODE.      Water pollution model  A lake has water volume  . Assume is constant. A factory emits kilograms of mercury into the lake every day. Suppose the mercury diffuses to the lake instantly and water refreshes every day by . How much time does it take for the water to be unpotable?  Let be the mass of mercury in the lake at time . Let be a small period of time. Within the time period :   Mercury in = .  Polluted water out = .  Density of mercury = .  Mercury out = .   Thus   Let , we obtain a differential equation for ,   Although not explicitly stated in the problem, we actually have  An initial condition .  We may also search on internet for the EPA standard, which states that water is not potable if density of mercury reaches the level .    Therefore, we are looking for a time when   This differential equation can be solved by separating variables:   This is a one-parameter family of solutions of the ODE. We may determine the constant with the initial condition:   Therefore, We obtained a definite function together with an interval.  In case , , , we may solve that   when .   We have solved the initial value problem which is an ODE together with an initial condition. The solution is a function defined on an interval satisfying both the ODE and the initial condition.   We end this section with the following definition.    A first-order ODE normally have infinitely many solutions. Many of them can be represented as one-parameter family of solutions . If the one-parameter family contains all solutions, we call it the general solution .  A first order initial value problem is of the form In most science and engineering applications, an IVP should have a unique solution on an interval, called interval of existence and uniqueness , usually abbreviated as interval of existence .  Generally, an -th order ODE also have infinitely many solutions. Many of them can be represented as an -parameter family of solutions . If the -parameter family contains all solutions, we call it the general solution .  Generally, an initial value problem (which shall be abbreviated as IVP ) consists of a (set of) differential equation(s) and a (set of) initial values. In case the IVP contains one ODE of order , we need initial values to obtain a unique solution.     "
 },
 {
-  "id": "Initial-value-problem-4",
+  "id": "Newtons-law-of-cooling-4",
   "level": "2",
-  "url": "sec-why-study-DEs.html#Initial-value-problem-4",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
+  "url": "sec-why-study-DEs.html#Newtons-law-of-cooling-4",
+  "type": "Remark",
+  "number": "1.2.1",
   "title": "",
-  "body": "initial value problem IVP "
+  "body": "  The constant is arbitrary. Without any further information there is no way to decide .  In other words, is a solution of the ODE for ANY . Such an expression is called a one-parameter family of solutions . Generally, when solving a first-order ODE , we seek a one-parameter family of solutions. If all solutions of the ODE are contained in the family, then we call it the general solution .   "
 },
 {
-  "id": "Initial-value-problem-5",
+  "id": "Newtons-law-of-cooling-5",
   "level": "2",
-  "url": "sec-why-study-DEs.html#Initial-value-problem-5",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
+  "url": "sec-why-study-DEs.html#Newtons-law-of-cooling-5",
+  "type": "Remark",
+  "number": "1.2.2",
   "title": "",
-  "body": "first order IVP "
+  "body": "  When we exponentiated to obtain , we ignored the absolute value after exponentiation. Let's go through the details carefully. Rigorously, when we exponentiate both sides of the equation, we get Notice that is always a positive constant. Getting rid of the absolute value, we obtain What we did to obtain is to incorporate the constant into the constant . So the constant can be either positive or negative.  A more acute reader might ask can be zero? The answer is yes. If , then , which is a constant function. It is easily verified that is also a solution of the ODE.   "
 },
 {
-  "id": "Initial-value-problem-7",
+  "id": "subsec-water-pollution-model-19",
   "level": "2",
-  "url": "sec-why-study-DEs.html#Initial-value-problem-7",
-  "type": "Paragraph (with a defined term)",
-  "number": "",
+  "url": "sec-why-study-DEs.html#subsec-water-pollution-model-19",
+  "type": "Remark",
+  "number": "1.2.3",
   "title": "",
-  "body": "interval of existence "
+  "body": " We have solved the initial value problem which is an ODE together with an initial condition. The solution is a function defined on an interval satisfying both the ODE and the initial condition.  "
+},
+{
+  "id": "subsec-water-pollution-model-21",
+  "level": "2",
+  "url": "sec-why-study-DEs.html#subsec-water-pollution-model-21",
+  "type": "Definition",
+  "number": "1.2.4",
+  "title": "",
+  "body": "  A first-order ODE normally have infinitely many solutions. Many of them can be represented as one-parameter family of solutions . If the one-parameter family contains all solutions, we call it the general solution .  A first order initial value problem is of the form In most science and engineering applications, an IVP should have a unique solution on an interval, called interval of existence and uniqueness , usually abbreviated as interval of existence .  Generally, an -th order ODE also have infinitely many solutions. Many of them can be represented as an -parameter family of solutions . If the -parameter family contains all solutions, we call it the general solution .  Generally, an initial value problem (which shall be abbreviated as IVP ) consists of a (set of) differential equation(s) and a (set of) initial values. In case the IVP contains one ODE of order , we need initial values to obtain a unique solution.   "
 },
 {
   "id": "geometric-interpretation",
@@ -367,7 +394,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.6",
   "title": "Separable Equations",
-  "body": " Separable Equations  In general, a nonlinear ODE is very difficult to solve. We can only handle a few special types of nonlinear ODEs.   Form of a separable ODE  In this section, we study the separable ODEs , namely, an ODE of the form: i.e., the derivative is a product of two functions, one depends only on , the other depends only on . To solve this ODE, we first separate the variables, then integrate both sides, The process yields a one-parameter family of implicit solutions.   Solve the separable ODE    Separate the variables:   Integrate both sides:  We thus obtain a one-parameter family of implicit solutions      Solve the IVP    Separate the variables:   Integrate both sides:   We thus obtain a one-parameter family of implicit solutions   The initial condition should give us a particular solution   We thus obtain a particular implicit solution   This solution can actually be made explicit by solving for in terms of . Multiply both sides by 2 and take the square root,   Since , we should take the positive branch. So is the explicit solution of the IVP.   The solution makes sense when Solving this inequality is not possible without a computer. So we will leave it as is.   Conclusion: The solution is It is defined when       Implicit solution vs explicit solution  In this section, we discuss the difference between an implicit solution and an explicit solution.   If you are given an ODE without initial values, then a one-parameter family of implicit solutions is sufficient.  If you are given an IVP, whenever possible, you should try to get the explicit solution and the interval of definition (the interval where the solution is defined).   Remark.    Suppose we have an initial condition specified for the ODE in , which determines a definite . But it is impossible to solve for in terms of to get the explicit solution. In that case, we have to be satisfied with the implicit solution and ask a computer to handle the function values.  In , we managed to solve for in terms of , but was not able to solve for the interval of definition by hand. Nevertheless, we can still ask a computer to solve for the interval of definition. For , the computer gives us the interval of definition as .  The interval of definition, as its name hints, should consist of only one interval that contains the initial -value. It should also be an open interval . We do not include the endpoints because the derivative is not defined there. In , the computer would say that the solution makes sense on . But we should exclude the endpoint and use instead.    Solve the ODE    Separate the variables:   Integrate both sides:    We thus obtain a one-parameter family of implicit solutions     Solve the IVP   We have obtained a one-parameter family of implicit solutions in , namely, We shall continue from here.   We determine the constant by using the initial condition:   The implicit solution we thus obtained is It is possible to solve an explicit solution. Take the negative reciprocal and simplify, Now take the square root. Since , we take the positive branch, thus   Solution exists when    Conclusion: The solution is The interval of definition is .     Solve the IVP   We have obtained a one-parameter family of implicit solutions in , namely, We shall continue from here.   We determine the constant by using the initial condition:   The implicit solution we thus obtained is It is possible to solve an explicit solution. Take the negative reciprocal and simplify, Now take the square root. Since , we take the negative branch, thus   Solution exists when    Conclusion: The solution is The interval of definition is .    Remark. The explicit solution contains more information than the implicit solution. Indeed, Observe that  The positive or negative branch cannot be seen in the implicit solution.  The interval of definition cannot be determined by the implicit solution.  This is why whenever it is possible, we should try to solve for the explicit solution and the interval of definition.  Remark. From and , we also see that the positive or negative branch and the interval of definition depends on the initial condition. Thus these notions make no sense for a one-parameter family of solutions. This is why without the initial condition, we can leave the solution in the implicit form.    Singular solutions  We saw that has a one-parameter family of implicit solutions.    It is not the general solution because the family does not include the solution . Such an extra solution is called a singular solution .  Another example is which has a one-parameter family of solutions while is a singular solution.  Generally, for a separable ODE the constant function is a singular solution for every number satisfying (Clearly, )  When we separate the variables, we divided both sides by Such an operation implicitly required that Therefore, in the subsequent one-parameter family of solutions obtained by integration, the constant functions with will not be included in the family.  Singular solutions are common for nonlinear ODEs.   "
+  "body": " Separable Equations  In general, a nonlinear ODE is very difficult to solve. We can only handle a few special types of nonlinear ODEs.   Form of a separable ODE  In this section, we study the separable ODEs , namely, an ODE of the form: i.e., the derivative is a product of two functions, one depends only on , the other depends only on . To solve this ODE, we first separate the variables, then integrate both sides, The process yields a one-parameter family of implicit solutions.   Solve the separable ODE    Separate the variables:   Integrate both sides:  We thus obtain a one-parameter family of implicit solutions      Solve the IVP    Separate the variables:   Integrate both sides:   We thus obtain a one-parameter family of implicit solutions   The initial condition should give us a particular solution   We thus obtain a particular implicit solution   This solution can actually be made explicit by solving for in terms of . Multiply both sides by 2 and take the square root,   Since , we should take the positive branch. So is the explicit solution of the IVP.   The solution makes sense when Solving this inequality is not possible without a computer. So we will leave it as is.   Conclusion: The solution is It is defined when       Implicit solution vs explicit solution  In this section, we discuss the difference between an implicit solution and an explicit solution.   If you are given an ODE without initial values, then a one-parameter family of implicit solutions is sufficient.  If you are given an IVP, whenever possible, you should try to get the explicit solution and the interval of definition (the interval where the solution is defined).     Suppose we have an initial condition specified for the ODE in , which determines a definite . But it is impossible to solve for in terms of to get the explicit solution. In that case, we have to be satisfied with the implicit solution and ask a computer to handle the function values.  In , we managed to solve for in terms of , but was not able to solve for the interval of definition by hand. Nevertheless, we can still ask a computer to solve for the interval of definition. For , the computer would say that the solution makes sense on . But we should exclude the endpoint and use instead, because the function is not differentiable at the boundary point. Excluding the boundary points and use an open interval is a convention. But exceptions do exist. We shall not require this technical matter in this course.  The interval of definition, as its name hints, should consist of only one interval that contains the initial -value. In case the solution is defined on multiple intervals, we should pick the interval that contains the initial -value.     Solve the ODE    Separate the variables:   Integrate both sides:    We thus obtain a one-parameter family of implicit solutions     Solve the IVP   We have obtained a one-parameter family of implicit solutions in , namely, We shall continue from here.   We determine the constant by using the initial condition:   The implicit solution we thus obtained is It is possible to solve an explicit solution. Take the negative reciprocal and simplify, Now take the square root. Since , we take the positive branch, thus   Solution exists when    Conclusion: The solution is The interval of definition is .     Solve the IVP   We have obtained a one-parameter family of implicit solutions in , namely, We shall continue from here.   We determine the constant by using the initial condition:   The implicit solution we thus obtained is It is possible to solve an explicit solution. Take the negative reciprocal and simplify, Now take the square root. Since , we take the negative branch, thus   Solution exists when    Conclusion: The solution is The interval of definition is .     The explicit solution contains more information than the implicit solution. Indeed, Observe that  The positive or negative branch cannot be seen in the implicit solution.  The interval of definition cannot be determined by the implicit solution.  This is why whenever it is possible, we should try to solve for the explicit solution and the interval of definition.    From and , we also see that the positive or negative branch and the interval of definition depends on the initial condition. Thus these notions make no sense for a one-parameter family of solutions. This is why without the initial condition, we can leave the solution in the implicit form.     Singular solutions  We saw that has a one-parameter family of implicit solutions.    It is not the general solution because the family does not include the solution . Such an extra solution is called a singular solution .  Another example is which has a one-parameter family of solutions while is a singular solution.  Generally, for a separable ODE the constant function is a singular solution for every number satisfying (Clearly, )  When we separate the variables, we divided both sides by Such an operation implicitly required that Therefore, in the subsequent one-parameter family of solutions obtained by integration, the constant functions with will not be included in the family.  Singular solutions are common for nonlinear ODEs.   "
 },
 {
   "id": "subsec-separable-equations-1-2",
@@ -384,7 +411,7 @@ var ptx_lunr_docs = [
   "url": "sec-separable-equations.html#ex-separable-1",
   "type": "Example",
   "number": "1.6.1",
-  "title": "Solve the separable ODE <span class=\"process-math\">\\(\\frac{dy}{dx} = \\frac{e^x - x}{e^{-y} + y}\\)<\/span>.",
+  "title": "Solve the separable ODE <span class=\"process-math\">\\(\\dfrac{dy}{dx} = \\dfrac{e^x - x}{e^{-y} + y}\\)<\/span>.",
   "body": " Solve the separable ODE    Separate the variables:   Integrate both sides:  We thus obtain a one-parameter family of implicit solutions    "
 },
 {
@@ -393,15 +420,24 @@ var ptx_lunr_docs = [
   "url": "sec-separable-equations.html#ex-separable-2",
   "type": "Example",
   "number": "1.6.2",
-  "title": "Solve the IVP <span class=\"process-math\">\\(\\frac{dy}{dx} = \\frac{x^2 + \\sin x}{y}, \\quad y(0) = 1\\)<\/span>.",
+  "title": "Solve the IVP <span class=\"process-math\">\\(\\dfrac{dy}{dx} = \\dfrac{x^2 + \\sin x}{y}, \\quad y(0) = 1\\)<\/span>.",
   "body": " Solve the IVP    Separate the variables:   Integrate both sides:   We thus obtain a one-parameter family of implicit solutions   The initial condition should give us a particular solution   We thus obtain a particular implicit solution   This solution can actually be made explicit by solving for in terms of . Multiply both sides by 2 and take the square root,   Since , we should take the positive branch. So is the explicit solution of the IVP.   The solution makes sense when Solving this inequality is not possible without a computer. So we will leave it as is.   Conclusion: The solution is It is defined when    "
+},
+{
+  "id": "subsec-implicit-vs-explicit-4",
+  "level": "2",
+  "url": "sec-separable-equations.html#subsec-implicit-vs-explicit-4",
+  "type": "Remark",
+  "number": "1.6.3",
+  "title": "",
+  "body": "  Suppose we have an initial condition specified for the ODE in , which determines a definite . But it is impossible to solve for in terms of to get the explicit solution. In that case, we have to be satisfied with the implicit solution and ask a computer to handle the function values.  In , we managed to solve for in terms of , but was not able to solve for the interval of definition by hand. Nevertheless, we can still ask a computer to solve for the interval of definition. For , the computer would say that the solution makes sense on . But we should exclude the endpoint and use instead, because the function is not differentiable at the boundary point. Excluding the boundary points and use an open interval is a convention. But exceptions do exist. We shall not require this technical matter in this course.  The interval of definition, as its name hints, should consist of only one interval that contains the initial -value. In case the solution is defined on multiple intervals, we should pick the interval that contains the initial -value.   "
 },
 {
   "id": "ex-separable-3",
   "level": "2",
   "url": "sec-separable-equations.html#ex-separable-3",
   "type": "Example",
-  "number": "1.6.3",
+  "number": "1.6.4",
   "title": "Solve the ODE <span class=\"process-math\">\\(y' = xy^3(1 + x^2)^{-1\/2}\\)<\/span>.",
   "body": " Solve the ODE    Separate the variables:   Integrate both sides:    We thus obtain a one-parameter family of implicit solutions   "
 },
@@ -410,8 +446,8 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-separable-equations.html#ex-separable-4",
   "type": "Example",
-  "number": "1.6.4",
-  "title": "Solve the IVP <span class=\"process-math\">\\(y' = xy^3(1 + x^2)^{-1\/2}, \\, y(\\sqrt{3}) = \\frac{1}{2}\\)<\/span>.",
+  "number": "1.6.5",
+  "title": "Solve the IVP <span class=\"process-math\">\\(y' = xy^3(1 + x^2)^{-1\/2}, \\, y(\\sqrt{3}) = \\dfrac{1}{2}\\)<\/span>.",
   "body": " Solve the IVP   We have obtained a one-parameter family of implicit solutions in , namely, We shall continue from here.   We determine the constant by using the initial condition:   The implicit solution we thus obtained is It is possible to solve an explicit solution. Take the negative reciprocal and simplify, Now take the square root. Since , we take the positive branch, thus   Solution exists when    Conclusion: The solution is The interval of definition is .   "
 },
 {
@@ -419,9 +455,36 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-separable-equations.html#ex-separable-5",
   "type": "Example",
-  "number": "1.6.5",
-  "title": "Solve the IVP <span class=\"process-math\">\\(y' = xy^3(1 + x^2)^{-1\/2}, \\, y(\\sqrt{3}) = -\\frac{1}{4}\\)<\/span>.",
+  "number": "1.6.6",
+  "title": "Solve the IVP <span class=\"process-math\">\\(y' = xy^3(1 + x^2)^{-1\/2}, \\, y(\\sqrt{3}) = -\\dfrac{1}{4}\\)<\/span>.",
   "body": " Solve the IVP   We have obtained a one-parameter family of implicit solutions in , namely, We shall continue from here.   We determine the constant by using the initial condition:   The implicit solution we thus obtained is It is possible to solve an explicit solution. Take the negative reciprocal and simplify, Now take the square root. Since , we take the negative branch, thus   Solution exists when    Conclusion: The solution is The interval of definition is .   "
+},
+{
+  "id": "subsec-implicit-vs-explicit-8",
+  "level": "2",
+  "url": "sec-separable-equations.html#subsec-implicit-vs-explicit-8",
+  "type": "Remark",
+  "number": "1.6.7",
+  "title": "",
+  "body": " The explicit solution contains more information than the implicit solution. Indeed, Observe that  The positive or negative branch cannot be seen in the implicit solution.  The interval of definition cannot be determined by the implicit solution.  This is why whenever it is possible, we should try to solve for the explicit solution and the interval of definition.  "
+},
+{
+  "id": "subsec-implicit-vs-explicit-9",
+  "level": "2",
+  "url": "sec-separable-equations.html#subsec-implicit-vs-explicit-9",
+  "type": "Remark",
+  "number": "1.6.8",
+  "title": "",
+  "body": " From and , we also see that the positive or negative branch and the interval of definition depends on the initial condition. Thus these notions make no sense for a one-parameter family of solutions. This is why without the initial condition, we can leave the solution in the implicit form.  "
+},
+{
+  "id": "subsec-separable-equations-3-3",
+  "level": "2",
+  "url": "sec-separable-equations.html#subsec-separable-equations-3-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "singular solution "
 },
 {
   "id": "sec-existence-uniqueness",
@@ -430,32 +493,50 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.7",
   "title": "Existence and Uniqueness of Solutions",
-  "body": " Existence and Uniqueness of Solutions  For the application of ODEs in science and engineering, when we modeled a problem into an initial value problem, normally we expect the solution to exist and be unique. However, this is not always the case.   Pathological IVP We first study the initial value problem (IVP)  This IVP has two solutions :   If a system is modeled by this IVP, then we cannot possibly predict how the system behaves. Such problem can also happen for linear ODeS.       Standard form:   Integrating factor:   General solution:    Plug in the initial value: This means for every real number , is a solution of the IVP. The IVP has infinitely many solutions.          We have obtained the general solution in :  Plug in the initial value: , impossible. In other words, The IVP has no solutions.      Summary: A pathological IVP may have no solution \/ more than one solution \/ infinitely many solutions . To determine if an IVP is reasonably posed, we need the existence and uniqueness theorem.    Existence and Uniqueness Theorem: Linear version.   Existence and Uniqueness Theorem: Linear version.   Consider the IVP where the ODE is linear and in its standard form . Assume that:   Both and are continuous on an open interval  The open interval contains the initial time   Then there exists a unique function  over the interval that solves the IVP.     Interval of Existence and Uniqueness   The interval of existence and uniqueness is an where the solution of the IVP exists uniquely. For brevity, we call it the interval of existence .    allows us to determine the interval of existence without solving it. To obtain the interval, we follow the following procedure.   Find out the standard form of the ODE and specify the initial condition  Find out the singular points, which are the points where and are not continuous. These singular points separate the real line into disjoint open intervals  If is a singular point, we have a pathological IVP. If is not a singular point, then the interval of existence is just the interval that contains that are bounded by the singular points.        Standard form:  Both and blow up at So is a singular point.  (Missing a diagram here)   Interval of existence =    Remark. The solution of the IVP is that is defined on So if we talk about the interval of definition of the solution, it is But this doesn't change the fact that is a singular point. Generally, we should not be concerned about the solution outside the interval of existence, which is still       Standard form:  is not continuous when and  is not continuous when  (Missing a diagram here)   Interval of existence =         The standard form is  is not continuous when or  Recall:  So is not continuous when or Note that and  is not continuous when , or where  So the singular points are and   Interval of existence =    Remark: Recall in , we studied the IVP Since is not continuous at , the IVP only has a unique solution on Indeed, for every number  is a solution (the IVP has infinitely many solutions). Only with the continuity requirement did us obtain a unique solution.    Existence and Uniqueness Theorem: Nonlinear case   Existence and Uniqueness Theorem: Nonlinear case   Consider the IVP  Assume that:   The function is continuous NEAR  i.e., one can find small such that is continuous in the rectangular region   The function is continuous NEAR    Then a unique solution  exists NEAR  i.e., there exists a small such that a solution exists on  Likewise, any IVP that does not satisfy the conditions of the theorem is pathological .  (Missing a diagram here.)    Remarks:   The theorem is not as strong as the linear version. It only concludes local existence. It does not tell us the interval of existence.  Nevertheless, the theorem tells if an IVP is reasonably formulated.   Example 1:   is continuous everywhere.  is continuous when   (away from  (Missing a diagram here.)  So the IVP has a unique solution near  Example 2:   is continuous everywhere.  is continuous when   (on  (Missing a diagram here.)  The IVP does not have a unique solution.  Exercise: Check that and are all solutions of the IVP.  Example 3. Find out all , such that the IVP is reasonably formulated.  is continuous when  is continuous when  (Missing a diagram here.)  So should satisfy  Remark: You should always take the “interior” of the region where the functions and are continuous. You should not keep the boundary (won't require in this course).   "
+  "body": " Existence and Uniqueness of Solutions  For the application of ODEs in science and engineering, when we modeled a problem into an initial value problem, normally we expect the solution to exist and be unique. However, this is not always the case.   Pathological IVP - Examples     This IVP has two solutions :    If a system is modeled by an IVP that does not have a unique solution, then we cannot possibly predict how the system behaves. This can also happen for linear ODEs. We shall call such IVPs pathological .      Standard form:  Integrating factor:  General solution:  Plug in the initial value: This means for every real number , is a solution of the IVP. The IVP has infinitely many solutions.        We have obtained the general solution in :  Plug in the initial value: , impossible. In other words, The IVP has no solutions.     Summary: A pathological IVP may have no solution \/ more than one solution \/ infinitely many solutions . To determine if an IVP is reasonably posed, we need the existence and uniqueness theorem.    Existence and Uniqueness Theorem: Linear version.   Existence and Uniqueness Theorem: Linear version.   Consider the IVP where the ODE is linear and in its standard form . Assume that:   Both and are continuous on an open interval  The open interval contains the initial time   Then there exists a unique function  over the interval that solves the IVP.     Interval of Existence and Uniqueness   The interval of existence and uniqueness is an interval where the solution of the IVP exists uniquely. For brevity, we call it the interval of existence .    allows us to determine the interval of existence without solving the IVP . To obtain the interval, we follow the following procedure.   Find out the standard form of the ODE and specify the initial condition  Find out the singular points, which are the points where and are not continuous. These singular points separate the real line into disjoint open intervals  If is a singular point, we have a pathological IVP. If is not a singular point, then the interval of existence is just the interval that contains that are bounded by the singular points. Note that does not matter here.       Standard form:  Both and blow up at So is a singular point.  (Missing a diagram here)   Interval of existence =    The solution of the IVP is that is defined on So if we talk about the interval of definition of the solution, it is But this doesn't change the fact that is a singular point. Generally, we should not be concerned about the solution outside the interval of existence, namely       Standard form:  is not continuous when and  is not continuous when  (Missing a diagram here)   Interval of existence =       The standard form is  is not continuous when or  Recall:  So is not continuous when or Note that and  is not continuous when , or where  So the singular points are and   Interval of existence =    Recall in , we studied the IVP Since is not continuous at , the IVP only has a unique solution on Indeed, for every number  is a solution (the IVP has infinitely many solutions). Only with the additional continuity condition did us obtain a unique solution.     Existence and Uniqueness Theorem: Nonlinear case   Existence and Uniqueness Theorem: Nonlinear case   Consider the IVP  Assume that:   The function is continuous NEAR  i.e., one can find small such that is continuous in the rectangular region   The function is continuous NEAR    Then a unique solution  exists NEAR  i.e., there exists a small such that a solution exists on  Likewise, any IVP that does not satisfy the conditions of the theorem is pathological .  (Missing a diagram here.)      The theorem is not as strong as the linear version. It only concludes local existence. It does not tell us the interval of existence.  Nevertheless, the theorem tells if an IVP is reasonably formulated.        is continuous everywhere.  is continuous when   (away from  (Missing a diagram here.)  So the IVP has a unique solution near       is continuous everywhere.  is continuous when   (on  (Missing a diagram here.)  The IVP does not satisfy the conditions of the theorem. Indeed, it is straightforward to check that and are all solutions of the IVP.    Find out all , such that the IVP is reasonably formulated.   is continuous when  is continuous when   (Missing a diagram here.)  So should satisfy     You should always take the “interior” of the region where the functions and are continuous. You should not keep the boundary.  Rigorously speaking, the existence and uniqueness theorem only guarantees that an IVP is reasonably formulated if the conditions are satisfied. Logically, it is possible that an IVP still has a unique solution when the conditions are not satisfied. But this is not a topic we shall explore in this course. We shall call any IVP that does not satisfy the conditions of the theorem pathological .  None of the technicalities in this remark shall be required in this course.     "
+},
+{
+  "id": "ex-existence-uniqueness-0",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#ex-existence-uniqueness-0",
+  "type": "Example",
+  "number": "1.7.1",
+  "title": "<span class=\"process-math\">\\(\\dfrac{dy}{dx} = x\\sqrt{y}, \\, y(0) = 0\\)<\/span>.",
+  "body": "   This IVP has two solutions :   "
+},
+{
+  "id": "subsec-existence-uniqueness-1-3",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#subsec-existence-uniqueness-1-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "pathological "
 },
 {
   "id": "ex-existence-uniqueness-1",
   "level": "2",
   "url": "sec-existence-uniqueness.html#ex-existence-uniqueness-1",
   "type": "Example",
-  "number": "1.7.1",
+  "number": "1.7.2",
   "title": "<span class=\"process-math\">\\(ty' + (t - 1)y = -e^{-t}, \\, y(0) = 1\\)<\/span>.",
-  "body": "     Standard form:   Integrating factor:   General solution:    Plug in the initial value: This means for every real number , is a solution of the IVP. The IVP has infinitely many solutions.    "
+  "body": "    Standard form:  Integrating factor:  General solution:  Plug in the initial value: This means for every real number , is a solution of the IVP. The IVP has infinitely many solutions.   "
 },
 {
   "id": "ex-existence-uniqueness-2",
   "level": "2",
   "url": "sec-existence-uniqueness.html#ex-existence-uniqueness-2",
   "type": "Example",
-  "number": "1.7.2",
+  "number": "1.7.3",
   "title": "<span class=\"process-math\">\\(ty' + (t - 1)y = -e^{-t}, \\, y(0) = 0\\)<\/span>.",
-  "body": "     We have obtained the general solution in :  Plug in the initial value: , impossible. In other words, The IVP has no solutions.     "
+  "body": "    We have obtained the general solution in :  Plug in the initial value: , impossible. In other words, The IVP has no solutions.    "
 },
 {
   "id": "thm-existence-uniqueness-linear",
   "level": "2",
   "url": "sec-existence-uniqueness.html#thm-existence-uniqueness-linear",
   "type": "Theorem",
-  "number": "1.7.3",
+  "number": "1.7.4",
   "title": "Existence and Uniqueness Theorem: Linear version..",
   "body": " Existence and Uniqueness Theorem: Linear version.   Consider the IVP where the ODE is linear and in its standard form . Assume that:   Both and are continuous on an open interval  The open interval contains the initial time   Then there exists a unique function  over the interval that solves the IVP.   "
 },
@@ -464,45 +545,108 @@ var ptx_lunr_docs = [
   "level": "2",
   "url": "sec-existence-uniqueness.html#def-existence-uniqueness-interval",
   "type": "Definition",
-  "number": "1.7.4",
+  "number": "1.7.5",
   "title": "Interval of Existence and Uniqueness.",
-  "body": " Interval of Existence and Uniqueness   The interval of existence and uniqueness is an where the solution of the IVP exists uniquely. For brevity, we call it the interval of existence .   "
+  "body": " Interval of Existence and Uniqueness   The interval of existence and uniqueness is an interval where the solution of the IVP exists uniquely. For brevity, we call it the interval of existence .   "
 },
 {
   "id": "ex-existence-uniqueness-3",
   "level": "2",
   "url": "sec-existence-uniqueness.html#ex-existence-uniqueness-3",
   "type": "Example",
-  "number": "1.7.5",
+  "number": "1.7.6",
   "title": "<span class=\"process-math\">\\(ty' + (t - 1)y = -e^{-t}, \\, y(\\ln 2) = \\dfrac{1}{2}\\)<\/span>.",
-  "body": "     Standard form:  Both and blow up at So is a singular point.  (Missing a diagram here)   Interval of existence =   "
+  "body": "    Standard form:  Both and blow up at So is a singular point.  (Missing a diagram here)   Interval of existence =  "
+},
+{
+  "id": "subsec-existence-uniqueness-2-7",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#subsec-existence-uniqueness-2-7",
+  "type": "Remark",
+  "number": "1.7.7",
+  "title": "",
+  "body": " The solution of the IVP is that is defined on So if we talk about the interval of definition of the solution, it is But this doesn't change the fact that is a singular point. Generally, we should not be concerned about the solution outside the interval of existence, namely  "
 },
 {
   "id": "ex-existence-uniqueness-4",
   "level": "2",
   "url": "sec-existence-uniqueness.html#ex-existence-uniqueness-4",
   "type": "Example",
-  "number": "1.7.6",
+  "number": "1.7.8",
   "title": "<span class=\"process-math\">\\((t - 3)y' + (\\ln t)y = 2t, \\, y(1) = 2.\\)<\/span>.",
-  "body": "     Standard form:  is not continuous when and  is not continuous when  (Missing a diagram here)   Interval of existence =   "
+  "body": "    Standard form:  is not continuous when and  is not continuous when  (Missing a diagram here)   Interval of existence =  "
 },
 {
   "id": "ex-existence-uniqueness-5",
   "level": "2",
   "url": "sec-existence-uniqueness.html#ex-existence-uniqueness-5",
   "type": "Example",
-  "number": "1.7.7",
+  "number": "1.7.9",
   "title": "<span class=\"process-math\">\\(\\sin(2t) y' + \\tan(4t) y = \\dfrac{1}{t}, \\, y\\left(\\dfrac{\\pi}{4}\\right) = 0.\\)<\/span>.",
-  "body": "     The standard form is  is not continuous when or  Recall:  So is not continuous when or Note that and  is not continuous when , or where  So the singular points are and   Interval of existence =   "
+  "body": "    The standard form is  is not continuous when or  Recall:  So is not continuous when or Note that and  is not continuous when , or where  So the singular points are and   Interval of existence =  "
+},
+{
+  "id": "subsec-existence-uniqueness-2-10",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#subsec-existence-uniqueness-2-10",
+  "type": "Remark",
+  "number": "1.7.10",
+  "title": "",
+  "body": " Recall in , we studied the IVP Since is not continuous at , the IVP only has a unique solution on Indeed, for every number  is a solution (the IVP has infinitely many solutions). Only with the additional continuity condition did us obtain a unique solution.  "
 },
 {
   "id": "thm-existence-uniqueness-nonlinear",
   "level": "2",
   "url": "sec-existence-uniqueness.html#thm-existence-uniqueness-nonlinear",
   "type": "Theorem",
-  "number": "1.7.8",
+  "number": "1.7.11",
   "title": "Existence and Uniqueness Theorem: Nonlinear case.",
   "body": " Existence and Uniqueness Theorem: Nonlinear case   Consider the IVP  Assume that:   The function is continuous NEAR  i.e., one can find small such that is continuous in the rectangular region   The function is continuous NEAR    Then a unique solution  exists NEAR  i.e., there exists a small such that a solution exists on  Likewise, any IVP that does not satisfy the conditions of the theorem is pathological .  (Missing a diagram here.)   "
+},
+{
+  "id": "subsec-existence-uniqueness-3-3",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#subsec-existence-uniqueness-3-3",
+  "type": "Remark",
+  "number": "1.7.12",
+  "title": "",
+  "body": "  The theorem is not as strong as the linear version. It only concludes local existence. It does not tell us the interval of existence.  Nevertheless, the theorem tells if an IVP is reasonably formulated.   "
+},
+{
+  "id": "ex-existence-uniqueness-6",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#ex-existence-uniqueness-6",
+  "type": "Example",
+  "number": "1.7.13",
+  "title": "<span class=\"process-math\">\\(y' = y^{\\frac{1}{3}}, \\, y(0) = 1.\\)<\/span>.",
+  "body": "    is continuous everywhere.  is continuous when   (away from  (Missing a diagram here.)  So the IVP has a unique solution near  "
+},
+{
+  "id": "ex-existence-uniqueness-7",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#ex-existence-uniqueness-7",
+  "type": "Example",
+  "number": "1.7.14",
+  "title": "<span class=\"process-math\">\\(y' = y^{\\frac{1}{3}}, \\, y(1) = 0.\\)<\/span>.",
+  "body": "    is continuous everywhere.  is continuous when   (on  (Missing a diagram here.)  The IVP does not satisfy the conditions of the theorem. Indeed, it is straightforward to check that and are all solutions of the IVP.  "
+},
+{
+  "id": "ex-existence-uniqueness-8",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#ex-existence-uniqueness-8",
+  "type": "Example",
+  "number": "1.7.15",
+  "title": "Find out all <span class=\"process-math\">\\((t_0, y_0)\\text{,}\\)<\/span> such that the IVP<div class=\"displaymath process-math\">\n\\begin{equation*}\ny' = \\sqrt{1 - t^2 - y^2}, \\, y(t_0) = y_0\n\\end{equation*}\n<\/div>is reasonably formulated..",
+  "body": " Find out all , such that the IVP is reasonably formulated.   is continuous when  is continuous when   (Missing a diagram here.)  So should satisfy  "
+},
+{
+  "id": "subsec-existence-uniqueness-3-7",
+  "level": "2",
+  "url": "sec-existence-uniqueness.html#subsec-existence-uniqueness-3-7",
+  "type": "Remark",
+  "number": "1.7.16",
+  "title": "",
+  "body": "  You should always take the “interior” of the region where the functions and are continuous. You should not keep the boundary.  Rigorously speaking, the existence and uniqueness theorem only guarantees that an IVP is reasonably formulated if the conditions are satisfied. Logically, it is possible that an IVP still has a unique solution when the conditions are not satisfied. But this is not a topic we shall explore in this course. We shall call any IVP that does not satisfy the conditions of the theorem pathological .  None of the technicalities in this remark shall be required in this course.   "
 },
 {
   "id": "sec-autonomous",
@@ -511,7 +655,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.8",
   "title": "Autonomous Equations",
-  "body": " Autonomous Equations  In many situations, the ODE we use to model a physical system is of the form where the right-hand-side does not depend on . Such an ODE is called an autonomous ODE .  All autonomous ODEs are separable and thus can be solved by the method of separation of variables. However, if we only need the qualitative behavior of the solutions, it is usually more convenient to use the qualitative method.   We start with the definition of an equilibrium solution . We say is an equlibrium solution of the autonomous ODE if  Example 1:  So is an equilibrium solution.  Example 2:   So are equilibrium solutions.  We consider only the case where the constant function is the unique solution of the IVP From the existence and uniqueness theorem, it suffices that and are continuous near . This always holds if is a polynomial function.    Let be an equilibrium solution of   is stable from above if for every that is not too far from ,   is unstable from above if for every that is not too far from ,   is stable from below if for every that is not too far from ,    is unstable from below if for every that is not too far from ,    is stable if it is both stable from above and stable from below.    is unstable if it is both unstable from above and unstable from below.    is semistable if it is stable from one side but unstable from the other side.       Once we know the equilibrium solutions and their stability, we may determine the asymptotic behavior of the solutions. The asymptotic behavior of the solutions is usually good enough for scientists and engineers to make decisions.  Example: Pollution Model   The ODE is autonomous.  Equilibrium solution:  From the direction field, the solution passing through will never go above  So density of mercury is always below If the lake water stays potable forever.    Example: Falling object from great height, subject to gravity and the air resistance . From Newton's second law:   The ODE is autonomous.  Equilibrium solution  The equilibrium solution is indeed the terminal velocity. We obtained it without much trouble.  We may also try to get the explicit solution of the IVP by separating the variables:              As you see, although the explicit solution contains much more information, if we only need the asymptotic behavior, it is much more convenient to use the qualitative method.  More examples  Example:  Equilibriums:  If , then  If , then  If , then  If , then    If an initial condition is given as , then   If an initial condition is given as , then     Instead of drawing the full directional field, we may compress the 2-dimensional plane into one single line, called the phase line.    The phase line can either be drawn vertically or horizontally.    Example:  Equilibriums:     In many cases, we do not know the explicity formula for but only its graph. We are still able to carry out the qualitative method.  Example: where the graph of is given.     "
+  "body": " Autonomous Equations  In many situations, the ODE we use to model a physical system is of the form where the right-hand-side does not depend on . Such an ODE is called an autonomous ODE .  All autonomous ODEs are separable and thus can be solved by the method of separation of variables. However, if we only need the qualitative behavior of the solutions, it is usually more convenient to use the qualitative method.   Equilibrium Solutions  We start with the definition of an equilibrium solution . We say is an equlibrium solution of the autonomous ODE if    So is an equilibrium solution.      So are equilibrium solutions.   We consider only the case where the constant function is the unique solution of the IVP From the existence and uniqueness theorem, it suffices that and are continuous near . This always holds if is a polynomial function.    Stability of Equilibrium Solutions  Let be an equilibrium solution of   is stable from above if for every that is not too far from ,   is unstable from above if for every that is not too far from ,   is stable from below if for every that is not too far from ,    is unstable from below if for every that is not too far from ,    is stable if it is both stable from above and stable from below.    is unstable if it is both unstable from above and unstable from below.    is semistable if it is stable from one side but unstable from the other side.       Qualitative Method  Once we know the equilibrium solutions and their stability, we may determine the asymptotic behavior of the solutions. The asymptotic behavior of the solutions is usually good enough for scientists and engineers to make decisions.   Pollution Model   The ODE is autonomous.  Equilibrium solution:  From the direction field, the solution passing through will never go above  So density of mercury is always below If the lake water stays potable forever.      Falling object from great height, subject to gravity and the air resistance .   The ODE is autonomous.  Equilibrium solution  The equilibrium solution is indeed the terminal velocity. We obtained it without much trouble.  We may also try to get the explicit solution of the IVP by separating the variables:              As you see, although the explicit solution contains much more information, if we only need the asymptotic behavior, it is much more convenient to use the qualitative method.     Equilibriums:  If , then  If , then  If , then  If , then    If an initial condition is given as , then   If an initial condition is given as , then      Instead of drawing the full directional field, we may compress the 2-dimensional plane into one single line, called the phase line .    The phase line can either be drawn vertically or horizontally.      Equilibriums solutions:      In many cases, we do not know the explicity formula for but only its graph. We are still able to carry out the qualitative method.   where the graph of is given as follows.      "
 },
 {
   "id": "sec-autonomous-2",
@@ -523,13 +667,85 @@ var ptx_lunr_docs = [
   "body": "autonomous ODE "
 },
 {
-  "id": "subsec-equilibrium-solution-1",
+  "id": "subsec-equilibrium-solution-2",
   "level": "2",
-  "url": "sec-autonomous.html#subsec-equilibrium-solution-1",
+  "url": "sec-autonomous.html#subsec-equilibrium-solution-2",
   "type": "Paragraph (with a defined term)",
   "number": "",
   "title": "",
   "body": "equilibrium solution "
+},
+{
+  "id": "ex-equilibrium-solution-1",
+  "level": "2",
+  "url": "sec-autonomous.html#ex-equilibrium-solution-1",
+  "type": "Example",
+  "number": "1.8.1",
+  "title": "<span class=\"process-math\">\\(y' = \\frac{1}{2}y - 1.\\)<\/span>.",
+  "body": "  So is an equilibrium solution.  "
+},
+{
+  "id": "ex-equilibrium-solution-2",
+  "level": "2",
+  "url": "sec-autonomous.html#ex-equilibrium-solution-2",
+  "type": "Example",
+  "number": "1.8.2",
+  "title": "<span class=\"process-math\">\\(y' = (y - 1)y(y + 1).\\)<\/span>.",
+  "body": "   So are equilibrium solutions.  "
+},
+{
+  "id": "ex-autonomous-1",
+  "level": "2",
+  "url": "sec-autonomous.html#ex-autonomous-1",
+  "type": "Example",
+  "number": "1.8.3",
+  "title": "Pollution Model.",
+  "body": " Pollution Model   The ODE is autonomous.  Equilibrium solution:  From the direction field, the solution passing through will never go above  So density of mercury is always below If the lake water stays potable forever.  "
+},
+{
+  "id": "ex-autonomous-2",
+  "level": "2",
+  "url": "sec-autonomous.html#ex-autonomous-2",
+  "type": "Example",
+  "number": "1.8.4",
+  "title": "Falling object from great height, subject to gravity <span class=\"process-math\">\\(mg\\)<\/span> and the air resistance <span class=\"process-math\">\\(-kv^2\\text{.}\\)<\/span>.",
+  "body": " Falling object from great height, subject to gravity and the air resistance .   The ODE is autonomous.  Equilibrium solution  The equilibrium solution is indeed the terminal velocity. We obtained it without much trouble.  We may also try to get the explicit solution of the IVP by separating the variables:              As you see, although the explicit solution contains much more information, if we only need the asymptotic behavior, it is much more convenient to use the qualitative method.  "
+},
+{
+  "id": "ex-autonomous-3",
+  "level": "2",
+  "url": "sec-autonomous.html#ex-autonomous-3",
+  "type": "Example",
+  "number": "1.8.5",
+  "title": "<span class=\"process-math\">\\(y' = y(y - 1)(y + 1).\\)<\/span>.",
+  "body": "  Equilibriums:  If , then  If , then  If , then  If , then    If an initial condition is given as , then   If an initial condition is given as , then     "
+},
+{
+  "id": "subsec-qualitative-method-6",
+  "level": "2",
+  "url": "sec-autonomous.html#subsec-qualitative-method-6",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "phase line "
+},
+{
+  "id": "ex-autonomous-4",
+  "level": "2",
+  "url": "sec-autonomous.html#ex-autonomous-4",
+  "type": "Example",
+  "number": "1.8.6",
+  "title": "<span class=\"process-math\">\\(y' = y^2(y^2 - 4) = y^2(y - 2)(y + 2).\\)<\/span>.",
+  "body": "  Equilibriums solutions:     "
+},
+{
+  "id": "ex-autonomous-5",
+  "level": "2",
+  "url": "sec-autonomous.html#ex-autonomous-5",
+  "type": "Example",
+  "number": "1.8.7",
+  "title": "<span class=\"process-math\">\\(y' = f(y)\\)<\/span> where the graph of <span class=\"process-math\">\\(f(y)\\)<\/span> is given as follows..",
+  "body": " where the graph of is given as follows.    "
 },
 {
   "id": "sec-numerical",
@@ -538,25 +754,70 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.9",
   "title": "Numerical Methods",
-  "body": " Numerical Methods  Numerical Methods   Applies to every reasonably formulated initial value problem.  Most useful when the analytic methods fail.  Main method for IVP in real world engineering practice.    Euler’s method.  Idea: Use the direction field to perform linear approximations.  Recall:  Consider we choose a small step-size  Then we approximate by    We read the line element at the point perform the same procedure to get an approximation of    Repeating the process, we may approximate for every    Formula: Given the IVP and step-size set  If we let be the approximation of then can be obtained from by   Example 1: Use Euler’s method to approximate with step-size  Since we compute that       We computed that   Want: i.e.,   So             0  1  3    1  1.5     2  2     3  2.5     4  3      General steps:   Formulate the formula and simplify in terms of  Determine how many steps you want to compute.  Compute using either a calculator or some software.   Example 2: Use Euler’s method to approximate with step-size  Since we compute that      We computed that   Want: i.e.,   So             0  1  2    1  2     2  3        Error analysis  In Example 1, we approximated that  The IVP can be solved directly.  The actual solution is  The approximation is not very good. However, if we use or the approximation will be much better.  Recall: Taylor's theorem:   In the Euler's method, we only kept the first two terms.  The dropped terms can be expressed using Lagrange remainder:    If on Euler’s method gives an underestimate of i.e., the estimate is smaller than the actual solution  If on Euler’s method gives an overestimate of i.e., the estimate is larger than the actual solution  If changes sign. In that case, we can’t tell.  The formula describes the error in one step , thus is called the local truncation error. It is proportional to In particular, lowering means lowering the error.  The final error, aka global truncation error, will accumulate.  In general, if the local truncation , then global truncation error For Euler’s method, the GTE   Example 1:  We estimated that Do we have an overestimate or an underestimate?  To find , we take the derivative on both sides of the ODE:   Within we can estimate using the values of each step. Recall that   All positive. It is likely that we have an underestimate.  Warning: This process is not fully rigorous. It provides some evidence that is usually good enough in engineering practices.  Example 1:  We estimated that If the error of is 0.2 with step-size what would the error be if step-size  We know that the global truncation error is proportional to i.e.,  We have when So  When we have  Remark: We may use this method to decide the step-size so that the error is controlled within a certain precision level.     Improved Euler's method:       Local truncation error , Global truncation error    Runge-Kutta method (RK4)        Local truncation error , Global truncation error      "
+  "body": " Numerical Methods  Numerical Methods   Applies to every reasonably formulated initial value problem.  Most useful when the analytic methods fail.  Main method for IVP in real world engineering practice.    Euler’s method  The idea of Euler's method is simple: we use the direction field to perform linear approximations. We first recall the linear approximation formula  Consider the IVP we choose a small step-size and we approximate by    We read the line element at the point perform the same procedure to get an approximation of    Repeating the process, we may approximate for every     Euler's method  Given the IVP and step-size set If we let be the approximation of then can be obtained from by    Use Euler’s method to approximate with step-size  Since we compute that       We computed that   Want: i.e.,   So             0  1  3    1  1.5     2  2     3  2.5     4  3       Summary: General steps in applying Euler's method:   Formulate the formula and simplify in terms of  Determine how many steps you want to compute.  Compute using either a calculator or some software.    Use Euler’s method to approximate with step-size  Since we compute that      We computed that   Want: i.e.,   So             0  1  2    1  2     2  3         Error analysis of Euler's method  In , we approximated that  The IVP can be solved directly.  The actual solution is  The approximation is not very good. However, if we use or the approximation will be much better.  To understand the error, we recall Taylor's theorem: In the Euler's method, we only kept the first two terms. The dropped terms can be expressed using Lagrange remainder:    If on Euler’s method gives an underestimate of i.e., the estimate is smaller than the actual solution  If on Euler’s method gives an overestimate of i.e., the estimate is larger than the actual solution  If changes sign. In that case, we can’t tell.  The formula describes the error in one step , thus is called the local truncation error. It is proportional to In particular, lowering means lowering the error.  The final error, aka global truncation error, will accumulate.  In general, if the local truncation , then global truncation error For Euler’s method, the GTE      We estimated that Do we have an overestimate or an underestimate?  To find , we take the derivative on both sides of the ODE: Within we can estimate using the values of each step. Recall that Using the data and the formular for , we have They are all positive. It is likely that we have an underestimate.  Warning: This process is not fully rigorous. It provides some evidence that is usually good enough in engineering practices.    If the error of is 0.2 with step-size what would the error be if step-size  We know that the global truncation error is proportional to i.e., We have when So When we have So the error is    We may use this method to decide the step-size so that the error is controlled within a certain precision level.     Other methods  Here are some other methods that are more accurate than Euler's method. Due to limitation of lecture time, we shall not discuss them in detail.   Improved Euler's method:       Local truncation error , Global truncation error    Runge-Kutta method (RK4)        Local truncation error , Global truncation error     It shall be noted that the RK4 method is the most popular method in practice.   "
 },
 {
-  "id": "subsec-euler-method-22",
+  "id": "alg-euler-method",
   "level": "2",
-  "url": "sec-numerical.html#subsec-euler-method-22",
-  "type": "Table",
+  "url": "sec-numerical.html#alg-euler-method",
+  "type": "Algorithm",
   "number": "1.9.1",
-  "title": "",
-  "body": "          0  1  3    1  1.5     2  2     3  2.5     4  3     "
+  "title": "Euler’s method.",
+  "body": " Euler's method  Given the IVP and step-size set If we let be the approximation of then can be obtained from by  "
 },
 {
-  "id": "subsec-euler-method-35",
+  "id": "ex-euler-method-1",
   "level": "2",
-  "url": "sec-numerical.html#subsec-euler-method-35",
-  "type": "Table",
+  "url": "sec-numerical.html#ex-euler-method-1",
+  "type": "Example",
   "number": "1.9.2",
+  "title": "<span class=\"process-math\">\\(y' = t - y + 1, \\, y(1) = 3.\\)<\/span> Use Euler’s method to approximate <span class=\"process-math\">\\(y(3)\\)<\/span> with step-size <span class=\"process-math\">\\(h = 0.5.\\)<\/span>.",
+  "body": " Use Euler’s method to approximate with step-size  Since we compute that       We computed that   Want: i.e.,   So             0  1  3    1  1.5     2  2     3  2.5     4  3      "
+},
+{
+  "id": "ex-euler-method-2",
+  "level": "2",
+  "url": "sec-numerical.html#ex-euler-method-2",
+  "type": "Example",
+  "number": "1.9.4",
+  "title": "<span class=\"process-math\">\\(y' = t + y, \\, y(1) = 2.\\)<\/span> Use Euler’s method to approximate <span class=\"process-math\">\\(y(3)\\)<\/span> with step-size <span class=\"process-math\">\\(h = 1.\\)<\/span>.",
+  "body": " Use Euler’s method to approximate with step-size  Since we compute that      We computed that   Want: i.e.,   So             0  1  2    1  2     2  3      "
+},
+{
+  "id": "subsec-error-analysis-7",
+  "level": "2",
+  "url": "sec-numerical.html#subsec-error-analysis-7",
+  "type": "Observation",
+  "number": "1.9.6",
   "title": "",
-  "body": "          0  1  2    1  2     2  3     "
+  "body": "  If on Euler’s method gives an underestimate of i.e., the estimate is smaller than the actual solution  If on Euler’s method gives an overestimate of i.e., the estimate is larger than the actual solution  If changes sign. In that case, we can’t tell.  The formula describes the error in one step , thus is called the local truncation error. It is proportional to In particular, lowering means lowering the error.  The final error, aka global truncation error, will accumulate.  In general, if the local truncation , then global truncation error For Euler’s method, the GTE   "
+},
+{
+  "id": "ex-error-analysis-1",
+  "level": "2",
+  "url": "sec-numerical.html#ex-error-analysis-1",
+  "type": "Example",
+  "number": "1.9.7",
+  "title": "<span class=\"process-math\">\\(y' = t - y + 1, \\, y(1) = 3.\\)<\/span>.",
+  "body": "  We estimated that Do we have an overestimate or an underestimate?  To find , we take the derivative on both sides of the ODE: Within we can estimate using the values of each step. Recall that Using the data and the formular for , we have They are all positive. It is likely that we have an underestimate.  Warning: This process is not fully rigorous. It provides some evidence that is usually good enough in engineering practices.  "
+},
+{
+  "id": "ex-error-analysis-2",
+  "level": "2",
+  "url": "sec-numerical.html#ex-error-analysis-2",
+  "type": "Example",
+  "number": "1.9.8",
+  "title": "<span class=\"process-math\">\\(y' = t - y + 1, \\, y(1) = 3.\\)<\/span> If the error of <span class=\"process-math\">\\(y(3)\\)<\/span> is 0.2 with step-size <span class=\"process-math\">\\(h = 0.5,\\)<\/span> what would the error be if step-size <span class=\"process-math\">\\(h = 0.01?\\)<\/span>",
+  "body": " If the error of is 0.2 with step-size what would the error be if step-size  We know that the global truncation error is proportional to i.e., We have when So When we have So the error is  "
+},
+{
+  "id": "subsec-error-analysis-10",
+  "level": "2",
+  "url": "sec-numerical.html#subsec-error-analysis-10",
+  "type": "Remark",
+  "number": "1.9.9",
+  "title": "",
+  "body": " We may use this method to decide the step-size so that the error is controlled within a certain precision level.  "
 },
 {
   "id": "sec-2nd-order-linear-gen-theory",
