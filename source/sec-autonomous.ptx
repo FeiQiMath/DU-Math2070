@@ -8,17 +8,25 @@ where the right-hand-side does not depend on <m>t</m>. Such an ODE is called an 
 <p>All autonomous ODEs are separable and thus can be solved by the method of separation of variables. However, if we only need the qualitative behavior of the solutions, it is usually more convenient to use the qualitative method. </p>
 
 <subsection xml:id="subsec-equilibrium-solution">
+<title>Equilibrium Solutions</title>
 <p>We start with the definition of an <term>equilibrium solution</term>. We say <m>y = y_0</m> is an equlibrium solution of the autonomous ODE <m>y' = f(y)</m> if <me>f(y_0) = 0.</me></p>
 
-<p>Example 1: <m>y' = \frac{1}{2}y - 1.</m></p>
+<example xml:id="ex-equilibrium-solution-1">
+<title><m>y' = \frac{1}{2}y - 1.</m></title>
 <p><m>\frac{1}{2}y - 1 = 0 \implies y = 2.</m> So <m>y = 2</m> is an equilibrium solution.</p>
-<p>Example 2: <m>y' = (y - 1)y(y + 1).</m></p>
+</example>
+
+<example xml:id="ex-equilibrium-solution-2">
+<title><m>y' = (y - 1)y(y + 1).</m></title>
 <p><m>(y - 1)y(y + 1) = 0 \implies y = 0, 1, -1.</m></p>
 <p>So <m>y = 0, y = -1, y = 1</m> are equilibrium solutions.</p>
+</example>
+
 <p>We consider only the case where the constant function <m>y(t) = y_0</m> is the unique solution of the IVP <m>y' = f(y), y(t_0) = y_0.</m> From the existence and uniqueness theorem, it suffices that <m>f(y)</m> and <m>\dfrac{\partial f}{\partial y}</m> are continuous near <m>y = y_0</m>. This always holds if <m>f(y)</m> is a polynomial function. </p>
 </subsection>
 
 <subsection xml:id="subsec-stability-of-equilibrium-solution">
+<title>Stability of Equilibrium Solutions</title>
 <p>Let <m>y = y_0</m> be an equilibrium solution of <m>y' = f(y).</m></p>
 <ul>
 <li><m>y = y_0</m> is <term>stable from above</term> if for every <m>y \gt y_0</m> that is not too far from <m>y_0</m>, <m>f(y) \lt 0.</m></li>
@@ -65,22 +73,25 @@ where the right-hand-side does not depend on <m>t</m>. Such an ODE is called an 
 </subsection>
 
 <subsection xml:id="subsec-qualitative-method">
+<title>Qualitative Method</title>
 <p> Once we know the equilibrium solutions and their stability, we may determine the asymptotic behavior of the solutions. The asymptotic behavior of the solutions is usually good enough for scientists and engineers to make decisions. </p>
 
-<p>Example: Pollution Model</p>
+<example xml:id="ex-autonomous-1">
+<title>Pollution Model</title>
 <p><m>\frac{dP}{dt} = R - \frac{P}{V}W, \, P(0) = 0.</m></p>
 
 <p>The ODE is autonomous.</p>
 <p>Equilibrium solution: <m>R - \frac{P}{V}W = 0 \implies P = \frac{RV}{W}.</m></p>
 <p>From the direction field, the solution passing through <m>(0, 0)</m> will never go above <m>P = \frac{RV}{W}.</m></p>
 <p>So density of mercury is always below <m>\frac{R}{W}.</m> If <m>\frac{R}{W} \lt 0.002 \, \text{mg/L},</m> the lake water stays potable forever.</p>
-
+</example>
 <!-- Figure: Pollution Model -->
 <!-- <p>
   <img src="path/to/pollution_model.png" alt="Pollution Model" />
 </p> -->
 
-<p>Example: Falling object from great height, subject to gravity <m>mg</m> and the air resistance <m>-kv^2</m>. From Newton's second law:</p>
+<example xml:id="ex-autonomous-2">
+<title>Falling object from great height, subject to gravity <m>mg</m> and the air resistance <m>-kv^2</m>.</title>
 <p><m>\frac{m \, dv}{dt} = mg - kv^2, \, v(0) = 0.</m></p>
 
 <p>The ODE is autonomous.</p>
@@ -108,10 +119,10 @@ where the right-hand-side does not depend on <m>t</m>. Such an ODE is called an 
 </p>
 
 <p>As you see, although the explicit solution contains much more information, if we only need the asymptotic behavior, it is much more convenient to use the qualitative method. </p>
+</example>
 
-<p>More examples</p>
-
-<p>Example: <m>y' = y(y - 1)(y + 1).</m></p>
+<example xml:id="ex-autonomous-3">
+<title><m>y' = y(y - 1)(y + 1).</m></title>
 <p>Equilibriums: <m>y = -1, y = 0, y = 1.</m></p>
 
 <p>If <m>y \gt 1</m>, then <m>y' \gt 0</m></p>
@@ -132,8 +143,9 @@ where the right-hand-side does not depend on <m>t</m>. Such an ODE is called an 
 <!-- <p>
   <img src="path/to/direction_field.png" alt="Direction Field" />
 </p> -->
+</example>
 
-<p>Instead of drawing the full directional field, we may compress the 2-dimensional plane into one single line, called the phase line.</p>
+<p>Instead of drawing the full directional field, we may compress the 2-dimensional plane into one single line, called the <term>phase line</term>.</p>
 
 <!-- Figure: Directional Field and Phase Line -->
 <!-- <p>
@@ -148,8 +160,9 @@ where the right-hand-side does not depend on <m>t</m>. Such an ODE is called an 
   <img src="path/to/phase_line.png" alt="Phase Line" />
 </p> -->
 
-<p>Example: <m>y' = y^2(y^2 - 4) = y^2(y - 2)(y + 2).</m></p>
-<p>Equilibriums: <m>y = -2, y = 0, y = 2.</m></p>
+<example xml:id="ex-autonomous-4">
+<title><m>y' = y^2(y^2 - 4) = y^2(y - 2)(y + 2).</m></title>
+<p>Equilibriums solutions: <m>y = -2, y = 0, y = 2.</m></p>
 
 <!-- Figure: Stability Analysis -->
 <!-- <p>
@@ -186,16 +199,18 @@ where the right-hand-side does not depend on <m>t</m>. Such an ODE is called an 
     </td>
   </tr>
 </table> -->
+</example>
 
 <p> In many cases, we do not know the explicity formula for <m>f(y)</m> but only its graph. We are still able to carry out the qualitative method.</p>
 
-<p>Example: <m>y' = f(y)</m> where the graph of <m>f(y)</m> is given.</p>
+<example xml:id="ex-autonomous-5">
+<title><m>y' = f(y)</m> where the graph of <m>f(y)</m> is given as follows.</title>
 
 <!-- Figure: Graph of f(y) -->
 <!-- <p>
   <img src="path/to/graph.png" alt="Graph of f(y)" />
 </p> -->
-
+</example>
 
 </subsection>
 

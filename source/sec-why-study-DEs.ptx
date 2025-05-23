@@ -3,29 +3,57 @@
 <section xml:id="sec-why-study-DEs">
     <title>Why study differential equations?</title>
     
-    <p>The answer is simple: <alert>Differential equation is the foundation of science and technology. </alert></p>
+    <p>The answer is simple: <alert>Differential equation is the foundation of science and technology. </alert> In this section, we shall discuss two examples. </p>
     <subsection xml:id="Newtons-law-of-cooling">
       <title>Newton's law of cooling</title>
-      <p>Consider an object of temperature <m>T</m> placed in a room of ambient temperature <m>T_a</m>.</p>
-      <p>Newton's law of cooling: The rate of change of <m>T</m> is proportional to the difference of the temperatures between the object and the ambient room.</p>
-      
-      <p>Mathematically, this means
-          <me>\frac{dT}{dt} = -k(T - T_a),</me>
+      <p>Consider an object of temperature <m>T</m> placed in a room of ambient temperature <m>T_a</m>. <alert>Newton's law of cooling</alert> states that the rate of change of <m>T</m> is proportional to the difference of the temperatures between the object and the ambient room. Mathematically, this means
+          <me>\dfrac{dT}{dt} = -k(T - T_a),</me>
       where <m>k</m> is some constant, <m>T_a</m> is the ambient temperature.</p>
-      <p>If the ambient temperature <m>T_a</m> is constant, then we may solve it by separating the variables:</p>
-      
-      <p><me>\frac{dT}{dt} = -k(T - T_a) \implies \frac{dT}{T - T_a} = -kdt \implies \int \frac{dT}{T - T_a} = \int -kdt</me>
-      <me>\implies \ln|T - T_a| = -kt + C \implies T - T_a = Ce^{-kt} \implies T = T_a + Ce^{-kt}</me>.</p>
-      
-      <p>
-        <alert>Note:</alert> The constant <m>C</m> is arbitrary. Without any further information there is no way to decide <m>C</m>.
-        In other words, <m>T(t) = T_a + C e^{-kt}</m> is a solution of the ODE <alert>for ANY <m>C</m></alert>. Such an expression is called a <alert>one-parameter family of solutions</alert>. Generally, when solving a first-order ODE <m>F(t, y, y') = 0</m>, we seek a one-parameter family of solutions. If all solutions of the ODE are contained in the family, then we call it the <alert>general solution</alert>.
+
+      <p>If the ambient temperature <m>T_a</m> is constant, then we may solve the ODE by <em>separating the variables</em>:
+      <md>
+        <mrow>\amp \dfrac{dT}{dt} = -k(T - T_a) </mrow>
+        <mrow>\implies \amp \dfrac{dT}{T - T_a} = -kdt </mrow>
+        <mrow>\implies \amp \int \dfrac{dT}{T - T_a} = \int -kdt </mrow>
+        <mrow>\implies \amp \ln|T - T_a| = -kt + C </mrow>
+      </md>
+      We exponentiate both sides to obtain
+        <men xml:id="eq-exp-abs-val"> T - T_a = Ce^{-kt}</men> 
+      Then moving <m>T_a</m> to the right-hand side, we obtain
+        <me>T = T_a + Ce^{-kt}</me>
       </p>
+    
+
+      <remark>
+        <ul>
+          <li>The constant <m>C</m> is arbitrary. Without any further information there is no way to decide <m>C</m>.</li>
+          <li>In other words, <m>T(t) = T_a + C e^{-kt}</m> is a solution of the ODE <alert>for ANY <m>C</m></alert>. Such an expression is called a <term>one-parameter family of solutions</term>. Generally, when solving a first-order ODE <m>F(t, y, y') = 0</m>, we seek a one-parameter family of solutions. If all solutions of the ODE are contained in the family, then we call it the <term>general solution</term>.</li>
+        </ul>
+      </remark>
+      <remark>
+        <ul>
+        <li>
+          When we exponentiated to obtain <xref ref="eq-exp-abs-val"/>, we ignored the absolute value after exponentiation. Let's go through the details carefully. Rigorously, when we exponentiate both sides of the equation, we get
+          <me>
+            |T - T_a| = e^{-kt + C} = e^C e^{-kt}
+          </me>
+          Notice that <m>e^C</m> is always a positive constant. Getting rid of the absolute value, we obtain 
+          <me>
+            T - T_a = \pm e^C e^{-kt}
+          </me>
+          What we did to obtain <xref ref="eq-exp-abs-val"/> is to incorporate the constant <m>\pm e^C</m> into the constant <m>C</m>. So the constant <m>C</m> can be either positive or negative.
+        </li>
+        <li>
+          A more acute reader might ask can <m>C</m> be zero? The answer is yes. If <m>C = 0</m>, then <m>T = T_a</m>, which is a constant function. It is easily verified that <m>T = T_a</m> is also a solution of the ODE. 
+        </li>
+        </ul>
+      </remark>
+
     </subsection>
-    <subsection xml:id="Water-pollution-model">
+    <subsection xml:id="subsec-water-pollution-model">
       <title>Water pollution model</title>
       <p>
-        A lake has water volume <m>V</m> m<sup>3</sup>. Assume <m>V</m> is constant. A factory emits <m>R</m> kilograms of mercury into the lake every day. Suppose the mercury diffuses to the lake instantly and water refreshes every day by <m>W</m> m<sup>3</sup>. How much time does it take for the water to be unpotable?
+        A lake has water volume <m>V</m> <m> \text{m}^3</m>. Assume <m>V</m> is constant. A factory emits <m>R</m> kilograms of mercury into the lake every day. Suppose the mercury diffuses to the lake instantly and water refreshes every day by <m>W</m><m> \text{m}^3</m>. How much time does it take for the water to be unpotable?
       </p>
       <p>
         Let <m>P(t)</m> be the mass of mercury in the lake at time <m>t</m>.  Let <m>\Delta t</m> be a small period of time. Within the time period <m>\Delta t</m>: 
@@ -33,19 +61,19 @@
       <ul>
         <li>Mercury in = <m>R \Delta t</m>.</li>
         <li>Polluted water out = <m>W \Delta t</m>.</li>
-        <li>Density of mercury = <m>\frac{P(t)}{V}</m>.</li>
-        <li>Mercury out = <m>\frac{P(t)}{V} W \Delta t</m>.</li>
+        <li>Density of mercury = <m>\dfrac{P(t)}{V}</m>.</li>
+        <li>Mercury out = <m>\dfrac{P(t)}{V} W \Delta t</m>.</li>
       </ul>
       <p> Thus </p>
-      <me>
-        \Delta P(t) = R \Delta t - \frac{P(t)}{V} W \implies
-        \frac{\Delta P(t)}{\Delta t} = R - \frac{P(t)}{V} W
-      </me>
+      <md>
+        <mrow>\amp \Delta P(t) = R \Delta t - \dfrac{P(t)}{V} W </mrow>
+        <mrow>\implies \amp \dfrac{\Delta P(t)}{\Delta t} = R - \dfrac{P(t)}{V} W</mrow>
+      </md>
       <p>
         Let <m>\Delta t \to 0</m>, we obtain a differential equation for <m>P(t)</m>,
       </p>
       <me>
-        \frac{dP(t)}{dt} = R - \frac{P(t)}{V} W
+        \dfrac{dP(t)}{dt} = R - \dfrac{P(t)}{V} W
       </me>
       <p>
       Although not explicitly stated in the problem, we actually have 
@@ -57,7 +85,7 @@
       <p>
       Therefore, we are looking for a time <m>T</m> when
       <me>
-        \frac{P(T)}{V} \geq 0.002\, \mathrm{mg/L} = 2 \times 10^{-6}\, \mathrm{kg/m^3}
+        \dfrac{P(T)}{V} \geq 0.002\, \mathrm{mg/L} = 2 \times 10^{-6}\, \mathrm{kg/m^3}
       </me>
       </p>
       
@@ -65,52 +93,56 @@
         This differential equation can be solved by separating variables:
       </p>
       <md align="center">
-        <mrow>\amp \frac{dP}{dt} = R - \frac{P}{V}W \implies \frac{dP}{R - \frac{P}{V}W} = dt \implies \frac{V dP}{W P - V R} = -dt </mrow>
-        <mrow>\implies \amp \int \frac{V dP}{-W P + V R} = \int dt \implies \frac{V}{W} \cdot \ln|W P - V R| = t + C </mrow>
-        <mrow>\implies \amp W P - V R = C e^{-\frac{W}{V} t} \implies P(t) = \frac{V}{W} R + C e^{-\frac{W}{V}t}. </mrow>
+        <mrow>\amp \dfrac{dP}{dt} = R - \dfrac{P}{V}W </mrow>
+        <mrow>\implies \amp \dfrac{dP}{R - \dfrac{P}{V}W} = dt </mrow>
+        <mrow>\implies \amp \dfrac{V dP}{W P - V R} = -dt </mrow>
+        <mrow>\implies \amp \int \dfrac{V dP}{-W P + V R} = \int dt </mrow>
+        <mrow>\implies \amp W P - V R = C e^{-\frac{W}{V} t} </mrow>
+        <mrow>\implies \amp P(t) = \dfrac{V}{W} R + C e^{-\dfrac{W}{V}t}. </mrow>
       </md>
       <p> This is a one-parameter family of solutions of the ODE. We may determine the constant <m>C</m> with the initial condition: </p>
       <me>
-        P(0) = 0 \implies \frac{V}{W} R + C = 0 \implies C = -\frac{V}{W} R 
-        \implies P(t) = \frac{V}{W} R - \frac{V}{W} R e^{-\frac{W}{V} t}
+        P(0) = 0 \implies \dfrac{V}{W} R + C = 0 \implies C = -\dfrac{V}{W} R 
       </me>
       <p>
-        So we obtained a definite function as the solution. 
+        Therefore, 
+      <me>
+          P(t) = \dfrac{V}{W} R - \dfrac{V}{W} R e^{-\frac{W}{V} t}, t \geq 0. 
+      </me>
+        We obtained a <alert>definite function</alert> together with an interval. 
       </p>
       <p>
-      In case <m>V = 10^6\, \mathrm{m}^3</m>, <m>W = 2 \times 10^4\, \mathrm{m}^3/\mathrm{d}</m>, <m>R = 0.05\, \mathrm{kg}/\mathrm{d}</m>, we see that
+      In case <m>V = 10^6\, \mathrm{m}^3</m>, <m>W = 2 \times 10^4\, \mathrm{m}^3/\mathrm{d}</m>, <m>R = 0.05\, \mathrm{kg}/\mathrm{d}</m>, we may solve that
       </p>
       <me>
-      \frac{P(T)}{V} \geq 0.002\, \mathrm{mg/L} = 2 \times 10^{-6}\, \mathrm{kg/m^3}
+      \dfrac{P(T)}{V} \geq 0.002\, \mathrm{mg/L} = 2 \times 10^{-6}\, \mathrm{kg/m^3}
       </me>
       <p>
-      when <m>T \geq -\frac{1}{0.02} \ln \frac{1}{5} \approx 80.5\, \mathrm{day}</m>.
+      when <m>T \geq -\dfrac{1}{0.02} \ln \dfrac{1}{5} \approx 80.5\, \mathrm{day}</m>.
       </p>
-    </subsection>
-    
-    <subsection xml:id="Initial-value-problem">
-      <title>Initial value problem</title>
+      <remark>
       <p>
         We have solved the initial value problem
-      </p>
-      <me>
-        \frac{dP(t)}{dt} = R - \frac{P(t)}{V} W, \quad P(0) = 0
+        <me>
+        \dfrac{dP(t)}{dt} = R - \dfrac{P(t)}{V} W, \quad P(0) = 0
       </me>
-      <p>
-        Generally, an <term>initial value problem</term> (which shall be abbreviated as <term>IVP</term>) consists of a (set of) differential equation(s) and a (set of) initial values.
+      which is an ODE together with an initial condition. The solution is a function defined on an interval satisfying both the ODE and the initial condition.
       </p>
-      <p>  
-        A <term>first order IVP</term> is of the form
-      </p>
-      <me>
-        y' = f(t, y), \quad y(t_0) = y_0
-      </me>
-      <p>
-        In most science and engineering applications, an IVP should have a <alert>unique</alert> solution on an interval, called <term>interval of existence</term>.
-      </p>
-      <p> Summary: </p> 
-      <p> A first-order ODE <m>\implies</m> One-parameter family of solutions.</p>
-      <p> A first-order IVP <m>\implies</m> A particular solution + interval of existence. </p>
+      </remark>
+      <p> We end this section with the following definition. </p>
+      <definition>
+        <ul>
+          <li>A first-order ODE normally have infinitely many solutions. Many of them can be represented as <term>one-parameter family of solutions</term>. If the one-parameter family contains all solutions, we call it the <term>general solution</term>.</li>
+          <li> A <term>first order initial value problem</term> is of the form
+            <me>
+              y' = f(t, y), \quad y(t_0) = y_0
+            </me>
+            In most science and engineering applications, an IVP should have a <alert>unique</alert> solution on an interval, called <term>interval of existence and uniqueness</term>, usually abbreviated as <term>interval of existence</term>.
+          </li>
+          <li> Generally, an <m>n</m>-th order ODE also have infinitely many solutions. Many of them can be represented as an <term><m>n</m>-parameter family of solutions</term>. If the <m>n</m>-parameter family contains all solutions, we call it the <term>general solution</term>.</li>
+          <li> Generally, an <term>initial value problem</term> (which shall be abbreviated as <term>IVP</term>) consists of a (set of) differential equation(s) and a (set of) initial values. In case the IVP contains one ODE of order <m>n</m>, we need <m>n</m> initial values to obtain a unique solution. </li>
+        </ul>
+      </definition>
     </subsection>
 
 </section>

@@ -10,12 +10,14 @@
 </ul>
 
 <subsection xml:id="subsec-euler-method">
-<p><strong>Euler’s method.</strong></p>
-<p>Idea: Use the direction field to perform linear approximations.</p>
-<p>Recall: <m>f(t) \approx f(t_0) + f'(t_0)(t - t_0)</m></p>
+<title>Euler’s method</title>
+<p>The idea of Euler's method is simple: we use the direction field to perform linear approximations. We first recall the linear approximation formula
+<me>f(t) \approx f(t_0) + f'(t_0)(t - t_0)</me></p>
 
-<p>Consider <m>y' = f(t, y), \, y(t_0) = y_0,</m> we choose a small step-size <m>h.</m></p>
-<p>Then we approximate <m>y(t_0 + h)</m> by <m>y(t_0 + h) \approx y(t_0) + y'(t_0)h = y(t_0) + h \cdot f(t_0, y_0).</m></p>
+<p>Consider the IVP 
+<me>y' = f(t, y), \, y(t_0) = y_0.</me> 
+we choose a small step-size <m>h.</m> and we approximate <m>y(t_0 + h)</m> by 
+<me>y(t_0 + h) \approx y(t_0) + y'(t_0)h = y(t_0) + h \cdot f(t_0, y_0).</me></p>
 
 <!-- Figure: Euler's Method -->
 <!-- <p>
@@ -37,12 +39,16 @@
   <img src="path/to/euler_method_3.png" alt="Euler's Method" />
 </p> -->
 
-<p>Formula: Given the IVP <m>y' = f(t, y)</m> and step-size <m>h,</m> set <m>t_n = t_0 + nh, \, n = 0, 1, 2, \ldots</m></p>
+<algorithm xml:id="alg-euler-method">
+<title>Euler's method</title>
+<p>Given the IVP <m>y' = f(t, y)</m> and step-size <m>h,</m> set 
+<me>t_n = t_0 + nh, \, n = 0, 1, 2, \ldots.</me>
+If we let <m>y_n</m> be the approximation of <m>y(t_0 + nh),</m> then <m>y_n</m> can be obtained from <m>y_{n-1}, t_{n-1}, h</m> by
+<me>y_n = y_{n-1} + h \cdot f(t_{n-1}, y_{n-1}).</me></p>
+</algorithm>
 
-<p>If we let <m>y_n</m> be the approximation of <m>y(t_0 + nh),</m> then <m>y_n</m> can be obtained from <m>y_{n-1}, t_{n-1}, h</m> by</p>
-<p><m>y_n = y_{n-1} + h \cdot f(t_{n-1}, y_{n-1})</m></p>
-
-<p>Example 1: <m>y' = t - y + 1, \, y(1) = 3.</m> Use Euler’s method to approximate <m>y(3)</m> with step-size <m>h = 0.5.</m></p>
+<example xml:id="ex-euler-method-1">
+<title><m>y' = t - y + 1, \, y(1) = 3.</m> Use Euler’s method to approximate <m>y(3)</m> with step-size <m>h = 0.5.</m></title>
 
 <p>Since <m>h = 0.5, \, t_0 = 1,</m> we compute that</p>
 <p><m>y_n = y_{n-1} + h(t_{n-1} - y_{n-1} + 1)</m></p>
@@ -93,15 +99,17 @@
     </tr>
   </tbody>
 </table>
+</example>
 
-<p><strong>General steps:</strong></p>
+<p><alert>Summary:</alert> General steps in applying Euler's method:</p>
 <ol>
   <li>Formulate the formula and simplify <m>y_n</m> in terms of <m>y_{n-1}, n, h.</m></li>
   <li>Determine how many steps you want to compute.</li>
   <li>Compute using either a calculator or some software.</li>
 </ol>
 
-<p>Example 2: <m>y' = t + y, \, y(1) = 2.</m> Use Euler’s method to approximate <m>y(3)</m> with step-size <m>h = 1.</m></p>
+<example xml:id="ex-euler-method-2">
+<title><m>y' = t + y, \, y(1) = 2.</m> Use Euler’s method to approximate <m>y(3)</m> with step-size <m>h = 1.</m></title>
 
 <p>Since <m>h = 1, \, t_0 = 1,</m> we compute that</p>
 <p><m>y_n = y_{n-1} + h(t_{n-1} + y_{n-1})</m></p>
@@ -140,24 +148,23 @@
     </tr>
   </tbody>
 </table>
+
+</example>
 </subsection>
 
 <subsection xml:id="subsec-error-analysis">
+<title>Error analysis of Euler's method</title>
 
-<p><strong>Error analysis</strong></p>
-
-<p>In Example 1, we approximated that <m>y(3) \approx 3.125.</m></p>
+<p>In <xref ref="ex-euler-method-1"/>, we approximated that <m>y(3) \approx 3.125.</m></p>
 <p>The IVP <m>y' = t - y + 1, \, y(1) = 3</m> can be solved directly.</p>
 <p>The actual solution is <m>y(t) = t + 2e^{1-t} \Rightarrow y(3) \approx 3.27067.</m></p>
 <p>The approximation is not very good. However, if we use <m>h = \frac{1}{10},</m> or <m>h = \frac{1}{10,000},</m> the approximation will be much better.</p>
 
-<p>Recall: Taylor's theorem:</p>
-<p><m>y(t_0 + h) = y(t_0) + hy'(t_0) + \frac{h^2}{2}y''(t_0) + \ldots</m></p>
-
-<p>In the Euler's method, we only kept the first two terms.</p>
-<p>The dropped terms can be expressed using Lagrange remainder:</p>
-<p><m>Error = \frac{1}{2}h^2y''(t_1), \, t_1 \in (t_0, t_0 + h)</m></p>
-
+<p>To understand the error, we recall Taylor's theorem:
+<me>y(t_0 + h) = y(t_0) + hy'(t_0) + \frac{h^2}{2}y''(t_0) + \cdots</me>
+In the Euler's method, we only kept the first two terms. The dropped terms can be expressed using Lagrange remainder:
+<me>Error = \frac{1}{2}h^2y''(t_1), \, t_1 \in (t_0, t_0 + h)</me></p>
+<observation>
 <ol>
   <li>If <m>y''(t) \gt 0</m> on <m>(t_0, t_0 + h),</m> Euler’s method gives an underestimate of <m>y(t_0 + h),</m> i.e., the estimate <m>y_1</m> is smaller than the actual solution <m>y(t_0 + h).</m></li>
   <li>If <m>y''(t) \lt 0</m> on <m>(t_0, t_0 + h),</m> Euler’s method gives an overestimate of <m>y(t_0 + h),</m> i.e., the estimate <m>y_1</m> is larger than the actual solution <m>y(t_0 + h).</m></li>
@@ -166,33 +173,38 @@
   <li>The final error, aka <term>global truncation error,</term> will accumulate.</li>
   <li>In general, if the local truncation <m>\sim h^k</m>, then global truncation error <m>\sim h^{k-1}.</m> For Euler’s method, the GTE <m>\sim h.</m></li>
 </ol>
+</observation>
 
-<p>Example 1: <m>y' = t - y + 1, \, y(1) = 3.</m></p>
+<example xml:id="ex-error-analysis-1">
+<title><m>y' = t - y + 1, \, y(1) = 3.</m></title>
 <p>We estimated that <m>y(3) \approx 3.125.</m> Do we have an overestimate or an underestimate?</p>
 
-<p>To find <m>y''</m>, we take the derivative on both sides of the ODE:</p>
-<p><m>y'' = t' - y' + 1' = 1 - (t - y + 1) = -t + y</m></p>
-
-<p>Within <m>[1, 3],</m> we can estimate <m>y''</m> using the values of each step. Recall that <m>y(1) = 3, \, y(1.5) \approx 2.5, \, y(2) \approx 2.5, \, y(2.5) \approx 2.75, \, y(3) \approx 3.125.</m></p>
-<p><m>\Rightarrow y''(1.5) \approx -1.5 + 2.5 = 1, \, y''(2) \approx -2 + 2.5 = 0.5, \, y''(2.5) \approx -2.5 + 2.75 = 0.25, \, y''(3) \approx -3 + 3.125 = 0.125.</m></p>
-
-<p>All positive. It is <alert>likely</alert> that we have an underestimate.</p>
+<p>To find <m>y''</m>, we take the derivative on both sides of the ODE:
+<me>y'' = t' - y' + 1' = 1 - (t - y + 1) = -t + y</me>
+Within <m>[1, 3],</m> we can estimate <m>y''</m> using the values of each step. Recall that 
+<me>y(1) = 3, \, y(1.5) \approx 2.5, \, y(2) \approx 2.5, \, y(2.5) \approx 2.75, \, y(3) \approx 3.125.</me>
+Using the data and the formular for <m>y''</m>, we have
+<me>y''(1.5) \approx -1.5 + 2.5 = 1, \, y''(2) \approx -2 + 2.5 = 0.5, \, y''(2.5) \approx -2.5 + 2.75 = 0.25, \, y''(3) \approx -3 + 3.125 = 0.125.</me>
+They are all positive. It is <alert>likely</alert> that we have an underestimate.</p>
 <p><alert>Warning:</alert> This process is not fully rigorous. It provides some evidence that is usually good enough in engineering practices.</p>
+</example>
 
-<p>Example 1: <m>y' = t - y + 1, \, y(1) = 3.</m></p>
-<p>We estimated that <m>y(3) \approx 3.125.</m> If the error of <m>y(3)</m> is 0.2 with step-size <m>h = 0.5,</m> what would the error be if step-size <m>h = 0.01?</m></p>
+<example xml:id="ex-error-analysis-2">
+<title><m>y' = t - y + 1, \, y(1) = 3.</m> If the error of <m>y(3)</m> is 0.2 with step-size <m>h = 0.5,</m> what would the error be if step-size <m>h = 0.01?</m></title>
 
-<p>We know that the global truncation error is proportional to <m>h,</m> i.e., <m>E = Kh.</m></p>
-
-<p>We have <m>E = 0.2</m> when <m>h = 0.5.</m> So <m>0.2 = K \cdot 0.5.</m></p>
-<p>When <m>h = 0.01,</m> we have <m>E = K \cdot 0.01 = \frac{0.2}{0.5} \cdot 0.01 = 0.004.</m></p>
-
-<p><alert>Remark:</alert> We may use this method to decide the step-size so that the error is controlled within a certain precision level.</p>
-
+<p>We know that the global truncation error is proportional to <m>h,</m> i.e., <me>E = Kh.</me>
+We have <m>E = 0.2</m> when <m>h = 0.5.</m> So <m>0.2 = K \cdot 0.5.</m>
+When <m>h = 0.01,</m> we have <me>E = K \cdot 0.01 = \frac{0.2}{0.5} \cdot 0.01 = 0.004.</me>
+So the error is <m>0.004.</m></p>
+</example>
+<remark>
+<p> We may use this method to decide the step-size so that the error is controlled within a certain precision level.</p>
+</remark>
 </subsection>   
 
 <subsection xml:id="subsec-other-methods">
-
+<title>Other methods</title>
+<p>Here are some other methods that are more accurate than Euler's method. Due to limitation of lecture time, we shall not discuss them in detail.</p>
 <ul>
   <li><strong>Improved Euler's method:</strong> <m>y' = f(t, y), \, y(t_0) = y_0</m>
     <ul>
@@ -214,6 +226,6 @@
     </ul>
   </li>
 </ul>
-
+<p>It shall be noted that the RK4 method is the most popular method in practice.</p>
 </subsection>
 </section>

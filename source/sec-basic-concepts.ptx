@@ -33,46 +33,63 @@
     This ODE expresses the derivative <m>y'(t)</m> in terms of <m>t</m> and <m>y(t)</m>.
   </p>
 
-  <definition>
-    <p>A function <m>y(t)</m> defined on an interval satisfying the equation is called a <term>solution</term>. </p>
+  <definition xml:id="def-solution">
+    <statement>
+      <p>A function <m>y(t)</m> defined on an <alert>open</alert> interval <m>I</m> is called a <term>solution</term> of the ODE <m>y' = f(t,y)</m> on <m>I</m> if</p>
+      <ul>
+        <li>
+          <p><m>y(t)</m> is differentiable on <m>I</m>.</p>
+        </li>
+        <li>
+          <p>For all <m>t</m> in <m>I</m>, the equation <m>y' = f(t,y)</m> holds.</p>
+        </li>
+      </ul>
+    </statement>
   </definition>
   <p>
     While we haven't learned how to solve an ODE, it is easy to check if a function is a solution of an ODE. Simply compute its derivatives, then plug in the ODE, and see if equality holds.
   </p>
 
-  <example>
+  <example xml:id="ex-solution">
     <title>A solution of an ODE</title>
     <p>
       <m>y(t) = e^t</m> is a solution of the ODE <m>y' - y = 0</m>, because <m>y'(t) = e^t</m>, 
     </p>
     <p>
-      <m>\Rightarrow LHS = y' - y = e^t - e^t = 0 = RHS</m>.
+      <m>\implies LHS = y' - y = e^t - e^t = 0 = RHS</m>.
     </p>
+    <p>The solution is defined on everywhere on <m>(-\infty, \infty)</m>.</p>
   </example>
 
-  <example>
+  <example xml:id="ex-non-solution">
     <title>A non-solution of an ODE</title>
       <p>
         <m>y(t) = \cos 2t</m> is not a solution of the ODE <m>y' - y = 0</m>, because <m>y'(t) = -2\sin 2t</m>,
       </p>
       <p>
-        <m>\Rightarrow LHS = y' - y = -2\sin 2t - \cos 2t \neq 0 = RHS</m>.
+        <m>\implies LHS = y' - y = -2\sin 2t - \cos 2t \neq 0 = RHS</m>.
       </p>
+      <p>The solution is defined on everywhere on <m>(-\infty, \infty)</m>.</p>
   </example>
 
-  <p>
-    We shall apply this method extensively in this course.
-  </p>
-  <p>
-    The most general form of a first-order ODE is 
-    <me>F(t,y,y') = 0.</me>
-    More presicely, it is a relation among the variable <m>t, y,</m> and <m>y'</m>. 
-  </p>
-
-  <p>The <term>order</term> of a differential equation is the order of the highest derivative appearing in the equation. Similarly, the most general form of an <m>n</m>-th order ODE is
+  <remark>
+    <p>We shall apply the method of checking solutions extensively in this course, especially in the study of higher-order linear ODEs.</p>
+  </remark>
+  <definition xml:id="def-general-form">
+    <statement>
+      <p>
+        Most generally, a first-order ODE is of the form
+        <me>F(t,y,y') = 0.</me>
+        i.e., a relation among the variable <m>t, y,</m> and <m>y'</m>. We call this the <term>general form</term> of a first-order ODE.
+      </p>
+      <p>The <term>order</term> of a differential equation is the order of the highest derivative appearing in the equation. Similarly, the <term>general form</term> of an <m>n</m>-th order ODE is
       <me>F(t,y,y',...,y^{(n)}) = 0</me>
+      i.e., a relation among the variable <m>t, y</m> and the <m>n</m> derivatives <m>y', y'', \cdots, y^{(n)}</m> of <m>y</m>.
   </p>
+    </statement>
+  </definition>
 
+  
 <example>
     <title>Examples of ODEs in typical and general forms</title>
     <statement>
@@ -86,9 +103,13 @@
     </statement>
 </example>
 
-<p> 
-  An ODE is an equation involving ordinary derivatives. A Partial Differential Equation (PDE) is an equation concerning partial derivatives. 
-</p>
+<definition xml:id="def-pde">
+  <statement>
+    <p>
+      A <term>partial differential equation</term> (abbrev. <term>PDE</term>) is an equation concerning partial derivatives. 
+    </p>
+  </statement>
+</definition>
 
 <example>
     <title>Example of a PDE</title>
@@ -96,9 +117,9 @@
         <p>
             A harmonic function <m>u = u(x,y)</m> in two variables are defined by the PDE 
             <me>\frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0.</me>
-            We shall not require PDEs in this course. 
         </p>
     </statement>
 </example>
 
+<p>We shall not require PDEs in this course. </p>
 </section>
