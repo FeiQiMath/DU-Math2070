@@ -10,7 +10,7 @@
 </ul>
 
 <subsection xml:id="subsec-euler-method">
-<title>Euler’s method</title>
+<title>Euler's method</title>
 <p>The idea of Euler's method is simple: we use the direction field to perform linear approximations. We first recall the linear approximation formula
 <me>f(t) \approx f(t_0) + f'(t_0)(t - t_0)</me></p>
 
@@ -48,7 +48,7 @@ If we let <m>y_n</m> be the approximation of <m>y(t_0 + nh),</m> then <m>y_n</m>
 </algorithm>
 
 <example xml:id="ex-euler-method-1">
-<title><m>y' = t - y + 1, \, y(1) = 3.</m> Use Euler’s method to approximate <m>y(3)</m> with step-size <m>h = 0.5.</m></title>
+<title><m>y' = t - y + 1, \, y(1) = 3.</m> Use Euler's method to approximate <m>y(3)</m> with step-size <m>h = 0.5.</m></title>
 
 <p>Since <m>h = 0.5, \, t_0 = 1,</m> we compute that</p>
 <p><m>y_n = y_{n-1} + h(t_{n-1} - y_{n-1} + 1)</m></p>
@@ -109,7 +109,7 @@ If we let <m>y_n</m> be the approximation of <m>y(t_0 + nh),</m> then <m>y_n</m>
 </ol>
 
 <example xml:id="ex-euler-method-2">
-<title><m>y' = t + y, \, y(1) = 2.</m> Use Euler’s method to approximate <m>y(3)</m> with step-size <m>h = 1.</m></title>
+<title><m>y' = t + y, \, y(1) = 2.</m> Use Euler's method to approximate <m>y(3)</m> with step-size <m>h = 1.</m></title>
 
 <p>Since <m>h = 1, \, t_0 = 1,</m> we compute that</p>
 <p><m>y_n = y_{n-1} + h(t_{n-1} + y_{n-1})</m></p>
@@ -166,12 +166,12 @@ In the Euler's method, we only kept the first two terms. The dropped terms can b
 <me>Error = \frac{1}{2}h^2y''(t_1), \, t_1 \in (t_0, t_0 + h)</me></p>
 <observation>
 <ol>
-  <li>If <m>y''(t) \gt 0</m> on <m>(t_0, t_0 + h),</m> Euler’s method gives an underestimate of <m>y(t_0 + h),</m> i.e., the estimate <m>y_1</m> is smaller than the actual solution <m>y(t_0 + h).</m></li>
-  <li>If <m>y''(t) \lt 0</m> on <m>(t_0, t_0 + h),</m> Euler’s method gives an overestimate of <m>y(t_0 + h),</m> i.e., the estimate <m>y_1</m> is larger than the actual solution <m>y(t_0 + h).</m></li>
-  <li>If <m>y''(t)</m> changes sign. In that case, we can’t tell.</li>
+  <li>If <m>y''(t) \gt 0</m> on <m>(t_0, t_0 + h),</m> Euler's method gives an underestimate of <m>y(t_0 + h),</m> i.e., the estimate <m>y_1</m> is smaller than the actual solution <m>y(t_0 + h).</m></li>
+  <li>If <m>y''(t) \lt 0</m> on <m>(t_0, t_0 + h),</m> Euler's method gives an overestimate of <m>y(t_0 + h),</m> i.e., the estimate <m>y_1</m> is larger than the actual solution <m>y(t_0 + h).</m></li>
+  <li>If <m>y''(t)</m> changes sign. In that case, we can't tell.</li>
   <li>The formula describes the error in <alert>one step</alert>, thus is called the <term>local truncation error.</term> It is proportional to <m>h^2.</m> In particular, lowering <m>h</m> means lowering the error.</li>
   <li>The final error, aka <term>global truncation error,</term> will accumulate.</li>
-  <li>In general, if the local truncation <m>\sim h^k</m>, then global truncation error <m>\sim h^{k-1}.</m> For Euler’s method, the GTE <m>\sim h.</m></li>
+  <li>In general, if the local truncation <m>\sim h^k</m>, then global truncation error <m>\sim h^{k-1}.</m> For Euler's method, the GTE <m>\sim h.</m></li>
 </ol>
 </observation>
 
@@ -205,8 +205,9 @@ So the error is <m>0.004.</m></p>
 <subsection xml:id="subsec-other-methods">
 <title>Other methods</title>
 <p>Here are some other methods that are more accurate than Euler's method. Due to limitation of lecture time, we shall not discuss them in detail.</p>
+Consider the IVP <me>y' = f(t, y),  y(t_0) = y_0. </me>
 <ul>
-  <li><strong>Improved Euler's method:</strong> <m>y' = f(t, y), \, y(t_0) = y_0</m>
+  <li><strong>Improved Euler's method:</strong> 
     <ul>
       <li><m>t_n = t_0 + nh</m></li>
       <li><m>y^*_n = y_{n-1} + h \cdot f(t_{n-1}, y_{n-1})</m></li>
