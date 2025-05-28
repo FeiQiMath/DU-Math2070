@@ -14,7 +14,7 @@
 <!--******************************************-->
 <head xmlns:og="http://ogp.me/ns#" xmlns:book="https://ogp.me/ns/book#">
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-<title>Second-order Linear ODEs</title>
+<title>General Theories of Second-order Linear ODEs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0">
@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.0';
+eBookConfig.runestone_version = '7.7.1';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.5eb70769dc5e56d7.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.253ff4af1e53e55f.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.cf591bce111c14c1.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.472f5a2f0bfe3571.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -146,10 +146,7 @@ eBookConfig.enable_chatcodes =  false;
 <div id="ptx-sidebar" class="ptx-sidebar"><nav id="ptx-toc" class="ptx-toc depth2"><ul class="structural toc-item-list contains-active">
 <li class="toc-item toc-frontmatter">
 <div class="toc-title-box"><a href="frontmatter.html" class="internal"><span class="title">Front Matter</span></a></div>
-<ul class="structural toc-item-list">
-<li class="toc-item toc-colophon"><div class="toc-title-box"><a href="front-colophon.html" class="internal"><span class="title">Colophon</span></a></div></li>
-<li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-4.html" class="internal"><span class="title">Preface</span></a></div></li>
-</ul>
+<ul class="structural toc-item-list"><li class="toc-item toc-preface"><div class="toc-title-box"><a href="frontmatter-3.html" class="internal"><span class="title">Preface</span></a></div></li></ul>
 </li>
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="First-order-ODE.html" class="internal"><span class="codenumber">1</span> <span class="title">First-order Differential Equations</span></a></div>
@@ -202,8 +199,22 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-higher-order.html" class="internal"><span class="codenumber">2</span> <span class="title">Second-Order and Higher-Order Differential Equations</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-2nd-order-linear-gen-theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">Second-order Linear ODEs</span></a></div></li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-real.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Real Roots</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-2nd-order-linear-gen-theory.html" class="internal"><span class="codenumber">2.1</span> <span class="title">General Theories of Second-order Linear ODEs</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2nd-order-linear-gen-theory.html#sec-2nd-order-linear-gen-theory-5" class="internal"><span class="codenumber">2.1.1</span> <span class="title">Existence and Uniqueness Theorem</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2nd-order-linear-gen-theory.html#sec-2nd-order-linear-gen-theory-6" class="internal"><span class="codenumber">2.1.2</span> <span class="title">Principle of Superposition</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2nd-order-linear-gen-theory.html#sec-2nd-order-linear-gen-theory-7" class="internal"><span class="codenumber">2.1.3</span> <span class="title">Wronskian for linear independence</span></a></div></li>
+</ul>
+</li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-real.html" class="internal"><span class="codenumber">2.2</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Real Roots</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-real.html#sec-2nd-order-linear-const-coeff-real-2" class="internal"><span class="codenumber">2.2.1</span> <span class="title">Auxiliary Equation</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-real.html#sec-2nd-order-linear-const-coeff-real-3" class="internal"><span class="codenumber">2.2.2</span> <span class="title">The case of two distinct real roots</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-real.html#sec-2nd-order-linear-const-coeff-real-4" class="internal"><span class="codenumber">2.2.3</span> <span class="title">Initial Value Problems and Long-term behaviors</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section">
 <div class="toc-title-box"><a href="sec-complex-numbers.html" class="internal"><span class="codenumber">2.3</span> <span class="title">Complex Numbers</span></a></div>
 <ul class="structural toc-item-list">
@@ -214,7 +225,13 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-complex-numbers.html#subsec-powers-roots" class="internal"><span class="codenumber">2.3.5</span> <span class="title">Powers and Roots</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-complex.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Complex Roots</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-complex.html" class="internal"><span class="codenumber">2.4</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Complex Roots</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-complex.html#sec-2nd-order-linear-const-coeff-complex-2" class="internal"><span class="codenumber">2.4.1</span> <span class="title">The case of (distinct) complex roots</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-complex.html#sec-2nd-order-linear-const-coeff-complex-3" class="internal"><span class="codenumber">2.4.2</span> <span class="title">Oscillation Patterns</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-const-coeff-repeated.html" class="internal"><span class="codenumber">2.5</span> <span class="title">Second-order Linear ODEs with Constant Coefficients - Repeated Real Roots</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-2nd-order-linear-non-homogeneous.html" class="internal"><span class="codenumber">2.6</span> <span class="title">Second-order Linear Non-Homogeneous ODEs</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-undetermined-coeff-2nd-order.html" class="internal"><span class="codenumber">2.7</span> <span class="title">Method of Undetermined Coefficients - First Ansatz</span></a></div></li>
@@ -244,78 +261,170 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-backmatter"><div class="toc-title-box"><a href="backmatter.html" class="internal"><span class="title">Backmatter</span></a></div></li>
 </ul></nav></div>
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-2nd-order-linear-gen-theory"><h2 class="heading hide-type">
-<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">Second-order Linear ODEs</span>
+<span class="type">Section</span><span class="space"> </span><span class="codenumber">2.1</span><span class="space"> </span><span class="title">General Theories of Second-order Linear ODEs</span>
 </h2>
-<div class="para" id="sec-2nd-order-linear-gen-theory-2">Standard form:</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-3"><span class="process-math">\(y'' + p(t)y' + q(t)y = g(t).\)</span></div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-4">If <span class="process-math">\(g(t) = 0\text{,}\)</span> then the ODE</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-5"><span class="process-math">\(y'' + p(t)y' + q(t)y = 0\)</span></div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-6">is said to be <em class="emphasis">homogeneous</em>.</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-7">Otherwise, we say the ODE is <em class="emphasis">nonhomogeneous</em>.</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-8">Unlike the first-order ODE where a formula gives the general solution, for second- and higher-order linear ODEs, we do not know how to solve them in general.</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-9">In this course we will only focus on some <em class="emphasis">special types of second-order linear ODEs</em> that appear frequently in science and engineering courses. We start with some general theories.</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-10">Existence and Uniqueness Theorem</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-11">For the IVP</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-12">
-<span class="process-math">\(y'' + p(t)y' + q(t)y = g(t),\)</span> <span class="process-math">\(y(t_0) = y_0, \, y'(t_0) = y_1\)</span>
+<div class="para logical" id="sec-2nd-order-linear-gen-theory-2">
+<div class="para">From <a href="sec-classification.html" class="internal" title="Section 1.4: Classification of Differential Equations">Section 1.4</a>, the standard form of a second-order linear ODE is</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-classification.html">
+\begin{equation*}
+y'' + p(t)y' + q(t)y = g(t).
+\end{equation*}
 </div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-13">If <span class="process-math">\(p(t), q(t), g(t)\)</span> are continuous in an interval <span class="process-math">\((a, b)\)</span> that contains <span class="process-math">\(t_0\text{,}\)</span> then the IVP has a unique solution on <span class="process-math">\((a, b)\text{.}\)</span>
+<div class="para">If <span class="process-math">\(g(t) = 0\text{,}\)</span> then the ODE</div>
+<div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/sec-classification.html">
+\begin{equation*}
+y'' + p(t)y' + q(t)y = 0
+\end{equation*}
 </div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-14">Likewise, the theorem gives the interval of existence.</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-15">Example: Find the interval of existence of the IVP</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-16"><span class="process-math">\(t^2y'' - 4ty' + 4y = 0, \, y(1) = 1, \, y'(1) = 4\)</span></div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-17">Standard form: <span class="process-math">\(y'' - \frac{4}{t}y' + \frac{4}{t^2}y = 0\)</span>
+<div class="para">is said to be <dfn class="terminology">homogeneous</dfn>. Otherwise, we say the ODE is <dfn class="terminology">nonhomogeneous</dfn>.</div>
 </div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-18">Singularity: <span class="process-math">\(t = 0.\)</span>
+<div class="para" id="sec-2nd-order-linear-gen-theory-3">Unlike the first-order ODE where a formula gives the general solution (see <a href="sec-1st-order-linear.html" class="internal" title="Section 1.5: First-order Linear ODEs">Section 1.5</a>), for second- and higher-order linear ODEs, we do not know how to solve them in general. In this course we will only focus on some <em class="alert">special types</em> of second-order linear ODEs that appear frequently in science and engineering courses.</div>
+<div class="para" id="sec-2nd-order-linear-gen-theory-4">We start with some general theories.</div>
+<section class="subsection" id="sec-2nd-order-linear-gen-theory-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="space"> </span><span class="title">Existence and Uniqueness Theorem</span>
+</h3>
+<article class="theorem theorem-like" id="th-existence-and-uniqueness-theorem-2nd-order"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Existence and Uniqueness Theorem.</span>
+</h4>
+<div class="para" id="th-existence-and-uniqueness-theorem-2nd-order-2-1">For the IVP</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y'' + p(t)y' + q(t)y = g(t), \, y(t_0) = y_0, \, y'(t_0) = y_1
+\end{equation*}
 </div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-19">Interval of existence: <span class="process-math">\((0, \infty).\)</span>
+<div class="para" id="th-existence-and-uniqueness-theorem-2nd-order-2-3">If <span class="process-math">\(p(t), q(t), g(t)\)</span> are continuous in an interval <span class="process-math">\((a, b)\)</span> that contains <span class="process-math">\(t_0\text{,}\)</span> then the IVP has a unique solution on <span class="process-math">\((a, b)\text{.}\)</span>
+</div></article><div class="para" id="sec-2nd-order-linear-gen-theory-5-3">The proof of this theorem is beyond the level of this course. We shall focus on using it. Just like in <a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-2" class="internal" title="Subsection 1.7.2: Existence and Uniqueness Theorem: Linear version.">Subsection 1.7.2</a>, we may use the theorem to find the interval of existence.</div>
+<details id="sec-2nd-order-linear-gen-theory-5-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Find the interval of existence of the IVP <span class="process-math">\(t^2y'' - 4ty' + 4y = 0, \, y(1) = 1, \, y'(1) = 4\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-2nd-order-linear-gen-theory-5-4-2">
+<li id="sec-2nd-order-linear-gen-theory-5-4-2-1"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-5-4-2-1">Standard form: <span class="process-math">\(y'' - \frac{4}{t}y' + \frac{4}{t^2}y = 0\)</span>
+</div></li>
+<li id="sec-2nd-order-linear-gen-theory-5-4-2-2"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-5-4-2-2">Singularity: <span class="process-math">\(t = 0.\)</span>
+</div></li>
+</ul>
+<div class="para" id="sec-2nd-order-linear-gen-theory-5-4-3">Interval of existence: <span class="process-math">\((0, \infty).\)</span>
+</div></article></details><article class="remark remark-like" id="sec-2nd-order-linear-gen-theory-5-5"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-2nd-order-linear-gen-theory-5-5-1">In what follows, all the results are supposed to hold on the interval of existence.</div></article></section><section class="subsection" id="sec-2nd-order-linear-gen-theory-6"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="space"> </span><span class="title">Principle of Superposition</span>
+</h3>
+<article class="theorem theorem-like" id="th-linear-independence-superposition"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Principle of Superposition.</span>
+</h4>
+<ol class="decimal" id="th-linear-independence-superposition-2-1">
+<li id="th-linear-independence-superposition-2-1-1"><div class="para" id="p-derived-th-linear-independence-superposition-2-1-1">If <span class="process-math">\(y_1, y_2\)</span> are solutions of a 2nd-order linear <em class="emphasis">homogeneous</em> ODE<div class="displaymath process-math">
+\begin{equation*}
+y'' + p(t)y' + q(t)y = 0
+\end{equation*}
+</div>then for every real number <span class="process-math">\(c_1, c_2\text{,}\)</span> the function<div class="displaymath process-math">
+\begin{equation*}
+c_1y_1 + c_2y_2
+\end{equation*}
+</div>is also a solution.</div></li>
+<li id="th-linear-independence-superposition-2-1-2"><div class="para" id="p-derived-th-linear-independence-superposition-2-1-2">In addition, if <span class="process-math">\(y_1, y_2\)</span> are linearly independent, i.e., if <span class="process-math">\(y_1\)</span> and <span class="process-math">\(y_2\)</span> are not proportional to each other, then the general solution of the ODE is<div class="displaymath process-math">
+\begin{equation*}
+y = c_1y_1 + c_2y_2
+\end{equation*}
 </div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-20">Remark: In what follows, all the results are supposed to hold on the interval of existence.</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-21">Principle of Superposition</div>
-<ol class="decimal" id="sec-2nd-order-linear-gen-theory-22">
-<li id="sec-2nd-order-linear-gen-theory-22-1"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-22-1">If <span class="process-math">\(y_1, y_2\)</span> are solutions of a 2nd-order linear <em class="emphasis">homogeneous</em> ODE</div></li>
-<li id="sec-2nd-order-linear-gen-theory-22-6"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-22-6">In addition, if <span class="process-math">\(y_1, y_2\)</span> are linearly independent, i.e., if <span class="process-math">\(y_1\)</span> and <span class="process-math">\(y_2\)</span> are not proportional to each other, then the general solution of the ODE is</div></li>
-</ol>
-<div class="para" id="sec-2nd-order-linear-gen-theory-23">Example: <span class="process-math">\(y'' - 2y' - 3y = 0.\)</span>
+</div></li>
+</ol></article><details id="sec-2nd-order-linear-gen-theory-6-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Check that <span class="process-math">\(y_1 = e^{3t}, \, y_2 = e^{-t}\)</span> are solutions of the ODE <span class="process-math">\(y'' - 2y' - 3y = 0.\)</span> What does the principle of superposition tell us?</span>
+</h4></summary><article class="example example-like knowl__content"><ol class="decimal" id="sec-2nd-order-linear-gen-theory-6-3-2">
+<li id="sec-2nd-order-linear-gen-theory-6-3-2-1"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-6-3-2-1">
+<span class="process-math">\(y_1 = e^{3t}, \, y_2 = e^{-t}\)</span> are solutions:<div class="displaymath process-math">
+\begin{equation*}
+y_1'' - 2y_1' - 3y_1 = 9e^{3t} - 2 \cdot 3e^{3t} - 3e^{3t} = 0.
+\end{equation*}
 </div>
-<ol class="decimal" id="sec-2nd-order-linear-gen-theory-24"><li id="sec-2nd-order-linear-gen-theory-24-1"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-24-1">
-<span class="process-math">\(y_1 = e^{3t}, \, y_2 = e^{-t}\)</span> are solutions:</div></li></ol>
-<ol class="decimal" id="sec-2nd-order-linear-gen-theory-25"><li id="sec-2nd-order-linear-gen-theory-25-1"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-25-1">
-<span class="process-math">\(Y(t) = 20e^{3t} - 99e^{-t} = 20y_1 - 99y_2\)</span> is also a solution.</div></li></ol>
-<ol class="decimal" id="sec-2nd-order-linear-gen-theory-26"><li id="sec-2nd-order-linear-gen-theory-26-1"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-26-1">
-<span class="process-math">\(Y(t) = c_1e^{3t} + c_2e^{-t} = c_1y_1 + c_2y_2\)</span> is also a solution.</div></li></ol>
-<div class="para" id="sec-2nd-order-linear-gen-theory-27">Remark: The proof of the theorem is not much more difficult.</div>
-<ol class="decimal" id="sec-2nd-order-linear-gen-theory-28"><li id="sec-2nd-order-linear-gen-theory-28-1"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-28-1">Since <span class="process-math">\(y_1 = e^{3t}\)</span> and <span class="process-math">\(y_2 = e^{-t}\)</span> are linearly independent, the theorem implies <span class="process-math">\(y(t) = c_1e^{3t} + c_2e^{-t}\)</span> is the general solution.</div></li></ol>
-<div class="para" id="sec-2nd-order-linear-gen-theory-29">Wronskian for linear independence</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-30">If <span class="process-math">\(y_1, y_2\)</span> are solutions of the 2nd-order linear homogeneous ODE</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-31"><span class="process-math">\(y'' + p(t)y' + q(t)y = 0,\)</span></div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-32">on an interval where the existence and uniqueness theorem holds, then <span class="process-math">\(y_1, y_2\)</span> are linearly independent if and only if the Wronskian</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-33"><span class="process-math">\((W(y_1, y_2))(t) = \begin{vmatrix} y_1(t) \amp y_2(t) \\ y'_1(t) \amp y'_2(t) \end{vmatrix}\)</span></div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-34">is nonzero on the interval.</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-35">Fact: It suffices that <span class="process-math">\((W(y_1, y_2))(t) \neq 0\)</span> on one point of the interval.</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-36">Example: <span class="process-math">\(t^2y'' - 4ty' + 6y = 0, \, y_1 = t^2, \, y_2 = t^3.\)</span>
+<div class="displaymath process-math">
+\begin{equation*}
+y''_2 - 2y'_2 - 3y_2 = e^{-t} = e^{-t} - 2 \cdot (-e^{-t}) - 3e^{-t} = 0.
+\end{equation*}
 </div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-37"><span class="process-math">\(W(y_1, y_2) = \begin{vmatrix} t^2 \amp t^3 \\ 2t \amp 3t^2 \end{vmatrix} = t^4 \neq 0 \text{ as long as } t \neq 0.\)</span></div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-38">So <span class="process-math">\(y_1 = t^2, \, y_2 = t^3\)</span> are linearly independent.</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-39">Example: <span class="process-math">\(y'' - 9y = 0, \, y_1 = e^{3t}, \, y_2 = 5e^{3t}.\)</span>
+</div></li>
+<li id="sec-2nd-order-linear-gen-theory-6-3-2-2"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-6-3-2-2">
+<span class="process-math">\(Y(t) = 20e^{3t} - 99e^{-t} = 20y_1 - 99y_2\)</span> is also a solution.<div class="displaymath process-math" id="sec-2nd-order-linear-gen-theory-6-3-2-2-2">
+\begin{align*}
+\amp Y'' - 2Y' - 3Y\\
+= \amp (20y_1 - 99y_2)'' - 2(20y_1 - 99y_2)' - 3(20y_1 - 99y_2)\\
+= \amp 20y''_1 - 99y''_2 - 2(20y_1' - 99y_2') - 3(20y_1 - 99y_2)\\
+= \amp 20y''_1 - 99y''_2 - 2 \cdot 20y_1' + 2 \cdot 99y_2' - 3 \cdot 20y_1 + 3 \cdot 99y_2\\
+= \amp 20(y''_1 - 2y'_1 - 3y_1) - 99(y''_2 - 2y_2' - 3y_2)\\
+= \amp 20 \cdot 0 - 99 \cdot 0 = 0.
+\end{align*}
 </div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-40"><span class="process-math">\(W(y_1, y_2) = \begin{vmatrix} e^{3t} \amp 5e^{3t} \\ 3e^{3t} \amp 15e^{3t} \end{vmatrix} = 15e^{6t} - 15e^{6t} = 0.\)</span></div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-41">So <span class="process-math">\(y_1 = e^{3t}, \, y_2 = 5e^{3t}\)</span> are linearly dependent.</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-42">Example: <span class="process-math">\(ay'' + by' + cy = 0, \, y_1 = e^{r_1 t}, \, y_2 = e^{r_2 t}, \, r_1 \neq r_2.\)</span>
+</div></li>
+<li id="sec-2nd-order-linear-gen-theory-6-3-2-3"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-6-3-2-3">
+<span class="process-math">\(Y(t) = c_1e^{3t} + c_2e^{-t} = c_1y_1 + c_2y_2\)</span> is also a solution.<div class="displaymath process-math" id="sec-2nd-order-linear-gen-theory-6-3-2-3-2">
+\begin{align*}
+\amp Y'' - 2Y' - 3Y\\
+= \amp (c_1y_1 + c_2y_2)'' - 2(c_1y_1 + c_2y_2)' - 3(c_1y_1 + c_2y_2)\\
+= \amp c_1y''_1 + c_2y''_2 - 2 \cdot (c_1y'_1 + c_2y'_2) - 3 \cdot (c_1y_1 + c_2y_2)\\
+= \amp c_1y''_1 + c_2y''_2 - 2 \cdot c_1y'_1 - 2 \cdot c_2y'_2 - 3 \cdot c_1y_1 - 3 \cdot c_2y_2\\
+= \amp c_1(y''_1 - 2y'_1 - 3y_1) + c_2(y''_2 - 2y'_2 - 3y_2)\\
+= \amp c_1 \cdot 0 + c_2 \cdot 0 = 0.
+\end{align*}
 </div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-43"><span class="process-math">\(W(y_1, y_2) = \begin{vmatrix} e^{r_1 t} \amp e^{r_2 t} \\ r_1 e^{r_1 t} \amp r_2 e^{r_2 t} \end{vmatrix} = (r_2 - r_1)e^{(r_1 + r_2)t}.\)</span></div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-44"><span class="process-math">\(r_1 \neq r_2 \Rightarrow W(y_1, y_2) \neq 0 \Rightarrow \text{Linear independence.}\)</span></div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-45">Example: <span class="process-math">\(y'' - \cot(2t)y' = 0, \, y_1 = \sin^2 t, \, y_2 = \cos(2t) - 1.\)</span>
+</div></li>
+<li id="sec-2nd-order-linear-gen-theory-6-3-2-4"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-6-3-2-4">We check that<div class="displaymath process-math">
+\begin{equation*}
+\dfrac{y_1}{y_2} = \dfrac{e^{3t}}{e^{-t}} = e^{4t}
+\end{equation*}
+</div>that is not a constant. So <span class="process-math">\(y_1 = e^{3t}\)</span> and <span class="process-math">\(y_2 = e^{-t}\)</span> are linearly independent, the theorem implies <span class="process-math">\(y(t) = c_1e^{3t} + c_2e^{-t}\)</span> is the general solution.</div></li>
+</ol></article></details><article class="remark remark-like" id="sec-2nd-order-linear-gen-theory-6-4"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-2nd-order-linear-gen-theory-6-4-1">The proof of the first part of the superposition principle is not much more difficult than what we did in the example above. I’ll leave it as an exercise. The second part, however, is a consequence of <a href="sec-2nd-order-linear-gen-theory.html#th-existence-and-uniqueness-theorem-2nd-order" class="xref" data-knowl="./knowl/xref/th-existence-and-uniqueness-theorem-2nd-order.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.1.1: Existence and Uniqueness Theorem">Theorem 2.1.1</a>. The proof is not difficult, but for the sake of brevity, we shall not prove it here.</div></article></section><section class="subsection" id="sec-2nd-order-linear-gen-theory-7"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="space"> </span><span class="title">Wronskian for linear independence</span>
+</h3>
+<article class="theorem theorem-like" id="th-wronskian-for-linear-independence"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Wronskian for linear independence.</span>
+</h4>
+<div class="para logical" id="th-wronskian-for-linear-independence-2-1">
+<div class="para">If <span class="process-math">\(y_1, y_2\)</span> are solutions of the 2nd-order linear homogeneous ODE</div>
+<div class="displaymath process-math">
+\begin{equation*}
+y'' + p(t)y' + q(t)y = 0,
+\end{equation*}
 </div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-46"><span class="process-math">\(W(y_1, y_2) = \begin{vmatrix} \sin^2 t \amp \cos(2t) - 1 \\ 2 \sin t \cos t \amp -2 \sin(2t) \end{vmatrix}\)</span></div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-47"><span class="process-math">\(= -2 \sin^2 t \sin(2t) - (\cos(2t) - 1)2 \sin t \cos t.\)</span></div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-48">Example: <span class="process-math">\(y'' - \cot(2t)y' = 0, \, y_1 = \sin^2 t, \, y_2 = \cos(2t) - 1.\)</span>
+<div class="para">on an interval where the existence and uniqueness theorem holds, then <span class="process-math">\(y_1, y_2\)</span> are linearly independent if and only if the Wronskian</div>
+<div class="displaymath process-math">
+\begin{equation*}
+(W(y_1, y_2))(t) = \begin{vmatrix} y_1(t) \amp y_2(t) \\ y'_1(t) \amp y'_2(t) \end{vmatrix}
+\end{equation*}
 </div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-49"><span class="process-math">\(W(y_1, y_2) = -2 \sin^2 t \sin(2t) - (\cos(2t) - 1)2 \sin t \cos t.\)</span></div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-50">Set <span class="process-math">\(t = \frac{\pi}{4} \Rightarrow W(y_1, y_2) = -2 \cdot \frac{1}{2} \cdot 1 - (0 - 1) \cdot 2 \cdot \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{2}}{2} = 0.\)</span>
+<div class="para">is nonzero on the interval.</div>
+</div></article><article class="fact theorem-like" id="sec-2nd-order-linear-gen-theory-7-3"><h4 class="heading">
+<span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-2nd-order-linear-gen-theory-7-3-1">It suffices that <span class="process-math">\((W(y_1, y_2))(t) \neq 0\)</span> on one point of the interval. The proof is not difficult. But for the sake of brevity, we shall not prove it here.</div></article><details id="sec-2nd-order-linear-gen-theory-7-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(t^2y'' - 4ty' + 6y = 0, \, y_1 = t^2, \, y_2 = t^3.\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec-2nd-order-linear-gen-theory-7-4-2"><span class="process-math">\(W(y_1, y_2) = \begin{vmatrix} t^2 \amp t^3 \\ 2t \amp 3t^2 \end{vmatrix} = t^4 \neq 0 \text{ as long as } t \neq 0.\)</span></div>
+<div class="para" id="sec-2nd-order-linear-gen-theory-7-4-3">So <span class="process-math">\(y_1 = t^2, \, y_2 = t^3\)</span> are linearly independent.</div></article></details><details id="sec-2nd-order-linear-gen-theory-7-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.10</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' - 9y = 0, \, y_1 = e^{3t}, \, y_2 = 5e^{3t}.\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec-2nd-order-linear-gen-theory-7-5-2"><span class="process-math">\(W(y_1, y_2) = \begin{vmatrix} e^{3t} \amp 5e^{3t} \\ 3e^{3t} \amp 15e^{3t} \end{vmatrix} = 15e^{6t} - 15e^{6t} = 0.\)</span></div>
+<div class="para" id="sec-2nd-order-linear-gen-theory-7-5-3">So <span class="process-math">\(y_1 = e^{3t}, \, y_2 = 5e^{3t}\)</span> are linearly dependent.</div></article></details><details id="ex-wronskian-real-distinct-roots" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.11</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(ay'' + by' + cy = 0, \, y_1 = e^{r_1 t}, \, y_2 = e^{r_2 t}, \, r_1 \neq r_2.\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-wronskian-real-distinct-roots-2"><span class="process-math">\(W(y_1, y_2) = \begin{vmatrix} e^{r_1 t} \amp e^{r_2 t} \\ r_1 e^{r_1 t} \amp r_2 e^{r_2 t} \end{vmatrix} = (r_2 - r_1)e^{(r_1 + r_2)t}.\)</span></div>
+<div class="para" id="ex-wronskian-real-distinct-roots-3"><span class="process-math">\(r_1 \neq r_2 \Rightarrow W(y_1, y_2) \neq 0 \Rightarrow \text{Linear independence.}\)</span></div></article></details><details id="sec-2nd-order-linear-gen-theory-7-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.12</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' - \cot(2t)y' = 0, \, y_1 = \sin^2 t, \, y_2 = \cos(2t) - 1.\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-2nd-order-linear-gen-theory-7-7-2">
+<div class="displaymath process-math" id="sec-2nd-order-linear-gen-theory-7-7-2-1">
+\begin{align*}
+W(y_1, y_2) = \amp \begin{vmatrix} \sin^2 t \amp \cos(2t) - 1 \\ 2 \sin t \cos t \amp -2 \sin(2t) \end{vmatrix}\\
+= \amp -2 \sin^2 t \sin(2t) - (\cos(2t) - 1)2 \sin t \cos t.
+\end{align*}
 </div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-51">So <em class="emphasis">linearly dependent.</em>
-</div></section></div>
+<div class="para">Set <span class="process-math">\(t = \frac{\pi}{4}\text{.}\)</span> Then</div>
+<div class="displaymath process-math">
+\begin{equation*}
+W(y_1, y_2) = -2 \cdot \frac{1}{2} \cdot 1 - (0 - 1) \cdot 2 \cdot \frac{\sqrt{2}}{2} \cdot \frac{\sqrt{2}}{2} = 0.
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\(y_1, y_2\)</span> are <em class="emphasis">linearly dependent.</em>
+</div>
+</div></article></details></section></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="ch-higher-order.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-2nd-order-linear-const-coeff-real.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

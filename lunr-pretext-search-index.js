@@ -1,22 +1,13 @@
 var ptx_lunr_search_style = "textbook";
 var ptx_lunr_docs = [
 {
-  "id": "front-colophon",
+  "id": "frontmatter-3",
   "level": "1",
-  "url": "front-colophon.html",
-  "type": "Colophon",
-  "number": "",
-  "title": "Colophon",
-  "body": ""
-},
-{
-  "id": "frontmatter-4",
-  "level": "1",
-  "url": "frontmatter-4.html",
+  "url": "frontmatter-3.html",
   "type": "Preface",
   "number": "",
   "title": "Preface",
-  "body": " This textbook is the culmination of several years of teaching differential equations at Rutgers University and the University of Denver. It originated from a desire to provide a more accessible, coherent, and pedagogically sound alternative to the commercial textbooks that I found lacking in various respects. Over time, these notes have been refined and expanded through continuous use in the classroom, shaped by student feedback, and improved by collaborative teaching experiences.  The current version covers the standard topics taught in a first course on differential equations at the University of Denver. While it is intended to serve as a complete resource for that curriculum, there remain several important topics that will be included in future iterations, such as series solutions to differential equations, the method of variation of parameters, and the phase portraits of linear and nonlinear autonomous systems.  This work was made possible in part through the support of a Colorado Department of Higher Education Open Educational Resources (CDHE OER) grant. I would also like to express my sincere gratitude to the many colleagues and teaching assistants who have contributed to this effort over the years. In particular, I am grateful for the valuable influence and mentorship of Doron Zeilberger, Lasantha Goonetilleke, and Kumar Shwetketu Virbhadra, who were instructors I have had the privilege to work as a TA at Rutgers University. I am indebted to my teaching assistants: Kempton Albee, Benjamin Brown, Brendan Dufty, Zion Hefty, Paul Johnson, Eden Ketchum, Christian Naess, and Kaya Wright, for their support, insights, and collaboration. I should also acknowledge the Cursor app that provided a quick conversion of my previous materials in all different formats (scanned, handwritten, latex, powerpoint, etc.) into the simple PreTeXt format and assisted me in the subsequent editing process.  It is my hope that this textbook will serve as a useful and adaptable resource for students and instructors alike, and that it contributes to a broader effort to make high-quality educational materials freely available.  "
+  "body": " This textbook is the culmination of several years of teaching differential equations at Rutgers University and the University of Denver. It originated from a desire to provide a more accessible, coherent, and pedagogically sound alternative to the commercial textbooks that I found lacking in various respects. Over time, these notes have been refined and expanded through continuous use in the classroom, shaped by student feedback, and improved by collaborative teaching experiences.  The current version covers the standard topics taught in a first course on differential equations at the University of Denver. While it is intended to serve as a complete resource for that curriculum, there remain several important topics that will be included in future iterations, such as series solutions to differential equations, the method of variation of parameters, and the phase portraits of linear and nonlinear autonomous systems.  This work was made possible in part through the support of a Colorado Department of Higher Education Open Educational Resources (CDHE OER) grant. I would also like to express my sincere gratitude to the many colleagues and teaching assistants who have contributed to this effort over the years. In particular, I am grateful for the valuable influence and mentorship of Doron Zeilberger, Lasantha Goonetilleke, and Kumar Shwetketu Virbhadra, who were instructors I have had the privilege to work as a TA at Rutgers University. I am indebted to my teaching assistants: Kempton Albee, Benjamin Brown, Brendan Dufty, Zion Hefty, Paul Johnson, Eden Ketchum, Christian Naess, and Kaya Wright, for their support, insights, and collaboration. I should also acknowledge the Cursor app that provided a quick conversion of my previous materials in all different formats (scanned, handwritten, latex, powerpoint, etc.) into the simple PreTeXt format and assisted me in the subsequent editing process.  It is my hope that this textbook will serve as a useful and adaptable resource for students and instructors alike, and that it contributes to a broader effort to make high-quality educational materials freely available.    Fei Qi  "
 },
 {
   "id": "sec-basic-concepts",
@@ -754,7 +745,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.9",
   "title": "Numerical Methods",
-  "body": " Numerical Methods  Numerical Methods   Applies to every reasonably formulated initial value problem.  Most useful when the analytic methods fail.  Main method for IVP in real world engineering practice.    Euler’s method  The idea of Euler's method is simple: we use the direction field to perform linear approximations. We first recall the linear approximation formula  Consider the IVP we choose a small step-size and we approximate by    We read the line element at the point perform the same procedure to get an approximation of    Repeating the process, we may approximate for every     Euler's method  Given the IVP and step-size set If we let be the approximation of then can be obtained from by    Use Euler’s method to approximate with step-size  Since we compute that       We computed that   Want: i.e.,   So             0  1  3    1  1.5     2  2     3  2.5     4  3       Summary: General steps in applying Euler's method:   Formulate the formula and simplify in terms of  Determine how many steps you want to compute.  Compute using either a calculator or some software.    Use Euler’s method to approximate with step-size  Since we compute that      We computed that   Want: i.e.,   So             0  1  2    1  2     2  3         Error analysis of Euler's method  In , we approximated that  The IVP can be solved directly.  The actual solution is  The approximation is not very good. However, if we use or the approximation will be much better.  To understand the error, we recall Taylor's theorem: In the Euler's method, we only kept the first two terms. The dropped terms can be expressed using Lagrange remainder:    If on Euler’s method gives an underestimate of i.e., the estimate is smaller than the actual solution  If on Euler’s method gives an overestimate of i.e., the estimate is larger than the actual solution  If changes sign. In that case, we can’t tell.  The formula describes the error in one step , thus is called the local truncation error. It is proportional to In particular, lowering means lowering the error.  The final error, aka global truncation error, will accumulate.  In general, if the local truncation , then global truncation error For Euler’s method, the GTE      We estimated that Do we have an overestimate or an underestimate?  To find , we take the derivative on both sides of the ODE: Within we can estimate using the values of each step. Recall that Using the data and the formular for , we have They are all positive. It is likely that we have an underestimate.  Warning: This process is not fully rigorous. It provides some evidence that is usually good enough in engineering practices.    If the error of is 0.2 with step-size what would the error be if step-size  We know that the global truncation error is proportional to i.e., We have when So When we have So the error is    We may use this method to decide the step-size so that the error is controlled within a certain precision level.     Other methods  Here are some other methods that are more accurate than Euler's method. Due to limitation of lecture time, we shall not discuss them in detail.   Improved Euler's method:       Local truncation error , Global truncation error    Runge-Kutta method (RK4)        Local truncation error , Global truncation error     It shall be noted that the RK4 method is the most popular method in practice.   "
+  "body": " Numerical Methods  Numerical Methods   Applies to every reasonably formulated initial value problem.  Most useful when the analytic methods fail.  Main method for IVP in real world engineering practice.    Euler's method  The idea of Euler's method is simple: we use the direction field to perform linear approximations. We first recall the linear approximation formula  Consider the IVP we choose a small step-size and we approximate by    We read the line element at the point perform the same procedure to get an approximation of    Repeating the process, we may approximate for every     Euler's method  Given the IVP and step-size set If we let be the approximation of then can be obtained from by    Use Euler's method to approximate with step-size  Since we compute that       We computed that   Want: i.e.,   So             0  1  3    1  1.5     2  2     3  2.5     4  3       Summary: General steps in applying Euler's method:   Formulate the formula and simplify in terms of  Determine how many steps you want to compute.  Compute using either a calculator or some software.    Use Euler's method to approximate with step-size  Since we compute that      We computed that   Want: i.e.,   So             0  1  2    1  2     2  3         Error analysis of Euler's method  In , we approximated that  The IVP can be solved directly.  The actual solution is  The approximation is not very good. However, if we use or the approximation will be much better.  To understand the error, we recall Taylor's theorem: In the Euler's method, we only kept the first two terms. The dropped terms can be expressed using Lagrange remainder:    If on Euler's method gives an underestimate of i.e., the estimate is smaller than the actual solution  If on Euler's method gives an overestimate of i.e., the estimate is larger than the actual solution  If changes sign. In that case, we can't tell.  The formula describes the error in one step , thus is called the local truncation error. It is proportional to In particular, lowering means lowering the error.  The final error, aka global truncation error, will accumulate.  In general, if the local truncation , then global truncation error For Euler's method, the GTE      We estimated that Do we have an overestimate or an underestimate?  To find , we take the derivative on both sides of the ODE: Within we can estimate using the values of each step. Recall that Using the data and the formular for , we have They are all positive. It is likely that we have an underestimate.  Warning: This process is not fully rigorous. It provides some evidence that is usually good enough in engineering practices.    If the error of is 0.2 with step-size what would the error be if step-size  We know that the global truncation error is proportional to i.e., We have when So When we have So the error is    We may use this method to decide the step-size so that the error is controlled within a certain precision level.     Other methods  Here are some other methods that are more accurate than Euler's method. Due to limitation of lecture time, we shall not discuss them in detail. Consider the IVP   Improved Euler's method:      Local truncation error , Global truncation error    Runge-Kutta method (RK4)        Local truncation error , Global truncation error     It shall be noted that the RK4 method is the most popular method in practice.   "
 },
 {
   "id": "alg-euler-method",
@@ -772,7 +763,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.9.2",
   "title": "<span class=\"process-math\">\\(y' = t - y + 1, \\, y(1) = 3.\\)<\/span> Use Euler’s method to approximate <span class=\"process-math\">\\(y(3)\\)<\/span> with step-size <span class=\"process-math\">\\(h = 0.5.\\)<\/span>.",
-  "body": " Use Euler’s method to approximate with step-size  Since we compute that       We computed that   Want: i.e.,   So             0  1  3    1  1.5     2  2     3  2.5     4  3      "
+  "body": " Use Euler's method to approximate with step-size  Since we compute that       We computed that   Want: i.e.,   So             0  1  3    1  1.5     2  2     3  2.5     4  3      "
 },
 {
   "id": "ex-euler-method-2",
@@ -781,7 +772,7 @@ var ptx_lunr_docs = [
   "type": "Example",
   "number": "1.9.4",
   "title": "<span class=\"process-math\">\\(y' = t + y, \\, y(1) = 2.\\)<\/span> Use Euler’s method to approximate <span class=\"process-math\">\\(y(3)\\)<\/span> with step-size <span class=\"process-math\">\\(h = 1.\\)<\/span>.",
-  "body": " Use Euler’s method to approximate with step-size  Since we compute that      We computed that   Want: i.e.,   So             0  1  2    1  2     2  3      "
+  "body": " Use Euler's method to approximate with step-size  Since we compute that      We computed that   Want: i.e.,   So             0  1  2    1  2     2  3      "
 },
 {
   "id": "subsec-error-analysis-7",
@@ -790,7 +781,7 @@ var ptx_lunr_docs = [
   "type": "Observation",
   "number": "1.9.6",
   "title": "",
-  "body": "  If on Euler’s method gives an underestimate of i.e., the estimate is smaller than the actual solution  If on Euler’s method gives an overestimate of i.e., the estimate is larger than the actual solution  If changes sign. In that case, we can’t tell.  The formula describes the error in one step , thus is called the local truncation error. It is proportional to In particular, lowering means lowering the error.  The final error, aka global truncation error, will accumulate.  In general, if the local truncation , then global truncation error For Euler’s method, the GTE   "
+  "body": "  If on Euler's method gives an underestimate of i.e., the estimate is smaller than the actual solution  If on Euler's method gives an overestimate of i.e., the estimate is larger than the actual solution  If changes sign. In that case, we can't tell.  The formula describes the error in one step , thus is called the local truncation error. It is proportional to In particular, lowering means lowering the error.  The final error, aka global truncation error, will accumulate.  In general, if the local truncation , then global truncation error For Euler's method, the GTE   "
 },
 {
   "id": "ex-error-analysis-1",
@@ -825,8 +816,125 @@ var ptx_lunr_docs = [
   "url": "sec-2nd-order-linear-gen-theory.html",
   "type": "Section",
   "number": "2.1",
-  "title": "Second-order Linear ODEs",
-  "body": " Second-order Linear ODEs  Standard form:     If , then the ODE     is said to be homogeneous .  Otherwise, we say the ODE is nonhomogeneous .  Unlike the first-order ODE where a formula gives the general solution, for second- and higher-order linear ODEs, we do not know how to solve them in general.  In this course we will only focus on some special types of second-order linear ODEs that appear frequently in science and engineering courses. We start with some general theories.  Existence and Uniqueness Theorem  For the IVP      If are continuous in an interval that contains , then the IVP has a unique solution on .  Likewise, the theorem gives the interval of existence.  Example: Find the interval of existence of the IVP     Standard form:  Singularity:  Interval of existence:  Remark: In what follows, all the results are supposed to hold on the interval of existence.  Principle of Superposition   If are solutions of a 2 nd -order linear homogeneous ODE     then for every real number , the function     is also a solution.  In addition, if are linearly independent, i.e., if and are not proportional to each other, then the general solution of the ODE is      Example:    are solutions:           is also a solution.                       is also a solution.                     Remark: The proof of the theorem is not much more difficult.   Since and are linearly independent, the theorem implies is the general solution.   Wronskian for linear independence  If are solutions of the 2 nd -order linear homogeneous ODE     on an interval where the existence and uniqueness theorem holds, then are linearly independent if and only if the Wronskian     is nonzero on the interval.  Fact: It suffices that on one point of the interval.  Example:      So are linearly independent.  Example:      So are linearly dependent.  Example:         Example:         Example:      Set   So linearly dependent.  "
+  "title": "General Theories of Second-order Linear ODEs",
+  "body": " General Theories of Second-order Linear ODEs  From , the standard form of a second-order linear ODE is If , then the ODE is said to be homogeneous . Otherwise, we say the ODE is nonhomogeneous .  Unlike the first-order ODE where a formula gives the general solution (see ), for second- and higher-order linear ODEs, we do not know how to solve them in general. In this course we will only focus on some special types of second-order linear ODEs that appear frequently in science and engineering courses.  We start with some general theories.   Existence and Uniqueness Theorem   Existence and Uniqueness Theorem   For the IVP   If are continuous in an interval that contains , then the IVP has a unique solution on .    The proof of this theorem is beyond the level of this course. We shall focus on using it. Just like in , we may use the theorem to find the interval of existence.   Find the interval of existence of the IVP   Standard form:  Singularity:   Interval of existence:    In what follows, all the results are supposed to hold on the interval of existence.     Principle of Superposition   Principle of Superposition    If are solutions of a 2 nd -order linear homogeneous ODE then for every real number , the function is also a solution.  In addition, if are linearly independent, i.e., if and are not proportional to each other, then the general solution of the ODE is       Check that are solutions of the ODE What does the principle of superposition tell us?   are solutions:     is also a solution.    is also a solution.   We check that that is not a constant. So and are linearly independent, the theorem implies is the general solution.     The proof of the first part of the superposition principle is not much more difficult than what we did in the example above. I'll leave it as an exercise. The second part, however, is a consequence of . The proof is not difficult, but for the sake of brevity, we shall not prove it here.     Wronskian for linear independence   Wronskian for linear independence   If are solutions of the 2 nd -order linear homogeneous ODE on an interval where the existence and uniqueness theorem holds, then are linearly independent if and only if the Wronskian is nonzero on the interval.     It suffices that on one point of the interval. The proof is not difficult. But for the sake of brevity, we shall not prove it here.        So are linearly independent.        So are linearly dependent.               Set . Then So are linearly dependent.    "
+},
+{
+  "id": "sec-2nd-order-linear-gen-theory-2",
+  "level": "2",
+  "url": "sec-2nd-order-linear-gen-theory.html#sec-2nd-order-linear-gen-theory-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "homogeneous nonhomogeneous "
+},
+{
+  "id": "th-existence-and-uniqueness-theorem-2nd-order",
+  "level": "2",
+  "url": "sec-2nd-order-linear-gen-theory.html#th-existence-and-uniqueness-theorem-2nd-order",
+  "type": "Theorem",
+  "number": "2.1.1",
+  "title": "Existence and Uniqueness Theorem.",
+  "body": " Existence and Uniqueness Theorem   For the IVP   If are continuous in an interval that contains , then the IVP has a unique solution on .   "
+},
+{
+  "id": "sec-2nd-order-linear-gen-theory-5-4",
+  "level": "2",
+  "url": "sec-2nd-order-linear-gen-theory.html#sec-2nd-order-linear-gen-theory-5-4",
+  "type": "Example",
+  "number": "2.1.2",
+  "title": "Find the interval of existence of the IVP <span class=\"process-math\">\\(t^2y'' - 4ty' + 4y = 0, \\, y(1) = 1, \\, y'(1) = 4\\)<\/span>.",
+  "body": " Find the interval of existence of the IVP   Standard form:  Singularity:   Interval of existence:  "
+},
+{
+  "id": "sec-2nd-order-linear-gen-theory-5-5",
+  "level": "2",
+  "url": "sec-2nd-order-linear-gen-theory.html#sec-2nd-order-linear-gen-theory-5-5",
+  "type": "Remark",
+  "number": "2.1.3",
+  "title": "",
+  "body": " In what follows, all the results are supposed to hold on the interval of existence.  "
+},
+{
+  "id": "th-linear-independence-superposition",
+  "level": "2",
+  "url": "sec-2nd-order-linear-gen-theory.html#th-linear-independence-superposition",
+  "type": "Theorem",
+  "number": "2.1.4",
+  "title": "Principle of Superposition.",
+  "body": " Principle of Superposition    If are solutions of a 2 nd -order linear homogeneous ODE then for every real number , the function is also a solution.  In addition, if are linearly independent, i.e., if and are not proportional to each other, then the general solution of the ODE is     "
+},
+{
+  "id": "sec-2nd-order-linear-gen-theory-6-3",
+  "level": "2",
+  "url": "sec-2nd-order-linear-gen-theory.html#sec-2nd-order-linear-gen-theory-6-3",
+  "type": "Example",
+  "number": "2.1.5",
+  "title": "Check that <span class=\"process-math\">\\(y_1 = e^{3t}, \\, y_2 = e^{-t}\\)<\/span> are solutions of the ODE <span class=\"process-math\">\\(y'' - 2y' - 3y = 0.\\)<\/span> What does the principle of superposition tell us?",
+  "body": " Check that are solutions of the ODE What does the principle of superposition tell us?   are solutions:     is also a solution.    is also a solution.   We check that that is not a constant. So and are linearly independent, the theorem implies is the general solution.   "
+},
+{
+  "id": "sec-2nd-order-linear-gen-theory-6-4",
+  "level": "2",
+  "url": "sec-2nd-order-linear-gen-theory.html#sec-2nd-order-linear-gen-theory-6-4",
+  "type": "Remark",
+  "number": "2.1.6",
+  "title": "",
+  "body": " The proof of the first part of the superposition principle is not much more difficult than what we did in the example above. I'll leave it as an exercise. The second part, however, is a consequence of . The proof is not difficult, but for the sake of brevity, we shall not prove it here.  "
+},
+{
+  "id": "th-wronskian-for-linear-independence",
+  "level": "2",
+  "url": "sec-2nd-order-linear-gen-theory.html#th-wronskian-for-linear-independence",
+  "type": "Theorem",
+  "number": "2.1.7",
+  "title": "Wronskian for linear independence.",
+  "body": " Wronskian for linear independence   If are solutions of the 2 nd -order linear homogeneous ODE on an interval where the existence and uniqueness theorem holds, then are linearly independent if and only if the Wronskian is nonzero on the interval.   "
+},
+{
+  "id": "sec-2nd-order-linear-gen-theory-7-3",
+  "level": "2",
+  "url": "sec-2nd-order-linear-gen-theory.html#sec-2nd-order-linear-gen-theory-7-3",
+  "type": "Fact",
+  "number": "2.1.8",
+  "title": "",
+  "body": " It suffices that on one point of the interval. The proof is not difficult. But for the sake of brevity, we shall not prove it here.  "
+},
+{
+  "id": "sec-2nd-order-linear-gen-theory-7-4",
+  "level": "2",
+  "url": "sec-2nd-order-linear-gen-theory.html#sec-2nd-order-linear-gen-theory-7-4",
+  "type": "Example",
+  "number": "2.1.9",
+  "title": "<span class=\"process-math\">\\(t^2y'' - 4ty' + 6y = 0, \\, y_1 = t^2, \\, y_2 = t^3.\\)<\/span>.",
+  "body": "     So are linearly independent.  "
+},
+{
+  "id": "sec-2nd-order-linear-gen-theory-7-5",
+  "level": "2",
+  "url": "sec-2nd-order-linear-gen-theory.html#sec-2nd-order-linear-gen-theory-7-5",
+  "type": "Example",
+  "number": "2.1.10",
+  "title": "<span class=\"process-math\">\\(y'' - 9y = 0, \\, y_1 = e^{3t}, \\, y_2 = 5e^{3t}.\\)<\/span>.",
+  "body": "     So are linearly dependent.  "
+},
+{
+  "id": "ex-wronskian-real-distinct-roots",
+  "level": "2",
+  "url": "sec-2nd-order-linear-gen-theory.html#ex-wronskian-real-distinct-roots",
+  "type": "Example",
+  "number": "2.1.11",
+  "title": "<span class=\"process-math\">\\(ay'' + by' + cy = 0, \\, y_1 = e^{r_1 t}, \\, y_2 = e^{r_2 t}, \\, r_1 \\neq r_2.\\)<\/span>.",
+  "body": "        "
+},
+{
+  "id": "sec-2nd-order-linear-gen-theory-7-7",
+  "level": "2",
+  "url": "sec-2nd-order-linear-gen-theory.html#sec-2nd-order-linear-gen-theory-7-7",
+  "type": "Example",
+  "number": "2.1.12",
+  "title": "<span class=\"process-math\">\\(y'' - \\cot(2t)y' = 0, \\, y_1 = \\sin^2 t, \\, y_2 = \\cos(2t) - 1.\\)<\/span>.",
+  "body": "   Set . Then So are linearly dependent.  "
 },
 {
   "id": "sec-2nd-order-linear-const-coeff-real",
@@ -835,7 +943,70 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.2",
   "title": "Second-order Linear ODEs with Constant Coefficients - Real Roots",
-  "body": " Second-order Linear ODEs with Constant Coefficients - Real Roots  Linear Homogeneous ODE with Constant Coeffs.  Consider the ODE    where are constant numbers.   To solve this ODE, we try the function Then     This means that if is a solution, then necessarily, is a root of the quadratic equation     We call it the auxiliary equation.  If the auxiliary equation has two distinct real roots , then   are solutions, with   Then is the general solution!  Example 1:   Auxiliary equation:  General solution:  Example 2:   Auxiliary equation:  General solution:  Example 3:   Auxiliary equation:  General solution:  Example 4:   Auxiliary equation:  General solution:  Initial Value Problems and Long-term behaviors  Example 5:  Find the solution and determine the long-term behavior.  Auxiliary equation:  General solution:  From the initial values:        Solve the system:     Solution:  As , the second term approaches zero. The solution is dominated by the first term, which approaches  Example 6:  Determine the critical value of where the long-term behavior changes.  Auxiliary equation:  General solution:  From the initial values:           Solution:  As , the solution is dominated by the second term.     The long-term behavior changes when  "
+  "body": " Second-order Linear ODEs with Constant Coefficients - Real Roots   Auxiliary Equation  Consider the ODE where are constant numbers. This particular type of ODE can be solved, and are widely used in science and engineering.  To solve this ODE, we try the function Then This means that if is a solution, then necessarily, is a root of the quadratic equation We call it the auxiliary equation .    The case of two distinct real roots  If the auxiliary equation has two distinct real roots , then are solutions, with (see ). Then by the principle of superposition , is the general solution.    Auxiliary equation:  General solution:     Auxiliary equation:  General solution:     Auxiliary equation:  General solution:     Auxiliary equation:  General solution:     Initial Value Problems and Long-term behaviors  Knowing the general solution, we can solve initial value problems and analyze the long-term behavior of the solution.   Find the solution and determine the long-term behavior.   Auxiliary equation:  General solution:  From the initial values:  Solving the system, we obtain    So the solution is As , the second term approaches zero. The solution is dominated by the first term, which approaches    Determine the critical value of where the long-term behavior changes.   Auxiliary equation:  General solution:  From the initial values:  Solving the system, we obtain    So the solution is As , the solution is dominated by the second term. Note that Thus, the long-term behavior changes when     "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-real-2-3",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-real.html#sec-2nd-order-linear-const-coeff-real-2-3",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "auxiliary equation "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-real-3-3",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-real.html#sec-2nd-order-linear-const-coeff-real-3-3",
+  "type": "Example",
+  "number": "2.2.1",
+  "title": "<span class=\"process-math\">\\(y'' - 2y' - 3y = 0.\\)<\/span>.",
+  "body": "  Auxiliary equation:  General solution:  "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-real-3-4",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-real.html#sec-2nd-order-linear-const-coeff-real-3-4",
+  "type": "Example",
+  "number": "2.2.2",
+  "title": "<span class=\"process-math\">\\(y'' - 5y' + 6y = 0.\\)<\/span>.",
+  "body": "  Auxiliary equation:  General solution:  "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-real-3-5",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-real.html#sec-2nd-order-linear-const-coeff-real-3-5",
+  "type": "Example",
+  "number": "2.2.3",
+  "title": "<span class=\"process-math\">\\(y'' - 5y' - 6y = 0.\\)<\/span>.",
+  "body": "  Auxiliary equation:  General solution:  "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-real-3-6",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-real.html#sec-2nd-order-linear-const-coeff-real-3-6",
+  "type": "Example",
+  "number": "2.2.4",
+  "title": "<span class=\"process-math\">\\(2y'' - 7y' + 3y = 0.\\)<\/span>.",
+  "body": "  Auxiliary equation:  General solution:  "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-real-4-3",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-real.html#sec-2nd-order-linear-const-coeff-real-4-3",
+  "type": "Example",
+  "number": "2.2.5",
+  "title": "<span class=\"process-math\">\\(y'' - 4y' - 6y = 0, \\, y(0) = 1, \\, y'(0) = 0.\\)<\/span> Find the solution and determine the long-term behavior..",
+  "body": " Find the solution and determine the long-term behavior.   Auxiliary equation:  General solution:  From the initial values:  Solving the system, we obtain    So the solution is As , the second term approaches zero. The solution is dominated by the first term, which approaches  "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-real-4-4",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-real.html#sec-2nd-order-linear-const-coeff-real-4-4",
+  "type": "Example",
+  "number": "2.2.6",
+  "title": "<span class=\"process-math\">\\(y'' - 5y' + 6y = 0, \\, y(0) = \\alpha, \\, y'(0) = 1.\\)<\/span> Determine the critical value of <span class=\"process-math\">\\(\\alpha\\)<\/span> where the long-term behavior changes..",
+  "body": " Determine the critical value of where the long-term behavior changes.   Auxiliary equation:  General solution:  From the initial values:  Solving the system, we obtain    So the solution is As , the solution is dominated by the second term. Note that Thus, the long-term behavior changes when   "
 },
 {
   "id": "sec-complex-numbers",
@@ -844,7 +1015,16 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.3",
   "title": "Complex Numbers",
-  "body": " Complex Numbers   Multiplication  A complex number is of the form , where are real numbers, and Note that  is called the real part, is called the imaginary part.  Multiplication:     Examples:         Geometric Interpretation  A complex number may be identified with a point in the two-dimensional plane, called the complex plane.     Example:      Example:        Euler Formula  Euler’s formula reads   More generally   Indeed, this formula is nothing more than the polar-coordinate transformation   Given a complex number , the number , called the amplitude, is precisely the distance between and the origin,   The angle , called the phase, is precisely the angle formed from the x-axis to the line connecting the origin and In formulas,       Examples:         Examples:           Geometric Interpretation of Multiplication  Consider two complex numbers     Then multiplying these two complex numbers ends up with     Proof:              Here we used the fact that        Geometrically, this means that the amplitude of the product is the product of amplitudes, and phase of the product is the sum of the phases.  Example:           Powers and Roots  To square the complex number     using the previous description of multiplications, we obtain     Generally, for an integer , the -th power of is simply     The roots, on the other hand, are more complicated.  Generally, the -th root has different candidates.  Let If then     While the amplitude is unique, the phase is not unique.  Indeed,  The roots, on the other hand, are more complicated.  Generally, the -th root has different candidates.  Let If then     While the amplitude is unique, the phase is not unique.  Indeed, means  This is to say that     Correspondingly, for     are candidates of roots for  Example:         Example:   may possibly be     i.e.      "
+  "body": " Complex Numbers   Multiplication  A complex number is of the form , where are real numbers, and Note that  is called the real part, is called the imaginary part.  Multiplication:    Examples:         Geometric Interpretation  A complex number may be identified with a point in the two-dimensional plane, called the complex plane.     Example:      Example:        Euler Formula  The famous Euler’s formula reads More generally, Indeed, this formula is nothing more than the polar-coordinate transformation Given a complex number , the number , called the amplitude , is precisely the distance between and the origin, The angle , called the phase, is precisely the angle formed from the x-axis to the line connecting the origin and In formulas,      Examples:         Examples:           Geometric Interpretation of Multiplication  Consider two complex numbers Then multiplying these two complex numbers ends up with   Proof: Here we used the fact that and   Geometrically, this means that the amplitude of the product is the product of amplitudes, and phase of the product is the sum of the phases.  Example:           Powers and Roots  To square the complex number using the previous description of multiplications, we obtain Generally, for an integer , the -th power of is simply   The roots, on the other hand, are more complicated. Generally, the -th root has different candidates.  Let If then While the amplitude is unique, the phase is not unique .  Indeed,  This is to say that Correspondingly, for  are candidates of roots for  Example:       Example:  may possibly be i.e.       "
+},
+{
+  "id": "subsec-Euler-formula-2",
+  "level": "2",
+  "url": "sec-complex-numbers.html#subsec-Euler-formula-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Euler’s formula amplitude "
 },
 {
   "id": "sec-2nd-order-linear-const-coeff-complex",
@@ -853,7 +1033,88 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.4",
   "title": "Second-order Linear ODEs with Constant Coefficients - Complex Roots",
-  "body": " Second-order Linear ODEs with Constant Coefficients - Complex Roots  Consider the ODE     where are constant numbers. We tried the function and got the auxiliary equation     If the quadratic equation has two complex roots, then these two roots can be written as     In this case, we obtain two complex solutions     Using Euler's formula, we may write them as     Note that Note also that are conjugate to each other.  Theorem: If is a complex solution of     then both the real part and the imaginary part are solutions of the ODE as well.  Proof:              Recall that  So we conclude that     Therefore, both and are solutions.  Theorem: If the auxiliary equation of has complex solutions then the general solution of the ODE is     Proof: We already have the complex solutions     The theorem implies that     are both solutions. Note that           So are linearly independent. The conclusion follows.  Example 1:   Auxiliary Equation:  General solution:     Example 2:   Auxiliary Equation:  General solution:     Example 3:   Auxiliary Equation:  General solution:     Oscillation Patterns  Recall: For real numbers and     In other words, any linear combination of sine and cosine functions of the same angle can be rewritten as a single cosine function, with angle determined by Engineers also call the amplitude , the phase.  Example:               Oscillation Patterns  Example 1:      Amplitude stays still.  Example 2:      Amplitude decays exponentially.  Example 3:      Amplitude grows exponentially.     In general, if are the roots of the auxiliary equation for the ODE      Steady Oscillation.  Decaying Oscillation.  Growing Oscillation.   Note that the oscillation pattern depends only on the differential equation itself. It does not depend on the initial condition.  "
+  "body": " Second-order Linear ODEs with Constant Coefficients - Complex Roots   The case of (distinct) complex roots  Consider the ODE where are constant numbers. We tried the function and got the auxiliary equation If the quadratic equation has two complex roots, then these two roots are distinct and can be written as In this case, we obtain two complex solutions Using Euler's formula, we may write them as Note that Note also that are conjugate to each other.   If is a complex solution of then both the real part and the imaginary part are solutions of the ODE as well.    Proof. Note that Therefore, Recall that So we conclude that Therefore, both and are solutions.   If the auxiliary equation of has complex solutions then the general solution of the ODE is    Proof. We already have the complex solutions  implies that are both solutions. Note that So are linearly independent. The conclusion follows.     Auxiliary Equation:  General solution:        Auxiliary Equation:  General solution:        Auxiliary Equation:  General solution:       Oscillation Patterns  For real numbers and  with In other words, any linear combination of sine and cosine functions of the same angle can be rewritten as a single cosine function, representing an oscillation with amplitude and phase    Amplitude and phase of linear combinations of sine and cosine functions               Oscillation Patterns    For the ODE in , we rewrite the general solution as Then the amplitude stays still.       For the ODE in , we rewrite the general solution as Then the amplitude decays exponentially.       For the ODE in , we rewrite the general solution as Then the amplitude grows exponentially.        In general, if are the roots of the auxiliary equation for the ODE then  Steady Oscillation.  Decaying Oscillation.  Growing Oscillation.    Note that the oscillation pattern depends only on the differential equation itself. It does not depend much on the initial condition (unless it leads to the zero solution).    "
+},
+{
+  "id": "th-complex-solution-real-solution",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-complex.html#th-complex-solution-real-solution",
+  "type": "Theorem",
+  "number": "2.4.1",
+  "title": "",
+  "body": " If is a complex solution of then both the real part and the imaginary part are solutions of the ODE as well.   "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-complex-2-5",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-complex.html#sec-2nd-order-linear-const-coeff-complex-2-5",
+  "type": "Theorem",
+  "number": "2.4.2",
+  "title": "",
+  "body": " If the auxiliary equation of has complex solutions then the general solution of the ODE is   "
+},
+{
+  "id": "ex-complex-roots-1",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-complex.html#ex-complex-roots-1",
+  "type": "Example",
+  "number": "2.4.3",
+  "title": "<span class=\"process-math\">\\(y'' + y = 0.\\)<\/span>.",
+  "body": "   Auxiliary Equation:  General solution:    "
+},
+{
+  "id": "ex-complex-roots-2",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-complex.html#ex-complex-roots-2",
+  "type": "Example",
+  "number": "2.4.4",
+  "title": "<span class=\"process-math\">\\(y'' + 2y' + 8y = 0.\\)<\/span>.",
+  "body": "   Auxiliary Equation:  General solution:    "
+},
+{
+  "id": "ex-complex-roots-3",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-complex.html#ex-complex-roots-3",
+  "type": "Example",
+  "number": "2.4.5",
+  "title": "<span class=\"process-math\">\\(y'' - y' + y = 0.\\)<\/span>.",
+  "body": "   Auxiliary Equation:  General solution:    "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-complex-3-2",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-complex.html#sec-2nd-order-linear-const-coeff-complex-3-2",
+  "type": "Fact",
+  "number": "2.4.6",
+  "title": "",
+  "body": "For real numbers and  with In other words, any linear combination of sine and cosine functions of the same angle can be rewritten as a single cosine function, representing an oscillation with amplitude and phase  "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-complex-3-3",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-complex.html#sec-2nd-order-linear-const-coeff-complex-3-3",
+  "type": "Example",
+  "number": "2.4.7",
+  "title": "Amplitude and phase of linear combinations of sine and cosine functions.",
+  "body": " Amplitude and phase of linear combinations of sine and cosine functions             "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-complex-3-4",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-complex.html#sec-2nd-order-linear-const-coeff-complex-3-4",
+  "type": "Example",
+  "number": "2.4.8",
+  "title": "Oscillation Patterns.",
+  "body": " Oscillation Patterns    For the ODE in , we rewrite the general solution as Then the amplitude stays still.       For the ODE in , we rewrite the general solution as Then the amplitude decays exponentially.       For the ODE in , we rewrite the general solution as Then the amplitude grows exponentially.       "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-complex-3-6",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-complex.html#sec-2nd-order-linear-const-coeff-complex-3-6",
+  "type": "Remark",
+  "number": "2.4.9",
+  "title": "",
+  "body": " Note that the oscillation pattern depends only on the differential equation itself. It does not depend much on the initial condition (unless it leads to the zero solution).  "
 },
 {
   "id": "sec-2nd-order-linear-const-coeff-repeated",
