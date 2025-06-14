@@ -295,7 +295,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "1.5",
   "title": "First-order Linear ODEs",
-  "body": " First-order Linear ODEs   Consider a first-order linear ODE in its standard form   We solve it by first calculating the integrating factor   then the formula of the general solution is   How comes the formula? Observe that  In general, any function making is called an integrating factor. To satisfy this equation, we calculate that   So means   Now that we found the , Recall that the ODE we intend to solve is   Thus, we conclude that   Integrate both sides:     This formula ONLY works for the standard form . Before using it, get the standard form first.  When integrating , no need to worry about the constant or the absolute value. They make no difference.  The arbitrary constant in the general solution appears as a part of the numerator, not outside of the fraction. It might be helpful to write the formula of the general solution as From this formula, it is clear that is a pure constant only when is a constant. This case is very rare, and only happens when .     Solve   Already in standard form.  Integrating factor:  General solution:    Digression: What if we keep the constant in the integrating factor?   Integrating factor:  General solution: So the extra constant in the integrating factor does not make any difference!    Coming back to the problem, we have obtained the general solution. But we are not done yet. We are given an IVP, so we need to take care of the initial condition.   Determine by the initial condition:     Conclusion: The solution of the IVP is     Solve    Standard form:  Integrating factor:  Warning! Saying commits the crime of abusing algebra, which is punishable by banishment to the STEM.  General solution:  Determine by initial value:  Solution of the IVP:      Solve    Standard form:  Integrating factor:   Note that  General solution:  We calculate the integral in the numerator:  Thus the general solution is of the form where in the last step we used the identity .       Solve    Standard form:  Integrating factor:  General solution:  We calculate the integral in the numerator:   So we conclude the general solution as        Solve    Already in standard form.  Integrating factor:  General solution:   How to calculate the integral?  So we have   Then we conclude the general solution as        Solve    Already in standard form.  Integrating factor:  Here we ignored the absolute value (why can we do that?).  General solution:  Please make sure you know how to integrate .       Solve . Find the solution of the IVP that is continuous everywhere   General principle: Solve the ODE on each individual interval. Determine the constants by either the initial condition or continuity at the boundary .  On the interval   Integrating factor:  General solution:   Initial condition  We conclude that on   On the interval   Integrating factor:  General solution:  On   So the solution of the IVP is  To make sure is continuous, we need . This is to say  Conclusion: the continuous solution of the IVP is    "
+  "body": " First-order Linear ODEs   Consider a first-order linear ODE in its standard form   We solve it by first calculating the integrating factor   then the formula of the general solution is    How comes the formula? Observe that  In general, any function making is called an integrating factor. To satisfy this equation, we calculate that   So means   Now that we found the , Recall that the ODE we intend to solve is   Thus, we conclude that   Integrate both sides:      This formula ONLY works for the standard form . Before using it, get the standard form first.  When integrating , no need to worry about the constant or the absolute value. They make no difference.  The arbitrary constant in the general solution appears as a part of the numerator, not outside of the fraction. It might be helpful to write the formula of the general solution as From this formula, it is clear that is a pure constant only when is a constant. This case is very rare, and only happens when .     Solve   Already in standard form.  Integrating factor:  General solution:    Digression: What if we keep the constant in the integrating factor?   Integrating factor:  General solution: So the extra constant in the integrating factor does not make any difference!    Coming back to the problem, we have obtained the general solution. But we are not done yet. We are given an IVP, so we need to take care of the initial condition.   Determine by the initial condition:     Conclusion: The solution of the IVP is     Solve    Standard form:  Integrating factor:  Warning! Saying commits the crime of abusing algebra, which is punishable by banishment to the STEM.  General solution:  Determine by initial value:  Solution of the IVP:      Solve    Standard form:  Integrating factor:   Note that  General solution:  We calculate the integral in the numerator:  Thus the general solution is of the form where in the last step we used the identity .       Solve    Standard form:  Integrating factor:  General solution:  We calculate the integral in the numerator:   So we conclude the general solution as        Solve    Already in standard form.  Integrating factor:  General solution:   How to calculate the integral?  So we have   Then we conclude the general solution as        Solve    Already in standard form.  Integrating factor:  Here we ignored the absolute value (why can we do that?).  General solution:  Please make sure you know how to integrate .       Solve . Find the solution of the IVP that is continuous everywhere   General principle: Solve the ODE on each individual interval. Determine the constants by either the initial condition or continuity at the boundary .  On the interval   Integrating factor:  General solution:   Initial condition  We conclude that on   On the interval   Integrating factor:  General solution:  On   So the solution of the IVP is  To make sure is continuous, we need . This is to say  Conclusion: the continuous solution of the IVP is    "
 },
 {
   "id": "thm-1st-order-linear",
@@ -307,63 +307,72 @@ var ptx_lunr_docs = [
   "body": " Consider a first-order linear ODE in its standard form   We solve it by first calculating the integrating factor   then the formula of the general solution is  "
 },
 {
-  "id": "sec-1st-order-linear-14",
+  "id": "sec-1st-order-linear-3",
   "level": "2",
-  "url": "sec-1st-order-linear.html#sec-1st-order-linear-14",
+  "url": "sec-1st-order-linear.html#sec-1st-order-linear-3",
+  "type": "Proof",
+  "number": "1.5.1",
+  "title": "",
+  "body": " How comes the formula? Observe that  In general, any function making is called an integrating factor. To satisfy this equation, we calculate that   So means   Now that we found the , Recall that the ODE we intend to solve is   Thus, we conclude that   Integrate both sides:   "
+},
+{
+  "id": "sec-1st-order-linear-4",
+  "level": "2",
+  "url": "sec-1st-order-linear.html#sec-1st-order-linear-4",
   "type": "Remark",
   "number": "1.5.2",
   "title": "",
   "body": "  This formula ONLY works for the standard form . Before using it, get the standard form first.  When integrating , no need to worry about the constant or the absolute value. They make no difference.  The arbitrary constant in the general solution appears as a part of the numerator, not outside of the fraction. It might be helpful to write the formula of the general solution as From this formula, it is clear that is a pure constant only when is a constant. This case is very rare, and only happens when .   "
 },
 {
-  "id": "sec-1st-order-linear-15",
+  "id": "sec-1st-order-linear-5",
   "level": "2",
-  "url": "sec-1st-order-linear.html#sec-1st-order-linear-15",
+  "url": "sec-1st-order-linear.html#sec-1st-order-linear-5",
   "type": "Example",
   "number": "1.5.3",
   "title": "Solve <span class=\"process-math\">\\(y' + 2y = e^{3t}, \\quad y(0) = 3.\\)<\/span>.",
   "body": " Solve   Already in standard form.  Integrating factor:  General solution:    Digression: What if we keep the constant in the integrating factor?   Integrating factor:  General solution: So the extra constant in the integrating factor does not make any difference!    Coming back to the problem, we have obtained the general solution. But we are not done yet. We are given an IVP, so we need to take care of the initial condition.   Determine by the initial condition:     Conclusion: The solution of the IVP is   "
 },
 {
-  "id": "sec-1st-order-linear-16",
+  "id": "sec-1st-order-linear-6",
   "level": "2",
-  "url": "sec-1st-order-linear.html#sec-1st-order-linear-16",
+  "url": "sec-1st-order-linear.html#sec-1st-order-linear-6",
   "type": "Example",
   "number": "1.5.4",
   "title": "Solve <span class=\"process-math\">\\(ty' - y = t^3, \\quad y(1) = 0.\\)<\/span>.",
   "body": " Solve    Standard form:  Integrating factor:  Warning! Saying commits the crime of abusing algebra, which is punishable by banishment to the STEM.  General solution:  Determine by initial value:  Solution of the IVP:    "
 },
 {
-  "id": "sec-1st-order-linear-17",
+  "id": "sec-1st-order-linear-7",
   "level": "2",
-  "url": "sec-1st-order-linear.html#sec-1st-order-linear-17",
+  "url": "sec-1st-order-linear.html#sec-1st-order-linear-7",
   "type": "Example",
   "number": "1.5.5",
   "title": "Solve <span class=\"process-math\">\\((\\sin t) y' + (\\cos t) y = \\sin^2 t, \\quad 0 \\lt t \\lt \\pi.\\)<\/span>.",
   "body": " Solve    Standard form:  Integrating factor:   Note that  General solution:  We calculate the integral in the numerator:  Thus the general solution is of the form where in the last step we used the identity .     "
 },
 {
-  "id": "sec-1st-order-linear-18",
+  "id": "sec-1st-order-linear-8",
   "level": "2",
-  "url": "sec-1st-order-linear.html#sec-1st-order-linear-18",
+  "url": "sec-1st-order-linear.html#sec-1st-order-linear-8",
   "type": "Example",
   "number": "1.5.6",
   "title": "Solve <span class=\"process-math\">\\(ty' + 2y = t(\\ln 3t)^2.\\)<\/span>.",
   "body": " Solve    Standard form:  Integrating factor:  General solution:  We calculate the integral in the numerator:   So we conclude the general solution as      "
 },
 {
-  "id": "sec-1st-order-linear-19",
+  "id": "sec-1st-order-linear-9",
   "level": "2",
-  "url": "sec-1st-order-linear.html#sec-1st-order-linear-19",
+  "url": "sec-1st-order-linear.html#sec-1st-order-linear-9",
   "type": "Example",
   "number": "1.5.7",
   "title": "Solve <span class=\"process-math\">\\(y' + y = \\cos 2t.\\)<\/span>.",
   "body": " Solve    Already in standard form.  Integrating factor:  General solution:   How to calculate the integral?  So we have   Then we conclude the general solution as      "
 },
 {
-  "id": "sec-1st-order-linear-20",
+  "id": "sec-1st-order-linear-10",
   "level": "2",
-  "url": "sec-1st-order-linear.html#sec-1st-order-linear-20",
+  "url": "sec-1st-order-linear.html#sec-1st-order-linear-10",
   "type": "Example",
   "number": "1.5.8",
   "title": "Solve <span class=\"process-math\">\\(y' - (\\tan t)y = \\sec^2 t.\\)<\/span>.",
@@ -1123,7 +1132,79 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.5",
   "title": "Second-order Linear ODEs with Constant Coefficients - Repeated Real Roots",
-  "body": " Second-order Linear ODEs with Constant Coefficients - Repeated Real Roots  Consider the ODE     where are constant numbers. We tried the function and got the auxiliary equation     If the quadratic equation has two repeated roots in this case, we only obtain one solution     Another solution may be obtained (via cheating) by     So the general solution is     Example 1:   Auxiliary equation:  General solution:  Example 2:   Auxiliary equation:  General solution:  Example 3: For the IVP     find the critical value of where the long-term behavior changes.  Auxiliary equation:  General solution:    Solution of the IVP:  As the solution no matter how is chosen.  However, there are two ways approaching zero:  If then If then  The long-term behavior changes when  Solution of the IVP:       For        For       How do we know we should multiply by It is a result of a very standard technique called variation of parameters.  Philosophy: If you know one solution then since the ODE is linear, for any number the function would also be a solution.  Variation of parameter simply means that replacing the numerical parameter with a function i.e., set     Plugging it back into the ODE, we may get an (usually much simpler) ODE for By solving for we may obtain  In the context of linear homogeneous ODE, the technique is usually referred to as reduction of order.  Let be a solution of the homogeneous linear ODE   We set and require that is another solution. This means that   Expanding the left-hand-side      we obtain a second-order ODE of that involves only and .  This ODE is essentially a first-order separable ODE of , i.e.,   Solving then integrate, we obtain and thus  Remarks:  1. When formulating the equation for , make sure you read the function from the standard form .  2. Since we only need one that is linearly independent to , when solving for and integrating for , we may make a wise choice of the arbitrary constants. It suffices that  3. It is possible to have a formula for , namely,   I do not recommend using this formula or memorizing it.  Example 1: Let be an ODE whose auxiliary equation has repeated roots . This means that the ODE can be rewritten as   For , we set , then       We may pick , so that  We may pick , so that  Exercise: Check that  We conclude that is the general solution.  Example 2: Knowing that is a solution, find the general solution.  Standard form:  Set To formulate the ODE for we have       Standard form:  Set We obtained that one option of namely,   By incorporating the coefficient into the arbitrary constants, we see that the general solution of the ODE is   "
+  "body": " Second-order Linear ODEs with Constant Coefficients - Repeated Real Roots   The formula of the general solution  Consider the ODE where are constant numbers. We tried the function and got the auxiliary equation If the quadratic equation has two repeated roots in this case, we only obtain one solution Another solution may be obtained (via cheating) by The general solution is      Auxiliary equation:  General solution:       Auxiliary equation:  General solution:     For the IVP find the critical value of where the long-term behavior changes.   Auxiliary equation:  General solution:  Plug in the initial values: Solution of the IVP:  As the solution no matter how is chosen. However, there are two ways approaching zero:  If then If then   Conclusuion: The long-term behavior changes when      For        For          The method of reduction of order  How do we know we should multiply by It is a result of a very standard technique called variation of parameters .  Philosophy: If you know one solution then since the ODE is linear, for any number the function would also be a solution.  Variation of parameter simply means that replacing the numerical parameter with a function i.e., set Plugging it back into the ODE, we may get an (usually much simpler) ODE for By solving for we may obtain  In the context of linear homogeneous ODE, the technique is usually referred to as reduction of order .  Let be a solution of the homogeneous linear ODE We set and require that is another solution. This means that Expanding the left-hand-side: we obtain a second-order ODE of that involves only and .  This ODE is essentially a first-order separable ODE of , i.e., Solving then integrate, we obtain and thus    When formulating the equation for , make sure you read the function from the standard form .  Since we only need one that is linearly independent to , when solving for and integrating for , we may make a wise choice of the arbitrary constants. It suffices that  It is possible to have a formula for , namely, I do not recommend using this formula or memorizing it.     How to find the -factor in the repeated root case  Let be an ODE whose auxiliary equation has repeated roots . This means that the ODE can be rewritten as For , we set , then For convenience, we pick so that , then integrate to get thus The condition that automatically guarantees that [Why?]. We conclude that is the general solution.    For the ODE knowing that is a solution, find the general solution.   Standard form:  Set To formulate the ODE for we have Plug them into the ODE we have By incorporating the coefficient into the arbitrary constants, we see that the general solution of the ODE is     "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-repeated-1-3",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-repeated.html#sec-2nd-order-linear-const-coeff-repeated-1-3",
+  "type": "Example",
+  "number": "2.5.1",
+  "title": "<span class=\"process-math\">\\(y'' - 2y' + y = 0.\\)<\/span>.",
+  "body": "   Auxiliary equation:  General solution:   "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-repeated-1-4",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-repeated.html#sec-2nd-order-linear-const-coeff-repeated-1-4",
+  "type": "Example",
+  "number": "2.5.2",
+  "title": "<span class=\"process-math\">\\(4y'' - 4y' + y = 0.\\)<\/span>.",
+  "body": "   Auxiliary equation:  General solution:   "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-repeated-1-5",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-repeated.html#sec-2nd-order-linear-const-coeff-repeated-1-5",
+  "type": "Example",
+  "number": "2.5.3",
+  "title": "For the IVP <span class=\"process-math\">\\(y'' + 10y' + 25y = 0, \\, y(0) = 1, \\, y'(0) = \\alpha,\\)<\/span>find the critical value of <span class=\"process-math\">\\(\\alpha\\)<\/span> where the long-term behavior changes..",
+  "body": " For the IVP find the critical value of where the long-term behavior changes.   Auxiliary equation:  General solution:  Plug in the initial values: Solution of the IVP:  As the solution no matter how is chosen. However, there are two ways approaching zero:  If then If then   Conclusuion: The long-term behavior changes when      For        For       "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-repeated-2-2",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-repeated.html#sec-2nd-order-linear-const-coeff-repeated-2-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "variation of parameters "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-repeated-2-5",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-repeated.html#sec-2nd-order-linear-const-coeff-repeated-2-5",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "reduction of order "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-repeated-2-8",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-repeated.html#sec-2nd-order-linear-const-coeff-repeated-2-8",
+  "type": "Remark",
+  "number": "2.5.4",
+  "title": "",
+  "body": "  When formulating the equation for , make sure you read the function from the standard form .  Since we only need one that is linearly independent to , when solving for and integrating for , we may make a wise choice of the arbitrary constants. It suffices that  It is possible to have a formula for , namely, I do not recommend using this formula or memorizing it.   "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-repeated-2-9",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-repeated.html#sec-2nd-order-linear-const-coeff-repeated-2-9",
+  "type": "Example",
+  "number": "2.5.5",
+  "title": "How to find the <span class=\"process-math\">\\(t\\)<\/span>-factor in the repeated root case.",
+  "body": " How to find the -factor in the repeated root case  Let be an ODE whose auxiliary equation has repeated roots . This means that the ODE can be rewritten as For , we set , then For convenience, we pick so that , then integrate to get thus The condition that automatically guarantees that [Why?]. We conclude that is the general solution.  "
+},
+{
+  "id": "sec-2nd-order-linear-const-coeff-repeated-2-10",
+  "level": "2",
+  "url": "sec-2nd-order-linear-const-coeff-repeated.html#sec-2nd-order-linear-const-coeff-repeated-2-10",
+  "type": "Example",
+  "number": "2.5.6",
+  "title": "For the ODE <span class=\"process-math\">\\(ty'' - y' - 4t^3y = 0,\\)<\/span> knowing that <span class=\"process-math\">\\(y_1 = \\sin(t^2)\\)<\/span> is a solution, find the general solution..",
+  "body": " For the ODE knowing that is a solution, find the general solution.   Standard form:  Set To formulate the ODE for we have Plug them into the ODE we have By incorporating the coefficient into the arbitrary constants, we see that the general solution of the ODE is   "
 },
 {
   "id": "sec-2nd-order-linear-non-homogeneous",
@@ -1132,7 +1213,52 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.6",
   "title": "Second-order Linear Non-Homogeneous ODEs",
-  "body": " Second-order Linear Non-Homogeneous ODEs  The general solution of a nonhomogeneous linear ODE   is closely related to the solution of the homogeneous ODE   Principle of Superposition  3. Let be two solutions of Then is a solution of  Proof. The assumption states that    Subtract these two equations, by linearity of derivatives, we get   Thus is a solution of the  Theorem. The general solution of is of the form   where is the general solution of the ODE   is a particular solution of ODE  Proof. We first check that is a solution:     Proof (continued). It remains to check that any solution is of this form. Let be any solution of the nonhomogeneous ODE. Then from the principle of superposition, is a solution of the homogeneous ODE. Thus   for some numbers Thus  Terminologies:  is called the complementary solution.  is called a particular solution.  Solving a nonhomogeneous ODE reduces to two parts: Solve the homogeneous ODE to find the complementary solution, then find a particular solution.  Linear ODE with constant coefficients  For a second order linear nonhomogeneous ODE with constant coefficients   we learned how to find the complementary solution:  We start by forming the auxiliary equation and solve the quadratic equation. Three cases:   Two distinct real roots   Two distinct complex roots   Two repeated real roots    For a second order linear nonhomogeneous ODE with constant coefficients   There are two approaches of finding a particular solution.   Method of Undetermined Coefficients. The method is convenient and easy to generalize to higher-order linear ODEs , but only works for some special classes of (good enough for most engineering practices).  Variation of Parameter (not required). Knowing the complementary solution we may set and solve that    "
+  "body": " Second-order Linear Non-Homogeneous ODEs   Principle of Superposition and the Structure of the General Solution  The general solution of a nonhomogeneous linear ODE   is closely related to the solution of the homogeneous ODE    Principle of Superposition   Let be two solutions of Then is a solution of     The assumption states that and Subtract these two equations, by linearity of derivatives, we get Thus is a solution of the    Structure of the general solution   The general solution of is of the form where   is the general solution of the homogeneous ODE  is a particular solution of ODE      We first check that is a solution:  It remains to check that any solution is of this form. Let be any solution of the nonhomogeneous ODE. Then from the , is a solution of the homogeneous ODE. Thus for some numbers In other words,    is called the complementary solution  is called a particular solution .   Solving a nonhomogeneous ODE reduces to two parts: Solve the homogeneous ODE to find the complementary solution, then find a particular solution.    Linear ODE with constant coefficients  For a second order linear nonhomogeneous ODE with constant coefficients we learned how to find the complementary solution:  We start by forming the auxiliary equation and solve the quadratic equation. Three cases:   Two distinct real roots   Two distinct complex roots   Two repeated real roots    For a second order linear nonhomogeneous ODE with constant coefficients There are two approaches of finding a particular solution.   Method of Undetermined Coefficients. The method is convenient and easy to generalize to higher-order linear ODEs, but only works when all the coefficients are constant and ranges in special classes of functions. Nevertheless, these special cases are good enough for lots of engineering practices.  Variation of Parameter (not required). Knowing the complementary solution we may set and solve that Therefore, knowing one part of the complementary solution, we may apply the reduction of order in to find the full complementary solution, then use this formula to find the particular solution.  While this integration formula is powerful and can be generalized to higher-order linear ODEs, the formula in higher-order case is much more complicated and not so convenient to use.     "
+},
+{
+  "id": "thm-superposition-nonhomogeneous",
+  "level": "2",
+  "url": "sec-2nd-order-linear-non-homogeneous.html#thm-superposition-nonhomogeneous",
+  "type": "Theorem",
+  "number": "2.6.1",
+  "title": "Principle of Superposition.",
+  "body": " Principle of Superposition   Let be two solutions of Then is a solution of   "
+},
+{
+  "id": "sec-2nd-order-linear-non-homogeneous-2-7",
+  "level": "2",
+  "url": "sec-2nd-order-linear-non-homogeneous.html#sec-2nd-order-linear-non-homogeneous-2-7",
+  "type": "Proof",
+  "number": "2.6.1.1",
+  "title": "",
+  "body": " The assumption states that and Subtract these two equations, by linearity of derivatives, we get Thus is a solution of the  "
+},
+{
+  "id": "sec-2nd-order-linear-non-homogeneous-2-8",
+  "level": "2",
+  "url": "sec-2nd-order-linear-non-homogeneous.html#sec-2nd-order-linear-non-homogeneous-2-8",
+  "type": "Theorem",
+  "number": "2.6.2",
+  "title": "Structure of the general solution.",
+  "body": " Structure of the general solution   The general solution of is of the form where   is the general solution of the homogeneous ODE  is a particular solution of ODE    "
+},
+{
+  "id": "sec-2nd-order-linear-non-homogeneous-2-9",
+  "level": "2",
+  "url": "sec-2nd-order-linear-non-homogeneous.html#sec-2nd-order-linear-non-homogeneous-2-9",
+  "type": "Proof",
+  "number": "2.6.1.2",
+  "title": "",
+  "body": " We first check that is a solution:  It remains to check that any solution is of this form. Let be any solution of the nonhomogeneous ODE. Then from the , is a solution of the homogeneous ODE. Thus for some numbers In other words,  "
+},
+{
+  "id": "sec-2nd-order-linear-non-homogeneous-2-10",
+  "level": "2",
+  "url": "sec-2nd-order-linear-non-homogeneous.html#sec-2nd-order-linear-non-homogeneous-2-10",
+  "type": "Definition",
+  "number": "2.6.3",
+  "title": "",
+  "body": " is called the complementary solution  is called a particular solution .  "
 },
 {
   "id": "sec-undetermined-coeff-2nd-order",
@@ -1141,7 +1267,124 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.7",
   "title": "Method of Undetermined Coefficients - First Ansatz",
-  "body": " Method of Undetermined Coefficients - First Ansatz  We use examples to study the method of undetermined coefficients.  Example 1:  Idea: RHS is a constant. We try a constant function.  Solution: Complementary solution:  Set Then   The general solution is   Example 2:  Idea: RHS is a polynomial. We try a polynomial function.  Solution: Complementary solution:  Set Then      The general solution is   Remark: Generally, if the RHS is a polynomial of degree , we set as a generic polynomial of degree  Remark: Even if , when setting , we should start from the highest degree of and go all the way down to the constant term.  Example 3:  Solution: Complementary solution:  Set  Then Then LHS is      General solution:   Example 4:  Idea: RHS is an exponential function. We try an exponential function with the same exponential coefficient.  Solution: Complementary solution:  Set Then    General solution:   Remark: If we choose for it won’t work.  Example 5:  Idea: RHS is a trigonometric function. We try a trigonometric function with the same trigonometric coefficient.  Solution: Complementary solution:  Set  Note that both sin and cos should appear.       General solution:   Remark: This works only for sin and cos, fails for other trigs.  Remark: If we try for the method won’t work.  Important Conceptual Remarks  The method works because:   Derivatives of polynomial functions are polynomials (up to the same degree).  Derivatives of exponential functions are exponential functions (with the same exponential coefficient).  Derivatives of sine and cosine functions are sine and cosine functions (with the same trigonometric coefficient).   For functions without this property, the method fails. You will have to use the integration formula.  The polynomials, exponentials, sine and cosine functions are referred to as the basic types. Observe that products of basic type functions satisfy the same property.  We have seen that for   If (or ), we should set the ansatz as  If (or , or ), we should set the ansatz as  If (or ), we should set the ansatz as  If (or , or ), we should set the ansatz as   This list continues with products of basic types.   If (or ), we should set the ansatz as   Remark: We need an exponential function with the same coefficient. Then we pair it with a generic polynomial.  If (or or ), we should set the ansatz as   Remark: We need both sine and cosine with the same coefficient. We pair both sine and cosine with generic polynomials of the same degrees.  Common mistake that won’t work:     If (or or ), we should set the ansatz as   Remark: We should understand (or or both) as the real parts (or imaginary parts, or both) of and We need both and  If (or or ), we should set the ansatz as   Remark: We need both and Then we pair both of them with generic polynomials of the same degree.   Example 6.  Complementary solution:  Set        So         Thus, we obtain four equations concerning four variables:    Solving the system, we obtain   So   The general solution is   The first ansatz - Summary  All the ansatz from 1-8 can be summarized as follows:  For the ODE with   for some real numbers (where and are not simultaneously zero ), the first ansatz should be set as   (Important) The first ansatz depends only on irrelevant of the left-hand-side.  "
+  "body": " Method of Undetermined Coefficients - First Ansatz   Basic Types  We use examples to study the method of undetermined coefficients.     Idea: RHS is a constant. We try a constant function.   Complementary solution:  Set Then  Plug the derivatives into the LHS: Comparing both sides, we see that   Conclusion: The general solution is      Idea: RHS is a polynomial. We try a polynomial function.   Complementary solution:  Set Then   Plug the derivatives into the LHS: Comparing the coefficients of powers of on both sides, we get   Conclusion: The general solution is     Generally, if the RHS is a polynomial of degree , we set as a generic polynomial of degree  Even if , when setting , we should start from the highest degree of and go all the way down to the constant term.        Complementary solution:  Set Then  Plug the derivatives into the LHS: Comparing the coefficients of powers of , we get   General solution:      Idea: RHS is an exponential function. We try an exponential function with the same exponential coefficient.   Complementary solution:  Set Then  Plug the derivatives into the LHS: Comparing the coefficients of on both sides, we get   General solution:    If we choose for it won't work.      Idea: RHS is a trigonometric function. We try a trigonometric function with the same trigonometric coefficient.   Complementary solution:  Set  Note that both sin and cos should appear. Then  Plug the derivatives into the LHS: Comparing the coefficients of and on both sides, we get   General solution:     This works only for sine and cosine functions, fails for other trigonometric functions.  Note that both sine and cosine functions should appear in the ansatz. This is because the sine function or cosine function alone is not closed under the differentiation.  If we try for the method won't work.     (Important!)  We have seen that for   If (or ), we should set the ansatz as  If (or , or ), we should set the ansatz as  If (or ), we should set the ansatz as  If (or , or ), we should set the ansatz as   The method works because:   Derivatives of polynomial functions are polynomials (up to the same degree).  Derivatives of exponential functions are exponential functions (with the same exponential coefficient).  Derivatives of sine and cosine functions are sine and cosine functions (with the same trigonometric coefficient).   For functions without this property, the method fails. We will have no choice but to use the integration formula.   We call the polynomials, exponentials, sine and cosine functions to be basic types .    Products of Basic Types  Observe that products of basic type functions satisfy the same property as in . Therefore, we may continue the list of with products of basic types .   If (or ), we should set the ansatz as  Remark: We need an exponential function with the same coefficient. Then we pair it with a generic polynomial.  If (or or ), we should set the ansatz as  Remark: We need both sine and cosine with the same coefficient. We pair both sine and cosine with generic polynomials of the same degrees.  A common mistake to avoid is to set This ansatz basically requires the coefficient of and to be proportional, which is too special.  If (or or ), we should set the ansatz as  Remark: We should understand (or or both) as the real parts (or imaginary parts, or both) of and We need both and  If (or or ), we should set the ansatz as  Remark: We need both and Then we pair both of them with generic polynomials of the same degree.       Complementary solution:  Set Then  Plug the derivatives into the LHS: Thus, we obtain four equations concerning four variables: Solving the system, we obtain    Conclusion: The general solution is      Summary of the first ansatz  All the ansatz from 1-8 can be summarized as follows:  For the ODE with the first ansatz should be set as where is the largest degree of the polynomials appeared in    (Important!)  The first ansatz depends only on  irrelevant of the left-hand-side . We call it the first ansatz because sometimes it might fail and might need to be further modified, as shall be seen in the next section.    "
+},
+{
+  "id": "sec-undetermined-coeff-1-basic-types-3",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2nd-order.html#sec-undetermined-coeff-1-basic-types-3",
+  "type": "Example",
+  "number": "2.7.1",
+  "title": "<span class=\"process-math\">\\(y'' - 2y' - 3y = 3\\)<\/span>.",
+  "body": "   Idea: RHS is a constant. We try a constant function.   Complementary solution:  Set Then  Plug the derivatives into the LHS: Comparing both sides, we see that   Conclusion: The general solution is  "
+},
+{
+  "id": "sec-undetermined-coeff-1-basic-types-4",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2nd-order.html#sec-undetermined-coeff-1-basic-types-4",
+  "type": "Example",
+  "number": "2.7.2",
+  "title": "<span class=\"process-math\">\\(y'' - y' - 2y = t^2 + 1\\)<\/span>.",
+  "body": "   Idea: RHS is a polynomial. We try a polynomial function.   Complementary solution:  Set Then   Plug the derivatives into the LHS: Comparing the coefficients of powers of on both sides, we get   Conclusion: The general solution is  "
+},
+{
+  "id": "sec-undetermined-coeff-1-basic-types-5",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2nd-order.html#sec-undetermined-coeff-1-basic-types-5",
+  "type": "Remark",
+  "number": "2.7.3",
+  "title": "",
+  "body": "  Generally, if the RHS is a polynomial of degree , we set as a generic polynomial of degree  Even if , when setting , we should start from the highest degree of and go all the way down to the constant term.   "
+},
+{
+  "id": "sec-undetermined-coeff-1-basic-types-6",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2nd-order.html#sec-undetermined-coeff-1-basic-types-6",
+  "type": "Example",
+  "number": "2.7.4",
+  "title": "<span class=\"process-math\">\\(y'' - y' - 2y = t^3\\)<\/span>.",
+  "body": "    Complementary solution:  Set Then  Plug the derivatives into the LHS: Comparing the coefficients of powers of , we get   General solution:  "
+},
+{
+  "id": "sec-undetermined-coeff-1-basic-types-7",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2nd-order.html#sec-undetermined-coeff-1-basic-types-7",
+  "type": "Example",
+  "number": "2.7.5",
+  "title": "<span class=\"process-math\">\\(y'' - y' - 2y = e^{3t}\\)<\/span>.",
+  "body": "   Idea: RHS is an exponential function. We try an exponential function with the same exponential coefficient.   Complementary solution:  Set Then  Plug the derivatives into the LHS: Comparing the coefficients of on both sides, we get   General solution:  "
+},
+{
+  "id": "sec-undetermined-coeff-1-basic-types-8",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2nd-order.html#sec-undetermined-coeff-1-basic-types-8",
+  "type": "Remark",
+  "number": "2.7.6",
+  "title": "",
+  "body": " If we choose for it won't work.  "
+},
+{
+  "id": "sec-undetermined-coeff-1-basic-types-9",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2nd-order.html#sec-undetermined-coeff-1-basic-types-9",
+  "type": "Example",
+  "number": "2.7.7",
+  "title": "<span class=\"process-math\">\\(y'' - 2y' + y = 3 \\sin 3t\\)<\/span>.",
+  "body": "   Idea: RHS is a trigonometric function. We try a trigonometric function with the same trigonometric coefficient.   Complementary solution:  Set  Note that both sin and cos should appear. Then  Plug the derivatives into the LHS: Comparing the coefficients of and on both sides, we get   General solution:  "
+},
+{
+  "id": "sec-undetermined-coeff-1-basic-types-10",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2nd-order.html#sec-undetermined-coeff-1-basic-types-10",
+  "type": "Remark",
+  "number": "2.7.8",
+  "title": "",
+  "body": "  This works only for sine and cosine functions, fails for other trigonometric functions.  Note that both sine and cosine functions should appear in the ansatz. This is because the sine function or cosine function alone is not closed under the differentiation.  If we try for the method won't work.   "
+},
+{
+  "id": "remark-basic-types",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2nd-order.html#remark-basic-types",
+  "type": "Remark",
+  "number": "2.7.9",
+  "title": "(Important!).",
+  "body": " (Important!)  We have seen that for   If (or ), we should set the ansatz as  If (or , or ), we should set the ansatz as  If (or ), we should set the ansatz as  If (or , or ), we should set the ansatz as   The method works because:   Derivatives of polynomial functions are polynomials (up to the same degree).  Derivatives of exponential functions are exponential functions (with the same exponential coefficient).  Derivatives of sine and cosine functions are sine and cosine functions (with the same trigonometric coefficient).   For functions without this property, the method fails. We will have no choice but to use the integration formula.  "
+},
+{
+  "id": "sec-undetermined-coeff-1-basic-types-12",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2nd-order.html#sec-undetermined-coeff-1-basic-types-12",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "basic types "
+},
+{
+  "id": "sec-undetermined-coeff-1-products-2",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2nd-order.html#sec-undetermined-coeff-1-products-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "products of basic types "
+},
+{
+  "id": "sec-undetermined-coeff-1-products-4",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2nd-order.html#sec-undetermined-coeff-1-products-4",
+  "type": "Example",
+  "number": "2.7.10",
+  "title": "<span class=\"process-math\">\\(y'' + 4y = t e^t \\cos 2t.\\)<\/span>.",
+  "body": "    Complementary solution:  Set Then  Plug the derivatives into the LHS: Thus, we obtain four equations concerning four variables: Solving the system, we obtain    Conclusion: The general solution is   "
+},
+{
+  "id": "sec-undetermined-coeff-1-summary-4",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2nd-order.html#sec-undetermined-coeff-1-summary-4",
+  "type": "Remark",
+  "number": "2.7.11",
+  "title": "(Important!).",
+  "body": " (Important!)  The first ansatz depends only on  irrelevant of the left-hand-side . We call it the first ansatz because sometimes it might fail and might need to be further modified, as shall be seen in the next section.  "
 },
 {
   "id": "sec-undetermined-coeff-2",
@@ -1150,7 +1393,97 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.8",
   "title": "Method of Undetermined Coefficients - Final Ansatz",
-  "body": " Method of Undetermined Coefficients - Final Ansatz  The case when the first ansatz fails  Example 1.  Complementary solution:  If we try then   There is no way for  Why does this happen? Notice that appears as a part of the complementary solution while my ansatz is its multiple. When this happens, the first try ansatz fails.  To find a particular solution, we multiply our ansatz by and try again.    Example 2.  Complementary solution:  The first try ansatz is  This ansatz clearly fails, as has the same structure as the complementary solution. We need to multiply by   Then       We do not have terms on the left-hand-side. The equality cannot hold, no matter how are chosen. The second try fails.  We will have to multiply by another and try again.  Now we try:   Then  So,      This means  The general solution:   How to find the final ansatz without trying  Recall: In of Example 1:   The aux. eqn. is  whose exponential coefficient is which is a root that appears once.  We have seen that the first ansatz failed, the second succeeded.   Recall: In of Example 2:   The aux. eqn. is  whose exponential coefficient is which is a root that appears twice.  We have seen that the first and second ansatz failed, the third ansatz succeeded.   Generally, for the ODE where   if the complex number appears as a root for the auxiliary equation for times, then the first ansatz fail. We should modify the first ansatz by  Remark: For convenience, we will call the complex number the exponential coefficient of  Remark: The exponential coefficient is a nonstandard terminology. In higher level mathematics, is indeed an eigenvalue with respect to the differential operator. Its associated eigenfunction is with real part and imaginary part But it’s wrong to call these trigs eigenfunctions.  Remark: Since the ODE is second-order , there are at most two roots for the auxiliary equation, the ansatz at most fails twice.  Example 3:  Aux. Eqn:  Complementary solution:  The first ansatz:  Exponential coefficient: appears as a single root.  First try fails. The final ansatz should be     To compute we may use the binomial theorem  Then        Comparing the coefficients, we see that    So The general solution is   Example 4:  Aux. Eqn:  Comp. Soln:  First ansatz:  Exp. Coeff.: that appear as a single root. First try fails.  Final ansatz:  To compute the derivatives, we may use the following rules:   So             So       General solution:   Note: In the MIT Lecture 13 and 14, there exists a simpler way of computing , using the exponential shift lemma of differential operators and complex functions. We shall not require that in our course.  Sums of functions with different exp coeffs.  We have seen how to solve when   What shall we do if is a sum of such functions but with different α’s and β’s? For example,   To handle such we need the following principle of superposition.  4. Let be a particular solution of   and be a particular solution of   Then is a particular solution of   Proof. The assumption implies that    Adding them up, by linearity of differential operators, we have   Thus satisfies the ODE   The principle of superposition tells us that to handle such   Break according to the exponential coefficients.  Find individually for i.e., for find a particular for  Then is a particular solution.   Example 5.  Aux. Eqn:  Comp. Soln:  Now we regard where   (Note: Terms with the same exponential coefficient should be collected together to avoid unnecessary repetitions.)  First we deal with The first ansatz is The exponential coefficient is that is not a root. First ansatz succeeds.    The first ansatz is  The exponential coefficient is that appears as a single root. First try fails. The final ansatz is   We compute the derivatives and find that      We found solutions   From the principle of superposition,   is a particular solution. The general solution is then   "
+  "body": " Method of Undetermined Coefficients - Final Ansatz   The case when the first ansatz fails    with the first ansatz   Complementary solution:  If we try then  Plug the derivatives into the LHS: There is no way for    Why does this happen? Notice that appears as a part of the complementary solution while my ansatz is its constant multiple. When this happens, the first try ansatz fails.  To find a particular solution, we multiply our ansatz by and try again.    with the second try   Set then  Plug the derivatives into the LHS: Compare both sides, we see that      with the second try fails   Complementary solution:  The first try ansatz is  This ansatz clearly fails, as has the same structure as the complementary solution. We need to multiply by  Set Then  Plug the derivatives into the LHS: We do not have terms on the left-hand-side. The equality cannot hold, no matter how are chosen. The second try fails.    To obtain a particular solution, we will have to multiply by another and try again.    with the third try   Now we try: Then  Plug the derivatives into the LHS: Compare both sides, we see that   The general solution:     How to find the final ansatz without trying  Recall: In of Example 1:   The aux. eqn. is  whose exponential coefficient is which is a root that appears once.  We have seen that the first ansatz failed, the second succeeded.   Recall: In of Example 2:   The aux. eqn. is  whose exponential coefficient is which is a root that appears twice.  We have seen that the first and second ansatz failed, the third ansatz succeeded.   Generally, for the ODE where   if the complex number appears as a root of the auxiliary equation for times, then the first ansatz fail. We should modify the first ansatz by   For convenience, we will call the complex number the exponential coefficient of  The exponential coefficient is a nonstandard terminology. In higher level mathematics, is indeed an eigenvalue with respect to the differential operator. Its associated eigenfunction is with real part and imaginary part But it's wrong to call these trigs eigenfunctions.  Since the ODE is second-order , there are at most two roots for the auxiliary equation, the ansatz at most fails twice.        Aux. Eqn:  Complementary solution:  The first ansatz: Exponential coefficient , a single root. First try fails. The final ansatz should be   We use product rule to compute the first derivative: To compute we may use the binomial theorem Then  Plug the derivatives into the LHS: Comparing the coefficients, we see that   The general solution is       Aux. Eqn:  Comp. Soln:  First ansatz: Exponential coefficient that appear as a single root. First try fails.  Final ansatz:  To compute the derivatives, we may use the following rules: So   Plug the derivatives into the LHS: Comparing the coefficients, we see that    The general solution is   Note: In the MIT Lecture 13 and 14, there exists a simpler way of computing , using the exponential shift lemma of differential operators and complex functions. We shall not require that in our course.    Sums of functions with different exponential coefficients.  We have seen how to solve when We use the exponential coefficient to determine the final ansatz.  What shall we do if is a sum of such functions but with different 's and 's? For example,   To handle such we need the following principle of superposition .   Principle of superposition: nonhomogeneous ODEs   Let be a particular solution of and be a particular solution of Then is a particular solution of     The assumption implies that  Adding them up, by linearity of differential operators, we have Thus satisfies the ODE   From the principle of superposition, we know that to handle such   Break according to the exponential coefficients.  Find individually for i.e., for find a particular for  Then is a particular solution.       Aux. Eqn:  Comp. Soln:  Now we regard where (Note: Terms with the same exponential coefficient should be collected together to avoid unnecessary repetitions.)  First we deal with The first ansatz is The exponential coefficient is that is not a root. First ansatz succeeds.  We calculate the derivatives and plug them into the LHS   For , the first ansatz is The exponential coefficient is that appears as a single root. First try fails. The final ansatz is  We compute the derivatives and find that Compare the coefficients, we see that   From the principle of superposition, is a particular solution of the ODE.   The general solution is then    "
+},
+{
+  "id": "sec-undetermined-coeff-2-2-2",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-2-2",
+  "type": "Example",
+  "number": "2.8.1",
+  "title": "<span class=\"process-math\">\\(y'' - y' - 2y = e^{2t}\\)<\/span> with the first ansatz.",
+  "body": "  with the first ansatz   Complementary solution:  If we try then  Plug the derivatives into the LHS: There is no way for   "
+},
+{
+  "id": "sec-undetermined-coeff-2-2-5",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-2-5",
+  "type": "Example",
+  "number": "2.8.2",
+  "title": "<span class=\"process-math\">\\(y'' - y' - 2y = e^{2t}\\)<\/span> with the second try.",
+  "body": "  with the second try   Set then  Plug the derivatives into the LHS: Compare both sides, we see that   "
+},
+{
+  "id": "sec-undetermined-coeff-2-2-6",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-2-6",
+  "type": "Example",
+  "number": "2.8.3",
+  "title": "<span class=\"process-math\">\\(y'' - 2y' + y = 2te^t\\)<\/span> with the second try fails.",
+  "body": "  with the second try fails   Complementary solution:  The first try ansatz is  This ansatz clearly fails, as has the same structure as the complementary solution. We need to multiply by  Set Then  Plug the derivatives into the LHS: We do not have terms on the left-hand-side. The equality cannot hold, no matter how are chosen. The second try fails.   "
+},
+{
+  "id": "sec-undetermined-coeff-2-2-8",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-2-8",
+  "type": "Example",
+  "number": "2.8.4",
+  "title": "<span class=\"process-math\">\\(y'' - 2y' + y = 2te^t\\)<\/span> with the third try.",
+  "body": "  with the third try   Now we try: Then  Plug the derivatives into the LHS: Compare both sides, we see that   The general solution:  "
+},
+{
+  "id": "sec-undetermined-coeff-2-3-9",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-3-9",
+  "type": "Remark",
+  "number": "2.8.5",
+  "title": "",
+  "body": " For convenience, we will call the complex number the exponential coefficient of  The exponential coefficient is a nonstandard terminology. In higher level mathematics, is indeed an eigenvalue with respect to the differential operator. Its associated eigenfunction is with real part and imaginary part But it's wrong to call these trigs eigenfunctions.  Since the ODE is second-order , there are at most two roots for the auxiliary equation, the ansatz at most fails twice.   "
+},
+{
+  "id": "sec-undetermined-coeff-2-3-10",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-3-10",
+  "type": "Example",
+  "number": "2.8.6",
+  "title": "<span class=\"process-math\">\\(y'' + 4y = t \\sin 2t.\\)<\/span>.",
+  "body": "    Aux. Eqn:  Complementary solution:  The first ansatz: Exponential coefficient , a single root. First try fails. The final ansatz should be   We use product rule to compute the first derivative: To compute we may use the binomial theorem Then  Plug the derivatives into the LHS: Comparing the coefficients, we see that   The general solution is  "
+},
+{
+  "id": "sec-undetermined-coeff-2-3-11",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-3-11",
+  "type": "Example",
+  "number": "2.8.7",
+  "title": "<span class=\"process-math\">\\(y'' - 2y' + 2y = e^t \\cos t.\\)<\/span>.",
+  "body": "    Aux. Eqn:  Comp. Soln:  First ansatz: Exponential coefficient that appear as a single root. First try fails.  Final ansatz:  To compute the derivatives, we may use the following rules: So   Plug the derivatives into the LHS: Comparing the coefficients, we see that    The general solution is  "
+},
+{
+  "id": "sec-undetermined-coeff-2-4-6",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-4-6",
+  "type": "Theorem",
+  "number": "2.8.8",
+  "title": "Principle of superposition: nonhomogeneous ODEs.",
+  "body": " Principle of superposition: nonhomogeneous ODEs   Let be a particular solution of and be a particular solution of Then is a particular solution of   "
+},
+{
+  "id": "sec-undetermined-coeff-2-4-7",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-4-7",
+  "type": "Proof",
+  "number": "2.8.3.1",
+  "title": "",
+  "body": " The assumption implies that  Adding them up, by linearity of differential operators, we have Thus satisfies the ODE  "
+},
+{
+  "id": "sec-undetermined-coeff-2-4-10",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-4-10",
+  "type": "Example",
+  "number": "2.8.9",
+  "title": "<span class=\"process-math\">\\(y'' + y = t + t \\sin t + 2 \\cos t.\\)<\/span>.",
+  "body": "    Aux. Eqn:  Comp. Soln:  Now we regard where (Note: Terms with the same exponential coefficient should be collected together to avoid unnecessary repetitions.)  First we deal with The first ansatz is The exponential coefficient is that is not a root. First ansatz succeeds.  We calculate the derivatives and plug them into the LHS   For , the first ansatz is The exponential coefficient is that appears as a single root. First try fails. The final ansatz is  We compute the derivatives and find that Compare the coefficients, we see that   From the principle of superposition, is a particular solution of the ODE.   The general solution is then  "
 },
 {
   "id": "sec-higher-order-linear-ODEs",
