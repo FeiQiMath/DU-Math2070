@@ -8,6 +8,7 @@
   <p>then the formula of the <alert>general solution</alert> is <me>y(t) = \frac{\int \mu(t)g(t)dt}{\mu(t)}.</me></p>
 </theorem>
 
+<proof>
   <p>How comes the formula? Observe that <me>e^{\int p(t)dt}(y' + p(t)y) = \left(e^{\int p(t)dt}y\right)'.</me></p>
   <p>In general, any function <m>\mu(t)</m> making <me>\mu(t)(y'(t) + p(t)y(t)) = (\mu(t)y(t))'</me> is called an integrating factor. To satisfy this equation, we calculate that</p>
   <me>RHS = \mu'(t)y(t) + \mu(t)y'(t)</me>
@@ -31,6 +32,7 @@
 <mrow>\amp \mu(t)y(t) = \int \mu(t)g(t)dt</mrow>
 <mrow>\implies \amp y(t) = \frac{\int \mu(t)g(t)dt}{\mu(t)}.</mrow>
 </md>
+</proof>
 
 <remark>
 <ul>
