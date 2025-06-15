@@ -1393,7 +1393,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.8",
   "title": "Method of Undetermined Coefficients - Final Ansatz",
-  "body": " Method of Undetermined Coefficients - Final Ansatz   The case when the first ansatz fails    with the first ansatz   Complementary solution:  If we try then  Plug the derivatives into the LHS: There is no way for    Why does this happen? Notice that appears as a part of the complementary solution while my ansatz is its constant multiple. When this happens, the first try ansatz fails.  To find a particular solution, we multiply our ansatz by and try again.    with the second try   Set then  Plug the derivatives into the LHS: Compare both sides, we see that      with the second try fails   Complementary solution:  The first try ansatz is  This ansatz clearly fails, as has the same structure as the complementary solution. We need to multiply by  Set Then  Plug the derivatives into the LHS: We do not have terms on the left-hand-side. The equality cannot hold, no matter how are chosen. The second try fails.    To obtain a particular solution, we will have to multiply by another and try again.    with the third try   Now we try: Then  Plug the derivatives into the LHS: Compare both sides, we see that   The general solution:     How to find the final ansatz without trying  Recall: In of Example 1:   The aux. eqn. is  whose exponential coefficient is which is a root that appears once.  We have seen that the first ansatz failed, the second succeeded.   Recall: In of Example 2:   The aux. eqn. is  whose exponential coefficient is which is a root that appears twice.  We have seen that the first and second ansatz failed, the third ansatz succeeded.   Generally, for the ODE where   if the complex number appears as a root of the auxiliary equation for times, then the first ansatz fail. We should modify the first ansatz by   For convenience, we will call the complex number the exponential coefficient of  The exponential coefficient is a nonstandard terminology. In higher level mathematics, is indeed an eigenvalue with respect to the differential operator. Its associated eigenfunction is with real part and imaginary part But it's wrong to call these trigs eigenfunctions.  Since the ODE is second-order , there are at most two roots for the auxiliary equation, the ansatz at most fails twice.        Aux. Eqn:  Complementary solution:  The first ansatz: Exponential coefficient , a single root. First try fails. The final ansatz should be   We use product rule to compute the first derivative: To compute we may use the binomial theorem Then  Plug the derivatives into the LHS: Comparing the coefficients, we see that   The general solution is       Aux. Eqn:  Comp. Soln:  First ansatz: Exponential coefficient that appear as a single root. First try fails.  Final ansatz:  To compute the derivatives, we may use the following rules: So   Plug the derivatives into the LHS: Comparing the coefficients, we see that    The general solution is   Note: In the MIT Lecture 13 and 14, there exists a simpler way of computing , using the exponential shift lemma of differential operators and complex functions. We shall not require that in our course.    Sums of functions with different exponential coefficients.  We have seen how to solve when We use the exponential coefficient to determine the final ansatz.  What shall we do if is a sum of such functions but with different 's and 's? For example,   To handle such we need the following principle of superposition .   Principle of superposition: nonhomogeneous ODEs   Let be a particular solution of and be a particular solution of Then is a particular solution of     The assumption implies that  Adding them up, by linearity of differential operators, we have Thus satisfies the ODE   From the principle of superposition, we know that to handle such   Break according to the exponential coefficients.  Find individually for i.e., for find a particular for  Then is a particular solution.       Aux. Eqn:  Comp. Soln:  Now we regard where (Note: Terms with the same exponential coefficient should be collected together to avoid unnecessary repetitions.)  First we deal with The first ansatz is The exponential coefficient is that is not a root. First ansatz succeeds.  We calculate the derivatives and plug them into the LHS   For , the first ansatz is The exponential coefficient is that appears as a single root. First try fails. The final ansatz is  We compute the derivatives and find that Compare the coefficients, we see that   From the principle of superposition, is a particular solution of the ODE.   The general solution is then    "
+  "body": " Method of Undetermined Coefficients - Final Ansatz   The case when the first ansatz fails    with the first ansatz   Complementary solution:  If we try then  Plug the derivatives into the LHS: There is no way for    Why does this happen? Notice that appears as a part of the complementary solution while my ansatz is its constant multiple. When this happens, the first try ansatz fails.  To find a particular solution, we multiply our ansatz by and try again.    with the second try   Set then  Plug the derivatives into the LHS: Compare both sides, we see that      with the second try fails   Complementary solution:  The first try ansatz is  This ansatz clearly fails, as has the same structure as the complementary solution. We need to multiply by  Set Then  Plug the derivatives into the LHS: We do not have terms on the left-hand-side. The equality cannot hold, no matter how are chosen. The second try fails.    To obtain a particular solution, we will have to multiply by another and try again.    with the third try   Now we try: Then  Plug the derivatives into the LHS: Compare both sides, we see that   The general solution:     How to find the final ansatz without trying  Recall: In of Example 1:   The aux. eqn. is  whose exponential coefficient is which is a root that appears once.  We have seen that the first ansatz failed, the second succeeded.   Recall: In of Example 2:   The aux. eqn. is  whose exponential coefficient is which is a root that appears twice.  We have seen that the first and second ansatz failed, the third ansatz succeeded.   Generally, for the ODE where   if the complex number appears as a root of the auxiliary equation for times, then the first ansatz fail. We should modify the first ansatz by   For convenience, we will call the complex number the exponential coefficient of  The exponential coefficient is a nonstandard terminology. In higher level mathematics, is indeed an eigenvalue with respect to the differential operator. Its associated eigenfunction is with real part and imaginary part But it's wrong to call these trigs eigenfunctions.  Since the ODE is second-order , there are at most two roots for the auxiliary equation, the ansatz at most fails twice.        Aux. Eqn:  Complementary solution:  The first ansatz: Exponential coefficient , a single root. First try fails. The final ansatz should be   We use product rule to compute the first derivative: To compute we may use the binomial theorem Then  Plug the derivatives into the LHS: Comparing the coefficients, we see that   The general solution is       Aux. Eqn:  Comp. Soln:  First ansatz: Exponential coefficient that appear as a single root. First try fails.  Final ansatz:  To compute the derivatives, we may use the following rules: So   Plug the derivatives into the LHS: Comparing the coefficients, we see that    The general solution is    There does exist faster ways to compute everything by hand. In the MIT Lecture 13 and 14, there exists a simpler way of computing , using the exponential shift lemma of differential operators and complex functions. We shall not require that in our course.     Sums of functions with different exponential coefficients.  We have seen how to solve when We use the exponential coefficient to determine the final ansatz.  What shall we do if is a sum of such functions but with different 's and 's? For example, To handle such we need the following principle of superposition .   Principle of superposition: nonhomogeneous ODEs   Let be a particular solution of and be a particular solution of Then is a particular solution of     The assumption implies that  Adding them up, by linearity of differential operators, we have Thus satisfies the ODE   From the principle of superposition, we know that to handle such   Break according to the exponential coefficients.  Find individually for i.e., for find a particular for  Then is a particular solution.       Aux. Eqn:  Comp. Soln:  Now we regard where (Note: Terms with the same exponential coefficient should be collected together to avoid unnecessary repetitions.)  First we deal with The first ansatz is The exponential coefficient is that is not a root. First ansatz succeeds.  We calculate the derivatives and plug them into the LHS   For , the first ansatz is The exponential coefficient is that appears as a single root. First try fails. The final ansatz is  We compute the derivatives and find that Compare the coefficients, we see that   From the principle of superposition, is a particular solution of the ODE.   The general solution is then    A computer can easily handle the derivatives. But to make sure the computer is doing the right thing, it is important for us human to know the correct ansatz at the very least. We will not be able to figure out a mistake made by a computer if we do not know what we are expecting and cannot perform the simplest calculation. This is the main emphasis of this section.    "
 },
 {
   "id": "sec-undetermined-coeff-2-2-2",
@@ -1459,31 +1459,49 @@ var ptx_lunr_docs = [
   "body": "    Aux. Eqn:  Comp. Soln:  First ansatz: Exponential coefficient that appear as a single root. First try fails.  Final ansatz:  To compute the derivatives, we may use the following rules: So   Plug the derivatives into the LHS: Comparing the coefficients, we see that    The general solution is  "
 },
 {
-  "id": "sec-undetermined-coeff-2-4-6",
+  "id": "sec-undetermined-coeff-2-3-12",
   "level": "2",
-  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-4-6",
-  "type": "Theorem",
+  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-3-12",
+  "type": "Remark",
   "number": "2.8.8",
+  "title": "",
+  "body": " There does exist faster ways to compute everything by hand. In the MIT Lecture 13 and 14, there exists a simpler way of computing , using the exponential shift lemma of differential operators and complex functions. We shall not require that in our course.  "
+},
+{
+  "id": "sec-undetermined-coeff-2-4-4",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-4-4",
+  "type": "Theorem",
+  "number": "2.8.9",
   "title": "Principle of superposition: nonhomogeneous ODEs.",
   "body": " Principle of superposition: nonhomogeneous ODEs   Let be a particular solution of and be a particular solution of Then is a particular solution of   "
 },
 {
-  "id": "sec-undetermined-coeff-2-4-7",
+  "id": "sec-undetermined-coeff-2-4-5",
   "level": "2",
-  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-4-7",
+  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-4-5",
   "type": "Proof",
   "number": "2.8.3.1",
   "title": "",
   "body": " The assumption implies that  Adding them up, by linearity of differential operators, we have Thus satisfies the ODE  "
 },
 {
-  "id": "sec-undetermined-coeff-2-4-10",
+  "id": "sec-undetermined-coeff-2-4-8",
   "level": "2",
-  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-4-10",
+  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-4-8",
   "type": "Example",
-  "number": "2.8.9",
+  "number": "2.8.10",
   "title": "<span class=\"process-math\">\\(y'' + y = t + t \\sin t + 2 \\cos t.\\)<\/span>.",
   "body": "    Aux. Eqn:  Comp. Soln:  Now we regard where (Note: Terms with the same exponential coefficient should be collected together to avoid unnecessary repetitions.)  First we deal with The first ansatz is The exponential coefficient is that is not a root. First ansatz succeeds.  We calculate the derivatives and plug them into the LHS   For , the first ansatz is The exponential coefficient is that appears as a single root. First try fails. The final ansatz is  We compute the derivatives and find that Compare the coefficients, we see that   From the principle of superposition, is a particular solution of the ODE.   The general solution is then  "
+},
+{
+  "id": "sec-undetermined-coeff-2-4-9",
+  "level": "2",
+  "url": "sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-4-9",
+  "type": "Remark",
+  "number": "2.8.11",
+  "title": "",
+  "body": " A computer can easily handle the derivatives. But to make sure the computer is doing the right thing, it is important for us human to know the correct ansatz at the very least. We will not be able to figure out a mistake made by a computer if we do not know what we are expecting and cannot perform the simplest calculation. This is the main emphasis of this section.  "
 },
 {
   "id": "sec-higher-order-linear-ODEs",
@@ -1492,7 +1510,196 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "2.9",
   "title": "Higher-order Linear ODEs",
-  "body": " Higher-order Linear ODEs  Higher order linear ODE – General theory   Homogeneous case: For the ODE    Fundamental set of solutions: that are  solutions of the ODE;  linear independent, i.e., the Wronskian   is nowhere vanishing (won’t require).   Principle of superposition: If forms a fundamental set of solutions, then the general solution of the ODE is    2. Nonhomogeneous case: For the ODE    Structure of general solution: where  the complementary solution, is the general solution of the homogeneous ODE.  a particular solution, is a solution of the nonhomogeneous ODE.    Principle of superposition:  If is a solution of  is a solution of  then is a solution of     Higher order linear ODE with Const. Coeff.   Homogeneous case: For the ODE,   We try and see that   Dividing by we obtain the auxiliary equation    Theorem: Every polynomial with real coefficients can be factored as a product of linear and quadratic polynomials.  Corollary: If is a root that is repeated times, then its conjugate is also a root that is repeated times.  Let be a solution of the auxiliary equation.  Case 1: If is a real single root, then it contributes one function to the fundamental set of solutions.  Case 2: If is a real root repeated times, then it contributes functions   to the fundamental set of solutions.  Case 3: If is a complex single root, then together with its conjugate they contribute two functions  to the fundamental set of solutions.  Case 4: If is a complex root repeated times, then together with they contribute 2m functions   to the fundamental set of solutions.  Example 1:   Auxiliary equation:  General solution:  Example 2:   Auxiliary equation:   General solution:  Example 3:   Auxiliary equation:     General solution:  Example 4:   Auxiliary equation:   General solution:   Example 5:   Auxiliary equation:   General solution:   Example 6:   Auxiliary equation: So  Recall that   Thus   Example 6:   Auxiliary equation: So  Recall that   Thus      General solution:   Higher order linear ODE with Const. Coeff.   Nonhomogeneous case: For the ODE   Variation of parameters would be quite complicated. But the method of coefficients works in the same way.  Step 1: Separate according to exponential coefficients, i.e., write where each is of the form:   For example, if  we should write where    Step 2: We find a particular solution for each   The first ansatz should be set as   where is the largest degree appearing in the polynomial.  If the exponential coefficient does not appear as a root of the auxiliary equation, the first ansatz succeeds.  If is a root repeated times, the final ansatz should be modified by i.e.,   Step 3: Once we find a particular solution for each   the principle of superposition implies that   is a particular solution of the nonhomogeneous ODE.   for  If you wish to ask the computer to carry out the calculation, make sure you plug in the final ansatz for each in  Example 7: Determine the final ansatz for the following ODES.  (a)  Aux. eqn:  The first ansatz Exp. Coeff. = single root.  The final ansatz  (b)  Solutions of the Aux. eqn:  The first ansatz Exp. Coeff. = double root.  The final ansatz  (c)  Aux. eqn:  First ansatz Exp. Coeff. = single root.  Final ansatz  (d)  Aux. eqn:  First ansatz  Exp. Coeff. = that is a double root.  Final ansatz  (e)  Aux. Eqn.   First ansatz Exp. Coeff. = 0 , double root.  Final ansatz  (f)  Aux. eqn.   First ansatz  Exp. Coeff. = -1 + i that is a single root.  Final ansatz  Example 8: Find the general solution of   Aux. Eqn.   Comp. Soln.  Let be a solution of  First ansatz Exp. Coeff. = 1 which is a double root.  Final ansatz Then      So  Let be a solution of  First ansatz Exp. Coeff. = -1 which is a single root.  Final ansatz Then      So  Let be a solution of  First ansatz Exp. Coeff. = -1 which is a single root.  Final ansatz Then      So  Let be a solution of  First ansatz  Exp. Coeff. = 2i , not a root.        So  Let be a solution of  First ansatz  Exp. Coeff. = 0 , not a root.      So  By the principle of superposition,    is a particular solution. The general solution is then    "
+  "body": " Higher-order Linear ODEs  Higher order linear ODE – General theory   General Theory  For higher-order linear ODEs, many results are similar to those for second-order linear ODEs. We start with the existence and uniqueness theorem.   Existence and Uniqueness Theorem  For the -th order linear ODE in its standard form , if and are continuous on an open interval then for every and real numbers there exists a unique solution of the ODE on the interval that satisfies the initial conditions    We now consider the homogeneous case, i.e.,    For the homogeneous linear ODE on an interval where the existence and uniqueness theorem holds, we say that form a fundamental set of solutions if they are  solutions of the ODE on the same interval;  linear independent, i.e., the Wronskian is nowhere vanishing (won't require).     Principle of Superposition for Homogeneous ODEs  If form a fundamental set of solutions, then the general solution of the ODE is   We now consider the nonhomogeneous case.   Structure of the general solution and the principle of superposition  Consider the nonhomogeneous linear ODE on an open interval where the existence and uniqueness theorem holds.   Its general solution is of the form where  the complementary solution , is the general solution of the homogeneous ODE.  a particular solution , is a solution of the nonhomogeneous ODE.    If is a solution of  is a solution of then is a solution of      Higher order linear homogeneous ODE with constant coefficients  We first consider the homogeneous case. For the ODE, We try and see that Dividing by we obtain the auxiliary equation   Regarding the roots of the auxiliary equation, we have the following theorems.  Fundamental theorem of algebra (real form)  Every polynomial with real coefficients can be factored as a product of linear and quadratic polynomials.    If is a root that is repeated times, then its conjugate is also a root that is repeated times.   Let be a solution of the auxiliary equation. Then its contribution to the fundamental set of solutions is as follows.   Case 1: If is a real single root, then it contributes one function to the fundamental set of solutions.  Case 2: If is a real root repeated times, then it contributes functions to the fundamental set of solutions.  Case 3: If is a complex single root, then together with its conjugate they contribute two functions to the fundamental set of solutions.  Case 4: If is a complex root repeated times, then together with they contribute 2m functions to the fundamental set of solutions.       Auxiliary equation: where  General solution:        Auxiliary equation: where  General solution:        Auxiliary equation: where  General solution:        Auxiliary equation: where  General solution:        Auxiliary equation: where  General solution:       Auxiliary equation: So Recall that Thus   General solution:      Higher order linear nonhomogeneous ODE with constant coefficients  We now consider the nonhomogeneous case. For the ODE Variation of parameters would be quite complicated. But the method of coefficients works in the same way.   Step 1: Separate according to exponential coefficients, i.e., write where each is of the form: For example, if we should write where   Step 2: We find a particular solution for each   The first ansatz should be set as where is the largest degree appearing in the polynomial.  If the exponential coefficient does not appear as a root of the auxiliary equation, the first ansatz succeeds. If is a root repeated times, the final ansatz should be modified by i.e.,     Step 3: Once we find a particular solution for each , the principle of superposition implies that is a particular solution of the nonhomogeneous ODE. for     If you wish to ask the computer to carry out the calculation, make sure you plug in the final ansatz for each in    Determine the final ansatz for .   Auxiliary equation:  The first ansatz Exp. Coeff. single root.  The final ansatz     Determine the final ansatz for   Solutions of the auxiliary equation:  The first ansatz Exp. Coeff. double root.  The final ansatz     Determine the final ansatz for   Auxiliary equation:  First ansatz Exp. Coeff. single root.  Final ansatz     Determine the final ansatz for   Auxiliary equation:  First ansatz Exp. Coeff. that is a double root.  Final ansatz     Determine the final ansatz for   Auxiliary equation: Solutions:  First ansatz Exp. Coeff. , double root.  Final ansatz     Determine the final ansatz for   Solutions of the Auxiliary equation:  First ansatz Exp. Coeff. that is a single root.  Final ansatz     Find the general solution of   Auxiliary equation is Solutions are  Complementary solution:   Let be a solution of   First ansatz Exp. Coeff. which is a double root. Final ansatz   We calculate the derivatives.  Plug the derivatives into the LHS,   So  Let be a solution of   First ansatz Exp. Coeff. which is a single root. Final ansatz  We calculate the derivatives:  Plug the derivatives into the LHS,   So  Let be a solution of   First ansatz Exp. Coeff. , not a root. Final ansatz is the first ansatz.  We calculate the derivatives:  Plug the derivatives into the LHS,   So  Let be a solution of   First ansatz Exp. Coeff. , not a root. Final ansatz is the first ansatz.  We calculate the derivatives:  Plug the derivatives into the LHS,   So  By the principle of superposition, is a particular solution. The general solution is then     "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-3-3",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-3-3",
+  "type": "Theorem",
+  "number": "2.9.1",
+  "title": "Existence and Uniqueness Theorem.",
+  "body": " Existence and Uniqueness Theorem  For the -th order linear ODE in its standard form , if and are continuous on an open interval then for every and real numbers there exists a unique solution of the ODE on the interval that satisfies the initial conditions   "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-3-5",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-3-5",
+  "type": "Definition",
+  "number": "2.9.2",
+  "title": "",
+  "body": " For the homogeneous linear ODE on an interval where the existence and uniqueness theorem holds, we say that form a fundamental set of solutions if they are  solutions of the ODE on the same interval;  linear independent, i.e., the Wronskian is nowhere vanishing (won't require).   "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-3-6",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-3-6",
+  "type": "Theorem",
+  "number": "2.9.3",
+  "title": "Principle of Superposition for Homogeneous ODEs.",
+  "body": " Principle of Superposition for Homogeneous ODEs  If form a fundamental set of solutions, then the general solution of the ODE is  "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-3-8",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-3-8",
+  "type": "Theorem",
+  "number": "2.9.4",
+  "title": "Structure of the general solution and the principle of superposition.",
+  "body": " Structure of the general solution and the principle of superposition  Consider the nonhomogeneous linear ODE on an open interval where the existence and uniqueness theorem holds.   Its general solution is of the form where  the complementary solution , is the general solution of the homogeneous ODE.  a particular solution , is a solution of the nonhomogeneous ODE.    If is a solution of  is a solution of then is a solution of   "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-4-2",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-4-2",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "auxiliary equation "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-4-3",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-4-3",
+  "type": "Theorem",
+  "number": "2.9.5",
+  "title": "Fundamental theorem of algebra (real form).",
+  "body": " Fundamental theorem of algebra (real form)  Every polynomial with real coefficients can be factored as a product of linear and quadratic polynomials.  "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-4-4",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-4-4",
+  "type": "Corollary",
+  "number": "2.9.6",
+  "title": "",
+  "body": " If is a root that is repeated times, then its conjugate is also a root that is repeated times.  "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-4-7",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-4-7",
+  "type": "Example",
+  "number": "2.9.7",
+  "title": "<span class=\"process-math\">\\(y''' - y' = 0.\\)<\/span>.",
+  "body": "    Auxiliary equation: where  General solution:   "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-4-8",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-4-8",
+  "type": "Example",
+  "number": "2.9.8",
+  "title": "<span class=\"process-math\">\\(y''' - y'' - y' + y = 0\\)<\/span>.",
+  "body": "    Auxiliary equation: where  General solution:   "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-4-9",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-4-9",
+  "type": "Example",
+  "number": "2.9.9",
+  "title": "<span class=\"process-math\">\\(y''' - 3y'' + 3y - y = 0\\)<\/span>.",
+  "body": "    Auxiliary equation: where  General solution:   "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-4-10",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-4-10",
+  "type": "Example",
+  "number": "2.9.10",
+  "title": "<span class=\"process-math\">\\(y''' - y = 0\\)<\/span>.",
+  "body": "    Auxiliary equation: where  General solution:   "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-4-11",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-4-11",
+  "type": "Example",
+  "number": "2.9.11",
+  "title": "<span class=\"process-math\">\\(y^{(4)} + 8y'' + 16y = 0\\)<\/span>.",
+  "body": "    Auxiliary equation: where  General solution:   "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-4-12",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-4-12",
+  "type": "Example",
+  "number": "2.9.12",
+  "title": "<span class=\"process-math\">\\(y^{(4)} + 4y = 0\\)<\/span>.",
+  "body": "   Auxiliary equation: So Recall that Thus   General solution:   "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-5-4",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-5-4",
+  "type": "Remark",
+  "number": "2.9.13",
+  "title": "",
+  "body": " If you wish to ask the computer to carry out the calculation, make sure you plug in the final ansatz for each in  "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-5-5",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-5-5",
+  "type": "Example",
+  "number": "2.9.14",
+  "title": "Determine the final ansatz for <span class=\"process-math\">\\(y''' - y'' - y' + y = 2e^{-t}\\text{.}\\)<\/span>.",
+  "body": " Determine the final ansatz for .   Auxiliary equation:  The first ansatz Exp. Coeff. single root.  The final ansatz   "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-5-6",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-5-6",
+  "type": "Example",
+  "number": "2.9.15",
+  "title": "Determine the final ansatz for <span class=\"process-math\">\\(y''' - y'' - y' + y = 2e^t\\)<\/span>.",
+  "body": " Determine the final ansatz for   Solutions of the auxiliary equation:  The first ansatz Exp. Coeff. double root.  The final ansatz   "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-5-7",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-5-7",
+  "type": "Example",
+  "number": "2.9.16",
+  "title": "Determine the final ansatz for <span class=\"process-math\">\\(y^{(4)} - y = \\cos t\\)<\/span>.",
+  "body": " Determine the final ansatz for   Auxiliary equation:  First ansatz Exp. Coeff. single root.  Final ansatz   "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-5-8",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-5-8",
+  "type": "Example",
+  "number": "2.9.17",
+  "title": "Determine the final ansatz for <span class=\"process-math\">\\(y^{(4)} + 2y'' + y = t \\sin t\\)<\/span>.",
+  "body": " Determine the final ansatz for   Auxiliary equation:  First ansatz Exp. Coeff. that is a double root.  Final ansatz   "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-5-9",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-5-9",
+  "type": "Example",
+  "number": "2.9.18",
+  "title": "Determine the final ansatz for <span class=\"process-math\">\\(y^{(4)} + 2y''' + 2y'' = 16\\)<\/span>.",
+  "body": " Determine the final ansatz for   Auxiliary equation: Solutions:  First ansatz Exp. Coeff. , double root.  Final ansatz   "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-5-10",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-5-10",
+  "type": "Example",
+  "number": "2.9.19",
+  "title": "Determine the final ansatz for <span class=\"process-math\">\\(y^{(4)} + 2y''' + 2y'' = e^{-t} \\cos t\\)<\/span>.",
+  "body": " Determine the final ansatz for   Solutions of the Auxiliary equation:  First ansatz Exp. Coeff. that is a single root.  Final ansatz   "
+},
+{
+  "id": "sec-higher-order-linear-ODEs-5-11",
+  "level": "2",
+  "url": "sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-5-11",
+  "type": "Example",
+  "number": "2.9.20",
+  "title": "Find the general solution of <span class=\"process-math\">\\(y''' - y'' - y' + y = 8e^t + 4e^{-t} + 25 \\cos 2t + t^2\\)<\/span>.",
+  "body": " Find the general solution of   Auxiliary equation is Solutions are  Complementary solution:   Let be a solution of   First ansatz Exp. Coeff. which is a double root. Final ansatz   We calculate the derivatives.  Plug the derivatives into the LHS,   So  Let be a solution of   First ansatz Exp. Coeff. which is a single root. Final ansatz  We calculate the derivatives:  Plug the derivatives into the LHS,   So  Let be a solution of   First ansatz Exp. Coeff. , not a root. Final ansatz is the first ansatz.  We calculate the derivatives:  Plug the derivatives into the LHS,   So  Let be a solution of   First ansatz Exp. Coeff. , not a root. Final ansatz is the first ansatz.  We calculate the derivatives:  Plug the derivatives into the LHS,   So  By the principle of superposition, is a particular solution. The general solution is then   "
 },
 {
   "id": "sec-laplace-transform",

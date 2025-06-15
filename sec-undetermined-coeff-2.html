@@ -262,7 +262,14 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-undetermined-coeff-2.html#sec-undetermined-coeff-2-4" class="internal"><span class="codenumber">2.8.3</span> <span class="title">Sums of functions with different exponential coefficients.</span></a></div></li>
 </ul>
 </li>
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-higher-order-linear-ODEs.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Higher-order Linear ODEs</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-higher-order-linear-ODEs.html" class="internal"><span class="codenumber">2.9</span> <span class="title">Higher-order Linear ODEs</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-3" class="internal"><span class="codenumber">2.9.1</span> <span class="title">General Theory</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-4" class="internal"><span class="codenumber">2.9.2</span> <span class="title">Higher order linear homogeneous ODE with constant coefficients</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-higher-order-linear-ODEs.html#sec-higher-order-linear-ODEs-5" class="internal"><span class="codenumber">2.9.3</span> <span class="title">Higher order linear nonhomogeneous ODE with constant coefficients</span></a></div></li>
+</ul>
+</li>
 </ul>
 </li>
 <li class="toc-item toc-chapter">
@@ -295,7 +302,7 @@ eBookConfig.enable_chatcodes =  false;
 <details id="sec-undetermined-coeff-2-2-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.1</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' - y' - 2y = e^{2t}\)</span> with the first ansatz.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-undetermined-coeff-2-2-2-2">
-<li id="sec-undetermined-coeff-2-2-2-2-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-2-2-1">Complementary solution: <span class="process-math">\(y = C_1e^{-t} + C_2e^{2t}.\)</span>
+<li id="sec-undetermined-coeff-2-2-2-2-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-2-2-1">Complementary solution: <span class="process-math">\(y_c = C_1e^{-t} + C_2e^{2t}.\)</span>
 </div></li>
 <li id="sec-undetermined-coeff-2-2-2-2-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-2-2-2">If we try <span class="process-math">\(Y = Ae^{2t},\)</span> then <span class="process-math">\(Y' = 2Ae^{2t}, Y'' = 4Ae^{2t}.\)</span>
 </div></li>
@@ -335,7 +342,7 @@ Y' = Ae^{2t} + 2Ate^{2t}, Y'' = 4Ae^{2t} + 4Ate^{2t}.
 </ul></article></details><details id="sec-undetermined-coeff-2-2-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.3</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' - 2y' + y = 2te^t\)</span> with the second try fails.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-undetermined-coeff-2-2-6-2">
-<li id="sec-undetermined-coeff-2-2-6-2-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-6-2-1">Complementary solution: <span class="process-math">\(y = C_1e^t + C_2te^t.\)</span>
+<li id="sec-undetermined-coeff-2-2-6-2-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-6-2-1">Complementary solution: <span class="process-math">\(y_c = C_1e^t + C_2te^t.\)</span>
 </div></li>
 <li id="sec-undetermined-coeff-2-2-6-2-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-6-2-2">The first try ansatz is <span class="process-math">\(Y = e^t(At + B) = Ate^t + Be^t.\)</span>
 </div></li>
@@ -553,7 +560,10 @@ Y'' = \amp (A + B)e^t \cos t + ((A + B)t + A)e^t \cos t\\
 y = C_1 e^t \cos t + C_2 e^t \sin t + \dfrac{1}{2} te^t \sin t.
 \end{equation*}
 </div>
-</div></article></details><div class="para" id="sec-undetermined-coeff-2-3-12">Note: In the MIT Lecture 13 and 14, there exists a simpler way of computing <span class="process-math">\(Y'' - 2Y' + 2Y\text{,}\)</span> using the exponential shift lemma of differential operators and complex functions. We shall not require that in our course.</div></section><section class="subsection" id="sec-undetermined-coeff-2-4"><h3 class="heading hide-type">
+</div></article></details><article class="remark remark-like" id="sec-undetermined-coeff-2-3-12"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.8.8</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-undetermined-coeff-2-3-12-1">There does exist faster ways to compute everything by hand. In the MIT Lecture 13 and 14, there exists a simpler way of computing <span class="process-math">\(Y'' - 2Y' + 2Y\text{,}\)</span> using the exponential shift lemma of differential operators and complex functions. We shall not require that in our course.</div></article></section><section class="subsection" id="sec-undetermined-coeff-2-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.8.3</span><span class="space"> </span><span class="title">Sums of functions with different exponential coefficients.</span>
 </h3>
 <div class="para logical" id="sec-undetermined-coeff-2-4-2">
@@ -565,13 +575,19 @@ g(t) = e^{\alpha t} \cos \beta t \cdot (\text{polynomial}) + e^{\alpha t} \sin \
 </div>
 <div class="para">We use the exponential coefficient <span class="process-math">\(\alpha + i\beta\)</span> to determine the final ansatz.</div>
 </div>
-<div class="para" id="sec-undetermined-coeff-2-4-3">What shall we do if <span class="process-math">\(g(t)\)</span> is a sum of such functions but with different <span class="process-math">\(\alpha\)</span>’s and <span class="process-math">\(\beta\)</span>’s? For example,</div>
-<div class="para" id="sec-undetermined-coeff-2-4-4"><span class="process-math">\(g(t) = t^3 + e^t + \sin 2t + 2 \cos 2t.\)</span></div>
-<div class="para" id="sec-undetermined-coeff-2-4-5">To handle such <span class="process-math">\(g(t),\)</span> we need the following <em class="alert">principle of superposition</em>.</div>
-<article class="theorem theorem-like" id="sec-undetermined-coeff-2-4-6"><h4 class="heading">
-<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.8.8</span><span class="period">.</span><span class="space"> </span><span class="title">Principle of superposition: nonhomogeneous ODEs.</span>
+<div class="para logical" id="sec-undetermined-coeff-2-4-3">
+<div class="para">What shall we do if <span class="process-math">\(g(t)\)</span> is a sum of such functions but with different <span class="process-math">\(\alpha\)</span>’s and <span class="process-math">\(\beta\)</span>’s? For example,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+g(t) = t^3 + e^t + \sin 2t + 2 \cos 2t.
+\end{equation*}
+</div>
+<div class="para">To handle such <span class="process-math">\(g(t),\)</span> we need the following <em class="alert">principle of superposition</em>.</div>
+</div>
+<article class="theorem theorem-like" id="sec-undetermined-coeff-2-4-4"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.8.9</span><span class="period">.</span><span class="space"> </span><span class="title">Principle of superposition: nonhomogeneous ODEs.</span>
 </h4>
-<div class="para logical" id="sec-undetermined-coeff-2-4-6-2-1">
+<div class="para logical" id="sec-undetermined-coeff-2-4-4-2-1">
 <div class="para">Let <span class="process-math">\(Y_1\)</span> be a particular solution of</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -590,7 +606,7 @@ y'' + p(t)y' + q(t)y = g_2(t).
 y'' + p(t)y' + q(t)y = g_1(t) + g_2(t).
 \end{equation*}
 </div>
-</div></article><details id="sec-undetermined-coeff-2-4-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-undetermined-coeff-2-4-7-1">
+</div></article><details id="sec-undetermined-coeff-2-4-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-undetermined-coeff-2-4-5-1">
 <div class="para">The assumption implies that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -614,40 +630,40 @@ Y_2'' + p(t)Y_2' + q(t)Y_2 = g_2(t).
 y'' + p(t)y' + q(t)y = g_1(t) + g_2(t).
 \end{equation*}
 </div>
-</div></article></details><div class="para" id="sec-undetermined-coeff-2-4-8">From the principle of superposition, we know that to handle such <span class="process-math">\(g(t):\)</span>
+</div></article></details><div class="para" id="sec-undetermined-coeff-2-4-6">From the principle of superposition, we know that to handle such <span class="process-math">\(g(t):\)</span>
 </div>
-<ol class="decimal" id="sec-undetermined-coeff-2-4-9">
-<li id="sec-undetermined-coeff-2-4-9-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-9-1">Break <span class="process-math">\(g(t) = g_1(t) + \cdots + g_m(t),\)</span> according to the exponential coefficients.</div></li>
-<li id="sec-undetermined-coeff-2-4-9-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-9-2">Find <span class="process-math">\(Y_1, \ldots, Y_m\)</span> individually for <span class="process-math">\(g_1, \ldots, g_m,\)</span> i.e., for <span class="process-math">\(i = 1, \ldots, m,\)</span> find a particular <span class="process-math">\(Y_i\)</span> for <span class="process-math">\(ay'' + by' + cy = g_i(t).\)</span>
+<ol class="decimal" id="sec-undetermined-coeff-2-4-7">
+<li id="sec-undetermined-coeff-2-4-7-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-7-1">Break <span class="process-math">\(g(t) = g_1(t) + \cdots + g_m(t),\)</span> according to the exponential coefficients.</div></li>
+<li id="sec-undetermined-coeff-2-4-7-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-7-2">Find <span class="process-math">\(Y_1, \ldots, Y_m\)</span> individually for <span class="process-math">\(g_1, \ldots, g_m,\)</span> i.e., for <span class="process-math">\(i = 1, \ldots, m,\)</span> find a particular <span class="process-math">\(Y_i\)</span> for <span class="process-math">\(ay'' + by' + cy = g_i(t).\)</span>
 </div></li>
-<li id="sec-undetermined-coeff-2-4-9-3"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-9-3">Then <span class="process-math">\(Y = Y_1 + \cdots + Y_m\)</span> is a particular solution.</div></li>
+<li id="sec-undetermined-coeff-2-4-7-3"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-7-3">Then <span class="process-math">\(Y = Y_1 + \cdots + Y_m\)</span> is a particular solution.</div></li>
 </ol>
-<details id="sec-undetermined-coeff-2-4-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
-<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.9</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' + y = t + t \sin t + 2 \cos t.\)</span>.</span>
-</h4></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-undetermined-coeff-2-4-10-2">
-<li id="sec-undetermined-coeff-2-4-10-2-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-10-2-1">Aux. Eqn: <span class="process-math">\(r^2 + 1 = 0 \implies r = \pm i.\)</span>
+<details id="sec-undetermined-coeff-2-4-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.10</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' + y = t + t \sin t + 2 \cos t.\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-undetermined-coeff-2-4-8-2">
+<li id="sec-undetermined-coeff-2-4-8-2-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-1">Aux. Eqn: <span class="process-math">\(r^2 + 1 = 0 \implies r = \pm i.\)</span>
 </div></li>
-<li id="sec-undetermined-coeff-2-4-10-2-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-10-2-2">Comp. Soln: <span class="process-math">\(y_c = C_1 \cos t + C_2 \sin t.\)</span>
+<li id="sec-undetermined-coeff-2-4-8-2-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-2">Comp. Soln: <span class="process-math">\(y_c = C_1 \cos t + C_2 \sin t.\)</span>
 </div></li>
-<li id="sec-undetermined-coeff-2-4-10-2-3"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-10-2-3">Now we regard <span class="process-math">\(g(t) = g_1(t) + g_2(t),\)</span> where<div class="displaymath process-math" id="sec-undetermined-coeff-2-4-10-2-3-2">
+<li id="sec-undetermined-coeff-2-4-8-2-3"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-3">Now we regard <span class="process-math">\(g(t) = g_1(t) + g_2(t),\)</span> where<div class="displaymath process-math" id="sec-undetermined-coeff-2-4-8-2-3-2">
 \begin{align*}
 g_1(t) = \amp t,\\
 g_2(t) = \amp t \sin t + 2 \cos t.
 \end{align*}
 </div>(Note: Terms with the same exponential coefficient should be collected together to avoid unnecessary repetitions.)</div></li>
-<li id="sec-undetermined-coeff-2-4-10-2-4"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-10-2-4">First we deal with <span class="process-math">\(g_1(t) = t.\)</span> The first ansatz is<div class="displaymath process-math">
+<li id="sec-undetermined-coeff-2-4-8-2-4"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-4">First we deal with <span class="process-math">\(g_1(t) = t.\)</span> The first ansatz is<div class="displaymath process-math">
 \begin{equation*}
 Y_1 = At + B.
 \end{equation*}
 </div>The exponential coefficient is <span class="process-math">\(0\)</span> that is not a root. First ansatz succeeds.</div></li>
-<li id="sec-undetermined-coeff-2-4-10-2-5"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-10-2-5">We calculate the derivatives and plug them into the LHS<div class="displaymath process-math" id="sec-undetermined-coeff-2-4-10-2-5-1">
+<li id="sec-undetermined-coeff-2-4-8-2-5"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-5">We calculate the derivatives and plug them into the LHS<div class="displaymath process-math" id="sec-undetermined-coeff-2-4-8-2-5-1">
 \begin{align*}
 \amp Y_1' = A, \quad Y_1'' = 0 \implies Y_1'' + Y_1 = At + B = g_1(t) = t\\
 \implies \amp A = 1, B = 0 \implies Y_1 = t.
 \end{align*}
 </div>
 </div></li>
-<li id="sec-undetermined-coeff-2-4-10-2-6"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-10-2-6">For <span class="process-math">\(g_2(t)\text{,}\)</span> the first ansatz is<div class="displaymath process-math">
+<li id="sec-undetermined-coeff-2-4-8-2-6"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-6">For <span class="process-math">\(g_2(t)\text{,}\)</span> the first ansatz is<div class="displaymath process-math">
 \begin{equation*}
 Y_2 = (Ct + D) \cos t + (Et + F) \sin t.
 \end{equation*}
@@ -657,13 +673,13 @@ Y_2 = (Ct^2 + Dt) \cos t + (Et^2 + Ft) \sin t.
 \end{equation*}
 </div>
 </div></li>
-<li id="sec-undetermined-coeff-2-4-10-2-7"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-10-2-7">We compute the derivatives and find that<div class="displaymath process-math" id="sec-undetermined-coeff-2-4-10-2-7-1">
+<li id="sec-undetermined-coeff-2-4-8-2-7"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-7">We compute the derivatives and find that<div class="displaymath process-math" id="sec-undetermined-coeff-2-4-8-2-7-1">
 \begin{align*}
 \amp Y_2'' + Y_2 \\
 = \amp (-4Ct + 2E - 2D) \sin t + (4Et + 2F + 2C) \cos t.\\
 = \amp t \sin t + 2 \cos t.
 \end{align*}
-</div>Compare the coefficients, we see that<div class="displaymath process-math" id="sec-undetermined-coeff-2-4-10-2-7-2">
+</div>Compare the coefficients, we see that<div class="displaymath process-math" id="sec-undetermined-coeff-2-4-8-2-7-2">
 \begin{align*}
 \amp -4C = 1, \quad 2E - 2D = 0, \quad 4E = 0, \quad 2F + 2C = 2.\\
 \amp \implies C = -\dfrac{1}{4}, \quad D = E = 0, \quad F = \dfrac{5}{4}.\\
@@ -671,20 +687,23 @@ Y_2 = (Ct^2 + Dt) \cos t + (Et^2 + Ft) \sin t.
 \end{align*}
 </div>
 </div></li>
-<li id="sec-undetermined-coeff-2-4-10-2-8"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-10-2-8">From the principle of superposition,<div class="displaymath process-math">
+<li id="sec-undetermined-coeff-2-4-8-2-8"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-8">From the principle of superposition,<div class="displaymath process-math">
 \begin{equation*}
 Y = Y_1 + Y_2 = t - \dfrac{1}{4}t^2 \cos t + \dfrac{5}{4}t \sin t
 \end{equation*}
 </div>is a particular solution of the ODE.</div></li>
 </ul>
-<div class="para logical" id="sec-undetermined-coeff-2-4-10-3">
+<div class="para logical" id="sec-undetermined-coeff-2-4-8-3">
 <div class="para">The general solution is then</div>
 <div class="displaymath process-math">
 \begin{equation*}
 y = C_1 \cos t + C_2 \sin t + t - \dfrac{1}{4}t^2 \cos t + \dfrac{5}{4}t \sin t.
 \end{equation*}
 </div>
-</div></article></details></section></section></div>
+</div></article></details><article class="remark remark-like" id="sec-undetermined-coeff-2-4-9"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.8.11</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-undetermined-coeff-2-4-9-1">A computer can easily handle the derivatives. But to make sure the computer is doing the right thing, it is important for us human to know the correct ansatz at the very least. We will not be able to figure out a mistake made by a computer if we do not know what we are expecting and cannot perform the simplest calculation. This is the main emphasis of this section.</div></article></section></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-undetermined-coeff-2nd-order.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-higher-order-linear-ODEs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
