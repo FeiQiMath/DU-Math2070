@@ -9,7 +9,7 @@
 <example>
 <title> <m>y'' - y' - 2y = e^{2t}</m> with the first ansatz</title>
 <ul>
-<li> Complementary solution: <m>y = C_1e^{-t} + C_2e^{2t}.</m></li>
+<li> Complementary solution: <m>y_c = C_1e^{-t} + C_2e^{2t}.</m></li>
 <li> If we try <m>Y = Ae^{2t},</m> then <m>Y' = 2Ae^{2t}, Y'' = 4Ae^{2t}.</m></li>
 <li> Plug the derivatives into the LHS:
 <me>Y'' - Y' - 2Y = 2Ae^{2t} - 2Ae^{2t} - 2Ae^{2t} = 0.</me> 
@@ -38,7 +38,7 @@ Compare both sides, we see that
 <example> 
 <title> <m>y'' - 2y' + y = 2te^t</m> with the second try fails</title>
 <ul>
-<li> Complementary solution: <m>y = C_1e^t + C_2te^t.</m></li>
+<li> Complementary solution: <m>y_c = C_1e^t + C_2te^t.</m></li>
 <li> The first try ansatz is <m>Y = e^t(At + B) = Ate^t + Be^t.</m></li>
 <li> This ansatz clearly fails, as <m>Y</m> has the same structure as the complementary solution. We need to multiply by <m>t.</m></li>
 <li> Set <me>Y = te^t(At + B) = (At^2 + Bt)e^t.</me>
@@ -193,7 +193,9 @@ Comparing the coefficients, we see that
 <me>y = C_1 e^t \cos t + C_2 e^t \sin t + \dfrac{1}{2} te^t \sin t.</me></p>
 </example>
 
-<p><strong>Note:</strong> In the MIT Lecture 13 and 14, there exists a simpler way of computing <m>Y'' - 2Y' + 2Y</m>, using the exponential shift lemma of differential operators and complex functions. We shall not require that in our course.</p>
+<remark>
+<p> There does exist faster ways to compute everything by hand. In the MIT Lecture 13 and 14, there exists a simpler way of computing <m>Y'' - 2Y' + 2Y</m>, using the exponential shift lemma of differential operators and complex functions. We shall not require that in our course. </p>
+</remark>
 </subsection>
 
 <subsection>
@@ -203,10 +205,9 @@ Comparing the coefficients, we see that
 <me>g(t) = e^{\alpha t} \cos \beta t \cdot (\text{polynomial}) + e^{\alpha t} \sin \beta t \cdot (\text{polynomial}).</me>
 We use the exponential coefficient <m>\alpha + i\beta</m> to determine the final ansatz. </p>
 
-<p>What shall we do if <m>g(t)</m> is a sum of such functions but with different <m>\alpha</m>'s and <m>\beta</m>'s? For example,</p>
-<p><m>g(t) = t^3 + e^t + \sin 2t + 2 \cos 2t.</m></p>
-
-<p>To handle such <m>g(t),</m> we need the following <alert>principle of superposition</alert>.</p>
+<p>What shall we do if <m>g(t)</m> is a sum of such functions but with different <m>\alpha</m>'s and <m>\beta</m>'s? For example,
+<me>g(t) = t^3 + e^t + \sin 2t + 2 \cos 2t.</me>
+To handle such <m>g(t),</m> we need the following <alert>principle of superposition</alert>.</p>
 
 <theorem>
 <title>Principle of superposition: nonhomogeneous ODEs</title>
@@ -278,6 +279,10 @@ is a particular solution of the ODE. </li>
 <p> The general solution is then
 <me>y = C_1 \cos t + C_2 \sin t + t - \dfrac{1}{4}t^2 \cos t + \dfrac{5}{4}t \sin t.</me></p> 
 </example>
+
+<remark>
+<p> A computer can easily handle the derivatives. But to make sure the computer is doing the right thing, it is important for us human to know the correct ansatz at the very least. We will not be able to figure out a mistake made by a computer if we do not know what we are expecting and cannot perform the simplest calculation. This is the main emphasis of this section. </p>
+</remark>
 
 </subsection>
 </section>
