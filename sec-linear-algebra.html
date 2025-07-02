@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.6';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -275,7 +275,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integral Transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Laplace transforms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-4" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Summary of basic formulas for Laplace transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-5" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
@@ -296,203 +304,360 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-linear-algebra"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">4.1</span><span class="space"> </span><span class="title">A crash course of linear algebra</span>
 </h2>
-<div class="para" id="sec-linear-algebra-2">A Crash Course of Linear Algebra</div>
-<div class="para" id="sec-linear-algebra-3">For Students in Differential Equations in Science and Engineering</div>
-<div class="para" id="sec-linear-algebra-4">1. Matrix Multiplication</div>
-<div class="para" id="sec-linear-algebra-5">(1) Multiplying row vectors and column vectors</div>
-<div class="para" id="sec-linear-algebra-6"><span class="process-math">\(\left[ x_1 \quad x_2 \quad x_3 \right] \left[ \begin{array}{c} y_1 \\ y_2 \\ y_3 \end{array} \right] = x_1y_1 + x_2y_2 + x_3y_3\)</span></div>
-<div class="para" id="sec-linear-algebra-7">It’s just like the dot product of two vectors.</div>
-<div class="para" id="sec-linear-algebra-8">(2) Multiplying matrices and column vectors</div>
-<div class="para" id="sec-linear-algebra-9"><span class="process-math">\(\left[ \begin{array}{ccc} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{array} \right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} a_{11}x_1 + a_{12}x_2 + a_{13}x_3 \\ a_{21}x_1 + a_{22}x_2 + a_{23}x_3 \\ a_{31}x_1 + a_{32}x_2 + a_{33}x_3 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-10">Regard the matrix as three row vectors, perform three row-column multiplications and put the results respectively in the corresponding rows.</div>
-<div class="para" id="sec-linear-algebra-11">(3) Multiplying matrices and matrices</div>
-<div class="para" id="sec-linear-algebra-12"><span class="process-math">\(\left[ \begin{array}{ccc} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{array} \right] \left[ \begin{array}{ccc} b_{11} \amp b_{12} \amp b_{13} \\ b_{21} \amp b_{22} \amp b_{23} \\ b_{31} \amp b_{32} \amp b_{33} \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-13"><span class="process-math">\(= \left[ \begin{array}{ccc} a_{11}b_{11} + a_{12}b_{21} + a_{13}b_{31} \amp a_{11}b_{12} + a_{12}b_{22} + a_{13}b_{32} \amp a_{11}b_{13} + a_{12}b_{23} + a_{13}b_{33} \\ a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31} \amp a_{21}b_{12} + a_{22}b_{22} + a_{23}b_{32} \amp a_{21}b_{13} + a_{22}b_{23} + a_{23}b_{33} \\ a_{31}b_{11} + a_{32}b_{21} + a_{33}b_{31} \amp a_{31}b_{12} + a_{32}b_{22} + a_{33}b_{32} \amp a_{31}b_{13} + a_{32}b_{23} + a_{33}b_{33} \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-14">Regard the matrix on the right as three column vectors, perform three matrix-column multiplications and put the results respectively in the corresponding columns.</div>
-<div class="para" id="sec-linear-algebra-15">2. Using Matrices to Solve System of Linear Equations</div>
-<div class="para" id="sec-linear-algebra-16">The system of linear equations</div>
-<div class="para" id="sec-linear-algebra-17"><span class="process-math">\(\begin{cases} 
+<div class="para" id="sec-linear-algebra-2">A Crash Course of Linear Algebra<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-3">For Students in Differential Equations in Science and Engineering<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-4">1. Matrix Multiplication<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-5">(1) Multiplying row vectors and column vectors<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-6">
+<span class="process-math">\(\left[ x_1 \quad x_2 \quad x_3 \right] \left[ \begin{array}{c} y_1 \\ y_2 \\ y_3 \end{array} \right] = x_1y_1 + x_2y_2 + x_3y_3\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-7">It’s just like the dot product of two vectors.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-7" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-8">(2) Multiplying matrices and column vectors<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-8" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-9">
+<span class="process-math">\(\left[ \begin{array}{ccc} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{array} \right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} a_{11}x_1 + a_{12}x_2 + a_{13}x_3 \\ a_{21}x_1 + a_{22}x_2 + a_{23}x_3 \\ a_{31}x_1 + a_{32}x_2 + a_{33}x_3 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-9" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-10">Regard the matrix as three row vectors, perform three row-column multiplications and put the results respectively in the corresponding rows.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-10" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-11">(3) Multiplying matrices and matrices<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-11" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-12">
+<span class="process-math">\(\left[ \begin{array}{ccc} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{array} \right] \left[ \begin{array}{ccc} b_{11} \amp b_{12} \amp b_{13} \\ b_{21} \amp b_{22} \amp b_{23} \\ b_{31} \amp b_{32} \amp b_{33} \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-12" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-13">
+<span class="process-math">\(= \left[ \begin{array}{ccc} a_{11}b_{11} + a_{12}b_{21} + a_{13}b_{31} \amp a_{11}b_{12} + a_{12}b_{22} + a_{13}b_{32} \amp a_{11}b_{13} + a_{12}b_{23} + a_{13}b_{33} \\ a_{21}b_{11} + a_{22}b_{21} + a_{23}b_{31} \amp a_{21}b_{12} + a_{22}b_{22} + a_{23}b_{32} \amp a_{21}b_{13} + a_{22}b_{23} + a_{23}b_{33} \\ a_{31}b_{11} + a_{32}b_{21} + a_{33}b_{31} \amp a_{31}b_{12} + a_{32}b_{22} + a_{33}b_{32} \amp a_{31}b_{13} + a_{32}b_{23} + a_{33}b_{33} \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-13" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-14">Regard the matrix on the right as three column vectors, perform three matrix-column multiplications and put the results respectively in the corresponding columns.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-14" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-15">2. Using Matrices to Solve System of Linear Equations<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-15" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-16">The system of linear equations<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-16" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-17">
+<span class="process-math">\(\begin{cases} 
 a_{11}x_1 + a_{12}x_2 + a_{13}x_3 = b_1 \\
 a_{21}x_1 + a_{22}x_2 + a_{23}x_3 = b_2 \\
 a_{31}x_1 + a_{32}x_2 + a_{33}x_3 = b_3
-\end{cases}\)</span></div>
-<div class="para" id="sec-linear-algebra-18">can be regarded as an equation of column vectors</div>
-<div class="para" id="sec-linear-algebra-19"><span class="process-math">\(\left[ \begin{array}{ccc} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{array} \right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} b_1 \\ b_2 \\ b_3 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-20">To solve it, we form the extended matrix</div>
-<div class="para" id="sec-linear-algebra-21"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-17" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-18">can be regarded as an equation of column vectors<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-18" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-19">
+<span class="process-math">\(\left[ \begin{array}{ccc} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{array} \right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} b_1 \\ b_2 \\ b_3 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-19" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-20">To solve it, we form the extended matrix<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-20" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-21">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 a_{11} \amp a_{12} \amp a_{13} \amp b_1 \\ 
 a_{21} \amp a_{22} \amp a_{23} \amp b_2 \\ 
 a_{31} \amp a_{32} \amp a_{33} \amp b_3 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-22">Perform row transformations to punch holes in the lower triangular part</div>
-<div class="para" id="sec-linear-algebra-23"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-21" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-22">Perform row transformations to punch holes in the lower triangular part<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-22" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-23">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 * \amp * \amp * \amp * \\ 
 0 \amp * \amp * \amp * \\ 
 0 \amp 0 \amp * \amp * 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-24">Several cases might occur:</div>
-<div class="para" id="sec-linear-algebra-25">(1) All the diagonal terms are nonzero. In this case, the system has a unique solution.</div>
-<div class="para" id="sec-linear-algebra-26">Example.</div>
-<div class="para" id="sec-linear-algebra-27"><span class="process-math">\(\begin{cases} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-23" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-24">Several cases might occur:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-24" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-25">(1) All the diagonal terms are nonzero. In this case, the system has a unique solution.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-25" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-26">Example.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-26" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-27">
+<span class="process-math">\(\begin{cases} 
 x_1 - 2x_2 + 3x_3 = 7 \\ 
 -x_1 + x_2 - 2x_3 = -5 \\ 
 2x_1 - x_2 - x_3 = 4 
-\end{cases}\)</span></div>
-<div class="para" id="sec-linear-algebra-28">The extended matrix</div>
-<div class="para" id="sec-linear-algebra-29"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-27" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-28">The extended matrix<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-28" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-29">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp -2 \amp 3 \amp 7 \\ 
 -1 \amp 1 \amp -2 \amp -5 \\ 
 2 \amp -1 \amp -1 \amp 4 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-30">We first punch two holes in the first column: add the first row to the second row, and add <span class="process-math">\((-2)\)</span> times the first row to the last row:</div>
-<div class="para" id="sec-linear-algebra-31"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-29" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-30">We first punch two holes in the first column: add the first row to the second row, and add <span class="process-math">\((-2)\)</span> times the first row to the last row:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-30" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-31">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp -2 \amp 3 \amp 7 \\ 
 0 \amp -1 \amp 1 \amp 2 \\ 
 0 \amp -3 \amp -7 \amp -10 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-32">Then punch one hole in the second column: add 3 times the second row to the last row.</div>
-<div class="para" id="sec-linear-algebra-33"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-31" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-32">Then punch one hole in the second column: add 3 times the second row to the last row.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-32" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-33">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp -2 \amp 3 \amp 7 \\ 
 0 \amp -1 \amp 1 \amp 2 \\ 
 0 \amp 0 \amp -4 \amp -4 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-34">Now all the diagonal terms are nonzero and we can start to solve it:</div>
-<div class="para" id="sec-linear-algebra-35">Last row says</div>
-<div class="para" id="sec-linear-algebra-36"><span class="process-math">\(-4x_3 = -4 \implies x_3 = 1.\)</span></div>
-<div class="para" id="sec-linear-algebra-37">Second row says</div>
-<div class="para" id="sec-linear-algebra-38"><span class="process-math">\(-x_2 + x_3 = 2 \implies x_2 = x_3 - 2 = 1 - 2 = -1.\)</span></div>
-<div class="para" id="sec-linear-algebra-39">First row says</div>
-<div class="para" id="sec-linear-algebra-40"><span class="process-math">\(x_1 - 2x_2 + 3x_3 = 7 \implies x_1 = 7 + 2x_2 - 3x_3 = 7 - 2 - 3 = 2.\)</span></div>
-<div class="para" id="sec-linear-algebra-41">So we have a unique solution</div>
-<div class="para" id="sec-linear-algebra-42"><span class="process-math">\(\left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} 2 \\ -1 \\ 1 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-43">Remark. This case happens if and only if the matrix is nonsingular, i.e., the determinant of the coefficient matrix is nonzero. In fact, if you did not switch rows or multiply any row by any number, then the determinant is precisely the product of all diagonal entries. Therefore it is nonzero if and only if all the factors are nonzero.</div>
-<div class="para" id="sec-linear-algebra-44">(2) The last term in the diagonal is zero, as well as the right-hand side, and the rest diagonal terms is nonzero. In this case, the system has infinitely many solutions parametrized by one free variable.</div>
-<div class="para" id="sec-linear-algebra-45">Example.</div>
-<div class="para" id="sec-linear-algebra-46"><span class="process-math">\(\begin{cases} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-33" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-34">Now all the diagonal terms are nonzero and we can start to solve it:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-34" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-35">Last row says<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-35" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-36">
+<span class="process-math">\(-4x_3 = -4 \implies x_3 = 1.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-36" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-37">Second row says<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-37" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-38">
+<span class="process-math">\(-x_2 + x_3 = 2 \implies x_2 = x_3 - 2 = 1 - 2 = -1.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-38" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-39">First row says<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-39" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-40">
+<span class="process-math">\(x_1 - 2x_2 + 3x_3 = 7 \implies x_1 = 7 + 2x_2 - 3x_3 = 7 - 2 - 3 = 2.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-40" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-41">So we have a unique solution<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-41" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-42">
+<span class="process-math">\(\left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} 2 \\ -1 \\ 1 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-42" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-43">Remark. This case happens if and only if the matrix is nonsingular, i.e., the determinant of the coefficient matrix is nonzero. In fact, if you did not switch rows or multiply any row by any number, then the determinant is precisely the product of all diagonal entries. Therefore it is nonzero if and only if all the factors are nonzero.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-43" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-44">(2) The last term in the diagonal is zero, as well as the right-hand side, and the rest diagonal terms is nonzero. In this case, the system has infinitely many solutions parametrized by one free variable.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-44" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-45">Example.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-45" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-46">
+<span class="process-math">\(\begin{cases} 
 x_1 + 2x_2 - x_3 = 2 \\ 
 2x_1 + x_2 + x_3 = 1 \\ 
 x_1 - 2x_2 + 2x_3 = -1 
-\end{cases}\)</span></div>
-<div class="para" id="sec-linear-algebra-47">The extended matrix</div>
-<div class="para" id="sec-linear-algebra-48"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-46" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-47">The extended matrix<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-47" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-48">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp -2 \amp -1 \amp 2 \\ 
 2 \amp 1 \amp 1 \amp 1 \\ 
 1 \amp -1 \amp 2 \amp -1 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-49">We first punch two holes in the first column: add <span class="process-math">\((-2)\)</span> times the first row to the second row, and add <span class="process-math">\((-1)\)</span> times the first row to the last row:</div>
-<div class="para" id="sec-linear-algebra-50"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-48" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-49">We first punch two holes in the first column: add <span class="process-math">\((-2)\)</span> times the first row to the second row, and add <span class="process-math">\((-1)\)</span> times the first row to the last row:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-49" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-50">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp -2 \amp -1 \amp 2 \\ 
 0 \amp 3 \amp 3 \amp -3 \\ 
 0 \amp 3 \amp -1 \amp -3 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-51">Then punch one hole in the second column: add <span class="process-math">\((-1)\)</span> times the second row to the last row.</div>
-<div class="para" id="sec-linear-algebra-52"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-50" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-51">Then punch one hole in the second column: add <span class="process-math">\((-1)\)</span> times the second row to the last row.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-51" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-52">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp -2 \amp -1 \amp 2 \\ 
 0 \amp 3 \amp 3 \amp -3 \\ 
 0 \amp 0 \amp -4 \amp 0 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-53">Last row reads</div>
-<div class="para" id="sec-linear-algebra-54"><span class="process-math">\(0 = 0.\)</span></div>
-<div class="para" id="sec-linear-algebra-55">That means it’s redundant and we now have two equations with three variables.</div>
-<div class="para" id="sec-linear-algebra-56">Second row says</div>
-<div class="para" id="sec-linear-algebra-57"><span class="process-math">\(-3x_2 + 3x_3 = -3 \implies x_2 = x_3 + 1.\)</span></div>
-<div class="para" id="sec-linear-algebra-58">First row says</div>
-<div class="para" id="sec-linear-algebra-59"><span class="process-math">\(x_1 + 2x_2 - x_3 = 2 \implies x_1 = -2x_2 + x_3 + 2 = -2(x_3 + 1) + x_3 + 2 = -x_3.\)</span></div>
-<div class="para" id="sec-linear-algebra-60">Let <span class="process-math">\(x_3 = c\)</span> as the free variable, then we have infinitely many solutions:</div>
-<div class="para" id="sec-linear-algebra-61"><span class="process-math">\(\left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} -c \\ c + 1 \\ c \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-62">that is parameterized by <span class="process-math">\(c.\)</span>
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-52" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-linear-algebra-63">(3) The left-hand side of the last row is zero, but the right-hand side of the last row is nonzero. In this case, the system has no solution.</div>
-<div class="para" id="sec-linear-algebra-64">Example.</div>
-<div class="para" id="sec-linear-algebra-65"><span class="process-math">\(\begin{cases} 
+<div class="para" id="sec-linear-algebra-53">Last row reads<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-53" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-54">
+<span class="process-math">\(0 = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-54" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-55">That means it’s redundant and we now have two equations with three variables.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-55" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-56">Second row says<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-56" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-57">
+<span class="process-math">\(-3x_2 + 3x_3 = -3 \implies x_2 = x_3 + 1.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-57" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-58">First row says<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-58" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-59">
+<span class="process-math">\(x_1 + 2x_2 - x_3 = 2 \implies x_1 = -2x_2 + x_3 + 2 = -2(x_3 + 1) + x_3 + 2 = -x_3.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-59" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-60">Let <span class="process-math">\(x_3 = c\)</span> as the free variable, then we have infinitely many solutions:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-60" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-61">
+<span class="process-math">\(\left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} -c \\ c + 1 \\ c \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-61" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-62">that is parameterized by <span class="process-math">\(c.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-62" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-63">(3) The left-hand side of the last row is zero, but the right-hand side of the last row is nonzero. In this case, the system has no solution.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-63" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-64">Example.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-64" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-65">
+<span class="process-math">\(\begin{cases} 
 x_1 + 2x_2 - x_3 = 1 \\ 
 2x_1 + x_2 + x_3 = 1 \\ 
 x_1 - x_2 + 2x_3 = 1 
-\end{cases}\)</span></div>
-<div class="para" id="sec-linear-algebra-66">The extended matrix</div>
-<div class="para" id="sec-linear-algebra-67"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-65" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-66">The extended matrix<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-66" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-67">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp 2 \amp -1 \amp 1 \\ 
 2 \amp 1 \amp 1 \amp 1 \\ 
 1 \amp -1 \amp 2 \amp 1 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-68">We first punch two holes in the first column: add <span class="process-math">\((-2)\)</span> times the first row to the second row, and add <span class="process-math">\((-1)\)</span> times the first row to the last row:</div>
-<div class="para" id="sec-linear-algebra-69"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-67" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-68">We first punch two holes in the first column: add <span class="process-math">\((-2)\)</span> times the first row to the second row, and add <span class="process-math">\((-1)\)</span> times the first row to the last row:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-68" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-69">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp 2 \amp -1 \amp 1 \\ 
 0 \amp -3 \amp 3 \amp -1 \\ 
 0 \amp -3 \amp -1 \amp 0 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-70">Then punch one hole in the second column: subtract the last row by the second row.</div>
-<div class="para" id="sec-linear-algebra-71"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-69" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-70">Then punch one hole in the second column: subtract the last row by the second row.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-70" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-71">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp 2 \amp -1 \amp 1 \\ 
 0 \amp -3 \amp 3 \amp -1 \\ 
 0 \amp 0 \amp -4 \amp 1 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-72">Last row reads</div>
-<div class="para" id="sec-linear-algebra-73"><span class="process-math">\(0 = 1\)</span></div>
-<div class="para" id="sec-linear-algebra-74">that can never be satisfied. Therefore the system has no solution.</div>
-<div class="para" id="sec-linear-algebra-75">(4) The second and the third row are all zero. In this case, the system has infinitely many solutions parametrized by two free variables.</div>
-<div class="para" id="sec-linear-algebra-76">Example.</div>
-<div class="para" id="sec-linear-algebra-77"><span class="process-math">\(\begin{cases} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-71" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-72">Last row reads<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-72" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-73">
+<span class="process-math">\(0 = 1\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-73" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-74">that can never be satisfied. Therefore the system has no solution.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-74" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-75">(4) The second and the third row are all zero. In this case, the system has infinitely many solutions parametrized by two free variables.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-75" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-76">Example.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-76" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-77">
+<span class="process-math">\(\begin{cases} 
 x_1 + 2x_2 - x_3 = -2 \\ 
 -2x_1 - 4x_2 + 2x_3 = 4 \\ 
 2x_1 + 4x_2 - 2x_3 = -4 
-\end{cases}\)</span></div>
-<div class="para" id="sec-linear-algebra-78">The extended matrix</div>
-<div class="para" id="sec-linear-algebra-79"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-77" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-78">The extended matrix<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-78" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-79">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp 2 \amp -1 \amp -2 \\ 
 -2 \amp -4 \amp 2 \amp 4 \\ 
 2 \amp 4 \amp -2 \amp -4 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-80">We first punch two holes in the first column: add <span class="process-math">\((2)\)</span> times the first row to the second row, and add <span class="process-math">\((-2)\)</span> times the first row to the last row:</div>
-<div class="para" id="sec-linear-algebra-81"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-79" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-80">We first punch two holes in the first column: add <span class="process-math">\((2)\)</span> times the first row to the second row, and add <span class="process-math">\((-2)\)</span> times the first row to the last row:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-80" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-81">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp 2 \amp -1 \amp -2 \\ 
 0 \amp 0 \amp 0 \amp 0 \\ 
 0 \amp 0 \amp 0 \amp 0 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-82">And now both the second row and third row read</div>
-<div class="para" id="sec-linear-algebra-83"><span class="process-math">\(0 = 0.\)</span></div>
-<div class="para" id="sec-linear-algebra-84">We are left with one equation with three variables. So two of them are free. Let’s set <span class="process-math">\(x_1 = c_1\)</span> and <span class="process-math">\(x_2 = c_2.\)</span>
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-81" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-linear-algebra-85">The first equation reads</div>
-<div class="para" id="sec-linear-algebra-86"><span class="process-math">\(x_1 + 2x_2 - x_3 = -2 \implies x_3 = x_1 + 2x_2 = c_1 + 2c_2 - 2.\)</span></div>
-<div class="para" id="sec-linear-algebra-87">Then we have infinitely many solutions:</div>
-<div class="para" id="sec-linear-algebra-88"><span class="process-math">\(\left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} c_1 \\ c_2 \\ c_1 + 2c_2 - 2 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-89">that is parameterized by two free variables <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2.\)</span>
+<div class="para" id="sec-linear-algebra-82">And now both the second row and third row read<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-82" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-linear-algebra-90">(5) Other cases. You will learn about them systematically in a course of linear algebra. For this class, you don’t need to worry about more than the above.</div>
-<div class="para" id="sec-linear-algebra-91">Remark. For all cases other than (1), the determinant of the coefficient matrix is zero.</div>
-<div class="para" id="sec-linear-algebra-92">Remark. In general you don’t need to be that mechanical in doing this. As long as there are enough zeros in the extended matrix, you can start to read it in terms of variables. Examples will be seen below.</div>
-<div class="para" id="sec-linear-algebra-93">Remark. For homogeneous equations (meaning that <span class="process-math">\(b_1 = b_2 = b_3 = 0\)</span>), we don’t need to worry about the third case.</div>
-<div class="para" id="sec-linear-algebra-94">3. Linearly Independent Vectors and Linearly Dependent Vectors</div>
-<div class="para" id="sec-linear-algebra-95">(1) Three vectors <span class="process-math">\(\vec{v_1}, \vec{v_2}, \vec{v_3}\)</span> are called linearly dependent if for some <span class="process-math">\(k_1, k_2\)</span> and <span class="process-math">\(k_3\)</span> that are NOT ALL ZERO, such that</div>
-<div class="para" id="sec-linear-algebra-96"><span class="process-math">\(k_1 \vec{v_1} + k_2 \vec{v_2} + k_3 \vec{v_3} = 0.\)</span></div>
-<div class="para" id="sec-linear-algebra-97">In this case, one can express one of them by the linear combination of the other two.</div>
-<div class="para" id="sec-linear-algebra-98">Example.</div>
-<div class="para" id="sec-linear-algebra-99"><span class="process-math">\(\vec{v_1} = \left[ \begin{array}{c} 2 \\ 1 \\ 0 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} 0 \\ 1 \\ 0 \end{array} \right], \quad \vec{v_3} = \left[ \begin{array}{c} -1 \\ 2 \\ 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-100">One can verify that</div>
-<div class="para" id="sec-linear-algebra-101"><span class="process-math">\(\vec{v_1} - 5\vec{v_2} + 2\vec{v_3} = 0.\)</span></div>
-<div class="para" id="sec-linear-algebra-102">Therefore</div>
-<div class="para" id="sec-linear-algebra-103"><span class="process-math">\(\vec{v_1} = 5\vec{v_2} - 2\vec{v_3}.\)</span></div>
-<div class="para" id="sec-linear-algebra-104">So <span class="process-math">\(\vec{v_1}\)</span> "depends" on <span class="process-math">\(\vec{v_2}\)</span> and <span class="process-math">\(\vec{v_3}.\)</span> This is one reason for this terminology.</div>
-<div class="para" id="sec-linear-algebra-105">(2) If you cannot find such <span class="process-math">\(k_1, k_2\)</span> and <span class="process-math">\(k_3\text{,}\)</span> then we say <span class="process-math">\(\vec{v_1}, \vec{v_2}, \vec{v_3}\)</span> are linearly independent. Equivalently, all <span class="process-math">\(k_1, k_2\)</span> and <span class="process-math">\(k_3\)</span> satisfying</div>
-<div class="para" id="sec-linear-algebra-106"><span class="process-math">\(k_1 \vec{v_1} + k_2 \vec{v_2} + k_3 \vec{v_3} = 0\)</span></div>
-<div class="para" id="sec-linear-algebra-107">must be ALL ZERO: <span class="process-math">\(k_1 = k_2 = k_3 = 0.\)</span>
+<div class="para" id="sec-linear-algebra-83">
+<span class="process-math">\(0 = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-83" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-linear-algebra-108">(3) Write</div>
-<div class="para" id="sec-linear-algebra-109"><span class="process-math">\(\vec{v_1} = \left[ \begin{array}{c} a_1 \\ a_2 \\ a_3 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} b_1 \\ b_2 \\ b_3 \end{array} \right], \quad \vec{v_3} = \left[ \begin{array}{c} c_1 \\ c_2 \\ c_3 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-110">The left-hand side of the equation</div>
-<div class="para" id="sec-linear-algebra-111"><span class="process-math">\(k_1 \vec{v_1} + k_2 \vec{v_2} + k_3 \vec{v_3} = 0\)</span></div>
-<div class="para" id="sec-linear-algebra-112">can then be written as</div>
-<div class="para" id="sec-linear-algebra-113"><span class="process-math">\(k_1 \left[ \begin{array}{c} a_1 \\ a_2 \\ a_3 \end{array} \right] + k_2 \left[ \begin{array}{c} b_1 \\ b_2 \\ b_3 \end{array} \right] + k_3 \left[ \begin{array}{c} c_1 \\ c_2 \\ c_3 \end{array} \right] = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-114">Therefore the equation is simply</div>
-<div class="para" id="sec-linear-algebra-115"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+<div class="para" id="sec-linear-algebra-84">We are left with one equation with three variables. So two of them are free. Let’s set <span class="process-math">\(x_1 = c_1\)</span> and <span class="process-math">\(x_2 = c_2.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-84" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-85">The first equation reads<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-85" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-86">
+<span class="process-math">\(x_1 + 2x_2 - x_3 = -2 \implies x_3 = x_1 + 2x_2 = c_1 + 2c_2 - 2.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-86" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-87">Then we have infinitely many solutions:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-87" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-88">
+<span class="process-math">\(\left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} c_1 \\ c_2 \\ c_1 + 2c_2 - 2 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-88" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-89">that is parameterized by two free variables <span class="process-math">\(c_1\)</span> and <span class="process-math">\(c_2.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-89" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-90">(5) Other cases. You will learn about them systematically in a course of linear algebra. For this class, you don’t need to worry about more than the above.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-90" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-91">Remark. For all cases other than (1), the determinant of the coefficient matrix is zero.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-91" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-92">Remark. In general you don’t need to be that mechanical in doing this. As long as there are enough zeros in the extended matrix, you can start to read it in terms of variables. Examples will be seen below.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-92" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-93">Remark. For homogeneous equations (meaning that <span class="process-math">\(b_1 = b_2 = b_3 = 0\)</span>), we don’t need to worry about the third case.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-93" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-94">3. Linearly Independent Vectors and Linearly Dependent Vectors<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-94" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-95">(1) Three vectors <span class="process-math">\(\vec{v_1}, \vec{v_2}, \vec{v_3}\)</span> are called linearly dependent if for some <span class="process-math">\(k_1, k_2\)</span> and <span class="process-math">\(k_3\)</span> that are NOT ALL ZERO, such that<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-95" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-96">
+<span class="process-math">\(k_1 \vec{v_1} + k_2 \vec{v_2} + k_3 \vec{v_3} = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-96" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-97">In this case, one can express one of them by the linear combination of the other two.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-97" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-98">Example.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-98" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-99">
+<span class="process-math">\(\vec{v_1} = \left[ \begin{array}{c} 2 \\ 1 \\ 0 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} 0 \\ 1 \\ 0 \end{array} \right], \quad \vec{v_3} = \left[ \begin{array}{c} -1 \\ 2 \\ 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-99" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-100">One can verify that<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-100" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-101">
+<span class="process-math">\(\vec{v_1} - 5\vec{v_2} + 2\vec{v_3} = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-101" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-102">Therefore<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-102" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-103">
+<span class="process-math">\(\vec{v_1} = 5\vec{v_2} - 2\vec{v_3}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-103" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-104">So <span class="process-math">\(\vec{v_1}\)</span> "depends" on <span class="process-math">\(\vec{v_2}\)</span> and <span class="process-math">\(\vec{v_3}.\)</span> This is one reason for this terminology.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-104" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-105">(2) If you cannot find such <span class="process-math">\(k_1, k_2\)</span> and <span class="process-math">\(k_3\text{,}\)</span> then we say <span class="process-math">\(\vec{v_1}, \vec{v_2}, \vec{v_3}\)</span> are linearly independent. Equivalently, all <span class="process-math">\(k_1, k_2\)</span> and <span class="process-math">\(k_3\)</span> satisfying<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-105" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-106">
+<span class="process-math">\(k_1 \vec{v_1} + k_2 \vec{v_2} + k_3 \vec{v_3} = 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-106" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-107">must be ALL ZERO: <span class="process-math">\(k_1 = k_2 = k_3 = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-107" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-108">(3) Write<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-108" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-109">
+<span class="process-math">\(\vec{v_1} = \left[ \begin{array}{c} a_1 \\ a_2 \\ a_3 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} b_1 \\ b_2 \\ b_3 \end{array} \right], \quad \vec{v_3} = \left[ \begin{array}{c} c_1 \\ c_2 \\ c_3 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-109" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-110">The left-hand side of the equation<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-110" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-111">
+<span class="process-math">\(k_1 \vec{v_1} + k_2 \vec{v_2} + k_3 \vec{v_3} = 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-111" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-112">can then be written as<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-112" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-113">
+<span class="process-math">\(k_1 \left[ \begin{array}{c} a_1 \\ a_2 \\ a_3 \end{array} \right] + k_2 \left[ \begin{array}{c} b_1 \\ b_2 \\ b_3 \end{array} \right] + k_3 \left[ \begin{array}{c} c_1 \\ c_2 \\ c_3 \end{array} \right] = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-113" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-114">Therefore the equation is simply<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-114" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-115">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 a_1 \amp b_1 \amp c_1 \\ 
 a_2 \amp b_2 \amp c_2 \\ 
 a_3 \amp b_3 \amp c_3 
-\end{array} \right] \left[ \begin{array}{c} k_1 \\ k_2 \\ k_3 \end{array} \right] = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-116">In other words, all we need to deal with is simply a homogeneous system of linear equations.</div>
-<div class="para" id="sec-linear-algebra-117">Like what we did in the previous section, we use row transformations to punch holes in the lower triangular part:</div>
-<div class="para" id="sec-linear-algebra-118"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right] \left[ \begin{array}{c} k_1 \\ k_2 \\ k_3 \end{array} \right] = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-115" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-116">In other words, all we need to deal with is simply a homogeneous system of linear equations.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-116" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-117">Like what we did in the previous section, we use row transformations to punch holes in the lower triangular part:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-117" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-118">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 a_1 \amp b_1 \amp c_1 \\ 
 a_2 \amp b_2 \amp c_2 \\ 
 a_3 \amp b_3 \amp c_3 
@@ -500,180 +665,340 @@ a_3 \amp b_3 \amp c_3
 * \amp * \amp * \\ 
 0 \amp * \amp * \\ 
 0 \amp 0 \amp * 
-\end{array} \right]\)</span></div>
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-118" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <ul class="disc" id="sec-linear-algebra-119">
-<li id="sec-linear-algebra-119-1"><div class="para" id="p-derived-sec-linear-algebra-119-1">If all diagonal entries are nonzero (equivalently, if the determinant of the matrix is nonzero), then we have linear independence.</div></li>
-<li id="sec-linear-algebra-119-2"><div class="para" id="p-derived-sec-linear-algebra-119-2">CAUTION! This only works when the matrix dimension is equal to the number of vectors. If say you have 4 vectors of dimension 3, then they are automatically linear dependent!</div></li>
-<li id="sec-linear-algebra-119-3"><div class="para" id="p-derived-sec-linear-algebra-119-3">Otherwise, we have linear dependence and solving the linear system should give a relation.</div></li>
+<li id="sec-linear-algebra-119-1">
+<div class="para" id="p-derived-sec-linear-algebra-119-1">If all diagonal entries are nonzero (equivalently, if the determinant of the matrix is nonzero), then we have linear independence.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-linear-algebra-119-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-linear-algebra-119-2">
+<div class="para" id="p-derived-sec-linear-algebra-119-2">CAUTION! This only works when the matrix dimension is equal to the number of vectors. If say you have 4 vectors of dimension 3, then they are automatically linear dependent!</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-linear-algebra-119-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-linear-algebra-119-3">
+<div class="para" id="p-derived-sec-linear-algebra-119-3">Otherwise, we have linear dependence and solving the linear system should give a relation.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-linear-algebra-119-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
-<div class="para" id="sec-linear-algebra-120">Example 1: Determine if the following vectors are linear independent.</div>
-<div class="para" id="sec-linear-algebra-121"><span class="process-math">\(\vec{v_1} = \left[ \begin{array}{c} 0 \\ 1 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} 1 \\ 0 \end{array} \right], \quad \vec{v_3} = \left[ \begin{array}{c} 1 \\ 1 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-122">Put <span class="process-math">\(\vec{v_1}, \vec{v_2}, \vec{v_3}\)</span> into a matrix and compute its determinant:</div>
-<div class="para" id="sec-linear-algebra-123"><span class="process-math">\(\left[ \begin{array}{ccc} 
+<div class="para" id="sec-linear-algebra-120">Example 1: Determine if the following vectors are linear independent.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-120" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-121">
+<span class="process-math">\(\vec{v_1} = \left[ \begin{array}{c} 0 \\ 1 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} 1 \\ 0 \end{array} \right], \quad \vec{v_3} = \left[ \begin{array}{c} 1 \\ 1 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-121" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-122">Put <span class="process-math">\(\vec{v_1}, \vec{v_2}, \vec{v_3}\)</span> into a matrix and compute its determinant:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-122" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-123">
+<span class="process-math">\(\left[ \begin{array}{ccc} 
 0 \amp 1 \amp 1 \\ 
 1 \amp 0 \amp 1 
-\end{array} \right] = 0 + 1 - 1 - 0 - 0 - 0 = 2 \neq 0.\)</span></div>
-<div class="para" id="sec-linear-algebra-124">So they are linearly independent.</div>
-<div class="para" id="sec-linear-algebra-125">If we look at the linear system</div>
-<div class="para" id="sec-linear-algebra-126"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right] = 0 + 1 - 1 - 0 - 0 - 0 = 2 \neq 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-123" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-124">So they are linearly independent.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-124" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-125">If we look at the linear system<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-125" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-126">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp 0 \amp 0 \\ 
 0 \amp 1 \amp 0 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-127">Switching <span class="process-math">\(r_1\)</span> and <span class="process-math">\(r_2\)</span> (note: switching two rows will change the sign of the determinant):</div>
-<div class="para" id="sec-linear-algebra-128"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-126" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-127">Switching <span class="process-math">\(r_1\)</span> and <span class="process-math">\(r_2\)</span> (note: switching two rows will change the sign of the determinant):<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-127" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-128">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp 0 \amp 1 \amp 0 \\ 
 0 \amp 1 \amp 1 \amp 0 \\ 
 1 \amp 0 \amp -1 \amp 0 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-129">Subtract the third row by the first:</div>
-<div class="para" id="sec-linear-algebra-130"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-128" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-129">Subtract the third row by the first:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-129" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-130">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp 0 \amp 1 \amp 0 \\ 
 0 \amp 1 \amp 1 \amp 0 \\ 
 0 \amp 1 \amp -2 \amp 0 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-131">Subtract the third row by the second:</div>
-<div class="para" id="sec-linear-algebra-132"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-130" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-131">Subtract the third row by the second:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-131" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-132">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp 0 \amp 1 \amp 0 \\ 
 0 \amp 1 \amp 1 \amp 0 \\ 
 0 \amp 0 \amp -3 \amp 0 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-133">One can see that all the diagonal entries are nonzero.</div>
-<div class="para" id="sec-linear-algebra-134">Example 2: Find a relation between the following vectors.</div>
-<div class="para" id="sec-linear-algebra-135"><span class="process-math">\(\vec{v_1} = \left[ \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} 0 \\ 1 \\ 1 \end{array} \right], \quad \vec{v_3} = \left[ \begin{array}{c} 1 \\ 2 \\ 1 \end{array} \right], \quad \vec{v_4} = \left[ \begin{array}{c} 1 \\ 2 \\ 2 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-136">Put <span class="process-math">\(\vec{v_1}, \vec{v_2}, \vec{v_3}, \vec{v_4}\)</span> into a matrix and form the linear system above:</div>
-<div class="para" id="sec-linear-algebra-137"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-132" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-133">One can see that all the diagonal entries are nonzero.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-133" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-134">Example 2: Find a relation between the following vectors.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-134" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-135">
+<span class="process-math">\(\vec{v_1} = \left[ \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} 0 \\ 1 \\ 1 \end{array} \right], \quad \vec{v_3} = \left[ \begin{array}{c} 1 \\ 2 \\ 1 \end{array} \right], \quad \vec{v_4} = \left[ \begin{array}{c} 1 \\ 2 \\ 2 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-135" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-136">Put <span class="process-math">\(\vec{v_1}, \vec{v_2}, \vec{v_3}, \vec{v_4}\)</span> into a matrix and form the linear system above:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-136" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-137">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp 0 \amp 1 \amp 0 \\ 
 1 \amp 1 \amp 2 \amp 0 \\ 
 0 \amp 1 \amp 2 \amp 0 
-\end{array} \right] \left[ \begin{array}{c} k_1 \\ k_2 \\ k_3 \\ k_4 \end{array} \right] = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-138">To solve it, we form the extended matrix:</div>
-<div class="para" id="sec-linear-algebra-139"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right] \left[ \begin{array}{c} k_1 \\ k_2 \\ k_3 \\ k_4 \end{array} \right] = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-137" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-138">To solve it, we form the extended matrix:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-138" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-139">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp 0 \amp 1 \amp 0 \\ 
 1 \amp 1 \amp 2 \amp 0 \\ 
 0 \amp 1 \amp 2 \amp 0 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-140">To punch holes on the lower triangular part, we first subtract the second row by the first row:</div>
-<div class="para" id="sec-linear-algebra-141"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-139" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-140">To punch holes on the lower triangular part, we first subtract the second row by the first row:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-140" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-141">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp 0 \amp 1 \amp 0 \\ 
 0 \amp 1 \amp 1 \amp 0 \\ 
 0 \amp 1 \amp 2 \amp 0 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-142">Then subtract the third row by the second:</div>
-<div class="para" id="sec-linear-algebra-143"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-141" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-142">Then subtract the third row by the second:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-142" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-143">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 1 \amp 0 \amp 1 \amp 0 \\ 
 0 \amp 1 \amp 1 \amp 0 \\ 
 0 \amp 0 \amp 1 \amp 0 
-\end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-144">(It seems that you have nonzero diagonal entries, but the additional column makes it possible to find nonzero solutions!)</div>
-<div class="para" id="sec-linear-algebra-145">The last row reads</div>
-<div class="para" id="sec-linear-algebra-146"><span class="process-math">\(k_3 = 0.\)</span></div>
-<div class="para" id="sec-linear-algebra-147">The second row reads</div>
-<div class="para" id="sec-linear-algebra-148"><span class="process-math">\(k_2 + k_4 = 0 \implies k_2 = -k_4.\)</span></div>
-<div class="para" id="sec-linear-algebra-149">The first row reads</div>
-<div class="para" id="sec-linear-algebra-150"><span class="process-math">\(k_1 + k_3 + k_4 = 0 \implies k_1 = -k_4.\)</span></div>
-<div class="para" id="sec-linear-algebra-151">Set <span class="process-math">\(k_4 = 1\)</span> and we have <span class="process-math">\(k_2 = -1, k_1 = -1.\)</span> So a linear relation is obtained, as</div>
-<div class="para" id="sec-linear-algebra-152"><span class="process-math">\(-1\vec{v_1} - 1\vec{v_2} + 1\vec{v_3} = 0.\)</span></div>
-<div class="para" id="sec-linear-algebra-153">4. Eigenvalues and Eigenvectors</div>
-<div class="para" id="sec-linear-algebra-154">(1) Let <span class="process-math">\(A\)</span> be a matrix and let <span class="process-math">\(\vec{x}\)</span> be a NONZERO vector. If the matrix-vector product <span class="process-math">\(A\vec{x}\)</span> is a multiple of <span class="process-math">\(\vec{x},\)</span> i.e.,</div>
-<div class="para" id="sec-linear-algebra-155"><span class="process-math">\(A\vec{x} = \lambda \vec{x}\)</span></div>
-<div class="para" id="sec-linear-algebra-156">Then the multiple <span class="process-math">\(\lambda\)</span> is called an eigenvalue of <span class="process-math">\(A,\)</span> and <span class="process-math">\(\vec{x}\)</span> is called an eigenvector of <span class="process-math">\(A\)</span> corresponding to the eigenvalue <span class="process-math">\(\lambda.\)</span>
+\end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-143" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-linear-algebra-157">(2) The condition is equivalent to the following system of linear equations</div>
-<div class="para" id="sec-linear-algebra-158"><span class="process-math">\((A - \lambda I)\vec{x} = 0.\)</span></div>
-<div class="para" id="sec-linear-algebra-159">To see more clearly, write</div>
-<div class="para" id="sec-linear-algebra-160"><span class="process-math">\(A = \left[ \begin{array}{ccc} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-161">Then the condition can be expressed as</div>
-<div class="para" id="sec-linear-algebra-162"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+<div class="para" id="sec-linear-algebra-144">(It seems that you have nonzero diagonal entries, but the additional column makes it possible to find nonzero solutions!)<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-144" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-145">The last row reads<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-145" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-146">
+<span class="process-math">\(k_3 = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-146" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-147">The second row reads<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-147" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-148">
+<span class="process-math">\(k_2 + k_4 = 0 \implies k_2 = -k_4.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-148" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-149">The first row reads<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-149" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-150">
+<span class="process-math">\(k_1 + k_3 + k_4 = 0 \implies k_1 = -k_4.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-150" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-151">Set <span class="process-math">\(k_4 = 1\)</span> and we have <span class="process-math">\(k_2 = -1, k_1 = -1.\)</span> So a linear relation is obtained, as<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-151" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-152">
+<span class="process-math">\(-1\vec{v_1} - 1\vec{v_2} + 1\vec{v_3} = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-152" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-153">4. Eigenvalues and Eigenvectors<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-153" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-154">(1) Let <span class="process-math">\(A\)</span> be a matrix and let <span class="process-math">\(\vec{x}\)</span> be a NONZERO vector. If the matrix-vector product <span class="process-math">\(A\vec{x}\)</span> is a multiple of <span class="process-math">\(\vec{x},\)</span> i.e.,<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-154" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-155">
+<span class="process-math">\(A\vec{x} = \lambda \vec{x}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-155" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-156">Then the multiple <span class="process-math">\(\lambda\)</span> is called an eigenvalue of <span class="process-math">\(A,\)</span> and <span class="process-math">\(\vec{x}\)</span> is called an eigenvector of <span class="process-math">\(A\)</span> corresponding to the eigenvalue <span class="process-math">\(\lambda.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-156" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-157">(2) The condition is equivalent to the following system of linear equations<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-157" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-158">
+<span class="process-math">\((A - \lambda I)\vec{x} = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-158" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-159">To see more clearly, write<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-159" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-160">
+<span class="process-math">\(A = \left[ \begin{array}{ccc} a_{11} \amp a_{12} \amp a_{13} \\ a_{21} \amp a_{22} \amp a_{23} \\ a_{31} \amp a_{32} \amp a_{33} \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-160" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-161">Then the condition can be expressed as<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-161" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-162">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 a_{11} - \lambda \amp a_{12} \amp a_{13} \\ 
 a_{21} \amp a_{22} - \lambda \amp a_{23} \\ 
 a_{31} \amp a_{32} \amp a_{33} - \lambda 
-\end{array} \right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-163">To have a nonzero solution to such a linear system, the determinant of the matrix must be zero. Therefore the eigenvalues of the matrix satisfy the polynomial equation</div>
-<div class="para" id="sec-linear-algebra-164"><span class="process-math">\(\text{det}(A - \lambda I) = 0.\)</span></div>
-<div class="para" id="sec-linear-algebra-165">Or in terms of matrices</div>
-<div class="para" id="sec-linear-algebra-166"><span class="process-math">\(\left| \begin{array}{ccc} 
+\end{array} \right] \left[ \begin{array}{c} x_1 \\ x_2 \\ x_3 \end{array} \right] = \left[ \begin{array}{c} 0 \\ 0 \\ 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-162" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-163">To have a nonzero solution to such a linear system, the determinant of the matrix must be zero. Therefore the eigenvalues of the matrix satisfy the polynomial equation<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-163" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-164">
+<span class="process-math">\(\text{det}(A - \lambda I) = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-164" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-165">Or in terms of matrices<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-165" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-166">
+<span class="process-math">\(\left| \begin{array}{ccc} 
 a_{11} - \lambda \amp a_{12} \amp a_{13} \\ 
 a_{21} \amp a_{22} - \lambda \amp a_{23} \\ 
 a_{31} \amp a_{32} \amp a_{33} - \lambda 
-\end{array} \right| = 0.\)</span></div>
-<div class="para" id="sec-linear-algebra-167">Once the roots of the above polynomial are found, put them into the above linear system and solve it, you will get the eigenvectors.</div>
-<div class="para" id="sec-linear-algebra-168">(3) In summary, to find the eigenvalues and eigenvectors for a given matrix <span class="process-math">\(A:\)</span>
+\end{array} \right| = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-166" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-167">Once the roots of the above polynomial are found, put them into the above linear system and solve it, you will get the eigenvectors.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-167" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-168">(3) In summary, to find the eigenvalues and eigenvectors for a given matrix <span class="process-math">\(A:\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-168" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <ul class="disc" id="sec-linear-algebra-169">
-<li id="sec-linear-algebra-169-1"><div class="para" id="p-derived-sec-linear-algebra-169-1">Find the eigenvalues by solving the polynomial equation <span class="process-math">\(\text{det}(A - \lambda I) = 0.\)</span>
-</div></li>
-<li id="sec-linear-algebra-169-2"><div class="para" id="p-derived-sec-linear-algebra-169-2">Solve the linear system specified above for EACH eigenvalue <span class="process-math">\(\lambda\)</span> to get the corresponding eigenvector.</div></li>
+<li id="sec-linear-algebra-169-1">
+<div class="para" id="p-derived-sec-linear-algebra-169-1">Find the eigenvalues by solving the polynomial equation <span class="process-math">\(\text{det}(A - \lambda I) = 0.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-linear-algebra-169-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-linear-algebra-169-2">
+<div class="para" id="p-derived-sec-linear-algebra-169-2">Solve the linear system specified above for EACH eigenvalue <span class="process-math">\(\lambda\)</span> to get the corresponding eigenvector.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-linear-algebra-169-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
-<div class="para" id="sec-linear-algebra-170">Example 1. Find the eigenvalues and corresponding eigenvectors for the matrix</div>
-<div class="para" id="sec-linear-algebra-171"><span class="process-math">\(A = \left[ \begin{array}{ccc} -3 \amp \frac{3}{4} \amp 1 \\ -5 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-172">Step 1: Find the eigenvalues:</div>
-<div class="para" id="sec-linear-algebra-173"><span class="process-math">\(\text{det}(A - \lambda I) = \left| \begin{array}{ccc} -3 - \lambda \amp \frac{3}{4} \amp 1 \\ -5 \amp -1 - \lambda \amp 0 \\ 0 \amp 0 \amp 1 \end{array} \right| = (-3 - \lambda)(-1 - \lambda)(1) + \frac{15}{4} \lambda^2 + 3\lambda = 0\)</span></div>
-<div class="para" id="sec-linear-algebra-174">Solving the quadratic equation, one gets the eigenvalues</div>
-<div class="para" id="sec-linear-algebra-175"><span class="process-math">\(\lambda_1 = -\frac{1}{2}, \quad \lambda_2 = -\frac{3}{2}.\)</span></div>
-<div class="para" id="sec-linear-algebra-176">Step 2: Find an eigenvector for each of the eigenvalues:</div>
-<div class="para" id="sec-linear-algebra-177">For <span class="process-math">\(\lambda = -\frac{1}{2},\)</span> solve the linear system</div>
-<div class="para" id="sec-linear-algebra-178"><span class="process-math">\(\left[ \begin{array}{ccc|c} -3 + \frac{1}{2} \amp \frac{3}{4} \amp 1 \amp 0 \\ -5 \amp 1 + \frac{1}{2} \amp 0 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -\frac{5}{2} \amp \frac{3}{4} \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-179">Punch a hole on the lower-left corner:</div>
-<div class="para" id="sec-linear-algebra-180"><span class="process-math">\(\left[ \begin{array}{ccc|c} -\frac{5}{2} \amp \frac{3}{4} \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-181">(If you did not get a full zero row, that means you messed up and DON’T YOU DARE TO CONTINUE!)</div>
-<div class="para" id="sec-linear-algebra-182">So the first row reads</div>
-<div class="para" id="sec-linear-algebra-183"><span class="process-math">\(-5x_1 + \frac{3}{4}x_2 = 0 \implies x_1 = \frac{3}{4}x_2.\)</span></div>
-<div class="para" id="sec-linear-algebra-184">Set <span class="process-math">\(x_2 = 10\)</span> (since I hate fractions), then <span class="process-math">\(x_1 = 3.\)</span> So</div>
+<div class="para" id="sec-linear-algebra-170">Example 1. Find the eigenvalues and corresponding eigenvectors for the matrix<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-170" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-171">
+<span class="process-math">\(A = \left[ \begin{array}{ccc} -3 \amp \frac{3}{4} \amp 1 \\ -5 \amp 0 \amp 0 \\ 0 \amp 0 \amp 1 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-171" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-172">Step 1: Find the eigenvalues:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-172" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-173">
+<span class="process-math">\(\text{det}(A - \lambda I) = \left| \begin{array}{ccc} -3 - \lambda \amp \frac{3}{4} \amp 1 \\ -5 \amp -1 - \lambda \amp 0 \\ 0 \amp 0 \amp 1 \end{array} \right| = (-3 - \lambda)(-1 - \lambda)(1) + \frac{15}{4} \lambda^2 + 3\lambda = 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-173" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-174">Solving the quadratic equation, one gets the eigenvalues<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-174" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-175">
+<span class="process-math">\(\lambda_1 = -\frac{1}{2}, \quad \lambda_2 = -\frac{3}{2}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-175" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-176">Step 2: Find an eigenvector for each of the eigenvalues:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-176" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-177">For <span class="process-math">\(\lambda = -\frac{1}{2},\)</span> solve the linear system<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-177" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-178">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} -3 + \frac{1}{2} \amp \frac{3}{4} \amp 1 \amp 0 \\ -5 \amp 1 + \frac{1}{2} \amp 0 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -\frac{5}{2} \amp \frac{3}{4} \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-178" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-179">Punch a hole on the lower-left corner:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-179" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-180">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} -\frac{5}{2} \amp \frac{3}{4} \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-180" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-181">(If you did not get a full zero row, that means you messed up and DON’T YOU DARE TO CONTINUE!)<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-181" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-182">So the first row reads<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-182" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-183">
+<span class="process-math">\(-5x_1 + \frac{3}{4}x_2 = 0 \implies x_1 = \frac{3}{4}x_2.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-183" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-184">Set <span class="process-math">\(x_2 = 10\)</span> (since I hate fractions), then <span class="process-math">\(x_1 = 3.\)</span> So<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-184" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para" id="sec-linear-algebra-185">
-<span class="process-math">\(\left[ \begin{array}{c} 3 \\ 10 \\ x_3 \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_1 = -\frac{1}{2}.\)</span>
+<span class="process-math">\(\left[ \begin{array}{c} 3 \\ 10 \\ x_3 \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_1 = -\frac{1}{2}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-185" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-linear-algebra-186">YOU ARE NOT DONE YET, there is another eigenvector to deal with!</div>
-<div class="para" id="sec-linear-algebra-187">For <span class="process-math">\(\lambda = -\frac{3}{2},\)</span> solve the linear system</div>
-<div class="para" id="sec-linear-algebra-188"><span class="process-math">\(\left[ \begin{array}{ccc|c} -3 + \frac{3}{2} \amp \frac{3}{4} \amp 1 \amp 0 \\ -5 \amp 1 + \frac{3}{2} \amp 0 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -\frac{3}{2} \amp \frac{3}{4} \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-189">Punch a hole on the lower-left corner:</div>
-<div class="para" id="sec-linear-algebra-190"><span class="process-math">\(\left[ \begin{array}{ccc|c} -\frac{3}{2} \amp \frac{3}{4} \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-191">The first row reads</div>
-<div class="para" id="sec-linear-algebra-192"><span class="process-math">\(\frac{3}{2}x_1 + \frac{3}{4}x_2 = 0 \implies x_1 = -\frac{1}{2}x_2.\)</span></div>
-<div class="para" id="sec-linear-algebra-193">Put <span class="process-math">\(x_2 = 2\)</span> to get <span class="process-math">\(x_1 = 1\)</span> and therefore</div>
+<div class="para" id="sec-linear-algebra-186">YOU ARE NOT DONE YET, there is another eigenvector to deal with!<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-186" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-187">For <span class="process-math">\(\lambda = -\frac{3}{2},\)</span> solve the linear system<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-187" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-188">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} -3 + \frac{3}{2} \amp \frac{3}{4} \amp 1 \amp 0 \\ -5 \amp 1 + \frac{3}{2} \amp 0 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -\frac{3}{2} \amp \frac{3}{4} \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-188" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-189">Punch a hole on the lower-left corner:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-189" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-190">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} -\frac{3}{2} \amp \frac{3}{4} \amp 0 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-190" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-191">The first row reads<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-191" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-192">
+<span class="process-math">\(\frac{3}{2}x_1 + \frac{3}{4}x_2 = 0 \implies x_1 = -\frac{1}{2}x_2.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-192" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-193">Put <span class="process-math">\(x_2 = 2\)</span> to get <span class="process-math">\(x_1 = 1\)</span> and therefore<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-193" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para" id="sec-linear-algebra-194">
-<span class="process-math">\(\left[ \begin{array}{c} 1 \\ 2 \\ x_3 \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_2 = -\frac{3}{2}.\)</span>
+<span class="process-math">\(\left[ \begin{array}{c} 1 \\ 2 \\ x_3 \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_2 = -\frac{3}{2}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-194" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-linear-algebra-195">(Now we are done!)</div>
-<div class="para" id="sec-linear-algebra-196">Example 2. Find the eigenvalues and corresponding eigenvectors for the matrix</div>
-<div class="para" id="sec-linear-algebra-197"><span class="process-math">\(A = \left[ \begin{array}{ccc} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp -2 \\ 3 \amp 2 \amp 1 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-198">Step 1: Find the eigenvalues:</div>
-<div class="para" id="sec-linear-algebra-199"><span class="process-math">\(\text{det}(A - \lambda I) = \left| \begin{array}{ccc} 1 - \lambda \amp 0 \amp 0 \\ 2 \amp 1 - \lambda \amp -2 \\ 3 \amp 2 \amp 1 - \lambda \end{array} \right| = (1 - \lambda)\left[(1 - \lambda)^2 + 4\right] = 0\)</span></div>
-<div class="para" id="sec-linear-algebra-200">Solving the equation, one gets the eigenvalue</div>
-<div class="para" id="sec-linear-algebra-201"><span class="process-math">\(\lambda_1 = 1, \quad \lambda_2 = 1 + 2i, \quad \lambda_3 = 1 - 2i.\)</span></div>
-<div class="para" id="sec-linear-algebra-202">Step 2: Find an eigenvector for each of the eigenvalues:</div>
-<div class="para" id="sec-linear-algebra-203">For <span class="process-math">\(\lambda = 1,\)</span> solve the linear system</div>
-<div class="para" id="sec-linear-algebra-204"><span class="process-math">\(\left[ \begin{array}{ccc|c} 1 - 1 \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 - 1 \amp -2 \amp 0 \\ 3 \amp 2 \amp 1 - 1 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} 0 \amp 0 \amp 0 \amp 0 \\ 2 \amp 0 \amp -2 \amp 0 \\ 3 \amp 2 \amp 0 \amp 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-205">(As long as there are enough holes in the matrix, you don’t have to punch more)</div>
-<div class="para" id="sec-linear-algebra-206">The second row reads</div>
-<div class="para" id="sec-linear-algebra-207"><span class="process-math">\(2x_1 - 2x_3 = 0 \implies x_1 = x_3.\)</span></div>
-<div class="para" id="sec-linear-algebra-208">The third row reads</div>
-<div class="para" id="sec-linear-algebra-209"><span class="process-math">\(3x_1 + 2x_2 = 0 \implies 3x_1 + 2x_2 = 0 \implies x_2 = -\frac{3}{2}x_1.\)</span></div>
-<div class="para" id="sec-linear-algebra-210">Set <span class="process-math">\(x_2 = 3,\)</span> then <span class="process-math">\(x_1 = -2\)</span> and <span class="process-math">\(x_3 = -2.\)</span> So</div>
+<div class="para" id="sec-linear-algebra-195">(Now we are done!)<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-195" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-196">Example 2. Find the eigenvalues and corresponding eigenvectors for the matrix<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-196" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-197">
+<span class="process-math">\(A = \left[ \begin{array}{ccc} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp -2 \\ 3 \amp 2 \amp 1 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-197" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-198">Step 1: Find the eigenvalues:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-198" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-199">
+<span class="process-math">\(\text{det}(A - \lambda I) = \left| \begin{array}{ccc} 1 - \lambda \amp 0 \amp 0 \\ 2 \amp 1 - \lambda \amp -2 \\ 3 \amp 2 \amp 1 - \lambda \end{array} \right| = (1 - \lambda)\left[(1 - \lambda)^2 + 4\right] = 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-199" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-200">Solving the equation, one gets the eigenvalue<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-200" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-201">
+<span class="process-math">\(\lambda_1 = 1, \quad \lambda_2 = 1 + 2i, \quad \lambda_3 = 1 - 2i.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-201" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-202">Step 2: Find an eigenvector for each of the eigenvalues:<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-202" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-203">For <span class="process-math">\(\lambda = 1,\)</span> solve the linear system<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-203" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-204">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 1 - 1 \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 - 1 \amp -2 \amp 0 \\ 3 \amp 2 \amp 1 - 1 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} 0 \amp 0 \amp 0 \amp 0 \\ 2 \amp 0 \amp -2 \amp 0 \\ 3 \amp 2 \amp 0 \amp 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-204" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-205">(As long as there are enough holes in the matrix, you don’t have to punch more)<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-205" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-206">The second row reads<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-206" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-207">
+<span class="process-math">\(2x_1 - 2x_3 = 0 \implies x_1 = x_3.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-207" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-208">The third row reads<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-208" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-209">
+<span class="process-math">\(3x_1 + 2x_2 = 0 \implies 3x_1 + 2x_2 = 0 \implies x_2 = -\frac{3}{2}x_1.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-209" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-210">Set <span class="process-math">\(x_2 = 3,\)</span> then <span class="process-math">\(x_1 = -2\)</span> and <span class="process-math">\(x_3 = -2.\)</span> So<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-210" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para" id="sec-linear-algebra-211">
-<span class="process-math">\(\left[ \begin{array}{c} -2 \\ 3 \\ -2 \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_1 = 1.\)</span>
+<span class="process-math">\(\left[ \begin{array}{c} -2 \\ 3 \\ -2 \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_1 = 1.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-211" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-linear-algebra-212">For <span class="process-math">\(\lambda = 1 + 2i,\)</span> solve the linear system</div>
-<div class="para" id="sec-linear-algebra-213"><span class="process-math">\(\left[ \begin{array}{ccc|c} 1 - (1 + 2i) \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 - (1 + 2i) \amp -2 \amp 0 \\ 3 \amp 2 \amp 1 - (1 + 2i) \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -2i \amp 0 \amp 0 \amp 0 \\ 2 \amp -2i \amp -2 \amp 0 \\ 3 \amp 2 \amp -2i \amp 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-linear-algebra-214">The first row reads</div>
-<div class="para" id="sec-linear-algebra-215"><span class="process-math">\(-2i x_1 = 0 \implies x_1 = 0.\)</span></div>
-<div class="para" id="sec-linear-algebra-216">The second equation reads</div>
-<div class="para" id="sec-linear-algebra-217"><span class="process-math">\(-2i x_2 - 2x_3 = -2 \implies x_3 = -i x_2.\)</span></div>
-<div class="para" id="sec-linear-algebra-218">The third equation reads</div>
-<div class="para" id="sec-linear-algebra-219"><span class="process-math">\(0 = 2x_2 - 2x_3 = 2x_2 - 2(-i x_2) = 0.\)</span></div>
-<div class="para" id="sec-linear-algebra-220">(It seems that you have nonzero diagonal entries, but the additional column makes it possible to find nonzero solutions!)</div>
-<div class="para" id="sec-linear-algebra-221">The last row reads</div>
-<div class="para" id="sec-linear-algebra-222"><span class="process-math">\(k_3 = 0.\)</span></div>
-<div class="para" id="sec-linear-algebra-223">So it should be redundant (otherwise you messed up!). Put <span class="process-math">\(x_2 = 1\)</span> to get <span class="process-math">\(x_3 = -i\)</span> and therefore</div>
+<div class="para" id="sec-linear-algebra-212">For <span class="process-math">\(\lambda = 1 + 2i,\)</span> solve the linear system<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-212" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-213">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 1 - (1 + 2i) \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 - (1 + 2i) \amp -2 \amp 0 \\ 3 \amp 2 \amp 1 - (1 + 2i) \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -2i \amp 0 \amp 0 \amp 0 \\ 2 \amp -2i \amp -2 \amp 0 \\ 3 \amp 2 \amp -2i \amp 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-213" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-214">The first row reads<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-214" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-215">
+<span class="process-math">\(-2i x_1 = 0 \implies x_1 = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-215" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-216">The second equation reads<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-216" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-217">
+<span class="process-math">\(-2i x_2 - 2x_3 = -2 \implies x_3 = -i x_2.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-217" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-218">The third equation reads<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-218" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-219">
+<span class="process-math">\(0 = 2x_2 - 2x_3 = 2x_2 - 2(-i x_2) = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-219" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-220">(It seems that you have nonzero diagonal entries, but the additional column makes it possible to find nonzero solutions!)<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-220" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-221">The last row reads<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-221" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-222">
+<span class="process-math">\(k_3 = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-222" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-223">So it should be redundant (otherwise you messed up!). Put <span class="process-math">\(x_2 = 1\)</span> to get <span class="process-math">\(x_3 = -i\)</span> and therefore<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-223" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para" id="sec-linear-algebra-224">
-<span class="process-math">\(\left[ \begin{array}{c} 0 \\ 1 \\ -i \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_2 = 1 + 2i.\)</span>
+<span class="process-math">\(\left[ \begin{array}{c} 0 \\ 1 \\ -i \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_2 = 1 + 2i.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-224" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-linear-algebra-225">For <span class="process-math">\(\lambda = 1 - 2i,\)</span> the eigenvector can actually be obtained by taking the conjugate of the eigenvector to <span class="process-math">\(\lambda_2,\)</span> namely, we should have</div>
+<div class="para" id="sec-linear-algebra-225">For <span class="process-math">\(\lambda = 1 - 2i,\)</span> the eigenvector can actually be obtained by taking the conjugate of the eigenvector to <span class="process-math">\(\lambda_2,\)</span> namely, we should have<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-225" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para" id="sec-linear-algebra-226">
-<span class="process-math">\(\left[ \begin{array}{c} 0 \\ 1 \\ i \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_3 = 1 - 2i.\)</span>
+<span class="process-math">\(\left[ \begin{array}{c} 0 \\ 1 \\ i \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_3 = 1 - 2i.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-226" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-linear-algebra-227">Please do the computations to verify this.</div>
-<div class="para" id="sec-linear-algebra-228">Remark. The technique of computing eigenvectors and eigenvalues is crucial for solving linear systems of ODE with constant coefficients, as you will see in 7.5, 7.6, and 7.8.</div>
-<div class="para" id="sec-linear-algebra-229">Remark. Actually, the above example tells the secret that, when dealing with complex eigenvalues, it suffices to look at only one of them. You will experience the same again in 7.6.</div></section></div>
+<div class="para" id="sec-linear-algebra-227">Please do the computations to verify this.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-227" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-228">Remark. The technique of computing eigenvectors and eigenvalues is crucial for solving linear systems of ODE with constant coefficients, as you will see in 7.5, 7.6, and 7.8.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-228" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-linear-algebra-229">Remark. Actually, the above example tells the secret that, when dealing with complex eigenvalues, it suffices to look at only one of them. You will experience the same again in 7.6.<div class="autopermalink" data-description="Paragraph"><a href="#sec-linear-algebra-229" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 4.1: A crash course of linear algebra"><a href="#sec-linear-algebra" title="Copy heading and permalink for Section 4.1: A crash course of linear algebra">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="ch-linear-systems.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-system-linear-ODEs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

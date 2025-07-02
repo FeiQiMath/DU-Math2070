@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.6';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -275,7 +275,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integral Transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Laplace transforms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-4" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Summary of basic formulas for Laplace transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-5" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
@@ -296,7 +304,8 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-separable-equations"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.6</span><span class="space"> </span><span class="title">Separable Equations</span>
 </h2>
-<div class="para" id="sec-separable-equations-2">In general, a nonlinear ODE is very difficult to solve. We can only handle a few special types of nonlinear ODEs.</div>
+<div class="para" id="sec-separable-equations-2">In general, a nonlinear ODE is very difficult to solve. We can only handle a few special types of nonlinear ODEs.<div class="autopermalink" data-description="Paragraph"><a href="#sec-separable-equations-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <section class="subsection" id="subsec-separable-equations-1"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.6.1</span><span class="space"> </span><span class="title">Form of a separable ODE</span>
 </h3>
@@ -320,16 +329,20 @@ eBookConfig.enable_chatcodes =  false;
 \end{equation*}
 </div>
 <div class="para">The process yields a one-parameter family of <em class="alert">implicit</em> solutions.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-separable-equations-1-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="ex-separable-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.1</span><span class="period">.</span><span class="space"> </span><span class="title">Solve the separable ODE <span class="process-math">\(\dfrac{dy}{dx} = \dfrac{e^x - x}{e^{-y} + y}\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="ex-separable-1-2-1">
-<li id="ex-separable-1-2-1-1"><div class="para" id="p-derived-ex-separable-1-2-1-1">Separate the variables:<div class="displaymath process-math">
+<li id="ex-separable-1-2-1-1">
+<div class="para" id="p-derived-ex-separable-1-2-1-1">Separate the variables:<div class="displaymath process-math">
 \begin{equation*}
 (e^x - x)dx = (e^{-y} + y)dy
 \end{equation*}
 </div>
-</div></li>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-separable-1-2-1-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 <li id="ex-separable-1-2-1-2">
 <div class="para logical" id="ex-separable-1-2-1-2-1">
 <div class="para">Integrate both sides:</div>
@@ -339,18 +352,25 @@ eBookConfig.enable_chatcodes =  false;
 \implies \amp e^x - \dfrac{1}{2}x^2 = -e^{-y} + \dfrac{1}{2}y^2 + C
 \end{align*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-separable-1-2-1-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-separable-1-2-1-2-2">We thus obtain a one-parameter family of <em class="emphasis">implicit</em> solutions</div>
+<div class="para" id="ex-separable-1-2-1-2-2">We thus obtain a one-parameter family of <em class="emphasis">implicit</em> solutions<div class="autopermalink" data-description="Paragraph"><a href="#ex-separable-1-2-1-2-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-separable-1-2-1-2" title="Copy heading and permalink for Item">🔗</a></div>
 </li>
-</ul></article></details><details id="ex-separable-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</ul>
+<div class="autopermalink" data-description="Example 1.6.1: Solve the separable ODE \dfrac{dy}{dx} = \dfrac{e^x - x}{e^{-y} + y}"><a href="#ex-separable-1" title="Copy heading and permalink for Example 1.6.1: Solve the separable ODE \dfrac{dy}{dx} = \dfrac{e^x - x}{e^{-y} + y}">🔗</a></div></article></details><details id="ex-separable-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Solve the IVP <span class="process-math">\(\dfrac{dy}{dx} = \dfrac{x^2 + \sin x}{y}, \quad y(0) = 1\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="ex-separable-2-2-1">
-<li id="ex-separable-2-2-1-1"><div class="para" id="p-derived-ex-separable-2-2-1-1">Separate the variables:<div class="displaymath process-math">
+<li id="ex-separable-2-2-1-1">
+<div class="para" id="p-derived-ex-separable-2-2-1-1">Separate the variables:<div class="displaymath process-math">
 \begin{equation*}
 ydy = (x^2 + \sin x)dx
 \end{equation*}
 </div>
-</div></li>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-separable-2-2-1-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 <li id="ex-separable-2-2-1-2">
 <div class="para logical" id="ex-separable-2-2-1-2-1">
 <div class="para">Integrate both sides:</div>
@@ -360,8 +380,11 @@ ydy = (x^2 + \sin x)dx
 \implies \amp \dfrac{1}{2}y^2 = \dfrac{1}{3}x^3 - \cos x + C
 \end{align*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-separable-2-2-1-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-separable-2-2-1-2-2">We thus obtain a one-parameter family of <em class="emphasis">implicit</em> solutions</div>
+<div class="para" id="ex-separable-2-2-1-2-2">We thus obtain a one-parameter family of <em class="emphasis">implicit</em> solutions<div class="autopermalink" data-description="Paragraph"><a href="#ex-separable-2-2-1-2-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-separable-2-2-1-2" title="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="ex-separable-2-2-1-3">
 <div class="para logical" id="ex-separable-2-2-1-3-1">
@@ -371,6 +394,7 @@ ydy = (x^2 + \sin x)dx
 y(0) = 1 \implies \dfrac{1}{2} = 0 - 1 + C \implies C = \dfrac{3}{2}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-separable-2-2-1-3-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-separable-2-2-1-3-2">
 <div class="para">We thus obtain a particular implicit solution</div>
@@ -379,7 +403,9 @@ y(0) = 1 \implies \dfrac{1}{2} = 0 - 1 + C \implies C = \dfrac{3}{2}
 \dfrac{1}{2}y^2 = \dfrac{1}{3}x^3 - \cos x + \dfrac{3}{2}
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-separable-2-2-1-3-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
+<div class="autopermalink" data-description="Item"><a href="#ex-separable-2-2-1-3" title="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="ex-separable-2-2-1-4">
 <div class="para logical" id="ex-separable-2-2-1-4-1">
@@ -390,6 +416,7 @@ y(0) = 1 \implies \dfrac{1}{2} = 0 - 1 + C \implies C = \dfrac{3}{2}
 \amp \implies y = \pm \sqrt{\dfrac{2}{3}x^3 - 2\cos x + 3}
 \end{align*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-separable-2-2-1-4-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-separable-2-2-1-4-2">
 <div class="para">Since <span class="process-math">\(y(0) = 1\text{,}\)</span> we should take the positive branch. So</div>
@@ -399,13 +426,18 @@ y = \sqrt{\dfrac{2}{3}x^3 - 2\cos x + 3}
 \end{equation*}
 </div>
 <div class="para">is the explicit solution of the IVP.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-separable-2-2-1-4-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
+<div class="autopermalink" data-description="Item"><a href="#ex-separable-2-2-1-4" title="Copy heading and permalink for Item">🔗</a></div>
 </li>
-<li id="ex-separable-2-2-1-5"><div class="para" id="p-derived-ex-separable-2-2-1-5">The solution makes sense when<div class="displaymath process-math">
+<li id="ex-separable-2-2-1-5">
+<div class="para" id="p-derived-ex-separable-2-2-1-5">The solution makes sense when<div class="displaymath process-math">
 \begin{equation*}
 \dfrac{2}{3}x^3 - 2\cos x + 3 \geq 0.
 \end{equation*}
-</div>Solving this inequality is not possible without a computer. So we will leave it as is.</div></li>
+</div>Solving this inequality is not possible without a computer. So we will leave it as is.</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-separable-2-2-1-5" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul> <div class="para logical" id="ex-separable-2-2-2">
 <div class="para">Conclusion: The solution is</div>
 <div class="displaymath process-math">
@@ -419,37 +451,64 @@ y = \sqrt{\dfrac{2}{3}x^3 - 2\cos x + 3}.
 \dfrac{2}{3}x^3 - 2\cos x + 3 \geq 0.
 \end{equation*}
 </div>
-</div></article></details></section><section class="subsection" id="subsec-implicit-vs-explicit"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-separable-2-2-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.6.2: Solve the IVP \dfrac{dy}{dx} = \dfrac{x^2 + \sin x}{y}, \quad y(0) = 1"><a href="#ex-separable-2" title="Copy heading and permalink for Example 1.6.2: Solve the IVP \dfrac{dy}{dx} = \dfrac{x^2 + \sin x}{y}, \quad y(0) = 1">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 1.6.1: Form of a separable ODE"><a href="#subsec-separable-equations-1" title="Copy heading and permalink for Subsection 1.6.1: Form of a separable ODE">🔗</a></div></section><section class="subsection" id="subsec-implicit-vs-explicit"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.6.2</span><span class="space"> </span><span class="title">Implicit solution vs explicit solution</span>
 </h3>
-<div class="para" id="subsec-implicit-vs-explicit-2">In this section, we discuss the difference between an implicit solution and an explicit solution.</div>
+<div class="para" id="subsec-implicit-vs-explicit-2">In this section, we discuss the difference between an implicit solution and an explicit solution.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-implicit-vs-explicit-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <ul class="disc" id="subsec-implicit-vs-explicit-3">
-<li id="subsec-implicit-vs-explicit-3-1"><div class="para" id="p-derived-subsec-implicit-vs-explicit-3-1">If you are given an ODE without initial values, then a one-parameter family of <em class="emphasis">implicit</em> solutions is sufficient.</div></li>
-<li id="subsec-implicit-vs-explicit-3-2"><div class="para" id="p-derived-subsec-implicit-vs-explicit-3-2">If you are given an IVP, whenever possible, you should try to get the <em class="emphasis">explicit</em> solution and the <em class="emphasis">interval of definition</em> (the interval where the solution is defined).</div></li>
+<li id="subsec-implicit-vs-explicit-3-1">
+<div class="para" id="p-derived-subsec-implicit-vs-explicit-3-1">If you are given an ODE without initial values, then a one-parameter family of <em class="emphasis">implicit</em> solutions is sufficient.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-implicit-vs-explicit-3-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-implicit-vs-explicit-3-2">
+<div class="para" id="p-derived-subsec-implicit-vs-explicit-3-2">If you are given an IVP, whenever possible, you should try to get the <em class="emphasis">explicit</em> solution and the <em class="emphasis">interval of definition</em> (the interval where the solution is defined).</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-implicit-vs-explicit-3-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
 <article class="remark remark-like" id="subsec-implicit-vs-explicit-4"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.6.3</span><span class="period">.</span>
 </h4>
 <ul class="disc" id="subsec-implicit-vs-explicit-4-1">
-<li id="subsec-implicit-vs-explicit-4-1-1"><div class="para" id="p-derived-subsec-implicit-vs-explicit-4-1-1">Suppose we have an initial condition specified for the ODE in <a href="sec-separable-equations.html#ex-separable-1" class="xref" data-knowl="./knowl/xref/ex-separable-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.1: Solve the separable ODE \dfrac{dy}{dx} = \dfrac{e^x - x}{e^{-y} + y}">Example 1.6.1</a>, which determines a definite <span class="process-math">\(C\text{.}\)</span> But it is impossible to solve for <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(x\)</span> to get the explicit solution. In that case, we have to be satisfied with the implicit solution and ask a computer to handle the function values.</div></li>
-<li id="subsec-implicit-vs-explicit-4-1-2"><div class="para" id="p-derived-subsec-implicit-vs-explicit-4-1-2">In <a href="sec-separable-equations.html#ex-separable-2" class="xref" data-knowl="./knowl/xref/ex-separable-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.2: Solve the IVP \dfrac{dy}{dx} = \dfrac{x^2 + \sin x}{y}, \quad y(0) = 1">Example 1.6.2</a>, we managed to solve for <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(x\text{,}\)</span> but was not able to solve for the interval of definition by hand. Nevertheless, we can still ask a computer to solve for the interval of definition. For <a href="sec-separable-equations.html#ex-separable-2" class="xref" data-knowl="./knowl/xref/ex-separable-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.2: Solve the IVP \dfrac{dy}{dx} = \dfrac{x^2 + \sin x}{y}, \quad y(0) = 1">Example 1.6.2</a>, the computer would say that the solution makes sense on <span class="process-math">\([-1.69533, +\infty)\text{.}\)</span> But we should exclude the endpoint <span class="process-math">\(-1.69533\)</span> and use <span class="process-math">\((-1.69533, +\infty)\)</span> instead, because the function is not differentiable at the boundary point. Excluding the boundary points and use an open interval is a convention. But exceptions do exist. We shall not require this technical matter in this course.</div></li>
-<li id="subsec-implicit-vs-explicit-4-1-3"><div class="para" id="p-derived-subsec-implicit-vs-explicit-4-1-3">The interval of definition, as its name hints, should consist of only one interval that contains the initial <span class="process-math">\(x\)</span>-value. In case the solution is defined on multiple intervals, we should pick the interval that contains the initial <span class="process-math">\(x\)</span>-value.</div></li>
-</ul></article><details id="ex-separable-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<li id="subsec-implicit-vs-explicit-4-1-1">
+<div class="para" id="p-derived-subsec-implicit-vs-explicit-4-1-1">Suppose we have an initial condition specified for the ODE in <a href="sec-separable-equations.html#ex-separable-1" class="xref" data-knowl="./knowl/xref/ex-separable-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.1: Solve the separable ODE \dfrac{dy}{dx} = \dfrac{e^x - x}{e^{-y} + y}">Example 1.6.1</a>, which determines a definite <span class="process-math">\(C\text{.}\)</span> But it is impossible to solve for <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(x\)</span> to get the explicit solution. In that case, we have to be satisfied with the implicit solution and ask a computer to handle the function values.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-implicit-vs-explicit-4-1-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-implicit-vs-explicit-4-1-2">
+<div class="para" id="p-derived-subsec-implicit-vs-explicit-4-1-2">In <a href="sec-separable-equations.html#ex-separable-2" class="xref" data-knowl="./knowl/xref/ex-separable-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.2: Solve the IVP \dfrac{dy}{dx} = \dfrac{x^2 + \sin x}{y}, \quad y(0) = 1">Example 1.6.2</a>, we managed to solve for <span class="process-math">\(y\)</span> in terms of <span class="process-math">\(x\text{,}\)</span> but was not able to solve for the interval of definition by hand. Nevertheless, we can still ask a computer to solve for the interval of definition. For <a href="sec-separable-equations.html#ex-separable-2" class="xref" data-knowl="./knowl/xref/ex-separable-2.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.2: Solve the IVP \dfrac{dy}{dx} = \dfrac{x^2 + \sin x}{y}, \quad y(0) = 1">Example 1.6.2</a>, the computer would say that the solution makes sense on <span class="process-math">\([-1.69533, +\infty)\text{.}\)</span> But we should exclude the endpoint <span class="process-math">\(-1.69533\)</span> and use <span class="process-math">\((-1.69533, +\infty)\)</span> instead, because the function is not differentiable at the boundary point. Excluding the boundary points and use an open interval is a convention. But exceptions do exist. We shall not require this technical matter in this course.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-implicit-vs-explicit-4-1-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-implicit-vs-explicit-4-1-3">
+<div class="para" id="p-derived-subsec-implicit-vs-explicit-4-1-3">The interval of definition, as its name hints, should consist of only one interval that contains the initial <span class="process-math">\(x\)</span>-value. In case the solution is defined on multiple intervals, we should pick the interval that contains the initial <span class="process-math">\(x\)</span>-value.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-implicit-vs-explicit-4-1-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Remark 1.6.3"><a href="#subsec-implicit-vs-explicit-4" title="Copy heading and permalink for Remark 1.6.3">🔗</a></div></article><details id="ex-separable-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.4</span><span class="period">.</span><span class="space"> </span><span class="title">Solve the ODE <span class="process-math">\(y' = xy^3(1 + x^2)^{-1/2}\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="ex-separable-3-2-1">
-<li id="ex-separable-3-2-1-1"><div class="para" id="p-derived-ex-separable-3-2-1-1">Separate the variables:<div class="displaymath process-math">
+<li id="ex-separable-3-2-1-1">
+<div class="para" id="p-derived-ex-separable-3-2-1-1">Separate the variables:<div class="displaymath process-math">
 \begin{equation*}
 \dfrac{dy}{dx} = y^3 \cdot \dfrac{x}{\sqrt{1 + x^2}} \implies \dfrac{dy}{y^3} = \dfrac{x}{\sqrt{1 + x^2}}dx
 \end{equation*}
 </div>
-</div></li>
-<li id="ex-separable-3-2-1-2"><div class="para" id="p-derived-ex-separable-3-2-1-2">Integrate both sides:<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-separable-3-2-1-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-separable-3-2-1-2">
+<div class="para" id="p-derived-ex-separable-3-2-1-2">Integrate both sides:<div class="displaymath process-math">
 \begin{equation*}
 \int \dfrac{dy}{y^3} = \int \dfrac{x}{\sqrt{1 + x^2}}dx \implies -\dfrac{1}{2}y^2 = \sqrt{1 + x^2} + C
 \end{equation*}
 </div>
-</div></li>
-</ul> <div class="para" id="ex-separable-3-2-2">We thus obtain a one-parameter family of <em class="emphasis">implicit</em> solutions</div></article></details><details id="ex-separable-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-separable-3-2-1-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul> <div class="para" id="ex-separable-3-2-2">We thus obtain a one-parameter family of <em class="emphasis">implicit</em> solutions<div class="autopermalink" data-description="Paragraph"><a href="#ex-separable-3-2-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.6.4: Solve the ODE y' = xy^3(1 + x^2)^{-1/2}"><a href="#ex-separable-3" title="Copy heading and permalink for Example 1.6.4: Solve the ODE y' = xy^3(1 + x^2)^{-1/2}">🔗</a></div></article></details><details id="ex-separable-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.5</span><span class="period">.</span><span class="space"> </span><span class="title">Solve the IVP <span class="process-math">\(y' = xy^3(1 + x^2)^{-1/2}, \, y(\sqrt{3}) = \dfrac{1}{2}\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-separable-4-2-1">
 <div class="para">We have obtained a one-parameter family of implicit solutions in <a href="sec-separable-equations.html#ex-separable-3" class="xref" data-knowl="./knowl/xref/ex-separable-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.4: Solve the ODE y' = xy^3(1 + x^2)^{-1/2}">Example 1.6.4</a>, namely,</div>
@@ -459,14 +518,19 @@ y = \sqrt{\dfrac{2}{3}x^3 - 2\cos x + 3}.
 \end{equation*}
 </div>
 <div class="para">We shall continue from here.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-separable-4-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <ul class="disc" id="ex-separable-4-2-2">
-<li id="ex-separable-4-2-2-1"><div class="para" id="p-derived-ex-separable-4-2-2-1">We determine the constant <span class="process-math">\(C\)</span> by using the initial condition:<div class="displaymath process-math">
+<li id="ex-separable-4-2-2-1">
+<div class="para" id="p-derived-ex-separable-4-2-2-1">We determine the constant <span class="process-math">\(C\)</span> by using the initial condition:<div class="displaymath process-math">
 \begin{equation*}
 y(\sqrt{3}) = \dfrac{1}{2} \implies -\dfrac{1}{2} \cdot (1/2)^2 = \sqrt{1 + 3} + C \implies C = -4.
 \end{equation*}
 </div>
-</div></li>
-<li id="ex-separable-4-2-2-2"><div class="para" id="p-derived-ex-separable-4-2-2-2">The implicit solution we thus obtained is<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-separable-4-2-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-separable-4-2-2-2">
+<div class="para" id="p-derived-ex-separable-4-2-2-2">The implicit solution we thus obtained is<div class="displaymath process-math">
 \begin{equation*}
 -\dfrac{1}{2y^2} = \sqrt{1 + x^2} - 4.
 \end{equation*}
@@ -479,14 +543,19 @@ y^2 = \dfrac{1}{2(4 - \sqrt{1 + x^2})}= \dfrac{1}{8 - 2\sqrt{1 + x^2}}.
 y = \sqrt{\dfrac{1}{8 - 2\sqrt{1 + x^2}}}.
 \end{equation*}
 </div>
-</div></li>
-<li id="ex-separable-4-2-2-3"><div class="para" id="p-derived-ex-separable-4-2-2-3">Solution exists when<div class="displaymath process-math" id="ex-separable-4-2-2-3-1">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-separable-4-2-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-separable-4-2-2-3">
+<div class="para" id="p-derived-ex-separable-4-2-2-3">Solution exists when<div class="displaymath process-math" id="ex-separable-4-2-2-3-1">
 \begin{align*}
 \amp 8 - 2\sqrt{1 + x^2} \gt 0 \implies  2\sqrt{1+x^2}\lt 8\implies 1+x^2 \lt 16 \\
 \implies \amp x^2 \lt 15 \implies x \in (-\sqrt{15}, \sqrt{15})
 \end{align*}
 </div>
-</div></li>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-separable-4-2-2-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul> <div class="para logical" id="ex-separable-4-2-3">
 <div class="para">Conclusion: The solution is</div>
 <div class="displaymath process-math">
@@ -496,7 +565,9 @@ y = \sqrt{\dfrac{1}{8 - 2\sqrt{1 + x^2}}}.
 </div>
 <div class="para">The interval of definition is <span class="process-math">\((-\sqrt{15}, \sqrt{15})\text{.}\)</span>
 </div>
-</div></article></details><details id="ex-separable-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-separable-4-2-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.6.5: Solve the IVP y' = xy^3(1 + x^2)^{-1/2}, \, y(\sqrt{3}) = \dfrac{1}{2}"><a href="#ex-separable-4" title="Copy heading and permalink for Example 1.6.5: Solve the IVP y' = xy^3(1 + x^2)^{-1/2}, \, y(\sqrt{3}) = \dfrac{1}{2}">🔗</a></div></article></details><details id="ex-separable-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.6.6</span><span class="period">.</span><span class="space"> </span><span class="title">Solve the IVP <span class="process-math">\(y' = xy^3(1 + x^2)^{-1/2}, \, y(\sqrt{3}) = -\dfrac{1}{4}\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-separable-5-2-1">
 <div class="para">We have obtained a one-parameter family of implicit solutions in <a href="sec-separable-equations.html#ex-separable-3" class="xref" data-knowl="./knowl/xref/ex-separable-3.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.4: Solve the ODE y' = xy^3(1 + x^2)^{-1/2}">Example 1.6.4</a>, namely,</div>
@@ -506,14 +577,19 @@ y = \sqrt{\dfrac{1}{8 - 2\sqrt{1 + x^2}}}.
 \end{equation*}
 </div>
 <div class="para">We shall continue from here.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-separable-5-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <ul class="disc" id="ex-separable-5-2-2">
-<li id="ex-separable-5-2-2-1"><div class="para" id="p-derived-ex-separable-5-2-2-1">We determine the constant <span class="process-math">\(C\)</span> by using the initial condition:<div class="displaymath process-math">
+<li id="ex-separable-5-2-2-1">
+<div class="para" id="p-derived-ex-separable-5-2-2-1">We determine the constant <span class="process-math">\(C\)</span> by using the initial condition:<div class="displaymath process-math">
 \begin{equation*}
 y(\sqrt{3}) = -\dfrac{1}{4} \implies -\dfrac{1}{2} \cdot (-\dfrac{1}{4})^2 = \sqrt{1 + 3} + C \implies C = -10.
 \end{equation*}
 </div>
-</div></li>
-<li id="ex-separable-5-2-2-2"><div class="para" id="p-derived-ex-separable-5-2-2-2">The implicit solution we thus obtained is<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-separable-5-2-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-separable-5-2-2-2">
+<div class="para" id="p-derived-ex-separable-5-2-2-2">The implicit solution we thus obtained is<div class="displaymath process-math">
 \begin{equation*}
 -\dfrac{1}{2y^2} = \sqrt{1 + x^2} - 10.
 \end{equation*}
@@ -526,14 +602,19 @@ y^2 = \dfrac{1}{2(10 - \sqrt{1 + x^2})}= \dfrac{1}{20 - 2\sqrt{1 + x^2}}.
 y = -\sqrt{\dfrac{1}{20 - 2\sqrt{1 + x^2}}}.
 \end{equation*}
 </div>
-</div></li>
-<li id="ex-separable-5-2-2-3"><div class="para" id="p-derived-ex-separable-5-2-2-3">Solution exists when<div class="displaymath process-math" id="ex-separable-5-2-2-3-1">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-separable-5-2-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-separable-5-2-2-3">
+<div class="para" id="p-derived-ex-separable-5-2-2-3">Solution exists when<div class="displaymath process-math" id="ex-separable-5-2-2-3-1">
 \begin{align*}
 \amp 20 - 2\sqrt{1 + x^2} \gt 0 \implies  2\sqrt{1+x^2}\lt 20\implies 1+x^2 \lt 100 \\
 \implies \amp x^2 \lt 99 \implies x \in (-\sqrt{99}, \sqrt{99})
 \end{align*}
 </div>
-</div></li>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-separable-5-2-2-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul> <div class="para logical" id="ex-separable-5-2-3">
 <div class="para">Conclusion: The solution is</div>
 <div class="displaymath process-math">
@@ -543,20 +624,32 @@ y = -\sqrt{\dfrac{1}{20 - 2\sqrt{1 + x^2}}}.
 </div>
 <div class="para">The interval of definition is <span class="process-math">\((-\sqrt{99}, \sqrt{99})\text{.}\)</span>
 </div>
-</div></article></details><article class="remark remark-like" id="subsec-implicit-vs-explicit-8"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-separable-5-2-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.6.6: Solve the IVP y' = xy^3(1 + x^2)^{-1/2}, \, y(\sqrt{3}) = -\dfrac{1}{4}"><a href="#ex-separable-5" title="Copy heading and permalink for Example 1.6.6: Solve the IVP y' = xy^3(1 + x^2)^{-1/2}, \, y(\sqrt{3}) = -\dfrac{1}{4}">🔗</a></div></article></details><article class="remark remark-like" id="subsec-implicit-vs-explicit-8"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.6.7</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="subsec-implicit-vs-explicit-8-1">
 <div class="para">The explicit solution contains more information than the implicit solution. Indeed, Observe that</div>
 <ul class="disc" id="subsec-implicit-vs-explicit-8-1-1">
-<li id="subsec-implicit-vs-explicit-8-1-1-1"><div class="para" id="p-derived-subsec-implicit-vs-explicit-8-1-1-1">The positive or negative branch cannot be seen in the implicit solution.</div></li>
-<li id="subsec-implicit-vs-explicit-8-1-1-2"><div class="para" id="p-derived-subsec-implicit-vs-explicit-8-1-1-2">The interval of definition cannot be determined by the implicit solution.</div></li>
+<li id="subsec-implicit-vs-explicit-8-1-1-1">
+<div class="para" id="p-derived-subsec-implicit-vs-explicit-8-1-1-1">The positive or negative branch cannot be seen in the implicit solution.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-implicit-vs-explicit-8-1-1-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-implicit-vs-explicit-8-1-1-2">
+<div class="para" id="p-derived-subsec-implicit-vs-explicit-8-1-1-2">The interval of definition cannot be determined by the implicit solution.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-implicit-vs-explicit-8-1-1-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
 <div class="para">This is why whenever it is possible, we should try to solve for the explicit solution and the interval of definition.</div>
-</div></article><article class="remark remark-like" id="subsec-implicit-vs-explicit-9"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-implicit-vs-explicit-8-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 1.6.7"><a href="#subsec-implicit-vs-explicit-8" title="Copy heading and permalink for Remark 1.6.7">🔗</a></div></article><article class="remark remark-like" id="subsec-implicit-vs-explicit-9"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.6.8</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec-implicit-vs-explicit-9-1">From <a href="sec-separable-equations.html#ex-separable-4" class="xref" data-knowl="./knowl/xref/ex-separable-4.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.5: Solve the IVP y' = xy^3(1 + x^2)^{-1/2}, \, y(\sqrt{3}) = \dfrac{1}{2}">Example 1.6.5</a> and <a href="sec-separable-equations.html#ex-separable-5" class="xref" data-knowl="./knowl/xref/ex-separable-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.6: Solve the IVP y' = xy^3(1 + x^2)^{-1/2}, \, y(\sqrt{3}) = -\dfrac{1}{4}">Example 1.6.6</a>, we also see that the positive or negative branch and the interval of definition depends on the initial condition. Thus these notions make no sense for a one-parameter family of solutions. This is why without the initial condition, we can leave the solution in the implicit form.</div></article></section><section class="subsection" id="subsec-separable-equations-3"><h3 class="heading hide-type">
+<div class="para" id="subsec-implicit-vs-explicit-9-1">From <a href="sec-separable-equations.html#ex-separable-4" class="xref" data-knowl="./knowl/xref/ex-separable-4.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.5: Solve the IVP y' = xy^3(1 + x^2)^{-1/2}, \, y(\sqrt{3}) = \dfrac{1}{2}">Example 1.6.5</a> and <a href="sec-separable-equations.html#ex-separable-5" class="xref" data-knowl="./knowl/xref/ex-separable-5.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.6.6: Solve the IVP y' = xy^3(1 + x^2)^{-1/2}, \, y(\sqrt{3}) = -\dfrac{1}{4}">Example 1.6.6</a>, we also see that the positive or negative branch and the interval of definition depends on the initial condition. Thus these notions make no sense for a one-parameter family of solutions. This is why without the initial condition, we can leave the solution in the implicit form.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-implicit-vs-explicit-9-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 1.6.8"><a href="#subsec-implicit-vs-explicit-9" title="Copy heading and permalink for Remark 1.6.8">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.6.2: Implicit solution vs explicit solution"><a href="#subsec-implicit-vs-explicit" title="Copy heading and permalink for Subsection 1.6.2: Implicit solution vs explicit solution">🔗</a></div></section><section class="subsection" id="subsec-separable-equations-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.6.3</span><span class="space"> </span><span class="title">Singular solutions</span>
 </h3>
 <div class="para logical" id="subsec-separable-equations-3-2">
@@ -566,9 +659,11 @@ y = -\sqrt{\dfrac{1}{20 - 2\sqrt{1 + x^2}}}.
 \dfrac{1}{2y^2} = \sqrt{1 + x^2} + C
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-separable-equations-3-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="subsec-separable-equations-3-3">
-<em class="alert">It is not the general solution</em> because the family does not include the solution <span class="process-math">\(y = 0\text{.}\)</span> Such an extra solution is called a <dfn class="terminology">singular solution</dfn>.</div>
+<em class="alert">It is not the general solution</em> because the family does not include the solution <span class="process-math">\(y = 0\text{.}\)</span> Such an extra solution is called a <dfn class="terminology">singular solution</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-separable-equations-3-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical" id="subsec-separable-equations-3-4">
 <div class="para">Another example is</div>
 <div class="displaymath process-math">
@@ -583,6 +678,7 @@ y = \left(\dfrac{1}{4}x^2 + C\right)^2
 \end{equation*}
 </div>
 <div class="para">while <span class="process-math">\(y = 0\)</span> is a singular solution.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-separable-equations-3-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-separable-equations-3-5">
 <div class="para">Generally, for a separable ODE</div>
@@ -592,9 +688,13 @@ y = \left(\dfrac{1}{4}x^2 + C\right)^2
 \end{equation*}
 </div>
 <div class="para">the constant function <span class="process-math">\(y = a\)</span> is a singular solution for every number <span class="process-math">\(a\)</span> satisfying <span class="process-math">\(f(a) = 0.\)</span> (Clearly, <span class="process-math">\(LHS = a' = 0, \, RHS = f(a)g(x) = 0.\)</span>)</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-separable-equations-3-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-separable-equations-3-6">When we separate the variables, we <em class="alert">divided</em> both sides by <span class="process-math">\(f(y).\)</span> Such an operation implicitly required that <span class="process-math">\(f(y) \neq 0.\)</span> Therefore, in the subsequent one-parameter family of solutions obtained by integration, the constant functions <span class="process-math">\(y = a\)</span> with <span class="process-math">\(f(a) = 0\)</span> will not be included in the family.</div>
-<div class="para" id="subsec-separable-equations-3-7">Singular solutions are common for nonlinear ODEs.</div></section></section></div>
+<div class="para" id="subsec-separable-equations-3-6">When we separate the variables, we <em class="alert">divided</em> both sides by <span class="process-math">\(f(y).\)</span> Such an operation implicitly required that <span class="process-math">\(f(y) \neq 0.\)</span> Therefore, in the subsequent one-parameter family of solutions obtained by integration, the constant functions <span class="process-math">\(y = a\)</span> with <span class="process-math">\(f(a) = 0\)</span> will not be included in the family.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-separable-equations-3-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-separable-equations-3-7">Singular solutions are common for nonlinear ODEs.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-separable-equations-3-7" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.6.3: Singular solutions"><a href="#subsec-separable-equations-3" title="Copy heading and permalink for Subsection 1.6.3: Singular solutions">🔗</a></div></section><div class="autopermalink" data-description="Section 1.6: Separable Equations"><a href="#sec-separable-equations" title="Copy heading and permalink for Section 1.6: Separable Equations">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-1st-order-linear.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-existence-uniqueness.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

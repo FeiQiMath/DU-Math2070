@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.6';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -275,7 +275,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integral Transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Laplace transforms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-4" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Summary of basic formulas for Laplace transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-5" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
@@ -296,108 +304,251 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-derivative-Laplace-convolutions"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">3.6</span><span class="space"> </span><span class="title">Derivative of Laplace Transform and Convolution</span>
 </h2>
-<div class="para" id="sec-derivative-Laplace-convolutions-2">Motivation: Provide some tools to solve all possible Laplace and inverse Laplace transforms.</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-3">Derivatives of <span class="process-math">\(L\{f(t)\}\)</span>
+<div class="para" id="sec-derivative-Laplace-convolutions-2">Motivation: Provide some tools to solve all possible Laplace and inverse Laplace transforms.<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-derivative-Laplace-convolutions-4">Let <span class="process-math">\(F(s) = L\{f(t)\}.\)</span> If we apply <span class="process-math">\(\frac{d}{ds}\)</span> on both sides, we have</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-5"><span class="process-math">\(\frac{d}{ds} F(s) = \frac{d}{ds} \int_0^{\infty} f(t)e^{-st}dt\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-6">If <span class="process-math">\(f\)</span> is piecewise continuous and of exponential order, the differential operator commutes with the integral, resulting in</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-7"><span class="process-math">\(F'(s) = \int_0^{\infty} f(t) \frac{d}{ds} (e^{-st})dt = \int_0^{\infty} f(t)(-te^{-st})dt\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-8"><span class="process-math">\(= -\int_0^{\infty} tf(t)e^{-st}dt = -L\{tf(t)\}.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-9">In other words,</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-10"><span class="process-math">\(L\{tf(t)\} = \left(-\frac{d}{ds}\right) F(s) = -F'(s).\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-11">With a similar argument, we see that for every integer <span class="process-math">\(n &gt; 0,\)</span>
+<div class="para" id="sec-derivative-Laplace-convolutions-3">Derivatives of <span class="process-math">\(L\{f(t)\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-derivative-Laplace-convolutions-12"><span class="process-math">\(L\{t^n f(t)\} = \left(-\frac{d}{ds}\right)^n F(s) = (-1)^n F^{(n)}(s).\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-13">With this formula, we may handle the Laplace transform of a polynomial multiplied by any function <span class="process-math">\(f(t),\)</span> provided we know <span class="process-math">\(L\{f(t)\}.\)</span>
+<div class="para" id="sec-derivative-Laplace-convolutions-4">Let <span class="process-math">\(F(s) = L\{f(t)\}.\)</span> If we apply <span class="process-math">\(\frac{d}{ds}\)</span> on both sides, we have<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-derivative-Laplace-convolutions-14">Example:</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-15"><span class="process-math">\(L\{(t + t^2)e^{2t} \sin 3t\} = L\{te^{2t} \sin 3t\} + L\{t^2 e^{2t} \sin 3t\}\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-16"><span class="process-math">\(= \left(-\frac{d}{ds}\right) \frac{3}{(s - 2)^2 + 9} + \left(-\frac{d}{ds}\right)^2 \frac{3}{(s - 2)^2 + 9}.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-17">Example:</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-18"><span class="process-math">\(L\{(t + t^2)e^{2t} \sin 3t\} = L\{te^{2t} \sin 3t\} + L\{t^2 e^{2t} \sin 3t\}\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-19"><span class="process-math">\(= \left(-\frac{d}{ds}\right) \frac{3}{(s - 2)^2 + 9} + \left(-\frac{d}{ds}\right)^2 \frac{3}{(s - 2)^2 + 9}.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-20">Say <span class="process-math">\(F(s) = \frac{3}{(s - 2)^2 + 9},\)</span> then its first derivative <span class="process-math">\(F'(s)\)</span> is</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-21"><span class="process-math">\(F'(s) = \frac{-6(s - 2)}{((s - 2)^2 + 9)^2}.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-22">Its second derivative <span class="process-math">\(F''(s)\)</span> is</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-23"><span class="process-math">\(F''(s) = \frac{-6((s - 2)^2 + 9)^2 \cdot 1 - (s - 2) \cdot 2((s - 2)^2 + 9) \cdot 2(s - 2)}{((s - 2)^2 + 9)^4}.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-24"><span class="process-math">\(= \frac{-6(s - 2)^2 + 9 - 4(s - 2)^2}{((s - 2)^2 + 9)^3} = \frac{18}{((s - 2)^2 + 9)^3}.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-25">So</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-26"><span class="process-math">\(L\{(t + t^2)e^{2t} \sin 3t\} = L\{te^{2t} \sin 3t\} + L\{t^2 e^{2t} \sin 3t\}\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-27"><span class="process-math">\(= \left(-\frac{d}{ds}\right) \frac{3}{(s - 2)^2 + 9} + \left(-\frac{d}{ds}\right)^2 \frac{3}{(s - 2)^2 + 9}\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-28"><span class="process-math">\(= \frac{6(s - 2)}{((s - 2)^2 + 9)^2} + \frac{18}{((s - 2)^2 + 9)^3}.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-29">(No matter what method you use, the product of polynomial, exponential and trig functions will always be annoying).</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-30">Inverse Laplace of repeated quadratic factors</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-31">The derivative formula also helps us to perform inverse Laplace transform of a particular kind of partial fractions with irreducible quadratic factor.</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-32">Recall that</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-33"><span class="process-math">\(L\{e^{\alpha t} \sin \beta t\} = \frac{\beta}{(s - \alpha)^2 + \beta^2}.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-34">The derivative formula implies that</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-35"><span class="process-math">\(L\{te^{\alpha t} \sin \beta t\} = -\frac{d}{ds} \frac{\beta}{(s - \alpha)^2 + \beta^2} = \frac{2\beta(s - \alpha)}{((s - \alpha)^2 + \beta^2)^2}.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-36">Therefore,</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-37"><span class="process-math">\(L^{-1} \left\{ \frac{(s - \alpha)}{((s - \alpha)^2 + \beta^2)^2} \right\} = \frac{1}{2\beta} te^{\alpha t} \sin \beta t.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-38">Convolution product</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-39">For the inverse Laplace of the most general type of partial fractions with repeated quadratic factor, we need to use the convolution product.</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-40">Let <span class="process-math">\(f, g\)</span> be piecewise continuous on <span class="process-math">\([0, \infty)\)</span> and of exp. order. The convolution <span class="process-math">\(f * g\)</span> is a function defined by</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-41"><span class="process-math">\((f * g)(t) = \int_0^t f(\tau)g(t - \tau)d\tau.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-42">Theorem. <span class="process-math">\(L\{(f * g)(t)\} = L\{f(t)\} \cdot L\{g(t)\}.\)</span>
+<div class="para" id="sec-derivative-Laplace-convolutions-5">
+<span class="process-math">\(\frac{d}{ds} F(s) = \frac{d}{ds} \int_0^{\infty} f(t)e^{-st}dt\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-derivative-Laplace-convolutions-43">Inverse form: <span class="process-math">\(L^{-1}\{F(s)G(s)\} = L^{-1}\{F(s)\} * L^{-1}\{G(s)\}.\)</span>
+<div class="para" id="sec-derivative-Laplace-convolutions-6">If <span class="process-math">\(f\)</span> is piecewise continuous and of exponential order, the differential operator commutes with the integral, resulting in<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-derivative-Laplace-convolutions-44">The proof is a simple exercise of multivariable calculus (via manipulation of regions of a double integral). (skip here).</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-45">Inverse Laplace of repeated quadratic factors</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-46">Using the inverse form, we compute that</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-47"><span class="process-math">\(L^{-1} \left\{ \frac{1}{((s - \alpha)^2 + \beta^2)^2} \right\}\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-48"><span class="process-math">\(= L^{-1} \left\{ \frac{1}{(s - \alpha)^2 + \beta^2} \cdot \frac{1}{(s - \alpha)^2 + \beta^2} \right\}\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-49"><span class="process-math">\(= L^{-1} \left\{ \frac{1}{(s - \alpha)^2 + \beta^2} \right\} * L^{-1} \left\{ \frac{1}{(s - \alpha)^2 + \beta^2} \right\}\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-50"><span class="process-math">\(= \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right) * \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right)\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-51"><span class="process-math">\(= \int_0^t \left( \frac{1}{\beta} e^{\alpha \tau} \sin \beta \tau \right) \left( \frac{1}{\beta} e^{\alpha (t - \tau)} \sin \beta (t - \tau) \right) d\tau\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-52"><span class="process-math">\(= \frac{1}{\beta^2} e^{\alpha t} \int_0^t \sin \beta \tau \sin \beta (t - \tau) d\tau.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-53">To compute the integral of a product of two sine functions, we need some trigonometric identities.</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-54">Recall. Sine and Cosine of sums and differences.</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-55"><span class="process-math">\(\sin(\alpha + \beta) = \sin \alpha \cos \beta + \sin \beta \cos \alpha,\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-56"><span class="process-math">\(\sin(\alpha - \beta) = \sin \alpha \cos \beta - \sin \beta \cos \alpha,\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-57"><span class="process-math">\(\cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta,\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-58"><span class="process-math">\(\cos(\alpha - \beta) = \cos \alpha \cos \beta + \sin \beta \sin \alpha.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-59">By adding and subtracting these identities, we obtain</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-60"><span class="process-math">\(\sin \alpha \cos \beta = \frac{1}{2}(\sin(\alpha + \beta) + \sin(\alpha - \beta))\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-61"><span class="process-math">\(\cos \alpha \cos \beta = \frac{1}{2}(\cos(\alpha - \beta) + \cos(\alpha + \beta))\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-62"><span class="process-math">\(\sin \alpha \sin \beta = -\frac{1}{2}(\cos(\alpha - \beta) - \cos(\alpha + \beta)).\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-63">So,</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-64"><span class="process-math">\(\int_0^t \sin \beta \tau \sin \beta (t - \tau) d\tau = \frac{1}{2} \left( \cos(\beta \tau - \beta(t - \tau)) - \cos(\beta \tau + \beta(t - \tau)) \right)\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-65"><span class="process-math">\(= -\frac{1}{2} \left( \cos(2\beta \tau - \beta) - \cos(\beta t) \right)\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-66"><span class="process-math">\(= \frac{1}{2} \int_0^t \left( \cos(2\beta \tau - \beta t) - \cos(\beta t) \right) d\tau\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-67"><span class="process-math">\(= \frac{1}{2} \left( \frac{1}{2\beta} \sin(2\beta \tau - \beta t) - \cos(\beta t) \tau \right) \bigg|_0^t\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-68"><span class="process-math">\(= \frac{1}{2} \left( \frac{1}{2\beta} \left( \sin(2\beta t - \beta t) - \sin(0 - \beta t) \right) - \cos(\beta t)(t - 0) \right)\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-69"><span class="process-math">\(= \frac{1}{2} \left( \frac{1}{\beta} \sin \beta t - t \cos(\beta t) \right).\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-70">So we conclude that</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-71"><span class="process-math">\(L^{-1} \left\{ \frac{1}{((s - \alpha)^2 + \beta^2)^2} \right\} = \frac{1}{\beta^2} e^{\alpha t} \int_0^t \sin \beta \tau \sin \beta (t - \tau) d\tau\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-72"><span class="process-math">\(= \frac{1}{\beta^2} e^{\alpha t} \cdot \frac{1}{2\beta} \left( \sin \beta t - t \cos(\beta t) \right)\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-73"><span class="process-math">\(= \frac{1}{2\beta^3} e^{\alpha t} \sin \beta t - \frac{1}{2\beta^2} t e^{\alpha t} \cos(\beta t).\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-74">In general,</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-75"><span class="process-math">\(L^{-1} \left\{ \frac{1}{((s - \alpha)^2 + \beta^2)^n} \right\} = \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right) * \cdots * \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right)\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-76">(convolution with itself for <span class="process-math">\(n\)</span> times).</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-77"><span class="process-math">\(L^{-1} \left\{ \frac{s - \alpha}{((s - \alpha)^2 + \beta^2)^n} \right\} = \left( e^{\alpha t} \cos \beta t \right) * \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right) * \cdots * \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right)\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-78">(convolution of one copy of <span class="process-math">\(e^{\alpha t} \cos \beta t\)</span> and <span class="process-math">\(n - 1\)</span> copies of <span class="process-math">\(\frac{1}{\beta} e^{\alpha t} \sin \beta t).\)</span>
+<div class="para" id="sec-derivative-Laplace-convolutions-7">
+<span class="process-math">\(F'(s) = \int_0^{\infty} f(t) \frac{d}{ds} (e^{-st})dt = \int_0^{\infty} f(t)(-te^{-st})dt\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-7" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-derivative-Laplace-convolutions-79">Integro-differential equation</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-80">Another application of the convolution product is the Laplace transform of an integral. Recall that the theorem states that</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-81"><span class="process-math">\(L\{(f * g)(t)\} = L\{f(t)\} \cdot L\{g(t)\}.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-82">If we take <span class="process-math">\(g(t) = 1,\)</span> then</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-83"><span class="process-math">\((f * 1)(t) = \int_0^t f(\tau) d\tau.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-84">The theorem then says that</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-85"><span class="process-math">\(L\left\{ \int_0^t f(\tau) d\tau \right\} = L\{f(t)\} \cdot L\{1\} = \frac{F(s)}{s}.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-86">This formula allows us to use the Laplace method to solve integro-differential equations that arise in science and engineering.</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-87">Example: LRC-series circuit.</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-88">In Midterm 2, we saw that the electron charge of the capacitor in an LRC-series circuit satisfies a second-order linear ODE. Experimentally, it is difficult to measure the charge of a capacitor. It is easier to measure the current instead.</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-89">Let <span class="process-math">\(i(t)\)</span> be the current at time <span class="process-math">\(t.\)</span> Suppose at time zero, the capacitor is uncharged. Then <span class="process-math">\(i(t)\)</span> satisfies the following ODE:</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-90"><span class="process-math">\(L \frac{di}{dt} + R i + \frac{1}{C} \int_0^t i(\tau) d\tau = E(t)\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-91">We set <span class="process-math">\(I(s) = L\{i(t)\}\)</span> and Laplace both sides:</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-92"><span class="process-math">\(L(I(s) - s \cdot i(0)) + R I(s) + \frac{1}{C} \cdot \frac{I(s)}{s} = L\{E(t)\}.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-93">If <span class="process-math">\(L = 0.1 \, h, \, R = 2 \, \Omega, \, C = 0.1 \, f, \, i(0) = 0,\)</span> and <span class="process-math">\(E(t)\)</span> is the unit square wave function, then</div>
-<div class="para" id="sec-derivative-Laplace-convolutions-94"><span class="process-math">\(0.1(I(s) - s \cdot 0) + 2 I(s) + \frac{10}{s} I(s) = \frac{1}{s(1 + e^{-s})}\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-95"><span class="process-math">\(\implies I(s) = \frac{10}{(s^2 + 20s + 100)(1 + e^{-s})}.\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-96"><span class="process-math">\(I(s) = \frac{10}{(s^2 + 20s + 100)(1 + e^{-s})} = 10 \sum_{n=0}^{\infty} (-1)^n \frac{e^{-ns}}{(s + 10)^2}\)</span></div>
-<div class="para" id="sec-derivative-Laplace-convolutions-97"><span class="process-math">\(= 10 \sum_{n=0}^{\infty} (-1)^n (t - n)e^{-10(t - n)} u(t - n).\)</span></div></section></div>
+<div class="para" id="sec-derivative-Laplace-convolutions-8">
+<span class="process-math">\(= -\int_0^{\infty} tf(t)e^{-st}dt = -L\{tf(t)\}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-8" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-9">In other words,<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-9" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-10">
+<span class="process-math">\(L\{tf(t)\} = \left(-\frac{d}{ds}\right) F(s) = -F'(s).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-10" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-11">With a similar argument, we see that for every integer <span class="process-math">\(n &gt; 0,\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-11" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-12">
+<span class="process-math">\(L\{t^n f(t)\} = \left(-\frac{d}{ds}\right)^n F(s) = (-1)^n F^{(n)}(s).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-12" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-13">With this formula, we may handle the Laplace transform of a polynomial multiplied by any function <span class="process-math">\(f(t),\)</span> provided we know <span class="process-math">\(L\{f(t)\}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-13" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-14">Example:<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-14" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-15">
+<span class="process-math">\(L\{(t + t^2)e^{2t} \sin 3t\} = L\{te^{2t} \sin 3t\} + L\{t^2 e^{2t} \sin 3t\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-15" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-16">
+<span class="process-math">\(= \left(-\frac{d}{ds}\right) \frac{3}{(s - 2)^2 + 9} + \left(-\frac{d}{ds}\right)^2 \frac{3}{(s - 2)^2 + 9}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-16" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-17">Example:<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-17" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-18">
+<span class="process-math">\(L\{(t + t^2)e^{2t} \sin 3t\} = L\{te^{2t} \sin 3t\} + L\{t^2 e^{2t} \sin 3t\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-18" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-19">
+<span class="process-math">\(= \left(-\frac{d}{ds}\right) \frac{3}{(s - 2)^2 + 9} + \left(-\frac{d}{ds}\right)^2 \frac{3}{(s - 2)^2 + 9}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-19" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-20">Say <span class="process-math">\(F(s) = \frac{3}{(s - 2)^2 + 9},\)</span> then its first derivative <span class="process-math">\(F'(s)\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-20" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-21">
+<span class="process-math">\(F'(s) = \frac{-6(s - 2)}{((s - 2)^2 + 9)^2}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-21" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-22">Its second derivative <span class="process-math">\(F''(s)\)</span> is<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-22" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-23">
+<span class="process-math">\(F''(s) = \frac{-6((s - 2)^2 + 9)^2 \cdot 1 - (s - 2) \cdot 2((s - 2)^2 + 9) \cdot 2(s - 2)}{((s - 2)^2 + 9)^4}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-23" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-24">
+<span class="process-math">\(= \frac{-6(s - 2)^2 + 9 - 4(s - 2)^2}{((s - 2)^2 + 9)^3} = \frac{18}{((s - 2)^2 + 9)^3}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-24" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-25">So<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-25" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-26">
+<span class="process-math">\(L\{(t + t^2)e^{2t} \sin 3t\} = L\{te^{2t} \sin 3t\} + L\{t^2 e^{2t} \sin 3t\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-26" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-27">
+<span class="process-math">\(= \left(-\frac{d}{ds}\right) \frac{3}{(s - 2)^2 + 9} + \left(-\frac{d}{ds}\right)^2 \frac{3}{(s - 2)^2 + 9}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-27" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-28">
+<span class="process-math">\(= \frac{6(s - 2)}{((s - 2)^2 + 9)^2} + \frac{18}{((s - 2)^2 + 9)^3}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-28" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-29">(No matter what method you use, the product of polynomial, exponential and trig functions will always be annoying).<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-29" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-30">Inverse Laplace of repeated quadratic factors<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-30" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-31">The derivative formula also helps us to perform inverse Laplace transform of a particular kind of partial fractions with irreducible quadratic factor.<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-31" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-32">Recall that<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-32" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-33">
+<span class="process-math">\(L\{e^{\alpha t} \sin \beta t\} = \frac{\beta}{(s - \alpha)^2 + \beta^2}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-33" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-34">The derivative formula implies that<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-34" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-35">
+<span class="process-math">\(L\{te^{\alpha t} \sin \beta t\} = -\frac{d}{ds} \frac{\beta}{(s - \alpha)^2 + \beta^2} = \frac{2\beta(s - \alpha)}{((s - \alpha)^2 + \beta^2)^2}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-35" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-36">Therefore,<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-36" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-37">
+<span class="process-math">\(L^{-1} \left\{ \frac{(s - \alpha)}{((s - \alpha)^2 + \beta^2)^2} \right\} = \frac{1}{2\beta} te^{\alpha t} \sin \beta t.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-37" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-38">Convolution product<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-38" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-39">For the inverse Laplace of the most general type of partial fractions with repeated quadratic factor, we need to use the convolution product.<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-39" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-40">Let <span class="process-math">\(f, g\)</span> be piecewise continuous on <span class="process-math">\([0, \infty)\)</span> and of exp. order. The convolution <span class="process-math">\(f * g\)</span> is a function defined by<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-40" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-41">
+<span class="process-math">\((f * g)(t) = \int_0^t f(\tau)g(t - \tau)d\tau.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-41" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-42">Theorem. <span class="process-math">\(L\{(f * g)(t)\} = L\{f(t)\} \cdot L\{g(t)\}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-42" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-43">Inverse form: <span class="process-math">\(L^{-1}\{F(s)G(s)\} = L^{-1}\{F(s)\} * L^{-1}\{G(s)\}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-43" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-44">The proof is a simple exercise of multivariable calculus (via manipulation of regions of a double integral). (skip here).<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-44" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-45">Inverse Laplace of repeated quadratic factors<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-45" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-46">Using the inverse form, we compute that<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-46" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-47">
+<span class="process-math">\(L^{-1} \left\{ \frac{1}{((s - \alpha)^2 + \beta^2)^2} \right\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-47" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-48">
+<span class="process-math">\(= L^{-1} \left\{ \frac{1}{(s - \alpha)^2 + \beta^2} \cdot \frac{1}{(s - \alpha)^2 + \beta^2} \right\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-48" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-49">
+<span class="process-math">\(= L^{-1} \left\{ \frac{1}{(s - \alpha)^2 + \beta^2} \right\} * L^{-1} \left\{ \frac{1}{(s - \alpha)^2 + \beta^2} \right\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-49" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-50">
+<span class="process-math">\(= \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right) * \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-50" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-51">
+<span class="process-math">\(= \int_0^t \left( \frac{1}{\beta} e^{\alpha \tau} \sin \beta \tau \right) \left( \frac{1}{\beta} e^{\alpha (t - \tau)} \sin \beta (t - \tau) \right) d\tau\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-51" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-52">
+<span class="process-math">\(= \frac{1}{\beta^2} e^{\alpha t} \int_0^t \sin \beta \tau \sin \beta (t - \tau) d\tau.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-52" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-53">To compute the integral of a product of two sine functions, we need some trigonometric identities.<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-53" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-54">Recall. Sine and Cosine of sums and differences.<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-54" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-55">
+<span class="process-math">\(\sin(\alpha + \beta) = \sin \alpha \cos \beta + \sin \beta \cos \alpha,\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-55" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-56">
+<span class="process-math">\(\sin(\alpha - \beta) = \sin \alpha \cos \beta - \sin \beta \cos \alpha,\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-56" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-57">
+<span class="process-math">\(\cos(\alpha + \beta) = \cos \alpha \cos \beta - \sin \alpha \sin \beta,\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-57" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-58">
+<span class="process-math">\(\cos(\alpha - \beta) = \cos \alpha \cos \beta + \sin \beta \sin \alpha.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-58" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-59">By adding and subtracting these identities, we obtain<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-59" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-60">
+<span class="process-math">\(\sin \alpha \cos \beta = \frac{1}{2}(\sin(\alpha + \beta) + \sin(\alpha - \beta))\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-60" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-61">
+<span class="process-math">\(\cos \alpha \cos \beta = \frac{1}{2}(\cos(\alpha - \beta) + \cos(\alpha + \beta))\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-61" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-62">
+<span class="process-math">\(\sin \alpha \sin \beta = -\frac{1}{2}(\cos(\alpha - \beta) - \cos(\alpha + \beta)).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-62" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-63">So,<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-63" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-64">
+<span class="process-math">\(\int_0^t \sin \beta \tau \sin \beta (t - \tau) d\tau = \frac{1}{2} \left( \cos(\beta \tau - \beta(t - \tau)) - \cos(\beta \tau + \beta(t - \tau)) \right)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-64" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-65">
+<span class="process-math">\(= -\frac{1}{2} \left( \cos(2\beta \tau - \beta) - \cos(\beta t) \right)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-65" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-66">
+<span class="process-math">\(= \frac{1}{2} \int_0^t \left( \cos(2\beta \tau - \beta t) - \cos(\beta t) \right) d\tau\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-66" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-67">
+<span class="process-math">\(= \frac{1}{2} \left( \frac{1}{2\beta} \sin(2\beta \tau - \beta t) - \cos(\beta t) \tau \right) \bigg|_0^t\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-67" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-68">
+<span class="process-math">\(= \frac{1}{2} \left( \frac{1}{2\beta} \left( \sin(2\beta t - \beta t) - \sin(0 - \beta t) \right) - \cos(\beta t)(t - 0) \right)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-68" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-69">
+<span class="process-math">\(= \frac{1}{2} \left( \frac{1}{\beta} \sin \beta t - t \cos(\beta t) \right).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-69" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-70">So we conclude that<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-70" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-71">
+<span class="process-math">\(L^{-1} \left\{ \frac{1}{((s - \alpha)^2 + \beta^2)^2} \right\} = \frac{1}{\beta^2} e^{\alpha t} \int_0^t \sin \beta \tau \sin \beta (t - \tau) d\tau\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-71" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-72">
+<span class="process-math">\(= \frac{1}{\beta^2} e^{\alpha t} \cdot \frac{1}{2\beta} \left( \sin \beta t - t \cos(\beta t) \right)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-72" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-73">
+<span class="process-math">\(= \frac{1}{2\beta^3} e^{\alpha t} \sin \beta t - \frac{1}{2\beta^2} t e^{\alpha t} \cos(\beta t).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-73" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-74">In general,<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-74" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-75">
+<span class="process-math">\(L^{-1} \left\{ \frac{1}{((s - \alpha)^2 + \beta^2)^n} \right\} = \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right) * \cdots * \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-75" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-76">(convolution with itself for <span class="process-math">\(n\)</span> times).<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-76" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-77">
+<span class="process-math">\(L^{-1} \left\{ \frac{s - \alpha}{((s - \alpha)^2 + \beta^2)^n} \right\} = \left( e^{\alpha t} \cos \beta t \right) * \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right) * \cdots * \left( \frac{1}{\beta} e^{\alpha t} \sin \beta t \right)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-77" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-78">(convolution of one copy of <span class="process-math">\(e^{\alpha t} \cos \beta t\)</span> and <span class="process-math">\(n - 1\)</span> copies of <span class="process-math">\(\frac{1}{\beta} e^{\alpha t} \sin \beta t).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-78" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-79">Integro-differential equation<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-79" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-80">Another application of the convolution product is the Laplace transform of an integral. Recall that the theorem states that<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-80" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-81">
+<span class="process-math">\(L\{(f * g)(t)\} = L\{f(t)\} \cdot L\{g(t)\}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-81" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-82">If we take <span class="process-math">\(g(t) = 1,\)</span> then<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-82" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-83">
+<span class="process-math">\((f * 1)(t) = \int_0^t f(\tau) d\tau.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-83" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-84">The theorem then says that<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-84" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-85">
+<span class="process-math">\(L\left\{ \int_0^t f(\tau) d\tau \right\} = L\{f(t)\} \cdot L\{1\} = \frac{F(s)}{s}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-85" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-86">This formula allows us to use the Laplace method to solve integro-differential equations that arise in science and engineering.<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-86" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-87">Example: LRC-series circuit.<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-87" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-88">In Midterm 2, we saw that the electron charge of the capacitor in an LRC-series circuit satisfies a second-order linear ODE. Experimentally, it is difficult to measure the charge of a capacitor. It is easier to measure the current instead.<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-88" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-89">Let <span class="process-math">\(i(t)\)</span> be the current at time <span class="process-math">\(t.\)</span> Suppose at time zero, the capacitor is uncharged. Then <span class="process-math">\(i(t)\)</span> satisfies the following ODE:<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-89" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-90">
+<span class="process-math">\(L \frac{di}{dt} + R i + \frac{1}{C} \int_0^t i(\tau) d\tau = E(t)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-90" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-91">We set <span class="process-math">\(I(s) = L\{i(t)\}\)</span> and Laplace both sides:<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-91" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-92">
+<span class="process-math">\(L(I(s) - s \cdot i(0)) + R I(s) + \frac{1}{C} \cdot \frac{I(s)}{s} = L\{E(t)\}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-92" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-93">If <span class="process-math">\(L = 0.1 \, h, \, R = 2 \, \Omega, \, C = 0.1 \, f, \, i(0) = 0,\)</span> and <span class="process-math">\(E(t)\)</span> is the unit square wave function, then<div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-93" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-94">
+<span class="process-math">\(0.1(I(s) - s \cdot 0) + 2 I(s) + \frac{10}{s} I(s) = \frac{1}{s(1 + e^{-s})}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-94" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-95">
+<span class="process-math">\(\implies I(s) = \frac{10}{(s^2 + 20s + 100)(1 + e^{-s})}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-95" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-96">
+<span class="process-math">\(I(s) = \frac{10}{(s^2 + 20s + 100)(1 + e^{-s})} = 10 \sum_{n=0}^{\infty} (-1)^n \frac{e^{-ns}}{(s + 10)^2}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-96" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-derivative-Laplace-convolutions-97">
+<span class="process-math">\(= 10 \sum_{n=0}^{\infty} (-1)^n (t - n)e^{-10(t - n)} u(t - n).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-derivative-Laplace-convolutions-97" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 3.6: Derivative of Laplace Transform and Convolution"><a href="#sec-derivative-Laplace-convolutions" title="Copy heading and permalink for Section 3.6: Derivative of Laplace Transform and Convolution">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-Laplace-periodic.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Dirac-delta.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

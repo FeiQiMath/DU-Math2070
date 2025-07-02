@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.6';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -275,7 +275,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integral Transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Laplace transforms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-4" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Summary of basic formulas for Laplace transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-5" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
@@ -299,7 +307,9 @@ eBookConfig.enable_chatcodes =  false;
 <article class="definition definition-like" id="def-diffeq"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.1</span><span class="period">.</span>
 </h3>
-<div class="para" id="def-diffeq-1-1">A <dfn class="terminology">differential equation</dfn> is an equation concerning derivatives. An <dfn class="terminology">ordinary differential equation</dfn> (abbrev. <dfn class="terminology">ODE</dfn>) is an equation involving only ordinary derivatives of a single-variable function.</div></article><div class="para logical" id="sec-basic-concepts-3">
+<div class="para" id="def-diffeq-1-1">A <dfn class="terminology">differential equation</dfn> is an equation concerning derivatives. An <dfn class="terminology">ordinary differential equation</dfn> (abbrev. <dfn class="terminology">ODE</dfn>) is an equation involving only ordinary derivatives of a single-variable function.<div class="autopermalink" data-description="Paragraph"><a href="#def-diffeq-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 1.1.1"><a href="#def-diffeq" title="Copy heading and permalink for Definition 1.1.1">🔗</a></div></article><div class="para logical" id="sec-basic-concepts-3">
 <div class="para">Here is the <dfn class="terminology">typical form</dfn> of a first-order ODE:</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -313,48 +323,81 @@ y' = f(t,y)
 \end{equation*}
 </div>
 <div class="para">where</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basic-concepts-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <ul class="disc" id="sec-basic-concepts-4">
-<li id="sec-basic-concepts-4-1"><div class="para" id="sec-basic-concepts-4-1-1">
-<span class="process-math">\(t\)</span> is the independent variable.</div></li>
-<li id="sec-basic-concepts-4-2"><div class="para" id="sec-basic-concepts-4-2-1">
-<span class="process-math">\(y = y(t)\)</span> is a one-variable function depending on <span class="process-math">\(t\text{.}\)</span>
-</div></li>
-<li id="sec-basic-concepts-4-3"><div class="para" id="sec-basic-concepts-4-3-1">
-<span class="process-math">\(y' = \frac{dy}{dt}\)</span> is the derivative of <span class="process-math">\(y\text{.}\)</span>
-</div></li>
-<li id="sec-basic-concepts-4-4"><div class="para" id="sec-basic-concepts-4-4-1">
-<span class="process-math">\(f(t,y)\)</span> is a known function of two variables.</div></li>
+<li id="sec-basic-concepts-4-1">
+<div class="para" id="sec-basic-concepts-4-1-1">
+<span class="process-math">\(t\)</span> is the independent variable.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basic-concepts-4-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-basic-concepts-4-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-basic-concepts-4-2">
+<div class="para" id="sec-basic-concepts-4-2-1">
+<span class="process-math">\(y = y(t)\)</span> is a one-variable function depending on <span class="process-math">\(t\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-basic-concepts-4-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-basic-concepts-4-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-basic-concepts-4-3">
+<div class="para" id="sec-basic-concepts-4-3-1">
+<span class="process-math">\(y' = \frac{dy}{dt}\)</span> is the derivative of <span class="process-math">\(y\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-basic-concepts-4-3-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-basic-concepts-4-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-basic-concepts-4-4">
+<div class="para" id="sec-basic-concepts-4-4-1">
+<span class="process-math">\(f(t,y)\)</span> is a known function of two variables.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basic-concepts-4-4-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-basic-concepts-4-4" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
-<div class="para" id="sec-basic-concepts-5">This ODE expresses the derivative <span class="process-math">\(y'(t)\)</span> in terms of <span class="process-math">\(t\)</span> and <span class="process-math">\(y(t)\text{.}\)</span>
+<div class="para" id="sec-basic-concepts-5">This ODE expresses the derivative <span class="process-math">\(y'(t)\)</span> in terms of <span class="process-math">\(t\)</span> and <span class="process-math">\(y(t)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-basic-concepts-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="definition definition-like" id="def-solution"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.2</span><span class="period">.</span>
 </h3>
-<div class="para" id="def-solution-1-1">A function <span class="process-math">\(y(t)\)</span> defined on an <em class="alert">open</em> interval <span class="process-math">\(I\)</span> is called a <dfn class="terminology">solution</dfn> of the ODE <span class="process-math">\(y' = f(t,y)\)</span> on <span class="process-math">\(I\)</span> if</div> <ul class="disc" id="def-solution-1-2">
-<li id="def-solution-1-2-1"><div class="para" id="def-solution-1-2-1-1">
-<span class="process-math">\(y(t)\)</span> is differentiable on <span class="process-math">\(I\text{.}\)</span>
-</div></li>
-<li id="def-solution-1-2-2"><div class="para" id="def-solution-1-2-2-1">For all <span class="process-math">\(t\)</span> in <span class="process-math">\(I\text{,}\)</span> the equation <span class="process-math">\(y' = f(t,y)\)</span> holds.</div></li>
-</ul></article><div class="para" id="sec-basic-concepts-7">While we haven’t learned how to solve an ODE, it is easy to check if a function is a solution of an ODE. Simply compute its derivatives, then plug in the ODE, and see if equality holds.</div>
+<div class="para" id="def-solution-1-1">A function <span class="process-math">\(y(t)\)</span> defined on an <em class="alert">open</em> interval <span class="process-math">\(I\)</span> is called a <dfn class="terminology">solution</dfn> of the ODE <span class="process-math">\(y' = f(t,y)\)</span> on <span class="process-math">\(I\)</span> if<div class="autopermalink" data-description="Paragraph"><a href="#def-solution-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ul class="disc" id="def-solution-1-2">
+<li id="def-solution-1-2-1">
+<div class="para" id="def-solution-1-2-1-1">
+<span class="process-math">\(y(t)\)</span> is differentiable on <span class="process-math">\(I\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#def-solution-1-2-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#def-solution-1-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="def-solution-1-2-2">
+<div class="para" id="def-solution-1-2-2-1">For all <span class="process-math">\(t\)</span> in <span class="process-math">\(I\text{,}\)</span> the equation <span class="process-math">\(y' = f(t,y)\)</span> holds.<div class="autopermalink" data-description="Paragraph"><a href="#def-solution-1-2-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#def-solution-1-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Definition 1.1.2"><a href="#def-solution" title="Copy heading and permalink for Definition 1.1.2">🔗</a></div></article><div class="para" id="sec-basic-concepts-7">While we haven’t learned how to solve an ODE, it is easy to check if a function is a solution of an ODE. Simply compute its derivatives, then plug in the ODE, and see if equality holds.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basic-concepts-7" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <details id="ex-solution" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.3</span><span class="period">.</span><span class="space"> </span><span class="title">A solution of an ODE.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="para" id="ex-solution-2">
-<span class="process-math">\(y(t) = e^t\)</span> is a solution of the ODE <span class="process-math">\(y' - y = 0\text{,}\)</span> because <span class="process-math">\(y'(t) = e^t\text{,}\)</span>
+<span class="process-math">\(y(t) = e^t\)</span> is a solution of the ODE <span class="process-math">\(y' - y = 0\text{,}\)</span> because <span class="process-math">\(y'(t) = e^t\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-solution-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-solution-3"><span class="process-math">\(\implies LHS = y' - y = e^t - e^t = 0 = RHS\text{.}\)</span></div>
-<div class="para" id="ex-solution-4">The solution is defined on everywhere on <span class="process-math">\((-\infty, \infty)\text{.}\)</span>
-</div></article></details><details id="ex-non-solution" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="para" id="ex-solution-3">
+<span class="process-math">\(\implies LHS = y' - y = e^t - e^t = 0 = RHS\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-solution-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-solution-4">The solution is defined on everywhere on <span class="process-math">\((-\infty, \infty)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-solution-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.1.3: A solution of an ODE"><a href="#ex-solution" title="Copy heading and permalink for Example 1.1.3: A solution of an ODE">🔗</a></div></article></details><details id="ex-non-solution" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">A non-solution of an ODE.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="para" id="ex-non-solution-2">
-<span class="process-math">\(y(t) = \cos 2t\)</span> is not a solution of the ODE <span class="process-math">\(y' - y = 0\text{,}\)</span> because <span class="process-math">\(y'(t) = -2\sin 2t\text{,}\)</span>
+<span class="process-math">\(y(t) = \cos 2t\)</span> is not a solution of the ODE <span class="process-math">\(y' - y = 0\text{,}\)</span> because <span class="process-math">\(y'(t) = -2\sin 2t\text{,}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-non-solution-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-non-solution-3"><span class="process-math">\(\implies LHS = y' - y = -2\sin 2t - \cos 2t \neq 0 = RHS\text{.}\)</span></div>
-<div class="para" id="ex-non-solution-4">The solution is defined on everywhere on <span class="process-math">\((-\infty, \infty)\text{.}\)</span>
-</div></article></details><article class="remark remark-like" id="sec-basic-concepts-10"><h3 class="heading">
+<div class="para" id="ex-non-solution-3">
+<span class="process-math">\(\implies LHS = y' - y = -2\sin 2t - \cos 2t \neq 0 = RHS\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-non-solution-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-non-solution-4">The solution is defined on everywhere on <span class="process-math">\((-\infty, \infty)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-non-solution-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.1.4: A non-solution of an ODE"><a href="#ex-non-solution" title="Copy heading and permalink for Example 1.1.4: A non-solution of an ODE">🔗</a></div></article></details><article class="remark remark-like" id="sec-basic-concepts-10"><h3 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.1.5</span><span class="period">.</span>
 </h3>
-<div class="para" id="sec-basic-concepts-10-1">We shall apply the method of checking solutions extensively in this course, especially in the study of higher-order linear ODEs.</div></article><article class="definition definition-like" id="def-general-form"><h3 class="heading">
+<div class="para" id="sec-basic-concepts-10-1">We shall apply the method of checking solutions extensively in this course, especially in the study of higher-order linear ODEs.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basic-concepts-10-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 1.1.5"><a href="#sec-basic-concepts-10" title="Copy heading and permalink for Remark 1.1.5">🔗</a></div></article><article class="definition definition-like" id="def-general-form"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.6</span><span class="period">.</span>
 </h3>
 <div class="para logical" id="def-general-form-1-1">
@@ -365,6 +408,7 @@ F(t,y,y') = 0.
 \end{equation*}
 </div>
 <div class="para">i.e., a relation among the variable <span class="process-math">\(t, y,\)</span> and <span class="process-math">\(y'\text{.}\)</span> We call this the <dfn class="terminology">general form</dfn> of a first-order ODE.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#def-general-form-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical" id="def-general-form-1-2">
 <div class="para">The <dfn class="terminology">order</dfn> of a differential equation is the order of the highest derivative appearing in the equation. Similarly, the <dfn class="terminology">general form</dfn> of an <span class="process-math">\(n\)</span>-th order ODE is</div>
 <div class="displaymath process-math">
@@ -374,19 +418,36 @@ F(t,y,y',...,y^{(n)}) = 0
 </div>
 <div class="para">i.e., a relation among the variable <span class="process-math">\(t, y\)</span> and the <span class="process-math">\(n\)</span> derivatives <span class="process-math">\(y', y'', \cdots, y^{(n)}\)</span> of <span class="process-math">\(y\text{.}\)</span>
 </div>
-</div></article><details id="sec-basic-concepts-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#def-general-form-1-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 1.1.6"><a href="#def-general-form" title="Copy heading and permalink for Definition 1.1.6">🔗</a></div></article><details id="sec-basic-concepts-12" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Examples of ODEs in typical and general forms.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-basic-concepts-12-2-1"><ul class="disc" id="sec-basic-concepts-12-2-1-1">
-<li id="sec-basic-concepts-12-2-1-1-1"><div class="para" id="p-derived-sec-basic-concepts-12-2-1-1-1">
-<span class="process-math">\(y' = t^2 + y\)</span> (First-order ODE in its typical form).</div></li>
-<li id="sec-basic-concepts-12-2-1-1-2"><div class="para" id="p-derived-sec-basic-concepts-12-2-1-1-2">
-<span class="process-math">\((y')^2 + \sin y = y + t^2\)</span> (First-order ODE).</div></li>
-<li id="sec-basic-concepts-12-2-1-1-3"><div class="para" id="p-derived-sec-basic-concepts-12-2-1-1-3">
-<span class="process-math">\(y''' + 3y'' + 3y' + y = e^{2t}\)</span> (Third-order ODE).</div></li>
-</ul></div></article></details><article class="definition definition-like" id="def-pde"><h3 class="heading">
+</h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-basic-concepts-12-2-1">
+<ul class="disc" id="sec-basic-concepts-12-2-1-1">
+<li id="sec-basic-concepts-12-2-1-1-1">
+<div class="para" id="p-derived-sec-basic-concepts-12-2-1-1-1">
+<span class="process-math">\(y' = t^2 + y\)</span> (First-order ODE in its typical form).</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-basic-concepts-12-2-1-1-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-basic-concepts-12-2-1-1-2">
+<div class="para" id="p-derived-sec-basic-concepts-12-2-1-1-2">
+<span class="process-math">\((y')^2 + \sin y = y + t^2\)</span> (First-order ODE).</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-basic-concepts-12-2-1-1-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-basic-concepts-12-2-1-1-3">
+<div class="para" id="p-derived-sec-basic-concepts-12-2-1-1-3">
+<span class="process-math">\(y''' + 3y'' + 3y' + y = e^{2t}\)</span> (Third-order ODE).</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-basic-concepts-12-2-1-1-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basic-concepts-12-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.1.7: Examples of ODEs in typical and general forms"><a href="#sec-basic-concepts-12" title="Copy heading and permalink for Example 1.1.7: Examples of ODEs in typical and general forms">🔗</a></div></article></details><article class="definition definition-like" id="def-pde"><h3 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.1.8</span><span class="period">.</span>
 </h3>
-<div class="para" id="def-pde-1-1">A <dfn class="terminology">partial differential equation</dfn> (abbrev. <dfn class="terminology">PDE</dfn>) is an equation concerning partial derivatives.</div></article><details id="sec-basic-concepts-14" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<div class="para" id="def-pde-1-1">A <dfn class="terminology">partial differential equation</dfn> (abbrev. <dfn class="terminology">PDE</dfn>) is an equation concerning partial derivatives.<div class="autopermalink" data-description="Paragraph"><a href="#def-pde-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 1.1.8"><a href="#def-pde" title="Copy heading and permalink for Definition 1.1.8">🔗</a></div></article><details id="sec-basic-concepts-14" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Example of a PDE.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-basic-concepts-14-2-1">
 <div class="para">A harmonic function <span class="process-math">\(u = u(x,y)\)</span> in two variables are defined by the PDE</div>
@@ -395,7 +456,11 @@ F(t,y,y',...,y^{(n)}) = 0
 \frac{\partial^2 u}{\partial x^2} + \frac{\partial^2 u}{\partial y^2} = 0.
 \end{equation*}
 </div>
-</div></article></details><div class="para" id="sec-basic-concepts-15">We shall not require PDEs in this course.</div></section></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-basic-concepts-14-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.1.9: Example of a PDE"><a href="#sec-basic-concepts-14" title="Copy heading and permalink for Example 1.1.9: Example of a PDE">🔗</a></div></article></details><div class="para" id="sec-basic-concepts-15">We shall not require PDEs in this course.<div class="autopermalink" data-description="Paragraph"><a href="#sec-basic-concepts-15" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 1.1: Basic Concepts"><a href="#sec-basic-concepts" title="Copy heading and permalink for Section 1.1: Basic Concepts">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="First-order-ODE.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-why-study-DEs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.6';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -275,7 +275,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integral Transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Laplace transforms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-4" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Summary of basic formulas for Laplace transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-5" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
@@ -302,22 +310,35 @@ eBookConfig.enable_chatcodes =  false;
 <details id="sec-undetermined-coeff-2-2-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.1</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' - y' - 2y = e^{2t}\)</span> with the first ansatz.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-undetermined-coeff-2-2-2-2">
-<li id="sec-undetermined-coeff-2-2-2-2-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-2-2-1">Complementary solution: <span class="process-math">\(y_c = C_1e^{-t} + C_2e^{2t}.\)</span>
-</div></li>
-<li id="sec-undetermined-coeff-2-2-2-2-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-2-2-2">If we try <span class="process-math">\(Y = Ae^{2t},\)</span> then <span class="process-math">\(Y' = 2Ae^{2t}, Y'' = 4Ae^{2t}.\)</span>
-</div></li>
-<li id="sec-undetermined-coeff-2-2-2-2-3"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-2-2-3">Plug the derivatives into the LHS:<div class="displaymath process-math">
+<li id="sec-undetermined-coeff-2-2-2-2-1">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-2-2-2-1">Complementary solution: <span class="process-math">\(y_c = C_1e^{-t} + C_2e^{2t}.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-2-2-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-2-2-2-2">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-2-2-2-2">If we try <span class="process-math">\(Y = Ae^{2t},\)</span> then <span class="process-math">\(Y' = 2Ae^{2t}, Y'' = 4Ae^{2t}.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-2-2-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-2-2-2-3">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-2-2-2-3">Plug the derivatives into the LHS:<div class="displaymath process-math">
 \begin{equation*}
 Y'' - Y' - 2Y = 2Ae^{2t} - 2Ae^{2t} - 2Ae^{2t} = 0.
 \end{equation*}
 </div>There is no way for <span class="process-math">\(Y'' - Y' - 2Y = e^{2t}.\)</span>
-</div></li>
-</ul></article></details><div class="para" id="sec-undetermined-coeff-2-2-3">Why does this happen? Notice that <span class="process-math">\(e^{2t}\)</span> appears as a part of the complementary solution while my ansatz <span class="process-math">\(Ae^{2t}\)</span> is its constant multiple. When this happens, the first try ansatz fails.</div>
-<div class="para" id="sec-undetermined-coeff-2-2-4">To find a particular solution, we multiply our ansatz by <span class="process-math">\(t\)</span> and try again.</div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-2-2-2-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Example 2.8.1: y'' - y' - 2y = e^{2t} with the first ansatz"><a href="#sec-undetermined-coeff-2-2-2" title="Copy heading and permalink for Example 2.8.1: y'' - y' - 2y = e^{2t} with the first ansatz">🔗</a></div></article></details><div class="para" id="sec-undetermined-coeff-2-2-3">Why does this happen? Notice that <span class="process-math">\(e^{2t}\)</span> appears as a part of the complementary solution while my ansatz <span class="process-math">\(Ae^{2t}\)</span> is its constant multiple. When this happens, the first try ansatz fails.<div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-2-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-undetermined-coeff-2-2-4">To find a particular solution, we multiply our ansatz by <span class="process-math">\(t\)</span> and try again.<div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-2-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <details id="sec-undetermined-coeff-2-2-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.2</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' - y' - 2y = e^{2t}\)</span> with the second try.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-undetermined-coeff-2-2-5-2">
-<li id="sec-undetermined-coeff-2-2-5-2-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-5-2-1">Set<div class="displaymath process-math">
+<li id="sec-undetermined-coeff-2-2-5-2-1">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-2-5-2-1">Set<div class="displaymath process-math">
 \begin{equation*}
 Y = Ate^{2t},
 \end{equation*}
@@ -326,8 +347,11 @@ Y = Ate^{2t},
 Y' = Ae^{2t} + 2Ate^{2t}, Y'' = 4Ae^{2t} + 4Ate^{2t}.
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-undetermined-coeff-2-2-5-2-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-5-2-2">Plug the derivatives into the LHS:<div class="displaymath process-math" id="sec-undetermined-coeff-2-2-5-2-2-1">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-2-5-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-2-5-2-2">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-2-5-2-2">Plug the derivatives into the LHS:<div class="displaymath process-math" id="sec-undetermined-coeff-2-2-5-2-2-1">
 \begin{align*}
 \amp Y'' - Y' - 2Y \\
 = \amp 4Ae^{2t} + 4Ate^{2t} - (Ae^{2t} + 2Ate^{2t}) - 2Ate^{2t}\\
@@ -338,17 +362,30 @@ Y' = Ae^{2t} + 2Ate^{2t}, Y'' = 4Ae^{2t} + 4Ate^{2t}.
 3A = 1 \implies A = \dfrac{1}{3} \implies Y = \dfrac{1}{3}te^{2t}.
 \end{equation*}
 </div>
-</div></li>
-</ul></article></details><details id="sec-undetermined-coeff-2-2-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-2-5-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Example 2.8.2: y'' - y' - 2y = e^{2t} with the second try"><a href="#sec-undetermined-coeff-2-2-5" title="Copy heading and permalink for Example 2.8.2: y'' - y' - 2y = e^{2t} with the second try">🔗</a></div></article></details><details id="sec-undetermined-coeff-2-2-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.3</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' - 2y' + y = 2te^t\)</span> with the second try fails.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-undetermined-coeff-2-2-6-2">
-<li id="sec-undetermined-coeff-2-2-6-2-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-6-2-1">Complementary solution: <span class="process-math">\(y_c = C_1e^t + C_2te^t.\)</span>
-</div></li>
-<li id="sec-undetermined-coeff-2-2-6-2-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-6-2-2">The first try ansatz is <span class="process-math">\(Y = e^t(At + B) = Ate^t + Be^t.\)</span>
-</div></li>
-<li id="sec-undetermined-coeff-2-2-6-2-3"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-6-2-3">This ansatz clearly fails, as <span class="process-math">\(Y\)</span> has the same structure as the complementary solution. We need to multiply by <span class="process-math">\(t.\)</span>
-</div></li>
-<li id="sec-undetermined-coeff-2-2-6-2-4"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-6-2-4">Set<div class="displaymath process-math">
+<li id="sec-undetermined-coeff-2-2-6-2-1">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-2-6-2-1">Complementary solution: <span class="process-math">\(y_c = C_1e^t + C_2te^t.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-2-6-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-2-6-2-2">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-2-6-2-2">The first try ansatz is <span class="process-math">\(Y = e^t(At + B) = Ate^t + Be^t.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-2-6-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-2-6-2-3">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-2-6-2-3">This ansatz clearly fails, as <span class="process-math">\(Y\)</span> has the same structure as the complementary solution. We need to multiply by <span class="process-math">\(t.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-2-6-2-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-2-6-2-4">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-2-6-2-4">Set<div class="displaymath process-math">
 \begin{equation*}
 Y = te^t(At + B) = (At^2 + Bt)e^t.
 \end{equation*}
@@ -358,20 +395,28 @@ Y' = \amp (2At + B)e^t + (At^2 + Bt)e^t,\\
 Y'' = \amp 2Ae^t + 2(2At + B)e^t + (At^2 + Bt)e^t.
 \end{align*}
 </div>
-</div></li>
-<li id="sec-undetermined-coeff-2-2-6-2-5"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-6-2-5">Plug the derivatives into the LHS:<div class="displaymath process-math" id="sec-undetermined-coeff-2-2-6-2-5-1">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-2-6-2-4" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-2-6-2-5">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-2-6-2-5">Plug the derivatives into the LHS:<div class="displaymath process-math" id="sec-undetermined-coeff-2-2-6-2-5-1">
 \begin{align*}
 \amp Y'' - 2Y' + Y\\
 = \amp 2Ae^t + 2(2At + B)e^t + (At^2 + Bt)e^t\\
 = \amp - 2((2At + B)e^t + (At^2 + Bt)e^t) + (At^2 + Bt)e^t\\
 = \amp 2Ae^t.
 \end{align*}
-</div>We do not have <span class="process-math">\(te^t\)</span> terms on the left-hand-side. The equality cannot hold, no matter how <span class="process-math">\(A, B\)</span> are chosen. The second try fails.</div></li>
-</ul></article></details><div class="para" id="sec-undetermined-coeff-2-2-7">To obtain a particular solution, we will have to multiply by another <span class="process-math">\(t\)</span> and try again.</div>
+</div>We do not have <span class="process-math">\(te^t\)</span> terms on the left-hand-side. The equality cannot hold, no matter how <span class="process-math">\(A, B\)</span> are chosen. The second try fails.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-2-6-2-5" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Example 2.8.3: y'' - 2y' + y = 2te^t with the second try fails"><a href="#sec-undetermined-coeff-2-2-6" title="Copy heading and permalink for Example 2.8.3: y'' - 2y' + y = 2te^t with the second try fails">🔗</a></div></article></details><div class="para" id="sec-undetermined-coeff-2-2-7">To obtain a particular solution, we will have to multiply by another <span class="process-math">\(t\)</span> and try again.<div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-2-7" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <details id="sec-undetermined-coeff-2-2-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.4</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' - 2y' + y = 2te^t\)</span> with the third try.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-undetermined-coeff-2-2-8-2">
-<li id="sec-undetermined-coeff-2-2-8-2-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-8-2-1">Now we try:<div class="displaymath process-math">
+<li id="sec-undetermined-coeff-2-2-8-2-1">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-2-8-2-1">Now we try:<div class="displaymath process-math">
 \begin{equation*}
 Y = t^2 e^t(At + B) = (At^3 + Bt^2)e^t.
 \end{equation*}
@@ -381,8 +426,11 @@ Y' = \amp (3At^2 + 2Bt)e^t + (At^3 + Bt^2)e^t, \\
 Y'' = \amp (6At + 2B)e^t + 2(3At^2 + 2Bt)e^t + (At^3 + Bt^2)e^t.
 \end{align*}
 </div>
-</div></li>
-<li id="sec-undetermined-coeff-2-2-8-2-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-2-8-2-2">Plug the derivatives into the LHS:<div class="displaymath process-math" id="sec-undetermined-coeff-2-2-8-2-2-1">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-2-8-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-2-8-2-2">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-2-8-2-2">Plug the derivatives into the LHS:<div class="displaymath process-math" id="sec-undetermined-coeff-2-2-8-2-2-1">
 \begin{align*}
 \amp Y'' - 2Y' + Y\\
 = \amp (6At + 2B)e^t + 2(3At^2 + 2Bt)e^t + (At^3 + Bt^2)e^t\\
@@ -394,7 +442,9 @@ Y'' = \amp (6At + 2B)e^t + 2(3At^2 + 2Bt)e^t + (At^3 + Bt^2)e^t.
 6A = 1, 2B = 0 \implies A = \dfrac{1}{6}, B = 0 \implies Y = \dfrac{1}{6}t^3 e^t.
 \end{equation*}
 </div>
-</div></li>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-2-8-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
 <div class="para logical" id="sec-undetermined-coeff-2-2-8-3">
 <div class="para">The general solution:</div>
@@ -403,48 +453,90 @@ Y'' = \amp (6At + 2B)e^t + 2(3At^2 + 2Bt)e^t + (At^3 + Bt^2)e^t.
 y = C_1 e^t + C_2 te^t + \dfrac{1}{6}t^3 e^t.
 \end{equation*}
 </div>
-</div></article></details></section><section class="subsection" id="sec-undetermined-coeff-2-3"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-2-8-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.8.4: y'' - 2y' + y = 2te^t with the third try"><a href="#sec-undetermined-coeff-2-2-8" title="Copy heading and permalink for Example 2.8.4: y'' - 2y' + y = 2te^t with the third try">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 2.8.1: The case when the first ansatz fails"><a href="#sec-undetermined-coeff-2-2" title="Copy heading and permalink for Subsection 2.8.1: The case when the first ansatz fails">🔗</a></div></section><section class="subsection" id="sec-undetermined-coeff-2-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.8.2</span><span class="space"> </span><span class="title">How to find the final ansatz without trying</span>
 </h3>
-<div class="para" id="sec-undetermined-coeff-2-3-2">Recall: In <span class="process-math">\(y'' - y' - 2y = e^{2t}\)</span> of Example 1:</div>
+<div class="para" id="sec-undetermined-coeff-2-3-2">Recall: In <span class="process-math">\(y'' - y' - 2y = e^{2t}\)</span> of Example 1:<div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-3-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <ol class="decimal" id="sec-undetermined-coeff-2-3-3">
-<li id="sec-undetermined-coeff-2-3-3-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-3-1">The aux. eqn. is <span class="process-math">\(r^2 - r - 2 = 0 \implies r_1 = 2, r_2 = -1.\)</span>
-</div></li>
-<li id="sec-undetermined-coeff-2-3-3-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-3-2">
+<li id="sec-undetermined-coeff-2-3-3-1">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-3-1">The aux. eqn. is <span class="process-math">\(r^2 - r - 2 = 0 \implies r_1 = 2, r_2 = -1.\)</span>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-undetermined-coeff-2-3-3-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-3-3-2">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-3-2">
 <span class="process-math">\(g(t) = e^{2t}\)</span> whose exponential coefficient is <span class="process-math">\(2,\)</span> which is a root that appears <em class="alert">once.</em>
-</div></li>
-<li id="sec-undetermined-coeff-2-3-3-3"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-3-3">We have seen that the first ansatz failed, the second succeeded.</div></li>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-undetermined-coeff-2-3-3-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-3-3-3">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-3-3">We have seen that the first ansatz failed, the second succeeded.</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec-undetermined-coeff-2-3-3-3" title="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
 </ol>
-<div class="para" id="sec-undetermined-coeff-2-3-4">Recall: In <span class="process-math">\(y'' - 2y' + y = te^t\)</span> of Example 2:</div>
+<div class="para" id="sec-undetermined-coeff-2-3-4">Recall: In <span class="process-math">\(y'' - 2y' + y = te^t\)</span> of Example 2:<div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-3-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <ol class="decimal" id="sec-undetermined-coeff-2-3-5">
-<li id="sec-undetermined-coeff-2-3-5-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-5-1">The aux. eqn. is <span class="process-math">\(r^2 - 2r + 1 = 0 \implies r_1 = r_2 = 1.\)</span>
-</div></li>
-<li id="sec-undetermined-coeff-2-3-5-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-5-2">
+<li id="sec-undetermined-coeff-2-3-5-1">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-5-1">The aux. eqn. is <span class="process-math">\(r^2 - 2r + 1 = 0 \implies r_1 = r_2 = 1.\)</span>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-undetermined-coeff-2-3-5-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-3-5-2">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-5-2">
 <span class="process-math">\(g(t) = e^t\)</span> whose exponential coefficient is <span class="process-math">\(1,\)</span> which is a root that appears <em class="alert">twice.</em>
-</div></li>
-<li id="sec-undetermined-coeff-2-3-5-3"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-5-3">We have seen that the first and second ansatz failed, the third ansatz succeeded.</div></li>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-undetermined-coeff-2-3-5-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-3-5-3">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-5-3">We have seen that the first and second ansatz failed, the third ansatz succeeded.</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec-undetermined-coeff-2-3-5-3" title="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
 </ol>
-<div class="para" id="sec-undetermined-coeff-2-3-6">Generally, for the ODE <span class="process-math">\(ay'' + by' + cy = g(t),\)</span> where</div>
-<div class="para" id="sec-undetermined-coeff-2-3-7"><span class="process-math">\(g(t) = e^{at} \cos \beta t \cdot (\text{polynomial}) + e^{at} \sin \beta t \cdot (\text{polynomial}),\)</span></div>
-<div class="para" id="sec-undetermined-coeff-2-3-8">if the complex number <span class="process-math">\(\alpha + i\beta\)</span> appears as a root of the auxiliary equation for <span class="process-math">\(m\)</span> times, then the first <span class="process-math">\(m\)</span> ansatz fail. We should modify the first ansatz by <span class="process-math">\(t^m.\)</span>
+<div class="para" id="sec-undetermined-coeff-2-3-6">Generally, for the ODE <span class="process-math">\(ay'' + by' + cy = g(t),\)</span> where<div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-3-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-undetermined-coeff-2-3-7">
+<span class="process-math">\(g(t) = e^{at} \cos \beta t \cdot (\text{polynomial}) + e^{at} \sin \beta t \cdot (\text{polynomial}),\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-3-7" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-undetermined-coeff-2-3-8">if the complex number <span class="process-math">\(\alpha + i\beta\)</span> appears as a root of the auxiliary equation for <span class="process-math">\(m\)</span> times, then the first <span class="process-math">\(m\)</span> ansatz fail. We should modify the first ansatz by <span class="process-math">\(t^m.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-3-8" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="remark remark-like" id="sec-undetermined-coeff-2-3-9"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.8.5</span><span class="period">.</span>
 </h4>
 <ol class="decimal" id="sec-undetermined-coeff-2-3-9-1">
-<li id="sec-undetermined-coeff-2-3-9-1-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-9-1-1">For convenience, we will call the complex number <span class="process-math">\(\alpha + i\beta\)</span> the <dfn class="terminology">exponential coefficient</dfn> of <span class="process-math">\(g(t).\)</span>
-</div></li>
-<li id="sec-undetermined-coeff-2-3-9-1-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-9-1-2">The exponential coefficient is a nonstandard terminology. In higher level mathematics, <span class="process-math">\(\alpha + i\beta\)</span> is indeed an eigenvalue with respect to the differential operator. Its associated eigenfunction is <span class="process-math">\(e^{(\alpha + i\beta)t}\)</span> with real part <span class="process-math">\(e^{at} \cos \beta t\)</span> and imaginary part <span class="process-math">\(e^{at} \sin \beta t.\)</span> But it’s wrong to call these trigs eigenfunctions.</div></li>
-<li id="sec-undetermined-coeff-2-3-9-1-3"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-9-1-3">Since the ODE is <em class="alert">second-order</em>, there are at most two roots for the auxiliary equation, <em class="alert">the ansatz at most fails twice.</em>
-</div></li>
-</ol></article><details id="sec-undetermined-coeff-2-3-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<li id="sec-undetermined-coeff-2-3-9-1-1">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-9-1-1">For convenience, we will call the complex number <span class="process-math">\(\alpha + i\beta\)</span> the <dfn class="terminology">exponential coefficient</dfn> of <span class="process-math">\(g(t).\)</span>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-undetermined-coeff-2-3-9-1-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-3-9-1-2">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-9-1-2">The exponential coefficient is a nonstandard terminology. In higher level mathematics, <span class="process-math">\(\alpha + i\beta\)</span> is indeed an eigenvalue with respect to the differential operator. Its associated eigenfunction is <span class="process-math">\(e^{(\alpha + i\beta)t}\)</span> with real part <span class="process-math">\(e^{at} \cos \beta t\)</span> and imaginary part <span class="process-math">\(e^{at} \sin \beta t.\)</span> But it’s wrong to call these trigs eigenfunctions.</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-undetermined-coeff-2-3-9-1-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-3-9-1-3">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-9-1-3">Since the ODE is <em class="alert">second-order</em>, there are at most two roots for the auxiliary equation, <em class="alert">the ansatz at most fails twice.</em>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec-undetermined-coeff-2-3-9-1-3" title="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Remark 2.8.5"><a href="#sec-undetermined-coeff-2-3-9" title="Copy heading and permalink for Remark 2.8.5">🔗</a></div></article><details id="sec-undetermined-coeff-2-3-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.6</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' + 4y = t \sin 2t.\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-undetermined-coeff-2-3-10-2">
-<li id="sec-undetermined-coeff-2-3-10-2-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-10-2-1">Aux. Eqn: <span class="process-math">\(r^2 + 4 = 0 \implies r^2 = -4 \implies r = \pm 2i.\)</span>
-</div></li>
-<li id="sec-undetermined-coeff-2-3-10-2-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-10-2-2">Complementary solution: <span class="process-math">\(y_c = C_1 \cos 2t + C_2 \sin 2t.\)</span>
-</div></li>
-<li id="sec-undetermined-coeff-2-3-10-2-3"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-10-2-3">The first ansatz:<div class="displaymath process-math">
+<li id="sec-undetermined-coeff-2-3-10-2-1">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-10-2-1">Aux. Eqn: <span class="process-math">\(r^2 + 4 = 0 \implies r^2 = -4 \implies r = \pm 2i.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-3-10-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-3-10-2-2">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-10-2-2">Complementary solution: <span class="process-math">\(y_c = C_1 \cos 2t + C_2 \sin 2t.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-3-10-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-3-10-2-3">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-10-2-3">The first ansatz:<div class="displaymath process-math">
 \begin{equation*}
 Y = (At + B) \cos 2t + (Ct + D) \sin 2t.
 \end{equation*}
@@ -454,8 +546,11 @@ Y = \amp t((At + B) \cos 2t + (Ct + D) \sin 2t)\\
 = \amp (At^2 + Bt) \cos 2t + (Ct^2 + Dt) \sin 2t.
 \end{align*}
 </div>
-</div></li>
-<li id="sec-undetermined-coeff-2-3-10-2-4"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-10-2-4">We use product rule to compute the first derivative:<div class="displaymath process-math" id="sec-undetermined-coeff-2-3-10-2-4-1">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-3-10-2-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-3-10-2-4">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-10-2-4">We use product rule to compute the first derivative:<div class="displaymath process-math" id="sec-undetermined-coeff-2-3-10-2-4-1">
 \begin{align*}
 Y' = \amp (2At + B) \cos 2t - 2(At^2 + Bt) \sin 2t \\
 \amp + (2Ct + D) \sin 2t + 2(Ct^2 + D) \cos 2t.
@@ -470,8 +565,11 @@ Y'' = \amp 2A \cos 2t + 2(2At + B) \cdot (-2 \sin 2t) + (At^2 + Bt) \cdot (-4 \c
 \amp + 2C \sin 2t + 2(2Ct + D) \cdot 2 \cos 2t + (Ct^2 + Dt) \cdot (-4 \sin 2t).
 \end{align*}
 </div>
-</div></li>
-<li id="sec-undetermined-coeff-2-3-10-2-5"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-10-2-5">Plug the derivatives into the LHS:<div class="displaymath process-math" id="sec-undetermined-coeff-2-3-10-2-5-1">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-3-10-2-4" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-3-10-2-5">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-10-2-5">Plug the derivatives into the LHS:<div class="displaymath process-math" id="sec-undetermined-coeff-2-3-10-2-5-1">
 \begin{align*}
 \amp Y'' + 4Y \\
 = \amp 2A \cos 2t + 2(2At + B) \cdot (-2 \sin 2t) \\
@@ -486,7 +584,9 @@ Y'' = \amp 2A \cos 2t + 2(2At + B) \cdot (-2 \sin 2t) + (At^2 + Bt) \cdot (-4 \c
 \implies \amp Y = -\dfrac{1}{8}t^2 \cos 2t + \dfrac{1}{16}t \sin 2t.
 \end{align*}
 </div>
-</div></li>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-3-10-2-5" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
 <div class="para logical" id="sec-undetermined-coeff-2-3-10-3">
 <div class="para">The general solution is</div>
@@ -495,33 +595,48 @@ Y'' = \amp 2A \cos 2t + 2(2At + B) \cdot (-2 \sin 2t) + (At^2 + Bt) \cdot (-4 \c
 y = C_1 \cos 2t + C_2 \sin 2t - \dfrac{1}{8}t^2 \cos 2t + \dfrac{1}{16}t \sin 2t.
 \end{equation*}
 </div>
-</div></article></details><details id="sec-undetermined-coeff-2-3-11" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-3-10-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.8.6: y'' + 4y = t \sin 2t."><a href="#sec-undetermined-coeff-2-3-10" title="Copy heading and permalink for Example 2.8.6: y'' + 4y = t \sin 2t.">🔗</a></div></article></details><details id="sec-undetermined-coeff-2-3-11" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.7</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' - 2y' + 2y = e^t \cos t.\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-undetermined-coeff-2-3-11-2">
-<li id="sec-undetermined-coeff-2-3-11-2-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-11-2-1">Aux. Eqn:<div class="displaymath process-math">
+<li id="sec-undetermined-coeff-2-3-11-2-1">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-11-2-1">Aux. Eqn:<div class="displaymath process-math">
 \begin{equation*}
 r^2 - 2r + 2 = 0 \implies (r - 1)^2 = -1 \implies r = 1 \pm i.
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-undetermined-coeff-2-3-11-2-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-11-2-2">Comp. Soln:<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-3-11-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-3-11-2-2">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-11-2-2">Comp. Soln:<div class="displaymath process-math">
 \begin{equation*}
 y_c = C_1 e^t \cos t + C_2 e^t \sin t.
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-undetermined-coeff-2-3-11-2-3"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-11-2-3">First ansatz:<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-3-11-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-3-11-2-3">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-11-2-3">First ansatz:<div class="displaymath process-math">
 \begin{equation*}
 Y = Ae^t \cos t + Be^t \sin t.
 \end{equation*}
-</div>Exponential coefficient <span class="process-math">\(= 1 + i\)</span> that appear as a single root. First try fails.</div></li>
-<li id="sec-undetermined-coeff-2-3-11-2-4"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-11-2-4">Final ansatz:<div class="displaymath process-math">
+</div>Exponential coefficient <span class="process-math">\(= 1 + i\)</span> that appear as a single root. First try fails.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-3-11-2-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-3-11-2-4">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-11-2-4">Final ansatz:<div class="displaymath process-math">
 \begin{equation*}
 Y = Ate^t \cos t + Bte^t \sin t.
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-undetermined-coeff-2-3-11-2-5"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-11-2-5">To compute the derivatives, we may use the following rules:<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-3-11-2-4" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-3-11-2-5">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-11-2-5">To compute the derivatives, we may use the following rules:<div class="displaymath process-math">
 \begin{equation*}
 (fgh)' = f'g h + f g'h + f g h'.
 \end{equation*}
@@ -538,8 +653,11 @@ Y'' = \amp (A + B)e^t \cos t + ((A + B)t + A)e^t \cos t\\
 = \amp (2Bt + 2A + 2B)e^t \cos t + (-2At - 2A + 2B)e^t \sin t.
 \end{align*}
 </div>
-</div></li>
-<li id="sec-undetermined-coeff-2-3-11-2-6"><div class="para" id="p-derived-sec-undetermined-coeff-2-3-11-2-6">Plug the derivatives into the LHS:<div class="displaymath process-math" id="sec-undetermined-coeff-2-3-11-2-6-1">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-3-11-2-5" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-3-11-2-6">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-3-11-2-6">Plug the derivatives into the LHS:<div class="displaymath process-math" id="sec-undetermined-coeff-2-3-11-2-6-1">
 \begin{align*}
 \amp Y'' - 2Y' + 2Y\\
 = \amp (2Bt + 2A + 2B - 2((A + B)t + A) + 2At)e^t \cos t\\
@@ -551,7 +669,9 @@ Y'' = \amp (A + B)e^t \cos t + ((A + B)t + A)e^t \cos t\\
 2B = 1, -2A = 0 \implies A = 0, B = \dfrac{1}{2} \implies Y = \dfrac{1}{2}te^t \sin t.
 \end{equation*}
 </div>
-</div></li>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-3-11-2-6" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
 <div class="para logical" id="sec-undetermined-coeff-2-3-11-3">
 <div class="para">The general solution is</div>
@@ -560,10 +680,14 @@ Y'' = \amp (A + B)e^t \cos t + ((A + B)t + A)e^t \cos t\\
 y = C_1 e^t \cos t + C_2 e^t \sin t + \dfrac{1}{2} te^t \sin t.
 \end{equation*}
 </div>
-</div></article></details><article class="remark remark-like" id="sec-undetermined-coeff-2-3-12"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-3-11-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.8.7: y'' - 2y' + 2y = e^t \cos t."><a href="#sec-undetermined-coeff-2-3-11" title="Copy heading and permalink for Example 2.8.7: y'' - 2y' + 2y = e^t \cos t.">🔗</a></div></article></details><article class="remark remark-like" id="sec-undetermined-coeff-2-3-12"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.8.8</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-undetermined-coeff-2-3-12-1">There does exist faster ways to compute everything by hand. In the MIT Lecture 13 and 14, there exists a simpler way of computing <span class="process-math">\(Y'' - 2Y' + 2Y\text{,}\)</span> using the exponential shift lemma of differential operators and complex functions. We shall not require that in our course.</div></article></section><section class="subsection" id="sec-undetermined-coeff-2-4"><h3 class="heading hide-type">
+<div class="para" id="sec-undetermined-coeff-2-3-12-1">There does exist faster ways to compute everything by hand. In the MIT Lecture 13 and 14, there exists a simpler way of computing <span class="process-math">\(Y'' - 2Y' + 2Y\text{,}\)</span> using the exponential shift lemma of differential operators and complex functions. We shall not require that in our course.<div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-3-12-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.8.8"><a href="#sec-undetermined-coeff-2-3-12" title="Copy heading and permalink for Remark 2.8.8">🔗</a></div></article><div class="autopermalink" data-description="Subsection 2.8.2: How to find the final ansatz without trying"><a href="#sec-undetermined-coeff-2-3" title="Copy heading and permalink for Subsection 2.8.2: How to find the final ansatz without trying">🔗</a></div></section><section class="subsection" id="sec-undetermined-coeff-2-4"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.8.3</span><span class="space"> </span><span class="title">Sums of functions with different exponential coefficients.</span>
 </h3>
 <div class="para logical" id="sec-undetermined-coeff-2-4-2">
@@ -574,6 +698,7 @@ g(t) = e^{\alpha t} \cos \beta t \cdot (\text{polynomial}) + e^{\alpha t} \sin \
 \end{equation*}
 </div>
 <div class="para">We use the exponential coefficient <span class="process-math">\(\alpha + i\beta\)</span> to determine the final ansatz.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-4-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec-undetermined-coeff-2-4-3">
 <div class="para">What shall we do if <span class="process-math">\(g(t)\)</span> is a sum of such functions but with different <span class="process-math">\(\alpha\)</span>’s and <span class="process-math">\(\beta\)</span>’s? For example,</div>
@@ -583,6 +708,7 @@ g(t) = t^3 + e^t + \sin 2t + 2 \cos 2t.
 \end{equation*}
 </div>
 <div class="para">To handle such <span class="process-math">\(g(t),\)</span> we need the following <em class="alert">principle of superposition</em>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-4-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="sec-undetermined-coeff-2-4-4"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.8.9</span><span class="period">.</span><span class="space"> </span><span class="title">Principle of superposition: nonhomogeneous ODEs.</span>
@@ -606,7 +732,9 @@ y'' + p(t)y' + q(t)y = g_2(t).
 y'' + p(t)y' + q(t)y = g_1(t) + g_2(t).
 \end{equation*}
 </div>
-</div></article><details id="sec-undetermined-coeff-2-4-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-undetermined-coeff-2-4-5-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-4-4-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 2.8.9: Principle of superposition: nonhomogeneous ODEs"><a href="#sec-undetermined-coeff-2-4-4" title="Copy heading and permalink for Theorem 2.8.9: Principle of superposition: nonhomogeneous ODEs">🔗</a></div></article><details id="sec-undetermined-coeff-2-4-5" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-undetermined-coeff-2-4-5-1">
 <div class="para">The assumption implies that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -630,40 +758,67 @@ Y_2'' + p(t)Y_2' + q(t)Y_2 = g_2(t).
 y'' + p(t)y' + q(t)y = g_1(t) + g_2(t).
 \end{equation*}
 </div>
-</div></article></details><div class="para" id="sec-undetermined-coeff-2-4-6">From the principle of superposition, we know that to handle such <span class="process-math">\(g(t):\)</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-4-5-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.8.3.1"><a href="#sec-undetermined-coeff-2-4-5" title="Copy heading and permalink for Proof 2.8.3.1">🔗</a></div></article></details><div class="para" id="sec-undetermined-coeff-2-4-6">From the principle of superposition, we know that to handle such <span class="process-math">\(g(t):\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-4-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <ol class="decimal" id="sec-undetermined-coeff-2-4-7">
-<li id="sec-undetermined-coeff-2-4-7-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-7-1">Break <span class="process-math">\(g(t) = g_1(t) + \cdots + g_m(t),\)</span> according to the exponential coefficients.</div></li>
-<li id="sec-undetermined-coeff-2-4-7-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-7-2">Find <span class="process-math">\(Y_1, \ldots, Y_m\)</span> individually for <span class="process-math">\(g_1, \ldots, g_m,\)</span> i.e., for <span class="process-math">\(i = 1, \ldots, m,\)</span> find a particular <span class="process-math">\(Y_i\)</span> for <span class="process-math">\(ay'' + by' + cy = g_i(t).\)</span>
-</div></li>
-<li id="sec-undetermined-coeff-2-4-7-3"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-7-3">Then <span class="process-math">\(Y = Y_1 + \cdots + Y_m\)</span> is a particular solution.</div></li>
+<li id="sec-undetermined-coeff-2-4-7-1">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-4-7-1">Break <span class="process-math">\(g(t) = g_1(t) + \cdots + g_m(t),\)</span> according to the exponential coefficients.</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-undetermined-coeff-2-4-7-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-4-7-2">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-4-7-2">Find <span class="process-math">\(Y_1, \ldots, Y_m\)</span> individually for <span class="process-math">\(g_1, \ldots, g_m,\)</span> i.e., for <span class="process-math">\(i = 1, \ldots, m,\)</span> find a particular <span class="process-math">\(Y_i\)</span> for <span class="process-math">\(ay'' + by' + cy = g_i(t).\)</span>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-undetermined-coeff-2-4-7-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-4-7-3">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-4-7-3">Then <span class="process-math">\(Y = Y_1 + \cdots + Y_m\)</span> is a particular solution.</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec-undetermined-coeff-2-4-7-3" title="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
 </ol>
 <details id="sec-undetermined-coeff-2-4-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.8.10</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' + y = t + t \sin t + 2 \cos t.\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-undetermined-coeff-2-4-8-2">
-<li id="sec-undetermined-coeff-2-4-8-2-1"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-1">Aux. Eqn: <span class="process-math">\(r^2 + 1 = 0 \implies r = \pm i.\)</span>
-</div></li>
-<li id="sec-undetermined-coeff-2-4-8-2-2"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-2">Comp. Soln: <span class="process-math">\(y_c = C_1 \cos t + C_2 \sin t.\)</span>
-</div></li>
-<li id="sec-undetermined-coeff-2-4-8-2-3"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-3">Now we regard <span class="process-math">\(g(t) = g_1(t) + g_2(t),\)</span> where<div class="displaymath process-math" id="sec-undetermined-coeff-2-4-8-2-3-2">
+<li id="sec-undetermined-coeff-2-4-8-2-1">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-1">Aux. Eqn: <span class="process-math">\(r^2 + 1 = 0 \implies r = \pm i.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-4-8-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-4-8-2-2">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-2">Comp. Soln: <span class="process-math">\(y_c = C_1 \cos t + C_2 \sin t.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-4-8-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-4-8-2-3">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-3">Now we regard <span class="process-math">\(g(t) = g_1(t) + g_2(t),\)</span> where<div class="displaymath process-math" id="sec-undetermined-coeff-2-4-8-2-3-2">
 \begin{align*}
 g_1(t) = \amp t,\\
 g_2(t) = \amp t \sin t + 2 \cos t.
 \end{align*}
-</div>(Note: Terms with the same exponential coefficient should be collected together to avoid unnecessary repetitions.)</div></li>
-<li id="sec-undetermined-coeff-2-4-8-2-4"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-4">First we deal with <span class="process-math">\(g_1(t) = t.\)</span> The first ansatz is<div class="displaymath process-math">
+</div>(Note: Terms with the same exponential coefficient should be collected together to avoid unnecessary repetitions.)</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-4-8-2-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-4-8-2-4">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-4">First we deal with <span class="process-math">\(g_1(t) = t.\)</span> The first ansatz is<div class="displaymath process-math">
 \begin{equation*}
 Y_1 = At + B.
 \end{equation*}
-</div>The exponential coefficient is <span class="process-math">\(0\)</span> that is not a root. First ansatz succeeds.</div></li>
-<li id="sec-undetermined-coeff-2-4-8-2-5"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-5">We calculate the derivatives and plug them into the LHS<div class="displaymath process-math" id="sec-undetermined-coeff-2-4-8-2-5-1">
+</div>The exponential coefficient is <span class="process-math">\(0\)</span> that is not a root. First ansatz succeeds.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-4-8-2-4" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-4-8-2-5">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-5">We calculate the derivatives and plug them into the LHS<div class="displaymath process-math" id="sec-undetermined-coeff-2-4-8-2-5-1">
 \begin{align*}
 \amp Y_1' = A, \quad Y_1'' = 0 \implies Y_1'' + Y_1 = At + B = g_1(t) = t\\
 \implies \amp A = 1, B = 0 \implies Y_1 = t.
 \end{align*}
 </div>
-</div></li>
-<li id="sec-undetermined-coeff-2-4-8-2-6"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-6">For <span class="process-math">\(g_2(t)\text{,}\)</span> the first ansatz is<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-4-8-2-5" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-4-8-2-6">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-6">For <span class="process-math">\(g_2(t)\text{,}\)</span> the first ansatz is<div class="displaymath process-math">
 \begin{equation*}
 Y_2 = (Ct + D) \cos t + (Et + F) \sin t.
 \end{equation*}
@@ -672,8 +827,11 @@ Y_2 = (Ct + D) \cos t + (Et + F) \sin t.
 Y_2 = (Ct^2 + Dt) \cos t + (Et^2 + Ft) \sin t.
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-undetermined-coeff-2-4-8-2-7"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-7">We compute the derivatives and find that<div class="displaymath process-math" id="sec-undetermined-coeff-2-4-8-2-7-1">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-4-8-2-6" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-4-8-2-7">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-7">We compute the derivatives and find that<div class="displaymath process-math" id="sec-undetermined-coeff-2-4-8-2-7-1">
 \begin{align*}
 \amp Y_2'' + Y_2 \\
 = \amp (-4Ct + 2E - 2D) \sin t + (4Et + 2F + 2C) \cos t.\\
@@ -686,12 +844,17 @@ Y_2 = (Ct^2 + Dt) \cos t + (Et^2 + Ft) \sin t.
 \amp \implies Y_2 = -\dfrac{1}{4}t^2 \cos t + \dfrac{5}{4}t \sin t.
 \end{align*}
 </div>
-</div></li>
-<li id="sec-undetermined-coeff-2-4-8-2-8"><div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-8">From the principle of superposition,<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-4-8-2-7" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-undetermined-coeff-2-4-8-2-8">
+<div class="para" id="p-derived-sec-undetermined-coeff-2-4-8-2-8">From the principle of superposition,<div class="displaymath process-math">
 \begin{equation*}
 Y = Y_1 + Y_2 = t - \dfrac{1}{4}t^2 \cos t + \dfrac{5}{4}t \sin t
 \end{equation*}
-</div>is a particular solution of the ODE.</div></li>
+</div>is a particular solution of the ODE.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-undetermined-coeff-2-4-8-2-8" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
 <div class="para logical" id="sec-undetermined-coeff-2-4-8-3">
 <div class="para">The general solution is then</div>
@@ -700,10 +863,14 @@ Y = Y_1 + Y_2 = t - \dfrac{1}{4}t^2 \cos t + \dfrac{5}{4}t \sin t
 y = C_1 \cos t + C_2 \sin t + t - \dfrac{1}{4}t^2 \cos t + \dfrac{5}{4}t \sin t.
 \end{equation*}
 </div>
-</div></article></details><article class="remark remark-like" id="sec-undetermined-coeff-2-4-9"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-4-8-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.8.10: y'' + y = t + t \sin t + 2 \cos t."><a href="#sec-undetermined-coeff-2-4-8" title="Copy heading and permalink for Example 2.8.10: y'' + y = t + t \sin t + 2 \cos t.">🔗</a></div></article></details><article class="remark remark-like" id="sec-undetermined-coeff-2-4-9"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.8.11</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-undetermined-coeff-2-4-9-1">A computer can easily handle the derivatives. But to make sure the computer is doing the right thing, it is important for us human to know the correct ansatz at the very least. We will not be able to figure out a mistake made by a computer if we do not know what we are expecting and cannot perform the simplest calculation. This is the main emphasis of this section.</div></article></section></section></div>
+<div class="para" id="sec-undetermined-coeff-2-4-9-1">A computer can easily handle the derivatives. But to make sure the computer is doing the right thing, it is important for us human to know the correct ansatz at the very least. We will not be able to figure out a mistake made by a computer if we do not know what we are expecting and cannot perform the simplest calculation. This is the main emphasis of this section.<div class="autopermalink" data-description="Paragraph"><a href="#sec-undetermined-coeff-2-4-9-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.8.11"><a href="#sec-undetermined-coeff-2-4-9" title="Copy heading and permalink for Remark 2.8.11">🔗</a></div></article><div class="autopermalink" data-description="Subsection 2.8.3: Sums of functions with different exponential coefficients."><a href="#sec-undetermined-coeff-2-4" title="Copy heading and permalink for Subsection 2.8.3: Sums of functions with different exponential coefficients.">🔗</a></div></section><div class="autopermalink" data-description="Section 2.8: Method of Undetermined Coefficients - Final Ansatz"><a href="#sec-undetermined-coeff-2" title="Copy heading and permalink for Section 2.8: Method of Undetermined Coefficients - Final Ansatz">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-undetermined-coeff-2nd-order.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-higher-order-linear-ODEs.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

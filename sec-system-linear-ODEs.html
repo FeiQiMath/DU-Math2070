@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.6';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -275,7 +275,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integral Transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Laplace transforms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-4" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Summary of basic formulas for Laplace transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-5" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
@@ -296,208 +304,435 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-system-linear-ODEs"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">4.2</span><span class="space"> </span><span class="title">System of First-Order Linear ODEs</span>
 </h2>
-<div class="para" id="sec-system-linear-ODEs-2">1. General theory systems of first order linear ODEs</div>
-<div class="para" id="sec-system-linear-ODEs-3"><span class="process-math">\(\vec{x}'(t) = A(t) \vec{x}(t)\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-4">In <span class="process-math">\(n\)</span>-variable case</div>
-<div class="para" id="sec-system-linear-ODEs-5"><span class="process-math">\(\begin{cases} 
+<div class="para" id="sec-system-linear-ODEs-2">1. General theory systems of first order linear ODEs<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-3">
+<span class="process-math">\(\vec{x}'(t) = A(t) \vec{x}(t)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-4">In <span class="process-math">\(n\)</span>-variable case<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-5">
+<span class="process-math">\(\begin{cases} 
 x_1' = p_{11}(t)x_1 + \cdots + p_{1n}(t)x_n + g_1(t) \\ 
 x_2' = p_{21}(t)x_1 + \cdots + p_{2n}(t)x_n + g_2(t) \\ 
 \vdots \\ 
 x_n' = p_{n1}(t)x_1 + \cdots + p_{nn}(t)x_n + g_n(t) 
-\end{cases}\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-6">Existence and Uniqueness Theorem: If <span class="process-math">\(p_{ij}(t), i, j = 1, \ldots, n\)</span> and <span class="process-math">\(g_i(t), i = 1, \ldots, n\)</span> are continuous over an interval <span class="process-math">\((\alpha, \beta)\)</span> that contains <span class="process-math">\(t_0\text{,}\)</span> then there exists a unique solution to the initial value problem</div>
-<div class="para" id="sec-system-linear-ODEs-7"><span class="process-math">\(\begin{cases} 
+\end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-6">Existence and Uniqueness Theorem: If <span class="process-math">\(p_{ij}(t), i, j = 1, \ldots, n\)</span> and <span class="process-math">\(g_i(t), i = 1, \ldots, n\)</span> are continuous over an interval <span class="process-math">\((\alpha, \beta)\)</span> that contains <span class="process-math">\(t_0\text{,}\)</span> then there exists a unique solution to the initial value problem<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-7">
+<span class="process-math">\(\begin{cases} 
 x_1' = p_{11}(t)x_1 + \cdots + p_{1n}(t)x_n + g_1(t) \\ 
 x_2' = p_{21}(t)x_1 + \cdots + p_{2n}(t)x_n + g_2(t), \quad x_1(t_0) = x_0^1, \ldots, x_n(t_0) = x_0^n 
-\end{cases}\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-8">over the interval <span class="process-math">\((\alpha, \beta).\)</span>
+\end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-7" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-9">Remark: We’ll only focus on the homogeneous system, i.e., the case when all <span class="process-math">\(g_i(t) = 0.\)</span>
+<div class="para" id="sec-system-linear-ODEs-8">over the interval <span class="process-math">\((\alpha, \beta).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-8" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-10">Principle of Superposition: Vector functions <span class="process-math">\(\vec{x}_1(t), \ldots, \vec{x}_n(t)\)</span> are linearly independent solutions to the system <span class="process-math">\(\vec{x}'(t) = A(t)\vec{x}(t),\)</span> then the general solution to the linear homogeneous system is</div>
-<div class="para" id="sec-system-linear-ODEs-11"><span class="process-math">\(\vec{x}(t) = C_1 \vec{x}_1(t) + \cdots + C_n \vec{x}_n(t)\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-12">Linearly independent means the Wronskian of the vector functions are not constantly zero.</div>
-<div class="para" id="sec-system-linear-ODEs-13">Relations to the first order ODE</div>
-<div class="para" id="sec-system-linear-ODEs-14">2. System of Linear ODEs with Constant coefficients:</div>
-<div class="para" id="sec-system-linear-ODEs-15"><span class="process-math">\(\vec{x}'(t) = A\vec{x}(t)\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-16">Idea: Try <span class="process-math">\(\vec{x}(t) = e^{Mt}\vec{c}\)</span> to find some solutions. Then use the principle of superposition to solve the problem.</div>
-<div class="para" id="sec-system-linear-ODEs-17">To get the general solution to the linear system of ODE defined by</div>
-<div class="para" id="sec-system-linear-ODEs-18"><span class="process-math">\(\vec{x}' = A \vec{x}\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-19">The initial steps are always the same: Find the eigenvalues by solving the polynomial equation</div>
-<div class="para" id="sec-system-linear-ODEs-20"><span class="process-math">\(\text{det}(A - \lambda I) = 0\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-21">Then find the eigenvectors by solving the linear system</div>
-<div class="para" id="sec-system-linear-ODEs-22"><span class="process-math">\((A - \lambda I) \vec{v} = 0\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-23">for each eigenvalue <span class="process-math">\(\lambda.\)</span>
+<div class="para" id="sec-system-linear-ODEs-9">Remark: We’ll only focus on the homogeneous system, i.e., the case when all <span class="process-math">\(g_i(t) = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-9" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-24">For <span class="process-math">\(2 \times 2\)</span> systems, this equation is quadratic. This means it might have three different kinds of roots and we have to deal with each case separately.</div>
-<div class="para" id="sec-system-linear-ODEs-25">1. Real distinct eigenvalues. In this case one can always find two linearly independent eigenvectors.</div>
-<div class="para" id="sec-system-linear-ODEs-26">Let <span class="process-math">\(\lambda_1 \neq \lambda_2\)</span> be the eigenvalues and <span class="process-math">\(\vec{v_1}, \vec{v_2}\)</span> are the eigenvectors corresponding respectively to <span class="process-math">\(\lambda_1, \lambda_2.\)</span> Then the general solution is</div>
-<div class="para" id="sec-system-linear-ODEs-27"><span class="process-math">\(\vec{x}(t) = C_1 e^{\lambda_1 t} \vec{v_1} + C_2 e^{\lambda_2 t} \vec{v_2}\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-28">2. Complex eigenvalues. In this case we need to look at only one eigenvector.</div>
-<div class="para" id="sec-system-linear-ODEs-29">Let <span class="process-math">\(\alpha + i\beta\)</span> be the eigenvalues of the matrix. Let <span class="process-math">\(\vec{v}\)</span> be the eigenvector corresponding to <span class="process-math">\(\alpha + i\beta.\)</span> Perform the following steps:</div>
+<div class="para" id="sec-system-linear-ODEs-10">Principle of Superposition: Vector functions <span class="process-math">\(\vec{x}_1(t), \ldots, \vec{x}_n(t)\)</span> are linearly independent solutions to the system <span class="process-math">\(\vec{x}'(t) = A(t)\vec{x}(t),\)</span> then the general solution to the linear homogeneous system is<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-10" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-11">
+<span class="process-math">\(\vec{x}(t) = C_1 \vec{x}_1(t) + \cdots + C_n \vec{x}_n(t)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-11" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-12">Linearly independent means the Wronskian of the vector functions are not constantly zero.<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-12" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-13">Relations to the first order ODE<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-13" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-14">2. System of Linear ODEs with Constant coefficients:<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-14" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-15">
+<span class="process-math">\(\vec{x}'(t) = A\vec{x}(t)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-15" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-16">Idea: Try <span class="process-math">\(\vec{x}(t) = e^{Mt}\vec{c}\)</span> to find some solutions. Then use the principle of superposition to solve the problem.<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-16" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-17">To get the general solution to the linear system of ODE defined by<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-17" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-18">
+<span class="process-math">\(\vec{x}' = A \vec{x}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-18" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-19">The initial steps are always the same: Find the eigenvalues by solving the polynomial equation<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-19" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-20">
+<span class="process-math">\(\text{det}(A - \lambda I) = 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-20" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-21">Then find the eigenvectors by solving the linear system<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-21" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-22">
+<span class="process-math">\((A - \lambda I) \vec{v} = 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-22" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-23">for each eigenvalue <span class="process-math">\(\lambda.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-23" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-24">For <span class="process-math">\(2 \times 2\)</span> systems, this equation is quadratic. This means it might have three different kinds of roots and we have to deal with each case separately.<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-24" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-25">1. Real distinct eigenvalues. In this case one can always find two linearly independent eigenvectors.<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-25" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-26">Let <span class="process-math">\(\lambda_1 \neq \lambda_2\)</span> be the eigenvalues and <span class="process-math">\(\vec{v_1}, \vec{v_2}\)</span> are the eigenvectors corresponding respectively to <span class="process-math">\(\lambda_1, \lambda_2.\)</span> Then the general solution is<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-26" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-27">
+<span class="process-math">\(\vec{x}(t) = C_1 e^{\lambda_1 t} \vec{v_1} + C_2 e^{\lambda_2 t} \vec{v_2}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-27" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-28">2. Complex eigenvalues. In this case we need to look at only one eigenvector.<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-28" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-29">Let <span class="process-math">\(\alpha + i\beta\)</span> be the eigenvalues of the matrix. Let <span class="process-math">\(\vec{v}\)</span> be the eigenvector corresponding to <span class="process-math">\(\alpha + i\beta.\)</span> Perform the following steps:<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-29" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <ul class="disc" id="sec-system-linear-ODEs-30">
-<li id="sec-system-linear-ODEs-30-1"><div class="para" id="p-derived-sec-system-linear-ODEs-30-1">Write the complex solution <span class="process-math">\(e^{\alpha + i\beta t}\)</span> into the following form</div></li>
-<li id="sec-system-linear-ODEs-30-4"><div class="para" id="p-derived-sec-system-linear-ODEs-30-4">Then the general solution is</div></li>
+<li id="sec-system-linear-ODEs-30-1">
+<div class="para" id="p-derived-sec-system-linear-ODEs-30-1">Write the complex solution <span class="process-math">\(e^{\alpha + i\beta t}\)</span> into the following form</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-system-linear-ODEs-30-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-system-linear-ODEs-30-4">
+<div class="para" id="p-derived-sec-system-linear-ODEs-30-4">Then the general solution is</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-system-linear-ODEs-30-4" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
-<div class="para" id="sec-system-linear-ODEs-31">3. Repeated eigenvalues. There are two sub-cases. Let <span class="process-math">\(\lambda\)</span> be the eigenvalue in question</div>
+<div class="para" id="sec-system-linear-ODEs-31">3. Repeated eigenvalues. There are two sub-cases. Let <span class="process-math">\(\lambda\)</span> be the eigenvalue in question<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-31" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <ul class="disc" id="sec-system-linear-ODEs-32">
-<li id="sec-system-linear-ODEs-32-1"><div class="para" id="p-derived-sec-system-linear-ODEs-32-1">(1) There exists two linearly independent eigenvectors <span class="process-math">\(\vec{v_1}, \vec{v_2}\text{,}\)</span> both corresponding to <span class="process-math">\(\lambda.\)</span> In this case the general solution is simply</div></li>
-<li id="sec-system-linear-ODEs-32-3"><div class="para" id="p-derived-sec-system-linear-ODEs-32-3">(2) Only one eigenvector <span class="process-math">\(\vec{v}\)</span> can be found and all other eigenvectors are proportion to it.</div></li>
+<li id="sec-system-linear-ODEs-32-1">
+<div class="para" id="p-derived-sec-system-linear-ODEs-32-1">(1) There exists two linearly independent eigenvectors <span class="process-math">\(\vec{v_1}, \vec{v_2}\text{,}\)</span> both corresponding to <span class="process-math">\(\lambda.\)</span> In this case the general solution is simply</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-system-linear-ODEs-32-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-system-linear-ODEs-32-3">
+<div class="para" id="p-derived-sec-system-linear-ODEs-32-3">(2) Only one eigenvector <span class="process-math">\(\vec{v}\)</span> can be found and all other eigenvectors are proportion to it.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-system-linear-ODEs-32-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
-<div class="para" id="sec-system-linear-ODEs-33">Find the "generalized eigenvector" by solving the following linear system</div>
-<div class="para" id="sec-system-linear-ODEs-34"><span class="process-math">\((A - \lambda I) \vec{u} = \vec{v}\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-35">The general solution would then be</div>
-<div class="para" id="sec-system-linear-ODEs-36"><span class="process-math">\(\vec{x}(t) = C_1 e^{\lambda_1 t} \vec{u} + C_2 e^{\lambda_2 t} (t \vec{u} + \vec{u})\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-37">4. Examples.</div>
-<div class="para" id="sec-system-linear-ODEs-38">(1) Real distinct eigenvalues - typical</div>
-<div class="para" id="sec-system-linear-ODEs-39"><span class="process-math">\(\vec{x} = \left[ \begin{array}{c} -2 \\ 1 \\ -2 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-40">Find the eigenvalues:</div>
-<div class="para" id="sec-system-linear-ODEs-41"><span class="process-math">\(\text{det}(A - \lambda I) = \left| \begin{array}{ccc} -2 - \lambda \amp 1 \amp 1 \\ 1 \amp -2 - \lambda \amp -2 \\ -2 \amp 1 \amp -2 \end{array} \right| = (-2 - \lambda)(-2 - \lambda)^2 - 1 = 0\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-42">Solve the equation</div>
-<div class="para" id="sec-system-linear-ODEs-43"><span class="process-math">\(\lambda = -2 \pm 1 \Rightarrow \lambda_1 = -1, \lambda_2 = -3.\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-44">Solve the eigenvector for <span class="process-math">\(\lambda_1 = -1\text{:}\)</span>
+<div class="para" id="sec-system-linear-ODEs-33">Find the "generalized eigenvector" by solving the following linear system<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-33" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-45"><span class="process-math">\(\left[ \begin{array}{ccc|c} -2 + 1 \amp 1 \amp 1 \amp 0 \\ 1 \amp -2 + 1 \amp -2 \amp 0 \\ -2 \amp 1 \amp -2 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -1 \amp 1 \amp 0 \amp 0 \\ 1 \amp -1 \amp 0 \amp 0 \\ -2 \amp 1 \amp -2 \amp 0 \end{array} \right] \Rightarrow \vec{v_1} = \left[ \begin{array}{c} 1 \\ 1 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-46">Solve the eigenvector for <span class="process-math">\(\lambda_2 = -3\text{:}\)</span>
+<div class="para" id="sec-system-linear-ODEs-34">
+<span class="process-math">\((A - \lambda I) \vec{u} = \vec{v}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-34" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-47"><span class="process-math">\(\left[ \begin{array}{ccc|c} -2 + 3 \amp 1 \amp 1 \amp 0 \\ 1 \amp -2 + 3 \amp -2 \amp 0 \\ -2 \amp 1 \amp -2 + 3 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} 1 \amp 1 \amp 0 \amp 0 \\ 1 \amp 1 \amp -2 \amp 0 \\ -2 \amp 1 \amp 1 \amp 0 \end{array} \right] \Rightarrow \vec{v_2} = \left[ \begin{array}{c} -1 \\ 1 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-48">So the general solution is</div>
-<div class="para" id="sec-system-linear-ODEs-49"><span class="process-math">\(\vec{x}(t) = C_1 e^{-t} \left[ \begin{array}{c} 1 \\ 1 \end{array} \right] + C_2 e^{-3t} \left[ \begin{array}{c} -1 \\ 1 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-50">(2) Real distinct eigenvalues - ugly</div>
-<div class="para" id="sec-system-linear-ODEs-51"><span class="process-math">\(\vec{x} = \left[ \begin{array}{c} 2 \\ 1 \\ 3 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-52">Find the eigenvalues:</div>
-<div class="para" id="sec-system-linear-ODEs-53"><span class="process-math">\(\text{det}(A - \lambda I) = \left| \begin{array}{ccc} 2 - \lambda \amp 1 \amp 1 \\ 3 \amp -\lambda \amp 5 \\ 0 \amp 0 \amp 0 \end{array} \right| = \lambda^2 - 5\lambda + 5 = 0\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-54">Solve the equation</div>
-<div class="para" id="sec-system-linear-ODEs-55"><span class="process-math">\(\lambda = \frac{5 \pm \sqrt{5^2 - 20}}{2} = \frac{5 \pm \sqrt{5}}{2}, \quad \lambda_1 = \frac{5 + \sqrt{5}}{2}, \quad \lambda_2 = \frac{5 - \sqrt{5}}{2}.\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-56">Solve the eigenvector for <span class="process-math">\(\lambda_1 = \frac{5 + \sqrt{5}}{2}\text{:}\)</span>
+<div class="para" id="sec-system-linear-ODEs-35">The general solution would then be<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-35" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-57"><span class="process-math">\(\left[ \begin{array}{ccc|c} 2 - \lambda \amp 1 \amp 1 \amp 0 \\ 3 \amp -\lambda \amp 5 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} 2 - \frac{5 + \sqrt{5}}{2} \amp 1 \amp 1 \amp 0 \\ 3 \amp -\frac{5 + \sqrt{5}}{2} \amp 5 \amp 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-58">So it should be redundant (otherwise you messed up!). Put <span class="process-math">\(x_2 = 1\)</span> to get <span class="process-math">\(x_3 = -i\)</span> and therefore</div>
+<div class="para" id="sec-system-linear-ODEs-36">
+<span class="process-math">\(\vec{x}(t) = C_1 e^{\lambda_1 t} \vec{u} + C_2 e^{\lambda_2 t} (t \vec{u} + \vec{u})\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-36" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-37">4. Examples.<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-37" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-38">(1) Real distinct eigenvalues - typical<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-38" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-39">
+<span class="process-math">\(\vec{x} = \left[ \begin{array}{c} -2 \\ 1 \\ -2 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-39" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-40">Find the eigenvalues:<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-40" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-41">
+<span class="process-math">\(\text{det}(A - \lambda I) = \left| \begin{array}{ccc} -2 - \lambda \amp 1 \amp 1 \\ 1 \amp -2 - \lambda \amp -2 \\ -2 \amp 1 \amp -2 \end{array} \right| = (-2 - \lambda)(-2 - \lambda)^2 - 1 = 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-41" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-42">Solve the equation<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-42" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-43">
+<span class="process-math">\(\lambda = -2 \pm 1 \Rightarrow \lambda_1 = -1, \lambda_2 = -3.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-43" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-44">Solve the eigenvector for <span class="process-math">\(\lambda_1 = -1\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-44" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-45">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} -2 + 1 \amp 1 \amp 1 \amp 0 \\ 1 \amp -2 + 1 \amp -2 \amp 0 \\ -2 \amp 1 \amp -2 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -1 \amp 1 \amp 0 \amp 0 \\ 1 \amp -1 \amp 0 \amp 0 \\ -2 \amp 1 \amp -2 \amp 0 \end{array} \right] \Rightarrow \vec{v_1} = \left[ \begin{array}{c} 1 \\ 1 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-45" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-46">Solve the eigenvector for <span class="process-math">\(\lambda_2 = -3\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-46" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-47">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} -2 + 3 \amp 1 \amp 1 \amp 0 \\ 1 \amp -2 + 3 \amp -2 \amp 0 \\ -2 \amp 1 \amp -2 + 3 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} 1 \amp 1 \amp 0 \amp 0 \\ 1 \amp 1 \amp -2 \amp 0 \\ -2 \amp 1 \amp 1 \amp 0 \end{array} \right] \Rightarrow \vec{v_2} = \left[ \begin{array}{c} -1 \\ 1 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-47" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-48">So the general solution is<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-48" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-49">
+<span class="process-math">\(\vec{x}(t) = C_1 e^{-t} \left[ \begin{array}{c} 1 \\ 1 \end{array} \right] + C_2 e^{-3t} \left[ \begin{array}{c} -1 \\ 1 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-49" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-50">(2) Real distinct eigenvalues - ugly<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-50" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-51">
+<span class="process-math">\(\vec{x} = \left[ \begin{array}{c} 2 \\ 1 \\ 3 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-51" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-52">Find the eigenvalues:<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-52" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-53">
+<span class="process-math">\(\text{det}(A - \lambda I) = \left| \begin{array}{ccc} 2 - \lambda \amp 1 \amp 1 \\ 3 \amp -\lambda \amp 5 \\ 0 \amp 0 \amp 0 \end{array} \right| = \lambda^2 - 5\lambda + 5 = 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-53" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-54">Solve the equation<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-54" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-55">
+<span class="process-math">\(\lambda = \frac{5 \pm \sqrt{5^2 - 20}}{2} = \frac{5 \pm \sqrt{5}}{2}, \quad \lambda_1 = \frac{5 + \sqrt{5}}{2}, \quad \lambda_2 = \frac{5 - \sqrt{5}}{2}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-55" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-56">Solve the eigenvector for <span class="process-math">\(\lambda_1 = \frac{5 + \sqrt{5}}{2}\text{:}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-56" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-57">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 2 - \lambda \amp 1 \amp 1 \amp 0 \\ 3 \amp -\lambda \amp 5 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} 2 - \frac{5 + \sqrt{5}}{2} \amp 1 \amp 1 \amp 0 \\ 3 \amp -\frac{5 + \sqrt{5}}{2} \amp 5 \amp 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-57" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-58">So it should be redundant (otherwise you messed up!). Put <span class="process-math">\(x_2 = 1\)</span> to get <span class="process-math">\(x_3 = -i\)</span> and therefore<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-58" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para" id="sec-system-linear-ODEs-59">
-<span class="process-math">\(\left[ \begin{array}{c} 0 \\ 1 \\ -i \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_2 = -\frac{3}{2}.\)</span>
+<span class="process-math">\(\left[ \begin{array}{c} 0 \\ 1 \\ -i \end{array} \right]\)</span> is an eigenvector corresponding to the eigenvalue <span class="process-math">\(\lambda_2 = -\frac{3}{2}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-59" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-60">Solve the eigenvector for <span class="process-math">\(\lambda_2 = \frac{5 - \sqrt{5}}{2}\)</span>
+<div class="para" id="sec-system-linear-ODEs-60">Solve the eigenvector for <span class="process-math">\(\lambda_2 = \frac{5 - \sqrt{5}}{2}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-60" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-61"><span class="process-math">\(\left[ \begin{array}{ccc|c} 
+<div class="para" id="sec-system-linear-ODEs-61">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 
 2 \amp -5 \amp -\sqrt{5} \amp 2 \\ 
 1 \amp 1 \amp 0 \amp 0 \\ 
 3 \amp -5 \amp -\sqrt{5} \amp 0 
 \end{array} \right] = \left[ \begin{array}{ccc|c} 
 -1 \amp -\sqrt{5} \amp 0 \amp 0 \\ 
 1 \amp -\sqrt{5} \amp 0 \amp 0 
-\end{array} \right] \Rightarrow \vec{v_2} = \left[ \begin{array}{c} 1 \\ \frac{1}{1 - \sqrt{5}} \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-62">So the general solution is</div>
-<div class="para" id="sec-system-linear-ODEs-63"><span class="process-math">\(\vec{x}(t) = C_1 e^{\frac{5 + \sqrt{5}}{2}t} \left[ \begin{array}{c} 1 \\ \frac{1}{1 + \sqrt{5}} \end{array} \right] + C_2 e^{\frac{5 - \sqrt{5}}{2}t} \left[ \begin{array}{c} 1 \\ \frac{1}{1 - \sqrt{5}} \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-64">Remark: Certainly things can be made uglier.</div>
-<div class="para" id="sec-system-linear-ODEs-65">(3) Complex eigenvalues - typical</div>
-<div class="para" id="sec-system-linear-ODEs-66"><span class="process-math">\(\vec{x} = \left[ \begin{array}{c} 2 \\ 5 \\ -1 \\ 4 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-67">Find the eigenvalues:</div>
-<div class="para" id="sec-system-linear-ODEs-68"><span class="process-math">\(\left| \begin{array}{cc} 2 - \lambda \amp -1 \\ 4 - \lambda \amp 5 \end{array} \right| = \lambda^2 - 6\lambda + 13 = 0\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-69">Solve the equation</div>
-<div class="para" id="sec-system-linear-ODEs-70"><span class="process-math">\(\lambda = 3 \pm 2i.\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-71">Solve the eigenvector for <span class="process-math">\(3 + 2i:\)</span>
+\end{array} \right] \Rightarrow \vec{v_2} = \left[ \begin{array}{c} 1 \\ \frac{1}{1 - \sqrt{5}} \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-61" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-72"><span class="process-math">\(\left[ \begin{array}{cc|c} 2 - (3 + 2i) \amp -1 \amp 0 \\ 5 \amp - (3 + 2i) \amp 0 \end{array} \right] = \left[ \begin{array}{cc|c} -1 - 2i \amp -1 \amp 0 \\ 5 \amp -1 - 2i \amp 0 \end{array} \right] \Rightarrow \vec{v_1} = \left[ \begin{array}{c} -1 \\ 1 + 2i \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-73">Formulate the complex solution and find its real and imaginary part.</div>
-<div class="para" id="sec-system-linear-ODEs-74"><span class="process-math">\(e^{(3 + 2i)t} \left[ \begin{array}{c} -1 \\ 1 + 2i \end{array} \right] = e^{3t} e^{2it} \left[ \begin{array}{c} -1 \\ 1 + 2i \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-75">Product rule of exponential</div>
-<div class="para" id="sec-system-linear-ODEs-76"><span class="process-math">\(e^{(3 + 2i)t} = e^{3t} \left[ \begin{array}{c} \cos(2t) + i\sin(2t) \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-77">You’ll need to use Euler’s equation and perform a complex multiplication.</div>
-<div class="para" id="sec-system-linear-ODEs-78">Then the general solution is</div>
-<div class="para" id="sec-system-linear-ODEs-79"><span class="process-math">\(\vec{x}(t) = C_1 e^{3t} \left[ \begin{array}{c} \cos(2t) + i\sin(2t) \end{array} \right] + C_2 e^{3t} \left[ \begin{array}{c} -\cos(2t) - 2\sin(2t) \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-80">Remark. The above eigenvector was obtained by looking at the first equation. If instead you look at the second row, you may get a different eigenvector <span class="process-math">\(\vec{v_1} = \left[ 1, -2, -5 \right],\)</span> which will lead to the following general solution</div>
-<div class="para" id="sec-system-linear-ODEs-81"><span class="process-math">\(\vec{x}(t) = C_1 e^{3t} \left[ \begin{array}{c} -\cos(2t) - 2\sin(2t) \end{array} \right] + C_2 e^{3t} \left[ \begin{array}{c} 2\sin(2t) \end{array} \right].\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-82">Although they look so different, but indeed they are the same when the initial values are specified.</div>
-<div class="para" id="sec-system-linear-ODEs-83">Indeed, if we impose that <span class="process-math">\(\vec{x}(0) = \left[ \begin{array}{c} 1 \\ -1 \end{array} \right],\)</span> then both general solutions yield the same solution</div>
-<div class="para" id="sec-system-linear-ODEs-84"><span class="process-math">\(\vec{x}(t) = \left[ \begin{array}{c} e^{3t} \cos 2t \\ e^{3t} \left( \cos 2t - 2\sin 2t \right) \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-85">The only difference would be in the choice of parameters.</div>
-<div class="para" id="sec-system-linear-ODEs-86">(4) Complex eigenvalues - ugly</div>
-<div class="para" id="sec-system-linear-ODEs-87"><span class="process-math">\(\vec{x} = \left[ \begin{array}{c} 2 \\ -1 \\ 5 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-88">Find the eigenvalues:</div>
-<div class="para" id="sec-system-linear-ODEs-89"><span class="process-math">\(\left| \begin{array}{cc} 2 - \lambda \amp -1 \\ 5 \amp -5 - \lambda \end{array} \right| = \lambda^2 - 7\lambda + 15 = 0\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-90">Solve the equation</div>
-<div class="para" id="sec-system-linear-ODEs-91"><span class="process-math">\(\lambda = \frac{7 \pm \sqrt{7^2 - 60}}{2} = 7 \pm \sqrt{1} = \frac{7 \pm \sqrt{1}}{2}.\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-92">Solve the eigenvector for <span class="process-math">\(\frac{7 + \sqrt{1}}{2}:\)</span>
+<div class="para" id="sec-system-linear-ODEs-62">So the general solution is<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-62" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-93"><span class="process-math">\(\left[ \begin{array}{cc|c} 2 - (7 + \sqrt{1}) \amp -1 \amp 0 \\ 5 \amp -5 - (7 + \sqrt{1}) \amp 0 \end{array} \right] = \left[ \begin{array}{cc|c} -3 - \sqrt{1} \amp -1 \amp 0 \\ 5 \amp -12 \amp 0 \end{array} \right] \Rightarrow \vec{v_1} = \left[ \begin{array}{c} -1 \\ 3 + \sqrt{1} \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-94">Formulate the complex solution and find its real and imaginary part.</div>
-<div class="para" id="sec-system-linear-ODEs-95"><span class="process-math">\(e^{(3 + i\pi)t} \left[ \begin{array}{c} -1 \\ 3 + \sqrt{1} \end{array} \right] = e^{3t} e^{i\pi t} \left[ \begin{array}{c} -1 \\ 3 + \sqrt{1} \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-96">Product rule of exponential</div>
-<div class="para" id="sec-system-linear-ODEs-97"><span class="process-math">\(e^{(3 + i\pi)t} = e^{3t} \left[ \begin{array}{c} \cos(\pi t) + i\sin(\pi t) \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-98">You’ll need to use Euler’s equation and perform a complex multiplication.</div>
-<div class="para" id="sec-system-linear-ODEs-99">Then the general solution is</div>
-<div class="para" id="sec-system-linear-ODEs-100"><span class="process-math">\(\vec{x}(t) = C_1 e^{3t} \left[ \begin{array}{c} -\cos(\pi t) + i\sin(\pi t) \end{array} \right] + C_2 e^{3t} \left[ \begin{array}{c} 3 + \sqrt{1} \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-101">(5) Repeated eigenvalues Case 1</div>
-<div class="para" id="sec-system-linear-ODEs-102"><span class="process-math">\(\vec{x} = \left[ \begin{array}{c} 2 \\ 0 \\ 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-103">Find the eigenvalues:</div>
-<div class="para" id="sec-system-linear-ODEs-104"><span class="process-math">\(\left| \begin{array}{cc} 2 - \lambda \amp 0 \\ 0 \amp 2 - \lambda \end{array} \right| = (2 - \lambda)^2 = 0\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-105">Solve the equation</div>
-<div class="para" id="sec-system-linear-ODEs-106"><span class="process-math">\(\lambda = 2 \quad \text{(repeated)}\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-107">Solve the eigenvector for <span class="process-math">\(\lambda = 2:\)</span>
+<div class="para" id="sec-system-linear-ODEs-63">
+<span class="process-math">\(\vec{x}(t) = C_1 e^{\frac{5 + \sqrt{5}}{2}t} \left[ \begin{array}{c} 1 \\ \frac{1}{1 + \sqrt{5}} \end{array} \right] + C_2 e^{\frac{5 - \sqrt{5}}{2}t} \left[ \begin{array}{c} 1 \\ \frac{1}{1 - \sqrt{5}} \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-63" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-108"><span class="process-math">\(\left[ \begin{array}{cc|c} 2 - 2 \amp 0 \amp 0 \\ 1 \amp -2 - \lambda \amp 0 \end{array} \right] = \left[ \begin{array}{cc|c} 0 \amp 0 \amp 0 \\ 1 \amp 0 \amp 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-109">This ridiculous linear system simply means we have zero equations for two variables, i.e., both variables involved are free.</div>
-<div class="para" id="sec-system-linear-ODEs-110">Setting free variable (<span class="process-math">\(#1,#2\)</span>) as <span class="process-math">\((1,0)\)</span> and <span class="process-math">\((0,1)\text{,}\)</span> we obtain two linearly independent eigenvectors and</div>
-<div class="para" id="sec-system-linear-ODEs-111"><span class="process-math">\(\vec{v_1} = \left[ \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} 0 \\ 1 \\ 1 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-112">And the general solution is</div>
-<div class="para" id="sec-system-linear-ODEs-113"><span class="process-math">\(\vec{x}(t) = C_1 e^{2t} \left[ \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right] + C_2 e^{2t} \left[ \begin{array}{c} 0 \\ 1 \\ 1 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-114">Remark: For <span class="process-math">\(2 \times 2\)</span> matrix, this is a considerably rare case and only happens when you have a scalar matrix, i.e., a scalar multiple of the identity matrix. But for matrices of higher dimension this is more common.</div>
-<div class="para" id="sec-system-linear-ODEs-115">(6) Repeated eigenvalues Case 2</div>
-<div class="para" id="sec-system-linear-ODEs-116"><span class="process-math">\(\vec{x}' = \left[ \begin{array}{cc} 2 \amp -1 \\ 1 \amp 4 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-117">Find the eigenvalues:</div>
-<div class="para" id="sec-system-linear-ODEs-118"><span class="process-math">\(\left| \begin{array}{cc} 2 - \lambda \amp -1 \\ 4 - \lambda \amp 1 \end{array} \right| = \lambda^2 - 6\lambda + 9 = 0\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-119">Solve the equation</div>
-<div class="para" id="sec-system-linear-ODEs-120"><span class="process-math">\(\lambda = 3 \quad \text{(repeated)}\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-121">Solve the eigenvector</div>
-<div class="para" id="sec-system-linear-ODEs-122"><span class="process-math">\(\left[ \begin{array}{cc|c} 2 - 3 \amp -1 \amp 0 \\ 4 - 3 \amp 1 \amp 0 \end{array} \right] = \left[ \begin{array}{cc|c} -1 \amp 0 \amp 0 \\ 1 \amp 0 \amp 0 \end{array} \right] \Rightarrow \vec{v} = \left[ \begin{array}{c} -1 \\ 1 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-123">Solve for the generalized eigenvector</div>
-<div class="para" id="sec-system-linear-ODEs-124"><span class="process-math">\(\left[ \begin{array}{cc|c} 2 - 3 \amp -1 \amp 0 \\ 4 - 3 \amp 1 \amp 0 \end{array} \right] = \left[ \begin{array}{cc|c} -1 \amp -1 \amp 0 \\ 1 \amp 0 \amp 0 \end{array} \right] \Rightarrow \vec{v} = \left[ \begin{array}{c} 0 \\ 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-125">So the general solution is</div>
-<div class="para" id="sec-system-linear-ODEs-126"><span class="process-math">\(\vec{x}(t) = C_1 e^{3t} \left[ \begin{array}{c} -1 \\ 1 \end{array} \right] + C_2 e^{3t} \left[ \begin{array}{c} t - 1 \\ 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-127">(7) 3 x 3 system: mixture of real and complex eigenvalues</div>
-<div class="para" id="sec-system-linear-ODEs-128"><span class="process-math">\(\vec{x}' = \left[ \begin{array}{ccc} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp -2 \\ 3 \amp 2 \amp 1 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-129">Find the eigenvalues:</div>
-<div class="para" id="sec-system-linear-ODEs-130"><span class="process-math">\(1 - \lambda = \left| \begin{array}{ccc} 1 - \lambda \amp 0 \amp 0 \\ 2 \amp 1 - \lambda \amp -2 \\ 3 \amp 2 \amp 1 - \lambda \end{array} \right| = (1 - \lambda)\left[(1 - \lambda)^2 + 4\right] = 0\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-131">Solve the equation</div>
-<div class="para" id="sec-system-linear-ODEs-132"><span class="process-math">\(\lambda_1 = 1, \quad \lambda_2 = 1 + 2i, \quad \lambda_3 = 1 - 2i.\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-133">Solve the eigenvector for <span class="process-math">\(\lambda_1 = 1:\)</span>
+<div class="para" id="sec-system-linear-ODEs-64">Remark: Certainly things can be made uglier.<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-64" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-134"><span class="process-math">\(\left[ \begin{array}{ccc|c} -1 \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 - 1 \amp -2 \amp 0 \\ 3 \amp 2 \amp 1 - 1 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -1 \amp 0 \amp 0 \amp 0 \\ 2 \amp 0 \amp -2 \amp 0 \\ 3 \amp 2 \amp 0 \amp 0 \end{array} \right] \Rightarrow \vec{v_1} = \left[ \begin{array}{c} 2 \\ 0 \\ 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-135">Solve the eigenvector for <span class="process-math">\(\lambda_2 = 1 + 2i:\)</span>
+<div class="para" id="sec-system-linear-ODEs-65">(3) Complex eigenvalues - typical<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-65" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-136"><span class="process-math">\(\left[ \begin{array}{ccc|c} 1 - (1 + 2i) \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 - (1 + 2i) \amp -2 \amp 0 \\ 3 \amp 2 \amp 1 - (1 + 2i) \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -2i \amp 0 \amp 0 \amp 0 \\ 2 \amp -2i \amp -2 \amp 0 \end{array} \right] \Rightarrow \vec{v_2} = \left[ \begin{array}{c} 0 \\ 1 \\ i \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-137">Find the real part and the imaginary part of <span class="process-math">\(e^{(1 + 2i)t} \vec{v_2}:\)</span>
+<div class="para" id="sec-system-linear-ODEs-66">
+<span class="process-math">\(\vec{x} = \left[ \begin{array}{c} 2 \\ 5 \\ -1 \\ 4 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-66" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-138"><span class="process-math">\(e^{(1 + 2i)t} \left[ \begin{array}{c} 0 \\ 1 \\ i \end{array} \right] = e^t e^{2it} \left[ \begin{array}{c} 0 \\ 1 \\ i \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-139">Product rule \amp Euler</div>
-<div class="para" id="sec-system-linear-ODEs-140"><span class="process-math">\(e^{(1 + 2i)t} = e^t \left[ \cos(2t) + i\sin(2t) \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-141">Multiply</div>
-<div class="para" id="sec-system-linear-ODEs-142"><span class="process-math">\(e^t \left[ \begin{array}{c} 0 \\ \cos(2t) + i\sin(2t) \end{array} \right] = e^t \left[ \begin{array}{c} 0 \\ \cos(2t) \\ \sin(2t) \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-143">Separate</div>
-<div class="para" id="sec-system-linear-ODEs-144"><span class="process-math">\(e^{t/2} \left[ \begin{array}{c} 0 \\ \cos(2t) \\ \sin(2t) \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-145">So the general solution is</div>
-<div class="para" id="sec-system-linear-ODEs-146"><span class="process-math">\(\vec{x}(t) = C_1 e^{3t} \left[ \begin{array}{c} -\cos(2t) \\ -2\sin(2t) \end{array} \right] + C_2 e^{3t} \left[ \begin{array}{c} -\sin(2t) \\ \cos(2t) \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-147">(8) 3 x 3 system: mixture of repeated (case 1) and single eigenvalues</div>
-<div class="para" id="sec-system-linear-ODEs-148"><span class="process-math">\(\vec{x}' = \left[ \begin{array}{ccc} 2 \amp -1 \amp 1 \\ 4 \amp 3 \amp -2 \\ 2 \amp 2 \amp 2 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-149">Find the eigenvalues:</div>
-<div class="para" id="sec-system-linear-ODEs-150"><span class="process-math">\(\left| \begin{array}{ccc} 3 - \lambda \amp -2 \amp 4 \\ 4 \amp 3 - \lambda \amp -2 \\ 2 \amp 2 \amp 2 - \lambda \end{array} \right| = -\lambda^3 + 6\lambda^2 + 15\lambda + 8 = -(\lambda + 1)^2(\lambda - 8)\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-151">Solve the equation</div>
-<div class="para" id="sec-system-linear-ODEs-152"><span class="process-math">\(\lambda_1 = \lambda_2 = -1, \quad \lambda_3 = 8.\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-153">Solve the eigenvector for <span class="process-math">\(\lambda_1 = -1:\)</span>
+<div class="para" id="sec-system-linear-ODEs-67">Find the eigenvalues:<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-67" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-154"><span class="process-math">\(\left[ \begin{array}{ccc|c} 3 + 1 \amp -2 \amp 4 \amp 0 \\ 4 \amp 3 + 1 \amp -2 \amp 0 \\ 2 \amp 2 \amp 2 + 1 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} 4 \amp -2 \amp 4 \amp 0 \\ 4 \amp 4 \amp -2 \amp 0 \\ 2 \amp 2 \amp 3 \amp 0 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-155">So the general solution is</div>
-<div class="para" id="sec-system-linear-ODEs-156"><span class="process-math">\(\vec{x}(t) = C_1 e^{-t} \left[ \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right] + C_2 e^{-t} \left[ \begin{array}{c} 0 \\ 1 \\ 0 \end{array} \right] + C_3 e^{8t} \left[ \begin{array}{c} 0 \\ 0 \\ 1 \end{array} \right]\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-157">Solve the eigenvector for <span class="process-math">\(\lambda_1 = -1\)</span>
+<div class="para" id="sec-system-linear-ODEs-68">
+<span class="process-math">\(\left| \begin{array}{cc} 2 - \lambda \amp -1 \\ 4 - \lambda \amp 5 \end{array} \right| = \lambda^2 - 6\lambda + 13 = 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-68" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-158"><span class="process-math">\(\begin{bmatrix} 3 \amp 1 \amp 2 \amp 4 \\ 2 \amp 1 \amp 0 \amp 0 \\ 4 \amp 2 \amp 3 \amp 1 \\ 0 \amp 0 \amp 0 \amp 0 \end{bmatrix} = \begin{bmatrix} 4 \amp 2 \amp 2 \amp 0 \\ 2 \amp 4 \amp 4 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{bmatrix} \Rightarrow \begin{bmatrix} 1 \\ -1 \\ 0 \end{bmatrix} = \mathbf{v_1}\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-159">One equation for three variables, thus two variables are free and can be set to solve</div>
-<div class="para" id="sec-system-linear-ODEs-160"><span class="process-math">\(\mathbf{v_1} = \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}, \quad \mathbf{v_2} = \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix}\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-161">Solve the eigenvector for <span class="process-math">\(\lambda_3 = 8\)</span>
+<div class="para" id="sec-system-linear-ODEs-69">Solve the equation<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-69" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-system-linear-ODEs-162"><span class="process-math">\(\begin{bmatrix} 3 \amp -8 \amp 2 \amp 4 \\ 2 \amp -2 \amp 8 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{bmatrix} = \begin{bmatrix} -5 \amp 2 \amp 4 \amp 0 \\ -1 \amp -4 \amp 1 \amp 0 \\ -2 \amp -8 \amp 2 \amp 0 \\ 4 \amp 2 \amp -5 \amp 0 \end{bmatrix} \Rightarrow \begin{bmatrix} r_1 = r_2 + r_3 \\ r_2 = r_1 + 2r_1 \end{bmatrix} \Rightarrow \mathbf{v_3} = \begin{bmatrix} 2 \\ 2 \\ 2 \end{bmatrix}\)</span></div>
-<div class="para" id="sec-system-linear-ODEs-163">So the general solution to the ODE is</div>
-<div class="para" id="sec-system-linear-ODEs-164"><span class="process-math">\(\mathbf{x}(t) = C_1 e^{-t} \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix} + C_2 e^{-2t} \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix} + C_3 e^{8t} \begin{bmatrix} 2 \\ 1 \\ 2 \end{bmatrix}\)</span></div></section></div>
+<div class="para" id="sec-system-linear-ODEs-70">
+<span class="process-math">\(\lambda = 3 \pm 2i.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-70" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-71">Solve the eigenvector for <span class="process-math">\(3 + 2i:\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-71" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-72">
+<span class="process-math">\(\left[ \begin{array}{cc|c} 2 - (3 + 2i) \amp -1 \amp 0 \\ 5 \amp - (3 + 2i) \amp 0 \end{array} \right] = \left[ \begin{array}{cc|c} -1 - 2i \amp -1 \amp 0 \\ 5 \amp -1 - 2i \amp 0 \end{array} \right] \Rightarrow \vec{v_1} = \left[ \begin{array}{c} -1 \\ 1 + 2i \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-72" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-73">Formulate the complex solution and find its real and imaginary part.<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-73" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-74">
+<span class="process-math">\(e^{(3 + 2i)t} \left[ \begin{array}{c} -1 \\ 1 + 2i \end{array} \right] = e^{3t} e^{2it} \left[ \begin{array}{c} -1 \\ 1 + 2i \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-74" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-75">Product rule of exponential<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-75" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-76">
+<span class="process-math">\(e^{(3 + 2i)t} = e^{3t} \left[ \begin{array}{c} \cos(2t) + i\sin(2t) \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-76" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-77">You’ll need to use Euler’s equation and perform a complex multiplication.<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-77" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-78">Then the general solution is<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-78" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-79">
+<span class="process-math">\(\vec{x}(t) = C_1 e^{3t} \left[ \begin{array}{c} \cos(2t) + i\sin(2t) \end{array} \right] + C_2 e^{3t} \left[ \begin{array}{c} -\cos(2t) - 2\sin(2t) \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-79" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-80">Remark. The above eigenvector was obtained by looking at the first equation. If instead you look at the second row, you may get a different eigenvector <span class="process-math">\(\vec{v_1} = \left[ 1, -2, -5 \right],\)</span> which will lead to the following general solution<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-80" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-81">
+<span class="process-math">\(\vec{x}(t) = C_1 e^{3t} \left[ \begin{array}{c} -\cos(2t) - 2\sin(2t) \end{array} \right] + C_2 e^{3t} \left[ \begin{array}{c} 2\sin(2t) \end{array} \right].\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-81" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-82">Although they look so different, but indeed they are the same when the initial values are specified.<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-82" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-83">Indeed, if we impose that <span class="process-math">\(\vec{x}(0) = \left[ \begin{array}{c} 1 \\ -1 \end{array} \right],\)</span> then both general solutions yield the same solution<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-83" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-84">
+<span class="process-math">\(\vec{x}(t) = \left[ \begin{array}{c} e^{3t} \cos 2t \\ e^{3t} \left( \cos 2t - 2\sin 2t \right) \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-84" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-85">The only difference would be in the choice of parameters.<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-85" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-86">(4) Complex eigenvalues - ugly<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-86" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-87">
+<span class="process-math">\(\vec{x} = \left[ \begin{array}{c} 2 \\ -1 \\ 5 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-87" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-88">Find the eigenvalues:<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-88" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-89">
+<span class="process-math">\(\left| \begin{array}{cc} 2 - \lambda \amp -1 \\ 5 \amp -5 - \lambda \end{array} \right| = \lambda^2 - 7\lambda + 15 = 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-89" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-90">Solve the equation<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-90" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-91">
+<span class="process-math">\(\lambda = \frac{7 \pm \sqrt{7^2 - 60}}{2} = 7 \pm \sqrt{1} = \frac{7 \pm \sqrt{1}}{2}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-91" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-92">Solve the eigenvector for <span class="process-math">\(\frac{7 + \sqrt{1}}{2}:\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-92" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-93">
+<span class="process-math">\(\left[ \begin{array}{cc|c} 2 - (7 + \sqrt{1}) \amp -1 \amp 0 \\ 5 \amp -5 - (7 + \sqrt{1}) \amp 0 \end{array} \right] = \left[ \begin{array}{cc|c} -3 - \sqrt{1} \amp -1 \amp 0 \\ 5 \amp -12 \amp 0 \end{array} \right] \Rightarrow \vec{v_1} = \left[ \begin{array}{c} -1 \\ 3 + \sqrt{1} \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-93" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-94">Formulate the complex solution and find its real and imaginary part.<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-94" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-95">
+<span class="process-math">\(e^{(3 + i\pi)t} \left[ \begin{array}{c} -1 \\ 3 + \sqrt{1} \end{array} \right] = e^{3t} e^{i\pi t} \left[ \begin{array}{c} -1 \\ 3 + \sqrt{1} \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-95" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-96">Product rule of exponential<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-96" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-97">
+<span class="process-math">\(e^{(3 + i\pi)t} = e^{3t} \left[ \begin{array}{c} \cos(\pi t) + i\sin(\pi t) \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-97" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-98">You’ll need to use Euler’s equation and perform a complex multiplication.<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-98" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-99">Then the general solution is<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-99" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-100">
+<span class="process-math">\(\vec{x}(t) = C_1 e^{3t} \left[ \begin{array}{c} -\cos(\pi t) + i\sin(\pi t) \end{array} \right] + C_2 e^{3t} \left[ \begin{array}{c} 3 + \sqrt{1} \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-100" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-101">(5) Repeated eigenvalues Case 1<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-101" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-102">
+<span class="process-math">\(\vec{x} = \left[ \begin{array}{c} 2 \\ 0 \\ 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-102" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-103">Find the eigenvalues:<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-103" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-104">
+<span class="process-math">\(\left| \begin{array}{cc} 2 - \lambda \amp 0 \\ 0 \amp 2 - \lambda \end{array} \right| = (2 - \lambda)^2 = 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-104" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-105">Solve the equation<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-105" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-106">
+<span class="process-math">\(\lambda = 2 \quad \text{(repeated)}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-106" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-107">Solve the eigenvector for <span class="process-math">\(\lambda = 2:\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-107" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-108">
+<span class="process-math">\(\left[ \begin{array}{cc|c} 2 - 2 \amp 0 \amp 0 \\ 1 \amp -2 - \lambda \amp 0 \end{array} \right] = \left[ \begin{array}{cc|c} 0 \amp 0 \amp 0 \\ 1 \amp 0 \amp 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-108" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-109">This ridiculous linear system simply means we have zero equations for two variables, i.e., both variables involved are free.<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-109" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-110">Setting free variable (<span class="process-math">\(#1,#2\)</span>) as <span class="process-math">\((1,0)\)</span> and <span class="process-math">\((0,1)\text{,}\)</span> we obtain two linearly independent eigenvectors and<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-110" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-111">
+<span class="process-math">\(\vec{v_1} = \left[ \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right], \quad \vec{v_2} = \left[ \begin{array}{c} 0 \\ 1 \\ 1 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-111" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-112">And the general solution is<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-112" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-113">
+<span class="process-math">\(\vec{x}(t) = C_1 e^{2t} \left[ \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right] + C_2 e^{2t} \left[ \begin{array}{c} 0 \\ 1 \\ 1 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-113" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-114">Remark: For <span class="process-math">\(2 \times 2\)</span> matrix, this is a considerably rare case and only happens when you have a scalar matrix, i.e., a scalar multiple of the identity matrix. But for matrices of higher dimension this is more common.<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-114" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-115">(6) Repeated eigenvalues Case 2<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-115" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-116">
+<span class="process-math">\(\vec{x}' = \left[ \begin{array}{cc} 2 \amp -1 \\ 1 \amp 4 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-116" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-117">Find the eigenvalues:<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-117" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-118">
+<span class="process-math">\(\left| \begin{array}{cc} 2 - \lambda \amp -1 \\ 4 - \lambda \amp 1 \end{array} \right| = \lambda^2 - 6\lambda + 9 = 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-118" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-119">Solve the equation<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-119" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-120">
+<span class="process-math">\(\lambda = 3 \quad \text{(repeated)}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-120" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-121">Solve the eigenvector<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-121" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-122">
+<span class="process-math">\(\left[ \begin{array}{cc|c} 2 - 3 \amp -1 \amp 0 \\ 4 - 3 \amp 1 \amp 0 \end{array} \right] = \left[ \begin{array}{cc|c} -1 \amp 0 \amp 0 \\ 1 \amp 0 \amp 0 \end{array} \right] \Rightarrow \vec{v} = \left[ \begin{array}{c} -1 \\ 1 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-122" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-123">Solve for the generalized eigenvector<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-123" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-124">
+<span class="process-math">\(\left[ \begin{array}{cc|c} 2 - 3 \amp -1 \amp 0 \\ 4 - 3 \amp 1 \amp 0 \end{array} \right] = \left[ \begin{array}{cc|c} -1 \amp -1 \amp 0 \\ 1 \amp 0 \amp 0 \end{array} \right] \Rightarrow \vec{v} = \left[ \begin{array}{c} 0 \\ 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-124" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-125">So the general solution is<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-125" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-126">
+<span class="process-math">\(\vec{x}(t) = C_1 e^{3t} \left[ \begin{array}{c} -1 \\ 1 \end{array} \right] + C_2 e^{3t} \left[ \begin{array}{c} t - 1 \\ 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-126" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-127">(7) 3 x 3 system: mixture of real and complex eigenvalues<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-127" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-128">
+<span class="process-math">\(\vec{x}' = \left[ \begin{array}{ccc} 1 \amp 0 \amp 0 \\ 2 \amp 1 \amp -2 \\ 3 \amp 2 \amp 1 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-128" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-129">Find the eigenvalues:<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-129" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-130">
+<span class="process-math">\(1 - \lambda = \left| \begin{array}{ccc} 1 - \lambda \amp 0 \amp 0 \\ 2 \amp 1 - \lambda \amp -2 \\ 3 \amp 2 \amp 1 - \lambda \end{array} \right| = (1 - \lambda)\left[(1 - \lambda)^2 + 4\right] = 0\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-130" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-131">Solve the equation<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-131" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-132">
+<span class="process-math">\(\lambda_1 = 1, \quad \lambda_2 = 1 + 2i, \quad \lambda_3 = 1 - 2i.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-132" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-133">Solve the eigenvector for <span class="process-math">\(\lambda_1 = 1:\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-133" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-134">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} -1 \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 - 1 \amp -2 \amp 0 \\ 3 \amp 2 \amp 1 - 1 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -1 \amp 0 \amp 0 \amp 0 \\ 2 \amp 0 \amp -2 \amp 0 \\ 3 \amp 2 \amp 0 \amp 0 \end{array} \right] \Rightarrow \vec{v_1} = \left[ \begin{array}{c} 2 \\ 0 \\ 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-134" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-135">Solve the eigenvector for <span class="process-math">\(\lambda_2 = 1 + 2i:\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-135" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-136">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 1 - (1 + 2i) \amp 0 \amp 0 \amp 0 \\ 2 \amp 1 - (1 + 2i) \amp -2 \amp 0 \\ 3 \amp 2 \amp 1 - (1 + 2i) \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} -2i \amp 0 \amp 0 \amp 0 \\ 2 \amp -2i \amp -2 \amp 0 \end{array} \right] \Rightarrow \vec{v_2} = \left[ \begin{array}{c} 0 \\ 1 \\ i \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-136" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-137">Find the real part and the imaginary part of <span class="process-math">\(e^{(1 + 2i)t} \vec{v_2}:\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-137" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-138">
+<span class="process-math">\(e^{(1 + 2i)t} \left[ \begin{array}{c} 0 \\ 1 \\ i \end{array} \right] = e^t e^{2it} \left[ \begin{array}{c} 0 \\ 1 \\ i \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-138" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-139">Product rule \amp Euler<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-139" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-140">
+<span class="process-math">\(e^{(1 + 2i)t} = e^t \left[ \cos(2t) + i\sin(2t) \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-140" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-141">Multiply<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-141" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-142">
+<span class="process-math">\(e^t \left[ \begin{array}{c} 0 \\ \cos(2t) + i\sin(2t) \end{array} \right] = e^t \left[ \begin{array}{c} 0 \\ \cos(2t) \\ \sin(2t) \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-142" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-143">Separate<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-143" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-144">
+<span class="process-math">\(e^{t/2} \left[ \begin{array}{c} 0 \\ \cos(2t) \\ \sin(2t) \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-144" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-145">So the general solution is<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-145" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-146">
+<span class="process-math">\(\vec{x}(t) = C_1 e^{3t} \left[ \begin{array}{c} -\cos(2t) \\ -2\sin(2t) \end{array} \right] + C_2 e^{3t} \left[ \begin{array}{c} -\sin(2t) \\ \cos(2t) \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-146" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-147">(8) 3 x 3 system: mixture of repeated (case 1) and single eigenvalues<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-147" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-148">
+<span class="process-math">\(\vec{x}' = \left[ \begin{array}{ccc} 2 \amp -1 \amp 1 \\ 4 \amp 3 \amp -2 \\ 2 \amp 2 \amp 2 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-148" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-149">Find the eigenvalues:<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-149" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-150">
+<span class="process-math">\(\left| \begin{array}{ccc} 3 - \lambda \amp -2 \amp 4 \\ 4 \amp 3 - \lambda \amp -2 \\ 2 \amp 2 \amp 2 - \lambda \end{array} \right| = -\lambda^3 + 6\lambda^2 + 15\lambda + 8 = -(\lambda + 1)^2(\lambda - 8)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-150" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-151">Solve the equation<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-151" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-152">
+<span class="process-math">\(\lambda_1 = \lambda_2 = -1, \quad \lambda_3 = 8.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-152" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-153">Solve the eigenvector for <span class="process-math">\(\lambda_1 = -1:\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-153" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-154">
+<span class="process-math">\(\left[ \begin{array}{ccc|c} 3 + 1 \amp -2 \amp 4 \amp 0 \\ 4 \amp 3 + 1 \amp -2 \amp 0 \\ 2 \amp 2 \amp 2 + 1 \amp 0 \end{array} \right] = \left[ \begin{array}{ccc|c} 4 \amp -2 \amp 4 \amp 0 \\ 4 \amp 4 \amp -2 \amp 0 \\ 2 \amp 2 \amp 3 \amp 0 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-154" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-155">So the general solution is<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-155" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-156">
+<span class="process-math">\(\vec{x}(t) = C_1 e^{-t} \left[ \begin{array}{c} 1 \\ 0 \\ 0 \end{array} \right] + C_2 e^{-t} \left[ \begin{array}{c} 0 \\ 1 \\ 0 \end{array} \right] + C_3 e^{8t} \left[ \begin{array}{c} 0 \\ 0 \\ 1 \end{array} \right]\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-156" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-157">Solve the eigenvector for <span class="process-math">\(\lambda_1 = -1\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-157" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-158">
+<span class="process-math">\(\begin{bmatrix} 3 \amp 1 \amp 2 \amp 4 \\ 2 \amp 1 \amp 0 \amp 0 \\ 4 \amp 2 \amp 3 \amp 1 \\ 0 \amp 0 \amp 0 \amp 0 \end{bmatrix} = \begin{bmatrix} 4 \amp 2 \amp 2 \amp 0 \\ 2 \amp 4 \amp 4 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{bmatrix} \Rightarrow \begin{bmatrix} 1 \\ -1 \\ 0 \end{bmatrix} = \mathbf{v_1}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-158" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-159">One equation for three variables, thus two variables are free and can be set to solve<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-159" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-160">
+<span class="process-math">\(\mathbf{v_1} = \begin{bmatrix} 1 \\ 0 \\ -1 \end{bmatrix}, \quad \mathbf{v_2} = \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-160" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-161">Solve the eigenvector for <span class="process-math">\(\lambda_3 = 8\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-161" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-162">
+<span class="process-math">\(\begin{bmatrix} 3 \amp -8 \amp 2 \amp 4 \\ 2 \amp -2 \amp 8 \amp 0 \\ 0 \amp 0 \amp 0 \amp 0 \end{bmatrix} = \begin{bmatrix} -5 \amp 2 \amp 4 \amp 0 \\ -1 \amp -4 \amp 1 \amp 0 \\ -2 \amp -8 \amp 2 \amp 0 \\ 4 \amp 2 \amp -5 \amp 0 \end{bmatrix} \Rightarrow \begin{bmatrix} r_1 = r_2 + r_3 \\ r_2 = r_1 + 2r_1 \end{bmatrix} \Rightarrow \mathbf{v_3} = \begin{bmatrix} 2 \\ 2 \\ 2 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-162" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-163">So the general solution to the ODE is<div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-163" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-system-linear-ODEs-164">
+<span class="process-math">\(\mathbf{x}(t) = C_1 e^{-t} \begin{bmatrix} -1 \\ 0 \\ 1 \end{bmatrix} + C_2 e^{-2t} \begin{bmatrix} 0 \\ -2 \\ 1 \end{bmatrix} + C_3 e^{8t} \begin{bmatrix} 2 \\ 1 \\ 2 \end{bmatrix}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-system-linear-ODEs-164" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 4.2: System of First-Order Linear ODEs"><a href="#sec-system-linear-ODEs" title="Copy heading and permalink for Section 4.2: System of First-Order Linear ODEs">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-linear-algebra.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="backmatter.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

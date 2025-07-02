@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.6';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -275,7 +275,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integral Transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Laplace transforms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-4" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Summary of basic formulas for Laplace transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-5" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
@@ -296,13 +304,19 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="preface" id="frontmatter-3"><h2 class="heading hide-type">
 <span class="type">Preface</span><span class="space"> </span><span class="codenumber"></span><span class="space"> </span><span class="title">Preface</span>
 </h2>
-<div class="para" id="frontmatter-3-1">This textbook is the culmination of several years of teaching differential equations at Rutgers University and the University of Denver. It originated from a desire to provide a more accessible, coherent, and pedagogically sound alternative to the commercial textbooks that I found lacking in various respects. Over time, these notes have been refined and expanded through continuous use in the classroom, shaped by student feedback, and improved by collaborative teaching experiences.</div>
-<div class="para" id="frontmatter-3-2">The current version covers the standard topics taught in a first course on differential equations at the University of Denver. While it is intended to serve as a complete resource for that curriculum, there remain several important topics that will be included in future iterations, such as series solutions to differential equations, the method of variation of parameters, and the phase portraits of linear and nonlinear autonomous systems.</div>
-<div class="para" id="frontmatter-3-3">This work was made possible in part through the support of a Colorado Department of Higher Education Open Educational Resources (CDHE OER) grant. I would also like to express my sincere gratitude to the many colleagues and teaching assistants who have contributed to this effort over the years. In particular, I am grateful for the valuable influence and mentorship of Doron Zeilberger, Lasantha Goonetilleke, and Kumar Shwetketu Virbhadra, who were instructors I have had the privilege to work as a TA at Rutgers University. I am indebted to my teaching assistants: Kempton Albee, Benjamin Brown, Brendan Dufty, Zion Hefty, Paul Johnson, Eden Ketchum, Christian Naess, and Kaya Wright, for their support, insights, and collaboration. I should also acknowledge the Cursor app that provided a quick conversion of my previous materials in all different formats (scanned, handwritten, latex, powerpoint, etc.) into the simple PreTeXt format and assisted me in the subsequent editing process.</div>
-<div class="para" id="frontmatter-3-4">It is my hope that this textbook will serve as a useful and adaptable resource for students and instructors alike, and that it contributes to a broader effort to make high-quality educational materials freely available.</div>
-<div class="para" id="frontmatter-3-5"></div>
-<div class="para" id="frontmatter-3-6"></div>
-<div class="para" id="frontmatter-3-7">Fei Qi</div></section></div>
+<div class="para" id="frontmatter-3-1">This textbook is the culmination of several years of teaching differential equations at Rutgers University and the University of Denver. It originated from a desire to provide a more accessible, coherent, and pedagogically sound alternative to the commercial textbooks that I found lacking in various respects. Over time, these notes have been refined and expanded through continuous use in the classroom, shaped by student feedback, and improved by collaborative teaching experiences.<div class="autopermalink" data-description="Paragraph"><a href="#frontmatter-3-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="frontmatter-3-2">The current version covers the standard topics taught in a first course on differential equations at the University of Denver. While it is intended to serve as a complete resource for that curriculum, there remain several important topics that will be included in future iterations, such as series solutions to differential equations, the method of variation of parameters, and the phase portraits of linear and nonlinear autonomous systems.<div class="autopermalink" data-description="Paragraph"><a href="#frontmatter-3-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="frontmatter-3-3">This work was made possible in part through the support of a Colorado Department of Higher Education Open Educational Resources (CDHE OER) grant. I would also like to express my sincere gratitude to the many colleagues and teaching assistants who have contributed to this effort over the years. In particular, I am grateful for the valuable influence and mentorship of Doron Zeilberger, Lasantha Goonetilleke, and Kumar Shwetketu Virbhadra, who were instructors I have had the privilege to work as a TA at Rutgers University. I am indebted to my teaching assistants: Kempton Albee, Benjamin Brown, Brendan Dufty, Zion Hefty, Paul Johnson, Eden Ketchum, Christian Naess, and Kaya Wright, for their support, insights, and collaboration. I should also acknowledge the Cursor app that provided a quick conversion of my previous materials in all different formats (scanned, handwritten, latex, powerpoint, etc.) into the simple PreTeXt format and assisted me in the subsequent editing process.<div class="autopermalink" data-description="Paragraph"><a href="#frontmatter-3-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="frontmatter-3-4">It is my hope that this textbook will serve as a useful and adaptable resource for students and instructors alike, and that it contributes to a broader effort to make high-quality educational materials freely available.<div class="autopermalink" data-description="Paragraph"><a href="#frontmatter-3-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="frontmatter-3-5"><div class="autopermalink" data-description="Paragraph"><a href="#frontmatter-3-5" title="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="para" id="frontmatter-3-6"><div class="autopermalink" data-description="Paragraph"><a href="#frontmatter-3-6" title="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="para" id="frontmatter-3-7">Fei Qi<div class="autopermalink" data-description="Paragraph"><a href="#frontmatter-3-7" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Preface"><a href="#frontmatter-3" title="Copy heading and permalink for Preface">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="frontmatter.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="First-order-ODE.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

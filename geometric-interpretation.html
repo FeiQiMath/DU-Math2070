@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.6';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -275,7 +275,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integral Transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Laplace transforms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-4" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Summary of basic formulas for Laplace transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-5" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
@@ -296,17 +304,21 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="geometric-interpretation"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.3</span><span class="space"> </span><span class="title">Geometric interpretation</span>
 </h2>
-<div class="para" id="geometric-interpretation-2"><em class="alert">Not all ODE can be solved as in the previous sections.</em></div>
-<div class="para" id="geometric-interpretation-3">In general, we cannot expect to obtain explicit solutions. But <em class="emphasis">there does exist a way</em> to get some information of the solution that <em class="emphasis">works for every ODE</em>.</div>
-<div class="para" id="geometric-interpretation-4">Consider the IVP <span class="process-math">\(y' = f(t, y),\ y(t_0) = y_0\text{.}\)</span> If we substitute <span class="process-math">\(t = t_0\)</span> in the ODE, we obtain</div>
+<div class="para" id="geometric-interpretation-2">
+<em class="alert">Not all ODE can be solved as in the previous sections.</em><div class="autopermalink" data-description="Paragraph"><a href="#geometric-interpretation-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="geometric-interpretation-3">In general, we cannot expect to obtain explicit solutions. But <em class="emphasis">there does exist a way</em> to get some information of the solution that <em class="emphasis">works for every ODE</em>.<div class="autopermalink" data-description="Paragraph"><a href="#geometric-interpretation-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="geometric-interpretation-4">Consider the IVP <span class="process-math">\(y' = f(t, y),\ y(t_0) = y_0\text{.}\)</span> If we substitute <span class="process-math">\(t = t_0\)</span> in the ODE, we obtain<div class="autopermalink" data-description="Paragraph"><a href="#geometric-interpretation-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
 y'(t_0) = f(t_0, y(t_0)) = f(t_0, y_0)
 \end{equation*}
 </div>
-<div class="para" id="geometric-interpretation-6">In other words, the <em class="emphasis">derivative</em> of the solution of the IVP at <span class="process-math">\(t = t_0\)</span> is <em class="emphasis">known</em>, and takes the value <span class="process-math">\(f(t_0, y_0)\text{.}\)</span>
+<div class="para" id="geometric-interpretation-6">In other words, the <em class="emphasis">derivative</em> of the solution of the IVP at <span class="process-math">\(t = t_0\)</span> is <em class="emphasis">known</em>, and takes the value <span class="process-math">\(f(t_0, y_0)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#geometric-interpretation-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="geometric-interpretation-7">Example: <span class="process-math">\(y' = 2y - 1,\, y(2) = 3\text{.}\)</span> <span class="process-math">\(\implies y'(2) = 2 \times 3 - 1 = 5\text{.}\)</span>
+<div class="para" id="geometric-interpretation-7">Example: <span class="process-math">\(y' = 2y - 1,\, y(2) = 3\text{.}\)</span> <span class="process-math">\(\implies y'(2) = 2 \times 3 - 1 = 5\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#geometric-interpretation-7" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="geometric-interpretation-8">
 <div class="para">Consider the IVP <span class="process-math">\(y' = f(t, y),\ y(t_0) = y_0\text{.}\)</span>
@@ -316,11 +328,13 @@ y'(t_0) = f(t_0, y(t_0)) = f(t_0, y_0)
 \implies y'(t_0) = f(t_0, y(t_0)) = f(t_0, y_0)
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#geometric-interpretation-8" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="geometric-interpretation-9">Collecting <em class="emphasis">all</em> the derivatives for <em class="emphasis">every point</em> in the <span class="process-math">\(ty\)</span>-plane, using <em class="emphasis">line elements</em> to denote the derivative, we obtain a picture called the <em class="emphasis">direction field</em>.</div>
+<div class="para" id="geometric-interpretation-9">Collecting <em class="emphasis">all</em> the derivatives for <em class="emphasis">every point</em> in the <span class="process-math">\(ty\)</span>-plane, using <em class="emphasis">line elements</em> to denote the derivative, we obtain a picture called the <em class="emphasis">direction field</em>.<div class="autopermalink" data-description="Paragraph"><a href="#geometric-interpretation-9" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <details id="geometric-interpretation-10" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.1</span><span class="period">.</span><span class="space"> </span><span class="title">Direction field of <span class="process-math">\(y' = 2y - 1\)</span>.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="geometric-interpretation-10-2-1">Note that the right-hand-side is independent of <span class="process-math">\(t\text{.}\)</span> So we only calculate <span class="process-math">\(y'\)</span> with varying <span class="process-math">\(y\)</span>-values. Here is the table of <span class="process-math">\(y'\)</span> values with <span class="process-math">\(y\)</span> ranging from <span class="process-math">\(-1\)</span> to <span class="process-math">\(2\)</span> with step <span class="process-math">\(1/2\text{.}\)</span>
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="geometric-interpretation-10-2-1">Note that the right-hand-side is independent of <span class="process-math">\(t\text{.}\)</span> So we only calculate <span class="process-math">\(y'\)</span> with varying <span class="process-math">\(y\)</span>-values. Here is the table of <span class="process-math">\(y'\)</span> values with <span class="process-math">\(y\)</span> ranging from <span class="process-math">\(-1\)</span> to <span class="process-math">\(2\)</span> with step <span class="process-math">\(1/2\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#geometric-interpretation-10-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="tabular-box natural-width"><table class="tabular">
 <tr>
 <td class="l m b1 r0 l0 t0 lines"><span class="process-math">\(y\)</span></td>
@@ -354,24 +368,46 @@ y'(t_0) = f(t_0, y(t_0)) = f(t_0, y_0)
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(-1\)</span></td>
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(2 \times (-1) - 1 = -3\)</span></td>
 </tr>
-</table></div> <div class="para" id="geometric-interpretation-10-2-3">Based on the previous table, we may sketch the direction field as follows.</div> <figure class="figure figure-like" id="direction-field-example-1"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external//figures/DE-Figure-1-Dir-Field-Ex-1.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.2<span class="period">.</span></span><span class="space"> </span>Direction field for <span class="process-math">\(y' = 2y - 1\)</span></figcaption></figure></article></details><div class="para" id="geometric-interpretation-11">We may use the direction field to conduct <em class="emphasis">qualitative studies</em>. Recall from Calculus I:</div>
+</table></div> <div class="para" id="geometric-interpretation-10-2-3">Based on the previous table, we may sketch the direction field as follows.<div class="autopermalink" data-description="Paragraph"><a href="#geometric-interpretation-10-2-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <figure class="figure figure-like" id="direction-field-example-1"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external//figures/DE-Figure-1-Dir-Field-Ex-1.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.2<span class="period">.</span></span><span class="space"> </span>Direction field for <span class="process-math">\(y' = 2y - 1\)</span><div class="autopermalink" data-description="Figure 1.3.2"><a href="#direction-field-example-1" title="Copy heading and permalink for Figure 1.3.2">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 1.3.1: Direction field of y' = 2y - 1"><a href="#geometric-interpretation-10" title="Copy heading and permalink for Example 1.3.1: Direction field of y' = 2y - 1">🔗</a></div></article></details><div class="para" id="geometric-interpretation-11">We may use the direction field to conduct <em class="emphasis">qualitative studies</em>. Recall from Calculus I:<div class="autopermalink" data-description="Paragraph"><a href="#geometric-interpretation-11" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <ul class="disc" id="geometric-interpretation-12">
-<li id="geometric-interpretation-12-1"><div class="para" id="p-derived-geometric-interpretation-12-1">If <span class="process-math">\(y' &gt; 0\text{,}\)</span> then <span class="process-math">\(y\)</span> increases;</div></li>
-<li id="geometric-interpretation-12-2"><div class="para" id="p-derived-geometric-interpretation-12-2">If <span class="process-math">\(y' = 0\text{,}\)</span> then <span class="process-math">\(y\)</span> stays;</div></li>
-<li id="geometric-interpretation-12-3"><div class="para" id="p-derived-geometric-interpretation-12-3">If <span class="process-math">\(y' &lt; 0\text{,}\)</span> then <span class="process-math">\(y\)</span> decreases.</div></li>
+<li id="geometric-interpretation-12-1">
+<div class="para" id="p-derived-geometric-interpretation-12-1">If <span class="process-math">\(y' &gt; 0\text{,}\)</span> then <span class="process-math">\(y\)</span> increases;</div>
+<div class="autopermalink" data-description="Item"><a href="#geometric-interpretation-12-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="geometric-interpretation-12-2">
+<div class="para" id="p-derived-geometric-interpretation-12-2">If <span class="process-math">\(y' = 0\text{,}\)</span> then <span class="process-math">\(y\)</span> stays;</div>
+<div class="autopermalink" data-description="Item"><a href="#geometric-interpretation-12-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="geometric-interpretation-12-3">
+<div class="para" id="p-derived-geometric-interpretation-12-3">If <span class="process-math">\(y' &lt; 0\text{,}\)</span> then <span class="process-math">\(y\)</span> decreases.</div>
+<div class="autopermalink" data-description="Item"><a href="#geometric-interpretation-12-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
-<div class="para" id="geometric-interpretation-13">Therefore, the direction field can be used to determine the qualitative behavior of solutions of the ODE.</div>
+<div class="para" id="geometric-interpretation-13">Therefore, the direction field can be used to determine the qualitative behavior of solutions of the ODE.<div class="autopermalink" data-description="Paragraph"><a href="#geometric-interpretation-13" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <details id="geometric-interpretation-14" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.3</span><span class="period">.</span><span class="space"> </span><span class="title">Qualitative behavior of solutions of <span class="process-math">\(y' = 2y - 1\text{.}\)</span>.</span>
 </h3></summary><article class="example example-like knowl__content"><ul class="disc" id="geometric-interpretation-14-2-1">
-<li id="geometric-interpretation-14-2-1-1"><div class="para" id="p-derived-geometric-interpretation-14-2-1-1">If <span class="process-math">\((t_0, y_0)\)</span> is above <span class="process-math">\(y = 1/2\text{,}\)</span> then the solution increases, going further away from <span class="process-math">\(y = 1/2\text{.}\)</span>
-</div></li>
-<li id="geometric-interpretation-14-2-1-2"><div class="para" id="p-derived-geometric-interpretation-14-2-1-2">If <span class="process-math">\((t_0, y_0)\)</span> is below <span class="process-math">\(y = 1/2\text{,}\)</span> then the solution decreases, going further away from <span class="process-math">\(y = 1/2\text{.}\)</span>
-</div></li>
-<li id="geometric-interpretation-14-2-1-3"><div class="para" id="p-derived-geometric-interpretation-14-2-1-3">If <span class="process-math">\((t_0, y_0)\)</span> is on <span class="process-math">\(y = 1/2\text{,}\)</span> then the solution stays on <span class="process-math">\(y = 1/2\text{.}\)</span>
-</div></li>
-</ul></article></details><details id="geometric-interpretation-15" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
+<li id="geometric-interpretation-14-2-1-1">
+<div class="para" id="p-derived-geometric-interpretation-14-2-1-1">If <span class="process-math">\((t_0, y_0)\)</span> is above <span class="process-math">\(y = 1/2\text{,}\)</span> then the solution increases, going further away from <span class="process-math">\(y = 1/2\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#geometric-interpretation-14-2-1-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="geometric-interpretation-14-2-1-2">
+<div class="para" id="p-derived-geometric-interpretation-14-2-1-2">If <span class="process-math">\((t_0, y_0)\)</span> is below <span class="process-math">\(y = 1/2\text{,}\)</span> then the solution decreases, going further away from <span class="process-math">\(y = 1/2\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#geometric-interpretation-14-2-1-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="geometric-interpretation-14-2-1-3">
+<div class="para" id="p-derived-geometric-interpretation-14-2-1-3">If <span class="process-math">\((t_0, y_0)\)</span> is on <span class="process-math">\(y = 1/2\text{,}\)</span> then the solution stays on <span class="process-math">\(y = 1/2\text{.}\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#geometric-interpretation-14-2-1-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Example 1.3.3: Qualitative behavior of solutions of y' = 2y - 1"><a href="#geometric-interpretation-14" title="Copy heading and permalink for Example 1.3.3: Qualitative behavior of solutions of y' = 2y - 1">🔗</a></div></article></details><details id="geometric-interpretation-15" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.4</span><span class="period">.</span><span class="space"> </span><span class="title">Nonlinear ODE <span class="process-math">\(y' = (y+1)(y-2)\)</span>.</span>
 </h3></summary><article class="example example-like knowl__content"><div class="tabular-box natural-width"><table class="tabular">
 <tr>
@@ -403,43 +439,63 @@ y'(t_0) = f(t_0, y(t_0)) = f(t_0, y_0)
 <td class="l m b0 r0 l0 t0 lines"><span class="process-math">\(((-2) + 1)((-2) - 2) = 4\)</span></td>
 </tr>
 </table></div> <figure class="figure figure-like" id="direction-field-example-2"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external//figures/DE-Figure-1-Dir-Field-Ex-2.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.5<span class="period">.</span></span><span class="space"> </span>Direction field for <span class="process-math">\(y' = (y+1)(y-2)\)</span></figcaption></figure></article></details><div class="para" id="geometric-interpretation-16">Knowing the direction field, we may plot the graph of a few actual solutions on the <span class="process-math">\(yt\)</span>-plane. The graph is usually called an <dfn class="terminology">integral curve</dfn>. We may analyze the <dfn class="terminology">asymptotic behavior</dfn> of the solutions, i.e., the behavior of <span class="process-math">\(y(t)\)</span> when <span class="process-math">\(t\to \pm \infty\text{.}\)</span> In most engineering practices, we only care about the <dfn class="terminology">long-term behavior</dfn>, which means the behavior of <span class="process-math">\(y(t)\)</span> when <span class="process-math">\(t\to + \infty\text{.}\)</span>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.5<span class="period">.</span></span><span class="space"> </span>Direction field for <span class="process-math">\(y' = (y+1)(y-2)\)</span><div class="autopermalink" data-description="Figure 1.3.5"><a href="#direction-field-example-2" title="Copy heading and permalink for Figure 1.3.5">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 1.3.4: Nonlinear ODE y' = (y+1)(y-2)"><a href="#geometric-interpretation-15" title="Copy heading and permalink for Example 1.3.4: Nonlinear ODE y' = (y+1)(y-2)">🔗</a></div></article></details><div class="para" id="geometric-interpretation-16">Knowing the direction field, we may plot the graph of a few actual solutions on the <span class="process-math">\(yt\)</span>-plane. The graph is usually called an <dfn class="terminology">integral curve</dfn>. We may analyze the <dfn class="terminology">asymptotic behavior</dfn> of the solutions, i.e., the behavior of <span class="process-math">\(y(t)\)</span> when <span class="process-math">\(t\to \pm \infty\text{.}\)</span> In most engineering practices, we only care about the <dfn class="terminology">long-term behavior</dfn>, which means the behavior of <span class="process-math">\(y(t)\)</span> when <span class="process-math">\(t\to + \infty\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#geometric-interpretation-16" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="geometric-interpretation-17" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h3 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.3.6</span><span class="period">.</span><span class="space"> </span><span class="title">Integral curve of <span class="process-math">\(y' = (y+1)(y-2)\)</span> and asymptotic behavior of solutions.</span>
-</h3></summary><article class="example example-like knowl__content"><div class="para" id="geometric-interpretation-17-2-1">We first sketch the integral curves, knowing that they must follow the flow given by the direction field.</div> <figure class="figure figure-like" id="direction-field-example-3"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external//figures/DE-Figure-1-Dir-Field-Ex-3.png" class="contained"></div>
-<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.7<span class="period">.</span></span><span class="space"> </span>Direction field for <span class="process-math">\(y' = (y+1)(y-2)\)</span></figcaption></figure> <div class="para" id="geometric-interpretation-17-2-3">From the direction field, the following asymptotic behaviors can be observed:</div> <ul class="disc" id="geometric-interpretation-17-2-4">
-<li id="geometric-interpretation-17-2-4-1"><div class="para" id="p-derived-geometric-interpretation-17-2-4-1">If <span class="process-math">\(y(t_0) \in (2,+\infty)\text{,}\)</span> then<div class="displaymath process-math">
+</h3></summary><article class="example example-like knowl__content"><div class="para" id="geometric-interpretation-17-2-1">We first sketch the integral curves, knowing that they must follow the flow given by the direction field.<div class="autopermalink" data-description="Paragraph"><a href="#geometric-interpretation-17-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <figure class="figure figure-like" id="direction-field-example-3"><div class="image-box" style="width: 100%; margin-left: 0%; margin-right: 0%;"><img src="external//figures/DE-Figure-1-Dir-Field-Ex-3.png" class="contained"></div>
+<figcaption><span class="type">Figure</span><span class="space"> </span><span class="codenumber">1.3.7<span class="period">.</span></span><span class="space"> </span>Direction field for <span class="process-math">\(y' = (y+1)(y-2)\)</span><div class="autopermalink" data-description="Figure 1.3.7"><a href="#direction-field-example-3" title="Copy heading and permalink for Figure 1.3.7">🔗</a></div></figcaption></figure> <div class="para" id="geometric-interpretation-17-2-3">From the direction field, the following asymptotic behaviors can be observed:<div class="autopermalink" data-description="Paragraph"><a href="#geometric-interpretation-17-2-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ul class="disc" id="geometric-interpretation-17-2-4">
+<li id="geometric-interpretation-17-2-4-1">
+<div class="para" id="p-derived-geometric-interpretation-17-2-4-1">If <span class="process-math">\(y(t_0) \in (2,+\infty)\text{,}\)</span> then<div class="displaymath process-math">
 \begin{equation*}
 \lim_{t \to \infty} y(t) = \infty, \lim_{t \to -\infty} y(t) = 2.
 \end{equation*}
 </div>
-</div></li>
-<li id="geometric-interpretation-17-2-4-2"><div class="para" id="p-derived-geometric-interpretation-17-2-4-2">If <span class="process-math">\(y(t_0) =2 \text{,}\)</span> then<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#geometric-interpretation-17-2-4-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="geometric-interpretation-17-2-4-2">
+<div class="para" id="p-derived-geometric-interpretation-17-2-4-2">If <span class="process-math">\(y(t_0) =2 \text{,}\)</span> then<div class="displaymath process-math">
 \begin{equation*}
 \lim_{t \to \infty} y(t) = 2, \lim_{t \to -\infty} y(t) = 2.
 \end{equation*}
 </div>
-</div></li>
-<li id="geometric-interpretation-17-2-4-3"><div class="para" id="p-derived-geometric-interpretation-17-2-4-3">If <span class="process-math">\(y(t_0) \in (-1,2)\text{,}\)</span> then<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#geometric-interpretation-17-2-4-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="geometric-interpretation-17-2-4-3">
+<div class="para" id="p-derived-geometric-interpretation-17-2-4-3">If <span class="process-math">\(y(t_0) \in (-1,2)\text{,}\)</span> then<div class="displaymath process-math">
 \begin{equation*}
 \lim_{t \to \infty} y(t) = -1, \lim_{t \to -\infty} y(t) = 2.
 \end{equation*}
 </div>
-</div></li>
-<li id="geometric-interpretation-17-2-4-4"><div class="para" id="p-derived-geometric-interpretation-17-2-4-4">If <span class="process-math">\(y(t_0) =-1 \text{,}\)</span> then<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#geometric-interpretation-17-2-4-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="geometric-interpretation-17-2-4-4">
+<div class="para" id="p-derived-geometric-interpretation-17-2-4-4">If <span class="process-math">\(y(t_0) =-1 \text{,}\)</span> then<div class="displaymath process-math">
 \begin{equation*}
 \lim_{t \to \infty} y(t) = -1, \lim_{t \to -\infty} y(t) = -1.
 \end{equation*}
 </div>
-</div></li>
-<li id="geometric-interpretation-17-2-4-5"><div class="para" id="p-derived-geometric-interpretation-17-2-4-5">If <span class="process-math">\(y(t_0) \in (-\infty, -1)\text{,}\)</span> then<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#geometric-interpretation-17-2-4-4" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="geometric-interpretation-17-2-4-5">
+<div class="para" id="p-derived-geometric-interpretation-17-2-4-5">If <span class="process-math">\(y(t_0) \in (-\infty, -1)\text{,}\)</span> then<div class="displaymath process-math">
 \begin{equation*}
 \lim_{t \to \infty} y(t) = -1, \lim_{t \to -\infty} y(t) = -\infty.
 \end{equation*}
 </div>
-</div></li>
-</ul></article></details><div class="para" id="geometric-interpretation-18">What happens if the ODE involves <span class="process-math">\(t\text{?}\)</span> It is still possible to draw the direction field by hand and use the qualitative method to analyze the asymptotic behavior of the solutions. We will not require the technique in this course. Please watch <a class="external" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-1-the-geometrical-view-of-y-f-x-y/" target="_blank">MIT Lecture 1</a><details class="ptx-footnote" aria-live="polite" id="geometric-interpretation-18-3"><summary class="ptx-footnote__number" title="Footnote 1.3.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="geometric-interpretation-18-3"><code class="code-inline tex2jax_ignore">ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-1-the-geometrical-view-of-y-f-x-y/</code></div></details> if you are interested.</div></section></div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#geometric-interpretation-17-2-4-5" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Example 1.3.6: Integral curve of y' = (y+1)(y-2) and asymptotic behavior of solutions"><a href="#geometric-interpretation-17" title="Copy heading and permalink for Example 1.3.6: Integral curve of y' = (y+1)(y-2) and asymptotic behavior of solutions">🔗</a></div></article></details><div class="para" id="geometric-interpretation-18">What happens if the ODE involves <span class="process-math">\(t\text{?}\)</span> It is still possible to draw the direction field by hand and use the qualitative method to analyze the asymptotic behavior of the solutions. We will not require the technique in this course. Please watch <a class="external" href="https://ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-1-the-geometrical-view-of-y-f-x-y/" target="_blank">MIT Lecture 1</a><details class="ptx-footnote" aria-live="polite" id="geometric-interpretation-18-3"><summary class="ptx-footnote__number" title="Footnote 1.3.1"><sup> 1 </sup></summary><div class="ptx-footnote__contents" id="geometric-interpretation-18-3"><code class="code-inline tex2jax_ignore">ocw.mit.edu/courses/18-03-differential-equations-spring-2010/resources/lecture-1-the-geometrical-view-of-y-f-x-y/</code></div></details> if you are interested.<div class="autopermalink" data-description="Paragraph"><a href="#geometric-interpretation-18" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 1.3: Geometric interpretation"><a href="#geometric-interpretation" title="Copy heading and permalink for Section 1.3: Geometric interpretation">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-why-study-DEs.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-classification.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

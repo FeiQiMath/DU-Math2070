@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.6';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -275,7 +275,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integral Transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Laplace transforms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-4" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Summary of basic formulas for Laplace transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-5" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
 <li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
@@ -296,210 +304,389 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-second-translation-theorem"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">3.4</span><span class="space"> </span><span class="title">Second Translation Theorem</span>
 </h2>
-<div class="para" id="sec-second-translation-theorem-2">Unit step function and piecewise function</div>
-<div class="para" id="sec-second-translation-theorem-3">Definition. The function</div>
+<div class="para" id="sec-second-translation-theorem-2">Unit step function and piecewise function<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-3">Definition. The function<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para" id="sec-second-translation-theorem-4">
 <span class="process-math">\(\mathcal{U}(t - a) = \begin{cases} 
 0, \amp  0 \le t \lt a \\ 
 1, \amp  t \ge a 
-\end{cases}\)</span> is called the unit step function (Heaviside step function).</div>
-<div class="para" id="sec-second-translation-theorem-5">Any piecewise function can be expressed as a (possible infinite) sum of functions with unit step functions.</div>
+\end{cases}\)</span> is called the unit step function (Heaviside step function).<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-5">Any piecewise function can be expressed as a (possible infinite) sum of functions with unit step functions.<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para" id="sec-second-translation-theorem-6">Suppose <span class="process-math">\(f(t) = \begin{cases} 
 f_1(t), \amp 0 \leq t \lt a \\ 
 f_2(t), \amp t \geq a 
-\end{cases}.\)</span>
+\end{cases}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-7">Then,</div>
-<div class="para" id="sec-second-translation-theorem-8"><span class="process-math">\(f(t) = f_1(t) + (f_2(t) - f_1(t))\mathcal{U}(t - a).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-9">We may interpret it as follows: <span class="process-math">\(f(t)\)</span> starts with <span class="process-math">\(f_1(t).\)</span> When <span class="process-math">\(t = a, f(t)\)</span> jumps from <span class="process-math">\(f_1(t)\)</span> to <span class="process-math">\(f_2(t),\)</span> i.e., <span class="process-math">\(f(t)\)</span> jumps by <span class="process-math">\(f_2(t) - f_1(t).\)</span> We then supplement <span class="process-math">\(\mathcal{U}(t - a).\)</span>
+<div class="para" id="sec-second-translation-theorem-7">Then,<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-7" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-8">
+<span class="process-math">\(f(t) = f_1(t) + (f_2(t) - f_1(t))\mathcal{U}(t - a).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-8" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-9">We may interpret it as follows: <span class="process-math">\(f(t)\)</span> starts with <span class="process-math">\(f_1(t).\)</span> When <span class="process-math">\(t = a, f(t)\)</span> jumps from <span class="process-math">\(f_1(t)\)</span> to <span class="process-math">\(f_2(t),\)</span> i.e., <span class="process-math">\(f(t)\)</span> jumps by <span class="process-math">\(f_2(t) - f_1(t).\)</span> We then supplement <span class="process-math">\(\mathcal{U}(t - a).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-9" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sec-second-translation-theorem-10">Example 1. <span class="process-math">\(f(t) = \begin{cases} 
 20t, \amp 0 \leq t \lt 5 \\ 
 0, \amp t \geq 5 
-\end{cases}\)</span> can be expressed as</div>
-<div class="para" id="sec-second-translation-theorem-11"><span class="process-math">\(f(t) = 20t + (0 - 20t)\mathcal{U}(t - 5) = 20t - 20t \cdot \mathcal{U}(t - 5).\)</span></div>
+\end{cases}\)</span> can be expressed as<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-10" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-11">
+<span class="process-math">\(f(t) = 20t + (0 - 20t)\mathcal{U}(t - 5) = 20t - 20t \cdot \mathcal{U}(t - 5).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-11" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para" id="sec-second-translation-theorem-12">Suppose <span class="process-math">\(f(t) = \begin{cases} 
 f_1(t), \amp 0 \leq t \lt a \\ 
 f_2(t), \amp a \leq t \lt b \\ 
 f_3(t), \amp t \geq b 
-\end{cases}.\)</span>
+\end{cases}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-12" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-13">Then,</div>
-<div class="para" id="sec-second-translation-theorem-14"><span class="process-math">\(f(t) = f_1(t) + (f_2(t) - f_1(t))\mathcal{U}(t - a) + (f_3(t) - f_2(t))\mathcal{U}(t - b).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-15">Interpretation: <span class="process-math">\(f(t)\)</span> starts from <span class="process-math">\(f_1(t),\)</span> jumps from <span class="process-math">\(f_1(t)\)</span> to <span class="process-math">\(f_2(t)\)</span> at <span class="process-math">\(t = a\)</span> by <span class="process-math">\(f_2(t) - f_1(t),\)</span> then jumps from <span class="process-math">\(f_2(t)\)</span> to <span class="process-math">\(f_3(t)\)</span> at <span class="process-math">\(t = b\)</span> by <span class="process-math">\(f_3(t) - f_2(t).\)</span>
+<div class="para" id="sec-second-translation-theorem-13">Then,<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-13" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-14">
+<span class="process-math">\(f(t) = f_1(t) + (f_2(t) - f_1(t))\mathcal{U}(t - a) + (f_3(t) - f_2(t))\mathcal{U}(t - b).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-14" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-15">Interpretation: <span class="process-math">\(f(t)\)</span> starts from <span class="process-math">\(f_1(t),\)</span> jumps from <span class="process-math">\(f_1(t)\)</span> to <span class="process-math">\(f_2(t)\)</span> at <span class="process-math">\(t = a\)</span> by <span class="process-math">\(f_2(t) - f_1(t),\)</span> then jumps from <span class="process-math">\(f_2(t)\)</span> to <span class="process-math">\(f_3(t)\)</span> at <span class="process-math">\(t = b\)</span> by <span class="process-math">\(f_3(t) - f_2(t).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-15" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sec-second-translation-theorem-16">Example 2. <span class="process-math">\(f(t) = \begin{cases} 
 2, \amp 0 \leq t \lt 2 \\ 
 -1, \amp 2 \leq t \lt 3 \\ 
 0, \amp t \geq 3 
-\end{cases}\)</span>
+\end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-16" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-17"><span class="process-math">\(f(t) = 2 + (-1 - 2)\mathcal{U}(t - 2) + (0 - (-1))\mathcal{U}(t - 3) = 2 - 3\mathcal{U}(t - 2) + \mathcal{U}(t - 3).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-18">Conversely, given a function</div>
-<div class="para" id="sec-second-translation-theorem-19"><span class="process-math">\(f(t) = g_1(t) + g_2(t)\mathcal{U}(t - a) + g_3(t)\mathcal{U}(t - b)\)</span></div>
-<div class="para" id="sec-second-translation-theorem-20">represented in terms of unit step functions (assume that <span class="process-math">\(a \lt b\)</span>), we may recover the piecewise function representation.</div>
-<div class="para" id="sec-second-translation-theorem-21">If <span class="process-math">\(t \in [0, a],\)</span> we see that</div>
-<div class="para" id="sec-second-translation-theorem-22"><span class="process-math">\(f(t) = g_1(t) + g_2(t) \cdot 0 + g_3(t) \cdot 0 = g_1(t).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-23">If <span class="process-math">\(t \in [a, b],\)</span> we see that</div>
-<div class="para" id="sec-second-translation-theorem-24"><span class="process-math">\(f(t) = g_1(t) + g_2(t) \cdot 1 + g_3(t) \cdot 0 = g_1(t) + g_2(t).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-25">If <span class="process-math">\(t \in [b, c],\)</span> we see that</div>
-<div class="para" id="sec-second-translation-theorem-26"><span class="process-math">\(f(t) = g_1(t) + g_2(t) \cdot 1 + g_3(t) \cdot 1 = g_1(t) + g_2(t) + g_3(t).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-27">So,</div>
-<div class="para" id="sec-second-translation-theorem-28"><span class="process-math">\(f(t) = \begin{cases} 
+<div class="para" id="sec-second-translation-theorem-17">
+<span class="process-math">\(f(t) = 2 + (-1 - 2)\mathcal{U}(t - 2) + (0 - (-1))\mathcal{U}(t - 3) = 2 - 3\mathcal{U}(t - 2) + \mathcal{U}(t - 3).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-17" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-18">Conversely, given a function<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-18" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-19">
+<span class="process-math">\(f(t) = g_1(t) + g_2(t)\mathcal{U}(t - a) + g_3(t)\mathcal{U}(t - b)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-19" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-20">represented in terms of unit step functions (assume that <span class="process-math">\(a \lt b\)</span>), we may recover the piecewise function representation.<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-20" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-21">If <span class="process-math">\(t \in [0, a],\)</span> we see that<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-21" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-22">
+<span class="process-math">\(f(t) = g_1(t) + g_2(t) \cdot 0 + g_3(t) \cdot 0 = g_1(t).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-22" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-23">If <span class="process-math">\(t \in [a, b],\)</span> we see that<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-23" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-24">
+<span class="process-math">\(f(t) = g_1(t) + g_2(t) \cdot 1 + g_3(t) \cdot 0 = g_1(t) + g_2(t).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-24" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-25">If <span class="process-math">\(t \in [b, c],\)</span> we see that<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-25" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-26">
+<span class="process-math">\(f(t) = g_1(t) + g_2(t) \cdot 1 + g_3(t) \cdot 1 = g_1(t) + g_2(t) + g_3(t).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-26" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-27">So,<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-27" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-28">
+<span class="process-math">\(f(t) = \begin{cases} 
 g_1(t), \amp 0 \leq t \lt a \\ 
 g_1(t) + g_2(t), \amp a \leq t \lt b \\ 
 g_1(t) + g_2(t) + g_3(t), \amp t \geq b 
-\end{cases}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-29">Second translation theorem</div>
-<div class="para" id="sec-second-translation-theorem-30">Theorem. If <span class="process-math">\(\mathcal{L}\{f(t)\} = F(s),\)</span> then <span class="process-math">\(\mathcal{L}\{f(t - a)\mathcal{U}(t - a)\} = e^{-as}F(s).\)</span>
+\end{cases}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-28" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-31">% Space for the first figure %</div>
-<div class="para" id="sec-second-translation-theorem-32">% Space for the second figure %</div>
-<div class="para" id="sec-second-translation-theorem-33">Proof:</div>
-<div class="para" id="sec-second-translation-theorem-34"><span class="process-math">\(\int_{0}^{\infty} f(t - a)\mathcal{U}(t - a)e^{-st}dt = \int_{a}^{\infty} f(t - a)\mathcal{U}(t - a)e^{-st}dt\)</span></div>
-<div class="para" id="sec-second-translation-theorem-35">= <span class="process-math">\(\int_{0}^{\infty} f(T)\mathcal{U}(t)e^{-s(T + a)}dT = e^{-as} \int_{0}^{\infty} f(T)e^{-sT}dT\)</span>
+<div class="para" id="sec-second-translation-theorem-29">Second translation theorem<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-29" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-36">= <span class="process-math">\(e^{-as}F(s).\)</span>
+<div class="para" id="sec-second-translation-theorem-30">Theorem. If <span class="process-math">\(\mathcal{L}\{f(t)\} = F(s),\)</span> then <span class="process-math">\(\mathcal{L}\{f(t - a)\mathcal{U}(t - a)\} = e^{-as}F(s).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-30" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-37">Remarks:</div>
+<div class="para" id="sec-second-translation-theorem-31">% Space for the first figure %<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-31" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-32">% Space for the second figure %<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-32" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-33">Proof:<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-33" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-34">
+<span class="process-math">\(\int_{0}^{\infty} f(t - a)\mathcal{U}(t - a)e^{-st}dt = \int_{a}^{\infty} f(t - a)\mathcal{U}(t - a)e^{-st}dt\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-34" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-35">= <span class="process-math">\(\int_{0}^{\infty} f(T)\mathcal{U}(t)e^{-s(T + a)}dT = e^{-as} \int_{0}^{\infty} f(T)e^{-sT}dT\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-35" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-36">= <span class="process-math">\(e^{-as}F(s).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-36" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-37">Remarks:<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-37" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <ol class="decimal" id="sec-second-translation-theorem-38">
-<li id="sec-second-translation-theorem-38-1"><div class="para" id="p-derived-sec-second-translation-theorem-38-1">The theorem is also referred to as the t-axis shift.</div></li>
-<li id="sec-second-translation-theorem-38-2"><div class="para" id="p-derived-sec-second-translation-theorem-38-2">Here is a more convenient and less confusing form: <span class="process-math">\(\mathcal{L}\{f(t)\mathcal{U}(t - a)\} = e^{-as}\mathcal{L}\{f(t + a)\}.\)</span>
-</div></li>
+<li id="sec-second-translation-theorem-38-1">
+<div class="para" id="p-derived-sec-second-translation-theorem-38-1">The theorem is also referred to as the t-axis shift.</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-second-translation-theorem-38-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-second-translation-theorem-38-2">
+<div class="para" id="p-derived-sec-second-translation-theorem-38-2">Here is a more convenient and less confusing form: <span class="process-math">\(\mathcal{L}\{f(t)\mathcal{U}(t - a)\} = e^{-as}\mathcal{L}\{f(t + a)\}.\)</span>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-second-translation-theorem-38-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
 </ol>
-<div class="para" id="sec-second-translation-theorem-39">We use this formula to handle the Laplace transform of piecewise functions.</div>
-<div class="para" id="sec-second-translation-theorem-40">Example 3. Laplace transform of the unit step function.</div>
-<div class="para" id="sec-second-translation-theorem-41"><span class="process-math">\(\mathcal{L}\{\mathcal{U}(t - a)\} = e^{-as}\mathcal{L}\{1\} = \dfrac{e^{-as}}{s}.\)</span></div>
+<div class="para" id="sec-second-translation-theorem-39">We use this formula to handle the Laplace transform of piecewise functions.<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-39" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-40">Example 3. Laplace transform of the unit step function.<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-40" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-41">
+<span class="process-math">\(\mathcal{L}\{\mathcal{U}(t - a)\} = e^{-as}\mathcal{L}\{1\} = \dfrac{e^{-as}}{s}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-41" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para" id="sec-second-translation-theorem-42">Example 4. <span class="process-math">\(f(t) = \begin{cases} 
 2, \amp 0 \leq t \lt 2 \\ 
 -1, \amp 2 \leq t \lt 3 \\ 
 0, \amp t \geq 3 
-\end{cases}\)</span>
+\end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-42" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-43"><span class="process-math">\(\mathcal{L}\{f(t)\} = \mathcal{L}\{2 - 3\mathcal{U}(t - 2) + \mathcal{U}(t - 3)\} = 2\mathcal{L}\{1\} - 3\mathcal{L}\{\mathcal{U}(t - 2)\} + \mathcal{L}\{\mathcal{U}(t - 3)\}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-44"><span class="process-math">\(= 2\cdot\dfrac{1}{s} - 3\cdot\dfrac{e^{-2s}}{s} + \dfrac{e^{-3s}}{s} = \dfrac{2}{s} - \dfrac{3e^{-2s}}{s} + \dfrac{e^{-3s}}{s}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-45">Example 5. <span class="process-math">\(\mathcal{L}\{\cos t \mathcal{U}(t - \pi)\} = e^{- \pi s}\mathcal{L}\{\cos(t + \pi)\}.\)</span>
+<div class="para" id="sec-second-translation-theorem-43">
+<span class="process-math">\(\mathcal{L}\{f(t)\} = \mathcal{L}\{2 - 3\mathcal{U}(t - 2) + \mathcal{U}(t - 3)\} = 2\mathcal{L}\{1\} - 3\mathcal{L}\{\mathcal{U}(t - 2)\} + \mathcal{L}\{\mathcal{U}(t - 3)\}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-43" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-46"><span class="process-math">\(= -e^{-\pi s}\mathcal{L}\{\cos t\} = -e^{-\pi s} \cdot \dfrac{s}{s^2 + 1}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-47">Example 6. <span class="process-math">\(\mathcal{L}^{-1}\left\{ e^{-2s} \cdot \dfrac{1}{s - 4} \right\} = \mathcal{L}^{-1}\left\{ \dfrac{1}{s - 4} \right\}\bigg|_{t \to t - 2}.\)</span>
+<div class="para" id="sec-second-translation-theorem-44">
+<span class="process-math">\(= 2\cdot\dfrac{1}{s} - 3\cdot\dfrac{e^{-2s}}{s} + \dfrac{e^{-3s}}{s} = \dfrac{2}{s} - \dfrac{3e^{-2s}}{s} + \dfrac{e^{-3s}}{s}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-44" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-48"><span class="process-math">\(= e^{4t}\bigg|_{t \to t - 2} \mathcal{U}(t - 2) = e^{4(t - 2)}\mathcal{U}(t - 2).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-49">Example 7. <span class="process-math">\(\mathcal{L}^{-1}\left\{ \dfrac{s}{s^2 + 9} e^{-\dfrac{\pi}{2}s} \right\} = \mathcal{L}^{-1}\left\{ \dfrac{s}{s^2 + 9} \right\}\bigg|_{t \to t - \dfrac{\pi}{2}} U\left(t - \dfrac{\pi}{2}\right).\)</span>
+<div class="para" id="sec-second-translation-theorem-45">Example 5. <span class="process-math">\(\mathcal{L}\{\cos t \mathcal{U}(t - \pi)\} = e^{- \pi s}\mathcal{L}\{\cos(t + \pi)\}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-45" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-50"><span class="process-math">\(= \cos 3t\bigg|_{t \to t - \dfrac{\pi}{2}} U\left(t - \dfrac{\pi}{2}\right) = -\sin 3t \mathcal{U}(t - 2).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-51">Initial value problem with piecewise functions</div>
+<div class="para" id="sec-second-translation-theorem-46">
+<span class="process-math">\(= -e^{-\pi s}\mathcal{L}\{\cos t\} = -e^{-\pi s} \cdot \dfrac{s}{s^2 + 1}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-46" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-47">Example 6. <span class="process-math">\(\mathcal{L}^{-1}\left\{ e^{-2s} \cdot \dfrac{1}{s - 4} \right\} = \mathcal{L}^{-1}\left\{ \dfrac{1}{s - 4} \right\}\bigg|_{t \to t - 2}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-47" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-48">
+<span class="process-math">\(= e^{4t}\bigg|_{t \to t - 2} \mathcal{U}(t - 2) = e^{4(t - 2)}\mathcal{U}(t - 2).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-48" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-49">Example 7. <span class="process-math">\(\mathcal{L}^{-1}\left\{ \dfrac{s}{s^2 + 9} e^{-\dfrac{\pi}{2}s} \right\} = \mathcal{L}^{-1}\left\{ \dfrac{s}{s^2 + 9} \right\}\bigg|_{t \to t - \dfrac{\pi}{2}} U\left(t - \dfrac{\pi}{2}\right).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-49" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-50">
+<span class="process-math">\(= \cos 3t\bigg|_{t \to t - \dfrac{\pi}{2}} U\left(t - \dfrac{\pi}{2}\right) = -\sin 3t \mathcal{U}(t - 2).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-50" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-51">Initial value problem with piecewise functions<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-51" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para" id="sec-second-translation-theorem-52">Example 7. <span class="process-math">\(y' + y = f(t), \quad y(0) = 5, \quad f(t) = \begin{cases} 
 0, \amp 0 \leq t \lt \pi \\ 
 3 \cos t, \amp t \geq \pi 
-\end{cases}.\)</span>
+\end{cases}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-52" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-53">Recall that we solved such ODE on each interval <span class="process-math">\([0, \pi]\)</span> and <span class="process-math">\([\pi, \infty)\)</span> separately using integrating factors. Laplace transform is much more convenient.</div>
-<div class="para" id="sec-second-translation-theorem-54">Set <span class="process-math">\(Y(s) = \mathcal{L}\{y(t)\}.\)</span> Also rewrite <span class="process-math">\(f(t) = 0 + (3 \cos t - 0)\mathcal{U}(t - \pi) = 3 \cos t \mathcal{U}(t - \pi).\)</span>
+<div class="para" id="sec-second-translation-theorem-53">Recall that we solved such ODE on each interval <span class="process-math">\([0, \pi]\)</span> and <span class="process-math">\([\pi, \infty)\)</span> separately using integrating factors. Laplace transform is much more convenient.<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-53" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-55">Laplace both sides, we have</div>
-<div class="para" id="sec-second-translation-theorem-56"><span class="process-math">\(sY(s) - y(0) + Y(s) = (s + 1)Y(s) - 5\)</span></div>
-<div class="para" id="sec-second-translation-theorem-57"><span class="process-math">\(= \mathcal{L}\{3 \cos t \mathcal{U}(t - \pi)\} = -3e^{-\pi s}\mathcal{L}\{\cos(t + \pi)\}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-58"><span class="process-math">\(= -3e^{-\pi s} \cdot \dfrac{s}{s^2 + 1}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-59">Set <span class="process-math">\(Y(s) = \mathcal{L}\{y(t)\}.\)</span>
+<div class="para" id="sec-second-translation-theorem-54">Set <span class="process-math">\(Y(s) = \mathcal{L}\{y(t)\}.\)</span> Also rewrite <span class="process-math">\(f(t) = 0 + (3 \cos t - 0)\mathcal{U}(t - \pi) = 3 \cos t \mathcal{U}(t - \pi).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-54" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-60"><span class="process-math">\((s + 1)Y(s) - 5 = -3e^{-\pi s} \cdot \dfrac{s}{s^2 + 1}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-61">Solving <span class="process-math">\(Y(s),\)</span> we obtain that</div>
-<div class="para" id="sec-second-translation-theorem-62"><span class="process-math">\(Y(s) = \dfrac{5}{s + 1} + e^{-\pi s} \cdot \dfrac{-3s}{(s^2 + 1)(s + 1)}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-63">We focus on the second fraction for now. We start by</div>
-<div class="para" id="sec-second-translation-theorem-64"><span class="process-math">\(\dfrac{-3s}{(s^2 + 1)(s + 1)} = \dfrac{A}{s} + \dfrac{Bs + C}{s^2 + 1}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-65"><span class="process-math">\(\implies A = \dfrac{-3s}{(s^2 + 1)}\bigg|_{s = -1} = \dfrac{3}{2}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-66">So</div>
-<div class="para" id="sec-second-translation-theorem-67"><span class="process-math">\(\dfrac{-3s}{(s^2 + 1)(s + 1)} = \dfrac{3}{2} \cdot \dfrac{1}{s + 1} + \dfrac{B s + C}{s^2 + 1}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-68">We obtain <span class="process-math">\(B, C\)</span> by subtraction.</div>
-<div class="para" id="sec-second-translation-theorem-69"><span class="process-math">\(\dfrac{Bs + C}{s^2 + 1} = \dfrac{-3s - \dfrac{3}{2}(s^2 + 1)}{(s^2 + 1)(s + 1)} = \dfrac{-\dfrac{3}{2}(s + 1)^2}{(s^2 + 1)(s + 1)} = \dfrac{-\dfrac{3}{2}s - \dfrac{3}{2}}{(s^2 + 1)}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-70">Therefore,</div>
-<div class="para" id="sec-second-translation-theorem-71"><span class="process-math">\(\dfrac{-3s}{(s^2 + 1)(s + 1)} = \dfrac{3}{2} \cdot \dfrac{1}{s + 1} + \dfrac{-\dfrac{3}{2}s - \dfrac{3}{2}}{s^2 + 1}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-72">Now we use the second translation theorem to handle the inverse Laplace transform:</div>
-<div class="para" id="sec-second-translation-theorem-73"><span class="process-math">\(\mathcal{L}^{-1}\left\{ e^{-\pi s} \cdot \dfrac{-3s}{(s^2 + 1)(s + 1)} \right\}\)</span></div>
-<div class="para" id="sec-second-translation-theorem-74">= <span class="process-math">\(\mathcal{L}^{-1}\left\{ \dfrac{3}{2} \cdot \dfrac{1}{s + 1} + \dfrac{-\dfrac{3}{2}s - \dfrac{3}{2}}{(s^2 + 1)} \right\}\bigg|_{t \to t - \pi} \mathcal{U}(t - \pi).\)</span>
+<div class="para" id="sec-second-translation-theorem-55">Laplace both sides, we have<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-55" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-75">= <span class="process-math">\(\left( \dfrac{3}{2} e^{-t} - \dfrac{3}{2} \cos t - \dfrac{3}{2} \sin t \right)\bigg|_{t \to t - \pi} \mathcal{U}(t - \pi).\)</span>
+<div class="para" id="sec-second-translation-theorem-56">
+<span class="process-math">\(sY(s) - y(0) + Y(s) = (s + 1)Y(s) - 5\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-56" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-76">= <span class="process-math">\(\left( \dfrac{3}{2} e^{-(t - \pi)} + \dfrac{3}{2} \cos t + \dfrac{3}{2} \sin t \right) \mathcal{U}(t - \pi).\)</span>
+<div class="para" id="sec-second-translation-theorem-57">
+<span class="process-math">\(= \mathcal{L}\{3 \cos t \mathcal{U}(t - \pi)\} = -3e^{-\pi s}\mathcal{L}\{\cos(t + \pi)\}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-57" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-77">We are now ready for the solution:</div>
-<div class="para" id="sec-second-translation-theorem-78"><span class="process-math">\(y(t) = \mathcal{L}^{-1}\{Y(s)\}\)</span></div>
-<div class="para" id="sec-second-translation-theorem-79">= <span class="process-math">\(\mathcal{L}^{-1}\left\{ \dfrac{5}{s + 1} + e^{-\pi s} \cdot \dfrac{-3s}{(s^2 + 1)(s + 1)} \right\}\)</span>
+<div class="para" id="sec-second-translation-theorem-58">
+<span class="process-math">\(= -3e^{-\pi s} \cdot \dfrac{s}{s^2 + 1}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-58" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-80">= <span class="process-math">\(5e^{-t} + \left( \dfrac{3}{2} e^{-(t - \pi)} + \dfrac{3}{2} \cos t + \dfrac{3}{2} \sin t \right) \mathcal{U}(t - \pi).\)</span>
+<div class="para" id="sec-second-translation-theorem-59">Set <span class="process-math">\(Y(s) = \mathcal{L}\{y(t)\}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-59" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-60">
+<span class="process-math">\((s + 1)Y(s) - 5 = -3e^{-\pi s} \cdot \dfrac{s}{s^2 + 1}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-60" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-61">Solving <span class="process-math">\(Y(s),\)</span> we obtain that<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-61" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-62">
+<span class="process-math">\(Y(s) = \dfrac{5}{s + 1} + e^{-\pi s} \cdot \dfrac{-3s}{(s^2 + 1)(s + 1)}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-62" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-63">We focus on the second fraction for now. We start by<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-63" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-64">
+<span class="process-math">\(\dfrac{-3s}{(s^2 + 1)(s + 1)} = \dfrac{A}{s} + \dfrac{Bs + C}{s^2 + 1}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-64" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-65">
+<span class="process-math">\(\implies A = \dfrac{-3s}{(s^2 + 1)}\bigg|_{s = -1} = \dfrac{3}{2}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-65" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-66">So<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-66" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-67">
+<span class="process-math">\(\dfrac{-3s}{(s^2 + 1)(s + 1)} = \dfrac{3}{2} \cdot \dfrac{1}{s + 1} + \dfrac{B s + C}{s^2 + 1}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-67" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-68">We obtain <span class="process-math">\(B, C\)</span> by subtraction.<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-68" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-69">
+<span class="process-math">\(\dfrac{Bs + C}{s^2 + 1} = \dfrac{-3s - \dfrac{3}{2}(s^2 + 1)}{(s^2 + 1)(s + 1)} = \dfrac{-\dfrac{3}{2}(s + 1)^2}{(s^2 + 1)(s + 1)} = \dfrac{-\dfrac{3}{2}s - \dfrac{3}{2}}{(s^2 + 1)}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-69" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-70">Therefore,<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-70" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-71">
+<span class="process-math">\(\dfrac{-3s}{(s^2 + 1)(s + 1)} = \dfrac{3}{2} \cdot \dfrac{1}{s + 1} + \dfrac{-\dfrac{3}{2}s - \dfrac{3}{2}}{s^2 + 1}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-71" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-72">Now we use the second translation theorem to handle the inverse Laplace transform:<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-72" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-73">
+<span class="process-math">\(\mathcal{L}^{-1}\left\{ e^{-\pi s} \cdot \dfrac{-3s}{(s^2 + 1)(s + 1)} \right\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-73" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-74">= <span class="process-math">\(\mathcal{L}^{-1}\left\{ \dfrac{3}{2} \cdot \dfrac{1}{s + 1} + \dfrac{-\dfrac{3}{2}s - \dfrac{3}{2}}{(s^2 + 1)} \right\}\bigg|_{t \to t - \pi} \mathcal{U}(t - \pi).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-74" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-75">= <span class="process-math">\(\left( \dfrac{3}{2} e^{-t} - \dfrac{3}{2} \cos t - \dfrac{3}{2} \sin t \right)\bigg|_{t \to t - \pi} \mathcal{U}(t - \pi).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-75" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-76">= <span class="process-math">\(\left( \dfrac{3}{2} e^{-(t - \pi)} + \dfrac{3}{2} \cos t + \dfrac{3}{2} \sin t \right) \mathcal{U}(t - \pi).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-76" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-77">We are now ready for the solution:<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-77" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-78">
+<span class="process-math">\(y(t) = \mathcal{L}^{-1}\{Y(s)\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-78" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-79">= <span class="process-math">\(\mathcal{L}^{-1}\left\{ \dfrac{5}{s + 1} + e^{-\pi s} \cdot \dfrac{-3s}{(s^2 + 1)(s + 1)} \right\}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-79" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-80">= <span class="process-math">\(5e^{-t} + \left( \dfrac{3}{2} e^{-(t - \pi)} + \dfrac{3}{2} \cos t + \dfrac{3}{2} \sin t \right) \mathcal{U}(t - \pi).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-80" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="sec-second-translation-theorem-81">= <span class="process-math">\(\begin{cases} 
 5e^{-t}, \amp 0 \leq t \lt \pi \\ 
 5e^{-t} + \dfrac{3}{2} e^{-(t - \pi)} + \dfrac{3}{2} \cos t + \dfrac{3}{2} \sin t, \amp t \geq \pi 
-\end{cases}.\)</span>
+\end{cases}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-81" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-82">Remark: Notice that <span class="process-math">\(y(t)\)</span> is continuous. Generally, the Laplace method yields a continuous solution of an IVP.</div>
-<div class="para" id="sec-second-translation-theorem-83">Example 1. <span class="process-math">\(y'' + y = f(t), \quad y(0) = 0, \quad y'(0) = 1,\)</span>
+<div class="para" id="sec-second-translation-theorem-82">Remark: Notice that <span class="process-math">\(y(t)\)</span> is continuous. Generally, the Laplace method yields a continuous solution of an IVP.<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-82" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-84"><span class="process-math">\(f(t) = \begin{cases} 
+<div class="para" id="sec-second-translation-theorem-83">Example 1. <span class="process-math">\(y'' + y = f(t), \quad y(0) = 0, \quad y'(0) = 1,\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-83" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-84">
+<span class="process-math">\(f(t) = \begin{cases} 
 0, \amp  0 \leq t \lt \pi \\ 
 1, \amp  \pi \leq t \lt 2\pi \\ 
 0, \amp  t \geq 2\pi 
-\end{cases}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-85">Write</div>
-<div class="para" id="sec-second-translation-theorem-86"><span class="process-math">\(f(t) = 0 + (1 - 0)\mathcal{U}(t - \pi) + (0 - 1)\mathcal{U}(t - 2\pi) = \mathcal{U}(t - \pi) - \mathcal{U}(t - 2\pi).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-87">Set <span class="process-math">\(Y(s) = \mathcal{L}\{y(t)\}.\)</span> Laplace both sides of the ODE:</div>
-<div class="para" id="sec-second-translation-theorem-88"><span class="process-math">\(s^2Y(s) - sy(0) - y'(0) + Y(s) = \mathcal{L}\{\mathcal{U}(t - \pi) - \mathcal{U}(t - 2\pi)\}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-89"><span class="process-math">\(\Rightarrow (s^2 + 1)Y(s) - 1 = \dfrac{e^{-\pi s}}{s} - \dfrac{e^{-2\pi s}}{s}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-90"><span class="process-math">\(\Rightarrow Y(s) = \dfrac{1}{s^2 + 1} + \dfrac{e^{-\pi s}}{s(s^2 + 1)} - \dfrac{e^{-2\pi s}}{s(s^2 + 1)}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-91">We first obtain the partial fraction decomposition of</div>
-<div class="para" id="sec-second-translation-theorem-92"><span class="process-math">\(\dfrac{1}{s(s^2 + 1)} = \dfrac{A}{s} + \dfrac{Bs + C}{s^2 + 1}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-93">Obtain <span class="process-math">\(A\)</span> by cover-up method, <span class="process-math">\(B, C\)</span> by subtraction:</div>
-<div class="para" id="sec-second-translation-theorem-94"><span class="process-math">\(A = \dfrac{1}{s^2 + 1}\bigg|_{s = 0} = 1,\)</span></div>
-<div class="para" id="sec-second-translation-theorem-95"><span class="process-math">\(\dfrac{Bs + C}{s^2 + 1} = \dfrac{1}{s(s^2 + 1)} - \dfrac{1 - s^2}{s} = \dfrac{1 - s^2 - 1}{s(s^2 + 1)} = \dfrac{-s}{s^2 + 1} \Rightarrow B = -1, C = 0.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-96">So</div>
-<div class="para" id="sec-second-translation-theorem-97"><span class="process-math">\(\dfrac{1}{s(s^2 + 1)} = \dfrac{1}{s} - \dfrac{s}{s^2 + 1}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-98">Then</div>
-<div class="para" id="sec-second-translation-theorem-99"><span class="process-math">\(\mathcal{L}^{-1}\left\{\dfrac{1}{s(s^2 + 1)}\right\} = 1 - \cos t.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-100">The inverse form of the second translation theorem says</div>
-<div class="para" id="sec-second-translation-theorem-101"><span class="process-math">\(\mathcal{L}^{-1}\left\{ e^{-as} \cdot \dfrac{1}{s(s^2 + 1)} \right\} = (1 - \cos t)\bigg|_{t \to t - a} \mathcal{U}(t - a).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-102">Set <span class="process-math">\(Y(s) = \mathcal{L}\{y(t)\}.\)</span> Then</div>
-<div class="para" id="sec-second-translation-theorem-103"><span class="process-math">\(Y(s) = \dfrac{1}{s^2 + 1} + \dfrac{e^{-\pi s}}{s(s^2 + 1)} - \dfrac{e^{-2\pi s}}{s(s^2 + 1)}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-104">The inverse form of the second translation theorem:</div>
-<div class="para" id="sec-second-translation-theorem-105"><span class="process-math">\(\mathcal{L}^{-1}\left\{ e^{-as} \cdot \dfrac{1}{s(s^2 + 1)} \right\} = \mathcal{U}(t - a) \cdot \left( (1 - \cos t)\bigg|_{t \to t - a} \right).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-106">Therefore</div>
-<div class="para" id="sec-second-translation-theorem-107"><span class="process-math">\(y(t) = \sin t + \mathcal{U}(t - \pi) \cdot (1 - \cos(t - \pi)) - \mathcal{U}(t - 2\pi) \cdot (1 - \cos(t - 2\pi))\)</span></div>
-<div class="para" id="sec-second-translation-theorem-108"><span class="process-math">\(= \sin t + \mathcal{U}(t - \pi) \cdot (1 + \cos t) - \mathcal{U}(t - 2\pi) \cdot (1 - \cos t).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-109">% Space for the third figure %</div>
-<div class="para" id="sec-second-translation-theorem-110">Example 2. <span class="process-math">\(y' + 2y = f(t), \quad y(0) = 0,\)</span>
+\end{cases}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-84" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-second-translation-theorem-111"><span class="process-math">\(f(t) = \begin{cases} 
+<div class="para" id="sec-second-translation-theorem-85">Write<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-85" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-86">
+<span class="process-math">\(f(t) = 0 + (1 - 0)\mathcal{U}(t - \pi) + (0 - 1)\mathcal{U}(t - 2\pi) = \mathcal{U}(t - \pi) - \mathcal{U}(t - 2\pi).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-86" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-87">Set <span class="process-math">\(Y(s) = \mathcal{L}\{y(t)\}.\)</span> Laplace both sides of the ODE:<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-87" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-88">
+<span class="process-math">\(s^2Y(s) - sy(0) - y'(0) + Y(s) = \mathcal{L}\{\mathcal{U}(t - \pi) - \mathcal{U}(t - 2\pi)\}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-88" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-89">
+<span class="process-math">\(\Rightarrow (s^2 + 1)Y(s) - 1 = \dfrac{e^{-\pi s}}{s} - \dfrac{e^{-2\pi s}}{s}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-89" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-90">
+<span class="process-math">\(\Rightarrow Y(s) = \dfrac{1}{s^2 + 1} + \dfrac{e^{-\pi s}}{s(s^2 + 1)} - \dfrac{e^{-2\pi s}}{s(s^2 + 1)}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-90" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-91">We first obtain the partial fraction decomposition of<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-91" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-92">
+<span class="process-math">\(\dfrac{1}{s(s^2 + 1)} = \dfrac{A}{s} + \dfrac{Bs + C}{s^2 + 1}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-92" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-93">Obtain <span class="process-math">\(A\)</span> by cover-up method, <span class="process-math">\(B, C\)</span> by subtraction:<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-93" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-94">
+<span class="process-math">\(A = \dfrac{1}{s^2 + 1}\bigg|_{s = 0} = 1,\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-94" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-95">
+<span class="process-math">\(\dfrac{Bs + C}{s^2 + 1} = \dfrac{1}{s(s^2 + 1)} - \dfrac{1 - s^2}{s} = \dfrac{1 - s^2 - 1}{s(s^2 + 1)} = \dfrac{-s}{s^2 + 1} \Rightarrow B = -1, C = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-95" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-96">So<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-96" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-97">
+<span class="process-math">\(\dfrac{1}{s(s^2 + 1)} = \dfrac{1}{s} - \dfrac{s}{s^2 + 1}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-97" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-98">Then<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-98" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-99">
+<span class="process-math">\(\mathcal{L}^{-1}\left\{\dfrac{1}{s(s^2 + 1)}\right\} = 1 - \cos t.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-99" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-100">The inverse form of the second translation theorem says<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-100" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-101">
+<span class="process-math">\(\mathcal{L}^{-1}\left\{ e^{-as} \cdot \dfrac{1}{s(s^2 + 1)} \right\} = (1 - \cos t)\bigg|_{t \to t - a} \mathcal{U}(t - a).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-101" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-102">Set <span class="process-math">\(Y(s) = \mathcal{L}\{y(t)\}.\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-102" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-103">
+<span class="process-math">\(Y(s) = \dfrac{1}{s^2 + 1} + \dfrac{e^{-\pi s}}{s(s^2 + 1)} - \dfrac{e^{-2\pi s}}{s(s^2 + 1)}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-103" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-104">The inverse form of the second translation theorem:<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-104" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-105">
+<span class="process-math">\(\mathcal{L}^{-1}\left\{ e^{-as} \cdot \dfrac{1}{s(s^2 + 1)} \right\} = \mathcal{U}(t - a) \cdot \left( (1 - \cos t)\bigg|_{t \to t - a} \right).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-105" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-106">Therefore<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-106" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-107">
+<span class="process-math">\(y(t) = \sin t + \mathcal{U}(t - \pi) \cdot (1 - \cos(t - \pi)) - \mathcal{U}(t - 2\pi) \cdot (1 - \cos(t - 2\pi))\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-107" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-108">
+<span class="process-math">\(= \sin t + \mathcal{U}(t - \pi) \cdot (1 + \cos t) - \mathcal{U}(t - 2\pi) \cdot (1 - \cos t).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-108" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-109">% Space for the third figure %<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-109" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-110">Example 2. <span class="process-math">\(y' + 2y = f(t), \quad y(0) = 0,\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-110" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-111">
+<span class="process-math">\(f(t) = \begin{cases} 
 t, \amp  0 \leq t \lt 1 \\ 
 0, \amp  t \geq 1 
-\end{cases}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-112">Rewrite the function <span class="process-math">\(f(t)\)</span> as</div>
-<div class="para" id="sec-second-translation-theorem-113"><span class="process-math">\(f(t) = t + (0 - t)\mathcal{U}(t - 1) = t - t\mathcal{U}(t - 1).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-114">Set <span class="process-math">\(Y(s) = \mathcal{L}\{y(t)\}.\)</span> Laplace both sides:</div>
-<div class="para" id="sec-second-translation-theorem-115"><span class="process-math">\(sY(s) - y(0) + 2Y(s) = \mathcal{L}\{t\} - \mathcal{L}\{t\mathcal{U}(t - 1)\},\)</span></div>
-<div class="para" id="sec-second-translation-theorem-116"><span class="process-math">\((s + 2)Y(s) = \dfrac{1}{s^2} - e^{-s}\mathcal{L}\{t + 1\} = \dfrac{1}{s^2} - e^{-s}\left(\dfrac{1}{s^2} + \dfrac{1}{s}\right).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-117"><span class="process-math">\(Y(s) = \dfrac{1}{s^2(s + 2)} - e^{-s}\left(\dfrac{1}{s^2} + \dfrac{1}{s}\right).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-118">We now focus on the fractions. By the cover-up method,</div>
-<div class="para" id="sec-second-translation-theorem-119"><span class="process-math">\(\dfrac{1}{s(s + 2)} = \dfrac{A}{s} + \dfrac{B}{s + 2}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-120">Set <span class="process-math">\(Y(s) = \mathcal{L}\{y(t)\}.\)</span> Then</div>
-<div class="para" id="sec-second-translation-theorem-121"><span class="process-math">\(Y(s) = \dfrac{1}{s^2(s + 2)} - e^{-s}\left(\dfrac{1}{s^2 + 2} + \dfrac{1}{s(s + 2)}\right).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-122">The other fraction requires some work.</div>
-<div class="para" id="sec-second-translation-theorem-123"><span class="process-math">\(\dfrac{1}{s^2(s + 2)} = \dfrac{A}{s^2} + \dfrac{B}{s} + \dfrac{C}{s + 2}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-124">Cover-up method gives <span class="process-math">\(A\)</span> and <span class="process-math">\(C.\)</span> We find <span class="process-math">\(B\)</span> by subtraction.</div>
-<div class="para" id="sec-second-translation-theorem-125"><span class="process-math">\(A = \dfrac{1}{s + 2}\bigg|_{s = 0} = \dfrac{1}{2}, \quad C = \dfrac{1}{s}\bigg|_{s = -2} = \dfrac{1}{4}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-126"><span class="process-math">\(B = \dfrac{1}{s^2(s + 2)} - \dfrac{1}{2} \cdot \dfrac{1}{s^2} - \dfrac{1}{4} \cdot \dfrac{1}{s + 2} = \ldots = -\dfrac{1}{4}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-127">So,</div>
-<div class="para" id="sec-second-translation-theorem-128"><span class="process-math">\(\dfrac{1}{s^2(s + 2)} = \dfrac{1}{2} \cdot \dfrac{1}{s^2} - \dfrac{1}{4} \cdot \dfrac{1}{s} + \dfrac{1}{s + 2}.\)</span></div>
-<div class="para" id="sec-second-translation-theorem-129"><span class="process-math">\(Y(s) = \dfrac{1}{s^2(s + 2)} - e^{-s}\left(\dfrac{1}{s^2(s + 2)} + \dfrac{1}{s(s + 2)}\right)\)</span></div>
-<div class="para" id="sec-second-translation-theorem-130"><span class="process-math">\(= \dfrac{1}{2} \cdot \dfrac{1}{s^2} + \dfrac{1}{4} \cdot \dfrac{1}{s} + \dfrac{1}{s + 2} - e^{-s}\left(\dfrac{1}{2} \cdot \dfrac{1}{s^2} + \dfrac{1}{4} \cdot \dfrac{1}{s + 2}\right).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-131"><span class="process-math">\(= \dfrac{1}{2} \cdot \dfrac{1}{s^2} + \dfrac{1}{4} \cdot \dfrac{1}{s} + \dfrac{1}{s + 2} - e^{-s}\left(\dfrac{1}{2} \cdot \dfrac{1}{s^2} + \dfrac{1}{4} \cdot \dfrac{1}{s + 2}\right).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-132"><span class="process-math">\(Y(s) = \dfrac{1}{2} \cdot \dfrac{1}{s^2} - \dfrac{1}{4} \cdot \dfrac{1}{s} + \dfrac{1}{s + 2} - e^{-s}\left(\dfrac{1}{2} \cdot \dfrac{1}{s^2} + \dfrac{1}{4} \cdot \dfrac{1}{s + 2}\right).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-133"><span class="process-math">\(y(t) = \dfrac{1}{2}t - \dfrac{1}{4} + \dfrac{1}{4}e^{-2t} - \left(-\dfrac{1}{2}t - \dfrac{1}{4}e^{-2t}\right)\mathcal{U}(t - 1).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-134"><span class="process-math">\(= \left(\dfrac{1}{2}t - \dfrac{1}{4} + \dfrac{1}{4}e^{-2t} - \left(\dfrac{1}{2}t - \dfrac{1}{4}\right)e^{-2(t - 1)}\right)\mathcal{U}(t - 1).\)</span></div>
-<div class="para" id="sec-second-translation-theorem-135"><span class="process-math">\(= \begin{cases} 
+\end{cases}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-111" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-112">Rewrite the function <span class="process-math">\(f(t)\)</span> as<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-112" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-113">
+<span class="process-math">\(f(t) = t + (0 - t)\mathcal{U}(t - 1) = t - t\mathcal{U}(t - 1).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-113" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-114">Set <span class="process-math">\(Y(s) = \mathcal{L}\{y(t)\}.\)</span> Laplace both sides:<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-114" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-115">
+<span class="process-math">\(sY(s) - y(0) + 2Y(s) = \mathcal{L}\{t\} - \mathcal{L}\{t\mathcal{U}(t - 1)\},\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-115" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-116">
+<span class="process-math">\((s + 2)Y(s) = \dfrac{1}{s^2} - e^{-s}\mathcal{L}\{t + 1\} = \dfrac{1}{s^2} - e^{-s}\left(\dfrac{1}{s^2} + \dfrac{1}{s}\right).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-116" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-117">
+<span class="process-math">\(Y(s) = \dfrac{1}{s^2(s + 2)} - e^{-s}\left(\dfrac{1}{s^2} + \dfrac{1}{s}\right).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-117" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-118">We now focus on the fractions. By the cover-up method,<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-118" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-119">
+<span class="process-math">\(\dfrac{1}{s(s + 2)} = \dfrac{A}{s} + \dfrac{B}{s + 2}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-119" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-120">Set <span class="process-math">\(Y(s) = \mathcal{L}\{y(t)\}.\)</span> Then<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-120" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-121">
+<span class="process-math">\(Y(s) = \dfrac{1}{s^2(s + 2)} - e^{-s}\left(\dfrac{1}{s^2 + 2} + \dfrac{1}{s(s + 2)}\right).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-121" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-122">The other fraction requires some work.<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-122" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-123">
+<span class="process-math">\(\dfrac{1}{s^2(s + 2)} = \dfrac{A}{s^2} + \dfrac{B}{s} + \dfrac{C}{s + 2}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-123" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-124">Cover-up method gives <span class="process-math">\(A\)</span> and <span class="process-math">\(C.\)</span> We find <span class="process-math">\(B\)</span> by subtraction.<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-124" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-125">
+<span class="process-math">\(A = \dfrac{1}{s + 2}\bigg|_{s = 0} = \dfrac{1}{2}, \quad C = \dfrac{1}{s}\bigg|_{s = -2} = \dfrac{1}{4}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-125" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-126">
+<span class="process-math">\(B = \dfrac{1}{s^2(s + 2)} - \dfrac{1}{2} \cdot \dfrac{1}{s^2} - \dfrac{1}{4} \cdot \dfrac{1}{s + 2} = \ldots = -\dfrac{1}{4}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-126" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-127">So,<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-127" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-128">
+<span class="process-math">\(\dfrac{1}{s^2(s + 2)} = \dfrac{1}{2} \cdot \dfrac{1}{s^2} - \dfrac{1}{4} \cdot \dfrac{1}{s} + \dfrac{1}{s + 2}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-128" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-129">
+<span class="process-math">\(Y(s) = \dfrac{1}{s^2(s + 2)} - e^{-s}\left(\dfrac{1}{s^2(s + 2)} + \dfrac{1}{s(s + 2)}\right)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-129" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-130">
+<span class="process-math">\(= \dfrac{1}{2} \cdot \dfrac{1}{s^2} + \dfrac{1}{4} \cdot \dfrac{1}{s} + \dfrac{1}{s + 2} - e^{-s}\left(\dfrac{1}{2} \cdot \dfrac{1}{s^2} + \dfrac{1}{4} \cdot \dfrac{1}{s + 2}\right).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-130" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-131">
+<span class="process-math">\(= \dfrac{1}{2} \cdot \dfrac{1}{s^2} + \dfrac{1}{4} \cdot \dfrac{1}{s} + \dfrac{1}{s + 2} - e^{-s}\left(\dfrac{1}{2} \cdot \dfrac{1}{s^2} + \dfrac{1}{4} \cdot \dfrac{1}{s + 2}\right).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-131" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-132">
+<span class="process-math">\(Y(s) = \dfrac{1}{2} \cdot \dfrac{1}{s^2} - \dfrac{1}{4} \cdot \dfrac{1}{s} + \dfrac{1}{s + 2} - e^{-s}\left(\dfrac{1}{2} \cdot \dfrac{1}{s^2} + \dfrac{1}{4} \cdot \dfrac{1}{s + 2}\right).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-132" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-133">
+<span class="process-math">\(y(t) = \dfrac{1}{2}t - \dfrac{1}{4} + \dfrac{1}{4}e^{-2t} - \left(-\dfrac{1}{2}t - \dfrac{1}{4}e^{-2t}\right)\mathcal{U}(t - 1).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-133" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-134">
+<span class="process-math">\(= \left(\dfrac{1}{2}t - \dfrac{1}{4} + \dfrac{1}{4}e^{-2t} - \left(\dfrac{1}{2}t - \dfrac{1}{4}\right)e^{-2(t - 1)}\right)\mathcal{U}(t - 1).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-134" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-135">
+<span class="process-math">\(= \begin{cases} 
 \dfrac{1}{2}t - \dfrac{1}{4} + \dfrac{1}{4}e^{-2t}, \amp  0 \leq t \lt 1 \\ 
 \dfrac{1}{4}e^{-2t} + \dfrac{1}{4}e^{-2t + 2}, \amp  t \geq 1 
-\end{cases}\)</span></div>
-<div class="para" id="sec-second-translation-theorem-136">% Space for the figure %</div></section></div>
+\end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-135" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-second-translation-theorem-136">% Space for the figure %<div class="autopermalink" data-description="Paragraph"><a href="#sec-second-translation-theorem-136" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 3.4: Second Translation Theorem"><a href="#sec-second-translation-theorem" title="Copy heading and permalink for Section 3.4: Second Translation Theorem">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-first-translation-theorem.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-Laplace-periodic.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

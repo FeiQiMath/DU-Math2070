@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.6';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -275,7 +275,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integral Transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Laplace transforms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-4" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Summary of basic formulas for Laplace transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-5" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
@@ -331,6 +339,7 @@ r_1 = \alpha + i\beta, \, r_2 = \alpha - i\beta.
 \end{equation*}
 </div>
 <div class="para">Note that <span class="process-math">\(\cos(-\theta) = \cos \theta, \, \sin(-\theta) = -\sin \theta.\)</span> Note also that <span class="process-math">\(y_1, y_2\)</span> are conjugate to each other.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-const-coeff-complex-2-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="th-complex-solution-real-solution"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.1</span><span class="period">.</span>
@@ -343,7 +352,9 @@ y'' + p(t)y' + q(t)y = 0,
 \end{equation*}
 </div>
 <div class="para">then both the real part <span class="process-math">\(u(t)\)</span> and the imaginary part <span class="process-math">\(v(t)\)</span> are solutions of the ODE as well.</div>
-</div></article><div class="para logical" id="sec-2nd-order-linear-const-coeff-complex-2-4">
+<div class="autopermalink" data-description="Paragraph"><a href="#th-complex-solution-real-solution-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 2.4.1"><a href="#th-complex-solution-real-solution" title="Copy heading and permalink for Theorem 2.4.1">🔗</a></div></article><div class="para logical" id="sec-2nd-order-linear-const-coeff-complex-2-4">
 <div class="para">
 <em class="alert">Proof.</em> Note that</div>
 <div class="displaymath process-math">
@@ -373,6 +384,7 @@ u'' + pu' + qu = 0, \, v'' + pv' + qv = 0.
 \end{equation*}
 </div>
 <div class="para">Therefore, both <span class="process-math">\(u\)</span> and <span class="process-math">\(v\)</span> are solutions.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-const-coeff-complex-2-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="theorem theorem-like" id="sec-2nd-order-linear-const-coeff-complex-2-5"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="period">.</span>
@@ -380,7 +392,8 @@ u'' + pu' + qu = 0, \, v'' + pv' + qv = 0.
 \begin{equation*}
 y = C_1 e^{\alpha t} \cos(\beta t) + C_2 e^{\alpha t} \sin(\beta t).
 \end{equation*}
-</div></article><div class="para logical" id="sec-2nd-order-linear-const-coeff-complex-2-6">
+</div>
+<div class="autopermalink" data-description="Theorem 2.4.2"><a href="#sec-2nd-order-linear-const-coeff-complex-2-5" title="Copy heading and permalink for Theorem 2.4.2">🔗</a></div></article><div class="para logical" id="sec-2nd-order-linear-const-coeff-complex-2-6">
 <div class="para">
 <em class="alert">Proof.</em> We already have the complex solutions</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/th-complex-solution-real-solution.html">
@@ -404,53 +417,75 @@ W(y_1, y_2) = \amp \begin{vmatrix} e^{\alpha t} \cos \beta t \amp e^{\alpha t} \
 \end{align*}
 </div>
 <div class="para">So <span class="process-math">\(y_1, y_2\)</span> are linearly independent. The conclusion follows.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-const-coeff-complex-2-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <details id="ex-complex-roots-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.3</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' + y = 0.\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="ex-complex-roots-1-2">
-<li id="ex-complex-roots-1-2-1"><div class="para" id="p-derived-ex-complex-roots-1-2-1">Auxiliary Equation:<div class="displaymath process-math">
+<li id="ex-complex-roots-1-2-1">
+<div class="para" id="p-derived-ex-complex-roots-1-2-1">Auxiliary Equation:<div class="displaymath process-math">
 \begin{equation*}
 r^2 + 1 = 0 \implies r^2 = -1 \implies r = \pm i = 0 \pm i.
 \end{equation*}
 </div>
-</div></li>
-<li id="ex-complex-roots-1-2-2"><div class="para" id="p-derived-ex-complex-roots-1-2-2">General solution:<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-complex-roots-1-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-complex-roots-1-2-2">
+<div class="para" id="p-derived-ex-complex-roots-1-2-2">General solution:<div class="displaymath process-math">
 \begin{equation*}
 y = C_1 e^{0t} \cos t + C_2 e^{0t} \sin t = C_1 \cos t + C_2 \sin t.
 \end{equation*}
 </div>
-</div></li>
-</ul></article></details><details id="ex-complex-roots-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-complex-roots-1-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Example 2.4.3: y'' + y = 0."><a href="#ex-complex-roots-1" title="Copy heading and permalink for Example 2.4.3: y'' + y = 0.">🔗</a></div></article></details><details id="ex-complex-roots-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.4</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' + 2y' + 8y = 0.\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="ex-complex-roots-2-2">
-<li id="ex-complex-roots-2-2-1"><div class="para" id="p-derived-ex-complex-roots-2-2-1">Auxiliary Equation:<div class="displaymath process-math">
+<li id="ex-complex-roots-2-2-1">
+<div class="para" id="p-derived-ex-complex-roots-2-2-1">Auxiliary Equation:<div class="displaymath process-math">
 \begin{equation*}
 r^2 + 2r + 8 = 0 \implies r = -1 \pm \sqrt{7}i.
 \end{equation*}
 </div>
-</div></li>
-<li id="ex-complex-roots-2-2-2"><div class="para" id="p-derived-ex-complex-roots-2-2-2">General solution:<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-complex-roots-2-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-complex-roots-2-2-2">
+<div class="para" id="p-derived-ex-complex-roots-2-2-2">General solution:<div class="displaymath process-math">
 \begin{equation*}
 y = C_1 e^{-t} \cos \sqrt{7}t + C_2 e^{-t} \sin \sqrt{7}t.
 \end{equation*}
 </div>
-</div></li>
-</ul></article></details><details id="ex-complex-roots-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-complex-roots-2-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Example 2.4.4: y'' + 2y' + 8y = 0."><a href="#ex-complex-roots-2" title="Copy heading and permalink for Example 2.4.4: y'' + 2y' + 8y = 0.">🔗</a></div></article></details><details id="ex-complex-roots-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.5</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' - y' + y = 0.\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="ex-complex-roots-3-2">
-<li id="ex-complex-roots-3-2-1"><div class="para" id="p-derived-ex-complex-roots-3-2-1">Auxiliary Equation:<div class="displaymath process-math">
+<li id="ex-complex-roots-3-2-1">
+<div class="para" id="p-derived-ex-complex-roots-3-2-1">Auxiliary Equation:<div class="displaymath process-math">
 \begin{equation*}
 r^2 - r + 1 = 0 \implies r = \frac{1}{2} \pm \frac{\sqrt{3}}{2}i.
 \end{equation*}
 </div>
-</div></li>
-<li id="ex-complex-roots-3-2-2"><div class="para" id="p-derived-ex-complex-roots-3-2-2">General solution:<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-complex-roots-3-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-complex-roots-3-2-2">
+<div class="para" id="p-derived-ex-complex-roots-3-2-2">General solution:<div class="displaymath process-math">
 \begin{equation*}
 y = C_1 e^{\frac{t}{2}} \cos \frac{\sqrt{3}}{2}t + C_2 e^{\frac{t}{2}} \sin \frac{\sqrt{3}}{2}t.
 \end{equation*}
 </div>
-</div></li>
-</ul></article></details></section><section class="subsection" id="sec-2nd-order-linear-const-coeff-complex-3"><h3 class="heading hide-type">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-complex-roots-3-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Example 2.4.5: y'' - y' + y = 0."><a href="#ex-complex-roots-3" title="Copy heading and permalink for Example 2.4.5: y'' - y' + y = 0.">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 2.4.1: The case of (distinct) complex roots"><a href="#sec-2nd-order-linear-const-coeff-complex-2" title="Copy heading and permalink for Subsection 2.4.1: The case of (distinct) complex roots">🔗</a></div></section><section class="subsection" id="sec-2nd-order-linear-const-coeff-complex-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.4.2</span><span class="space"> </span><span class="title">Oscillation Patterns</span>
 </h3>
 <article class="fact theorem-like" id="sec-2nd-order-linear-const-coeff-complex-3-2"><h4 class="heading">
@@ -472,21 +507,30 @@ R = \sqrt{A^2 + B^2}, \, \phi =\text{ angle determined by }(A, B).
 </div>
 <div class="para">In other words, any linear combination of sine and cosine functions of the same angle can be rewritten as a single cosine function, representing an oscillation with amplitude <span class="process-math">\(R\)</span> and phase <span class="process-math">\(\phi.\)</span>
 </div>
-</div></article><details id="sec-2nd-order-linear-const-coeff-complex-3-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-const-coeff-complex-3-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Fact 2.4.6"><a href="#sec-2nd-order-linear-const-coeff-complex-3-2" title="Copy heading and permalink for Fact 2.4.6">🔗</a></div></article><details id="sec-2nd-order-linear-const-coeff-complex-3-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.7</span><span class="period">.</span><span class="space"> </span><span class="title">Amplitude and phase of linear combinations of sine and cosine functions.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-2nd-order-linear-const-coeff-complex-3-3-2">
-<li id="sec-2nd-order-linear-const-coeff-complex-3-3-2-1"><div class="para" id="p-derived-sec-2nd-order-linear-const-coeff-complex-3-3-2-1"><div class="displaymath process-math">
+<li id="sec-2nd-order-linear-const-coeff-complex-3-3-2-1">
+<div class="para" id="p-derived-sec-2nd-order-linear-const-coeff-complex-3-3-2-1"><div class="displaymath process-math">
 \begin{equation*}
 2 \cos \theta + 2\sqrt{3} \sin \theta = 4 \cos\left(\theta - \frac{\pi}{3}\right)
 \end{equation*}
-</div></div></li>
-<li id="sec-2nd-order-linear-const-coeff-complex-3-3-2-2"><div class="para" id="p-derived-sec-2nd-order-linear-const-coeff-complex-3-3-2-2"><div class="displaymath process-math">
+</div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-2nd-order-linear-const-coeff-complex-3-3-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-2nd-order-linear-const-coeff-complex-3-3-2-2">
+<div class="para" id="p-derived-sec-2nd-order-linear-const-coeff-complex-3-3-2-2"><div class="displaymath process-math">
 \begin{equation*}
 - \cos \theta + \sin \theta = \sqrt{2} \cos\left(\theta - \frac{3\pi}{4}\right)
 \end{equation*}
-</div></div></li>
+</div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-2nd-order-linear-const-coeff-complex-3-3-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
-<div class="para" id="sec-2nd-order-linear-const-coeff-complex-3-3-3"></div></article></details><details id="sec-2nd-order-linear-const-coeff-complex-3-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="sec-2nd-order-linear-const-coeff-complex-3-3-3"><div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-const-coeff-complex-3-3-3" title="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Example 2.4.7: Amplitude and phase of linear combinations of sine and cosine functions"><a href="#sec-2nd-order-linear-const-coeff-complex-3-3" title="Copy heading and permalink for Example 2.4.7: Amplitude and phase of linear combinations of sine and cosine functions">🔗</a></div></article></details><details id="sec-2nd-order-linear-const-coeff-complex-3-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.4.8</span><span class="period">.</span><span class="space"> </span><span class="title">Oscillation Patterns.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-2nd-order-linear-const-coeff-complex-3-4-2">
 <li id="sec-2nd-order-linear-const-coeff-complex-3-4-2-1">
@@ -499,8 +543,10 @@ y = \amp C_1 \cos t + C_2 \sin t \\
 \end{align*}
 </div>
 <div class="para">Then the amplitude <span class="process-math">\(\sqrt{C_1^2 + C_2^2}\)</span> stays still.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-const-coeff-complex-3-4-2-1-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-2nd-order-linear-const-coeff-complex-3-4-2-1-2"></div>
+<div class="para" id="sec-2nd-order-linear-const-coeff-complex-3-4-2-1-2"><div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-const-coeff-complex-3-4-2-1-2" title="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-2nd-order-linear-const-coeff-complex-3-4-2-1" title="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="sec-2nd-order-linear-const-coeff-complex-3-4-2-2">
 <div class="para logical" id="sec-2nd-order-linear-const-coeff-complex-3-4-2-2-1">
@@ -512,8 +558,10 @@ y = \amp C_1 e^{-t} \cos \sqrt{7}t + C_2 e^{-t} \sin \sqrt{7}t \\
 \end{align*}
 </div>
 <div class="para">Then the amplitude <span class="process-math">\(\sqrt{C_1^2 + C_2^2} e^{-t}\)</span> decays exponentially.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-const-coeff-complex-3-4-2-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-2nd-order-linear-const-coeff-complex-3-4-2-2-2"></div>
+<div class="para" id="sec-2nd-order-linear-const-coeff-complex-3-4-2-2-2"><div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-const-coeff-complex-3-4-2-2-2" title="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-2nd-order-linear-const-coeff-complex-3-4-2-2" title="Copy heading and permalink for Item">🔗</a></div>
 </li>
 <li id="sec-2nd-order-linear-const-coeff-complex-3-4-2-3">
 <div class="para logical" id="sec-2nd-order-linear-const-coeff-complex-3-4-2-3-1">
@@ -525,10 +573,13 @@ y = \amp C_1 e^{\frac{t}{2}} \cos\left(\frac{\sqrt{3}}{2} t\right) + C_2 e^{\fra
 \end{align*}
 </div>
 <div class="para">Then the amplitude <span class="process-math">\(\sqrt{C_1^2 + C_2^2} e^{\frac{t}{2}}\)</span> grows exponentially.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-const-coeff-complex-3-4-2-3-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-2nd-order-linear-const-coeff-complex-3-4-2-3-2"></div>
+<div class="para" id="sec-2nd-order-linear-const-coeff-complex-3-4-2-3-2"><div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-const-coeff-complex-3-4-2-3-2" title="Copy heading and permalink for Paragraph">🔗</a></div></div>
+<div class="autopermalink" data-description="Item"><a href="#sec-2nd-order-linear-const-coeff-complex-3-4-2-3" title="Copy heading and permalink for Item">🔗</a></div>
 </li>
-</ul></article></details><div class="para logical" id="sec-2nd-order-linear-const-coeff-complex-3-5">
+</ul>
+<div class="autopermalink" data-description="Example 2.4.8: Oscillation Patterns"><a href="#sec-2nd-order-linear-const-coeff-complex-3-4" title="Copy heading and permalink for Example 2.4.8: Oscillation Patterns">🔗</a></div></article></details><div class="para logical" id="sec-2nd-order-linear-const-coeff-complex-3-5">
 <div class="para">In general, if <span class="process-math">\(\alpha \pm \beta i\)</span> are the roots of the auxiliary equation for the ODE</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -537,18 +588,30 @@ ay'' + by' + cy = 0,
 </div>
 <div class="para">then</div>
 <ol class="decimal" id="sec-2nd-order-linear-const-coeff-complex-3-5-3">
-<li id="sec-2nd-order-linear-const-coeff-complex-3-5-3-1"><div class="para" id="p-derived-sec-2nd-order-linear-const-coeff-complex-3-5-3-1">
-<span class="process-math">\(\alpha = 0 \implies\)</span> Steady Oscillation.</div></li>
-<li id="sec-2nd-order-linear-const-coeff-complex-3-5-3-2"><div class="para" id="p-derived-sec-2nd-order-linear-const-coeff-complex-3-5-3-2">
-<span class="process-math">\(\alpha \lt 0 \implies\)</span> Decaying Oscillation.</div></li>
-<li id="sec-2nd-order-linear-const-coeff-complex-3-5-3-3"><div class="para" id="p-derived-sec-2nd-order-linear-const-coeff-complex-3-5-3-3">
-<span class="process-math">\(\alpha \gt 0 \implies\)</span> Growing Oscillation.</div></li>
+<li id="sec-2nd-order-linear-const-coeff-complex-3-5-3-1">
+<div class="para" id="p-derived-sec-2nd-order-linear-const-coeff-complex-3-5-3-1">
+<span class="process-math">\(\alpha = 0 \implies\)</span> Steady Oscillation.</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-2nd-order-linear-const-coeff-complex-3-5-3-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-2nd-order-linear-const-coeff-complex-3-5-3-2">
+<div class="para" id="p-derived-sec-2nd-order-linear-const-coeff-complex-3-5-3-2">
+<span class="process-math">\(\alpha \lt 0 \implies\)</span> Decaying Oscillation.</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-2nd-order-linear-const-coeff-complex-3-5-3-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-2nd-order-linear-const-coeff-complex-3-5-3-3">
+<div class="para" id="p-derived-sec-2nd-order-linear-const-coeff-complex-3-5-3-3">
+<span class="process-math">\(\alpha \gt 0 \implies\)</span> Growing Oscillation.</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec-2nd-order-linear-const-coeff-complex-3-5-3-3" title="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
 </ol>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-const-coeff-complex-3-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="remark remark-like" id="sec-2nd-order-linear-const-coeff-complex-3-6"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.4.9</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-2nd-order-linear-const-coeff-complex-3-6-1">Note that the oscillation pattern depends only on the differential equation itself. It does not depend <em class="emphasis">much</em> on the initial condition (unless it leads to the zero solution).</div></article></section></section></div>
+<div class="para" id="sec-2nd-order-linear-const-coeff-complex-3-6-1">Note that the oscillation pattern depends only on the differential equation itself. It does not depend <em class="emphasis">much</em> on the initial condition (unless it leads to the zero solution).<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-const-coeff-complex-3-6-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.4.9"><a href="#sec-2nd-order-linear-const-coeff-complex-3-6" title="Copy heading and permalink for Remark 2.4.9">🔗</a></div></article><div class="autopermalink" data-description="Subsection 2.4.2: Oscillation Patterns"><a href="#sec-2nd-order-linear-const-coeff-complex-3" title="Copy heading and permalink for Subsection 2.4.2: Oscillation Patterns">🔗</a></div></section><div class="autopermalink" data-description="Section 2.4: Second-order Linear ODEs with Constant Coefficients - Complex Roots"><a href="#sec-2nd-order-linear-const-coeff-complex" title="Copy heading and permalink for Section 2.4: Second-order Linear ODEs with Constant Coefficients - Complex Roots">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-complex-numbers.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-2nd-order-linear-const-coeff-repeated.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

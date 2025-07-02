@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.6';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -275,7 +275,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integral Transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Laplace transforms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-4" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Summary of basic formulas for Laplace transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-5" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
@@ -310,43 +318,59 @@ y'' + p(t)y' + q(t)y = 0
 \end{equation*}
 </div>
 <div class="para">is said to be <dfn class="terminology">homogeneous</dfn>. Otherwise, we say the ODE is <dfn class="terminology">nonhomogeneous</dfn>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-gen-theory-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-3">Unlike the first-order ODE where a formula gives the general solution (see <a href="sec-1st-order-linear.html" class="internal" title="Section 1.5: First-order Linear ODEs">Section 1.5</a>), for second- and higher-order linear ODEs, we do not know how to solve them in general. In this course we will only focus on some <em class="alert">special types</em> of second-order linear ODEs that appear frequently in science and engineering courses.</div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-4">We start with some general theories.</div>
+<div class="para" id="sec-2nd-order-linear-gen-theory-3">Unlike the first-order ODE where a formula gives the general solution (see <a href="sec-1st-order-linear.html" class="internal" title="Section 1.5: First-order Linear ODEs">Section 1.5</a>), for second- and higher-order linear ODEs, we do not know how to solve them in general. In this course we will only focus on some <em class="alert">special types</em> of second-order linear ODEs that appear frequently in science and engineering courses.<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-gen-theory-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-2nd-order-linear-gen-theory-4">We start with some general theories.<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-gen-theory-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <section class="subsection" id="sec-2nd-order-linear-gen-theory-5"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="space"> </span><span class="title">Existence and Uniqueness Theorem</span>
 </h3>
 <article class="theorem theorem-like" id="th-existence-and-uniqueness-theorem-2nd-order"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.1</span><span class="period">.</span><span class="space"> </span><span class="title">Existence and Uniqueness Theorem.</span>
 </h4>
-<div class="para" id="th-existence-and-uniqueness-theorem-2nd-order-2-1">For the IVP</div>
+<div class="para" id="th-existence-and-uniqueness-theorem-2nd-order-2-1">For the IVP<div class="autopermalink" data-description="Paragraph"><a href="#th-existence-and-uniqueness-theorem-2nd-order-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
 y'' + p(t)y' + q(t)y = g(t), \, y(t_0) = y_0, \, y'(t_0) = y_1
 \end{equation*}
 </div>
-<div class="para" id="th-existence-and-uniqueness-theorem-2nd-order-2-3">If <span class="process-math">\(p(t), q(t), g(t)\)</span> are continuous in an interval <span class="process-math">\((a, b)\)</span> that contains <span class="process-math">\(t_0\text{,}\)</span> then the IVP has a unique solution on <span class="process-math">\((a, b)\text{.}\)</span>
-</div></article><div class="para" id="sec-2nd-order-linear-gen-theory-5-3">The proof of this theorem is beyond the level of this course. We shall focus on using it. Just like in <a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-2" class="internal" title="Subsection 1.7.2: Existence and Uniqueness Theorem: Linear version.">Subsection 1.7.2</a>, we may use the theorem to find the interval of existence.</div>
+<div class="para" id="th-existence-and-uniqueness-theorem-2nd-order-2-3">If <span class="process-math">\(p(t), q(t), g(t)\)</span> are continuous in an interval <span class="process-math">\((a, b)\)</span> that contains <span class="process-math">\(t_0\text{,}\)</span> then the IVP has a unique solution on <span class="process-math">\((a, b)\text{.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#th-existence-and-uniqueness-theorem-2nd-order-2-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 2.1.1: Existence and Uniqueness Theorem"><a href="#th-existence-and-uniqueness-theorem-2nd-order" title="Copy heading and permalink for Theorem 2.1.1: Existence and Uniqueness Theorem">🔗</a></div></article><div class="para" id="sec-2nd-order-linear-gen-theory-5-3">The proof of this theorem is beyond the level of this course. We shall focus on using it. Just like in <a href="sec-existence-uniqueness.html#subsec-existence-uniqueness-2" class="internal" title="Subsection 1.7.2: Existence and Uniqueness Theorem: Linear version.">Subsection 1.7.2</a>, we may use the theorem to find the interval of existence.<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-gen-theory-5-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <details id="sec-2nd-order-linear-gen-theory-5-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="period">.</span><span class="space"> </span><span class="title">Find the interval of existence of the IVP <span class="process-math">\(t^2y'' - 4ty' + 4y = 0, \, y(1) = 1, \, y'(1) = 4\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-2nd-order-linear-gen-theory-5-4-2">
-<li id="sec-2nd-order-linear-gen-theory-5-4-2-1"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-5-4-2-1">Standard form: <span class="process-math">\(y'' - \frac{4}{t}y' + \frac{4}{t^2}y = 0\)</span>
-</div></li>
-<li id="sec-2nd-order-linear-gen-theory-5-4-2-2"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-5-4-2-2">Singularity: <span class="process-math">\(t = 0.\)</span>
-</div></li>
+<li id="sec-2nd-order-linear-gen-theory-5-4-2-1">
+<div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-5-4-2-1">Standard form: <span class="process-math">\(y'' - \frac{4}{t}y' + \frac{4}{t^2}y = 0\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-2nd-order-linear-gen-theory-5-4-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-2nd-order-linear-gen-theory-5-4-2-2">
+<div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-5-4-2-2">Singularity: <span class="process-math">\(t = 0.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-2nd-order-linear-gen-theory-5-4-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
-<div class="para" id="sec-2nd-order-linear-gen-theory-5-4-3">Interval of existence: <span class="process-math">\((0, \infty).\)</span>
-</div></article></details><article class="remark remark-like" id="sec-2nd-order-linear-gen-theory-5-5"><h4 class="heading">
+<div class="para" id="sec-2nd-order-linear-gen-theory-5-4-3">Interval of existence: <span class="process-math">\((0, \infty).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-gen-theory-5-4-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.2: Find the interval of existence of the IVP t^2y'' - 4ty' + 4y = 0, \, y(1) = 1, \, y'(1) = 4"><a href="#sec-2nd-order-linear-gen-theory-5-4" title="Copy heading and permalink for Example 2.1.2: Find the interval of existence of the IVP t^2y'' - 4ty' + 4y = 0, \, y(1) = 1, \, y'(1) = 4">🔗</a></div></article></details><article class="remark remark-like" id="sec-2nd-order-linear-gen-theory-5-5"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-2nd-order-linear-gen-theory-5-5-1">In what follows, all the results are supposed to hold on the interval of existence.</div></article></section><section class="subsection" id="sec-2nd-order-linear-gen-theory-6"><h3 class="heading hide-type">
+<div class="para" id="sec-2nd-order-linear-gen-theory-5-5-1">In what follows, all the results are supposed to hold on the interval of existence.<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-gen-theory-5-5-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.1.3"><a href="#sec-2nd-order-linear-gen-theory-5-5" title="Copy heading and permalink for Remark 2.1.3">🔗</a></div></article><div class="autopermalink" data-description="Subsection 2.1.1: Existence and Uniqueness Theorem"><a href="#sec-2nd-order-linear-gen-theory-5" title="Copy heading and permalink for Subsection 2.1.1: Existence and Uniqueness Theorem">🔗</a></div></section><section class="subsection" id="sec-2nd-order-linear-gen-theory-6"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.2</span><span class="space"> </span><span class="title">Principle of Superposition</span>
 </h3>
 <article class="theorem theorem-like" id="th-linear-independence-superposition"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Principle of Superposition.</span>
 </h4>
 <ol class="decimal" id="th-linear-independence-superposition-2-1">
-<li id="th-linear-independence-superposition-2-1-1"><div class="para" id="p-derived-th-linear-independence-superposition-2-1-1">If <span class="process-math">\(y_1, y_2\)</span> are solutions of a 2nd-order linear <em class="emphasis">homogeneous</em> ODE<div class="displaymath process-math">
+<li id="th-linear-independence-superposition-2-1-1">
+<div class="para" id="p-derived-th-linear-independence-superposition-2-1-1">If <span class="process-math">\(y_1, y_2\)</span> are solutions of a 2nd-order linear <em class="emphasis">homogeneous</em> ODE<div class="displaymath process-math">
 \begin{equation*}
 y'' + p(t)y' + q(t)y = 0
 \end{equation*}
@@ -354,17 +378,24 @@ y'' + p(t)y' + q(t)y = 0
 \begin{equation*}
 c_1y_1 + c_2y_2
 \end{equation*}
-</div>is also a solution.</div></li>
-<li id="th-linear-independence-superposition-2-1-2"><div class="para" id="p-derived-th-linear-independence-superposition-2-1-2">In addition, if <span class="process-math">\(y_1, y_2\)</span> are linearly independent, i.e., if <span class="process-math">\(y_1\)</span> and <span class="process-math">\(y_2\)</span> are not proportional to each other, then the general solution of the ODE is<div class="displaymath process-math">
+</div>is also a solution.</div>
+<div class="autopermalink" data-description="Item 1"><a href="#th-linear-independence-superposition-2-1-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="th-linear-independence-superposition-2-1-2">
+<div class="para" id="p-derived-th-linear-independence-superposition-2-1-2">In addition, if <span class="process-math">\(y_1, y_2\)</span> are linearly independent, i.e., if <span class="process-math">\(y_1\)</span> and <span class="process-math">\(y_2\)</span> are not proportional to each other, then the general solution of the ODE is<div class="displaymath process-math">
 \begin{equation*}
 y = c_1y_1 + c_2y_2
 \end{equation*}
 </div>
-</div></li>
-</ol></article><details id="sec-2nd-order-linear-gen-theory-6-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#th-linear-independence-superposition-2-1-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Theorem 2.1.4: Principle of Superposition"><a href="#th-linear-independence-superposition" title="Copy heading and permalink for Theorem 2.1.4: Principle of Superposition">🔗</a></div></article><details id="sec-2nd-order-linear-gen-theory-6-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Check that <span class="process-math">\(y_1 = e^{3t}, \, y_2 = e^{-t}\)</span> are solutions of the ODE <span class="process-math">\(y'' - 2y' - 3y = 0.\)</span> What does the principle of superposition tell us?</span>
 </h4></summary><article class="example example-like knowl__content"><ol class="decimal" id="sec-2nd-order-linear-gen-theory-6-3-2">
-<li id="sec-2nd-order-linear-gen-theory-6-3-2-1"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-6-3-2-1">
+<li id="sec-2nd-order-linear-gen-theory-6-3-2-1">
+<div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-6-3-2-1">
 <span class="process-math">\(y_1 = e^{3t}, \, y_2 = e^{-t}\)</span> are solutions:<div class="displaymath process-math">
 \begin{equation*}
 y_1'' - 2y_1' - 3y_1 = 9e^{3t} - 2 \cdot 3e^{3t} - 3e^{3t} = 0.
@@ -375,8 +406,11 @@ y_1'' - 2y_1' - 3y_1 = 9e^{3t} - 2 \cdot 3e^{3t} - 3e^{3t} = 0.
 y''_2 - 2y'_2 - 3y_2 = e^{-t} = e^{-t} - 2 \cdot (-e^{-t}) - 3e^{-t} = 0.
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-2nd-order-linear-gen-theory-6-3-2-2"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-6-3-2-2">
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-2nd-order-linear-gen-theory-6-3-2-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="sec-2nd-order-linear-gen-theory-6-3-2-2">
+<div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-6-3-2-2">
 <span class="process-math">\(Y(t) = 20e^{3t} - 99e^{-t} = 20y_1 - 99y_2\)</span> is also a solution.<div class="displaymath process-math" id="sec-2nd-order-linear-gen-theory-6-3-2-2-2">
 \begin{align*}
 \amp Y'' - 2Y' - 3Y\\
@@ -387,8 +421,11 @@ y''_2 - 2y'_2 - 3y_2 = e^{-t} = e^{-t} - 2 \cdot (-e^{-t}) - 3e^{-t} = 0.
 = \amp 20 \cdot 0 - 99 \cdot 0 = 0.
 \end{align*}
 </div>
-</div></li>
-<li id="sec-2nd-order-linear-gen-theory-6-3-2-3"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-6-3-2-3">
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-2nd-order-linear-gen-theory-6-3-2-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="sec-2nd-order-linear-gen-theory-6-3-2-3">
+<div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-6-3-2-3">
 <span class="process-math">\(Y(t) = c_1e^{3t} + c_2e^{-t} = c_1y_1 + c_2y_2\)</span> is also a solution.<div class="displaymath process-math" id="sec-2nd-order-linear-gen-theory-6-3-2-3-2">
 \begin{align*}
 \amp Y'' - 2Y' - 3Y\\
@@ -399,16 +436,24 @@ y''_2 - 2y'_2 - 3y_2 = e^{-t} = e^{-t} - 2 \cdot (-e^{-t}) - 3e^{-t} = 0.
 = \amp c_1 \cdot 0 + c_2 \cdot 0 = 0.
 \end{align*}
 </div>
-</div></li>
-<li id="sec-2nd-order-linear-gen-theory-6-3-2-4"><div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-6-3-2-4">We check that<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#sec-2nd-order-linear-gen-theory-6-3-2-3" title="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="sec-2nd-order-linear-gen-theory-6-3-2-4">
+<div class="para" id="p-derived-sec-2nd-order-linear-gen-theory-6-3-2-4">We check that<div class="displaymath process-math">
 \begin{equation*}
 \dfrac{y_1}{y_2} = \dfrac{e^{3t}}{e^{-t}} = e^{4t}
 \end{equation*}
-</div>that is not a constant. So <span class="process-math">\(y_1 = e^{3t}\)</span> and <span class="process-math">\(y_2 = e^{-t}\)</span> are linearly independent, the theorem implies <span class="process-math">\(y(t) = c_1e^{3t} + c_2e^{-t}\)</span> is the general solution.</div></li>
-</ol></article></details><article class="remark remark-like" id="sec-2nd-order-linear-gen-theory-6-4"><h4 class="heading">
+</div>that is not a constant. So <span class="process-math">\(y_1 = e^{3t}\)</span> and <span class="process-math">\(y_2 = e^{-t}\)</span> are linearly independent, the theorem implies <span class="process-math">\(y(t) = c_1e^{3t} + c_2e^{-t}\)</span> is the general solution.</div>
+<div class="autopermalink" data-description="Item 4"><a href="#sec-2nd-order-linear-gen-theory-6-3-2-4" title="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Example 2.1.5: Check that y_1 = e^{3t}, \, y_2 = e^{-t} are solutions of the ODE y'' - 2y' - 3y = 0. What does the principle of superposition tell us?"><a href="#sec-2nd-order-linear-gen-theory-6-3" title="Copy heading and permalink for Example 2.1.5: Check that y_1 = e^{3t}, \, y_2 = e^{-t} are solutions of the ODE y'' - 2y' - 3y = 0. What does the principle of superposition tell us?">🔗</a></div></article></details><article class="remark remark-like" id="sec-2nd-order-linear-gen-theory-6-4"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">2.1.6</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-2nd-order-linear-gen-theory-6-4-1">The proof of the first part of the superposition principle is not much more difficult than what we did in the example above. I’ll leave it as an exercise. The second part, however, is a consequence of <a href="sec-2nd-order-linear-gen-theory.html#th-existence-and-uniqueness-theorem-2nd-order" class="xref" data-knowl="./knowl/xref/th-existence-and-uniqueness-theorem-2nd-order.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.1.1: Existence and Uniqueness Theorem">Theorem 2.1.1</a>. The proof is not difficult, but for the sake of brevity, we shall not prove it here.</div></article></section><section class="subsection" id="sec-2nd-order-linear-gen-theory-7"><h3 class="heading hide-type">
+<div class="para" id="sec-2nd-order-linear-gen-theory-6-4-1">The proof of the first part of the superposition principle is not much more difficult than what we did in the example above. I’ll leave it as an exercise. The second part, however, is a consequence of <a href="sec-2nd-order-linear-gen-theory.html#th-existence-and-uniqueness-theorem-2nd-order" class="xref" data-knowl="./knowl/xref/th-existence-and-uniqueness-theorem-2nd-order.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.1.1: Existence and Uniqueness Theorem">Theorem 2.1.1</a>. The proof is not difficult, but for the sake of brevity, we shall not prove it here.<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-gen-theory-6-4-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 2.1.6"><a href="#sec-2nd-order-linear-gen-theory-6-4" title="Copy heading and permalink for Remark 2.1.6">🔗</a></div></article><div class="autopermalink" data-description="Subsection 2.1.2: Principle of Superposition"><a href="#sec-2nd-order-linear-gen-theory-6" title="Copy heading and permalink for Subsection 2.1.2: Principle of Superposition">🔗</a></div></section><section class="subsection" id="sec-2nd-order-linear-gen-theory-7"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.1.3</span><span class="space"> </span><span class="title">Wronskian for linear independence</span>
 </h3>
 <article class="theorem theorem-like" id="th-wronskian-for-linear-independence"><h4 class="heading">
@@ -428,19 +473,36 @@ y'' + p(t)y' + q(t)y = 0,
 \end{equation*}
 </div>
 <div class="para">is nonzero on the interval.</div>
-</div></article><article class="fact theorem-like" id="sec-2nd-order-linear-gen-theory-7-3"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#th-wronskian-for-linear-independence-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 2.1.7: Wronskian for linear independence"><a href="#th-wronskian-for-linear-independence" title="Copy heading and permalink for Theorem 2.1.7: Wronskian for linear independence">🔗</a></div></article><article class="fact theorem-like" id="sec-2nd-order-linear-gen-theory-7-3"><h4 class="heading">
 <span class="type">Fact</span><span class="space"> </span><span class="codenumber">2.1.8</span><span class="period">.</span>
 </h4>
-<div class="para" id="sec-2nd-order-linear-gen-theory-7-3-1">It suffices that <span class="process-math">\((W(y_1, y_2))(t) \neq 0\)</span> on one point of the interval. The proof is not difficult. But for the sake of brevity, we shall not prove it here.</div></article><details id="sec-2nd-order-linear-gen-theory-7-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="sec-2nd-order-linear-gen-theory-7-3-1">It suffices that <span class="process-math">\((W(y_1, y_2))(t) \neq 0\)</span> on one point of the interval. The proof is not difficult. But for the sake of brevity, we shall not prove it here.<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-gen-theory-7-3-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Fact 2.1.8"><a href="#sec-2nd-order-linear-gen-theory-7-3" title="Copy heading and permalink for Fact 2.1.8">🔗</a></div></article><details id="sec-2nd-order-linear-gen-theory-7-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.9</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(t^2y'' - 4ty' + 6y = 0, \, y_1 = t^2, \, y_2 = t^3.\)</span>.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec-2nd-order-linear-gen-theory-7-4-2"><span class="process-math">\(W(y_1, y_2) = \begin{vmatrix} t^2 \amp t^3 \\ 2t \amp 3t^2 \end{vmatrix} = t^4 \neq 0 \text{ as long as } t \neq 0.\)</span></div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-7-4-3">So <span class="process-math">\(y_1 = t^2, \, y_2 = t^3\)</span> are linearly independent.</div></article></details><details id="sec-2nd-order-linear-gen-theory-7-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec-2nd-order-linear-gen-theory-7-4-2">
+<span class="process-math">\(W(y_1, y_2) = \begin{vmatrix} t^2 \amp t^3 \\ 2t \amp 3t^2 \end{vmatrix} = t^4 \neq 0 \text{ as long as } t \neq 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-gen-theory-7-4-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-2nd-order-linear-gen-theory-7-4-3">So <span class="process-math">\(y_1 = t^2, \, y_2 = t^3\)</span> are linearly independent.<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-gen-theory-7-4-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.9: t^2y'' - 4ty' + 6y = 0, \, y_1 = t^2, \, y_2 = t^3."><a href="#sec-2nd-order-linear-gen-theory-7-4" title="Copy heading and permalink for Example 2.1.9: t^2y'' - 4ty' + 6y = 0, \, y_1 = t^2, \, y_2 = t^3.">🔗</a></div></article></details><details id="sec-2nd-order-linear-gen-theory-7-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.10</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' - 9y = 0, \, y_1 = e^{3t}, \, y_2 = 5e^{3t}.\)</span>.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec-2nd-order-linear-gen-theory-7-5-2"><span class="process-math">\(W(y_1, y_2) = \begin{vmatrix} e^{3t} \amp 5e^{3t} \\ 3e^{3t} \amp 15e^{3t} \end{vmatrix} = 15e^{6t} - 15e^{6t} = 0.\)</span></div>
-<div class="para" id="sec-2nd-order-linear-gen-theory-7-5-3">So <span class="process-math">\(y_1 = e^{3t}, \, y_2 = 5e^{3t}\)</span> are linearly dependent.</div></article></details><details id="ex-wronskian-real-distinct-roots" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="sec-2nd-order-linear-gen-theory-7-5-2">
+<span class="process-math">\(W(y_1, y_2) = \begin{vmatrix} e^{3t} \amp 5e^{3t} \\ 3e^{3t} \amp 15e^{3t} \end{vmatrix} = 15e^{6t} - 15e^{6t} = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-gen-theory-7-5-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-2nd-order-linear-gen-theory-7-5-3">So <span class="process-math">\(y_1 = e^{3t}, \, y_2 = 5e^{3t}\)</span> are linearly dependent.<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-gen-theory-7-5-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.10: y'' - 9y = 0, \, y_1 = e^{3t}, \, y_2 = 5e^{3t}."><a href="#sec-2nd-order-linear-gen-theory-7-5" title="Copy heading and permalink for Example 2.1.10: y'' - 9y = 0, \, y_1 = e^{3t}, \, y_2 = 5e^{3t}.">🔗</a></div></article></details><details id="ex-wronskian-real-distinct-roots" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.11</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(ay'' + by' + cy = 0, \, y_1 = e^{r_1 t}, \, y_2 = e^{r_2 t}, \, r_1 \neq r_2.\)</span>.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-wronskian-real-distinct-roots-2"><span class="process-math">\(W(y_1, y_2) = \begin{vmatrix} e^{r_1 t} \amp e^{r_2 t} \\ r_1 e^{r_1 t} \amp r_2 e^{r_2 t} \end{vmatrix} = (r_2 - r_1)e^{(r_1 + r_2)t}.\)</span></div>
-<div class="para" id="ex-wronskian-real-distinct-roots-3"><span class="process-math">\(r_1 \neq r_2 \Rightarrow W(y_1, y_2) \neq 0 \Rightarrow \text{Linear independence.}\)</span></div></article></details><details id="sec-2nd-order-linear-gen-theory-7-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-wronskian-real-distinct-roots-2">
+<span class="process-math">\(W(y_1, y_2) = \begin{vmatrix} e^{r_1 t} \amp e^{r_2 t} \\ r_1 e^{r_1 t} \amp r_2 e^{r_2 t} \end{vmatrix} = (r_2 - r_1)e^{(r_1 + r_2)t}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-wronskian-real-distinct-roots-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-wronskian-real-distinct-roots-3">
+<span class="process-math">\(r_1 \neq r_2 \Rightarrow W(y_1, y_2) \neq 0 \Rightarrow \text{Linear independence.}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-wronskian-real-distinct-roots-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.11: ay'' + by' + cy = 0, \, y_1 = e^{r_1 t}, \, y_2 = e^{r_2 t}, \, r_1 \neq r_2."><a href="#ex-wronskian-real-distinct-roots" title="Copy heading and permalink for Example 2.1.11: ay'' + by' + cy = 0, \, y_1 = e^{r_1 t}, \, y_2 = e^{r_2 t}, \, r_1 \neq r_2.">🔗</a></div></article></details><details id="sec-2nd-order-linear-gen-theory-7-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">2.1.12</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y'' - \cot(2t)y' = 0, \, y_1 = \sin^2 t, \, y_2 = \cos(2t) - 1.\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-2nd-order-linear-gen-theory-7-7-2">
 <div class="displaymath process-math" id="sec-2nd-order-linear-gen-theory-7-7-2-1">
@@ -457,7 +519,9 @@ W(y_1, y_2) = -2 \cdot \frac{1}{2} \cdot 1 - (0 - 1) \cdot 2 \cdot \frac{\sqrt{2
 </div>
 <div class="para">So <span class="process-math">\(y_1, y_2\)</span> are <em class="emphasis">linearly dependent.</em>
 </div>
-</div></article></details></section></section></div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-gen-theory-7-7-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 2.1.12: y'' - \cot(2t)y' = 0, \, y_1 = \sin^2 t, \, y_2 = \cos(2t) - 1."><a href="#sec-2nd-order-linear-gen-theory-7-7" title="Copy heading and permalink for Example 2.1.12: y'' - \cot(2t)y' = 0, \, y_1 = \sin^2 t, \, y_2 = \cos(2t) - 1.">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 2.1.3: Wronskian for linear independence"><a href="#sec-2nd-order-linear-gen-theory-7" title="Copy heading and permalink for Subsection 2.1.3: Wronskian for linear independence">🔗</a></div></section><div class="autopermalink" data-description="Section 2.1: General Theories of Second-order Linear ODEs"><a href="#sec-2nd-order-linear-gen-theory" title="Copy heading and permalink for Section 2.1: General Theories of Second-order Linear ODEs">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="ch-higher-order.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-2nd-order-linear-const-coeff-real.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

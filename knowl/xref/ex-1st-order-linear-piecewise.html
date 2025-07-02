@@ -25,32 +25,54 @@ y' + y = g(t), \, y(0) = 0, \, g(t) = \begin{cases} 1 \amp 0 \leq t \leq 1 \\ 0 
 \end{equation*}
 </div>Find the solution of the IVP that is continuous everywhere.</span>
 </h3>
-<div class="para">General principle: Solve the ODE on each individual interval. Determine the constants by either the initial condition or continuity at the boundary .</div> <div class="para">On the interval <span class="process-math">\([0,1], \, y' + y = 1.\)</span>
+<div class="para">General principle: Solve the ODE on each individual interval. Determine the constants by either the initial condition or continuity at the boundary .<div class="autopermalink" data-description="Paragraph"><a href="#ex-1st-order-linear-piecewise-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para">On the interval <span class="process-math">\([0,1], \, y' + y = 1.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-1st-order-linear-piecewise-2-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <ul class="disc" id="ex-1st-order-linear-piecewise-2-3">
-<li><div class="para">Integrating factor: <span class="process-math">\(\mu(t) = e^{\int dt} = e^t.\)</span>
-</div></li>
-<li><div class="para">General solution:<div class="displaymath process-math">
+<li>
+<div class="para">Integrating factor: <span class="process-math">\(\mu(t) = e^{\int dt} = e^t.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-1st-order-linear-piecewise-2-3-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li>
+<div class="para">General solution:<div class="displaymath process-math">
 \begin{equation*}
 y(t) = \frac{\int e^t \cdot 1 \, dt + C}{e^t} = \frac{e^t + C}{e^t} = 1 + Ce^{-t}.
 \end{equation*}
 </div>
-</div></li>
-<li><div class="para">Initial condition <span class="process-math">\(y(0) = 0 \Rightarrow 1 + Ce^0 = 0 \Rightarrow C = -1.\)</span>
-</div></li>
-<li><div class="para">We conclude that on <span class="process-math">\([0,1], \, y(t) = 1 - e^{-t}.\)</span>
-</div></li>
-</ul> <div class="para">On the interval <span class="process-math">\((1, \infty), \, y' + y = 0.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-1st-order-linear-piecewise-2-3-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li>
+<div class="para">Initial condition <span class="process-math">\(y(0) = 0 \Rightarrow 1 + Ce^0 = 0 \Rightarrow C = -1.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-1st-order-linear-piecewise-2-3-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li>
+<div class="para">We conclude that on <span class="process-math">\([0,1], \, y(t) = 1 - e^{-t}.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-1st-order-linear-piecewise-2-3-4" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul> <div class="para">On the interval <span class="process-math">\((1, \infty), \, y' + y = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-1st-order-linear-piecewise-2-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <ul class="disc" id="ex-1st-order-linear-piecewise-2-5">
-<li><div class="para">Integrating factor: <span class="process-math">\(\mu(t) = e^{\int dt} = e^t.\)</span>
-</div></li>
-<li><div class="para">General solution:<div class="displaymath process-math">
+<li>
+<div class="para">Integrating factor: <span class="process-math">\(\mu(t) = e^{\int dt} = e^t.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-1st-order-linear-piecewise-2-5-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li>
+<div class="para">General solution:<div class="displaymath process-math">
 \begin{equation*}
 y(t) = \frac{\int e^t \cdot 0 \, dt + C}{e^t} = \frac{C}{e^t} = Ce^{-t}.
 \end{equation*}
 </div>
-</div></li>
-<li><div class="para">On <span class="process-math">\((1, \infty), \, y(t) = Ce^{-t}.\)</span>
-</div></li>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-1st-order-linear-piecewise-2-5-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li>
+<div class="para">On <span class="process-math">\((1, \infty), \, y(t) = Ce^{-t}.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-1st-order-linear-piecewise-2-5-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul> <div class="para logical">
 <div class="para">So the solution of the IVP is</div>
 <div class="displaymath process-math">
@@ -58,7 +80,8 @@ y(t) = \frac{\int e^t \cdot 0 \, dt + C}{e^t} = \frac{C}{e^t} = Ce^{-t}.
 y(t) = \begin{cases} 1 - e^{-t} \amp t \in [0,1] \\ Ce^{-t} \amp t \in (1,\infty) \end{cases}
 \end{equation*}
 </div>
-</div> <div class="para">To make sure <span class="process-math">\(y(t)\)</span> is continuous, we need <span class="process-math">\(\lim_{t \to 1^-} y(t) = \lim_{t \to 1^+} y(t).\text{.}\)</span> This is to say <span class="process-math">\(1 - e^{-1} = Ce^{-1} \Rightarrow C = (e - 1).\)</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-1st-order-linear-piecewise-2-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para">To make sure <span class="process-math">\(y(t)\)</span> is continuous, we need <span class="process-math">\(\lim_{t \to 1^-} y(t) = \lim_{t \to 1^+} y(t).\text{.}\)</span> This is to say <span class="process-math">\(1 - e^{-1} = Ce^{-1} \Rightarrow C = (e - 1).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-1st-order-linear-piecewise-2-7" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <div class="para logical">
 <div class="para">Conclusion: the continuous solution of the IVP is</div>
 <div class="displaymath process-math">
@@ -66,6 +89,16 @@ y(t) = \begin{cases} 1 - e^{-t} \amp t \in [0,1] \\ Ce^{-t} \amp t \in (1,\infty
 y(t) = \begin{cases} 1 - e^{-t} \amp t \in [0,1] \\ (e - 1)e^{-t} \amp t \in (1,\infty) \end{cases}
 \end{equation*}
 </div>
-</div></article><span class="incontext"><a class="internal" href="sec-1st-order-linear.html#ex-1st-order-linear-piecewise">in-context</a></span>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-1st-order-linear-piecewise-2-8" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.5.9: Solve
+\begin{equation*}
+y' + y = g(t), \, y(0) = 0, \, g(t) = \begin{cases} 1 \amp 0 \leq t \leq 1 \\ 0 \amp t \gt 1 \end{cases}\text{.}
+\end{equation*}
+Find the solution of the IVP that is continuous everywhere"><a href="#ex-1st-order-linear-piecewise" title="Copy heading and permalink for Example 1.5.9: Solve
+\begin{equation*}
+y' + y = g(t), \, y(0) = 0, \, g(t) = \begin{cases} 1 \amp 0 \leq t \leq 1 \\ 0 \amp t \gt 1 \end{cases}\text{.}
+\end{equation*}
+Find the solution of the IVP that is continuous everywhere">🔗</a></div></article><span class="incontext"><a class="internal" href="sec-1st-order-linear.html#ex-1st-order-linear-piecewise">in-context</a></span>
 </body>
 </html>

@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.6';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -275,7 +275,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section active"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section contains-active">
+<div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div>
+<ul class="structural toc-item-list active">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integral Transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Laplace transforms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-4" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Summary of basic formulas for Laplace transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-5" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
@@ -296,171 +304,511 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-laplace-transform"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">3.1</span><span class="space"> </span><span class="title">Laplace Transform and Examples</span>
 </h2>
-<div class="para" id="sec-laplace-transform-2">Integral transform</div>
-<div class="para" id="sec-laplace-transform-3">Integral transforms: Let <span class="process-math">\(K(s, t)\)</span> be a function with two real variables. Given a function <span class="process-math">\(f(t)\)</span> defined on a set <span class="process-math">\(D\text{,}\)</span> the following integral</div>
-<div class="para" id="sec-laplace-transform-4"><span class="process-math">\(F(s) = \int_D K(s, t)f(t)dt\)</span></div>
-<div class="para" id="sec-laplace-transform-5">defines a new function <span class="process-math">\(F(s)\text{.}\)</span> The map sending <span class="process-math">\(f(t)\)</span> to <span class="process-math">\(F(s)\)</span> is called an <em class="alert">integral transform</em>. The function <span class="process-math">\(K(s, t)\)</span> is called the <em class="alert">kernel</em> of the integral transform.</div>
-<div class="para" id="sec-laplace-transform-6">Note that when <span class="process-math">\(D\)</span> is an <em class="alert">infinite</em> interval, the integral defining <span class="process-math">\(F(s)\)</span> is improper and might not converge for all real numbers <span class="process-math">\(s\text{.}\)</span> In this case, the domain of new function <span class="process-math">\(F(s)\text{,}\)</span> i.e., the set of <span class="process-math">\(s\)</span> such that the integral converges, is not expected to be <span class="process-math">\((-\infty, \infty).\)</span>
+<section class="subsection" id="sec-laplace-transform-2"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="space"> </span><span class="title">Integral Transform</span>
+</h3>
+<article class="definition definition-like" id="sec-laplace-transform-2-2"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.1</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="sec-laplace-transform-2-2-1">
+<div class="para">Let <span class="process-math">\(K(s, t)\)</span> be a function with two real variables. Given a function <span class="process-math">\(f(t)\)</span> defined on a set <span class="process-math">\(D\text{,}\)</span> the following integral</div>
+<div class="displaymath process-math">
+\begin{equation*}
+F(s) = \int_D K(s, t)f(t)dt
+\end{equation*}
 </div>
-<div class="para" id="sec-laplace-transform-7">Integral transforms appears in many discussions of mathematics, physics, engineering, and computer science.</div>
-<div class="para" id="sec-laplace-transform-8">Fourier transform: <span class="process-math">\(D = (-\infty, \infty), K(s, t) = e^{-ist},\)</span>
+<div class="para">defines a new function <span class="process-math">\(F(s)\text{.}\)</span> The map sending <span class="process-math">\(f(t)\)</span> to <span class="process-math">\(F(s)\)</span> is called an <dfn class="terminology">integral transform</dfn>. The function <span class="process-math">\(K(s, t)\)</span> is called the <dfn class="terminology">kernel</dfn> of the integral transform.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-2-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-laplace-transform-9">
-<span class="process-math">\(f(t) \mapsto F(s) = \int_{-\infty}^{\infty} f(t)e^{-ist} dt\)</span> <em class="alert">complex function</em>
+<div class="autopermalink" data-description="Definition 3.1.1"><a href="#sec-laplace-transform-2-2" title="Copy heading and permalink for Definition 3.1.1">🔗</a></div></article><article class="remark remark-like" id="sec-laplace-transform-2-3"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-laplace-transform-2-3-1">Note that when <span class="process-math">\(D\)</span> is an <em class="alert">infinite</em> interval, the integral defining <span class="process-math">\(F(s)\)</span> is improper and might not converge for all real numbers <span class="process-math">\(s\text{.}\)</span> In this case, the domain of new function <span class="process-math">\(F(s)\text{,}\)</span> i.e., the set of <span class="process-math">\(s\)</span> such that the integral converges, is not expected to be <span class="process-math">\((-\infty, \infty).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-2-3-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-laplace-transform-10">Fourier transform is widely used, including but not limited to, partial differential equations, computer graphics, machine learning, etc. (not required in this course)</div>
-<div class="para" id="sec-laplace-transform-11">In this course, we mainly focus on the <em class="alert">Laplace transform</em>, with</div>
-<div class="para" id="sec-laplace-transform-12"><span class="process-math">\(D = [0, \infty), K(s, t) = e^{-st}.\)</span></div>
-<div class="para" id="sec-laplace-transform-13">The corresponding integral transform</div>
-<div class="para" id="sec-laplace-transform-14"><span class="process-math">\(f(t) \mapsto F(s) = \int_{0}^{\infty} f(t)e^{-st} dt\)</span></div>
-<div class="para" id="sec-laplace-transform-15">is called the <em class="alert">Laplace transform</em>. The function <span class="process-math">\(F(s)\)</span> is usually denoted by <span class="process-math">\(\mathcal{L}\{f(t)\}.\)</span>
+<div class="autopermalink" data-description="Remark 3.1.2"><a href="#sec-laplace-transform-2-3" title="Copy heading and permalink for Remark 3.1.2">🔗</a></div></article><div class="para logical" id="sec-laplace-transform-2-4">
+<div class="para">Integral transforms appears in many discussions of mathematics, physics, engineering, and computer science. The most important one is the <dfn class="terminology">Fourier transform</dfn>, where</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D = (-\infty, \infty), K(s, t) = e^{-ist}.
+\end{equation*}
 </div>
-<div class="para" id="sec-laplace-transform-16">The domain of <span class="process-math">\(F(s)\)</span> depends on <span class="process-math">\(f(t)\text{,}\)</span> determined by the convergence of the improper integral, i.e.,</div>
-<div class="para" id="sec-laplace-transform-17">
-<span class="process-math">\(\lim_{b \to \infty} \int_{0}^{b} f(t)e^{-st} dt\)</span> should exist.</div>
-<div class="para" id="sec-laplace-transform-18">Examples of Laplace transforms</div>
-<div class="para" id="sec-laplace-transform-19">Laplace Transform:</div>
-<div class="para" id="sec-laplace-transform-20"><span class="process-math">\(f(t) \mapsto \mathcal{L}\{f(t)\} = F(s) = \int_{0}^{\infty} f(t)e^{-st} dt\)</span></div>
-<div class="para" id="sec-laplace-transform-21">Note that the domain of <span class="process-math">\(F(s)\)</span> depends on the choice of <span class="process-math">\(f(t).\)</span>
+<div class="para">In other words, Fourier transform sends <span class="process-math">\(f(t)\)</span> to a <em class="alert">complex function</em>
 </div>
-<div class="para" id="sec-laplace-transform-22">Example 1. Evaluate <span class="process-math">\(\mathcal{L}\{1\}.\)</span>
+<div class="displaymath process-math">
+\begin{equation*}
+F(s) = \int_{-\infty}^{\infty} f(t)e^{-ist} dt
+\end{equation*}
 </div>
-<div class="para" id="sec-laplace-transform-23"><span class="process-math">\(\mathcal{L}\{1\} = \int_{0}^{\infty} e^{-st} dt = \left. \frac{e^{-st}}{-s} \right|_{0}^{\infty} = \left( \lim_{t \to \infty} \frac{e^{-st}}{-s} \right) - \frac{1}{-s}.\)</span></div>
-<div class="para" id="sec-laplace-transform-24">If <span class="process-math">\(s \gt 0\text{,}\)</span> then <span class="process-math">\(\lim_{t \to \infty} \frac{e^{-st}}{-s} = 0.\)</span> The integral converges.</div>
-<div class="para" id="sec-laplace-transform-25">In this case, <span class="process-math">\(F(s) = 0 - \frac{1}{-s} = \frac{1}{s}.\)</span>
+<div class="para">Note that when <span class="process-math">\(D\)</span> is an <em class="alert">infinite</em> interval, the integral defining <span class="process-math">\(F(s)\)</span> is improper and might not converge for all real numbers <span class="process-math">\(s\text{.}\)</span> In this case, the domain of new function <span class="process-math">\(F(s)\text{,}\)</span> i.e., the set of <span class="process-math">\(s\)</span> such that the integral converges, is not expected to be <span class="process-math">\((-\infty, \infty).\)</span>
 </div>
-<div class="para" id="sec-laplace-transform-26">If <span class="process-math">\(s \lt 0\text{,}\)</span> then <span class="process-math">\(\lim_{t \to \infty} \frac{e^{-st}}{-s} = +\infty.\)</span> The integral diverges.</div>
-<div class="para" id="sec-laplace-transform-27">If <span class="process-math">\(s = 0\text{,}\)</span> then we have <span class="process-math">\(e^{-st} = 1.\)</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-2-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-laplace-transform-28">In this case, <span class="process-math">\(\int_{0}^{\infty} e^{-st} dt = \int_{0}^{\infty} 1 dt\)</span> also diverges.</div>
-<div class="para" id="sec-laplace-transform-29">Conclusion: <em class="alert">\mathcal{L}\{1\} = \frac{1}{s}, \quad s \gt 0.</em>
+<div class="para" id="sec-laplace-transform-2-5">Fourier transform is widely used, including but not limited to, partial differential equations, computer graphics, machine learning, etc. We will not require it in this course because it is necessary to know complex function.<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-2-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-laplace-transform-30">Example 2. Evaluate <span class="process-math">\(\mathcal{L}\{t\}.\)</span>
+<div class="para" id="sec-laplace-transform-2-6">In this course, we mainly focus on the <em class="alert">Laplace transform</em>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-2-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-laplace-transform-31"><span class="process-math">\(\mathcal{L}\{t\} = \int_{0}^{\infty} te^{-st} dt = -\frac{1}{s} te^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} 1 \cdot \left(-\frac{1}{s} e^{-st}\right) dt\)</span></div>
-<div class="para" id="sec-laplace-transform-32"><span class="process-math">\(= -\frac{1}{s} \left( \lim_{t \to \infty} te^{-st} - 0 \right) + \frac{1}{s} \int_{0}^{\infty} e^{-st} dt\)</span></div>
-<div class="para" id="sec-laplace-transform-33">We have seen that <span class="process-math">\(\int_{0}^{\infty} e^{-st} dt\)</span> converges if and only if <span class="process-math">\(s \gt 0.\)</span> In this case, <span class="process-math">\(\lim_{t \to \infty} te^{-st} = \lim_{t \to \infty} \frac{t}{e^{st}} = 0\)</span> by L’Hôpital’s rule.</div>
-<div class="para" id="sec-laplace-transform-34"><span class="process-math">\(\mathcal{L}\{t\} = \int_{0}^{\infty} te^{-st} dt = -\frac{1}{s} te^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} 1 \cdot \left(-\frac{1}{s} e^{-st}\right) dt\)</span></div>
-<div class="para" id="sec-laplace-transform-35"><span class="process-math">\(= -\frac{1}{s} \left( \lim_{t \to \infty} te^{-st} - 0 \right) + \frac{1}{s} \int_{0}^{\infty} e^{-st} dt\)</span></div>
-<div class="para" id="sec-laplace-transform-36"><span class="process-math">\(= -\frac{1}{s} \cdot (0 - 0) + \frac{1}{s} \cdot \frac{1}{s} = \frac{1}{s^2}.\)</span></div>
-<div class="para" id="sec-laplace-transform-37">So</div>
-<div class="para" id="sec-laplace-transform-38"><em class="alert">\mathcal{L}\{t\} = \frac{1}{s^2}, \quad s \gt 0.</em></div>
-<div class="para" id="sec-laplace-transform-39">So we have obtained that for <span class="process-math">\(s \gt 0,\)</span>
+<article class="definition definition-like" id="sec-laplace-transform-2-7"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="sec-laplace-transform-2-7-1">
+<div class="para">The <dfn class="terminology">Laplace transform</dfn> is the integral transform with</div>
+<div class="displaymath process-math">
+\begin{equation*}
+D = [0, \infty), K(s, t) = e^{-st}.
+\end{equation*}
 </div>
-<div class="para" id="sec-laplace-transform-40"><span class="process-math">\(\mathcal{L}\{t^n\} = -\frac{n}{s} \int_{0}^{\infty} t^{n-1} e^{-st} dt = -\frac{n}{s} \mathcal{L}\{t^{n-1}\}\)</span></div>
-<div class="para" id="sec-laplace-transform-41">This defines a recursion of <span class="process-math">\(\mathcal{L}\{t^n\}\)</span> that can be easily solved:</div>
-<div class="para" id="sec-laplace-transform-42"><span class="process-math">\(\mathcal{L}\{t^n\} = -\frac{n}{s} \mathcal{L}\{t^{n-1}\} = -\frac{n}{s} \cdot \frac{n - 1}{s} \mathcal{L}\{t^{n-2}\}\)</span></div>
-<div class="para" id="sec-laplace-transform-43"><span class="process-math">\(= \ldots = -\frac{n}{s} \cdot \frac{n - 1}{s} \cdots \frac{2}{s} \cdot \frac{1}{s} \mathcal{L}\{1\} = -\frac{n \cdot (n - 1) \cdots 2 \cdot 1}{s^{n + 1}} = -\frac{n!}{s^{n + 1}}.\)</span></div>
-<div class="para" id="sec-laplace-transform-44">Conclusion:</div>
-<div class="para" id="sec-laplace-transform-45"><em class="alert">\mathcal{L}\{t^n\} = \frac{n!}{s^{n + 1}}, \quad s \gt 0.</em></div>
-<div class="para" id="sec-laplace-transform-46">For example</div>
-<div class="para" id="sec-laplace-transform-47"><span class="process-math">\(\mathcal{L}\{t^2\} = \frac{2!}{s^3}, \quad \mathcal{L}\{t^3\} = \frac{3!}{s^4}, \quad \mathcal{L}\{t^4\} = \frac{4!}{s^5}, \quad s \gt 0.\)</span></div>
-<div class="para" id="sec-laplace-transform-48">Note that the power of <span class="process-math">\(s\)</span> in the denominator is 1 larger than the power of <span class="process-math">\(t.\)</span>
+<div class="para">In other words, Laplace transform sends</div>
+<div class="displaymath process-math">
+\begin{equation*}
+f(t) \mapsto F(s) = \int_{0}^{\infty} f(t)e^{-st} dt
+\end{equation*}
 </div>
-<div class="para" id="sec-laplace-transform-49">Example 4. Evaluate <span class="process-math">\(\mathcal{L}\{e^{-3t}\}\)</span> and <span class="process-math">\(\mathcal{L}\{e^{5t}\}.\)</span>
+<div class="para">The function <span class="process-math">\(F(s)\)</span> is often denoted by <span class="process-math">\(\mathcal{L}\{f(t)\}.\)</span>
 </div>
-<div class="para" id="sec-laplace-transform-50"><span class="process-math">\(\mathcal{L}\{e^{-3t}\} = \int_{0}^{\infty} e^{-3t} e^{-st} dt = \int_{0}^{\infty} e^{-(s + 3)t} dt\)</span></div>
-<div class="para" id="sec-laplace-transform-51"><span class="process-math">\(= \frac{1}{-(s + 3)} e^{-(s + 3)t} \bigg|_{0}^{\infty} = \frac{1}{-(s + 3)} \left( \lim_{t \to \infty} e^{-(s + 3)t} - 1 \right)\)</span></div>
-<div class="para" id="sec-laplace-transform-52">Clearly, <span class="process-math">\(\lim_{t \to \infty} e^{-(s + 3)t}\)</span> exists when <span class="process-math">\(s + 3 \gt 0,\)</span> i.e., <span class="process-math">\(s \gt -3.\)</span> The limit is zero. So</div>
-<div class="para" id="sec-laplace-transform-53"><span class="process-math">\(\mathcal{L}\{e^{-3t}\} = \frac{1}{-(s + 3)} (0 - 1) = \frac{1}{s + 5}, \quad s \gt -3.\)</span></div>
-<div class="para" id="sec-laplace-transform-54"><span class="process-math">\(\mathcal{L}\{e^{5t}\} = \int_{0}^{\infty} e^{5t} e^{-st} dt = \int_{0}^{\infty} e^{-(s - 5)t} dt\)</span></div>
-<div class="para" id="sec-laplace-transform-55"><span class="process-math">\(= \frac{1}{-(s - 5)} e^{-(s - 5)t} \bigg|_{0}^{\infty} = \frac{1}{-(s - 5)} \left( \lim_{t \to \infty} e^{-(s - 5)t} - 1 \right)\)</span></div>
-<div class="para" id="sec-laplace-transform-56">Clearly, <span class="process-math">\(\lim_{t \to \infty} e^{-(s - 5)t}\)</span> exists when <span class="process-math">\(s - 5 \gt 0,\)</span> i.e., <span class="process-math">\(s \gt 5.\)</span> The limit is zero. So</div>
-<div class="para" id="sec-laplace-transform-57"><span class="process-math">\(\mathcal{L}\{e^{5t}\} = \frac{1}{-(s - 5)} (0 - 1) = \frac{1}{s - 5}, \quad s \gt 5.\)</span></div>
-<div class="para" id="sec-laplace-transform-58">Example 5. Evaluate <span class="process-math">\(\mathcal{L}\{e^{at}\}.\)</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-2-7-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-laplace-transform-59"><span class="process-math">\(\mathcal{L}\{e^{at}\} = \int_{0}^{\infty} e^{at} e^{-st} dt = \int_{0}^{\infty} e^{-(s - \alpha)t} dt\)</span></div>
-<div class="para" id="sec-laplace-transform-60"><span class="process-math">\(= \frac{1}{-(s - \alpha)} e^{-(s - \alpha)t} \bigg|_{0}^{\infty} = \frac{1}{-(s - \alpha)} \left( \lim_{t \to \infty} e^{-(s - \alpha)t} - 1 \right)\)</span></div>
-<div class="para" id="sec-laplace-transform-61">Clearly, <span class="process-math">\(\lim_{t \to \infty} e^{-(s - \alpha)t}\)</span> exists when <span class="process-math">\(s - \alpha \gt 0,\)</span> i.e., <span class="process-math">\(s \gt \alpha.\)</span> The limit is zero. So</div>
-<div class="para" id="sec-laplace-transform-62"><em class="alert">\mathcal{L}\{e^{at}\} = \frac{1}{s - \alpha}, \quad s \gt \alpha.</em></div>
-<div class="para" id="sec-laplace-transform-63">Example 6. Evaluate <span class="process-math">\(\mathcal{L}\{\sin 2t\}.\)</span>
+<div class="para logical" id="sec-laplace-transform-2-7-2">
+<div class="para">The domain of <span class="process-math">\(F(s)\)</span> depends on <span class="process-math">\(f(t)\text{,}\)</span> determined by the convergence of the improper integral, i.e.,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{b \to \infty} \int_{0}^{b} f(t)e^{-st} dt
+\end{equation*}
 </div>
-<div class="para" id="sec-laplace-transform-64"><span class="process-math">\(\mathcal{L}\{\sin 2t\} = \int_{0}^{\infty} \sin 2t \, e^{-st} dt\)</span></div>
-<div class="para" id="sec-laplace-transform-65"><span class="process-math">\(= -\frac{1}{s} \sin 2t \, e^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} 2 \cos 2t \left(-\frac{1}{s} e^{-st}\right) dt\)</span></div>
-<div class="para" id="sec-laplace-transform-66"><span class="process-math">\(= -\frac{1}{s} \left( \lim_{t \to \infty} e^{-st} \sin 2t - 0 \right) + \frac{2}{s} \int_{0}^{\infty} \cos 2t \, e^{-st} dt\)</span></div>
-<div class="para" id="sec-laplace-transform-67">Clearly, <span class="process-math">\(\lim_{t \to \infty} e^{-st} \sin 2t\)</span> exists <em class="alert">iff</em> <span class="process-math">\(s \gt 0,\)</span> and equals 0.</div>
-<div class="para" id="sec-laplace-transform-68"><span class="process-math">\(\mathcal{L}\{\sin 2t\} = -\frac{2}{s} \int_{0}^{\infty} \cos 2t \, e^{-st} dt\)</span></div>
-<div class="para" id="sec-laplace-transform-69"><span class="process-math">\(= \frac{2}{s} \left( -\frac{1}{s} \cos 2t \, e^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} (-2 \sin 2t) \left(-\frac{1}{s} e^{-st}\right) dt \right)\)</span></div>
-<div class="para" id="sec-laplace-transform-70"><span class="process-math">\(= -\frac{2}{s^2} \left( \lim_{t \to \infty} \cos 2t \, e^{-st} - \cos 0 \, e^0 \right) - \frac{4}{s^2} \int_{0}^{\infty} \sin 2t \, e^{-st} dt\)</span></div>
-<div class="para" id="sec-laplace-transform-71">Clearly when <span class="process-math">\(s \gt 0,\)</span> <span class="process-math">\(\lim_{t \to \infty} e^{-st} \cos 2t = 0.\)</span>
+<div class="para">should exist.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-2-7-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-laplace-transform-72"><span class="process-math">\(\mathcal{L}\{\sin 2t\} = -\frac{2}{s^2} (0 - 1) - \frac{4}{s^2} \int_{0}^{\infty} \sin 2t \, e^{-st} dt\)</span></div>
-<div class="para" id="sec-laplace-transform-73"><span class="process-math">\(= \frac{2}{s^2} - \frac{4}{s^2} \mathcal{L}\{\sin 2t\} \Rightarrow \left( 1 + \frac{4}{s^2} \right) \mathcal{L}\{\sin 2t\} = \frac{2}{s^2}\)</span></div>
-<div class="para" id="sec-laplace-transform-74">So we conclude that</div>
-<div class="para" id="sec-laplace-transform-75"><span class="process-math">\(\mathcal{L}\{\sin 2t\} = \frac{2}{s^2 + 4}, \quad s \gt 0.\)</span></div>
-<div class="para" id="sec-laplace-transform-76">Example 7. Evaluate <span class="process-math">\(\mathcal{L}\{\sin \beta t\}.\)</span>
+<div class="autopermalink" data-description="Definition 3.1.3"><a href="#sec-laplace-transform-2-7" title="Copy heading and permalink for Definition 3.1.3">🔗</a></div></article><div class="autopermalink" data-description="Subsection 3.1.1: Integral Transform"><a href="#sec-laplace-transform-2" title="Copy heading and permalink for Subsection 3.1.1: Integral Transform">🔗</a></div></section><section class="subsection" id="sec-laplace-transform-3"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.2</span><span class="space"> </span><span class="title">Examples of Laplace transforms</span>
+</h3>
+<details id="sec-laplace-transform-3-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluate <span class="process-math">\(\mathcal{L}\{1\}\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-laplace-transform-3-2-2">
+<div class="displaymath process-math" id="sec-laplace-transform-3-2-2-1">
+\begin{align*}
+\mathcal{L}\{1\} = \ \amp \int_{0}^{\infty} e^{-st} dt = \left. \dfrac{e^{-st}}{-s} \right|_{0}^{\infty} \\
+= \ \amp \left( \lim_{t \to \infty} \dfrac{e^{-st}}{-s} \right) - \frac{1}{-s}.
+\end{align*}
 </div>
-<div class="para" id="sec-laplace-transform-77">With a similar procedure, we see that</div>
-<div class="para" id="sec-laplace-transform-78"><span class="process-math">\(\mathcal{L}\{\sin \beta t\} = \frac{\beta}{s^2} - \frac{\beta^2}{s^2} \mathcal{L}\{\sin \beta t\} \Rightarrow \left( 1 + \frac{\beta^2}{s^2} \right) \mathcal{L}\{\sin \beta t\} = \frac{\beta}{s^2}\)</span></div>
-<div class="para" id="sec-laplace-transform-79">So we conclude that</div>
-<div class="para" id="sec-laplace-transform-80"><em class="alert">\mathcal{L}\{\sin \beta t\} = \frac{\beta}{s^2 + \beta^2}, \quad s \gt 0.</em></div>
-<div class="para" id="sec-laplace-transform-81">Example 8. Evaluate <span class="process-math">\(\mathcal{L}\{\cos \beta t\}.\)</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-3-2-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-laplace-transform-82">With a similar procedure, we see that</div>
-<div class="para" id="sec-laplace-transform-83"><span class="process-math">\(\mathcal{L}\{\cos \beta t\} = \frac{1}{s} - \frac{\beta^2}{s^2} \mathcal{L}\{\cos \beta t\} \Rightarrow \left( 1 + \frac{\beta^2}{s^2} \right) \mathcal{L}\{\cos \beta t\} = \frac{s}{s^2}\)</span></div>
-<div class="para" id="sec-laplace-transform-84">So we conclude that</div>
-<div class="para" id="sec-laplace-transform-85"><em class="alert">\mathcal{L}\{\cos \beta t\} = \frac{s}{s^2 + \beta^2}, \quad s \gt 0.</em></div>
-<div class="para" id="sec-laplace-transform-86">Theorem: For every real numbers <span class="process-math">\(\alpha, \beta,\)</span>
+<ul class="disc" id="sec-laplace-transform-3-2-3">
+<li id="sec-laplace-transform-3-2-3-1">
+<div class="para" id="p-derived-sec-laplace-transform-3-2-3-1">If <span class="process-math">\(s \gt 0\text{,}\)</span> then <span class="process-math">\(\lim_{t \to \infty} \dfrac{e^{-st}}{-s} = 0.\)</span> The integral converges. In this case,<div class="displaymath process-math">
+\begin{equation*}
+F(s) = 0 - \frac{1}{-s} = \dfrac{1}{s}.
+\end{equation*}
 </div>
-<div class="para" id="sec-laplace-transform-87"><span class="process-math">\(\mathcal{L}\{af(t) + \beta g(t)\} = \alpha \mathcal{L}\{f(t)\} + \beta \mathcal{L}\{g(t)\}.\)</span></div>
-<div class="para" id="sec-laplace-transform-88">Proof: It follows from the linearity of integrals.</div>
-<div class="para" id="sec-laplace-transform-89"><span class="process-math">\(\mathcal{L}\{af(t) + \beta g(t)\} = \int_{0}^{\infty} (af(t) + \beta g(t)) e^{-st} dt\)</span></div>
-<div class="para" id="sec-laplace-transform-90"><span class="process-math">\(= \alpha \int_{0}^{\infty} f(t)e^{-st} dt + \beta \int_{0}^{\infty} g(t)e^{-st} dt\)</span></div>
-<div class="para" id="sec-laplace-transform-91"><span class="process-math">\(= \alpha \mathcal{L}\{f(t)\} + \beta \mathcal{L}\{g(t)\}.\)</span></div>
-<div class="para" id="sec-laplace-transform-92">Hyperbolic functions</div>
-<div class="para" id="sec-laplace-transform-93">Recall that from the Euler’s formula, the usual sine and cosine functions may also be expressed as</div>
-<div class="para" id="sec-laplace-transform-94"><span class="process-math">\(\sin t = \frac{e^{it} - e^{-it}}{2i}, \quad \cos x = \frac{e^{it} + e^{-it}}{2}.\)</span></div>
-<div class="para" id="sec-laplace-transform-95">The hyperbolic functions are defined similarly:</div>
-<div class="para" id="sec-laplace-transform-96"><span class="process-math">\(\sinh x = \frac{e^t - e^{-t}}{2}, \quad \cosh x = \frac{e^t + e^{-t}}{2}.\)</span></div>
-<div class="para" id="sec-laplace-transform-97">These functions are widely used in engineering practices.</div>
-<div class="para" id="sec-laplace-transform-98">The Laplace transform of hyperbolic functions can be obtained via linearity. For every <span class="process-math">\(k \gt 0:\)</span>
 </div>
-<div class="para" id="sec-laplace-transform-99"><span class="process-math">\(\mathcal{L}\{\sinh kt\} = \mathcal{L}\left\{ \frac{e^{kt} - e^{-kt}}{2} \right\} = \frac{1}{2} \mathcal{L}\{e^{kt}\} - \frac{1}{2} \mathcal{L}\{e^{-kt}\}\)</span></div>
-<div class="para" id="sec-laplace-transform-100"><span class="process-math">\(= \frac{1}{2} \cdot \frac{1}{s - k} - \frac{1}{2} \cdot \frac{1}{s + k} = \frac{1}{2} \cdot \frac{s + k - (s - k)}{(s - k)(s + k)} = \frac{k}{s^2 - k^2}.\)</span></div>
-<div class="para" id="sec-laplace-transform-101"><span class="process-math">\(\mathcal{L}\{\cosh kt\} = \mathcal{L}\left\{ \frac{e^{kt} + e^{-kt}}{2} \right\} = \frac{1}{2} \mathcal{L}\{e^{kt}\} + \frac{1}{2} \mathcal{L}\{e^{-kt}\}\)</span></div>
-<div class="para" id="sec-laplace-transform-102"><span class="process-math">\(= \frac{1}{2} \cdot \frac{1}{s - k} + \frac{1}{2} \cdot \frac{1}{s + k} = \frac{1}{2} \cdot \frac{s + k + (s - k)}{(s - k)(s + k)} = \frac{s}{s^2 - k^2}.\)</span></div>
-<div class="para" id="sec-laplace-transform-103">Summary of basic formulas for Laplace transform</div>
-<ul class="disc" id="sec-laplace-transform-104">
-<li id="sec-laplace-transform-104-1"><div class="para" id="p-derived-sec-laplace-transform-104-1">Power functions</div></li>
-<li id="sec-laplace-transform-104-4"><div class="para" id="p-derived-sec-laplace-transform-104-4">Exponential functions: for every real number <span class="process-math">\(\alpha,\)</span>
-</div></li>
-<li id="sec-laplace-transform-104-6"><div class="para" id="p-derived-sec-laplace-transform-104-6">Trigonometric and hyperbolic functions: for every <span class="process-math">\(\beta, k \gt 0,\)</span>
-</div></li>
+<div class="autopermalink" data-description="Item"><a href="#sec-laplace-transform-3-2-3-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-laplace-transform-3-2-3-2">
+<div class="para" id="p-derived-sec-laplace-transform-3-2-3-2">If <span class="process-math">\(s \lt 0\text{,}\)</span> then <span class="process-math">\(\lim_{t \to \infty} \dfrac{e^{-st}}{-s} = +\infty.\)</span> The integral diverges.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-laplace-transform-3-2-3-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-laplace-transform-3-2-3-3">
+<div class="para" id="p-derived-sec-laplace-transform-3-2-3-3">If <span class="process-math">\(s = 0\text{,}\)</span> we cannot use the previous formula because <span class="process-math">\(1/s\)</span> makes no sense. But looking back to the integral, note that when <span class="process-math">\(s = 0, e^{-st} = 1.\)</span> In this case,<div class="displaymath process-math">
+\begin{equation*}
+\int_{0}^{\infty} e^{-st} dt = \int_{0}^{\infty} 1 dt
+\end{equation*}
+</div>also diverges.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-laplace-transform-3-2-3-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
-<div class="para" id="sec-laplace-transform-105">When does <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> exist</div>
-<div class="para" id="sec-laplace-transform-106">Recall: A function is piecewise continuous on <span class="process-math">\([0, \infty),\)</span> if in any subinterval <span class="process-math">\([a, b],\)</span> the function is continuous everywhere except at finitely many numbers. The discontinuities are either removable or jump.</div>
-<div class="para" id="sec-laplace-transform-107">Definition: A function is said to be of exponential order, if there exist constants <span class="process-math">\(c, M \gt 0\)</span> and <span class="process-math">\(T \gt 0,\)</span> such that <span class="process-math">\(|f(t)| \leq Me^{ct}\)</span> for all <span class="process-math">\(t \gt T.\)</span>
+<div class="para logical" id="sec-laplace-transform-3-2-4">
+<div class="para">Conclusion:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{1\} = \dfrac{1}{s}, \quad s \gt 0.
+\end{equation*}
 </div>
-<div class="para" id="sec-laplace-transform-108">In other words, <span class="process-math">\(|f(t)|\)</span> does not grow faster than a constant multiple of a simple exponential function.</div>
-<div class="para" id="sec-laplace-transform-109">Definition: A function is said to be of exponential order, if there exist constants <span class="process-math">\(c, M \gt 0\)</span> and <span class="process-math">\(T \gt 0,\)</span> such that <span class="process-math">\(|f(t)| \leq Me^{ct}\)</span> for all <span class="process-math">\(t \gt T.\)</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-3-2-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-laplace-transform-110">In other words, <span class="process-math">\(|f(t)|\)</span> does not grow faster than a constant multiple of a simple exponential function <span class="process-math">\(e^{ct}.\)</span>
+<div class="autopermalink" data-description="Example 3.1.4: Evaluate \mathcal{L}\{1\}"><a href="#sec-laplace-transform-3-2" title="Copy heading and permalink for Example 3.1.4: Evaluate \mathcal{L}\{1\}">🔗</a></div></article></details><details id="sec-laplace-transform-3-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.5</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluate <span class="process-math">\(\mathcal{L}\{t\}\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-laplace-transform-3-3-2">
+<div class="displaymath process-math" id="sec-laplace-transform-3-3-2-1">
+\begin{align*}
+\mathcal{L}\{t\} = \ \amp  \int_{0}^{\infty} te^{-st} dt = -\dfrac{1}{s} te^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} 1 \cdot \left(-\dfrac{1}{s} e^{-st}\right) dt\\
+= \ \amp  -\dfrac{1}{s} \left( \lim_{t \to \infty} te^{-st} - 0 \right) + \dfrac{1}{s} \int_{0}^{\infty} e^{-st} dt
+\end{align*}
 </div>
-<div class="para" id="sec-laplace-transform-111">Polynomial functions, simple exponential function <span class="process-math">\(e^{at},\)</span> cosine and sine functions are of exponential order.</div>
-<div class="para" id="sec-laplace-transform-112">The function <span class="process-math">\(f(t) = e^{t^2}\)</span> is not of exponential order, since for every possible <span class="process-math">\(c \gt 0,\)</span>
+<div class="para">We have seen that <span class="process-math">\(\int_{0}^{\infty} e^{-st} dt\)</span> converges if and only if <span class="process-math">\(s \gt 0.\)</span> In this case, using L’Hôpital’s rule,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\lim_{t \to \infty} te^{-st} = \lim_{t \to \infty} \dfrac{t}{e^{st}} = 0. 
+\end{equation*}
 </div>
-<div class="para" id="sec-laplace-transform-113"><span class="process-math">\(\left| \frac{e^{t^2}}{e^{ct}} \right| = e^{t^2 - ct} = e^{t^2(t - c)} \to \infty\)</span></div>
-<div class="para" id="sec-laplace-transform-114">So <span class="process-math">\(e^{t^2}\)</span> grows faster than any multiple of <span class="process-math">\(e^{ct}.\)</span>
+<div class="para">so</div>
+<div class="displaymath process-math" id="sec-laplace-transform-3-3-2-5">
+\begin{align*}
+\mathcal{L}\{t\} = \ \amp \int_{0}^{\infty} te^{-st} dt = -\dfrac{1}{s} te^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} 1 \cdot \left(-\dfrac{1}{s} e^{-st}\right) dt\\
+= \ \amp -\dfrac{1}{s} \left( \lim_{t \to \infty} te^{-st} - 0 \right) + \dfrac{1}{s} \int_{0}^{\infty} e^{-st} dt\\
+= \ \amp -\dfrac{1}{s} \cdot (0 - 0) + \dfrac{1}{s} \cdot \dfrac{1}{s} = \dfrac{1}{s^2}.
+\end{align*}
 </div>
-<div class="para" id="sec-laplace-transform-115">Theorem: If <span class="process-math">\(f\)</span> is piecewise continuous on <span class="process-math">\([0, \infty)\)</span> and of exponential order, then <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> exists for <span class="process-math">\(s \gt c.\)</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-3-3-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-laplace-transform-116">Proof: Since <span class="process-math">\(f\)</span> is of exponential order, there exists <span class="process-math">\(c \gt 0, M \gt 0, T \gt 0,\)</span> such that whenever <span class="process-math">\(t \gt T, |f(t)| \leq Me^{ct}.\)</span> Using the number <span class="process-math">\(T,\)</span> we rewrite</div>
-<div class="para" id="sec-laplace-transform-117"><span class="process-math">\(\mathcal{L}\{f(t)\} = \int_{0}^{T} e^{-st} f(t) dt + \int_{T}^{\infty} e^{-st} f(t) dt = I_1 + I_2\)</span></div>
-<div class="para" id="sec-laplace-transform-118">Since <span class="process-math">\(f\)</span> is piecewise continuous, <span class="process-math">\(I_1\)</span> exists.</div>
-<div class="para" id="sec-laplace-transform-119">For <span class="process-math">\(I_2,\)</span> we use the inequality <span class="process-math">\(|f(t)| \leq Me^{ct}\)</span> to show that</div>
-<div class="para" id="sec-laplace-transform-120"><span class="process-math">\(\int_{T}^{\infty} |e^{-st} f(t)| dt = \int_{T}^{\infty} e^{-st} |f(t)| dt \leq \int_{T}^{\infty} e^{-st} e^{ct} dt\)</span></div>
-<div class="para" id="sec-laplace-transform-121">Right-hand side is precisely <span class="process-math">\(\mathcal{L}\{e^{ct}\}\)</span> that exists when <span class="process-math">\(s \gt c.\)</span> In other words, <span class="process-math">\(I_2\)</span> converges absolutely when <span class="process-math">\(s \gt c.\)</span>
+<div class="para logical" id="sec-laplace-transform-3-3-3">
+<div class="para">Conclusion:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{t\} = \dfrac{1}{s^2}, \quad s \gt 0.
+\end{equation*}
 </div>
-<div class="para" id="sec-laplace-transform-122">Remark: These two conditions are sufficient but not necessary. In other words, <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> exists does not mean that <span class="process-math">\(f(t)\)</span> should satisfy these two conditions.</div>
-<div class="para" id="sec-laplace-transform-123">Examples: The function <span class="process-math">\(t^{-\frac{1}{2}}\)</span> is not piecewise continuous. The function <span class="process-math">\(2te^{t^2} \cos e^{t^2}\)</span> is not of exponential order. But it is not difficult to see that both <span class="process-math">\(\mathcal{L}\{t^{-\frac{1}{2}}\}\)</span> and <span class="process-math">\(\mathcal{L}\{2te^{t^2} \cos e^{t^2}\}\)</span> exist.</div>
-<div class="para" id="sec-laplace-transform-124">Long term behavior of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-3-3-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-laplace-transform-125">Theorem: If <span class="process-math">\(f\)</span> is piecewise continuous on <span class="process-math">\([0, \infty)\)</span> and of exponential order, then the function <span class="process-math">\(F(s) = \mathcal{L}\{f(t)\}\)</span> satisfies <span class="process-math">\(\lim_{s \to \infty} F(s) = 0.\)</span>
+<div class="autopermalink" data-description="Example 3.1.5: Evaluate \mathcal{L}\{t\}"><a href="#sec-laplace-transform-3-3" title="Copy heading and permalink for Example 3.1.5: Evaluate \mathcal{L}\{t\}">🔗</a></div></article></details><details id="sec-laplace-transform-3-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.6</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluate <span class="process-math">\(\mathcal{L}\{t^n\}\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-laplace-transform-3-4-2">
+<div class="displaymath process-math" id="sec-laplace-transform-3-4-2-1">
+\begin{align*}
+\mathcal{L}\{t^n\} = \ \amp \int_{0}^{\infty} t^n e^{-st} dt\\
+= \ \amp -\dfrac{1}{s} t^n e^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} nt^{n-1} \left(-\dfrac{1}{s} e^{-st}\right) dt\\
+= \ \amp -\dfrac{1}{s} \left( \lim_{t \to \infty} t^n e^{-st} - 0 \right) + \dfrac{n}{s} \int_{0}^{\infty} t^{n-1} e^{-st} dt
+\end{align*}
 </div>
-<div class="para" id="sec-laplace-transform-126">Proof: Take <span class="process-math">\(c, M, T \gt 0\)</span> as in the previous proof. Since <span class="process-math">\(f\)</span> is piecewise continuous on <span class="process-math">\([0, T],\)</span> <span class="process-math">\(f(x)\)</span> is bounded. By adjusting <span class="process-math">\(M,\)</span> we may assume that <span class="process-math">\(|f(t)| \leq Me^{ct}\)</span> on <span class="process-math">\([0, \infty).\)</span>
+<div class="para">Clearly, <span class="process-math">\(\lim_{t \to \infty} t^n e^{-st}\)</span> exists if and only if <span class="process-math">\(s \gt 0\text{,}\)</span> and the limit is 0. So we have obtained that for <span class="process-math">\(s \gt 0,\)</span>
 </div>
-<div class="para" id="sec-laplace-transform-127"><span class="process-math">\(0 \leq |F(s)| \leq \int_{0}^{\infty} e^{-st} |f(t)| dt \leq \int_{0}^{\infty} e^{-st} e^{ct} dt = \int_{0}^{\infty} e^{-(s - c)t} dt = \frac{1}{s - c} \to 0, \text{ as } s \to \infty.\)</span></div>
-<div class="para" id="sec-laplace-transform-128">The conclusion then follows from the squeeze theorem.</div></section></div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{t^n\} = -\frac{n}{s} \int_{0}^{\infty} t^{n-1} e^{-st} dt = -\frac{n}{s} \mathcal{L}\{t^{n-1}\}.
+\end{equation*}
+</div>
+<div class="para">This defines a recursion of <span class="process-math">\(\mathcal{L}\{t^n\}\)</span> that can be easily solved:</div>
+<div class="displaymath process-math" id="sec-laplace-transform-3-4-2-7">
+\begin{align*}
+\mathcal{L}\{t^n\} = \ \amp \dfrac{n}{s} \mathcal{L}\{t^{n-1}\} = \dfrac{n}{s} \cdot \dfrac{n - 1}{s} \mathcal{L}\{t^{n-2}\}\\
+= \ \amp \cdots = \dfrac{n}{s} \cdot \dfrac{n - 1}{s} \cdots \dfrac{2}{s} \cdot \dfrac{1}{s} \mathcal{L}\{1\}\\
+= \ \amp \dfrac{n \cdot (n - 1) \cdots 2 \cdot 1}{s^{n + 1}} = \dfrac{n!}{s^{n + 1}}.
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-3-4-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-laplace-transform-3-4-3">
+<div class="para">Conclusion:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{t^n\} = \dfrac{n!}{s^{n + 1}}, \quad s \gt 0.
+\end{equation*}
+</div>
+<div class="para">For example,</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{t^2\} = \dfrac{2!}{s^3}, \quad \mathcal{L}\{t^3\} = \dfrac{3!}{s^4}, \quad \mathcal{L}\{t^4\} = \dfrac{4!}{s^5}, \quad s \gt 0.
+\end{equation*}
+</div>
+<div class="para">Note that the power of <span class="process-math">\(s\)</span> in the denominator is 1 larger than the power of <span class="process-math">\(t.\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-3-4-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 3.1.6: Evaluate \mathcal{L}\{t^n\}"><a href="#sec-laplace-transform-3-4" title="Copy heading and permalink for Example 3.1.6: Evaluate \mathcal{L}\{t^n\}">🔗</a></div></article></details><details id="sec-laplace-transform-3-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.7</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluate <span class="process-math">\(\mathcal{L}\{e^{-3t}\}\)</span> and <span class="process-math">\(\mathcal{L}\{e^{5t}\}\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><ul class="disc" id="sec-laplace-transform-3-5-2">
+<li id="sec-laplace-transform-3-5-2-1">
+<div class="para" id="p-derived-sec-laplace-transform-3-5-2-1">By definition,<div class="displaymath process-math" id="sec-laplace-transform-3-5-2-1-1">
+\begin{align*}
+\mathcal{L}\{e^{-3t}\} = \ \amp \int_{0}^{\infty} e^{-3t} e^{-st} dt = \int_{0}^{\infty} e^{-(s + 3)t} dt\\
+= \ \amp \frac{1}{-(s + 3)} e^{-(s + 3)t} \bigg|_{0}^{\infty} = \frac{1}{-(s + 3)} \left( \lim_{t \to \infty} e^{-(s + 3)t} - 1 \right)
+\end{align*}
+</div>Clearly, <span class="process-math">\(\lim_{t \to \infty} e^{-(s + 3)t}\)</span> exists when <span class="process-math">\(s + 3 \gt 0,\)</span> i.e., <span class="process-math">\(s \gt -3.\)</span> The limit is zero. So<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{e^{-3t}\} = \frac{1}{-(s + 3)} (0 - 1) = \frac{1}{s + 5}, \quad s \gt -3.
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-laplace-transform-3-5-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-laplace-transform-3-5-2-2">
+<div class="para" id="p-derived-sec-laplace-transform-3-5-2-2">By definition,<div class="displaymath process-math" id="sec-laplace-transform-3-5-2-2-1">
+\begin{align*}
+\mathcal{L}\{e^{5t}\} = \ \amp \int_{0}^{\infty} e^{5t} e^{-st} dt = \int_{0}^{\infty} e^{-(s - 5)t} dt\\
+= \ \amp \frac{1}{-(s - 5)} e^{-(s - 5)t} \bigg|_{0}^{\infty} = \frac{1}{-(s - 5)} \left( \lim_{t \to \infty} e^{-(s - 5)t} - 1 \right)
+\end{align*}
+</div>Clearly, <span class="process-math">\(\lim_{t \to \infty} e^{-(s - 5)t}\)</span> exists when <span class="process-math">\(s - 5 \gt 0,\)</span> i.e., <span class="process-math">\(s \gt 5.\)</span> The limit is zero. So<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{e^{5t}\} = \frac{1}{-(s - 5)} (0 - 1) = \frac{1}{s - 5}, \quad s \gt 5.
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-laplace-transform-3-5-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Example 3.1.7: Evaluate \mathcal{L}\{e^{-3t}\} and \mathcal{L}\{e^{5t}\}"><a href="#sec-laplace-transform-3-5" title="Copy heading and permalink for Example 3.1.7: Evaluate \mathcal{L}\{e^{-3t}\} and \mathcal{L}\{e^{5t}\}">🔗</a></div></article></details><details id="sec-laplace-transform-3-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.8</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluate <span class="process-math">\(\mathcal{L}\{e^{at}\}\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-laplace-transform-3-6-2">
+<div class="para">By definition,</div>
+<div class="displaymath process-math" id="sec-laplace-transform-3-6-2-1">
+\begin{align*}
+\mathcal{L}\{e^{at}\} = \ \amp \int_{0}^{\infty} e^{at} e^{-st} dt = \int_{0}^{\infty} e^{-(s - \alpha)t} dt\\
+= \ \amp \frac{1}{-(s - \alpha)} e^{-(s - \alpha)t} \bigg|_{0}^{\infty} = \frac{1}{-(s - \alpha)} \left( \lim_{t \to \infty} e^{-(s - \alpha)t} - 1 \right)
+\end{align*}
+</div>
+<div class="para">Clearly, <span class="process-math">\(\lim_{t \to \infty} e^{-(s - \alpha)t}\)</span> exists when <span class="process-math">\(s - \alpha \gt 0,\)</span> i.e., <span class="process-math">\(s \gt \alpha.\)</span> The limit is zero. So</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{e^{at}\} = \frac{1}{s - \alpha}, \quad s \gt \alpha.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-3-6-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 3.1.8: Evaluate \mathcal{L}\{e^{at}\}"><a href="#sec-laplace-transform-3-6" title="Copy heading and permalink for Example 3.1.8: Evaluate \mathcal{L}\{e^{at}\}">🔗</a></div></article></details><details id="sec-laplace-transform-3-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.9</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluate <span class="process-math">\(\mathcal{L}\{\sin 2t\}\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-laplace-transform-3-7-2">
+<div class="displaymath process-math" id="sec-laplace-transform-3-7-2-1">
+\begin{align*}
+\mathcal{L}\{\sin 2t\} = \ \amp \int_{0}^{\infty} \sin 2t \, e^{-st} dt\\
+= \ \amp -\dfrac{1}{s} \sin 2t \, e^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} 2 \cos 2t \left(-\dfrac{1}{s} e^{-st}\right) dt\\
+= \ \amp -\dfrac{1}{s} \left( \lim_{t \to \infty} e^{-st} \sin 2t - 0 \right) + \frac{2}{s} \int_{0}^{\infty} \cos 2t \, e^{-st} dt
+\end{align*}
+</div>
+<div class="para">Clearly, <span class="process-math">\(\lim_{t \to \infty} e^{-st} \sin 2t\)</span> exists <em class="alert">iff</em> <span class="process-math">\(s \gt 0,\)</span> and equals 0. So</div>
+<div class="displaymath process-math" id="sec-laplace-transform-3-7-2-5">
+\begin{align*}
+\mathcal{L}\{\sin 2t\} =\ \amp -\frac{2}{s} \int_{0}^{\infty} \cos 2t \, e^{-st} dt\\
+= \ \amp \frac{2}{s} \left( -\dfrac{1}{s} \cos 2t \, e^{-st} \bigg|_{0}^{\infty} - \int_{0}^{\infty} (-2 \sin 2t) \left(-\dfrac{1}{s} e^{-st}\right) dt \right)\\
+= \ \amp -\frac{2}{s^2} \left( \lim_{t \to \infty} \cos 2t \, e^{-st} - \cos 0 \, e^0 \right) - \frac{4}{s^2} \int_{0}^{\infty} \sin 2t \, e^{-st} dt
+\end{align*}
+</div>
+<div class="para">Clearly when <span class="process-math">\(s \gt 0,\)</span> <span class="process-math">\(\lim_{t \to \infty} e^{-st} \cos 2t = 0.\)</span> So</div>
+<div class="displaymath process-math" id="sec-laplace-transform-3-7-2-8">
+\begin{align*}
+\mathcal{L}\{\sin 2t\} = \ \amp -\frac{2}{s^2} (0 - 1) - \frac{4}{s^2} \int_{0}^{\infty} \sin 2t \, e^{-st} dt\\
+= \ \amp \frac{2}{s^2} - \frac{4}{s^2} \mathcal{L}\{\sin 2t\} \Rightarrow \left( 1 + \frac{4}{s^2} \right) \mathcal{L}\{\sin 2t\} = \frac{2}{s^2}
+\end{align*}
+</div>
+<div class="para">So we conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{\sin 2t\} = \frac{2}{s^2 + 4}, \quad s \gt 0.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-3-7-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 3.1.9: Evaluate \mathcal{L}\{\sin 2t\}"><a href="#sec-laplace-transform-3-7" title="Copy heading and permalink for Example 3.1.9: Evaluate \mathcal{L}\{\sin 2t\}">🔗</a></div></article></details><details id="sec-laplace-transform-3-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.10</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluate <span class="process-math">\(\mathcal{L}\{\sin \beta t\}\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-laplace-transform-3-8-2">
+<div class="para">With a similar procedure, we see that</div>
+<div class="displaymath process-math" id="sec-laplace-transform-3-8-2-1">
+\begin{align*}
+\mathcal{L}\{\sin \beta t\} = \ \amp \frac{\beta}{s^2} - \frac{\beta^2}{s^2} \mathcal{L}\{\sin \beta t\} \Rightarrow \left( 1 + \frac{\beta^2}{s^2} \right) \mathcal{L}\{\sin \beta t\} = \frac{\beta}{s^2}
+\end{align*}
+</div>
+<div class="para">So we conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{\sin \beta t\} = \frac{\beta}{s^2 + \beta^2}, \quad s \gt 0.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-3-8-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 3.1.10: Evaluate \mathcal{L}\{\sin \beta t\}"><a href="#sec-laplace-transform-3-8" title="Copy heading and permalink for Example 3.1.10: Evaluate \mathcal{L}\{\sin \beta t\}">🔗</a></div></article></details><details id="sec-laplace-transform-3-9" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<span class="type">Example</span><span class="space"> </span><span class="codenumber">3.1.11</span><span class="period">.</span><span class="space"> </span><span class="title">Evaluate <span class="process-math">\(\mathcal{L}\{\cos \beta t\}\)</span>.</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para logical" id="sec-laplace-transform-3-9-2">
+<div class="para">With a similar procedure, we see that</div>
+<div class="displaymath process-math" id="sec-laplace-transform-3-9-2-1">
+\begin{align*}
+\mathcal{L}\{\cos \beta t\} = \ \amp \frac{1}{s} - \frac{\beta^2}{s^2} \mathcal{L}\{\cos \beta t\} \Rightarrow \left( 1 + \frac{\beta^2}{s^2} \right) \mathcal{L}\{\cos \beta t\} = \frac{s}{s^2}
+\end{align*}
+</div>
+<div class="para">So we conclude that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{\cos \beta t\} = \frac{s}{s^2 + \beta^2}, \quad s \gt 0.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-3-9-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 3.1.11: Evaluate \mathcal{L}\{\cos \beta t\}"><a href="#sec-laplace-transform-3-9" title="Copy heading and permalink for Example 3.1.11: Evaluate \mathcal{L}\{\cos \beta t\}">🔗</a></div></article></details><article class="theorem theorem-like" id="sec-laplace-transform-3-10"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.12</span><span class="period">.</span><span class="space"> </span><span class="title">Linearity of Laplace transform.</span>
+</h4>
+<div class="para logical" id="sec-laplace-transform-3-10-2">
+<div class="para">For every real numbers <span class="process-math">\(\alpha, \beta,\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{\alpha f(t) + \beta g(t)\} = \alpha \mathcal{L}\{f(t)\} + \beta \mathcal{L}\{g(t)\}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-3-10-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 3.1.12: Linearity of Laplace transform"><a href="#sec-laplace-transform-3-10" title="Copy heading and permalink for Theorem 3.1.12: Linearity of Laplace transform">🔗</a></div></article><details id="sec-laplace-transform-3-11" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-laplace-transform-3-11-1">
+<div class="para">It follows from the linearity of integrals.</div>
+<div class="displaymath process-math" id="sec-laplace-transform-3-11-1-1">
+\begin{align*}
+\mathcal{L}\{\alpha f(t) + \beta g(t)\} = \ \amp \int_{0}^{\infty} (\alpha f(t) + \beta g(t)) e^{-st} dt\\
+= \ \amp \alpha \int_{0}^{\infty} f(t)e^{-st} dt + \beta \int_{0}^{\infty} g(t)e^{-st} dt\\
+= \ \amp \alpha \mathcal{L}\{f(t)\} + \beta \mathcal{L}\{g(t)\}.
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-3-11-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.1.2.1"><a href="#sec-laplace-transform-3-11" title="Copy heading and permalink for Proof 3.1.2.1">🔗</a></div></article></details><article class="definition definition-like" id="sec-laplace-transform-3-12"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.13</span><span class="period">.</span><span class="space"> </span><span class="title">Hyperbolic functions.</span>
+</h4>
+<div class="para logical" id="sec-laplace-transform-3-12-2">
+<div class="para">Recall that from the Euler’s formula, the usual sine and cosine functions may also be expressed as</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sin t = \frac{e^{it} - e^{-it}}{2i}, \quad \cos t = \frac{e^{it} + e^{-it}}{2}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-3-12-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-laplace-transform-3-12-3">
+<div class="para">The <dfn class="terminology">hyperbolic functions</dfn> are defined similarly:</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\sinh t = \frac{e^t - e^{-t}}{2}, \quad \cosh t = \frac{e^t + e^{-t}}{2}.
+\end{equation*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-3-12-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-laplace-transform-3-12-4">These functions are widely used in engineering practices.<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-3-12-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 3.1.13: Hyperbolic functions"><a href="#sec-laplace-transform-3-12" title="Copy heading and permalink for Definition 3.1.13: Hyperbolic functions">🔗</a></div></article><div class="para logical" id="sec-laplace-transform-3-13">
+<div class="para">The Laplace transform of hyperbolic functions can be obtained via linearity. For every <span class="process-math">\(k \gt 0:\)</span>
+</div>
+<div class="displaymath process-math" id="sec-laplace-transform-3-13-2">
+\begin{align*}
+\mathcal{L}\{\sinh kt\} = \ \amp \mathcal{L}\left\{ \frac{e^{kt} - e^{-kt}}{2} \right\} = \frac{1}{2} \mathcal{L}\{e^{kt}\} - \frac{1}{2} \mathcal{L}\{e^{-kt}\}\\
+= \ \amp \frac{1}{2} \cdot \frac{1}{s - k} - \frac{1}{2} \cdot \frac{1}{s + k} = \frac{1}{2} \cdot \frac{s + k - (s - k)}{(s - k)(s + k)} = \frac{k}{s^2 - k^2}.
+\end{align*}
+</div>
+<div class="displaymath process-math" id="sec-laplace-transform-3-13-3">
+\begin{align*}
+\mathcal{L}\{\cosh kt\} = \ \amp \mathcal{L}\left\{ \frac{e^{kt} + e^{-kt}}{2} \right\} = \frac{1}{2} \mathcal{L}\{e^{kt}\} + \frac{1}{2} \mathcal{L}\{e^{-kt}\}\\
+= \ \amp \frac{1}{2} \cdot \frac{1}{s - k} + \frac{1}{2} \cdot \frac{1}{s + k} = \frac{1}{2} \cdot \frac{s + k + (s - k)}{(s - k)(s + k)} = \frac{s}{s^2 - k^2}.
+\end{align*}
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-3-13" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 3.1.2: Examples of Laplace transforms"><a href="#sec-laplace-transform-3" title="Copy heading and permalink for Subsection 3.1.2: Examples of Laplace transforms">🔗</a></div></section><section class="subsection" id="sec-laplace-transform-4"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.3</span><span class="space"> </span><span class="title">Summary of basic formulas for Laplace transform</span>
+</h3>
+<ul class="disc" id="sec-laplace-transform-4-2">
+<li id="sec-laplace-transform-4-2-1">
+<div class="para" id="p-derived-sec-laplace-transform-4-2-1">Power functions:<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{1\} = \dfrac{1}{s}, \quad \mathcal{L}\{t\} = \frac{1}{s^2}, \quad \mathcal{L}\{t^n\} = \frac{n!}{s^{n + 1}}, \quad s \gt 0.
+\end{equation*}
+</div>Then by linearity, we may obtain the Laplace transform of all polynomial functions, e.g.,<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{1 + 5t + 3t^2\} = \mathcal{L}\{1\} + 5\mathcal{L}\{t\} + 3\mathcal{L}\{t^2\} = \dfrac{1}{s} + \frac{5}{s^2} + 3 \cdot \frac{2!}{s^3} = \dfrac{1}{s} + \frac{5}{s^2} + \frac{6}{s^3}.
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-laplace-transform-4-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-laplace-transform-4-2-2">
+<div class="para" id="p-derived-sec-laplace-transform-4-2-2">Exponential functions: for every real number <span class="process-math">\(\alpha,\)</span><div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{e^{\alpha t}\} = \frac{1}{s - \alpha}, \quad s \gt \alpha.
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-laplace-transform-4-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-laplace-transform-4-2-3">
+<div class="para" id="p-derived-sec-laplace-transform-4-2-3">Trigonometric functions: for every <span class="process-math">\(\beta \gt 0,\)</span><div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{\cos \beta t\} = \frac{s}{s^2 + \beta^2}, \quad \mathcal{L}\{\sin \beta t\} = \frac{\beta}{s^2 + \beta^2}, \quad s \gt 0.
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-laplace-transform-4-2-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-laplace-transform-4-2-4">
+<div class="para" id="p-derived-sec-laplace-transform-4-2-4">Hyperbolic functions, for every <span class="process-math">\(k \gt 0,\)</span><div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{\cosh kt\} = \frac{s}{s^2 - k^2}, \quad \mathcal{L}\{\sinh kt\} = \frac{k}{s^2 - k^2}, \quad s \gt k.
+\end{equation*}
+</div>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-laplace-transform-4-2-4" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Subsection 3.1.3: Summary of basic formulas for Laplace transform"><a href="#sec-laplace-transform-4" title="Copy heading and permalink for Subsection 3.1.3: Summary of basic formulas for Laplace transform">🔗</a></div></section><section class="subsection" id="sec-laplace-transform-5"><h3 class="heading hide-type">
+<span class="type">Subsection</span><span class="space"> </span><span class="codenumber">3.1.4</span><span class="space"> </span><span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span>
+</h3>
+<div class="para" id="sec-laplace-transform-5-2">Recall: A function is piecewise continuous on <span class="process-math">\([0, \infty),\)</span> if in any subinterval <span class="process-math">\([a, b],\)</span> the function is continuous everywhere except at finitely many removable or jump discontinuities.<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-5-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="definition definition-like" id="sec-laplace-transform-5-3"><h4 class="heading">
+<span class="type">Definition</span><span class="space"> </span><span class="codenumber">3.1.14</span><span class="period">.</span>
+</h4>
+<div class="para logical" id="sec-laplace-transform-5-3-1">
+<div class="para">A function is said to be <dfn class="terminology">of exponential order</dfn> if there exist constants <span class="process-math">\(c, M \gt 0\)</span> and <span class="process-math">\(T \gt 0,\)</span> such that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+|f(t)| \leq Me^{ct} \text{ for all } t \gt T.
+\end{equation*}
+</div>
+<div class="para">In other words, <span class="process-math">\(|f(t)|\)</span> does not grow faster than a constant multiple of a simple exponential function <span class="process-math">\(e^{ct}.\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-5-3-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 3.1.14"><a href="#sec-laplace-transform-5-3" title="Copy heading and permalink for Definition 3.1.14">🔗</a></div></article><div class="para" id="sec-laplace-transform-5-4">Polynomial functions, simple exponential function <span class="process-math">\(e^{at},\)</span> cosine and sine functions are of exponential order.<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-5-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-laplace-transform-5-5">
+<div class="para">The function <span class="process-math">\(f(t) = e^{t^2}\)</span> is not of exponential order, since for every possible <span class="process-math">\(c \gt 0,\)</span>
+</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\left| \frac{e^{t^2}}{e^{ct}} \right| = e^{t^2 - ct} = e^{t^2(t - c)} \to \infty
+\end{equation*}
+</div>
+<div class="para">So <span class="process-math">\(e^{t^2}\)</span> grows faster than any multiple of <span class="process-math">\(e^{ct}.\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-5-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<article class="theorem theorem-like" id="sec-laplace-transform-5-6"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.15</span><span class="period">.</span><span class="space"> </span><span class="title">Sufficient conditions for existence of Laplace transform.</span>
+</h4>
+<div class="para" id="sec-laplace-transform-5-6-2">If <span class="process-math">\(f\)</span> is piecewise continuous on <span class="process-math">\([0, \infty)\)</span> and of exponential order, then <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> exists for <span class="process-math">\(s \gt c.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-5-6-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 3.1.15: Sufficient conditions for existence of Laplace transform"><a href="#sec-laplace-transform-5-6" title="Copy heading and permalink for Theorem 3.1.15: Sufficient conditions for existence of Laplace transform">🔗</a></div></article><details id="sec-laplace-transform-5-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-laplace-transform-5-7-1">
+<div class="para">Since <span class="process-math">\(f\)</span> is of exponential order, there exist <span class="process-math">\(c \gt 0, M \gt 0, T \gt 0,\)</span> such that whenever <span class="process-math">\(t \gt T, |f(t)| \leq Me^{ct}.\)</span> Using the number <span class="process-math">\(T,\)</span> we rewrite</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\mathcal{L}\{f(t)\} = \int_{0}^{T} e^{-st} f(t) dt + \int_{T}^{\infty} e^{-st} f(t) dt = I_1 + I_2
+\end{equation*}
+</div>
+<div class="para">Since <span class="process-math">\(f\)</span> is piecewise continuous, <span class="process-math">\(I_1\)</span> exists.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-5-7-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para logical" id="sec-laplace-transform-5-7-2">
+<div class="para">For <span class="process-math">\(I_2,\)</span> we use the inequality <span class="process-math">\(|f(t)| \leq Me^{ct}\)</span> to show that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+\int_{T}^{\infty} |e^{-st} f(t)| dt = \int_{T}^{\infty} e^{-st} |f(t)| dt \leq \int_{T}^{\infty} e^{-st} e^{ct} dt
+\end{equation*}
+</div>
+<div class="para">Right-hand side is precisely <span class="process-math">\(\mathcal{L}\{e^{ct}\}\)</span> that exists when <span class="process-math">\(s \gt c.\)</span> In other words, <span class="process-math">\(I_2\)</span> converges absolutely when <span class="process-math">\(s \gt c.\)</span>
+</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-5-7-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.1.4.1"><a href="#sec-laplace-transform-5-7" title="Copy heading and permalink for Proof 3.1.4.1">🔗</a></div></article></details><article class="remark remark-like" id="sec-laplace-transform-5-8"><h4 class="heading">
+<span class="type">Remark</span><span class="space"> </span><span class="codenumber">3.1.16</span><span class="period">.</span>
+</h4>
+<div class="para" id="sec-laplace-transform-5-8-1">These two conditions are sufficient but not necessary. In other words, <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> exists does not mean that <span class="process-math">\(f(t)\)</span> should satisfy these two conditions.<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-5-8-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-laplace-transform-5-8-2">For example, the function <span class="process-math">\(t^{-\frac{1}{2}}\)</span> is not piecewise continuous. The function <span class="process-math">\(2te^{t^2} \cos e^{t^2}\)</span> is not of exponential order. But it is not difficult to see that both <span class="process-math">\(\mathcal{L}\{t^{-\frac{1}{2}}\}\)</span> and <span class="process-math">\(\mathcal{L}\{2te^{t^2} \cos e^{t^2}\}\)</span> exist.<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-5-8-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 3.1.16"><a href="#sec-laplace-transform-5-8" title="Copy heading and permalink for Remark 3.1.16">🔗</a></div></article><article class="theorem theorem-like" id="sec-laplace-transform-5-9"><h4 class="heading">
+<span class="type">Theorem</span><span class="space"> </span><span class="codenumber">3.1.17</span><span class="period">.</span><span class="space"> </span><span class="title">Long term behavior of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span>.</span>
+</h4>
+<div class="para" id="sec-laplace-transform-5-9-2">If <span class="process-math">\(f\)</span> is piecewise continuous on <span class="process-math">\([0, \infty)\)</span> and of exponential order, then the function <span class="process-math">\(F(s) = \mathcal{L}\{f(t)\}\)</span> satisfies <span class="process-math">\(\lim_{s \to \infty} F(s) = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-5-9-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 3.1.17: Long term behavior of \mathcal{L}\{f(t)\}"><a href="#sec-laplace-transform-5-9" title="Copy heading and permalink for Theorem 3.1.17: Long term behavior of \mathcal{L}\{f(t)\}">🔗</a></div></article><details id="sec-laplace-transform-5-10" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-laplace-transform-5-10-1">
+<div class="para">Take <span class="process-math">\(c, M, T \gt 0\)</span> as in the previous proof. Since <span class="process-math">\(f\)</span> is piecewise continuous on <span class="process-math">\([0, T],\)</span> <span class="process-math">\(f(x)\)</span> is bounded. By adjusting <span class="process-math">\(M,\)</span> we may assume that <span class="process-math">\(|f(t)| \leq Me^{ct}\)</span> on <span class="process-math">\([0, \infty).\)</span> Then we estimate that</div>
+<div class="displaymath process-math">
+\begin{equation*}
+0 \leq |F(s)| \leq \int_{0}^{\infty} e^{-st} |f(t)| dt \leq \int_{0}^{\infty} e^{-st} e^{ct} dt = \int_{0}^{\infty} e^{-(s - c)t} dt = \frac{1}{s - c} \to 0, \text{ as } s \to \infty.
+\end{equation*}
+</div>
+<div class="para">The conclusion then follows from the squeeze theorem.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-laplace-transform-5-10-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 3.1.4.2"><a href="#sec-laplace-transform-5-10" title="Copy heading and permalink for Proof 3.1.4.2">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 3.1.4: Existence of \mathcal{L}\{f(t)\} and its long term behavior"><a href="#sec-laplace-transform-5" title="Copy heading and permalink for Subsection 3.1.4: Existence of \mathcal{L}\{f(t)\} and its long term behavior">🔗</a></div></section><div class="autopermalink" data-description="Section 3.1: Laplace Transform and Examples"><a href="#sec-laplace-transform" title="Copy heading and permalink for Section 3.1: Laplace Transform and Examples">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="ch-Laplace.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-inverse-Laplace.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

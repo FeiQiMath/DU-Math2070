@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.6';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -275,7 +275,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integral Transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Laplace transforms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-4" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Summary of basic formulas for Laplace transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-5" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
@@ -296,7 +304,8 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-existence-uniqueness"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.7</span><span class="space"> </span><span class="title">Existence and Uniqueness of Solutions</span>
 </h2>
-<div class="para" id="sec-existence-uniqueness-2">For the application of ODEs in science and engineering, when we modeled a problem into an initial value problem, normally we expect the solution to exist and be unique. However, this is not always the case.</div>
+<div class="para" id="sec-existence-uniqueness-2">For the application of ODEs in science and engineering, when we modeled a problem into an initial value problem, normally we expect the solution to exist and be unique. However, this is not always the case.<div class="autopermalink" data-description="Paragraph"><a href="#sec-existence-uniqueness-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <section class="subsection" id="subsec-existence-uniqueness-1"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.7.1</span><span class="space"> </span><span class="title">Pathological IVP - Examples</span>
 </h3>
@@ -309,31 +318,44 @@ eBookConfig.enable_chatcodes =  false;
 y = \dfrac{1}{16}x^2 \text{ and }y = 0.
 \end{equation*}
 </div>
-</div></article></details><div class="para" id="subsec-existence-uniqueness-1-3">If a system is modeled by an IVP that does not have a unique solution, then we cannot possibly predict how the system behaves. This can also happen for linear ODEs. We shall call such IVPs <dfn class="terminology">pathological</dfn>.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-existence-uniqueness-0-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.7.1: \dfrac{dy}{dx} = x\sqrt{y}, \, y(0) = 0"><a href="#ex-existence-uniqueness-0" title="Copy heading and permalink for Example 1.7.1: \dfrac{dy}{dx} = x\sqrt{y}, \, y(0) = 0">🔗</a></div></article></details><div class="para" id="subsec-existence-uniqueness-1-3">If a system is modeled by an IVP that does not have a unique solution, then we cannot possibly predict how the system behaves. This can also happen for linear ODEs. We shall call such IVPs <dfn class="terminology">pathological</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-existence-uniqueness-1-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <details id="ex-existence-uniqueness-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.2</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(ty' + (t - 1)y = -e^{-t}, \, y(0) = 1\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="ex-existence-uniqueness-1-2">
-<li id="ex-existence-uniqueness-1-2-1"><div class="para" id="p-derived-ex-existence-uniqueness-1-2-1">Standard form:<div class="displaymath process-math">
+<li id="ex-existence-uniqueness-1-2-1">
+<div class="para" id="p-derived-ex-existence-uniqueness-1-2-1">Standard form:<div class="displaymath process-math">
 \begin{equation*}
 y' + \dfrac{t - 1}{t}y = -\dfrac{e^{-t}}{t}
 \end{equation*}
 </div>
-</div></li>
-<li id="ex-existence-uniqueness-1-2-2"><div class="para" id="p-derived-ex-existence-uniqueness-1-2-2">Integrating factor:<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-existence-uniqueness-1-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-existence-uniqueness-1-2-2">
+<div class="para" id="p-derived-ex-existence-uniqueness-1-2-2">Integrating factor:<div class="displaymath process-math">
 \begin{equation*}
 \mu(t) = e^{\int \dfrac{t - 1}{t}dt} = e^{\int (1 - \dfrac{1}{t})dt} = e^{t - \ln t} = \dfrac{e^t}{t}
 \end{equation*}
 </div>
-</div></li>
-<li id="ex-existence-uniqueness-1-2-3"><div class="para" id="p-derived-ex-existence-uniqueness-1-2-3">General solution:<div class="displaymath process-math" id="ex-existence-uniqueness-1-2-3-1">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-existence-uniqueness-1-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-existence-uniqueness-1-2-3">
+<div class="para" id="p-derived-ex-existence-uniqueness-1-2-3">General solution:<div class="displaymath process-math" id="ex-existence-uniqueness-1-2-3-1">
 \begin{align*}
 y(t) = \amp \dfrac{\int e^{-t} \left(-\dfrac{e^{-t}}{t}\right)dt}{\dfrac{e^t}{t}} \\
 = \amp te^{-t}\left(-\int t^{-2}dt\right)\\
 = \amp te^{-t}\left(t^{-1} + C\right) = e^{-t} + Cte^{-t}
 \end{align*}
 </div>
-</div></li>
-<li id="ex-existence-uniqueness-1-2-4"><div class="para" id="p-derived-ex-existence-uniqueness-1-2-4">Plug in the initial value:<div class="displaymath process-math">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-existence-uniqueness-1-2-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-existence-uniqueness-1-2-4">
+<div class="para" id="p-derived-ex-existence-uniqueness-1-2-4">Plug in the initial value:<div class="displaymath process-math">
 \begin{equation*}
 y(0) = 1 \implies 1 + 0 = 1
 \end{equation*}
@@ -342,15 +364,27 @@ y(0) = 1 \implies 1 + 0 = 1
 y(t) = e^{-t} + Cte^{-t}
 \end{equation*}
 </div>is a solution of the IVP. <em class="alert">The IVP has infinitely many solutions.</em>
-</div></li>
-</ul></article></details><details id="ex-existence-uniqueness-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-existence-uniqueness-1-2-4" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Example 1.7.2: ty' + (t - 1)y = -e^{-t}, \, y(0) = 1"><a href="#ex-existence-uniqueness-1" title="Copy heading and permalink for Example 1.7.2: ty' + (t - 1)y = -e^{-t}, \, y(0) = 1">🔗</a></div></article></details><details id="ex-existence-uniqueness-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(ty' + (t - 1)y = -e^{-t}, \, y(0) = 0\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ul class="disc" id="ex-existence-uniqueness-2-2">
-<li id="ex-existence-uniqueness-2-2-1"><div class="para" id="p-derived-ex-existence-uniqueness-2-2-1">We have obtained the general solution in <a href="sec-existence-uniqueness.html#ex-existence-uniqueness-1" class="xref" data-knowl="./knowl/xref/ex-existence-uniqueness-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.7.2: ty' + (t - 1)y = -e^{-t}, \, y(0) = 1">Example 1.7.2</a>: <span class="process-math">\(y(t) = e^{-t} + Cte^{-t}.\)</span>
-</div></li>
-<li id="ex-existence-uniqueness-2-2-2"><div class="para" id="p-derived-ex-existence-uniqueness-2-2-2">Plug in the initial value: <span class="process-math">\(y(0) = 0 \implies 1 + 0 = 0\text{,}\)</span> impossible. <em class="alert">In other words, The IVP has no solutions.</em>
-</div></li>
-</ul></article></details><div class="para" id="subsec-existence-uniqueness-1-6">Summary: A pathological IVP may have <em class="alert">no solution</em> / <em class="alert">more than one solution</em> / <em class="alert">infinitely many solutions</em>. To determine if an IVP is reasonably posed, we need the existence and uniqueness theorem.</div></section><section class="subsection" id="subsec-existence-uniqueness-2"><h3 class="heading hide-type">
+<li id="ex-existence-uniqueness-2-2-1">
+<div class="para" id="p-derived-ex-existence-uniqueness-2-2-1">We have obtained the general solution in <a href="sec-existence-uniqueness.html#ex-existence-uniqueness-1" class="xref" data-knowl="./knowl/xref/ex-existence-uniqueness-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.7.2: ty' + (t - 1)y = -e^{-t}, \, y(0) = 1">Example 1.7.2</a>: <span class="process-math">\(y(t) = e^{-t} + Cte^{-t}.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-existence-uniqueness-2-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="ex-existence-uniqueness-2-2-2">
+<div class="para" id="p-derived-ex-existence-uniqueness-2-2-2">Plug in the initial value: <span class="process-math">\(y(0) = 0 \implies 1 + 0 = 0\text{,}\)</span> impossible. <em class="alert">In other words, The IVP has no solutions.</em>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#ex-existence-uniqueness-2-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Example 1.7.3: ty' + (t - 1)y = -e^{-t}, \, y(0) = 0"><a href="#ex-existence-uniqueness-2" title="Copy heading and permalink for Example 1.7.3: ty' + (t - 1)y = -e^{-t}, \, y(0) = 0">🔗</a></div></article></details><div class="para" id="subsec-existence-uniqueness-1-6">Summary: A pathological IVP may have <em class="alert">no solution</em> / <em class="alert">more than one solution</em> / <em class="alert">infinitely many solutions</em>. To determine if an IVP is reasonably posed, we need the existence and uniqueness theorem.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-existence-uniqueness-1-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.7.1: Pathological IVP - Examples"><a href="#subsec-existence-uniqueness-1" title="Copy heading and permalink for Subsection 1.7.1: Pathological IVP - Examples">🔗</a></div></section><section class="subsection" id="subsec-existence-uniqueness-2"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.7.2</span><span class="space"> </span><span class="title">Existence and Uniqueness Theorem: Linear version.</span>
 </h3>
 <article class="theorem theorem-like" id="thm-existence-uniqueness-linear"><h4 class="heading">
@@ -364,69 +398,117 @@ y' + p(t)y = g(t), \, y(t_0) = y_0
 \end{equation*}
 </div>
 <div class="para">where the ODE is <em class="alert">linear</em> and in its <em class="alert">standard form</em>. Assume that:</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-existence-uniqueness-linear-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <ol class="decimal" id="thm-existence-uniqueness-linear-2-2">
-<li id="thm-existence-uniqueness-linear-2-2-1"><div class="para" id="p-derived-thm-existence-uniqueness-linear-2-2-1">Both <span class="process-math">\(p(t)\)</span> and <span class="process-math">\(g(t)\)</span> are <em class="alert">continuous</em> on an open interval <span class="process-math">\((a,b).\)</span>
-</div></li>
-<li id="thm-existence-uniqueness-linear-2-2-2"><div class="para" id="p-derived-thm-existence-uniqueness-linear-2-2-2">The open interval <span class="process-math">\((a,b)\)</span> contains the initial time <span class="process-math">\(t_0.\)</span>
-</div></li>
-</ol> <div class="para" id="thm-existence-uniqueness-linear-2-3">Then there <em class="alert">exists a unique function</em> <span class="process-math">\(y = y(t)\)</span> over the interval <span class="process-math">\((a,b)\)</span> that solves the IVP.</div></article><article class="definition definition-like" id="def-existence-uniqueness-interval"><h4 class="heading">
+<li id="thm-existence-uniqueness-linear-2-2-1">
+<div class="para" id="p-derived-thm-existence-uniqueness-linear-2-2-1">Both <span class="process-math">\(p(t)\)</span> and <span class="process-math">\(g(t)\)</span> are <em class="alert">continuous</em> on an open interval <span class="process-math">\((a,b).\)</span>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-existence-uniqueness-linear-2-2-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-existence-uniqueness-linear-2-2-2">
+<div class="para" id="p-derived-thm-existence-uniqueness-linear-2-2-2">The open interval <span class="process-math">\((a,b)\)</span> contains the initial time <span class="process-math">\(t_0.\)</span>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-existence-uniqueness-linear-2-2-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol> <div class="para" id="thm-existence-uniqueness-linear-2-3">Then there <em class="alert">exists a unique function</em> <span class="process-math">\(y = y(t)\)</span> over the interval <span class="process-math">\((a,b)\)</span> that solves the IVP.<div class="autopermalink" data-description="Paragraph"><a href="#thm-existence-uniqueness-linear-2-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 1.7.4: Existence and Uniqueness Theorem: Linear version."><a href="#thm-existence-uniqueness-linear" title="Copy heading and permalink for Theorem 1.7.4: Existence and Uniqueness Theorem: Linear version.">🔗</a></div></article><article class="definition definition-like" id="def-existence-uniqueness-interval"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">1.7.5</span><span class="period">.</span><span class="space"> </span><span class="title">Interval of Existence and Uniqueness.</span>
 </h4>
-<div class="para" id="def-existence-uniqueness-interval-2-1">The <dfn class="terminology">interval of existence and uniqueness</dfn> is an interval <span class="process-math">\((a,b)\)</span> where the solution of the IVP exists uniquely. For brevity, we call it the <dfn class="terminology">interval of existence</dfn>.</div></article><div class="para" id="subsec-existence-uniqueness-2-4">
-<a href="sec-existence-uniqueness.html#thm-existence-uniqueness-linear" class="xref" data-knowl="./knowl/xref/thm-existence-uniqueness-linear.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.7.4: Existence and Uniqueness Theorem: Linear version.">Theorem 1.7.4</a> allows us to <em class="emphasis">determine</em> the interval of existence <em class="emphasis">without solving the IVP</em>. To obtain the interval, we follow the following procedure.</div>
+<div class="para" id="def-existence-uniqueness-interval-2-1">The <dfn class="terminology">interval of existence and uniqueness</dfn> is an interval <span class="process-math">\((a,b)\)</span> where the solution of the IVP exists uniquely. For brevity, we call it the <dfn class="terminology">interval of existence</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#def-existence-uniqueness-interval-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 1.7.5: Interval of Existence and Uniqueness"><a href="#def-existence-uniqueness-interval" title="Copy heading and permalink for Definition 1.7.5: Interval of Existence and Uniqueness">🔗</a></div></article><div class="para" id="subsec-existence-uniqueness-2-4">
+<a href="sec-existence-uniqueness.html#thm-existence-uniqueness-linear" class="xref" data-knowl="./knowl/xref/thm-existence-uniqueness-linear.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 1.7.4: Existence and Uniqueness Theorem: Linear version.">Theorem 1.7.4</a> allows us to <em class="emphasis">determine</em> the interval of existence <em class="emphasis">without solving the IVP</em>. To obtain the interval, we follow the following procedure.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-existence-uniqueness-2-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <ol class="decimal" id="subsec-existence-uniqueness-2-5">
-<li id="subsec-existence-uniqueness-2-5-1"><div class="para" id="p-derived-subsec-existence-uniqueness-2-5-1">Find out the standard form of the ODE <span class="process-math">\(y' + p(t)y = g(t).\)</span> and specify the initial condition <span class="process-math">\(y(t_0) = y_0.\)</span>
-</div></li>
-<li id="subsec-existence-uniqueness-2-5-2"><div class="para" id="p-derived-subsec-existence-uniqueness-2-5-2">Find out the singular points, which are the points where <span class="process-math">\(p(t)\)</span> and <span class="process-math">\(g(t)\)</span> are not continuous. These singular points separate the real line into disjoint open intervals</div></li>
-<li id="subsec-existence-uniqueness-2-5-3"><div class="para" id="p-derived-subsec-existence-uniqueness-2-5-3">If <span class="process-math">\(t_0\)</span> is a singular point, we have a pathological IVP. If <span class="process-math">\(t_0\)</span> is not a singular point, then the interval of existence is just the interval that contains <span class="process-math">\(t_0\)</span> that are bounded by the singular points. Note that <span class="process-math">\(y_0\)</span> does not matter here.</div></li>
+<li id="subsec-existence-uniqueness-2-5-1">
+<div class="para" id="p-derived-subsec-existence-uniqueness-2-5-1">Find out the standard form of the ODE <span class="process-math">\(y' + p(t)y = g(t).\)</span> and specify the initial condition <span class="process-math">\(y(t_0) = y_0.\)</span>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#subsec-existence-uniqueness-2-5-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsec-existence-uniqueness-2-5-2">
+<div class="para" id="p-derived-subsec-existence-uniqueness-2-5-2">Find out the singular points, which are the points where <span class="process-math">\(p(t)\)</span> and <span class="process-math">\(g(t)\)</span> are not continuous. These singular points separate the real line into disjoint open intervals</div>
+<div class="autopermalink" data-description="Item 2"><a href="#subsec-existence-uniqueness-2-5-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="subsec-existence-uniqueness-2-5-3">
+<div class="para" id="p-derived-subsec-existence-uniqueness-2-5-3">If <span class="process-math">\(t_0\)</span> is a singular point, we have a pathological IVP. If <span class="process-math">\(t_0\)</span> is not a singular point, then the interval of existence is just the interval that contains <span class="process-math">\(t_0\)</span> that are bounded by the singular points. Note that <span class="process-math">\(y_0\)</span> does not matter here.</div>
+<div class="autopermalink" data-description="Item 3"><a href="#subsec-existence-uniqueness-2-5-3" title="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
 </ol>
 <details id="ex-existence-uniqueness-3" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.6</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(ty' + (t - 1)y = -e^{-t}, \, y(\ln 2) = \dfrac{1}{2}\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ol class="decimal" id="ex-existence-uniqueness-3-2">
-<li id="ex-existence-uniqueness-3-2-1"><div class="para" id="p-derived-ex-existence-uniqueness-3-2-1">Standard form:<div class="displaymath process-math">
+<li id="ex-existence-uniqueness-3-2-1">
+<div class="para" id="p-derived-ex-existence-uniqueness-3-2-1">Standard form:<div class="displaymath process-math">
 \begin{equation*}
 y' + \dfrac{t - 1}{t}y = -\dfrac{e^{-t}}{t}.
 \end{equation*}
 </div>
-</div></li>
-<li id="ex-existence-uniqueness-3-2-2"><div class="para" id="p-derived-ex-existence-uniqueness-3-2-2">Both <span class="process-math">\(\dfrac{t - 1}{t}\)</span> and <span class="process-math">\(- \dfrac{e^{-t}}{t}\)</span> blow up at <span class="process-math">\(0.\)</span> So <span class="process-math">\(t = 0\)</span> is a singular point.</div></li>
-<li id="ex-existence-uniqueness-3-2-3"><div class="para" id="p-derived-ex-existence-uniqueness-3-2-3">(Missing a diagram here)</div></li>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#ex-existence-uniqueness-3-2-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-existence-uniqueness-3-2-2">
+<div class="para" id="p-derived-ex-existence-uniqueness-3-2-2">Both <span class="process-math">\(\dfrac{t - 1}{t}\)</span> and <span class="process-math">\(- \dfrac{e^{-t}}{t}\)</span> blow up at <span class="process-math">\(0.\)</span> So <span class="process-math">\(t = 0\)</span> is a singular point.</div>
+<div class="autopermalink" data-description="Item 2"><a href="#ex-existence-uniqueness-3-2-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="ex-existence-uniqueness-3-2-3">
+<div class="para" id="p-derived-ex-existence-uniqueness-3-2-3">(Missing a diagram here)</div>
+<div class="autopermalink" data-description="Item 3"><a href="#ex-existence-uniqueness-3-2-3" title="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
 </ol>
-<div class="para" id="ex-existence-uniqueness-3-3">Interval of existence = <span class="process-math">\((0, \infty).\)</span>
-</div></article></details><article class="remark remark-like" id="subsec-existence-uniqueness-2-7"><h4 class="heading">
+<div class="para" id="ex-existence-uniqueness-3-3">Interval of existence = <span class="process-math">\((0, \infty).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-existence-uniqueness-3-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.7.6: ty' + (t - 1)y = -e^{-t}, \, y(\ln 2) = \dfrac{1}{2}"><a href="#ex-existence-uniqueness-3" title="Copy heading and permalink for Example 1.7.6: ty' + (t - 1)y = -e^{-t}, \, y(\ln 2) = \dfrac{1}{2}">🔗</a></div></article></details><article class="remark remark-like" id="subsec-existence-uniqueness-2-7"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.7.7</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec-existence-uniqueness-2-7-1">The solution of the IVP is <span class="process-math">\(y(t) = e^{-t}\)</span> that is defined on <span class="process-math">\((-\infty, \infty).\)</span> So if we talk about the interval of definition of the solution, it is <span class="process-math">\((-\infty, \infty).\)</span> But this doesn’t change the fact that <span class="process-math">\(t = 0\)</span> is a singular point. Generally, we should not be concerned about the solution outside the interval of existence, namely <span class="process-math">\((0, \infty).\)</span>
-</div></article><details id="ex-existence-uniqueness-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="subsec-existence-uniqueness-2-7-1">The solution of the IVP is <span class="process-math">\(y(t) = e^{-t}\)</span> that is defined on <span class="process-math">\((-\infty, \infty).\)</span> So if we talk about the interval of definition of the solution, it is <span class="process-math">\((-\infty, \infty).\)</span> But this doesn’t change the fact that <span class="process-math">\(t = 0\)</span> is a singular point. Generally, we should not be concerned about the solution outside the interval of existence, namely <span class="process-math">\((0, \infty).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-existence-uniqueness-2-7-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 1.7.7"><a href="#subsec-existence-uniqueness-2-7" title="Copy heading and permalink for Remark 1.7.7">🔗</a></div></article><details id="ex-existence-uniqueness-4" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.8</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\((t - 3)y' + (\ln t)y = 2t, \, y(1) = 2.\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ol class="decimal" id="ex-existence-uniqueness-4-2">
-<li id="ex-existence-uniqueness-4-2-1"><div class="para" id="p-derived-ex-existence-uniqueness-4-2-1">Standard form:<div class="displaymath process-math">
+<li id="ex-existence-uniqueness-4-2-1">
+<div class="para" id="p-derived-ex-existence-uniqueness-4-2-1">Standard form:<div class="displaymath process-math">
 \begin{equation*}
 y' + \dfrac{\ln t}{t - 3}y = \dfrac{2t}{t - 3}.
 \end{equation*}
 </div>
-</div></li>
-<li id="ex-existence-uniqueness-4-2-2"><div class="para" id="p-derived-ex-existence-uniqueness-4-2-2">
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#ex-existence-uniqueness-4-2-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-existence-uniqueness-4-2-2">
+<div class="para" id="p-derived-ex-existence-uniqueness-4-2-2">
 <span class="process-math">\(\dfrac{\ln t}{t - 3}\)</span> is not continuous when <span class="process-math">\(t \lt 0\)</span> and <span class="process-math">\(t = 3.\)</span>
-</div></li>
-<li id="ex-existence-uniqueness-4-2-3"><div class="para" id="p-derived-ex-existence-uniqueness-4-2-3">
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#ex-existence-uniqueness-4-2-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="ex-existence-uniqueness-4-2-3">
+<div class="para" id="p-derived-ex-existence-uniqueness-4-2-3">
 <span class="process-math">\(\dfrac{2t}{t - 3}\)</span> is not continuous when <span class="process-math">\(t = 3.\)</span>
-</div></li>
-<li id="ex-existence-uniqueness-4-2-4"><div class="para" id="p-derived-ex-existence-uniqueness-4-2-4">(Missing a diagram here)</div></li>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#ex-existence-uniqueness-4-2-3" title="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="ex-existence-uniqueness-4-2-4">
+<div class="para" id="p-derived-ex-existence-uniqueness-4-2-4">(Missing a diagram here)</div>
+<div class="autopermalink" data-description="Item 4"><a href="#ex-existence-uniqueness-4-2-4" title="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
 </ol>
-<div class="para" id="ex-existence-uniqueness-4-3">Interval of existence = <span class="process-math">\((0, 3).\)</span>
-</div></article></details><details id="ex-existence-uniqueness-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="ex-existence-uniqueness-4-3">Interval of existence = <span class="process-math">\((0, 3).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-existence-uniqueness-4-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.7.8: (t - 3)y' + (\ln t)y = 2t, \, y(1) = 2."><a href="#ex-existence-uniqueness-4" title="Copy heading and permalink for Example 1.7.8: (t - 3)y' + (\ln t)y = 2t, \, y(1) = 2.">🔗</a></div></article></details><details id="ex-existence-uniqueness-5" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.9</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(\sin(2t) y' + \tan(4t) y = \dfrac{1}{t}, \, y\left(\dfrac{\pi}{4}\right) = 0.\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ol class="decimal" id="ex-existence-uniqueness-5-2">
-<li id="ex-existence-uniqueness-5-2-1"><div class="para" id="p-derived-ex-existence-uniqueness-5-2-1">The standard form is<div class="displaymath process-math">
+<li id="ex-existence-uniqueness-5-2-1">
+<div class="para" id="p-derived-ex-existence-uniqueness-5-2-1">The standard form is<div class="displaymath process-math">
 \begin{equation*}
 y' + \dfrac{\tan 4t}{\sin 2t}y = \dfrac{1}{t \sin(2t)}.
 \end{equation*}
 </div>
-</div></li>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#ex-existence-uniqueness-5-2-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
 <li id="ex-existence-uniqueness-5-2-2">
 <div class="para" id="ex-existence-uniqueness-5-2-2-1">
-<span class="process-math">\(\dfrac{\tan 4t}{\sin 2t} = \dfrac{\sin 4t}{\cos 4t \sin 2t}\)</span> is not continuous when <span class="process-math">\(\cos 4t = 0\)</span> or <span class="process-math">\(\sin 2t = 0.\)</span>
+<span class="process-math">\(\dfrac{\tan 4t}{\sin 2t} = \dfrac{\sin 4t}{\cos 4t \sin 2t}\)</span> is not continuous when <span class="process-math">\(\cos 4t = 0\)</span> or <span class="process-math">\(\sin 2t = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-existence-uniqueness-5-2-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-existence-uniqueness-5-2-2-2">
 <div class="para">Recall:</div>
@@ -436,6 +518,7 @@ y' + \dfrac{\tan 4t}{\sin 2t}y = \dfrac{1}{t \sin(2t)}.
 \amp \cos \alpha = 0 \text{ when } \alpha = k\pi + \dfrac{\pi}{2}, \, k = 0, \pm 1, \pm 2, \ldots
 \end{align*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-existence-uniqueness-5-2-2-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="ex-existence-uniqueness-5-2-2-3">
 <div class="para">So <span class="process-math">\(\dfrac{\tan 4t}{\sin 2t} = \dfrac{\sin 4t}{\cos 4t \sin 2t}\)</span> is not continuous when <span class="process-math">\(\cos 4t = 0\)</span> or <span class="process-math">\(\sin 2t = 0.\)</span> Note that</div>
@@ -450,16 +533,25 @@ y' + \dfrac{\tan 4t}{\sin 2t}y = \dfrac{1}{t \sin(2t)}.
 \sin 2t = 0 \text{ when }2t = k\pi \implies t = \dfrac{k\pi}{2}, k = 0, \pm 1, \pm 2, \ldots.
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-existence-uniqueness-5-2-2-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
+<div class="autopermalink" data-description="Item 2"><a href="#ex-existence-uniqueness-5-2-2" title="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
-<li id="ex-existence-uniqueness-5-2-3"><div class="para" id="p-derived-ex-existence-uniqueness-5-2-3">
+<li id="ex-existence-uniqueness-5-2-3">
+<div class="para" id="p-derived-ex-existence-uniqueness-5-2-3">
 <span class="process-math">\(\dfrac{1}{t \sin 2t}\)</span> is not continuous when <span class="process-math">\(t = 0\text{,}\)</span> or <span class="process-math">\(t = \dfrac{k\pi}{2},\)</span> where <span class="process-math">\(k = 0, \pm 1, \pm 2, \ldots.\)</span>
-</div></li>
-<li id="ex-existence-uniqueness-5-2-4"><div class="para" id="p-derived-ex-existence-uniqueness-5-2-4">So the singular points are <span class="process-math">\(t = \dfrac{k\pi}{4} + \dfrac{\pi}{8}, k = 0, \pm 1, \pm 2, \ldots\)</span> and <span class="process-math">\(t = \dfrac{k\pi}{2}, k = 0, \pm 1, \pm 2, \ldots.\)</span>
-</div></li>
+</div>
+<div class="autopermalink" data-description="Item 3"><a href="#ex-existence-uniqueness-5-2-3" title="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="ex-existence-uniqueness-5-2-4">
+<div class="para" id="p-derived-ex-existence-uniqueness-5-2-4">So the singular points are <span class="process-math">\(t = \dfrac{k\pi}{4} + \dfrac{\pi}{8}, k = 0, \pm 1, \pm 2, \ldots\)</span> and <span class="process-math">\(t = \dfrac{k\pi}{2}, k = 0, \pm 1, \pm 2, \ldots.\)</span>
+</div>
+<div class="autopermalink" data-description="Item 4"><a href="#ex-existence-uniqueness-5-2-4" title="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
 </ol>
-<div class="para" id="ex-existence-uniqueness-5-3">Interval of existence = <span class="process-math">\((\dfrac{\pi}{8}, \dfrac{3\pi}{8}).\)</span>
-</div></article></details><article class="remark remark-like" id="subsec-existence-uniqueness-2-10"><h4 class="heading">
+<div class="para" id="ex-existence-uniqueness-5-3">Interval of existence = <span class="process-math">\((\dfrac{\pi}{8}, \dfrac{3\pi}{8}).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-existence-uniqueness-5-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.7.9: \sin(2t) y' + \tan(4t) y = \dfrac{1}{t}, \, y\left(\dfrac{\pi}{4}\right) = 0."><a href="#ex-existence-uniqueness-5" title="Copy heading and permalink for Example 1.7.9: \sin(2t) y' + \tan(4t) y = \dfrac{1}{t}, \, y\left(\dfrac{\pi}{4}\right) = 0.">🔗</a></div></article></details><article class="remark remark-like" id="subsec-existence-uniqueness-2-10"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.7.10</span><span class="period">.</span>
 </h4>
 <div class="para logical" id="subsec-existence-uniqueness-2-10-1">
@@ -481,7 +573,9 @@ y(t) = \begin{cases} 1 - e^{-t} \amp t \in [0, 1] \\ Ce^{-t} \amp t \in (1, \inf
 \end{equation*}
 </div>
 <div class="para">is a solution (the IVP has infinitely many solutions). Only with the additional continuity condition did us obtain a unique solution.</div>
-</div></article></section><section class="subsection" id="subsec-existence-uniqueness-3"><h3 class="heading hide-type">
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-existence-uniqueness-2-10-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 1.7.10"><a href="#subsec-existence-uniqueness-2-10" title="Copy heading and permalink for Remark 1.7.10">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.7.2: Existence and Uniqueness Theorem: Linear version."><a href="#subsec-existence-uniqueness-2" title="Copy heading and permalink for Subsection 1.7.2: Existence and Uniqueness Theorem: Linear version.">🔗</a></div></section><section class="subsection" id="subsec-existence-uniqueness-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.7.3</span><span class="space"> </span><span class="title">Existence and Uniqueness Theorem: Nonlinear case</span>
 </h3>
 <article class="theorem theorem-like" id="thm-existence-uniqueness-nonlinear"><h4 class="heading">
@@ -494,69 +588,130 @@ y(t) = \begin{cases} 1 - e^{-t} \amp t \in [0, 1] \\ Ce^{-t} \amp t \in (1, \inf
 y' = f(t,y), \, y(t_0) = y_0.
 \end{equation*}
 </div>
-</div> <div class="para" id="thm-existence-uniqueness-nonlinear-2-2">Assume that:</div> <ol class="decimal" id="thm-existence-uniqueness-nonlinear-2-3">
-<li id="thm-existence-uniqueness-nonlinear-2-3-1"><div class="para" id="p-derived-thm-existence-uniqueness-nonlinear-2-3-1">The function <span class="process-math">\(f(t,y)\)</span> is continuous <em class="alert">NEAR</em> <span class="process-math">\((t_0,y_0),\)</span> i.e., one can find small <span class="process-math">\(\epsilon_1, \epsilon_2 \gt 0,\)</span> such that <span class="process-math">\(f(t,y)\)</span> is continuous in the rectangular region <span class="process-math">\((t_0 - \epsilon_1, t_0 + \epsilon_1) \times (y_0 - \epsilon_2, y_0 + \epsilon_2).\)</span>
-</div></li>
-<li id="thm-existence-uniqueness-nonlinear-2-3-2"><div class="para" id="p-derived-thm-existence-uniqueness-nonlinear-2-3-2">The function <span class="process-math">\(\dfrac{\partial f}{\partial y}(t,y)\)</span> is continuous <em class="alert">NEAR</em> <span class="process-math">\((t_0,y_0).\)</span>
-</div></li>
-</ol> <div class="para" id="thm-existence-uniqueness-nonlinear-2-4">Then a <em class="alert">unique solution</em> <span class="process-math">\(y = y(t)\)</span> exists <em class="alert">NEAR</em> <span class="process-math">\(t = t_0,\)</span> i.e., there exists a small <span class="process-math">\(\epsilon \gt 0\)</span> such that a solution exists on <span class="process-math">\((t_0 - \epsilon, t_0 + \epsilon).\)</span>
-</div> <div class="para" id="thm-existence-uniqueness-nonlinear-2-5">Likewise, any IVP that does not satisfy the conditions of the theorem is <dfn class="terminology">pathological</dfn>.</div> <div class="para" id="thm-existence-uniqueness-nonlinear-2-6">(Missing a diagram here.)</div></article><article class="remark remark-like" id="subsec-existence-uniqueness-3-3"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-existence-uniqueness-nonlinear-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="thm-existence-uniqueness-nonlinear-2-2">Assume that:<div class="autopermalink" data-description="Paragraph"><a href="#thm-existence-uniqueness-nonlinear-2-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <ol class="decimal" id="thm-existence-uniqueness-nonlinear-2-3">
+<li id="thm-existence-uniqueness-nonlinear-2-3-1">
+<div class="para" id="p-derived-thm-existence-uniqueness-nonlinear-2-3-1">The function <span class="process-math">\(f(t,y)\)</span> is continuous <em class="alert">NEAR</em> <span class="process-math">\((t_0,y_0),\)</span> i.e., one can find small <span class="process-math">\(\epsilon_1, \epsilon_2 \gt 0,\)</span> such that <span class="process-math">\(f(t,y)\)</span> is continuous in the rectangular region <span class="process-math">\((t_0 - \epsilon_1, t_0 + \epsilon_1) \times (y_0 - \epsilon_2, y_0 + \epsilon_2).\)</span>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#thm-existence-uniqueness-nonlinear-2-3-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="thm-existence-uniqueness-nonlinear-2-3-2">
+<div class="para" id="p-derived-thm-existence-uniqueness-nonlinear-2-3-2">The function <span class="process-math">\(\dfrac{\partial f}{\partial y}(t,y)\)</span> is continuous <em class="alert">NEAR</em> <span class="process-math">\((t_0,y_0).\)</span>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#thm-existence-uniqueness-nonlinear-2-3-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol> <div class="para" id="thm-existence-uniqueness-nonlinear-2-4">Then a <em class="alert">unique solution</em> <span class="process-math">\(y = y(t)\)</span> exists <em class="alert">NEAR</em> <span class="process-math">\(t = t_0,\)</span> i.e., there exists a small <span class="process-math">\(\epsilon \gt 0\)</span> such that a solution exists on <span class="process-math">\((t_0 - \epsilon, t_0 + \epsilon).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#thm-existence-uniqueness-nonlinear-2-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="thm-existence-uniqueness-nonlinear-2-5">Likewise, any IVP that does not satisfy the conditions of the theorem is <dfn class="terminology">pathological</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#thm-existence-uniqueness-nonlinear-2-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div> <div class="para" id="thm-existence-uniqueness-nonlinear-2-6">(Missing a diagram here.)<div class="autopermalink" data-description="Paragraph"><a href="#thm-existence-uniqueness-nonlinear-2-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 1.7.11: Existence and Uniqueness Theorem: Nonlinear case"><a href="#thm-existence-uniqueness-nonlinear" title="Copy heading and permalink for Theorem 1.7.11: Existence and Uniqueness Theorem: Nonlinear case">🔗</a></div></article><article class="remark remark-like" id="subsec-existence-uniqueness-3-3"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.7.12</span><span class="period">.</span>
 </h4>
 <ol class="decimal" id="subsec-existence-uniqueness-3-3-1">
-<li id="subsec-existence-uniqueness-3-3-1-1"><div class="para" id="p-derived-subsec-existence-uniqueness-3-3-1-1">The theorem is <em class="alert">not</em> as strong as the linear version. It only concludes <em class="alert">local</em> existence. It does <em class="alert">not</em> tell us the interval of existence.</div></li>
-<li id="subsec-existence-uniqueness-3-3-1-2"><div class="para" id="p-derived-subsec-existence-uniqueness-3-3-1-2">Nevertheless, the theorem tells if an IVP is reasonably formulated.</div></li>
-</ol></article><details id="ex-existence-uniqueness-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<li id="subsec-existence-uniqueness-3-3-1-1">
+<div class="para" id="p-derived-subsec-existence-uniqueness-3-3-1-1">The theorem is <em class="alert">not</em> as strong as the linear version. It only concludes <em class="alert">local</em> existence. It does <em class="alert">not</em> tell us the interval of existence.</div>
+<div class="autopermalink" data-description="Item 1"><a href="#subsec-existence-uniqueness-3-3-1-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsec-existence-uniqueness-3-3-1-2">
+<div class="para" id="p-derived-subsec-existence-uniqueness-3-3-1-2">Nevertheless, the theorem tells if an IVP is reasonably formulated.</div>
+<div class="autopermalink" data-description="Item 2"><a href="#subsec-existence-uniqueness-3-3-1-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Remark 1.7.12"><a href="#subsec-existence-uniqueness-3-3" title="Copy heading and permalink for Remark 1.7.12">🔗</a></div></article><details id="ex-existence-uniqueness-6" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.13</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y' = y^{\frac{1}{3}}, \, y(0) = 1.\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ol class="decimal" id="ex-existence-uniqueness-6-2">
-<li id="ex-existence-uniqueness-6-2-1"><div class="para" id="p-derived-ex-existence-uniqueness-6-2-1">
-<span class="process-math">\(f(t,y) = 3\sqrt[3]{y}\)</span> is continuous everywhere.</div></li>
-<li id="ex-existence-uniqueness-6-2-2"><div class="para" id="p-derived-ex-existence-uniqueness-6-2-2">
+<li id="ex-existence-uniqueness-6-2-1">
+<div class="para" id="p-derived-ex-existence-uniqueness-6-2-1">
+<span class="process-math">\(f(t,y) = 3\sqrt[3]{y}\)</span> is continuous everywhere.</div>
+<div class="autopermalink" data-description="Item 1"><a href="#ex-existence-uniqueness-6-2-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-existence-uniqueness-6-2-2">
+<div class="para" id="p-derived-ex-existence-uniqueness-6-2-2">
 <span class="process-math">\(\dfrac{\partial f}{\partial y}(t,y) = \dfrac{1}{3\sqrt[3]{y^2}}\)</span> is continuous when <span class="process-math">\(y \neq 0.\)</span>
-</div></li>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#ex-existence-uniqueness-6-2-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
 </ol>
 <div class="para" id="ex-existence-uniqueness-6-3">
-<span class="process-math">\(y(0) = 1 \implies (t_0, y_0) = (0, 1)\)</span> (away from <span class="process-math">\(y = 0).\)</span>
+<span class="process-math">\(y(0) = 1 \implies (t_0, y_0) = (0, 1)\)</span> (away from <span class="process-math">\(y = 0).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-existence-uniqueness-6-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-existence-uniqueness-6-4">(Missing a diagram here.)</div>
-<div class="para" id="ex-existence-uniqueness-6-5">So the IVP has a unique solution near <span class="process-math">\(t = 0.\)</span>
-</div></article></details><details id="ex-existence-uniqueness-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="ex-existence-uniqueness-6-4">(Missing a diagram here.)<div class="autopermalink" data-description="Paragraph"><a href="#ex-existence-uniqueness-6-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-existence-uniqueness-6-5">So the IVP has a unique solution near <span class="process-math">\(t = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-existence-uniqueness-6-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.7.13: y' = y^{\frac{1}{3}}, \, y(0) = 1."><a href="#ex-existence-uniqueness-6" title="Copy heading and permalink for Example 1.7.13: y' = y^{\frac{1}{3}}, \, y(0) = 1.">🔗</a></div></article></details><details id="ex-existence-uniqueness-7" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.14</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y' = y^{\frac{1}{3}}, \, y(1) = 0.\)</span>.</span>
 </h4></summary><article class="example example-like knowl__content"><ol class="decimal" id="ex-existence-uniqueness-7-2">
-<li id="ex-existence-uniqueness-7-2-1"><div class="para" id="p-derived-ex-existence-uniqueness-7-2-1">
-<span class="process-math">\(f(t,y) = 3\sqrt[3]{y}\)</span> is continuous everywhere.</div></li>
-<li id="ex-existence-uniqueness-7-2-2"><div class="para" id="p-derived-ex-existence-uniqueness-7-2-2">
+<li id="ex-existence-uniqueness-7-2-1">
+<div class="para" id="p-derived-ex-existence-uniqueness-7-2-1">
+<span class="process-math">\(f(t,y) = 3\sqrt[3]{y}\)</span> is continuous everywhere.</div>
+<div class="autopermalink" data-description="Item 1"><a href="#ex-existence-uniqueness-7-2-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-existence-uniqueness-7-2-2">
+<div class="para" id="p-derived-ex-existence-uniqueness-7-2-2">
 <span class="process-math">\(\dfrac{\partial f}{\partial y}(t,y) = \dfrac{1}{3\sqrt[3]{y^2}}\)</span> is continuous when <span class="process-math">\(y \neq 0.\)</span>
-</div></li>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#ex-existence-uniqueness-7-2-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
 </ol>
 <div class="para" id="ex-existence-uniqueness-7-3">
-<span class="process-math">\(y(1) = 0 \implies (t_0, y_0) = (1, 0)\)</span> (on <span class="process-math">\(y = 0).\)</span>
+<span class="process-math">\(y(1) = 0 \implies (t_0, y_0) = (1, 0)\)</span> (on <span class="process-math">\(y = 0).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-existence-uniqueness-7-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-existence-uniqueness-7-4">(Missing a diagram here.)</div>
-<div class="para" id="ex-existence-uniqueness-7-5">The IVP does not satisfy the conditions of the theorem. Indeed, it is straightforward to check that <span class="process-math">\(y = 0, \, y = \sqrt[3]{\dfrac{8}{27}(x - 1)^3}\)</span> and <span class="process-math">\(y = -\sqrt[3]{\dfrac{8}{27}(x - 1)^3}\)</span> are all solutions of the IVP.</div></article></details><details id="ex-existence-uniqueness-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="para" id="ex-existence-uniqueness-7-4">(Missing a diagram here.)<div class="autopermalink" data-description="Paragraph"><a href="#ex-existence-uniqueness-7-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-existence-uniqueness-7-5">The IVP does not satisfy the conditions of the theorem. Indeed, it is straightforward to check that <span class="process-math">\(y = 0, \, y = \sqrt[3]{\dfrac{8}{27}(x - 1)^3}\)</span> and <span class="process-math">\(y = -\sqrt[3]{\dfrac{8}{27}(x - 1)^3}\)</span> are all solutions of the IVP.<div class="autopermalink" data-description="Paragraph"><a href="#ex-existence-uniqueness-7-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.7.14: y' = y^{\frac{1}{3}}, \, y(1) = 0."><a href="#ex-existence-uniqueness-7" title="Copy heading and permalink for Example 1.7.14: y' = y^{\frac{1}{3}}, \, y(1) = 0.">🔗</a></div></article></details><details id="ex-existence-uniqueness-8" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.7.15</span><span class="period">.</span><span class="space"> </span><span class="title">Find out all <span class="process-math">\((t_0, y_0)\text{,}\)</span> such that the IVP<div class="displaymath process-math">
 \begin{equation*}
 y' = \sqrt{1 - t^2 - y^2}, \, y(t_0) = y_0
 \end{equation*}
 </div>is reasonably formulated..</span>
 </h4></summary><article class="example example-like knowl__content"><ol class="decimal" id="ex-existence-uniqueness-8-2">
-<li id="ex-existence-uniqueness-8-2-1"><div class="para" id="p-derived-ex-existence-uniqueness-8-2-1">
+<li id="ex-existence-uniqueness-8-2-1">
+<div class="para" id="p-derived-ex-existence-uniqueness-8-2-1">
 <span class="process-math">\(f(t,y) = \sqrt{1 - t^2 - y^2}\)</span> is continuous when <span class="process-math">\(t^2 + y^2 \leq 1.\)</span>
-</div></li>
-<li id="ex-existence-uniqueness-8-2-2"><div class="para" id="p-derived-ex-existence-uniqueness-8-2-2">
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#ex-existence-uniqueness-8-2-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="ex-existence-uniqueness-8-2-2">
+<div class="para" id="p-derived-ex-existence-uniqueness-8-2-2">
 <span class="process-math">\(\dfrac{\partial f}{\partial y}(t,y) = -\dfrac{y}{\sqrt{1 - t^2 - y^2}}\)</span> is continuous when <span class="process-math">\(t^2 + y^2 \lt 1.\)</span>
-</div></li>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#ex-existence-uniqueness-8-2-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
 </ol>
-<div class="para" id="ex-existence-uniqueness-8-3">(Missing a diagram here.)</div>
-<div class="para" id="ex-existence-uniqueness-8-4">So <span class="process-math">\((t_0, y_0)\)</span> should satisfy <span class="process-math">\(t_0^2 + y_0^2 \lt 1.\)</span>
-</div></article></details><article class="remark remark-like" id="subsec-existence-uniqueness-3-7"><h4 class="heading">
+<div class="para" id="ex-existence-uniqueness-8-3">(Missing a diagram here.)<div class="autopermalink" data-description="Paragraph"><a href="#ex-existence-uniqueness-8-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-existence-uniqueness-8-4">So <span class="process-math">\((t_0, y_0)\)</span> should satisfy <span class="process-math">\(t_0^2 + y_0^2 \lt 1.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-existence-uniqueness-8-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.7.15: Find out all (t_0, y_0) such that the IVP
+\begin{equation*}
+y' = \sqrt{1 - t^2 - y^2}, \, y(t_0) = y_0
+\end{equation*}
+is reasonably formulated."><a href="#ex-existence-uniqueness-8" title="Copy heading and permalink for Example 1.7.15: Find out all (t_0, y_0) such that the IVP
+\begin{equation*}
+y' = \sqrt{1 - t^2 - y^2}, \, y(t_0) = y_0
+\end{equation*}
+is reasonably formulated.">🔗</a></div></article></details><article class="remark remark-like" id="subsec-existence-uniqueness-3-7"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.7.16</span><span class="period">.</span>
 </h4>
 <ul class="disc" id="subsec-existence-uniqueness-3-7-1">
-<li id="subsec-existence-uniqueness-3-7-1-1"><div class="para" id="p-derived-subsec-existence-uniqueness-3-7-1-1">You should always take the “interior” of the region where the functions <span class="process-math">\(f\)</span> and <span class="process-math">\(\dfrac{\partial f}{\partial y}\)</span> are continuous. You should not keep the boundary.</div></li>
-<li id="subsec-existence-uniqueness-3-7-1-2"><div class="para" id="p-derived-subsec-existence-uniqueness-3-7-1-2">Rigorously speaking, the existence and uniqueness theorem only guarantees that an IVP is reasonably formulated if the conditions are satisfied. Logically, it is possible that an IVP still has a unique solution when the conditions are not satisfied. But this is not a topic we shall explore in this course. We shall call any IVP that does not satisfy the conditions of the theorem <dfn class="terminology">pathological</dfn>.</div></li>
-<li id="subsec-existence-uniqueness-3-7-1-3"><div class="para" id="p-derived-subsec-existence-uniqueness-3-7-1-3">None of the technicalities in this remark shall be required in this course.</div></li>
-</ul></article></section></section></div>
+<li id="subsec-existence-uniqueness-3-7-1-1">
+<div class="para" id="p-derived-subsec-existence-uniqueness-3-7-1-1">You should always take the “interior” of the region where the functions <span class="process-math">\(f\)</span> and <span class="process-math">\(\dfrac{\partial f}{\partial y}\)</span> are continuous. You should not keep the boundary.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-existence-uniqueness-3-7-1-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-existence-uniqueness-3-7-1-2">
+<div class="para" id="p-derived-subsec-existence-uniqueness-3-7-1-2">Rigorously speaking, the existence and uniqueness theorem only guarantees that an IVP is reasonably formulated if the conditions are satisfied. Logically, it is possible that an IVP still has a unique solution when the conditions are not satisfied. But this is not a topic we shall explore in this course. We shall call any IVP that does not satisfy the conditions of the theorem <dfn class="terminology">pathological</dfn>.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-existence-uniqueness-3-7-1-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-existence-uniqueness-3-7-1-3">
+<div class="para" id="p-derived-subsec-existence-uniqueness-3-7-1-3">None of the technicalities in this remark shall be required in this course.</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-existence-uniqueness-3-7-1-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Remark 1.7.16"><a href="#subsec-existence-uniqueness-3-7" title="Copy heading and permalink for Remark 1.7.16">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.7.3: Existence and Uniqueness Theorem: Nonlinear case"><a href="#subsec-existence-uniqueness-3" title="Copy heading and permalink for Subsection 1.7.3: Existence and Uniqueness Theorem: Nonlinear case">🔗</a></div></section><div class="autopermalink" data-description="Section 1.7: Existence and Uniqueness of Solutions"><a href="#sec-existence-uniqueness" title="Copy heading and permalink for Section 1.7: Existence and Uniqueness of Solutions">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-separable-equations.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-autonomous.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

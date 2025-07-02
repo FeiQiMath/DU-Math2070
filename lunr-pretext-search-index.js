@@ -1708,7 +1708,196 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.1",
   "title": "Laplace Transform and Examples",
-  "body": " Laplace Transform and Examples  Integral transform  Integral transforms: Let be a function with two real variables. Given a function defined on a set , the following integral   defines a new function . The map sending to is called an integral transform . The function is called the kernel of the integral transform.  Note that when is an infinite interval, the integral defining is improper and might not converge for all real numbers . In this case, the domain of new function , i.e., the set of such that the integral converges, is not expected to be  Integral transforms appears in many discussions of mathematics, physics, engineering, and computer science.  Fourier transform:    complex function  Fourier transform is widely used, including but not limited to, partial differential equations, computer graphics, machine learning, etc. (not required in this course)  In this course, we mainly focus on the Laplace transform , with   The corresponding integral transform   is called the Laplace transform . The function is usually denoted by  The domain of depends on , determined by the convergence of the improper integral, i.e.,  should exist.  Examples of Laplace transforms  Laplace Transform:   Note that the domain of depends on the choice of  Example 1. Evaluate   If , then The integral converges.  In this case,  If , then The integral diverges.  If , then we have  In this case, also diverges.  Conclusion:  \\mathcal{L}\\{1\\} = \\frac{1}{s}, \\quad s \\gt 0.  Example 2. Evaluate    We have seen that converges if and only if In this case, by L'Hôpital's rule.     So  \\mathcal{L}\\{t\\} = \\frac{1}{s^2}, \\quad s \\gt 0.  So we have obtained that for   This defines a recursion of that can be easily solved:    Conclusion:  \\mathcal{L}\\{t^n\\} = \\frac{n!}{s^{n + 1}}, \\quad s \\gt 0.  For example   Note that the power of in the denominator is 1 larger than the power of  Example 4. Evaluate and    Clearly, exists when i.e., The limit is zero. So     Clearly, exists when i.e., The limit is zero. So   Example 5. Evaluate    Clearly, exists when i.e., The limit is zero. So  \\mathcal{L}\\{e^{at}\\} = \\frac{1}{s - \\alpha}, \\quad s \\gt \\alpha.  Example 6. Evaluate     Clearly, exists iff  and equals 0.     Clearly when     So we conclude that   Example 7. Evaluate  With a similar procedure, we see that   So we conclude that  \\mathcal{L}\\{\\sin \\beta t\\} = \\frac{\\beta}{s^2 + \\beta^2}, \\quad s \\gt 0.  Example 8. Evaluate  With a similar procedure, we see that   So we conclude that  \\mathcal{L}\\{\\cos \\beta t\\} = \\frac{s}{s^2 + \\beta^2}, \\quad s \\gt 0.  Theorem: For every real numbers   Proof: It follows from the linearity of integrals.     Hyperbolic functions  Recall that from the Euler’s formula, the usual sine and cosine functions may also be expressed as   The hyperbolic functions are defined similarly:   These functions are widely used in engineering practices.  The Laplace transform of hyperbolic functions can be obtained via linearity. For every      Summary of basic formulas for Laplace transform   Power functions   Then by linearity, we may obtain the Laplace transform of all polynomial functions, e.g.,  Exponential functions: for every real number   Trigonometric and hyperbolic functions: for every     When does exist  Recall: A function is piecewise continuous on if in any subinterval the function is continuous everywhere except at finitely many numbers. The discontinuities are either removable or jump.  Definition: A function is said to be of exponential order, if there exist constants and such that for all  In other words, does not grow faster than a constant multiple of a simple exponential function.  Definition: A function is said to be of exponential order, if there exist constants and such that for all  In other words, does not grow faster than a constant multiple of a simple exponential function  Polynomial functions, simple exponential function cosine and sine functions are of exponential order.  The function is not of exponential order, since for every possible   So grows faster than any multiple of  Theorem: If is piecewise continuous on and of exponential order, then exists for  Proof: Since is of exponential order, there exists such that whenever Using the number we rewrite   Since is piecewise continuous, exists.  For we use the inequality to show that   Right-hand side is precisely that exists when In other words, converges absolutely when  Remark: These two conditions are sufficient but not necessary. In other words, exists does not mean that should satisfy these two conditions.  Examples: The function is not piecewise continuous. The function is not of exponential order. But it is not difficult to see that both and exist.  Long term behavior of  Theorem: If is piecewise continuous on and of exponential order, then the function satisfies  Proof: Take as in the previous proof. Since is piecewise continuous on  is bounded. By adjusting we may assume that on   The conclusion then follows from the squeeze theorem.  "
+  "body": " Laplace Transform and Examples   Integral Transform   Let be a function with two real variables. Given a function defined on a set , the following integral defines a new function . The map sending to is called an integral transform . The function is called the kernel of the integral transform.    Note that when is an infinite interval, the integral defining is improper and might not converge for all real numbers . In this case, the domain of new function , i.e., the set of such that the integral converges, is not expected to be   Integral transforms appears in many discussions of mathematics, physics, engineering, and computer science. The most important one is the Fourier transform , where In other words, Fourier transform sends to a complex function  Note that when is an infinite interval, the integral defining is improper and might not converge for all real numbers . In this case, the domain of new function , i.e., the set of such that the integral converges, is not expected to be  Fourier transform is widely used, including but not limited to, partial differential equations, computer graphics, machine learning, etc. We will not require it in this course because it is necessary to know complex function.  In this course, we mainly focus on the Laplace transform .   The Laplace transform is the integral transform with In other words, Laplace transform sends The function is often denoted by  The domain of depends on , determined by the convergence of the improper integral, i.e., should exist.     Examples of Laplace transforms   Evaluate    If , then The integral converges. In this case,  If , then The integral diverges.  If , we cannot use the previous formula because makes no sense. But looking back to the integral, note that when In this case, also diverges.   Conclusion:    Evaluate  We have seen that converges if and only if In this case, using L'Hôpital's rule, so  Conclusion:    Evaluate  Clearly, exists if and only if , and the limit is 0. So we have obtained that for  This defines a recursion of that can be easily solved:  Conclusion: For example, Note that the power of in the denominator is 1 larger than the power of    Evaluate and   By definition, Clearly, exists when i.e., The limit is zero. So  By definition, Clearly, exists when i.e., The limit is zero. So     Evaluate  By definition, Clearly, exists when i.e., The limit is zero. So    Evaluate  Clearly, exists iff  and equals 0. So Clearly when  So So we conclude that    Evaluate  With a similar procedure, we see that So we conclude that    Evaluate  With a similar procedure, we see that So we conclude that    Linearity of Laplace transform  For every real numbers     It follows from the linearity of integrals.    Hyperbolic functions  Recall that from the Euler’s formula, the usual sine and cosine functions may also be expressed as  The hyperbolic functions are defined similarly:  These functions are widely used in engineering practices.   The Laplace transform of hyperbolic functions can be obtained via linearity. For every       Summary of basic formulas for Laplace transform   Power functions: Then by linearity, we may obtain the Laplace transform of all polynomial functions, e.g.,  Exponential functions: for every real number   Trigonometric functions: for every   Hyperbolic functions, for every      Existence of and its long term behavior  Recall: A function is piecewise continuous on if in any subinterval the function is continuous everywhere except at finitely many removable or jump discontinuities.   A function is said to be of exponential order if there exist constants and such that In other words, does not grow faster than a constant multiple of a simple exponential function   Polynomial functions, simple exponential function cosine and sine functions are of exponential order.  The function is not of exponential order, since for every possible  So grows faster than any multiple of   Sufficient conditions for existence of Laplace transform  If is piecewise continuous on and of exponential order, then exists for    Since is of exponential order, there exist such that whenever Using the number we rewrite Since is piecewise continuous, exists.  For we use the inequality to show that Right-hand side is precisely that exists when In other words, converges absolutely when    These two conditions are sufficient but not necessary. In other words, exists does not mean that should satisfy these two conditions.  For example, the function is not piecewise continuous. The function is not of exponential order. But it is not difficult to see that both and exist.    Long term behavior of  If is piecewise continuous on and of exponential order, then the function satisfies    Take as in the previous proof. Since is piecewise continuous on  is bounded. By adjusting we may assume that on Then we estimate that The conclusion then follows from the squeeze theorem.    "
+},
+{
+  "id": "sec-laplace-transform-2-2",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-2-2",
+  "type": "Definition",
+  "number": "3.1.1",
+  "title": "",
+  "body": " Let be a function with two real variables. Given a function defined on a set , the following integral defines a new function . The map sending to is called an integral transform . The function is called the kernel of the integral transform.  "
+},
+{
+  "id": "sec-laplace-transform-2-3",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-2-3",
+  "type": "Remark",
+  "number": "3.1.2",
+  "title": "",
+  "body": " Note that when is an infinite interval, the integral defining is improper and might not converge for all real numbers . In this case, the domain of new function , i.e., the set of such that the integral converges, is not expected to be  "
+},
+{
+  "id": "sec-laplace-transform-2-4",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-2-4",
+  "type": "Paragraph (with a defined term)",
+  "number": "",
+  "title": "",
+  "body": "Fourier transform "
+},
+{
+  "id": "sec-laplace-transform-2-7",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-2-7",
+  "type": "Definition",
+  "number": "3.1.3",
+  "title": "",
+  "body": " The Laplace transform is the integral transform with In other words, Laplace transform sends The function is often denoted by  The domain of depends on , determined by the convergence of the improper integral, i.e., should exist.  "
+},
+{
+  "id": "sec-laplace-transform-3-2",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-3-2",
+  "type": "Example",
+  "number": "3.1.4",
+  "title": "Evaluate <span class=\"process-math\">\\(\\mathcal{L}\\{1\\}\\)<\/span>.",
+  "body": " Evaluate    If , then The integral converges. In this case,  If , then The integral diverges.  If , we cannot use the previous formula because makes no sense. But looking back to the integral, note that when In this case, also diverges.   Conclusion:  "
+},
+{
+  "id": "sec-laplace-transform-3-3",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-3-3",
+  "type": "Example",
+  "number": "3.1.5",
+  "title": "Evaluate <span class=\"process-math\">\\(\\mathcal{L}\\{t\\}\\)<\/span>.",
+  "body": " Evaluate  We have seen that converges if and only if In this case, using L'Hôpital's rule, so  Conclusion:  "
+},
+{
+  "id": "sec-laplace-transform-3-4",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-3-4",
+  "type": "Example",
+  "number": "3.1.6",
+  "title": "Evaluate <span class=\"process-math\">\\(\\mathcal{L}\\{t^n\\}\\)<\/span>.",
+  "body": " Evaluate  Clearly, exists if and only if , and the limit is 0. So we have obtained that for  This defines a recursion of that can be easily solved:  Conclusion: For example, Note that the power of in the denominator is 1 larger than the power of  "
+},
+{
+  "id": "sec-laplace-transform-3-5",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-3-5",
+  "type": "Example",
+  "number": "3.1.7",
+  "title": "Evaluate <span class=\"process-math\">\\(\\mathcal{L}\\{e^{-3t}\\}\\)<\/span> and <span class=\"process-math\">\\(\\mathcal{L}\\{e^{5t}\\}\\)<\/span>.",
+  "body": " Evaluate and   By definition, Clearly, exists when i.e., The limit is zero. So  By definition, Clearly, exists when i.e., The limit is zero. So   "
+},
+{
+  "id": "sec-laplace-transform-3-6",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-3-6",
+  "type": "Example",
+  "number": "3.1.8",
+  "title": "Evaluate <span class=\"process-math\">\\(\\mathcal{L}\\{e^{at}\\}\\)<\/span>.",
+  "body": " Evaluate  By definition, Clearly, exists when i.e., The limit is zero. So  "
+},
+{
+  "id": "sec-laplace-transform-3-7",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-3-7",
+  "type": "Example",
+  "number": "3.1.9",
+  "title": "Evaluate <span class=\"process-math\">\\(\\mathcal{L}\\{\\sin 2t\\}\\)<\/span>.",
+  "body": " Evaluate  Clearly, exists iff  and equals 0. So Clearly when  So So we conclude that  "
+},
+{
+  "id": "sec-laplace-transform-3-8",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-3-8",
+  "type": "Example",
+  "number": "3.1.10",
+  "title": "Evaluate <span class=\"process-math\">\\(\\mathcal{L}\\{\\sin \\beta t\\}\\)<\/span>.",
+  "body": " Evaluate  With a similar procedure, we see that So we conclude that  "
+},
+{
+  "id": "sec-laplace-transform-3-9",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-3-9",
+  "type": "Example",
+  "number": "3.1.11",
+  "title": "Evaluate <span class=\"process-math\">\\(\\mathcal{L}\\{\\cos \\beta t\\}\\)<\/span>.",
+  "body": " Evaluate  With a similar procedure, we see that So we conclude that  "
+},
+{
+  "id": "sec-laplace-transform-3-10",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-3-10",
+  "type": "Theorem",
+  "number": "3.1.12",
+  "title": "Linearity of Laplace transform.",
+  "body": " Linearity of Laplace transform  For every real numbers   "
+},
+{
+  "id": "sec-laplace-transform-3-11",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-3-11",
+  "type": "Proof",
+  "number": "3.1.2.1",
+  "title": "",
+  "body": " It follows from the linearity of integrals.  "
+},
+{
+  "id": "sec-laplace-transform-3-12",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-3-12",
+  "type": "Definition",
+  "number": "3.1.13",
+  "title": "Hyperbolic functions.",
+  "body": " Hyperbolic functions  Recall that from the Euler’s formula, the usual sine and cosine functions may also be expressed as  The hyperbolic functions are defined similarly:  These functions are widely used in engineering practices.  "
+},
+{
+  "id": "sec-laplace-transform-5-3",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-5-3",
+  "type": "Definition",
+  "number": "3.1.14",
+  "title": "",
+  "body": " A function is said to be of exponential order if there exist constants and such that In other words, does not grow faster than a constant multiple of a simple exponential function  "
+},
+{
+  "id": "sec-laplace-transform-5-6",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-5-6",
+  "type": "Theorem",
+  "number": "3.1.15",
+  "title": "Sufficient conditions for existence of Laplace transform.",
+  "body": " Sufficient conditions for existence of Laplace transform  If is piecewise continuous on and of exponential order, then exists for  "
+},
+{
+  "id": "sec-laplace-transform-5-7",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-5-7",
+  "type": "Proof",
+  "number": "3.1.4.1",
+  "title": "",
+  "body": " Since is of exponential order, there exist such that whenever Using the number we rewrite Since is piecewise continuous, exists.  For we use the inequality to show that Right-hand side is precisely that exists when In other words, converges absolutely when  "
+},
+{
+  "id": "sec-laplace-transform-5-8",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-5-8",
+  "type": "Remark",
+  "number": "3.1.16",
+  "title": "",
+  "body": " These two conditions are sufficient but not necessary. In other words, exists does not mean that should satisfy these two conditions.  For example, the function is not piecewise continuous. The function is not of exponential order. But it is not difficult to see that both and exist.  "
+},
+{
+  "id": "sec-laplace-transform-5-9",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-5-9",
+  "type": "Theorem",
+  "number": "3.1.17",
+  "title": "Long term behavior of <span class=\"process-math\">\\(\\mathcal{L}\\{f(t)\\}\\)<\/span>.",
+  "body": " Long term behavior of  If is piecewise continuous on and of exponential order, then the function satisfies  "
+},
+{
+  "id": "sec-laplace-transform-5-10",
+  "level": "2",
+  "url": "sec-laplace-transform.html#sec-laplace-transform-5-10",
+  "type": "Proof",
+  "number": "3.1.4.2",
+  "title": "",
+  "body": " Take as in the previous proof. Since is piecewise continuous on  is bounded. By adjusting we may assume that on Then we estimate that The conclusion then follows from the squeeze theorem.  "
 },
 {
   "id": "sec-inverse-Laplace",
@@ -1717,7 +1906,7 @@ var ptx_lunr_docs = [
   "type": "Section",
   "number": "3.2",
   "title": "Inverse Laplace Transform",
-  "body": " Inverse Laplace Transform  Inverse Laplace transform  If represents the Laplace transform of i.e., we would say that is the inverse Laplace transform of and write  Examples:        Remark: There is a general theorem stating that if then for all except for the points of discontinuity of and . In particular, the Laplace transform is a one-to-one mapping only when restricted to the set of continuous functions. We implicitly assume that the image of the inverse Laplace transform is the set of continuous functions.  Since the Laplace transform is linear, its inverse is also linear, i.e., for every real numbers and functions   Examples:        The following formulas of inverse Laplace should be memorized.    For a real number   For real numbers    Laplace Transform of derivatives  Theorem: If is continuous on and of exponential order, and if is piecewise continuous on then   The equality holds for sufficiently large  Proof: It follows from integration by parts.     Since is of exponential order, for sufficiently large  Thus,  Theorem: If are continuous on and of exponential order, and if is piecewise continuous on then for sufficiently large   Proof: It follows from integration by parts.     Since is of exponential order, for sufficiently large  Thus,  Theorem: If are continuous on and are of exponential order, and if is piecewise continuous on then with for sufficiently large   Proof: From integration by parts     Since is of exponential order, for sufficiently large  Thus,  Laplace transform of a linear ODE.  We have learned how to obtain the general solution of   using the auxiliary equation and the method of undetermined coefficients. When initial conditions are given, we need to solve in the process. The process is not always convenient.  Laplace transform provides an alternative way and gives a direct solution of an IVP    Given an IVP    We Laplace transform both sides. Let Then for the derivative, we have    Note that except for the first term, all other terms are known.  So, the Laplace transform of the left-hand side is   while the right-hand side is  Therefore, the Laplace transform on a differential equation ends up with the algebraic equation   from which we may solve explicitly. Indeed,   where is decided by the initial condition. After getting we perform the inverse Laplace transform to obtain that solves the IVP.  Given an IVP    The process of solving the IVP may be summarized as follows:   Find unknown that satisfies DE and initial conditions  Apply Laplace transform  Transformed DE becomes an algebraic equation in  Solve transformed equation for  Apply inverse Laplace transform  Solution of original IVP   Example 1  Solve the IVP   Set Laplace transform both sides:     Then     Partial Fractions - Linear factors  To evaluate  We will need to break the fraction as   We apply the cover-up method to conclude that     So, the solution of the IVP is      Example 2  Solve the IVP   Set Laplace transform both sides:     To find  We will need to break the fraction as   We may use the cover-up method to decide   Then we decide and directly from subtraction:    So   =  =  =  =  "
+  "body": " Inverse Laplace Transform  If represents the Laplace transform of i.e., we would say that is the inverse Laplace transform of and write  Examples:        Remark: There is a general theorem stating that if then for all except for the points of discontinuity of and . In particular, the Laplace transform is a one-to-one mapping only when restricted to the set of continuous functions. We implicitly assume that the image of the inverse Laplace transform is the set of continuous functions.  Since the Laplace transform is linear, its inverse is also linear, i.e., for every real numbers and functions   Examples:        The following formulas of inverse Laplace should be memorized.    For a real number   For real numbers    Laplace Transform of derivatives  Theorem: If is continuous on and of exponential order, and if is piecewise continuous on then   The equality holds for sufficiently large  Proof: It follows from integration by parts.     Since is of exponential order, for sufficiently large  Thus,  Theorem: If are continuous on and of exponential order, and if is piecewise continuous on then for sufficiently large   Proof: It follows from integration by parts.     Since is of exponential order, for sufficiently large  Thus,  Theorem: If are continuous on and are of exponential order, and if is piecewise continuous on then with for sufficiently large   Proof: From integration by parts     Since is of exponential order, for sufficiently large  Thus,  Laplace transform of a linear ODE.  We have learned how to obtain the general solution of   using the auxiliary equation and the method of undetermined coefficients. When initial conditions are given, we need to solve in the process. The process is not always convenient.  Laplace transform provides an alternative way and gives a direct solution of an IVP    Given an IVP    We Laplace transform both sides. Let Then for the derivative, we have    Note that except for the first term, all other terms are known.  So, the Laplace transform of the left-hand side is   while the right-hand side is  Therefore, the Laplace transform on a differential equation ends up with the algebraic equation   from which we may solve explicitly. Indeed,   where is decided by the initial condition. After getting we perform the inverse Laplace transform to obtain that solves the IVP.  Given an IVP    The process of solving the IVP may be summarized as follows:   Find unknown that satisfies DE and initial conditions  Apply Laplace transform  Transformed DE becomes an algebraic equation in  Solve transformed equation for  Apply inverse Laplace transform  Solution of original IVP   Example 1  Solve the IVP   Set Laplace transform both sides:     Then     Partial Fractions - Linear factors  To evaluate  We will need to break the fraction as   We apply the cover-up method to conclude that     So, the solution of the IVP is      Example 2  Solve the IVP   Set Laplace transform both sides:     To find  We will need to break the fraction as   We may use the cover-up method to decide   Then we decide and directly from subtraction:    So   =  =  =  =  "
 },
 {
   "id": "sec-first-translation-theorem",

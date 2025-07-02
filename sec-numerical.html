@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.6';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -275,7 +275,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integral Transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Laplace transforms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-4" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Summary of basic formulas for Laplace transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-5" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
@@ -296,11 +304,21 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-numerical"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">1.9</span><span class="space"> </span><span class="title">Numerical Methods</span>
 </h2>
-<div class="para" id="sec-numerical-2">Numerical Methods</div>
+<div class="para" id="sec-numerical-2">Numerical Methods<div class="autopermalink" data-description="Paragraph"><a href="#sec-numerical-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <ul class="disc" id="sec-numerical-3">
-<li id="sec-numerical-3-1"><div class="para" id="p-derived-sec-numerical-3-1">Applies to every reasonably formulated initial value problem.</div></li>
-<li id="sec-numerical-3-2"><div class="para" id="p-derived-sec-numerical-3-2">Most useful when the analytic methods fail.</div></li>
-<li id="sec-numerical-3-3"><div class="para" id="p-derived-sec-numerical-3-3">Main method for IVP in real world engineering practice.</div></li>
+<li id="sec-numerical-3-1">
+<div class="para" id="p-derived-sec-numerical-3-1">Applies to every reasonably formulated initial value problem.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-numerical-3-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-numerical-3-2">
+<div class="para" id="p-derived-sec-numerical-3-2">Most useful when the analytic methods fail.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-numerical-3-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-numerical-3-3">
+<div class="para" id="p-derived-sec-numerical-3-3">Main method for IVP in real world engineering practice.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-numerical-3-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
 <section class="subsection" id="subsec-euler-method"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.1</span><span class="space"> </span><span class="title">Euler’s method</span>
@@ -312,6 +330,7 @@ eBookConfig.enable_chatcodes =  false;
 f(t) \approx f(t_0) + f'(t_0)(t - t_0)
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-euler-method-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="subsec-euler-method-3">
 <div class="para">Consider the IVP</div>
@@ -326,10 +345,11 @@ y' = f(t, y), \, y(t_0) = y_0.
 y(t_0 + h) \approx y(t_0) + y'(t_0)h = y(t_0) + h \cdot f(t_0, y_0).
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-euler-method-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-euler-method-4">We read the line element at the point <span class="process-math">\((t_0, y(t_0 + h)),\)</span> perform the same procedure to get an approximation of <span class="process-math">\(y(t_0 + 2h).\)</span>
+<div class="para" id="subsec-euler-method-4">We read the line element at the point <span class="process-math">\((t_0, y(t_0 + h)),\)</span> perform the same procedure to get an approximation of <span class="process-math">\(y(t_0 + 2h).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-euler-method-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-euler-method-5">Repeating the process, we may approximate <span class="process-math">\(y(t_0 + nh)\)</span> for every <span class="process-math">\(n = 1, 2, 3, \ldots\)</span>
+<div class="para" id="subsec-euler-method-5">Repeating the process, we may approximate <span class="process-math">\(y(t_0 + nh)\)</span> for every <span class="process-math">\(n = 1, 2, 3, \ldots\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-euler-method-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="algorithm theorem-like" id="alg-euler-method"><h4 class="heading">
 <span class="type">Algorithm</span><span class="space"> </span><span class="codenumber">1.9.1</span><span class="period">.</span><span class="space"> </span><span class="title">Euler’s method.</span>
@@ -347,50 +367,90 @@ t_n = t_0 + nh, \, n = 0, 1, 2, \ldots.
 y_n = y_{n-1} + h \cdot f(t_{n-1}, y_{n-1}).
 \end{equation*}
 </div>
-</div></article><details id="ex-euler-method-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#alg-euler-method-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Algorithm 1.9.1: Euler’s method"><a href="#alg-euler-method" title="Copy heading and permalink for Algorithm 1.9.1: Euler’s method">🔗</a></div></article><details id="ex-euler-method-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.2</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y' = t - y + 1, \, y(1) = 3.\)</span> Use Euler’s method to approximate <span class="process-math">\(y(3)\)</span> with step-size <span class="process-math">\(h = 0.5.\)</span>.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-euler-method-1-2">Since <span class="process-math">\(h = 0.5, \, t_0 = 1,\)</span> we compute that</div>
-<div class="para" id="ex-euler-method-1-3"><span class="process-math">\(y_n = y_{n-1} + h(t_{n-1} - y_{n-1} + 1)\)</span></div>
-<div class="para" id="ex-euler-method-1-4"><span class="process-math">\(= y_{n-1} + 0.5(t_0 + (n - 1)h - y_{n-1} + 1)\)</span></div>
-<div class="para" id="ex-euler-method-1-5"><span class="process-math">\(= y_{n-1} + 0.5(1 + (n - 1)0.5 - y_{n-1} + 1)\)</span></div>
-<div class="para" id="ex-euler-method-1-6"><span class="process-math">\(= y_{n-1} + 0.5 + 0.25(n - 1)\)</span></div>
-<div class="para" id="ex-euler-method-1-7"><span class="process-math">\(= 0.5y_{n-1} + 0.75 + 0.25n.\)</span></div>
-<div class="para" id="ex-euler-method-1-8">We computed that</div>
-<div class="para" id="ex-euler-method-1-9"><span class="process-math">\(y_n = 0.5y_{n-1} + 0.75 + 0.25n.\)</span></div>
-<div class="para" id="ex-euler-method-1-10">Want: <span class="process-math">\(y(3),\)</span> i.e., <span class="process-math">\(t_0 + nh = 3\)</span> <span class="process-math">\(\Rightarrow 1 + 0.5n = 3 \Rightarrow n = 4.\)</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-euler-method-1-2">Since <span class="process-math">\(h = 0.5, \, t_0 = 1,\)</span> we compute that<div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-1-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-euler-method-1-11">So <span class="process-math">\(y(3) \approx 3.125.\)</span>
+<div class="para" id="ex-euler-method-1-3">
+<span class="process-math">\(y_n = y_{n-1} + h(t_{n-1} - y_{n-1} + 1)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-1-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="table table-like" id="ex-euler-method-1-12"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.9.3<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article></details><div class="para" id="subsec-euler-method-8">
-<em class="alert">Summary:</em> General steps in applying Euler’s method:</div>
+<div class="para" id="ex-euler-method-1-4">
+<span class="process-math">\(= y_{n-1} + 0.5(t_0 + (n - 1)h - y_{n-1} + 1)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-1-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-euler-method-1-5">
+<span class="process-math">\(= y_{n-1} + 0.5(1 + (n - 1)0.5 - y_{n-1} + 1)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-1-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-euler-method-1-6">
+<span class="process-math">\(= y_{n-1} + 0.5 + 0.25(n - 1)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-1-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-euler-method-1-7">
+<span class="process-math">\(= 0.5y_{n-1} + 0.75 + 0.25n.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-1-7" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-euler-method-1-8">We computed that<div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-1-8" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-euler-method-1-9">
+<span class="process-math">\(y_n = 0.5y_{n-1} + 0.75 + 0.25n.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-1-9" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-euler-method-1-10">Want: <span class="process-math">\(y(3),\)</span> i.e., <span class="process-math">\(t_0 + nh = 3\)</span> <span class="process-math">\(\Rightarrow 1 + 0.5n = 3 \Rightarrow n = 4.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-1-10" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-euler-method-1-11">So <span class="process-math">\(y(3) \approx 3.125.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-1-11" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="ex-euler-method-1-12"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.9.3<span class="period">.</span></span><span class="space"> </span><div class="autopermalink" data-description="Table 1.9.3"><a href="#ex-euler-method-1-12" title="Copy heading and permalink for Table 1.9.3">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 1.9.2: y' = t - y + 1, \, y(1) = 3. Use Euler’s method to approximate y(3) with step-size h = 0.5."><a href="#ex-euler-method-1" title="Copy heading and permalink for Example 1.9.2: y' = t - y + 1, \, y(1) = 3. Use Euler’s method to approximate y(3) with step-size h = 0.5.">🔗</a></div></article></details><div class="para" id="subsec-euler-method-8">
+<em class="alert">Summary:</em> General steps in applying Euler’s method:<div class="autopermalink" data-description="Paragraph"><a href="#subsec-euler-method-8" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <ol class="decimal" id="subsec-euler-method-9">
-<li id="subsec-euler-method-9-1"><div class="para" id="p-derived-subsec-euler-method-9-1">Formulate the formula and simplify <span class="process-math">\(y_n\)</span> in terms of <span class="process-math">\(y_{n-1}, n, h.\)</span>
-</div></li>
-<li id="subsec-euler-method-9-2"><div class="para" id="p-derived-subsec-euler-method-9-2">Determine how many steps you want to compute.</div></li>
-<li id="subsec-euler-method-9-3"><div class="para" id="p-derived-subsec-euler-method-9-3">Compute using either a calculator or some software.</div></li>
+<li id="subsec-euler-method-9-1">
+<div class="para" id="p-derived-subsec-euler-method-9-1">Formulate the formula and simplify <span class="process-math">\(y_n\)</span> in terms of <span class="process-math">\(y_{n-1}, n, h.\)</span>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#subsec-euler-method-9-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsec-euler-method-9-2">
+<div class="para" id="p-derived-subsec-euler-method-9-2">Determine how many steps you want to compute.</div>
+<div class="autopermalink" data-description="Item 2"><a href="#subsec-euler-method-9-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="subsec-euler-method-9-3">
+<div class="para" id="p-derived-subsec-euler-method-9-3">Compute using either a calculator or some software.</div>
+<div class="autopermalink" data-description="Item 3"><a href="#subsec-euler-method-9-3" title="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
 </ol>
 <details id="ex-euler-method-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.4</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y' = t + y, \, y(1) = 2.\)</span> Use Euler’s method to approximate <span class="process-math">\(y(3)\)</span> with step-size <span class="process-math">\(h = 1.\)</span>.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-euler-method-2-2">Since <span class="process-math">\(h = 1, \, t_0 = 1,\)</span> we compute that</div>
-<div class="para" id="ex-euler-method-2-3"><span class="process-math">\(y_n = y_{n-1} + h(t_{n-1} + y_{n-1})\)</span></div>
-<div class="para" id="ex-euler-method-2-4"><span class="process-math">\(= y_{n-1} + 1 \cdot (t_0 + (n - 1)h + y_{n-1})\)</span></div>
-<div class="para" id="ex-euler-method-2-5"><span class="process-math">\(= y_{n-1} + (1 + (n - 1) + y_{n-1})\)</span></div>
-<div class="para" id="ex-euler-method-2-6"><span class="process-math">\(= 2y_{n-1} + n.\)</span></div>
-<div class="para" id="ex-euler-method-2-7">We computed that</div>
-<div class="para" id="ex-euler-method-2-8"><span class="process-math">\(y_n = 2y_{n-1} + n.\)</span></div>
-<div class="para" id="ex-euler-method-2-9">Want: <span class="process-math">\(y(3),\)</span> i.e., <span class="process-math">\(t_0 + nh = 3\)</span> <span class="process-math">\(\Rightarrow 1 + n = 3 \Rightarrow n = 2.\)</span>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-euler-method-2-2">Since <span class="process-math">\(h = 1, \, t_0 = 1,\)</span> we compute that<div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-2-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="ex-euler-method-2-10">So <span class="process-math">\(y(3) \approx 12.\)</span>
+<div class="para" id="ex-euler-method-2-3">
+<span class="process-math">\(y_n = y_{n-1} + h(t_{n-1} + y_{n-1})\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-2-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<figure class="table table-like" id="ex-euler-method-2-11"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.9.5<span class="period">.</span></span><span class="space"> </span></figcaption></figure></article></details></section><section class="subsection" id="subsec-error-analysis"><h3 class="heading hide-type">
+<div class="para" id="ex-euler-method-2-4">
+<span class="process-math">\(= y_{n-1} + 1 \cdot (t_0 + (n - 1)h + y_{n-1})\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-2-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-euler-method-2-5">
+<span class="process-math">\(= y_{n-1} + (1 + (n - 1) + y_{n-1})\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-2-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-euler-method-2-6">
+<span class="process-math">\(= 2y_{n-1} + n.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-2-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-euler-method-2-7">We computed that<div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-2-7" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-euler-method-2-8">
+<span class="process-math">\(y_n = 2y_{n-1} + n.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-2-8" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-euler-method-2-9">Want: <span class="process-math">\(y(3),\)</span> i.e., <span class="process-math">\(t_0 + nh = 3\)</span> <span class="process-math">\(\Rightarrow 1 + n = 3 \Rightarrow n = 2.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-2-9" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="ex-euler-method-2-10">So <span class="process-math">\(y(3) \approx 12.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#ex-euler-method-2-10" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<figure class="table table-like" id="ex-euler-method-2-11"><figcaption><span class="type">Table</span><span class="space"> </span><span class="codenumber">1.9.5<span class="period">.</span></span><span class="space"> </span><div class="autopermalink" data-description="Table 1.9.5"><a href="#ex-euler-method-2-11" title="Copy heading and permalink for Table 1.9.5">🔗</a></div></figcaption></figure><div class="autopermalink" data-description="Example 1.9.4: y' = t + y, \, y(1) = 2. Use Euler’s method to approximate y(3) with step-size h = 1."><a href="#ex-euler-method-2" title="Copy heading and permalink for Example 1.9.4: y' = t + y, \, y(1) = 2. Use Euler’s method to approximate y(3) with step-size h = 1.">🔗</a></div></article></details><div class="autopermalink" data-description="Subsection 1.9.1: Euler’s method"><a href="#subsec-euler-method" title="Copy heading and permalink for Subsection 1.9.1: Euler’s method">🔗</a></div></section><section class="subsection" id="subsec-error-analysis"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.2</span><span class="space"> </span><span class="title">Error analysis of Euler’s method</span>
 </h3>
-<div class="para" id="subsec-error-analysis-2">In <a href="sec-numerical.html#ex-euler-method-1" class="xref" data-knowl="./knowl/xref/ex-euler-method-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.9.2: y' = t - y + 1, \, y(1) = 3. Use Euler’s method to approximate y(3) with step-size h = 0.5.">Example 1.9.2</a>, we approximated that <span class="process-math">\(y(3) \approx 3.125.\)</span>
+<div class="para" id="subsec-error-analysis-2">In <a href="sec-numerical.html#ex-euler-method-1" class="xref" data-knowl="./knowl/xref/ex-euler-method-1.html" data-reveal-label="Reveal" data-close-label="Close" title="Example 1.9.2: y' = t - y + 1, \, y(1) = 3. Use Euler’s method to approximate y(3) with step-size h = 0.5.">Example 1.9.2</a>, we approximated that <span class="process-math">\(y(3) \approx 3.125.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-error-analysis-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-error-analysis-3">The IVP <span class="process-math">\(y' = t - y + 1, \, y(1) = 3\)</span> can be solved directly.</div>
-<div class="para" id="subsec-error-analysis-4">The actual solution is <span class="process-math">\(y(t) = t + 2e^{1-t} \Rightarrow y(3) \approx 3.27067.\)</span>
+<div class="para" id="subsec-error-analysis-3">The IVP <span class="process-math">\(y' = t - y + 1, \, y(1) = 3\)</span> can be solved directly.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-error-analysis-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="subsec-error-analysis-5">The approximation is not very good. However, if we use <span class="process-math">\(h = \frac{1}{10},\)</span> or <span class="process-math">\(h = \frac{1}{10,000},\)</span> the approximation will be much better.</div>
+<div class="para" id="subsec-error-analysis-4">The actual solution is <span class="process-math">\(y(t) = t + 2e^{1-t} \Rightarrow y(3) \approx 3.27067.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#subsec-error-analysis-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="subsec-error-analysis-5">The approximation is not very good. However, if we use <span class="process-math">\(h = \frac{1}{10},\)</span> or <span class="process-math">\(h = \frac{1}{10,000},\)</span> the approximation will be much better.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-error-analysis-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical" id="subsec-error-analysis-6">
 <div class="para">To understand the error, we recall Taylor’s theorem:</div>
 <div class="displaymath process-math">
@@ -404,23 +464,44 @@ y(t_0 + h) = y(t_0) + hy'(t_0) + \frac{h^2}{2}y''(t_0) + \cdots
 Error = \frac{1}{2}h^2y''(t_1), \, t_1 \in (t_0, t_0 + h)
 \end{equation*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#subsec-error-analysis-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <article class="observation remark-like" id="subsec-error-analysis-7"><h4 class="heading">
 <span class="type">Observation</span><span class="space"> </span><span class="codenumber">1.9.6</span><span class="period">.</span>
 </h4>
 <ol class="decimal" id="subsec-error-analysis-7-1">
-<li id="subsec-error-analysis-7-1-1"><div class="para" id="p-derived-subsec-error-analysis-7-1-1">If <span class="process-math">\(y''(t) \gt 0\)</span> on <span class="process-math">\((t_0, t_0 + h),\)</span> Euler’s method gives an underestimate of <span class="process-math">\(y(t_0 + h),\)</span> i.e., the estimate <span class="process-math">\(y_1\)</span> is smaller than the actual solution <span class="process-math">\(y(t_0 + h).\)</span>
-</div></li>
-<li id="subsec-error-analysis-7-1-2"><div class="para" id="p-derived-subsec-error-analysis-7-1-2">If <span class="process-math">\(y''(t) \lt 0\)</span> on <span class="process-math">\((t_0, t_0 + h),\)</span> Euler’s method gives an overestimate of <span class="process-math">\(y(t_0 + h),\)</span> i.e., the estimate <span class="process-math">\(y_1\)</span> is larger than the actual solution <span class="process-math">\(y(t_0 + h).\)</span>
-</div></li>
-<li id="subsec-error-analysis-7-1-3"><div class="para" id="p-derived-subsec-error-analysis-7-1-3">If <span class="process-math">\(y''(t)\)</span> changes sign. In that case, we can’t tell.</div></li>
-<li id="subsec-error-analysis-7-1-4"><div class="para" id="p-derived-subsec-error-analysis-7-1-4">The formula describes the error in <em class="alert">one step</em>, thus is called the <dfn class="terminology">local truncation error.</dfn> It is proportional to <span class="process-math">\(h^2.\)</span> In particular, lowering <span class="process-math">\(h\)</span> means lowering the error.</div></li>
-<li id="subsec-error-analysis-7-1-5"><div class="para" id="p-derived-subsec-error-analysis-7-1-5">The final error, aka <dfn class="terminology">global truncation error,</dfn> will accumulate.</div></li>
-<li id="subsec-error-analysis-7-1-6"><div class="para" id="p-derived-subsec-error-analysis-7-1-6">In general, if the local truncation <span class="process-math">\(\sim h^k\text{,}\)</span> then global truncation error <span class="process-math">\(\sim h^{k-1}.\)</span> For Euler’s method, the GTE <span class="process-math">\(\sim h.\)</span>
-</div></li>
-</ol></article><details id="ex-error-analysis-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<li id="subsec-error-analysis-7-1-1">
+<div class="para" id="p-derived-subsec-error-analysis-7-1-1">If <span class="process-math">\(y''(t) \gt 0\)</span> on <span class="process-math">\((t_0, t_0 + h),\)</span> Euler’s method gives an underestimate of <span class="process-math">\(y(t_0 + h),\)</span> i.e., the estimate <span class="process-math">\(y_1\)</span> is smaller than the actual solution <span class="process-math">\(y(t_0 + h).\)</span>
+</div>
+<div class="autopermalink" data-description="Item 1"><a href="#subsec-error-analysis-7-1-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
+<li id="subsec-error-analysis-7-1-2">
+<div class="para" id="p-derived-subsec-error-analysis-7-1-2">If <span class="process-math">\(y''(t) \lt 0\)</span> on <span class="process-math">\((t_0, t_0 + h),\)</span> Euler’s method gives an overestimate of <span class="process-math">\(y(t_0 + h),\)</span> i.e., the estimate <span class="process-math">\(y_1\)</span> is larger than the actual solution <span class="process-math">\(y(t_0 + h).\)</span>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#subsec-error-analysis-7-1-2" title="Copy heading and permalink for Item 2">🔗</a></div>
+</li>
+<li id="subsec-error-analysis-7-1-3">
+<div class="para" id="p-derived-subsec-error-analysis-7-1-3">If <span class="process-math">\(y''(t)\)</span> changes sign. In that case, we can’t tell.</div>
+<div class="autopermalink" data-description="Item 3"><a href="#subsec-error-analysis-7-1-3" title="Copy heading and permalink for Item 3">🔗</a></div>
+</li>
+<li id="subsec-error-analysis-7-1-4">
+<div class="para" id="p-derived-subsec-error-analysis-7-1-4">The formula describes the error in <em class="alert">one step</em>, thus is called the <dfn class="terminology">local truncation error.</dfn> It is proportional to <span class="process-math">\(h^2.\)</span> In particular, lowering <span class="process-math">\(h\)</span> means lowering the error.</div>
+<div class="autopermalink" data-description="Item 4"><a href="#subsec-error-analysis-7-1-4" title="Copy heading and permalink for Item 4">🔗</a></div>
+</li>
+<li id="subsec-error-analysis-7-1-5">
+<div class="para" id="p-derived-subsec-error-analysis-7-1-5">The final error, aka <dfn class="terminology">global truncation error,</dfn> will accumulate.</div>
+<div class="autopermalink" data-description="Item 5"><a href="#subsec-error-analysis-7-1-5" title="Copy heading and permalink for Item 5">🔗</a></div>
+</li>
+<li id="subsec-error-analysis-7-1-6">
+<div class="para" id="p-derived-subsec-error-analysis-7-1-6">In general, if the local truncation <span class="process-math">\(\sim h^k\text{,}\)</span> then global truncation error <span class="process-math">\(\sim h^{k-1}.\)</span> For Euler’s method, the GTE <span class="process-math">\(\sim h.\)</span>
+</div>
+<div class="autopermalink" data-description="Item 6"><a href="#subsec-error-analysis-7-1-6" title="Copy heading and permalink for Item 6">🔗</a></div>
+</li>
+</ol>
+<div class="autopermalink" data-description="Observation 1.9.6"><a href="#subsec-error-analysis-7" title="Copy heading and permalink for Observation 1.9.6">🔗</a></div></article><details id="ex-error-analysis-1" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.7</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y' = t - y + 1, \, y(1) = 3.\)</span>.</span>
-</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-error-analysis-1-2">We estimated that <span class="process-math">\(y(3) \approx 3.125.\)</span> Do we have an overestimate or an underestimate?</div>
+</h4></summary><article class="example example-like knowl__content"><div class="para" id="ex-error-analysis-1-2">We estimated that <span class="process-math">\(y(3) \approx 3.125.\)</span> Do we have an overestimate or an underestimate?<div class="autopermalink" data-description="Paragraph"><a href="#ex-error-analysis-1-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="para logical" id="ex-error-analysis-1-3">
 <div class="para">To find <span class="process-math">\(y''\text{,}\)</span> we take the derivative on both sides of the ODE:</div>
 <div class="displaymath process-math">
@@ -441,9 +522,12 @@ y''(1.5) \approx -1.5 + 2.5 = 1, \, y''(2) \approx -2 + 2.5 = 0.5, \, y''(2.5) \
 \end{equation*}
 </div>
 <div class="para">They are all positive. It is <em class="alert">likely</em> that we have an underestimate.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-error-analysis-1-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para" id="ex-error-analysis-1-4">
-<em class="alert">Warning:</em> This process is not fully rigorous. It provides some evidence that is usually good enough in engineering practices.</div></article></details><details id="ex-error-analysis-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
+<em class="alert">Warning:</em> This process is not fully rigorous. It provides some evidence that is usually good enough in engineering practices.<div class="autopermalink" data-description="Paragraph"><a href="#ex-error-analysis-1-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.9.7: y' = t - y + 1, \, y(1) = 3."><a href="#ex-error-analysis-1" title="Copy heading and permalink for Example 1.9.7: y' = t - y + 1, \, y(1) = 3.">🔗</a></div></article></details><details id="ex-error-analysis-2" class="example example-like born-hidden-knowl"><summary class="knowl__link"><h4 class="heading">
 <span class="type">Example</span><span class="space"> </span><span class="codenumber">1.9.8</span><span class="period">.</span><span class="space"> </span><span class="title"><span class="process-math">\(y' = t - y + 1, \, y(1) = 3.\)</span> If the error of <span class="process-math">\(y(3)\)</span> is 0.2 with step-size <span class="process-math">\(h = 0.5,\)</span> what would the error be if step-size <span class="process-math">\(h = 0.01?\)</span></span>
 </h4></summary><article class="example example-like knowl__content"><div class="para logical" id="ex-error-analysis-2-2">
 <div class="para">We know that the global truncation error is proportional to <span class="process-math">\(h,\)</span> i.e.,</div>
@@ -460,39 +544,82 @@ E = K \cdot 0.01 = \frac{0.2}{0.5} \cdot 0.01 = 0.004.
 </div>
 <div class="para">So the error is <span class="process-math">\(0.004.\)</span>
 </div>
-</div></article></details><article class="remark remark-like" id="subsec-error-analysis-10"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#ex-error-analysis-2-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Example 1.9.8: y' = t - y + 1, \, y(1) = 3. If the error of y(3) is 0.2 with step-size h = 0.5, what would the error be if step-size h = 0.01?"><a href="#ex-error-analysis-2" title="Copy heading and permalink for Example 1.9.8: y' = t - y + 1, \, y(1) = 3. If the error of y(3) is 0.2 with step-size h = 0.5, what would the error be if step-size h = 0.01?">🔗</a></div></article></details><article class="remark remark-like" id="subsec-error-analysis-10"><h4 class="heading">
 <span class="type">Remark</span><span class="space"> </span><span class="codenumber">1.9.9</span><span class="period">.</span>
 </h4>
-<div class="para" id="subsec-error-analysis-10-1">We may use this method to decide the step-size so that the error is controlled within a certain precision level.</div></article></section><section class="subsection" id="subsec-other-methods"><h3 class="heading hide-type">
+<div class="para" id="subsec-error-analysis-10-1">We may use this method to decide the step-size so that the error is controlled within a certain precision level.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-error-analysis-10-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Remark 1.9.9"><a href="#subsec-error-analysis-10" title="Copy heading and permalink for Remark 1.9.9">🔗</a></div></article><div class="autopermalink" data-description="Subsection 1.9.2: Error analysis of Euler’s method"><a href="#subsec-error-analysis" title="Copy heading and permalink for Subsection 1.9.2: Error analysis of Euler’s method">🔗</a></div></section><section class="subsection" id="subsec-other-methods"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">1.9.3</span><span class="space"> </span><span class="title">Other methods</span>
 </h3>
-<div class="para" id="subsec-other-methods-2">Here are some other methods that are more accurate than Euler’s method. Due to limitation of lecture time, we shall not discuss them in detail.</div>
+<div class="para" id="subsec-other-methods-2">Here are some other methods that are more accurate than Euler’s method. Due to limitation of lecture time, we shall not discuss them in detail.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-other-methods-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="displaymath process-math">
 \begin{equation*}
 y' = f(t, y),  y(t_0) = y_0. 
 \end{equation*}
 </div>
 <ul class="disc" id="subsec-other-methods-4">
-<li id="subsec-other-methods-4-1"><div class="para" id="p-derived-subsec-other-methods-4-1">Improved Euler’s method:<ul class="circle" id="subsec-other-methods-4-1-2">
-<li id="subsec-other-methods-4-1-2-1"><div class="para" id="p-derived-subsec-other-methods-4-1-2-1"><span class="process-math">\(\displaystyle t_n = t_0 + nh\)</span></div></li>
-<li id="subsec-other-methods-4-1-2-2"><div class="para" id="p-derived-subsec-other-methods-4-1-2-2"><span class="process-math">\(\displaystyle y^*_n = y_{n-1} + h \cdot f(t_{n-1}, y_{n-1})\)</span></div></li>
-<li id="subsec-other-methods-4-1-2-3"><div class="para" id="p-derived-subsec-other-methods-4-1-2-3"><span class="process-math">\(\displaystyle y_n = y_{n-1} + h \cdot \frac{1}{2}(f(t_{n-1}, y_{n-1}) + f(t_n, y^*_n))\)</span></div></li>
-<li id="subsec-other-methods-4-1-2-4"><div class="para" id="p-derived-subsec-other-methods-4-1-2-4">Local truncation error <span class="process-math">\(\sim h^3\text{,}\)</span> Global truncation error <span class="process-math">\(\sim h^2\)</span>
-</div></li>
+<li id="subsec-other-methods-4-1">
+<div class="para" id="p-derived-subsec-other-methods-4-1">Improved Euler’s method:<ul class="circle" id="subsec-other-methods-4-1-2">
+<li id="subsec-other-methods-4-1-2-1">
+<div class="para" id="p-derived-subsec-other-methods-4-1-2-1"><span class="process-math">\(\displaystyle t_n = t_0 + nh\)</span></div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-other-methods-4-1-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-other-methods-4-1-2-2">
+<div class="para" id="p-derived-subsec-other-methods-4-1-2-2"><span class="process-math">\(\displaystyle y^*_n = y_{n-1} + h \cdot f(t_{n-1}, y_{n-1})\)</span></div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-other-methods-4-1-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-other-methods-4-1-2-3">
+<div class="para" id="p-derived-subsec-other-methods-4-1-2-3"><span class="process-math">\(\displaystyle y_n = y_{n-1} + h \cdot \frac{1}{2}(f(t_{n-1}, y_{n-1}) + f(t_n, y^*_n))\)</span></div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-other-methods-4-1-2-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-other-methods-4-1-2-4">
+<div class="para" id="p-derived-subsec-other-methods-4-1-2-4">Local truncation error <span class="process-math">\(\sim h^3\text{,}\)</span> Global truncation error <span class="process-math">\(\sim h^2\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-other-methods-4-1-2-4" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
-</div></li>
-<li id="subsec-other-methods-4-2"><div class="para" id="p-derived-subsec-other-methods-4-2">Runge-Kutta method (RK4)<ul class="circle" id="subsec-other-methods-4-2-2">
-<li id="subsec-other-methods-4-2-2-1"><div class="para" id="p-derived-subsec-other-methods-4-2-2-1"><span class="process-math">\(\displaystyle t_n = t_0 + nh\)</span></div></li>
-<li id="subsec-other-methods-4-2-2-2"><div class="para" id="p-derived-subsec-other-methods-4-2-2-2"><span class="process-math">\(\displaystyle K_1 = f(t_{n-1}, y_{n-1}), \, K_2 = f(t_{n-1} + \frac{1}{2}h, y_{n-1} + \frac{1}{2}K_1h)\)</span></div></li>
-<li id="subsec-other-methods-4-2-2-3"><div class="para" id="p-derived-subsec-other-methods-4-2-2-3"><span class="process-math">\(\displaystyle K_3 = f(t_{n-1} + \frac{1}{2}h, y_{n-1} + \frac{1}{2}K_2h)\)</span></div></li>
-<li id="subsec-other-methods-4-2-2-4"><div class="para" id="p-derived-subsec-other-methods-4-2-2-4"><span class="process-math">\(\displaystyle K_4 = f(t_{n-1} + h, y_{n-1} + K_3)\)</span></div></li>
-<li id="subsec-other-methods-4-2-2-5"><div class="para" id="p-derived-subsec-other-methods-4-2-2-5"><span class="process-math">\(\displaystyle y_n = y_{n-1} + \frac{h}{6}(K_1 + 2K_2 + 2K_3 + K_4)\)</span></div></li>
-<li id="subsec-other-methods-4-2-2-6"><div class="para" id="p-derived-subsec-other-methods-4-2-2-6">Local truncation error <span class="process-math">\(\sim h^5\text{,}\)</span> Global truncation error <span class="process-math">\(\sim h^4\)</span>
-</div></li>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-other-methods-4-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-other-methods-4-2">
+<div class="para" id="p-derived-subsec-other-methods-4-2">Runge-Kutta method (RK4)<ul class="circle" id="subsec-other-methods-4-2-2">
+<li id="subsec-other-methods-4-2-2-1">
+<div class="para" id="p-derived-subsec-other-methods-4-2-2-1"><span class="process-math">\(\displaystyle t_n = t_0 + nh\)</span></div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-other-methods-4-2-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-other-methods-4-2-2-2">
+<div class="para" id="p-derived-subsec-other-methods-4-2-2-2"><span class="process-math">\(\displaystyle K_1 = f(t_{n-1}, y_{n-1}), \, K_2 = f(t_{n-1} + \frac{1}{2}h, y_{n-1} + \frac{1}{2}K_1h)\)</span></div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-other-methods-4-2-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-other-methods-4-2-2-3">
+<div class="para" id="p-derived-subsec-other-methods-4-2-2-3"><span class="process-math">\(\displaystyle K_3 = f(t_{n-1} + \frac{1}{2}h, y_{n-1} + \frac{1}{2}K_2h)\)</span></div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-other-methods-4-2-2-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-other-methods-4-2-2-4">
+<div class="para" id="p-derived-subsec-other-methods-4-2-2-4"><span class="process-math">\(\displaystyle K_4 = f(t_{n-1} + h, y_{n-1} + K_3)\)</span></div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-other-methods-4-2-2-4" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-other-methods-4-2-2-5">
+<div class="para" id="p-derived-subsec-other-methods-4-2-2-5"><span class="process-math">\(\displaystyle y_n = y_{n-1} + \frac{h}{6}(K_1 + 2K_2 + 2K_3 + K_4)\)</span></div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-other-methods-4-2-2-5" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="subsec-other-methods-4-2-2-6">
+<div class="para" id="p-derived-subsec-other-methods-4-2-2-6">Local truncation error <span class="process-math">\(\sim h^5\text{,}\)</span> Global truncation error <span class="process-math">\(\sim h^4\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-other-methods-4-2-2-6" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
-</div></li>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#subsec-other-methods-4-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
-<div class="para" id="subsec-other-methods-5">It shall be noted that the RK4 method is the most popular method in practice.</div></section></section></div>
+<div class="para" id="subsec-other-methods-5">It shall be noted that the RK4 method is the most popular method in practice.<div class="autopermalink" data-description="Paragraph"><a href="#subsec-other-methods-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 1.9.3: Other methods"><a href="#subsec-other-methods" title="Copy heading and permalink for Subsection 1.9.3: Other methods">🔗</a></div></section><div class="autopermalink" data-description="Section 1.9: Numerical Methods"><a href="#sec-numerical" title="Copy heading and permalink for Section 1.9: Numerical Methods">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-autonomous.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-higher-order.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.6';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -275,7 +275,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter">
 <div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
 <ul class="structural toc-item-list">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integral Transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Laplace transforms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-4" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Summary of basic formulas for Laplace transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-5" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
@@ -299,13 +307,15 @@ eBookConfig.enable_chatcodes =  false;
 <section class="subsection" id="sec-2nd-order-linear-non-homogeneous-2"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.6.1</span><span class="space"> </span><span class="title">Principle of Superposition and the Structure of the General Solution</span>
 </h3>
-<div class="para" id="sec-2nd-order-linear-non-homogeneous-2-2">The general solution of a nonhomogeneous linear ODE</div>
+<div class="para" id="sec-2nd-order-linear-non-homogeneous-2-2">The general solution of a nonhomogeneous linear ODE<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-non-homogeneous-2-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-superposition-nonhomogeneous.html">
 \begin{equation*}
 y'' + p(t)y' + q(t)y = g(t)
 \end{equation*}
 </div>
-<div class="para" id="sec-2nd-order-linear-non-homogeneous-2-4">is closely related to the solution of the homogeneous ODE</div>
+<div class="para" id="sec-2nd-order-linear-non-homogeneous-2-4">is closely related to the solution of the homogeneous ODE<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-non-homogeneous-2-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <div class="displaymath process-math" data-contains-math-knowls="./knowl/xref/thm-superposition-nonhomogeneous.html">
 \begin{equation*}
 y'' + p(t)y' + q(t)y = 0.
@@ -327,7 +337,9 @@ y'' + p(t)y' + q(t)y = g(t).
 y'' + p(t)y' + q(t)y = 0.
 \end{equation*}
 </div>
-</div></article><details id="sec-2nd-order-linear-non-homogeneous-2-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-2nd-order-linear-non-homogeneous-2-7-1">
+<div class="autopermalink" data-description="Paragraph"><a href="#thm-superposition-nonhomogeneous-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Theorem 2.6.1: Principle of Superposition"><a href="#thm-superposition-nonhomogeneous" title="Copy heading and permalink for Theorem 2.6.1: Principle of Superposition">🔗</a></div></article><details id="sec-2nd-order-linear-non-homogeneous-2-7" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-2nd-order-linear-non-homogeneous-2-7-1">
 <div class="para">The assumption states that</div>
 <div class="displaymath process-math">
 \begin{equation*}
@@ -348,7 +360,9 @@ Y_2'' + p(t)Y_2' + q(t)Y_2 = g(t).
 </div>
 <div class="para">Thus <span class="process-math">\(Y_1 - Y_2\)</span> is a solution of the <span class="process-math">\(y'' + p(t)y' + q(t)y = 0.\)</span>
 </div>
-</div></article></details><article class="theorem theorem-like" id="sec-2nd-order-linear-non-homogeneous-2-8"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-non-homogeneous-2-7-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.6.1.1"><a href="#sec-2nd-order-linear-non-homogeneous-2-7" title="Copy heading and permalink for Proof 2.6.1.1">🔗</a></div></article></details><article class="theorem theorem-like" id="sec-2nd-order-linear-non-homogeneous-2-8"><h4 class="heading">
 <span class="type">Theorem</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="period">.</span><span class="space"> </span><span class="title">Structure of the general solution.</span>
 </h4>
 <div class="para logical" id="sec-2nd-order-linear-non-homogeneous-2-8-2-1">
@@ -359,22 +373,30 @@ y = y_c + Y = C_1y_1 + C_2y_2 + Y
 \end{equation*}
 </div>
 <div class="para">where</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-non-homogeneous-2-8-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div> <ul class="disc" id="sec-2nd-order-linear-non-homogeneous-2-8-2-2">
-<li id="sec-2nd-order-linear-non-homogeneous-2-8-2-2-1"><div class="para" id="p-derived-sec-2nd-order-linear-non-homogeneous-2-8-2-2-1">
+<li id="sec-2nd-order-linear-non-homogeneous-2-8-2-2-1">
+<div class="para" id="p-derived-sec-2nd-order-linear-non-homogeneous-2-8-2-2-1">
 <span class="process-math">\(y_c = C_1y_1 + C_2y_2\)</span> is the general solution of the homogeneous ODE<div class="displaymath process-math">
 \begin{equation*}
 y'' + p(t)y' + q(t)y = 0.
 \end{equation*}
 </div>
-</div></li>
-<li id="sec-2nd-order-linear-non-homogeneous-2-8-2-2-2"><div class="para" id="p-derived-sec-2nd-order-linear-non-homogeneous-2-8-2-2-2">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-2nd-order-linear-non-homogeneous-2-8-2-2-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-2nd-order-linear-non-homogeneous-2-8-2-2-2">
+<div class="para" id="p-derived-sec-2nd-order-linear-non-homogeneous-2-8-2-2-2">
 <span class="process-math">\(Y\)</span> is a particular solution of ODE<div class="displaymath process-math">
 \begin{equation*}
 y'' + p(t)y' + q(t)y = g(t).
 \end{equation*}
 </div>
-</div></li>
-</ul></article><details id="sec-2nd-order-linear-non-homogeneous-2-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-2nd-order-linear-non-homogeneous-2-9-1">
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-2nd-order-linear-non-homogeneous-2-8-2-2-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+</ul>
+<div class="autopermalink" data-description="Theorem 2.6.2: Structure of the general solution"><a href="#sec-2nd-order-linear-non-homogeneous-2-8" title="Copy heading and permalink for Theorem 2.6.2: Structure of the general solution">🔗</a></div></article><details id="sec-2nd-order-linear-non-homogeneous-2-9" class="hiddenproof born-hidden-knowl"><summary class="knowl__link"><h4 class="heading"><span class="type">Proof<span class="period">.</span></span></h4></summary><article class="hiddenproof knowl__content"><div class="para logical" id="sec-2nd-order-linear-non-homogeneous-2-9-1">
 <div class="para">We first check that <span class="process-math">\(y = y_c + Y\)</span> is a solution:</div>
 <div class="displaymath process-math" id="sec-2nd-order-linear-non-homogeneous-2-9-1-2">
 \begin{align*}
@@ -383,6 +405,7 @@ LHS \amp= (y_c + Y)'' + p(t)(y_c + Y)' + q(t)(y_c + Y)\\
 \amp= 0 + g(t) = RHS.
 \end{align*}
 </div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-non-homogeneous-2-9-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <div class="para logical" id="sec-2nd-order-linear-non-homogeneous-2-9-2">
 <div class="para">It remains to check that <em class="alert">any solution is of this form.</em> Let <span class="process-math">\(y\)</span> be any solution of the nonhomogeneous ODE. Then from the <a href="sec-2nd-order-linear-non-homogeneous.html#thm-superposition-nonhomogeneous" class="xref" data-knowl="./knowl/xref/thm-superposition-nonhomogeneous.html" data-reveal-label="Reveal" data-close-label="Close" title="Theorem 2.6.1: Principle of Superposition">Theorem 2.6.1</a>, <span class="process-math">\(y - Y\)</span> is a solution of the homogeneous ODE. Thus</div>
@@ -397,11 +420,17 @@ y - Y = C_1y_1 + C_2y_2
 y = C_1y_1 + C_2y_2 + Y.
 \end{equation*}
 </div>
-</div></article></details><article class="definition definition-like" id="sec-2nd-order-linear-non-homogeneous-2-10"><h4 class="heading">
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-non-homogeneous-2-9-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Proof 2.6.1.2"><a href="#sec-2nd-order-linear-non-homogeneous-2-9" title="Copy heading and permalink for Proof 2.6.1.2">🔗</a></div></article></details><article class="definition definition-like" id="sec-2nd-order-linear-non-homogeneous-2-10"><h4 class="heading">
 <span class="type">Definition</span><span class="space"> </span><span class="codenumber">2.6.3</span><span class="period">.</span>
 </h4>
 <div class="para" id="sec-2nd-order-linear-non-homogeneous-2-10-1">
-<span class="process-math">\(y_c = C_1y_1 + C_2y_2\)</span> is called the <dfn class="terminology">complementary solution</dfn> <span class="process-math">\(Y\)</span> is called a <dfn class="terminology">particular solution</dfn>.</div></article><div class="para" id="sec-2nd-order-linear-non-homogeneous-2-11">Solving a nonhomogeneous ODE reduces to two parts: Solve the homogeneous ODE to find the complementary solution, then find a particular solution.</div></section><section class="subsection" id="sec-2nd-order-linear-non-homogeneous-3"><h3 class="heading hide-type">
+<span class="process-math">\(y_c = C_1y_1 + C_2y_2\)</span> is called the <dfn class="terminology">complementary solution</dfn> <span class="process-math">\(Y\)</span> is called a <dfn class="terminology">particular solution</dfn>.<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-non-homogeneous-2-10-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Definition 2.6.3"><a href="#sec-2nd-order-linear-non-homogeneous-2-10" title="Copy heading and permalink for Definition 2.6.3">🔗</a></div></article><div class="para" id="sec-2nd-order-linear-non-homogeneous-2-11">Solving a nonhomogeneous ODE reduces to two parts: Solve the homogeneous ODE to find the complementary solution, then find a particular solution.<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-non-homogeneous-2-11" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Subsection 2.6.1: Principle of Superposition and the Structure of the General Solution"><a href="#sec-2nd-order-linear-non-homogeneous-2" title="Copy heading and permalink for Subsection 2.6.1: Principle of Superposition and the Structure of the General Solution">🔗</a></div></section><section class="subsection" id="sec-2nd-order-linear-non-homogeneous-3"><h3 class="heading hide-type">
 <span class="type">Subsection</span><span class="space"> </span><span class="codenumber">2.6.2</span><span class="space"> </span><span class="title">Linear ODE with constant coefficients</span>
 </h3>
 <div class="para logical" id="sec-2nd-order-linear-non-homogeneous-3-2">
@@ -412,15 +441,26 @@ ay'' + by' + cy = g(t),
 \end{equation*}
 </div>
 <div class="para">we learned how to find the complementary solution:</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-non-homogeneous-3-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-2nd-order-linear-non-homogeneous-3-3">We start by forming the auxiliary equation <span class="process-math">\(ar^2 + br + c = 0\)</span> and solve the quadratic equation. Three cases:</div>
+<div class="para" id="sec-2nd-order-linear-non-homogeneous-3-3">We start by forming the auxiliary equation <span class="process-math">\(ar^2 + br + c = 0\)</span> and solve the quadratic equation. Three cases:<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-non-homogeneous-3-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <ul class="disc" id="sec-2nd-order-linear-non-homogeneous-3-4">
-<li id="sec-2nd-order-linear-non-homogeneous-3-4-1"><div class="para" id="p-derived-sec-2nd-order-linear-non-homogeneous-3-4-1">Two distinct real roots <span class="process-math">\(r_1 \neq r_2,\)</span> <span class="process-math">\(y_c = C_1e^{r_1t} + C_2e^{r_2t}.\)</span>
-</div></li>
-<li id="sec-2nd-order-linear-non-homogeneous-3-4-2"><div class="para" id="p-derived-sec-2nd-order-linear-non-homogeneous-3-4-2">Two distinct complex roots <span class="process-math">\(r_1 = \alpha + i\beta, r_2 = \alpha - i\beta,\)</span> <span class="process-math">\(y_c = C_1e^{\alpha t} \cos \beta t + C_2e^{\alpha t} \sin \beta t.\)</span>
-</div></li>
-<li id="sec-2nd-order-linear-non-homogeneous-3-4-3"><div class="para" id="p-derived-sec-2nd-order-linear-non-homogeneous-3-4-3">Two repeated real roots <span class="process-math">\(r_1 = r_2 = r,\)</span> <span class="process-math">\(y_c = C_1e^{rt} + C_2te^{rt}.\)</span>
-</div></li>
+<li id="sec-2nd-order-linear-non-homogeneous-3-4-1">
+<div class="para" id="p-derived-sec-2nd-order-linear-non-homogeneous-3-4-1">Two distinct real roots <span class="process-math">\(r_1 \neq r_2,\)</span> <span class="process-math">\(y_c = C_1e^{r_1t} + C_2e^{r_2t}.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-2nd-order-linear-non-homogeneous-3-4-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-2nd-order-linear-non-homogeneous-3-4-2">
+<div class="para" id="p-derived-sec-2nd-order-linear-non-homogeneous-3-4-2">Two distinct complex roots <span class="process-math">\(r_1 = \alpha + i\beta, r_2 = \alpha - i\beta,\)</span> <span class="process-math">\(y_c = C_1e^{\alpha t} \cos \beta t + C_2e^{\alpha t} \sin \beta t.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-2nd-order-linear-non-homogeneous-3-4-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-2nd-order-linear-non-homogeneous-3-4-3">
+<div class="para" id="p-derived-sec-2nd-order-linear-non-homogeneous-3-4-3">Two repeated real roots <span class="process-math">\(r_1 = r_2 = r,\)</span> <span class="process-math">\(y_c = C_1e^{rt} + C_2te^{rt}.\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-2nd-order-linear-non-homogeneous-3-4-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
 <div class="para logical" id="sec-2nd-order-linear-non-homogeneous-3-5">
 <div class="para">For a second order linear nonhomogeneous ODE with constant coefficients</div>
@@ -430,9 +470,13 @@ ay'' + by' + cy = g(t),
 \end{equation*}
 </div>
 <div class="para">There are two approaches of finding a particular solution.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-non-homogeneous-3-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
 <ol class="decimal" id="sec-2nd-order-linear-non-homogeneous-3-6">
-<li id="sec-2nd-order-linear-non-homogeneous-3-6-1"><div class="para" id="p-derived-sec-2nd-order-linear-non-homogeneous-3-6-1">Method of Undetermined Coefficients. The method is convenient and easy to generalize to higher-order linear ODEs, but only works when all the coefficients are constant and <span class="process-math">\(g(t)\)</span> ranges in special classes of functions. Nevertheless, these special cases are good enough for lots of engineering practices.</div></li>
+<li id="sec-2nd-order-linear-non-homogeneous-3-6-1">
+<div class="para" id="p-derived-sec-2nd-order-linear-non-homogeneous-3-6-1">Method of Undetermined Coefficients. The method is convenient and easy to generalize to higher-order linear ODEs, but only works when all the coefficients are constant and <span class="process-math">\(g(t)\)</span> ranges in special classes of functions. Nevertheless, these special cases are good enough for lots of engineering practices.</div>
+<div class="autopermalink" data-description="Item 1"><a href="#sec-2nd-order-linear-non-homogeneous-3-6-1" title="Copy heading and permalink for Item 1">🔗</a></div>
+</li>
 <li id="sec-2nd-order-linear-non-homogeneous-3-6-2">
 <div class="para logical" id="sec-2nd-order-linear-non-homogeneous-3-6-2-1">
 <div class="para">Variation of Parameter <em class="alert">(not required).</em> Knowing the complementary solution <span class="process-math">\(y_c = C_1y_1 + C_2y_2,\)</span> we may set <span class="process-math">\(Y = u_1y_1 + u_2y_2\)</span> and solve that</div>
@@ -442,10 +486,14 @@ Y = y_1 \cdot \int \dfrac{-y_2 \cdot g}{W(y_1, y_2)} dt + y_2 \cdot \int \dfrac{
 \end{equation*}
 </div>
 <div class="para">Therefore, knowing one part of the complementary solution, we may apply the reduction of order in <a href="sec-2nd-order-linear-const-coeff-repeated.html#sec-2nd-order-linear-const-coeff-repeated-2" class="internal" title="Subsection 2.5.2: The method of reduction of order">Subsection 2.5.2</a> to find the full complementary solution, then use this formula to find the particular solution.</div>
+<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-non-homogeneous-3-6-2-1" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-2nd-order-linear-non-homogeneous-3-6-2-2">While this integration formula is powerful and can be generalized to higher-order linear ODEs, the formula in higher-order case is much more complicated and not so convenient to use.</div>
+<div class="para" id="sec-2nd-order-linear-non-homogeneous-3-6-2-2">While this integration formula is powerful and can be generalized to higher-order linear ODEs, the formula in higher-order case is much more complicated and not so convenient to use.<div class="autopermalink" data-description="Paragraph"><a href="#sec-2nd-order-linear-non-homogeneous-3-6-2-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Item 2"><a href="#sec-2nd-order-linear-non-homogeneous-3-6-2" title="Copy heading and permalink for Item 2">🔗</a></div>
 </li>
-</ol></section></section></div>
+</ol>
+<div class="autopermalink" data-description="Subsection 2.6.2: Linear ODE with constant coefficients"><a href="#sec-2nd-order-linear-non-homogeneous-3" title="Copy heading and permalink for Subsection 2.6.2: Linear ODE with constant coefficients">🔗</a></div></section><div class="autopermalink" data-description="Section 2.6: Second-order Linear Non-Homogeneous ODEs"><a href="#sec-2nd-order-linear-non-homogeneous" title="Copy heading and permalink for Section 2.6: Second-order Linear Non-Homogeneous ODEs">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-2nd-order-linear-const-coeff-repeated.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="sec-undetermined-coeff-2nd-order.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>

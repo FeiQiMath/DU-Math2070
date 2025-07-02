@@ -106,14 +106,14 @@ eBookConfig.allow_pairs = false;
 eBookConfig.enableScratchAC = false;
 eBookConfig.build_info = "";
 eBookConfig.python3 = null;
-eBookConfig.runestone_version = '7.7.6';
+eBookConfig.runestone_version = '7.8.4';
 eBookConfig.jobehost = '';
 eBookConfig.proxyuri_runs = '';
 eBookConfig.proxyuri_files = '';
 eBookConfig.enable_chatcodes =  false;
 </script>
 <!--*** Runestone Services ***-->
-<script src="_static/prefix-runtime.107bf2d9be20d9c4.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.c7bf407f76a97812.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
+<script src="_static/prefix-runtime.962d00926ef9460e.bundle.js"></script><script src="_static/prefix-723.3e6434f80549315a.bundle.js"></script><script src="_static/prefix-runestone.2e7f40e86ae7d163.bundle.js"></script><link rel="stylesheet" type="text/css" href="_static/prefix-723.3bccd435914aa0ff.css">
 <link rel="stylesheet" type="text/css" href="_static/prefix-runestone.5bdeacdba067a0e3.css">
 <script src="_static/pretext/js/lti_iframe_resizer.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/lunr.js/2.3.9/lunr.min.js" integrity="sha512-4xUl/d6D6THrAnXAwGajXkoWaeMNwEKK4iNfq5DotEbLPAfk6FSxSP3ydNxqDgCw1c/0Z1Jg6L8h2j+++9BZmg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script><script src="lunr-pretext-search-index.js" async=""></script><script src="_static/pretext/js/pretext_search.js"></script><script src="_static/pretext/js/lib/knowl.js"></script><!--knowl.js code controls Sage Cells within knowls--><script>sagecellEvalName='Evaluate (Sage)';
 </script>
@@ -275,7 +275,15 @@ eBookConfig.enable_chatcodes =  false;
 <li class="toc-item toc-chapter contains-active">
 <div class="toc-title-box"><a href="ch-Laplace.html" class="internal"><span class="codenumber">3</span> <span class="title">Laplace Transform</span></a></div>
 <ul class="structural toc-item-list contains-active">
-<li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div></li>
+<li class="toc-item toc-section">
+<div class="toc-title-box"><a href="sec-laplace-transform.html" class="internal"><span class="codenumber">3.1</span> <span class="title">Laplace Transform and Examples</span></a></div>
+<ul class="structural toc-item-list">
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-2" class="internal"><span class="codenumber">3.1.1</span> <span class="title">Integral Transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-3" class="internal"><span class="codenumber">3.1.2</span> <span class="title">Examples of Laplace transforms</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-4" class="internal"><span class="codenumber">3.1.3</span> <span class="title">Summary of basic formulas for Laplace transform</span></a></div></li>
+<li class="toc-item toc-subsection"><div class="toc-title-box"><a href="sec-laplace-transform.html#sec-laplace-transform-5" class="internal"><span class="codenumber">3.1.4</span> <span class="title">Existence of <span class="process-math">\(\mathcal{L}\{f(t)\}\)</span> and its long term behavior</span></a></div></li>
+</ul>
+</li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-inverse-Laplace.html" class="internal"><span class="codenumber">3.2</span> <span class="title">Inverse Laplace Transform</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-first-translation-theorem.html" class="internal"><span class="codenumber">3.3</span> <span class="title">First Translation Theorem</span></a></div></li>
 <li class="toc-item toc-section"><div class="toc-title-box"><a href="sec-second-translation-theorem.html" class="internal"><span class="codenumber">3.4</span> <span class="title">Second Translation Theorem</span></a></div></li>
@@ -296,71 +304,150 @@ eBookConfig.enable_chatcodes =  false;
 <main class="ptx-main"><div id="ptx-content" class="ptx-content"><section class="section" id="sec-Dirac-delta"><h2 class="heading hide-type">
 <span class="type">Section</span><span class="space"> </span><span class="codenumber">3.7</span><span class="space"> </span><span class="title">Dirac Delta Function</span>
 </h2>
-<div class="para" id="sec-Dirac-delta-2">The topic is one of the most confusing topics in undergraduate level STEM courses. The full justification requires the theory of distributions.</div>
-<div class="para" id="sec-Dirac-delta-3">We start by the unit impulse function. For fixed <span class="process-math">\(t_0 \gt 0\)</span> and <span class="process-math">\(0 \lt a \lt t_0\text{,}\)</span> the function</div>
-<div class="para" id="sec-Dirac-delta-4"><span class="process-math">\(\delta_a(t - t_0) = \begin{cases} \frac{1}{2a}, \amp t_0 - a \leq t \lt t_0 + a, \\ 0, \amp \text{otherwise.} \end{cases}\)</span></div>
-<div class="para" id="sec-Dirac-delta-5">is called the unit impulse function centered at <span class="process-math">\(t_0\)</span> with width <span class="process-math">\(a.\)</span>
+<div class="para" id="sec-Dirac-delta-2">The topic is one of the most confusing topics in undergraduate level STEM courses. The full justification requires the theory of distributions.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-2" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-Dirac-delta-6">Key property:</div>
-<div class="para" id="sec-Dirac-delta-7"><span class="process-math">\(\int_0^{\infty} \delta_a(t - t_0) dt = 1.\)</span></div>
-<div class="para" id="sec-Dirac-delta-8">For fixed <span class="process-math">\(t_0 \gt 0\)</span> and <span class="process-math">\(0 \lt a \lt t_0\text{,}\)</span> the function</div>
-<div class="para" id="sec-Dirac-delta-9"><span class="process-math">\(\delta_a(t - t_0) = \begin{cases} \frac{1}{2a}, \amp t_0 - a \leq t \lt t_0 + a, \\ 0, \amp \text{otherwise.} \end{cases}\)</span></div>
-<div class="para" id="sec-Dirac-delta-10">is called the unit impulse function centered at <span class="process-math">\(t_0\)</span> with width <span class="process-math">\(a.\)</span>
+<div class="para" id="sec-Dirac-delta-3">We start by the unit impulse function. For fixed <span class="process-math">\(t_0 \gt 0\)</span> and <span class="process-math">\(0 \lt a \lt t_0\text{,}\)</span> the function<div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-3" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-Dirac-delta-11">Key property:</div>
-<div class="para" id="sec-Dirac-delta-12"><span class="process-math">\(\int_0^{\infty} \delta_a(t - t_0) dt = 1.\)</span></div>
-<div class="para" id="sec-Dirac-delta-13">The Dirac <span class="process-math">\(\delta\)</span>-function is defined as the "limit" of the unit impulse function:</div>
-<div class="para" id="sec-Dirac-delta-14"><span class="process-math">\(\delta(t - t_0) = \lim_{a \to 0} \delta_a(t - t_0).\)</span></div>
-<div class="para" id="sec-Dirac-delta-15">Intuitively,</div>
-<div class="para" id="sec-Dirac-delta-16"><span class="process-math">\(\delta(t - t_0) = \begin{cases} \infty, \amp t = t_0, \\ 0, \amp t \neq t_0. \end{cases}\)</span></div>
-<div class="para" id="sec-Dirac-delta-17"><span class="process-math">\(\int_0^{\infty} \delta(t - t_0) dt = 1.\)</span></div>
-<div class="para" id="sec-Dirac-delta-18">Trouble: there does not exist a function in the usual sense satisfying both properties above.</div>
-<div class="para" id="sec-Dirac-delta-19">Indeed, the <span class="process-math">\(\delta\)</span>-function makes sense ONLY as a distribution (aka, generalized function).</div>
-<div class="para" id="sec-Dirac-delta-20">The key property of the Dirac <span class="process-math">\(\delta\)</span>-function that matters in both pure and applied mathematics is</div>
-<div class="para" id="sec-Dirac-delta-21"><span class="process-math">\(\int_0^{\infty} f(t) \delta(t - t_0) dt = f(t_0).\)</span></div>
-<div class="para" id="sec-Dirac-delta-22">In other words, the integration sifts <span class="process-math">\(f(t_0).\)</span>
+<div class="para" id="sec-Dirac-delta-4">
+<span class="process-math">\(\delta_a(t - t_0) = \begin{cases} \frac{1}{2a}, \amp t_0 - a \leq t \lt t_0 + a, \\ 0, \amp \text{otherwise.} \end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-4" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-Dirac-delta-23">In all applications of the Dirac <span class="process-math">\(\delta\)</span>-function, this is the only property that matters. We should not worry about the values of the function at a number. We should stick to this property only.</div>
-<div class="para" id="sec-Dirac-delta-24">In particular, we know the Laplace transform of <span class="process-math">\(\delta(t - t_0).\)</span>
+<div class="para" id="sec-Dirac-delta-5">is called the unit impulse function centered at <span class="process-math">\(t_0\)</span> with width <span class="process-math">\(a.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-5" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-Dirac-delta-25"><span class="process-math">\(L\{\delta(t - t_0)\} = \int_0^{\infty} \delta(t - t_0)e^{-st} dt = e^{-st_0}.\)</span></div>
-<div class="para" id="sec-Dirac-delta-26">Dirac <span class="process-math">\(\delta\)</span>-function – history and applications</div>
+<div class="para" id="sec-Dirac-delta-6">Key property:<div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-6" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-7">
+<span class="process-math">\(\int_0^{\infty} \delta_a(t - t_0) dt = 1.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-7" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-8">For fixed <span class="process-math">\(t_0 \gt 0\)</span> and <span class="process-math">\(0 \lt a \lt t_0\text{,}\)</span> the function<div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-8" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-9">
+<span class="process-math">\(\delta_a(t - t_0) = \begin{cases} \frac{1}{2a}, \amp t_0 - a \leq t \lt t_0 + a, \\ 0, \amp \text{otherwise.} \end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-9" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-10">is called the unit impulse function centered at <span class="process-math">\(t_0\)</span> with width <span class="process-math">\(a.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-10" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-11">Key property:<div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-11" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-12">
+<span class="process-math">\(\int_0^{\infty} \delta_a(t - t_0) dt = 1.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-12" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-13">The Dirac <span class="process-math">\(\delta\)</span>-function is defined as the "limit" of the unit impulse function:<div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-13" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-14">
+<span class="process-math">\(\delta(t - t_0) = \lim_{a \to 0} \delta_a(t - t_0).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-14" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-15">Intuitively,<div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-15" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-16">
+<span class="process-math">\(\delta(t - t_0) = \begin{cases} \infty, \amp t = t_0, \\ 0, \amp t \neq t_0. \end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-16" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-17">
+<span class="process-math">\(\int_0^{\infty} \delta(t - t_0) dt = 1.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-17" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-18">Trouble: there does not exist a function in the usual sense satisfying both properties above.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-18" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-19">Indeed, the <span class="process-math">\(\delta\)</span>-function makes sense ONLY as a distribution (aka, generalized function).<div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-19" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-20">The key property of the Dirac <span class="process-math">\(\delta\)</span>-function that matters in both pure and applied mathematics is<div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-20" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-21">
+<span class="process-math">\(\int_0^{\infty} f(t) \delta(t - t_0) dt = f(t_0).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-21" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-22">In other words, the integration sifts <span class="process-math">\(f(t_0).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-22" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-23">In all applications of the Dirac <span class="process-math">\(\delta\)</span>-function, this is the only property that matters. We should not worry about the values of the function at a number. We should stick to this property only.<div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-23" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-24">In particular, we know the Laplace transform of <span class="process-math">\(\delta(t - t_0).\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-24" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-25">
+<span class="process-math">\(L\{\delta(t - t_0)\} = \int_0^{\infty} \delta(t - t_0)e^{-st} dt = e^{-st_0}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-25" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-26">Dirac <span class="process-math">\(\delta\)</span>-function – history and applications<div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-26" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <ul class="disc" id="sec-Dirac-delta-27">
-<li id="sec-Dirac-delta-27-1"><div class="para" id="p-derived-sec-Dirac-delta-27-1">The idea of the Dirac <span class="process-math">\(\delta\)</span>-function is essentially in Fourier’s work of partial differential equations in mid-1800’s.</div></li>
-<li id="sec-Dirac-delta-27-2"><div class="para" id="p-derived-sec-Dirac-delta-27-2">The function is formally introduced by Paul Dirac in 1927, when he used the function to study various spectral problems.</div></li>
-<li id="sec-Dirac-delta-27-3"><div class="para" id="p-derived-sec-Dirac-delta-27-3">The function is rigorized by Laurent Schwartz in 1945 by inventing the theory of distributions (almost 20 years later).</div></li>
+<li id="sec-Dirac-delta-27-1">
+<div class="para" id="p-derived-sec-Dirac-delta-27-1">The idea of the Dirac <span class="process-math">\(\delta\)</span>-function is essentially in Fourier’s work of partial differential equations in mid-1800’s.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Dirac-delta-27-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-Dirac-delta-27-2">
+<div class="para" id="p-derived-sec-Dirac-delta-27-2">The function is formally introduced by Paul Dirac in 1927, when he used the function to study various spectral problems.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Dirac-delta-27-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-Dirac-delta-27-3">
+<div class="para" id="p-derived-sec-Dirac-delta-27-3">The function is rigorized by Laurent Schwartz in 1945 by inventing the theory of distributions (almost 20 years later).</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Dirac-delta-27-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
-<div class="para" id="sec-Dirac-delta-28">Applications</div>
+<div class="para" id="sec-Dirac-delta-28">Applications<div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-28" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
 <ul class="disc" id="sec-Dirac-delta-29">
-<li id="sec-Dirac-delta-29-1"><div class="para" id="p-derived-sec-Dirac-delta-29-1">Describe the “fundamental solution” of a PDE.</div></li>
-<li id="sec-Dirac-delta-29-2"><div class="para" id="p-derived-sec-Dirac-delta-29-2">Describe the “derivative” of a function with jump discontinuity, e.g., <span class="process-math">\(\frac{d}{dt} U(t - a) = \delta(t - a).\)</span>
-</div></li>
-<li id="sec-Dirac-delta-29-3"><div class="para" id="p-derived-sec-Dirac-delta-29-3">Unifying the discrete and continuous models in probability theory.</div></li>
+<li id="sec-Dirac-delta-29-1">
+<div class="para" id="p-derived-sec-Dirac-delta-29-1">Describe the “fundamental solution” of a PDE.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Dirac-delta-29-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-Dirac-delta-29-2">
+<div class="para" id="p-derived-sec-Dirac-delta-29-2">Describe the “derivative” of a function with jump discontinuity, e.g., <span class="process-math">\(\frac{d}{dt} U(t - a) = \delta(t - a).\)</span>
+</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Dirac-delta-29-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-Dirac-delta-29-3">
+<div class="para" id="p-derived-sec-Dirac-delta-29-3">Unifying the discrete and continuous models in probability theory.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Dirac-delta-29-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
 <ul class="disc" id="sec-Dirac-delta-30">
-<li id="sec-Dirac-delta-30-1"><div class="para" id="p-derived-sec-Dirac-delta-30-1">Physicists and engineers tend to use the Dirac <span class="process-math">\(\delta\)</span>-function without worrying about the theory of distributions, because the effect of the \delta-function can be easily observed from experiments, e.g., on an oscilloscope connected to a differential circuit with square wave external voltage.</div></li>
-<li id="sec-Dirac-delta-30-2"><div class="para" id="p-derived-sec-Dirac-delta-30-2">In the teaching of quantum mechanics, for a very long time, the standard response to conceptual problems is SUAC, abbreviation of Shut up and Calculate.</div></li>
-<li id="sec-Dirac-delta-30-3"><div class="para" id="p-derived-sec-Dirac-delta-30-3">In applying the <span class="process-math">\(\delta\)</span>-function in engineering practices, you may use the same philosophy. We shall see that in the next two examples.</div></li>
+<li id="sec-Dirac-delta-30-1">
+<div class="para" id="p-derived-sec-Dirac-delta-30-1">Physicists and engineers tend to use the Dirac <span class="process-math">\(\delta\)</span>-function without worrying about the theory of distributions, because the effect of the \delta-function can be easily observed from experiments, e.g., on an oscilloscope connected to a differential circuit with square wave external voltage.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Dirac-delta-30-1" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-Dirac-delta-30-2">
+<div class="para" id="p-derived-sec-Dirac-delta-30-2">In the teaching of quantum mechanics, for a very long time, the standard response to conceptual problems is SUAC, abbreviation of Shut up and Calculate.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Dirac-delta-30-2" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
+<li id="sec-Dirac-delta-30-3">
+<div class="para" id="p-derived-sec-Dirac-delta-30-3">In applying the <span class="process-math">\(\delta\)</span>-function in engineering practices, you may use the same philosophy. We shall see that in the next two examples.</div>
+<div class="autopermalink" data-description="Item"><a href="#sec-Dirac-delta-30-3" title="Copy heading and permalink for Item">🔗</a></div>
+</li>
 </ul>
-<div class="para" id="sec-Dirac-delta-31">Dirac <span class="process-math">\(\delta\)</span>-function – examples</div>
-<div class="para" id="sec-Dirac-delta-32">Example. <span class="process-math">\(y'' + y = 4\delta(t - 2\pi), \, y(0) = 0, \, y'(0) = 0.\)</span>
+<div class="para" id="sec-Dirac-delta-31">Dirac <span class="process-math">\(\delta\)</span>-function – examples<div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-31" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-Dirac-delta-33">We solve the ODE using the Laplace method. Set <span class="process-math">\(Y(s) = L\{y(t)\}.\)</span>
+<div class="para" id="sec-Dirac-delta-32">Example. <span class="process-math">\(y'' + y = 4\delta(t - 2\pi), \, y(0) = 0, \, y'(0) = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-32" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-Dirac-delta-34"><span class="process-math">\(s^2 Y(s) - sy(0) - y'(0) + Y(s) = \frac{4e^{-2\pi s}}{s^2 + 1}\)</span></div>
-<div class="para" id="sec-Dirac-delta-35"><span class="process-math">\(\Rightarrow Y(s) = \frac{4}{s^2 + 1}\)</span></div>
-<div class="para" id="sec-Dirac-delta-36"><span class="process-math">\(\Rightarrow y(t) = L^{-1} \left\{ \frac{4}{s^2 + 1} \right\} \, \bigg|_{t \mapsto t - 2\pi}\)</span></div>
-<div class="para" id="sec-Dirac-delta-37"><span class="process-math">\(= 4 \sin(t - 2\pi) U(t - 2\pi)\)</span></div>
-<div class="para" id="sec-Dirac-delta-38"><span class="process-math">\(= \begin{cases} 0, \amp 0 \leq t \lt 2\pi \\ 4 \sin t, \amp t \geq 2\pi \end{cases}\)</span></div>
-<div class="para" id="sec-Dirac-delta-39">Example. <span class="process-math">\(y'' + y = 4\delta(t - 2\pi), \, y(0) = 1, \, y'(0) = 0.\)</span>
+<div class="para" id="sec-Dirac-delta-33">We solve the ODE using the Laplace method. Set <span class="process-math">\(Y(s) = L\{y(t)\}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-33" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-Dirac-delta-40">We solve the ODE using the Laplace method. Set <span class="process-math">\(Y(s) = L\{y(t)\}.\)</span>
+<div class="para" id="sec-Dirac-delta-34">
+<span class="process-math">\(s^2 Y(s) - sy(0) - y'(0) + Y(s) = \frac{4e^{-2\pi s}}{s^2 + 1}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-34" title="Copy heading and permalink for Paragraph">🔗</a></div>
 </div>
-<div class="para" id="sec-Dirac-delta-41"><span class="process-math">\(s^2 Y(s) - sy(0) - y'(0) + Y(s) = 4e^{-2\pi s}\)</span></div>
-<div class="para" id="sec-Dirac-delta-42"><span class="process-math">\(\Rightarrow Y(s) = \frac{s}{s^2 + 1} + \frac{4e^{-2\pi s}}{s^2 + 1}\)</span></div>
-<div class="para" id="sec-Dirac-delta-43"><span class="process-math">\(\Rightarrow y(t) = \cos t + 4\sin(t - 2\pi) U(t - 2\pi)\)</span></div>
-<div class="para" id="sec-Dirac-delta-44"><span class="process-math">\(= \begin{cases} \cos t, \amp 0 \leq t \lt 2\pi \\ \cos t + 4\sin t, \amp t \geq 2\pi \end{cases}\)</span></div>
-<div class="para" id="sec-Dirac-delta-45">Generally, the Dirac <span class="process-math">\(\delta\)</span>-function <span class="process-math">\(\delta(t - t_0)\)</span> effectively introduces an abrupt change of the solution at <span class="process-math">\(t = t_0\)</span> (that can be observed from experiments).</div></section></div>
+<div class="para" id="sec-Dirac-delta-35">
+<span class="process-math">\(\Rightarrow Y(s) = \frac{4}{s^2 + 1}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-35" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-36">
+<span class="process-math">\(\Rightarrow y(t) = L^{-1} \left\{ \frac{4}{s^2 + 1} \right\} \, \bigg|_{t \mapsto t - 2\pi}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-36" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-37">
+<span class="process-math">\(= 4 \sin(t - 2\pi) U(t - 2\pi)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-37" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-38">
+<span class="process-math">\(= \begin{cases} 0, \amp 0 \leq t \lt 2\pi \\ 4 \sin t, \amp t \geq 2\pi \end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-38" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-39">Example. <span class="process-math">\(y'' + y = 4\delta(t - 2\pi), \, y(0) = 1, \, y'(0) = 0.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-39" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-40">We solve the ODE using the Laplace method. Set <span class="process-math">\(Y(s) = L\{y(t)\}.\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-40" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-41">
+<span class="process-math">\(s^2 Y(s) - sy(0) - y'(0) + Y(s) = 4e^{-2\pi s}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-41" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-42">
+<span class="process-math">\(\Rightarrow Y(s) = \frac{s}{s^2 + 1} + \frac{4e^{-2\pi s}}{s^2 + 1}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-42" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-43">
+<span class="process-math">\(\Rightarrow y(t) = \cos t + 4\sin(t - 2\pi) U(t - 2\pi)\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-43" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-44">
+<span class="process-math">\(= \begin{cases} \cos t, \amp 0 \leq t \lt 2\pi \\ \cos t + 4\sin t, \amp t \geq 2\pi \end{cases}\)</span><div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-44" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="para" id="sec-Dirac-delta-45">Generally, the Dirac <span class="process-math">\(\delta\)</span>-function <span class="process-math">\(\delta(t - t_0)\)</span> effectively introduces an abrupt change of the solution at <span class="process-math">\(t = t_0\)</span> (that can be observed from experiments).<div class="autopermalink" data-description="Paragraph"><a href="#sec-Dirac-delta-45" title="Copy heading and permalink for Paragraph">🔗</a></div>
+</div>
+<div class="autopermalink" data-description="Section 3.7: Dirac Delta Function"><a href="#sec-Dirac-delta" title="Copy heading and permalink for Section 3.7: Dirac Delta Function">🔗</a></div></section></div>
 <div id="ptx-content-footer" class="ptx-content-footer">
 <a class="previous-button button" href="sec-derivative-Laplace-convolutions.html" title="Previous"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cb;</span><span class="name">Prev</span></a><a class="top-button button" href="#" title="Top"><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5ce;</span><span class="name">Top</span></a><a class="next-button button" href="ch-linear-systems.html" title="Next"><span class="name">Next</span><span class="icon material-symbols-outlined" aria-hidden="true">&#xe5cc;</span></a>
 </div></main>
