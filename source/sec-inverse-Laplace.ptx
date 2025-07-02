@@ -3,8 +3,6 @@
 <section xml:id="sec-inverse-Laplace" xmlns:xi="http://www.w3.org/2001/XInclude">
   <title>Inverse Laplace Transform</title>
 
-<p><strong>Inverse Laplace transform</strong></p>
-
 <p>If <m>F(s)</m> represents the Laplace transform of <m>f(t),</m> i.e., <m>\mathcal{L}\{f(t)\} = F(s),</m> we would say that <m>f(t)</m> is the inverse Laplace transform of <m>F(s)</m> and write <m>f(t) = \mathcal{L}^{-1}\{F(s)\}.</m></p>
 
 <p><strong>Examples:</strong></p>
